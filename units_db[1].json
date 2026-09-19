@@ -1,0 +1,580 @@
+{
+  "dimensions": {
+    "L": "長さ [m]",
+    "M": "質量 [kg]",
+    "T": "時間 [s]",
+    "I": "電流 [A]",
+    "Θ": "温度 [K]",
+    "N": "物質量 [mol]",
+    "J": "光度 [cd]"
+  },
+  "categories": [
+    {
+      "id": "force",
+      "name": "力",
+      "quantity": "force",
+      "dimension_formula": "M·L·T⁻²",
+      "description": "物体の運動状態を変える作用",
+      "units": [
+        {
+          "id": "N",
+          "name": "ニュートン",
+          "symbol": "N",
+          "si_decomposition": "kg·m/s²",
+          "to_si": 1,
+          "physical_meaning": "1kgの物体に1m/s²の加速度を与える力。地球上でりんご約1個（約102g）を持ち上げる力にほぼ等しい。",
+          "is_si": true
+        },
+        {
+          "id": "kgf",
+          "name": "キログラム重",
+          "symbol": "kgf",
+          "si_decomposition": "kg·(9.80665 m/s²)",
+          "to_si": 9.80665,
+          "physical_meaning": "1kgの物体にかかる地球の重力。重力加速度g≈9.8m/s²を含んだ「力の旧単位」。SIでは非推奨だが工学現場で根強く使われる。",
+          "is_si": false
+        },
+        {
+          "id": "dyn",
+          "name": "ダイン",
+          "symbol": "dyn",
+          "si_decomposition": "g·cm/s² = 10⁻⁵ kg·m/s²",
+          "to_si": 1e-5,
+          "physical_meaning": "CGS単位系における力の単位。1gの物体に1cm/s²の加速度を与える力。",
+          "is_si": false
+        },
+        {
+          "id": "lbf",
+          "name": "重量ポンド",
+          "symbol": "lbf",
+          "si_decomposition": "0.45359237 kg × 9.80665 m/s²",
+          "to_si": 4.4482216152605,
+          "physical_meaning": "1ポンド（約454g）の物体にかかる地球の重力。ヤード・ポンド法圏の工業規格で頻出。",
+          "is_si": false
+        }
+      ]
+    },
+    {
+      "id": "pressure",
+      "name": "圧力",
+      "quantity": "pressure",
+      "dimension_formula": "M·L⁻¹·T⁻²",
+      "description": "単位面積あたりに働く力",
+      "units": [
+        {
+          "id": "Pa",
+          "name": "パスカル",
+          "symbol": "Pa",
+          "si_decomposition": "kg/(m·s²) = N/m²",
+          "to_si": 1,
+          "physical_meaning": "1m²の面に1Nの力がかかる圧力。りんご1個を1m²に載せた程度のごく小さな圧力。",
+          "is_si": true
+        },
+        {
+          "id": "kPa",
+          "name": "キロパスカル",
+          "symbol": "kPa",
+          "si_decomposition": "10³ Pa",
+          "to_si": 1000,
+          "physical_meaning": "1000Pa。自動車のタイヤ空気圧（約200〜250kPa）などで使われるスケール。",
+          "is_si": true
+        },
+        {
+          "id": "MPa",
+          "name": "メガパスカル",
+          "symbol": "MPa",
+          "si_decomposition": "10⁶ Pa = N/mm²",
+          "to_si": 1e6,
+          "physical_meaning": "100万Pa。鉄鋼の引張強度（400〜800MPa）やコンクリートの圧縮強度（20〜60MPa）に使われるスケール。1MPa=1N/mm²と覚えると便利。",
+          "is_si": true
+        },
+        {
+          "id": "atm",
+          "name": "気圧（標準大気圧）",
+          "symbol": "atm",
+          "si_decomposition": "101325 Pa",
+          "to_si": 101325,
+          "physical_meaning": "海面上の平均的な大気圧。1atm=101325Pa=1013.25hPa。天気予報の「1気圧」はこれ。",
+          "is_si": false
+        },
+        {
+          "id": "bar",
+          "name": "バール",
+          "symbol": "bar",
+          "si_decomposition": "10⁵ Pa",
+          "to_si": 1e5,
+          "physical_meaning": "10万Pa。1atmとほぼ等しい（約1.013bar）。ヨーロッパの工業規格でよく使われる。",
+          "is_si": false
+        },
+        {
+          "id": "mmHg",
+          "name": "水銀柱ミリメートル",
+          "symbol": "mmHg",
+          "si_decomposition": "133.322 Pa",
+          "to_si": 133.322,
+          "physical_meaning": "水銀柱を1mm押し上げる圧力。血圧測定（例：120/80mmHg）で日常的に使われる。トルと実質同じ。",
+          "is_si": false
+        },
+        {
+          "id": "psi",
+          "name": "ポンド毎平方インチ",
+          "symbol": "psi",
+          "si_decomposition": "6894.757 Pa",
+          "to_si": 6894.757,
+          "physical_meaning": "1平方インチに1重量ポンドの力がかかる圧力。米国のタイヤ空気圧や配管規格で標準的に使われる。",
+          "is_si": false
+        },
+        {
+          "id": "hPa",
+          "name": "ヘクトパスカル",
+          "symbol": "hPa",
+          "si_decomposition": "100 Pa",
+          "to_si": 100,
+          "physical_meaning": "100Pa。天気予報で気圧を示す際の標準単位。1hPa=1mbar。台風の中心気圧（例：950hPa）で馴染み深い。",
+          "is_si": true
+        }
+      ]
+    },
+    {
+      "id": "energy",
+      "name": "エネルギー",
+      "quantity": "energy",
+      "dimension_formula": "M·L²·T⁻²",
+      "description": "仕事をする能力、または物体の状態変化の指標",
+      "units": [
+        {
+          "id": "J",
+          "name": "ジュール",
+          "symbol": "J",
+          "si_decomposition": "kg·m²/s² = N·m = Pa·m³",
+          "to_si": 1,
+          "physical_meaning": "1Nの力で1m動かしたときの仕事。りんご1個を1m持ち上げるエネルギーにほぼ等しい。",
+          "is_si": true
+        },
+        {
+          "id": "kJ",
+          "name": "キロジュール",
+          "symbol": "kJ",
+          "si_decomposition": "10³ J",
+          "to_si": 1000,
+          "physical_meaning": "1000J。食品のエネルギー表示（例：おにぎり1個≈700kJ）で使われるスケール。",
+          "is_si": true
+        },
+        {
+          "id": "cal",
+          "name": "カロリー（熱力学カロリー）",
+          "symbol": "cal",
+          "si_decomposition": "4.184 J",
+          "to_si": 4.184,
+          "physical_meaning": "水1gの温度を1℃上げるのに必要な熱量。食品の「カロリー」は実はkcal（1000cal）。",
+          "is_si": false
+        },
+        {
+          "id": "kcal",
+          "name": "キロカロリー",
+          "symbol": "kcal",
+          "si_decomposition": "4184 J",
+          "to_si": 4184,
+          "physical_meaning": "1000cal。水1kgの温度を1℃上げる熱量。食品表示の「カロリー」は実はこれ。",
+          "is_si": false
+        },
+        {
+          "id": "eV",
+          "name": "電子ボルト",
+          "symbol": "eV",
+          "si_decomposition": "1.602176634 × 10⁻¹⁹ J",
+          "to_si": 1.602176634e-19,
+          "physical_meaning": "電子1個を1Vの電位差で加速したときに得るエネルギー。原子・分子スケールのエネルギーを語るときの共通言語。",
+          "is_si": false
+        },
+        {
+          "id": "kWh",
+          "name": "キロワット時",
+          "symbol": "kWh",
+          "si_decomposition": "3.6 × 10⁶ J",
+          "to_si": 3.6e6,
+          "physical_meaning": "1kWの電力を1時間使ったときのエネルギー。電気料金の基本単位（例：1kWh≈30円）。",
+          "is_si": false
+        },
+        {
+          "id": "erg",
+          "name": "エルグ",
+          "symbol": "erg",
+          "si_decomposition": "10⁻⁷ J = g·cm²/s²",
+          "to_si": 1e-7,
+          "physical_meaning": "CGS単位系のエネルギー単位。1dyn×1cm。天文学の一部で今も使われる。",
+          "is_si": false
+        }
+      ]
+    },
+    {
+      "id": "power",
+      "name": "仕事率（パワー）",
+      "quantity": "power",
+      "dimension_formula": "M·L²·T⁻³",
+      "description": "単位時間あたりのエネルギー変換量",
+      "units": [
+        {
+          "id": "W",
+          "name": "ワット",
+          "symbol": "W",
+          "si_decomposition": "kg·m²/s³ = J/s = V·A",
+          "to_si": 1,
+          "physical_meaning": "毎秒1Jのエネルギーを変換する仕事率。スマホの充電器は約5〜20W。",
+          "is_si": true
+        },
+        {
+          "id": "kW",
+          "name": "キロワット",
+          "symbol": "kW",
+          "si_decomposition": "10³ W",
+          "to_si": 1000,
+          "physical_meaning": "1000W。家庭用エアコンは約0.5〜3kW。電気自動車のモーターは100〜300kW。",
+          "is_si": true
+        },
+        {
+          "id": "HP",
+          "name": "馬力（英馬力）",
+          "symbol": "HP",
+          "si_decomposition": "745.7 W",
+          "to_si": 745.7,
+          "physical_meaning": "もともと蒸気機関の性能を馬と比較するために定義された。自動車のエンジン出力（例：150HP≈112kW）で今も使われる。",
+          "is_si": false
+        },
+        {
+          "id": "PS",
+          "name": "馬力（仏馬力）",
+          "symbol": "PS",
+          "si_decomposition": "735.49875 W",
+          "to_si": 735.49875,
+          "physical_meaning": "75kgの物体を1秒で1m持ち上げる仕事率として定義。日本の自動車カタログではこちらが標準。",
+          "is_si": false
+        }
+      ]
+    },
+    {
+      "id": "electric",
+      "name": "電圧・電気抵抗・静電容量",
+      "quantity": "electromagnetic",
+      "dimension_formula": "（量による）",
+      "description": "電磁気学の基本量",
+      "units": [
+        {
+          "id": "V",
+          "name": "ボルト",
+          "symbol": "V",
+          "si_decomposition": "kg·m²/(A·s³) = W/A = J/C",
+          "to_si": 1,
+          "physical_meaning": "1Aの電流に対して1Wの電力を生む電位差。乾電池1本は約1.5V、家庭のコンセントは100V。",
+          "is_si": true
+        },
+        {
+          "id": "Ω",
+          "name": "オーム",
+          "symbol": "Ω",
+          "si_decomposition": "kg·m²/(A²·s³) = V/A",
+          "to_si": 1,
+          "physical_meaning": "1Vの電圧をかけたとき1Aの電流が流れる抵抗。イヤホンのインピーダンス（16〜300Ω）で馴染みがある。",
+          "is_si": true
+        },
+        {
+          "id": "F",
+          "name": "ファラド",
+          "symbol": "F",
+          "si_decomposition": "A²·s⁴/(kg·m²) = C/V",
+          "to_si": 1,
+          "physical_meaning": "1Vの電圧で1C（クーロン）の電荷を蓄える容量。1Fは非常に大きく、実用ではμF〜pFが多い。",
+          "is_si": true
+        },
+        {
+          "id": "C",
+          "name": "クーロン",
+          "symbol": "C",
+          "si_decomposition": "A·s",
+          "to_si": 1,
+          "physical_meaning": "1Aの電流が1秒間に運ぶ電荷量。電子約6.24×10¹⁸個分の電荷に相当する。",
+          "is_si": true
+        }
+      ]
+    },
+    {
+      "id": "frequency",
+      "name": "周波数",
+      "quantity": "frequency",
+      "dimension_formula": "T⁻¹",
+      "description": "単位時間あたりの振動・回転の回数",
+      "units": [
+        {
+          "id": "Hz",
+          "name": "ヘルツ",
+          "symbol": "Hz",
+          "si_decomposition": "s⁻¹",
+          "to_si": 1,
+          "physical_meaning": "毎秒1回の振動。電源周波数は東日本50Hz、西日本60Hz。人の可聴域は約20Hz〜20kHz。",
+          "is_si": true
+        },
+        {
+          "id": "rpm",
+          "name": "回転毎分",
+          "symbol": "rpm",
+          "si_decomposition": "(1/60) s⁻¹",
+          "to_si": 0.0166667,
+          "physical_meaning": "1分間に何回転するか。自動車のエンジン回転数（例：3000rpm）や洗濯機の脱水（1000rpm）で使う。",
+          "is_si": false
+        }
+      ]
+    },
+    {
+      "id": "temperature",
+      "name": "温度",
+      "quantity": "temperature",
+      "dimension_formula": "Θ",
+      "description": "物体の熱的な状態を表す量",
+      "units": [
+        {
+          "id": "K",
+          "name": "ケルビン",
+          "symbol": "K",
+          "si_decomposition": "（SI基本単位）",
+          "to_si": 1,
+          "physical_meaning": "絶対温度。0K=-273.15℃は分子の熱運動が理論上停止する温度。温度差1K=温度差1℃。",
+          "is_si": true
+        },
+        {
+          "id": "degC",
+          "name": "セルシウス度",
+          "symbol": "℃",
+          "si_decomposition": "K - 273.15",
+          "to_si": "special",
+          "physical_meaning": "水の凝固点を0℃、沸点を100℃とした日常の温度スケール。温度差はケルビンと同じ。",
+          "is_si": false
+        },
+        {
+          "id": "degF",
+          "name": "ファーレンハイト度",
+          "symbol": "℉",
+          "si_decomposition": "(K - 273.15) × 9/5 + 32",
+          "to_si": "special",
+          "physical_meaning": "米国の日常温度。水の凝固点32℉、沸点212℉。体温98.6℉は37℃に相当。",
+          "is_si": false
+        }
+      ]
+    },
+    {
+      "id": "length",
+      "name": "長さ",
+      "quantity": "length",
+      "dimension_formula": "L",
+      "description": "空間における2点間の距離",
+      "units": [
+        {
+          "id": "m",
+          "name": "メートル",
+          "symbol": "m",
+          "si_decomposition": "（SI基本単位）",
+          "to_si": 1,
+          "physical_meaning": "光が真空中で1/299792458秒間に進む距離として定義。ドアの高さ（約2m）が身近な目安。",
+          "is_si": true
+        },
+        {
+          "id": "km",
+          "name": "キロメートル",
+          "symbol": "km",
+          "si_decomposition": "10³ m",
+          "to_si": 1000,
+          "physical_meaning": "1000m。駅1〜2個分の距離（約1km）。東京〜大阪は約500km。",
+          "is_si": true
+        },
+        {
+          "id": "cm",
+          "name": "センチメートル",
+          "symbol": "cm",
+          "si_decomposition": "10⁻² m",
+          "to_si": 0.01,
+          "physical_meaning": "0.01m。指の太さ（約1cm）が目安。",
+          "is_si": true
+        },
+        {
+          "id": "mm",
+          "name": "ミリメートル",
+          "symbol": "mm",
+          "si_decomposition": "10⁻³ m",
+          "to_si": 0.001,
+          "physical_meaning": "0.001m。シャープペンの芯の太さ（0.5mm）が目安。機械加工の精度はmm単位。",
+          "is_si": true
+        },
+        {
+          "id": "um",
+          "name": "マイクロメートル",
+          "symbol": "μm",
+          "si_decomposition": "10⁻⁶ m",
+          "to_si": 1e-6,
+          "physical_meaning": "0.001mm。赤血球の直径（約7μm）、髪の毛の太さ（約70μm）。半導体プロセスの寸法。",
+          "is_si": true
+        },
+        {
+          "id": "nm",
+          "name": "ナノメートル",
+          "symbol": "nm",
+          "si_decomposition": "10⁻⁹ m",
+          "to_si": 1e-9,
+          "physical_meaning": "0.001μm。可視光の波長（380〜780nm）。最先端半導体は3nm世代。",
+          "is_si": true
+        },
+        {
+          "id": "Å",
+          "name": "オングストローム",
+          "symbol": "Å",
+          "si_decomposition": "10⁻¹⁰ m = 0.1 nm",
+          "to_si": 1e-10,
+          "physical_meaning": "原子の大きさのスケール。水素原子の半径は約0.53Å。結晶学・分光学で頻出。",
+          "is_si": false
+        },
+        {
+          "id": "in",
+          "name": "インチ",
+          "symbol": "in",
+          "si_decomposition": "0.0254 m",
+          "to_si": 0.0254,
+          "physical_meaning": "2.54cm。ディスプレイのサイズ（対角線の長さ）やネジ規格で使われる。",
+          "is_si": false
+        },
+        {
+          "id": "ft",
+          "name": "フィート",
+          "symbol": "ft",
+          "si_decomposition": "0.3048 m",
+          "to_si": 0.3048,
+          "physical_meaning": "約30.5cm。航空機の高度（例：35000ft≈10,700m）で使われる。",
+          "is_si": false
+        }
+      ]
+    },
+    {
+      "id": "mass",
+      "name": "質量",
+      "quantity": "mass",
+      "dimension_formula": "M",
+      "description": "物体の慣性の大きさ",
+      "units": [
+        {
+          "id": "kg",
+          "name": "キログラム",
+          "symbol": "kg",
+          "si_decomposition": "（SI基本単位）",
+          "to_si": 1,
+          "physical_meaning": "プランク定数を正確に6.62607015×10⁻³⁴ J·sと定めることで定義。水1Lがほぼ1kg。",
+          "is_si": true
+        },
+        {
+          "id": "g",
+          "name": "グラム",
+          "symbol": "g",
+          "si_decomposition": "10⁻³ kg",
+          "to_si": 0.001,
+          "physical_meaning": "0.001kg。1円玉がちょうど1g。",
+          "is_si": true
+        },
+        {
+          "id": "mg",
+          "name": "ミリグラム",
+          "symbol": "mg",
+          "si_decomposition": "10⁻⁶ kg",
+          "to_si": 1e-6,
+          "physical_meaning": "0.001g。薬の有効成分量（例：ロキソニン60mg）で使われる。",
+          "is_si": true
+        },
+        {
+          "id": "t",
+          "name": "トン",
+          "symbol": "t",
+          "si_decomposition": "10³ kg",
+          "to_si": 1000,
+          "physical_meaning": "1000kg。乗用車の重さ（約1〜2t）が目安。",
+          "is_si": false
+        },
+        {
+          "id": "lb",
+          "name": "ポンド",
+          "symbol": "lb",
+          "si_decomposition": "0.45359237 kg",
+          "to_si": 0.45359237,
+          "physical_meaning": "約453.6g。米国の体重測定やボウリングのボール（6〜16lb）で使われる。",
+          "is_si": false
+        },
+        {
+          "id": "oz",
+          "name": "オンス",
+          "symbol": "oz",
+          "si_decomposition": "0.028349523 kg",
+          "to_si": 0.028349523,
+          "physical_meaning": "約28.35g。金・銀の取引では「トロイオンス」（約31.1g）が標準。",
+          "is_si": false
+        },
+        {
+          "id": "u",
+          "name": "統一原子質量単位",
+          "symbol": "u (amu)",
+          "si_decomposition": "1.66053906660 × 10⁻²⁷ kg",
+          "to_si": 1.66053906660e-27,
+          "physical_meaning": "炭素12の質量の1/12。陽子・中性子1個がほぼ1u。原子・分子の質量を語るスケール。",
+          "is_si": false
+        }
+      ]
+    },
+    {
+      "id": "speed",
+      "name": "速度",
+      "quantity": "speed",
+      "dimension_formula": "L·T⁻¹",
+      "description": "単位時間あたりに移動する距離",
+      "units": [
+        {
+          "id": "ms",
+          "name": "メートル毎秒",
+          "symbol": "m/s",
+          "si_decomposition": "m/s",
+          "to_si": 1,
+          "physical_meaning": "毎秒1m進む速さ。人の歩行速度は約1.2m/s。",
+          "is_si": true
+        },
+        {
+          "id": "kmh",
+          "name": "キロメートル毎時",
+          "symbol": "km/h",
+          "si_decomposition": "(1/3.6) m/s",
+          "to_si": 0.27778,
+          "physical_meaning": "1時間に何km進むか。自動車の速度表示の標準。100km/h≈27.8m/s。",
+          "is_si": false
+        },
+        {
+          "id": "mph",
+          "name": "マイル毎時",
+          "symbol": "mph",
+          "si_decomposition": "0.44704 m/s",
+          "to_si": 0.44704,
+          "physical_meaning": "米国・英国の速度標準。60mph≈96.6km/h。野球の球速表示でも使われる。",
+          "is_si": false
+        },
+        {
+          "id": "knot",
+          "name": "ノット",
+          "symbol": "kn",
+          "si_decomposition": "0.514444 m/s",
+          "to_si": 0.514444,
+          "physical_meaning": "1時間に1海里（1852m）進む速さ。航空・航海の国際標準。",
+          "is_si": false
+        },
+        {
+          "id": "c",
+          "name": "光速",
+          "symbol": "c",
+          "si_decomposition": "299792458 m/s",
+          "to_si": 299792458,
+          "physical_meaning": "真空中の光の速さ。宇宙で最速。相対論によりこれを超える情報伝達は不可能。",
+          "is_si": false
+        }
+      ]
+    }
+  ]
+}
