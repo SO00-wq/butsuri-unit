@@ -23,7 +23,7 @@ from itertools import combinations
 
 OUT = Path("dist")
 SITE_NAME = "ブツリ単位ラボ"
-SITE_URL = "https://tanitani.amft00571.workers.dev"  # ★独自ドメイン取得後に変更
+SITE_URL = "https://tanitani.butsuri-lab.workers.dev"  # ★独自ドメイン取得後に変更
 SITE_DESC = "知らない単位や公式を、知っている公式と単位だけで理解する。SI単位と次元解析で物理量を基本単位まで分解するサイト。"
 
 DB = json.load(open("data/si_db.json", encoding="utf-8"))

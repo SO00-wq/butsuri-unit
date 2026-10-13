@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tanitani.amft00571.workers.dev/sitemap.xml
+Sitemap: https://tanitani.butsuri-lab.workers.dev/sitemap.xml
