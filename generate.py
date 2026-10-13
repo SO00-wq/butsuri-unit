@@ -24,6 +24,7 @@ from itertools import combinations
 OUT = Path("dist")
 SITE_NAME = "ブツリ単位ラボ"
 SITE_URL = "https://tanitani.butsuri-lab.workers.dev"  # ★独自ドメイン取得後に変更
+GOOGLE_VERIFICATION = "kVE91IWkP86K1E_JpBQDklXXu5gz86ZOA64xcgtDUwc"  # Search Console 所有権確認
 SITE_DESC = "知らない単位や公式を、知っている公式と単位だけで理解する。SI単位と次元解析で物理量を基本単位まで分解するサイト。"
 
 DB = json.load(open("data/si_db.json", encoding="utf-8"))
@@ -324,6 +325,7 @@ def page(path, title, desc, body, crumbs=()):
 <title>{E(title)} | {SITE_NAME}</title>
 <meta name="description" content="{E(desc)}">
 <link rel="canonical" href="{SITE_URL}{path}">
+<meta name="google-site-verification" content="{GOOGLE_VERIFICATION}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
