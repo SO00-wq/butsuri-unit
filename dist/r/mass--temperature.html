@@ -29,7 +29,8 @@ p{margin-bottom:1rem}ul,ol{margin:0 0 1rem 1.3rem}li{margin-bottom:.35rem}
 .hero .big{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1.45rem;font-weight:600;overflow-wrap:anywhere}
 .hero .sub{color:var(--dim);font-size:.85rem;margin-top:.3rem}
 .step{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:.9rem 1rem;margin-bottom:.8rem}
-.step .no{display:inline-block;background:var(--accent);color:#fff;font-size:.75rem;font-weight:700;border-radius:3px;padding:0 .45rem;margin-right:.4rem}
+.step .st{margin-bottom:.35rem;font-size:.95rem}.step p{margin:.2rem 0 .3rem}.step .lead{font-size:.85rem}
+details.pre{margin-bottom:.9rem}details.pre summary{cursor:pointer;color:var(--dim);font-size:.9rem;margin-bottom:.6rem}
 .calc{font-family:'IBM Plex Mono',ui-monospace,monospace;background:var(--code);border-left:3px solid var(--accent);padding:.6rem .9rem;margin:.5rem 0 .2rem;border-radius:0 var(--r) var(--r) 0;overflow-x:auto;white-space:nowrap;font-size:.92rem;line-height:2}
 .ok{color:var(--ok);font-weight:700}
 table{width:100%;border-collapse:collapse;margin-bottom:1rem;font-size:.92rem}
@@ -55,8 +56,8 @@ footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);font-
 <div class="calc">[質量] ÷ [温度（熱力学温度）] = (kg) ÷ (K) = kg/K</div>
 <h2>2つの量を結ぶ公式</h2>
 <div class="step"><b><a href="/f/spec_heat.html">比熱</a></b>：<span class="mono">Q = m c ΔT</span>
-<div class="calc">m = Q / (c ΔT)<br>[m] = J × (J/(kg·K))⁻¹ × (K)⁻¹<br>　　= kg</div>
-<div class="calc">ΔT = Q / (m c)<br>[ΔT] = J × (kg)⁻¹ × (J/(kg·K))⁻¹<br>　　= K</div>
+<div class="calc">m = Q / (c ΔT)<br>[m] = J ÷ (J/(kg·K)) ÷ K<br>　　= kg</div>
+<div class="calc">ΔT = Q / (m c)<br>[ΔT] = J ÷ kg ÷ (J/(kg·K))<br>　　= K</div>
 </div>
 <h2>それぞれの量のページ</h2><ul>
 <li><a href="/q/mass.html">質量</a>（<span class="mono">kg = kg</span>）</li>

@@ -29,7 +29,8 @@ p{margin-bottom:1rem}ul,ol{margin:0 0 1rem 1.3rem}li{margin-bottom:.35rem}
 .hero .big{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1.45rem;font-weight:600;overflow-wrap:anywhere}
 .hero .sub{color:var(--dim);font-size:.85rem;margin-top:.3rem}
 .step{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:.9rem 1rem;margin-bottom:.8rem}
-.step .no{display:inline-block;background:var(--accent);color:#fff;font-size:.75rem;font-weight:700;border-radius:3px;padding:0 .45rem;margin-right:.4rem}
+.step .st{margin-bottom:.35rem;font-size:.95rem}.step p{margin:.2rem 0 .3rem}.step .lead{font-size:.85rem}
+details.pre{margin-bottom:.9rem}details.pre summary{cursor:pointer;color:var(--dim);font-size:.9rem;margin-bottom:.6rem}
 .calc{font-family:'IBM Plex Mono',ui-monospace,monospace;background:var(--code);border-left:3px solid var(--accent);padding:.6rem .9rem;margin:.5rem 0 .2rem;border-radius:0 var(--r) var(--r) 0;overflow-x:auto;white-space:nowrap;font-size:.92rem;line-height:2}
 .ok{color:var(--ok);font-weight:700}
 table{width:100%;border-collapse:collapse;margin-bottom:1rem;font-size:.92rem}
@@ -68,9 +69,9 @@ footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);font-
 <h3><a href="/q/luminous_flux.html">光束</a>について解く</h3>
 <div class="calc">[Φ_v] = cd × sr<br>　　= cd　<span class="lead">（sr は無次元なので省く）</span><br>　　= lm</div>
 <h3><a href="/q/luminous_intensity.html">光度</a>について解く</h3>
-<div class="calc">I_v = Φ_v / Ω<br>[I_v] = lm × (sr)⁻¹<br>　　= lm　<span class="lead">（sr は無次元なので省く）</span><br>　　= cd</div>
+<div class="calc">I_v = Φ_v / Ω<br>[I_v] = lm ÷ sr<br>　　= lm　<span class="lead">（sr は無次元なので省く）</span><br>　　= cd</div>
 <h3><a href="/q/solid_angle.html">立体角</a>について解く</h3>
-<div class="calc">Ω = Φ_v / I_v<br>[Ω] = lm × (cd)⁻¹<br>　　= lm/cd<br>　　= 1<br>　　= sr</div>
+<div class="calc">Ω = Φ_v / I_v<br>[Ω] = lm ÷ cd<br>　　= lm/cd<br>　　= 1<br>　　= sr</div>
 <h2>波・光・量子のほかの公式</h2><ul>
 <li><a href="/f/wave.html">波の基本式</a>：<span class="mono">v = f λ</span></li>
 <li><a href="/f/wavenumber.html">波数</a>：<span class="mono">k = 2π / λ</span></li>

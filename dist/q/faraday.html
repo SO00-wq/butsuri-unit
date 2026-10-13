@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ファラデー定数の単位 C/mol を基本単位で表すと s·A/mol | ブツリ単位ラボ</title>
-<meta name="description" content="ファラデー定数の単位C/molを、知っている公式からSI基本単位s·A/molまで分解して理解する。同じ単位の別の書き方と、同じ次元をもつ量も紹介。">
+<title>ファラデー定数の単位 C/mol を基本単位で表すと A·s/mol | ブツリ単位ラボ</title>
+<meta name="description" content="ファラデー定数の単位C/molを、知っている公式からSI基本単位A·s/molまで分解して理解する。同じ単位の別の書き方と、同じ次元をもつ量も紹介。">
 <link rel="canonical" href="https://tanitani.amft00571.workers.dev/q/faraday.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,7 +29,8 @@ p{margin-bottom:1rem}ul,ol{margin:0 0 1rem 1.3rem}li{margin-bottom:.35rem}
 .hero .big{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1.45rem;font-weight:600;overflow-wrap:anywhere}
 .hero .sub{color:var(--dim);font-size:.85rem;margin-top:.3rem}
 .step{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:.9rem 1rem;margin-bottom:.8rem}
-.step .no{display:inline-block;background:var(--accent);color:#fff;font-size:.75rem;font-weight:700;border-radius:3px;padding:0 .45rem;margin-right:.4rem}
+.step .st{margin-bottom:.35rem;font-size:.95rem}.step p{margin:.2rem 0 .3rem}.step .lead{font-size:.85rem}
+details.pre{margin-bottom:.9rem}details.pre summary{cursor:pointer;color:var(--dim);font-size:.9rem;margin-bottom:.6rem}
 .calc{font-family:'IBM Plex Mono',ui-monospace,monospace;background:var(--code);border-left:3px solid var(--accent);padding:.6rem .9rem;margin:.5rem 0 .2rem;border-radius:0 var(--r) var(--r) 0;overflow-x:auto;white-space:nowrap;font-size:.92rem;line-height:2}
 .ok{color:var(--ok);font-weight:700}
 table{width:100%;border-collapse:collapse;margin-bottom:1rem;font-size:.92rem}
@@ -50,16 +51,16 @@ footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);font-
 <header class="site"><a class="logo" href="/">ブツリ単位ラボ</a><nav><a href="/guide.html">使い方</a><a href="/#cats">分野一覧</a></nav></header>
 <nav class="bc"><a href="/">トップ</a> › <a href="/c/em.html">電磁気</a> › ファラデー定数</nav>
 <span class="tag">電磁気</span>
-<h1>ファラデー定数の単位 C/mol を基本単位で表すと s·A/mol</h1>
+<h1>ファラデー定数の単位 C/mol を基本単位で表すと A·s/mol</h1>
 <p class="lead">電子1 molぶんの電荷。電気分解の計算に使う。</p>
 <div class="hero">
-<div class="big">C/mol = s·A/mol</div>
+<div class="big">C/mol = A·s/mol</div>
 <div class="sub">次元 [T I N⁻¹]</div></div>
-<h2>知っている公式からファラデー定数の単位を組み立てる</h2>
-<p>基本単位（m・kg・s・A・K・mol・cd）だけを出発点に、よく知られた公式を順にたどると、ファラデー定数の単位が自然に出てきます。</p>
-<div class="step"><span class="no">STEP 1</span><a href="/q/charge.html">電荷（電気量）</a>　—　<a href="/f/charge_def.html">電荷と電流</a>：<span class="mono">q = I t</span><div class="calc">[q] = A × s<br>　　= s·A<br>　　= C</div></div>
-<div class="step"><span class="no">STEP 2</span><a href="/q/faraday.html">ファラデー定数</a>　—　<a href="/f/faraday.html">ファラデー定数</a>：<span class="mono">q = n F</span><div class="calc">F = q / n<br>[F] = C × (mol)⁻¹<br>　　= C/mol<br>　　= s·A/mol</div></div>
-<p>こうして <span class="mono">C/mol</span> は <span class="mono ok">s·A/mol</span> と同じだとわかります。</p>
+<h2>ファラデー定数の単位を、知っている公式から組み立てる</h2>
+<p>C/mol を基本単位までほどくには、電荷（電気量） → ファラデー定数 の順に単位をつないでいきます。</p>
+<div class="step"><div class="st"><b><a href="/q/charge.html">電荷（電気量）</a></b> <span class="lead">— <a href="/f/charge_def.html">電荷と電流</a>　<span class="mono">q = I t</span></span></div><p>電荷は「電流 × 流れた時間」。A に s をかけた A·s が C（クーロン）です。</p><div class="calc">[q] = A × s = A·s = C</div></div>
+<div class="step"><div class="st"><b><a href="/q/faraday.html">ファラデー定数</a></b> <span class="lead">— <a href="/f/faraday.html">ファラデー定数</a>　<span class="mono">q = n F</span></span></div><p>q = nF から F = q/n。「1 mol あたりの電荷」なので C/mol です。</p><div class="calc">[F] = C ÷ mol = C/mol = A·s/mol</div></div>
+<p>まとめると、<span class="mono ok">C/mol = A·s/mol</span> です。</p>
 <h2>ファラデー定数が出てくる公式</h2><ul>
 <li><a href="/f/faraday.html">ファラデー定数</a>：<span class="mono">q = n F</span></li>
 <li><a href="/f/faraday_e.html">ファラデー定数と電気素量</a>：<span class="mono">F = N_A e</span></li>

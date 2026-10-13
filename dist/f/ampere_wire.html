@@ -29,7 +29,8 @@ p{margin-bottom:1rem}ul,ol{margin:0 0 1rem 1.3rem}li{margin-bottom:.35rem}
 .hero .big{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1.45rem;font-weight:600;overflow-wrap:anywhere}
 .hero .sub{color:var(--dim);font-size:.85rem;margin-top:.3rem}
 .step{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:.9rem 1rem;margin-bottom:.8rem}
-.step .no{display:inline-block;background:var(--accent);color:#fff;font-size:.75rem;font-weight:700;border-radius:3px;padding:0 .45rem;margin-right:.4rem}
+.step .st{margin-bottom:.35rem;font-size:.95rem}.step p{margin:.2rem 0 .3rem}.step .lead{font-size:.85rem}
+details.pre{margin-bottom:.9rem}details.pre summary{cursor:pointer;color:var(--dim);font-size:.9rem;margin-bottom:.6rem}
 .calc{font-family:'IBM Plex Mono',ui-monospace,monospace;background:var(--code);border-left:3px solid var(--accent);padding:.6rem .9rem;margin:.5rem 0 .2rem;border-radius:0 var(--r) var(--r) 0;overflow-x:auto;white-space:nowrap;font-size:.92rem;line-height:2}
 .ok{color:var(--ok);font-weight:700}
 table{width:100%;border-collapse:collapse;margin-bottom:1rem;font-size:.92rem}
@@ -59,17 +60,17 @@ footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);font-
 <tr><td class="mono">r</td><td><a href="/q/length.html">長さ</a></td><td class="mono">m</td><td class="mono">m</td></tr>
 </table></div>
 <h2>両辺の単位が一致するか確かめる</h2>
-<div class="calc">左辺： H<br>　→ (A/m)<br>　= A/m</div>
-<div class="calc">右辺： I / r<br>　→ A × (m)⁻¹<br>　= A/m</div>
+<div class="calc">左辺： H<br>　→ A/m</div>
+<div class="calc">右辺： I / r<br>　→ A ÷ m<br>　= A/m</div>
 <p><span class="ok">両辺とも A/m で一致</span>します。単位が合わない式は、どこかが間違っているサインです。</p>
 <h2>この公式から読み取れる単位の関係</h2>
 <p>公式をある量について解くと、その量の単位をほかの量の単位で表せます。知らない量が出てきたときは、知っている量について解き直して単位を組み立てるのが近道です。</p>
 <h3><a href="/q/magnetic_field.html">磁場（磁界）の強さ</a>について解く</h3>
-<div class="calc">H = I / r　<span class="lead">（係数は単位に影響しないので省略）</span><br>[H] = A × (m)⁻¹<br>　　= A/m</div>
+<div class="calc">H = I / r　<span class="lead">（係数は単位に影響しないので省略）</span><br>[H] = A ÷ m<br>　　= A/m</div>
 <h3><a href="/q/current.html">電流</a>について解く</h3>
-<div class="calc">I = H r　<span class="lead">（係数は単位に影響しないので省略）</span><br>[I] = (A/m) × m<br>　　= A</div>
+<div class="calc">I = H r　<span class="lead">（係数は単位に影響しないので省略）</span><br>[I] = A/m × m<br>　　= A</div>
 <h3><a href="/q/length.html">長さ</a>について解く</h3>
-<div class="calc">r = I / H　<span class="lead">（係数は単位に影響しないので省略）</span><br>[r] = (A/m)⁻¹ × A<br>　　= m</div>
+<div class="calc">r = I / H　<span class="lead">（係数は単位に影響しないので省略）</span><br>[r] = A ÷ (A/m)<br>　　= m</div>
 <h2>電磁気のほかの公式</h2><ul>
 <li><a href="/f/charge_def.html">電荷と電流</a>：<span class="mono">q = I t</span></li>
 <li><a href="/f/voltage_def.html">電圧と仕事</a>：<span class="mono">W = q V</span></li>

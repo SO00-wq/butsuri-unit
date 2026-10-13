@@ -29,6 +29,7 @@ SITE_DESC = "知らない単位や公式を、知っている公式と単位だ�
 DB = json.load(open("data/si_db.json", encoding="utf-8"))
 
 BASE_SYMS = ["kg", "m", "s", "A", "K", "mol", "cd"]
+DISPLAY_ORDER = ["kg", "m", "A", "s", "K", "mol", "cd"]  # 表示の並び（A·s のように書く）
 DIM_LABELS = DB["dimension_labels"]
 UNITS = {u["symbol"]: u for u in DB["units"]}
 UDIMS = {s: tuple(Fr(x) for x in u["dims"]) for s, u in UNITS.items()}
@@ -89,7 +90,7 @@ def fmt_ud(ud, mode="frac"):
     if not items:
         return "1"
     if all(s in BASE_SYMS for s, _ in items):
-        items.sort(key=lambda t: BASE_SYMS.index(t[0]))
+        items.sort(key=lambda t: DISPLAY_ORDER.index(t[0]))
     if mode == "pow":
         return "·".join(f"{s}{sup(Fr(e))}" for s, e in items)
     num = [f"{s}{sup(Fr(e))}" for s, e in items if e > 0]
@@ -176,15 +177,24 @@ def solve(f, x):
     return [(v, -e / k) for v, e in f["D"].items() if v != x and e != 0]
 
 def factors_str(f, terms):
-    """[(var, exp)] → '(N·m²/C²) × C × C × (m)⁻²'"""
+    """[(var, exp)] → 'N·m²/C² × C × C ÷ m²' のような、手で計算するときの書き方"""
+    terms = sorted(terms, key=lambda t: t[1] < 0)
     out = []
-    for v, e in terms:
+    for i, (v, e) in enumerate(terms):
         u = qunit(f["qof"][v])
         if u.startswith("1"):
             u = "1"
-        wrapped = f"({u})" if ("·" in u or "/" in u or e != 1) else u
-        out.append(f"{wrapped}{sup(e)}" if e != 1 else wrapped)
-    return " × ".join(out) if out else "1"
+        a = abs(e)
+        simple = re.fullmatch(r"[A-Za-zΩ]+", u) is not None
+        if a == 1:
+            disp = u if (e > 0 or simple) else f"({u})"
+        else:
+            disp = f"{u}{sup(a)}" if simple else f"({u}){sup(a)}"
+        if e > 0:
+            out.append(disp if i == 0 else f"× {disp}")
+        else:
+            out.append(f"1 ÷ {disp}" if i == 0 else f"÷ {disp}")
+    return " ".join(out) if out else "1"
 
 def combine(f, terms):
     ud = {}
@@ -283,7 +293,8 @@ p{margin-bottom:1rem}ul,ol{margin:0 0 1rem 1.3rem}li{margin-bottom:.35rem}
 .hero .big{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1.45rem;font-weight:600;overflow-wrap:anywhere}
 .hero .sub{color:var(--dim);font-size:.85rem;margin-top:.3rem}
 .step{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:.9rem 1rem;margin-bottom:.8rem}
-.step .no{display:inline-block;background:var(--accent);color:#fff;font-size:.75rem;font-weight:700;border-radius:3px;padding:0 .45rem;margin-right:.4rem}
+.step .st{margin-bottom:.35rem;font-size:.95rem}.step p{margin:.2rem 0 .3rem}.step .lead{font-size:.85rem}
+details.pre{margin-bottom:.9rem}details.pre summary{cursor:pointer;color:var(--dim);font-size:.9rem;margin-bottom:.6rem}
 .calc{font-family:'IBM Plex Mono',ui-monospace,monospace;background:var(--code);border-left:3px solid var(--accent);padding:.6rem .9rem;margin:.5rem 0 .2rem;border-radius:0 var(--r) var(--r) 0;overflow-x:auto;white-space:nowrap;font-size:.92rem;line-height:2}
 .ok{color:var(--ok);font-weight:700}
 table{width:100%;border-collapse:collapse;margin-bottom:1rem;font-size:.92rem}
@@ -410,6 +421,32 @@ def alt_expressions(qid):
             out.append((s, fid, x))
     return out
 
+BASICS = {"velocity", "acceleration", "force", "energy", "power", "area", "volume", "charge", "momentum"}
+
+def one_line(f, x):
+    """'[F] = kg × m/s² = kg·m/s² = N' のような1行の計算"""
+    q = QS[f["qof"][x]]
+    terms = solve(f, x)
+    combined, dropped = tidy(combine(f, terms), q)
+    parts = [factors_str(f, terms)]
+    c = fmt_ud(combined)
+    if c not in parts:
+        parts.append(c)
+    b = fmt_base(q["dims"])
+    if b not in parts:
+        parts.append(b)
+    if q["ud"] and q["unit_str"] not in parts:
+        parts.append(q["unit_str"])
+    return f"[{f['sym'][x]}] = " + " = ".join(parts)
+
+def step_html(st):
+    sid, fid, _ = st
+    sq, f = QS[sid], FS[fid]
+    return ('<div class="step">'
+            f'<div class="st"><b>{qlink(sid)}</b> <span class="lead">— {flink(fid)}　<span class="mono">{E(f["expr"])}</span></span></div>'
+            f'<p>{E(sq.get("how", ""))}</p>'
+            f'<div class="calc">{E(one_line(f, sq["def_var"]))}</div></div>')
+
 def build_quantity(q):
     qid = q["id"]
     cat = CATS[q["category"]]
@@ -435,17 +472,20 @@ def build_quantity(q):
 
     steps = chain(qid)
     if steps:
-        b.append(f"<h2>知っている公式から{E(q['name'])}の単位を組み立てる</h2>")
-        b.append("<p>基本単位（m・kg・s・A・K・mol・cd）だけを出発点に、よく知られた公式を順にたどると、"
-                 f"{E(q['name'])}の単位が自然に出てきます。</p>")
-        for i, (sid, fid, terms) in enumerate(steps, 1):
-            f = FS[fid]
-            sq = QS[sid]
-            b.append('<div class="step">'
-                     f'<span class="no">STEP {i}</span>{qlink(sid)}　—　{flink(fid)}：<span class="mono">{E(f["expr"])}</span>'
-                     + calc_block(f, sq["def_var"])
-                     + "</div>")
-        b.append(f'<p>こうして <span class="mono">{E(u)}</span> は <span class="mono ok">{E(base)}</span> と同じだとわかります。</p>')
+        b.append(f"<h2>{E(q['name'])}の単位を、知っている公式から組み立てる</h2>")
+        if len(steps) > 1:
+            route = " → ".join(E(QS[sid]["name"]) for sid, _, _ in steps)
+            b.append(f"<p>{E(u)} を基本単位までほどくには、{route} の順に単位をつないでいきます。</p>")
+        basics = [st for st in steps[:-1] if st[0] in BASICS] if len(steps) >= 4 else []
+        rest = [st for st in steps if st not in basics]
+        if basics:
+            names = "・".join(QS[sid]["name"] for sid, _, _ in basics)
+            b.append(f'<details class="pre"><summary>前提：{E(names)}の単位（知っていれば飛ばしてOK）</summary>')
+            b += [step_html(st) for st in basics]
+            b.append("</details>")
+        b += [step_html(st) for st in rest]
+        if base != u:
+            b.append(f'<p>まとめると、<span class="mono ok">{E(u)} = {E(base)}</span> です。</p>')
     elif d != ZERO:
         b.append("<h2>基本単位として</h2>")
         b.append(f"<p>{E(q['name'])}はSIの基本量で、その単位 <span class=\"mono\">{E(u)}</span> はこれ以上分解できません。"

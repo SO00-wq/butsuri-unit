@@ -29,7 +29,8 @@ p{margin-bottom:1rem}ul,ol{margin:0 0 1rem 1.3rem}li{margin-bottom:.35rem}
 .hero .big{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1.45rem;font-weight:600;overflow-wrap:anywhere}
 .hero .sub{color:var(--dim);font-size:.85rem;margin-top:.3rem}
 .step{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:.9rem 1rem;margin-bottom:.8rem}
-.step .no{display:inline-block;background:var(--accent);color:#fff;font-size:.75rem;font-weight:700;border-radius:3px;padding:0 .45rem;margin-right:.4rem}
+.step .st{margin-bottom:.35rem;font-size:.95rem}.step p{margin:.2rem 0 .3rem}.step .lead{font-size:.85rem}
+details.pre{margin-bottom:.9rem}details.pre summary{cursor:pointer;color:var(--dim);font-size:.9rem;margin-bottom:.6rem}
 .calc{font-family:'IBM Plex Mono',ui-monospace,monospace;background:var(--code);border-left:3px solid var(--accent);padding:.6rem .9rem;margin:.5rem 0 .2rem;border-radius:0 var(--r) var(--r) 0;overflow-x:auto;white-space:nowrap;font-size:.92rem;line-height:2}
 .ok{color:var(--ok);font-weight:700}
 table{width:100%;border-collapse:collapse;margin-bottom:1rem;font-size:.92rem}
@@ -60,16 +61,16 @@ footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);font-
 </table></div>
 <h2>両辺の単位が一致するか確かめる</h2>
 <div class="calc">左辺： Q<br>　→ J<br>　= kg·m²/s²</div>
-<div class="calc">右辺： m L<br>　→ kg × (J/kg)<br>　= J<br>　= kg·m²/s²</div>
+<div class="calc">右辺： m L<br>　→ kg × J/kg<br>　= J<br>　= kg·m²/s²</div>
 <p><span class="ok">両辺とも kg·m²/s² で一致</span>します。単位が合わない式は、どこかが間違っているサインです。</p>
 <h2>この公式から読み取れる単位の関係</h2>
 <p>公式をある量について解くと、その量の単位をほかの量の単位で表せます。知らない量が出てきたときは、知っている量について解き直して単位を組み立てるのが近道です。</p>
 <h3><a href="/q/energy.html">エネルギー・仕事・熱量</a>について解く</h3>
-<div class="calc">[Q] = kg × (J/kg)<br>　　= J<br>　　= kg·m²/s²</div>
+<div class="calc">[Q] = kg × J/kg<br>　　= J<br>　　= kg·m²/s²</div>
 <h3><a href="/q/mass.html">質量</a>について解く</h3>
-<div class="calc">m = Q / L<br>[m] = J × (J/kg)⁻¹<br>　　= kg</div>
+<div class="calc">m = Q / L<br>[m] = J ÷ (J/kg)<br>　　= kg</div>
 <h3><a href="/q/latent_heat.html">潜熱（比潜熱）</a>について解く</h3>
-<div class="calc">L = Q / m<br>[L] = J × (kg)⁻¹<br>　　= J/kg<br>　　= m²/s²</div>
+<div class="calc">L = Q / m<br>[L] = J ÷ kg<br>　　= J/kg<br>　　= m²/s²</div>
 <h2>熱・気体のほかの公式</h2><ul>
 <li><a href="/f/heat_cap.html">熱容量</a>：<span class="mono">Q = C ΔT</span></li>
 <li><a href="/f/spec_heat.html">比熱</a>：<span class="mono">Q = m c ΔT</span></li>

@@ -29,7 +29,8 @@ p{margin-bottom:1rem}ul,ol{margin:0 0 1rem 1.3rem}li{margin-bottom:.35rem}
 .hero .big{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1.45rem;font-weight:600;overflow-wrap:anywhere}
 .hero .sub{color:var(--dim);font-size:.85rem;margin-top:.3rem}
 .step{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:.9rem 1rem;margin-bottom:.8rem}
-.step .no{display:inline-block;background:var(--accent);color:#fff;font-size:.75rem;font-weight:700;border-radius:3px;padding:0 .45rem;margin-right:.4rem}
+.step .st{margin-bottom:.35rem;font-size:.95rem}.step p{margin:.2rem 0 .3rem}.step .lead{font-size:.85rem}
+details.pre{margin-bottom:.9rem}details.pre summary{cursor:pointer;color:var(--dim);font-size:.9rem;margin-bottom:.6rem}
 .calc{font-family:'IBM Plex Mono',ui-monospace,monospace;background:var(--code);border-left:3px solid var(--accent);padding:.6rem .9rem;margin:.5rem 0 .2rem;border-radius:0 var(--r) var(--r) 0;overflow-x:auto;white-space:nowrap;font-size:.92rem;line-height:2}
 .ok{color:var(--ok);font-weight:700}
 table{width:100%;border-collapse:collapse;margin-bottom:1rem;font-size:.92rem}
@@ -68,9 +69,9 @@ footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);font-
 <h3><a href="/q/energy.html">エネルギー・仕事・熱量</a>について解く</h3>
 <div class="calc">K = m v²　<span class="lead">（係数は単位に影響しないので省略）</span><br>[K] = kg × (m/s)²<br>　　= kg·m²/s²<br>　　= J</div>
 <h3><a href="/q/mass.html">質量</a>について解く</h3>
-<div class="calc">m = K / v²　<span class="lead">（係数は単位に影響しないので省略）</span><br>[m] = J × (m/s)⁻²<br>　　= J·s²/m²<br>　　= kg</div>
+<div class="calc">m = K / v²　<span class="lead">（係数は単位に影響しないので省略）</span><br>[m] = J ÷ (m/s)²<br>　　= J·s²/m²<br>　　= kg</div>
 <h3><a href="/q/velocity.html">速度</a>について解く</h3>
-<div class="calc">v = K¹ᐟ² / m¹ᐟ²　<span class="lead">（係数は単位に影響しないので省略）</span><br>[v] = (J)¹ᐟ² × (kg)⁻¹ᐟ²<br>　　= J¹ᐟ²/kg¹ᐟ²<br>　　= m/s</div>
+<div class="calc">v = K¹ᐟ² / m¹ᐟ²　<span class="lead">（係数は単位に影響しないので省略）</span><br>[v] = J¹ᐟ² ÷ kg¹ᐟ²<br>　　= J¹ᐟ²/kg¹ᐟ²<br>　　= m/s</div>
 <h2>力学のほかの公式</h2><ul>
 <li><a href="/f/area_sq.html">面積と長さ</a>：<span class="mono">S = l²</span></li>
 <li><a href="/f/vol_cube.html">体積と長さ</a>：<span class="mono">V = l³</span></li>

@@ -29,7 +29,8 @@ p{margin-bottom:1rem}ul,ol{margin:0 0 1rem 1.3rem}li{margin-bottom:.35rem}
 .hero .big{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1.45rem;font-weight:600;overflow-wrap:anywhere}
 .hero .sub{color:var(--dim);font-size:.85rem;margin-top:.3rem}
 .step{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:.9rem 1rem;margin-bottom:.8rem}
-.step .no{display:inline-block;background:var(--accent);color:#fff;font-size:.75rem;font-weight:700;border-radius:3px;padding:0 .45rem;margin-right:.4rem}
+.step .st{margin-bottom:.35rem;font-size:.95rem}.step p{margin:.2rem 0 .3rem}.step .lead{font-size:.85rem}
+details.pre{margin-bottom:.9rem}details.pre summary{cursor:pointer;color:var(--dim);font-size:.9rem;margin-bottom:.6rem}
 .calc{font-family:'IBM Plex Mono',ui-monospace,monospace;background:var(--code);border-left:3px solid var(--accent);padding:.6rem .9rem;margin:.5rem 0 .2rem;border-radius:0 var(--r) var(--r) 0;overflow-x:auto;white-space:nowrap;font-size:.92rem;line-height:2}
 .ok{color:var(--ok);font-weight:700}
 table{width:100%;border-collapse:collapse;margin-bottom:1rem;font-size:.92rem}
@@ -55,8 +56,8 @@ footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);font-
 <h2>出てくる記号と単位</h2>
 <div class="tbl"><table><tr><th>記号</th><th>量</th><th>SI単位</th><th>基本単位</th></tr>
 <tr><td class="mono">τ</td><td><a href="/q/time.html">時間</a></td><td class="mono">s</td><td class="mono">s</td></tr>
-<tr><td class="mono">R</td><td><a href="/q/resistance.html">電気抵抗</a></td><td class="mono">Ω</td><td class="mono">kg·m²/(s³·A²)</td></tr>
-<tr><td class="mono">C</td><td><a href="/q/capacitance.html">静電容量</a></td><td class="mono">F</td><td class="mono">s⁴·A²/(kg·m²)</td></tr>
+<tr><td class="mono">R</td><td><a href="/q/resistance.html">電気抵抗</a></td><td class="mono">Ω</td><td class="mono">kg·m²/(A²·s³)</td></tr>
+<tr><td class="mono">C</td><td><a href="/q/capacitance.html">静電容量</a></td><td class="mono">F</td><td class="mono">A²·s⁴/(kg·m²)</td></tr>
 </table></div>
 <h2>両辺の単位が一致するか確かめる</h2>
 <div class="calc">左辺： τ<br>　→ s</div>
@@ -68,9 +69,9 @@ footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);font-
 <h3><a href="/q/time.html">時間</a>について解く</h3>
 <div class="calc">[τ] = Ω × F<br>　　= Ω·F<br>　　= s</div>
 <h3><a href="/q/resistance.html">電気抵抗</a>について解く</h3>
-<div class="calc">R = τ / C<br>[R] = s × (F)⁻¹<br>　　= s/F<br>　　= kg·m²/(s³·A²)<br>　　= Ω</div>
+<div class="calc">R = τ / C<br>[R] = s ÷ F<br>　　= s/F<br>　　= kg·m²/(A²·s³)<br>　　= Ω</div>
 <h3><a href="/q/capacitance.html">静電容量</a>について解く</h3>
-<div class="calc">C = τ / R<br>[C] = s × (Ω)⁻¹<br>　　= s/Ω<br>　　= s⁴·A²/(kg·m²)<br>　　= F</div>
+<div class="calc">C = τ / R<br>[C] = s ÷ Ω<br>　　= s/Ω<br>　　= A²·s⁴/(kg·m²)<br>　　= F</div>
 <h2>電磁気のほかの公式</h2><ul>
 <li><a href="/f/charge_def.html">電荷と電流</a>：<span class="mono">q = I t</span></li>
 <li><a href="/f/voltage_def.html">電圧と仕事</a>：<span class="mono">W = q V</span></li>

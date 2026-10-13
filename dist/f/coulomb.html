@@ -29,7 +29,8 @@ p{margin-bottom:1rem}ul,ol{margin:0 0 1rem 1.3rem}li{margin-bottom:.35rem}
 .hero .big{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1.45rem;font-weight:600;overflow-wrap:anywhere}
 .hero .sub{color:var(--dim);font-size:.85rem;margin-top:.3rem}
 .step{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:.9rem 1rem;margin-bottom:.8rem}
-.step .no{display:inline-block;background:var(--accent);color:#fff;font-size:.75rem;font-weight:700;border-radius:3px;padding:0 .45rem;margin-right:.4rem}
+.step .st{margin-bottom:.35rem;font-size:.95rem}.step p{margin:.2rem 0 .3rem}.step .lead{font-size:.85rem}
+details.pre{margin-bottom:.9rem}details.pre summary{cursor:pointer;color:var(--dim);font-size:.9rem;margin-bottom:.6rem}
 .calc{font-family:'IBM Plex Mono',ui-monospace,monospace;background:var(--code);border-left:3px solid var(--accent);padding:.6rem .9rem;margin:.5rem 0 .2rem;border-radius:0 var(--r) var(--r) 0;overflow-x:auto;white-space:nowrap;font-size:.92rem;line-height:2}
 .ok{color:var(--ok);font-weight:700}
 table{width:100%;border-collapse:collapse;margin-bottom:1rem;font-size:.92rem}
@@ -55,23 +56,23 @@ footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);font-
 <h2>出てくる記号と単位</h2>
 <div class="tbl"><table><tr><th>記号</th><th>量</th><th>SI単位</th><th>基本単位</th></tr>
 <tr><td class="mono">F</td><td><a href="/q/force.html">力</a></td><td class="mono">N</td><td class="mono">kg·m/s²</td></tr>
-<tr><td class="mono">k</td><td><a href="/q/coulomb_constant.html">クーロンの法則の比例定数</a></td><td class="mono">N·m²/C²</td><td class="mono">kg·m³/(s⁴·A²)</td></tr>
-<tr><td class="mono">q₁</td><td><a href="/q/charge.html">電荷（電気量）</a></td><td class="mono">C</td><td class="mono">s·A</td></tr>
-<tr><td class="mono">q₂</td><td><a href="/q/charge.html">電荷（電気量）</a></td><td class="mono">C</td><td class="mono">s·A</td></tr>
+<tr><td class="mono">k</td><td><a href="/q/coulomb_constant.html">クーロンの法則の比例定数</a></td><td class="mono">N·m²/C²</td><td class="mono">kg·m³/(A²·s⁴)</td></tr>
+<tr><td class="mono">q₁</td><td><a href="/q/charge.html">電荷（電気量）</a></td><td class="mono">C</td><td class="mono">A·s</td></tr>
+<tr><td class="mono">q₂</td><td><a href="/q/charge.html">電荷（電気量）</a></td><td class="mono">C</td><td class="mono">A·s</td></tr>
 <tr><td class="mono">r</td><td><a href="/q/length.html">長さ</a></td><td class="mono">m</td><td class="mono">m</td></tr>
 </table></div>
 <h2>両辺の単位が一致するか確かめる</h2>
 <div class="calc">左辺： F<br>　→ N<br>　= kg·m/s²</div>
-<div class="calc">右辺： k q₁ q₂ / r²<br>　→ (N·m²/C²) × C × C × (m)⁻²<br>　= N<br>　= kg·m/s²</div>
+<div class="calc">右辺： k q₁ q₂ / r²<br>　→ N·m²/C² × C × C ÷ m²<br>　= N<br>　= kg·m/s²</div>
 <p><span class="ok">両辺とも kg·m/s² で一致</span>します。単位が合わない式は、どこかが間違っているサインです。</p>
 <h2>この公式から読み取れる単位の関係</h2>
 <p>公式をある量について解くと、その量の単位をほかの量の単位で表せます。知らない量が出てきたときは、知っている量について解き直して単位を組み立てるのが近道です。</p>
 <h3><a href="/q/force.html">力</a>について解く</h3>
-<div class="calc">[F] = (N·m²/C²) × C × C × (m)⁻²<br>　　= N<br>　　= kg·m/s²</div>
+<div class="calc">[F] = N·m²/C² × C × C ÷ m²<br>　　= N<br>　　= kg·m/s²</div>
 <h3><a href="/q/coulomb_constant.html">クーロンの法則の比例定数</a>について解く</h3>
-<div class="calc">k = F r² / (q₁ q₂)<br>[k] = N × (C)⁻¹ × (C)⁻¹ × (m)²<br>　　= N·m²/C²<br>　　= kg·m³/(s⁴·A²)</div>
+<div class="calc">k = F r² / (q₁ q₂)<br>[k] = N × m² ÷ C ÷ C<br>　　= N·m²/C²<br>　　= kg·m³/(A²·s⁴)</div>
 <h3><a href="/q/length.html">長さ</a>について解く</h3>
-<div class="calc">r = k¹ᐟ² q₁¹ᐟ² q₂¹ᐟ² / F¹ᐟ²<br>[r] = (N)⁻¹ᐟ² × (N·m²/C²)¹ᐟ² × (C)¹ᐟ² × (C)¹ᐟ²<br>　　= m</div>
+<div class="calc">r = k¹ᐟ² q₁¹ᐟ² q₂¹ᐟ² / F¹ᐟ²<br>[r] = (N·m²/C²)¹ᐟ² × C¹ᐟ² × C¹ᐟ² ÷ N¹ᐟ²<br>　　= m</div>
 <h2>電磁気のほかの公式</h2><ul>
 <li><a href="/f/charge_def.html">電荷と電流</a>：<span class="mono">q = I t</span></li>
 <li><a href="/f/voltage_def.html">電圧と仕事</a>：<span class="mono">W = q V</span></li>

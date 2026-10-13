@@ -29,7 +29,8 @@ p{margin-bottom:1rem}ul,ol{margin:0 0 1rem 1.3rem}li{margin-bottom:.35rem}
 .hero .big{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1.45rem;font-weight:600;overflow-wrap:anywhere}
 .hero .sub{color:var(--dim);font-size:.85rem;margin-top:.3rem}
 .step{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:.9rem 1rem;margin-bottom:.8rem}
-.step .no{display:inline-block;background:var(--accent);color:#fff;font-size:.75rem;font-weight:700;border-radius:3px;padding:0 .45rem;margin-right:.4rem}
+.step .st{margin-bottom:.35rem;font-size:.95rem}.step p{margin:.2rem 0 .3rem}.step .lead{font-size:.85rem}
+details.pre{margin-bottom:.9rem}details.pre summary{cursor:pointer;color:var(--dim);font-size:.9rem;margin-bottom:.6rem}
 .calc{font-family:'IBM Plex Mono',ui-monospace,monospace;background:var(--code);border-left:3px solid var(--accent);padding:.6rem .9rem;margin:.5rem 0 .2rem;border-radius:0 var(--r) var(--r) 0;overflow-x:auto;white-space:nowrap;font-size:.92rem;line-height:2}
 .ok{color:var(--ok);font-weight:700}
 table{width:100%;border-collapse:collapse;margin-bottom:1rem;font-size:.92rem}
@@ -52,15 +53,15 @@ footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);font-
 <h1>磁束と時間の関係</h1>
 <div class="hero"><div class="big">Wb　と　s</div><div class="sub">[M L² T⁻² I⁻¹]　と　[T]</div></div>
 <h2>単位の比から見る</h2>
-<div class="calc">[磁束] ÷ [時間] = (kg·m²/(s²·A)) ÷ (s) = kg·m²/(s³·A)</div>
+<div class="calc">[磁束] ÷ [時間] = (kg·m²/(A·s²)) ÷ (s) = kg·m²/(A·s³)</div>
 <p>つまり 磁束 は「時間 × <a href="/q/voltage.html">電圧・電位</a>」と同じ単位をもちます。</p>
 <h2>2つの量を結ぶ公式</h2>
 <div class="step"><b><a href="/f/faraday_law.html">ファラデーの電磁誘導の法則</a></b>：<span class="mono">V = ΔΦ / Δt</span>
-<div class="calc">ΔΦ = V Δt<br>[ΔΦ] = V × s<br>　　= V·s<br>　　= kg·m²/(s²·A)<br>　　= Wb</div>
-<div class="calc">Δt = ΔΦ / V<br>[Δt] = (V)⁻¹ × Wb<br>　　= Wb/V<br>　　= s</div>
+<div class="calc">ΔΦ = V Δt<br>[ΔΦ] = V × s<br>　　= V·s<br>　　= kg·m²/(A·s²)<br>　　= Wb</div>
+<div class="calc">Δt = ΔΦ / V<br>[Δt] = Wb ÷ V<br>　　= Wb/V<br>　　= s</div>
 </div>
 <h2>それぞれの量のページ</h2><ul>
-<li><a href="/q/magnetic_flux.html">磁束</a>（<span class="mono">Wb = kg·m²/(s²·A)</span>）</li>
+<li><a href="/q/magnetic_flux.html">磁束</a>（<span class="mono">Wb = kg·m²/(A·s²)</span>）</li>
 <li><a href="/q/time.html">時間</a>（<span class="mono">s = s</span>）</li>
 </ul>
 <footer>ブツリ単位ラボ — SI単位と次元解析で物理を理解する。<br>単位はすべてSI（国際単位系）で表記しています。</footer>

@@ -29,7 +29,8 @@ p{margin-bottom:1rem}ul,ol{margin:0 0 1rem 1.3rem}li{margin-bottom:.35rem}
 .hero .big{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1.45rem;font-weight:600;overflow-wrap:anywhere}
 .hero .sub{color:var(--dim);font-size:.85rem;margin-top:.3rem}
 .step{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:.9rem 1rem;margin-bottom:.8rem}
-.step .no{display:inline-block;background:var(--accent);color:#fff;font-size:.75rem;font-weight:700;border-radius:3px;padding:0 .45rem;margin-right:.4rem}
+.step .st{margin-bottom:.35rem;font-size:.95rem}.step p{margin:.2rem 0 .3rem}.step .lead{font-size:.85rem}
+details.pre{margin-bottom:.9rem}details.pre summary{cursor:pointer;color:var(--dim);font-size:.9rem;margin-bottom:.6rem}
 .calc{font-family:'IBM Plex Mono',ui-monospace,monospace;background:var(--code);border-left:3px solid var(--accent);padding:.6rem .9rem;margin:.5rem 0 .2rem;border-radius:0 var(--r) var(--r) 0;overflow-x:auto;white-space:nowrap;font-size:.92rem;line-height:2}
 .ok{color:var(--ok);font-weight:700}
 table{width:100%;border-collapse:collapse;margin-bottom:1rem;font-size:.92rem}
@@ -55,15 +56,17 @@ footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);font-
 <div class="hero">
 <div class="big">Sv = m²/s²</div>
 <div class="sub">次元 [L² T⁻²]</div></div>
-<h2>知っている公式から等価線量の単位を組み立てる</h2>
-<p>基本単位（m・kg・s・A・K・mol・cd）だけを出発点に、よく知られた公式を順にたどると、等価線量の単位が自然に出てきます。</p>
-<div class="step"><span class="no">STEP 1</span><a href="/q/velocity.html">速度</a>　—　<a href="/f/v_def.html">速さの定義</a>：<span class="mono">v = x / t</span><div class="calc">[v] = m × (s)⁻¹<br>　　= m/s</div></div>
-<div class="step"><span class="no">STEP 2</span><a href="/q/acceleration.html">加速度</a>　—　<a href="/f/a_def.html">加速度の定義</a>：<span class="mono">a = Δv / Δt</span><div class="calc">[a] = (m/s) × (s)⁻¹<br>　　= m/s²</div></div>
-<div class="step"><span class="no">STEP 3</span><a href="/q/force.html">力</a>　—　<a href="/f/newton2.html">運動方程式</a>：<span class="mono">F = m a</span><div class="calc">[F] = kg × (m/s²)<br>　　= kg·m/s²<br>　　= N</div></div>
-<div class="step"><span class="no">STEP 4</span><a href="/q/energy.html">エネルギー・仕事・熱量</a>　—　<a href="/f/work.html">仕事の定義</a>：<span class="mono">W = F x</span><div class="calc">[W] = N × m<br>　　= N·m<br>　　= kg·m²/s²<br>　　= J</div></div>
-<div class="step"><span class="no">STEP 5</span><a href="/q/absorbed_dose.html">吸収線量</a>　—　<a href="/f/absorbed.html">吸収線量</a>：<span class="mono">D = E / m</span><div class="calc">[D] = J × (kg)⁻¹<br>　　= J/kg<br>　　= m²/s²<br>　　= Gy</div></div>
-<div class="step"><span class="no">STEP 6</span><a href="/q/equivalent_dose.html">等価線量</a>　—　<a href="/f/equivalent.html">等価線量</a>：<span class="mono">H = w_R D</span><div class="calc">[H] = 1 × Gy<br>　　= Gy<br>　　= m²/s²<br>　　= Sv</div></div>
-<p>こうして <span class="mono">Sv</span> は <span class="mono ok">m²/s²</span> と同じだとわかります。</p>
+<h2>等価線量の単位を、知っている公式から組み立てる</h2>
+<p>Sv を基本単位までほどくには、速度 → 加速度 → 力 → エネルギー・仕事・熱量 → 吸収線量 → 等価線量 の順に単位をつないでいきます。</p>
+<details class="pre"><summary>前提：速度・加速度・力・エネルギー・仕事・熱量の単位（知っていれば飛ばしてOK）</summary>
+<div class="step"><div class="st"><b><a href="/q/velocity.html">速度</a></b> <span class="lead">— <a href="/f/v_def.html">速さの定義</a>　<span class="mono">v = x / t</span></span></div><p>速さは「進んだ距離 ÷ かかった時間」。m を s で割って m/s です。</p><div class="calc">[v] = m ÷ s = m/s</div></div>
+<div class="step"><div class="st"><b><a href="/q/acceleration.html">加速度</a></b> <span class="lead">— <a href="/f/a_def.html">加速度の定義</a>　<span class="mono">a = Δv / Δt</span></span></div><p>加速度は「1秒あたりに速さがどれだけ変わるか」。速さの m/s をさらに s で割るので m/s² になります。</p><div class="calc">[a] = m/s ÷ s = m/s²</div></div>
+<div class="step"><div class="st"><b><a href="/q/force.html">力</a></b> <span class="lead">— <a href="/f/newton2.html">運動方程式</a>　<span class="mono">F = m a</span></span></div><p>運動方程式 F = ma で、質量 kg と加速度 m/s² をかけると kg·m/s²。この組み合わせに N（ニュートン）という名前がついています。</p><div class="calc">[F] = kg × m/s² = kg·m/s² = N</div></div>
+<div class="step"><div class="st"><b><a href="/q/energy.html">エネルギー・仕事・熱量</a></b> <span class="lead">— <a href="/f/work.html">仕事の定義</a>　<span class="mono">W = F x</span></span></div><p>仕事は「力 × 動かした距離」。N に m をかけた N·m に、J（ジュール）という名前がついています。</p><div class="calc">[W] = N × m = N·m = kg·m²/s² = J</div></div>
+</details>
+<div class="step"><div class="st"><b><a href="/q/absorbed_dose.html">吸収線量</a></b> <span class="lead">— <a href="/f/absorbed.html">吸収線量</a>　<span class="mono">D = E / m</span></span></div><p>吸収線量は「1 kg あたりに吸収したエネルギー」。J を kg で割った J/kg が Gy（グレイ）です。</p><div class="calc">[D] = J ÷ kg = J/kg = m²/s² = Gy</div></div>
+<div class="step"><div class="st"><b><a href="/q/equivalent_dose.html">等価線量</a></b> <span class="lead">— <a href="/f/equivalent.html">等価線量</a>　<span class="mono">H = w_R D</span></span></div><p>等価線量は、吸収線量に放射線ごとの重み（ただの数）をかけたもの。単位は Gy と同じ J/kg ですが、Sv と呼んで区別します。</p><div class="calc">[H] = 1 × Gy = Gy = m²/s² = Sv</div></div>
+<p>まとめると、<span class="mono ok">Sv = m²/s²</span> です。</p>
 <h2>Sv の別の書き方</h2>
 <p>同じ量でも、使う公式によって単位の見え方が変わります。どれも基本単位にすると一致します。</p>
 <div class="tbl"><table><tr><th>書き方</th><th>根拠になる公式</th></tr>

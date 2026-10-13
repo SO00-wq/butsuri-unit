@@ -29,7 +29,8 @@ p{margin-bottom:1rem}ul,ol{margin:0 0 1rem 1.3rem}li{margin-bottom:.35rem}
 .hero .big{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1.45rem;font-weight:600;overflow-wrap:anywhere}
 .hero .sub{color:var(--dim);font-size:.85rem;margin-top:.3rem}
 .step{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:.9rem 1rem;margin-bottom:.8rem}
-.step .no{display:inline-block;background:var(--accent);color:#fff;font-size:.75rem;font-weight:700;border-radius:3px;padding:0 .45rem;margin-right:.4rem}
+.step .st{margin-bottom:.35rem;font-size:.95rem}.step p{margin:.2rem 0 .3rem}.step .lead{font-size:.85rem}
+details.pre{margin-bottom:.9rem}details.pre summary{cursor:pointer;color:var(--dim);font-size:.9rem;margin-bottom:.6rem}
 .calc{font-family:'IBM Plex Mono',ui-monospace,monospace;background:var(--code);border-left:3px solid var(--accent);padding:.6rem .9rem;margin:.5rem 0 .2rem;border-radius:0 var(--r) var(--r) 0;overflow-x:auto;white-space:nowrap;font-size:.92rem;line-height:2}
 .ok{color:var(--ok);font-weight:700}
 table{width:100%;border-collapse:collapse;margin-bottom:1rem;font-size:.92rem}
@@ -56,35 +57,35 @@ footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);font-
 <p>つまり 長さ は「速度 × <a href="/q/time.html">時間</a>」と同じ単位をもちます。</p>
 <h2>2つの量を結ぶ公式</h2>
 <div class="step"><b><a href="/f/v_def.html">速さの定義</a></b>：<span class="mono">v = x / t</span>
-<div class="calc">x = v t<br>[x] = (m/s) × s<br>　　= m</div>
-<div class="calc">[v] = m × (s)⁻¹<br>　　= m/s</div>
+<div class="calc">x = v t<br>[x] = m/s × s<br>　　= m</div>
+<div class="calc">[v] = m ÷ s<br>　　= m/s</div>
 </div>
 <div class="step"><b><a href="/f/v_omega.html">速さと角速度</a></b>：<span class="mono">v = r ω</span>
-<div class="calc">r = v / ω<br>[r] = (m/s) × (rad/s)⁻¹<br>　　= m　<span class="lead">（rad は無次元なので省く）</span></div>
-<div class="calc">[v] = m × (rad/s)<br>　　= m/s　<span class="lead">（rad は無次元なので省く）</span></div>
+<div class="calc">r = v / ω<br>[r] = m/s ÷ (rad/s)<br>　　= m　<span class="lead">（rad は無次元なので省く）</span></div>
+<div class="calc">[v] = m × rad/s<br>　　= m/s　<span class="lead">（rad は無次元なので省く）</span></div>
 </div>
 <div class="step"><b><a href="/f/centripetal.html">向心加速度</a></b>：<span class="mono">a = v² / r</span>
-<div class="calc">r = v² / a<br>[r] = (m/s²)⁻¹ × (m/s)²<br>　　= m</div>
-<div class="calc">v = a¹ᐟ² r¹ᐟ²<br>[v] = (m/s²)¹ᐟ² × (m)¹ᐟ²<br>　　= m/s</div>
+<div class="calc">r = v² / a<br>[r] = (m/s)² ÷ (m/s²)<br>　　= m</div>
+<div class="calc">v = a¹ᐟ² r¹ᐟ²<br>[v] = (m/s²)¹ᐟ² × m¹ᐟ²<br>　　= m/s</div>
 </div>
 <div class="step"><b><a href="/f/newton_visc.html">ニュートンの粘性法則</a></b>：<span class="mono">F = η S v / d</span>
-<div class="calc">d = η S v / F<br>[d] = (N)⁻¹ × (Pa·s) × m² × (m/s)<br>　　= Pa·m³/N<br>　　= m</div>
-<div class="calc">v = F d / (η S)<br>[v] = N × (Pa·s)⁻¹ × (m²)⁻¹ × m<br>　　= N/(Pa·s·m)<br>　　= m/s</div>
+<div class="calc">d = η S v / F<br>[d] = Pa·s × m² × m/s ÷ N<br>　　= Pa·m³/N<br>　　= m</div>
+<div class="calc">v = F d / (η S)<br>[v] = N × m ÷ (Pa·s) ÷ (m²)<br>　　= N/(Pa·s·m)<br>　　= m/s</div>
 </div>
 <div class="step"><b><a href="/f/stokes.html">ストークスの法則</a></b>：<span class="mono">F = 6π η r v</span>
-<div class="calc">r = F / (η v)　<span class="lead">（係数は単位に影響しないので省略）</span><br>[r] = N × (Pa·s)⁻¹ × (m/s)⁻¹<br>　　= N/(Pa·m)<br>　　= m</div>
-<div class="calc">v = F / (η r)　<span class="lead">（係数は単位に影響しないので省略）</span><br>[v] = N × (Pa·s)⁻¹ × (m)⁻¹<br>　　= N/(Pa·s·m)<br>　　= m/s</div>
+<div class="calc">r = F / (η v)　<span class="lead">（係数は単位に影響しないので省略）</span><br>[r] = N ÷ (Pa·s) ÷ (m/s)<br>　　= N/(Pa·m)<br>　　= m</div>
+<div class="calc">v = F / (η r)　<span class="lead">（係数は単位に影響しないので省略）</span><br>[v] = N ÷ (Pa·s) ÷ m<br>　　= N/(Pa·s·m)<br>　　= m/s</div>
 </div>
 <div class="step"><b><a href="/f/reynolds.html">レイノルズ数</a></b>：<span class="mono">Re = ρ v l / η</span>
-<div class="calc">l = Re η / (ρ v)<br>[l] = 1 × (kg/m³)⁻¹ × (m/s)⁻¹ × (Pa·s)<br>　　= m²·s²·Pa/kg<br>　　= m</div>
-<div class="calc">v = Re η / (ρ l)<br>[v] = 1 × (kg/m³)⁻¹ × (m)⁻¹ × (Pa·s)<br>　　= m²·Pa·s/kg<br>　　= m/s</div>
+<div class="calc">l = Re η / (ρ v)<br>[l] = 1 × Pa·s ÷ (kg/m³) ÷ (m/s)<br>　　= m²·s²·Pa/kg<br>　　= m</div>
+<div class="calc">v = Re η / (ρ l)<br>[v] = 1 × Pa·s ÷ (kg/m³) ÷ m<br>　　= m²·Pa·s/kg<br>　　= m/s</div>
 </div>
 <div class="step"><b><a href="/f/escape.html">脱出速度</a></b>：<span class="mono">v = √(2 G M / r)</span>
-<div class="calc">r = G M / v²　<span class="lead">（係数は単位に影響しないので省略）</span><br>[r] = (m/s)⁻² × (N·m²/kg²) × kg<br>　　= s²·N/kg<br>　　= m</div>
-<div class="calc">v = G¹ᐟ² M¹ᐟ² / r¹ᐟ²　<span class="lead">（係数は単位に影響しないので省略）</span><br>[v] = (N·m²/kg²)¹ᐟ² × (kg)¹ᐟ² × (m)⁻¹ᐟ²<br>　　= N¹ᐟ²·m¹ᐟ²/kg¹ᐟ²<br>　　= m/s</div>
+<div class="calc">r = G M / v²　<span class="lead">（係数は単位に影響しないので省略）</span><br>[r] = N·m²/kg² × kg ÷ (m/s)²<br>　　= s²·N/kg<br>　　= m</div>
+<div class="calc">v = G¹ᐟ² M¹ᐟ² / r¹ᐟ²　<span class="lead">（係数は単位に影響しないので省略）</span><br>[v] = (N·m²/kg²)¹ᐟ² × kg¹ᐟ² ÷ m¹ᐟ²<br>　　= N¹ᐟ²·m¹ᐟ²/kg¹ᐟ²<br>　　= m/s</div>
 </div>
 <div class="step"><b><a href="/f/wave.html">波の基本式</a></b>：<span class="mono">v = f λ</span>
-<div class="calc">λ = v / f<br>[λ] = (m/s) × (Hz)⁻¹<br>　　= m/(s·Hz)<br>　　= m</div>
+<div class="calc">λ = v / f<br>[λ] = m/s ÷ Hz<br>　　= m/(s·Hz)<br>　　= m</div>
 <div class="calc">[v] = Hz × m<br>　　= Hz·m<br>　　= m/s</div>
 </div>
 <h2>それぞれの量のページ</h2><ul>

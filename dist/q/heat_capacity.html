@@ -29,7 +29,8 @@ p{margin-bottom:1rem}ul,ol{margin:0 0 1rem 1.3rem}li{margin-bottom:.35rem}
 .hero .big{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1.45rem;font-weight:600;overflow-wrap:anywhere}
 .hero .sub{color:var(--dim);font-size:.85rem;margin-top:.3rem}
 .step{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:.9rem 1rem;margin-bottom:.8rem}
-.step .no{display:inline-block;background:var(--accent);color:#fff;font-size:.75rem;font-weight:700;border-radius:3px;padding:0 .45rem;margin-right:.4rem}
+.step .st{margin-bottom:.35rem;font-size:.95rem}.step p{margin:.2rem 0 .3rem}.step .lead{font-size:.85rem}
+details.pre{margin-bottom:.9rem}details.pre summary{cursor:pointer;color:var(--dim);font-size:.9rem;margin-bottom:.6rem}
 .calc{font-family:'IBM Plex Mono',ui-monospace,monospace;background:var(--code);border-left:3px solid var(--accent);padding:.6rem .9rem;margin:.5rem 0 .2rem;border-radius:0 var(--r) var(--r) 0;overflow-x:auto;white-space:nowrap;font-size:.92rem;line-height:2}
 .ok{color:var(--ok);font-weight:700}
 table{width:100%;border-collapse:collapse;margin-bottom:1rem;font-size:.92rem}
@@ -55,14 +56,16 @@ footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);font-
 <div class="hero">
 <div class="big">J/K = kg·m²/(s²·K)</div>
 <div class="sub">次元 [M L² T⁻² Θ⁻¹]</div></div>
-<h2>知っている公式から熱容量の単位を組み立てる</h2>
-<p>基本単位（m・kg・s・A・K・mol・cd）だけを出発点に、よく知られた公式を順にたどると、熱容量の単位が自然に出てきます。</p>
-<div class="step"><span class="no">STEP 1</span><a href="/q/velocity.html">速度</a>　—　<a href="/f/v_def.html">速さの定義</a>：<span class="mono">v = x / t</span><div class="calc">[v] = m × (s)⁻¹<br>　　= m/s</div></div>
-<div class="step"><span class="no">STEP 2</span><a href="/q/acceleration.html">加速度</a>　—　<a href="/f/a_def.html">加速度の定義</a>：<span class="mono">a = Δv / Δt</span><div class="calc">[a] = (m/s) × (s)⁻¹<br>　　= m/s²</div></div>
-<div class="step"><span class="no">STEP 3</span><a href="/q/force.html">力</a>　—　<a href="/f/newton2.html">運動方程式</a>：<span class="mono">F = m a</span><div class="calc">[F] = kg × (m/s²)<br>　　= kg·m/s²<br>　　= N</div></div>
-<div class="step"><span class="no">STEP 4</span><a href="/q/energy.html">エネルギー・仕事・熱量</a>　—　<a href="/f/work.html">仕事の定義</a>：<span class="mono">W = F x</span><div class="calc">[W] = N × m<br>　　= N·m<br>　　= kg·m²/s²<br>　　= J</div></div>
-<div class="step"><span class="no">STEP 5</span><a href="/q/heat_capacity.html">熱容量</a>　—　<a href="/f/heat_cap.html">熱容量</a>：<span class="mono">Q = C ΔT</span><div class="calc">C = Q / ΔT<br>[C] = J × (K)⁻¹<br>　　= J/K<br>　　= kg·m²/(s²·K)</div></div>
-<p>こうして <span class="mono">J/K</span> は <span class="mono ok">kg·m²/(s²·K)</span> と同じだとわかります。</p>
+<h2>熱容量の単位を、知っている公式から組み立てる</h2>
+<p>J/K を基本単位までほどくには、速度 → 加速度 → 力 → エネルギー・仕事・熱量 → 熱容量 の順に単位をつないでいきます。</p>
+<details class="pre"><summary>前提：速度・加速度・力・エネルギー・仕事・熱量の単位（知っていれば飛ばしてOK）</summary>
+<div class="step"><div class="st"><b><a href="/q/velocity.html">速度</a></b> <span class="lead">— <a href="/f/v_def.html">速さの定義</a>　<span class="mono">v = x / t</span></span></div><p>速さは「進んだ距離 ÷ かかった時間」。m を s で割って m/s です。</p><div class="calc">[v] = m ÷ s = m/s</div></div>
+<div class="step"><div class="st"><b><a href="/q/acceleration.html">加速度</a></b> <span class="lead">— <a href="/f/a_def.html">加速度の定義</a>　<span class="mono">a = Δv / Δt</span></span></div><p>加速度は「1秒あたりに速さがどれだけ変わるか」。速さの m/s をさらに s で割るので m/s² になります。</p><div class="calc">[a] = m/s ÷ s = m/s²</div></div>
+<div class="step"><div class="st"><b><a href="/q/force.html">力</a></b> <span class="lead">— <a href="/f/newton2.html">運動方程式</a>　<span class="mono">F = m a</span></span></div><p>運動方程式 F = ma で、質量 kg と加速度 m/s² をかけると kg·m/s²。この組み合わせに N（ニュートン）という名前がついています。</p><div class="calc">[F] = kg × m/s² = kg·m/s² = N</div></div>
+<div class="step"><div class="st"><b><a href="/q/energy.html">エネルギー・仕事・熱量</a></b> <span class="lead">— <a href="/f/work.html">仕事の定義</a>　<span class="mono">W = F x</span></span></div><p>仕事は「力 × 動かした距離」。N に m をかけた N·m に、J（ジュール）という名前がついています。</p><div class="calc">[W] = N × m = N·m = kg·m²/s² = J</div></div>
+</details>
+<div class="step"><div class="st"><b><a href="/q/heat_capacity.html">熱容量</a></b> <span class="lead">— <a href="/f/heat_cap.html">熱容量</a>　<span class="mono">Q = C ΔT</span></span></div><p>熱容量は「温度を1 K上げるのに必要な熱量」。J を K で割って J/K です。</p><div class="calc">[C] = J ÷ K = J/K = kg·m²/(s²·K)</div></div>
+<p>まとめると、<span class="mono ok">J/K = kg·m²/(s²·K)</span> です。</p>
 <h2>同じ次元をもつ量</h2>
 <p>次の量は 熱容量 と次元 [M L² T⁻² Θ⁻¹] が同じです。単位が同じでも意味が違う量があるので、式の検算では区別に注意しましょう。</p><ul>
 <li><a href="/q/entropy.html">エントロピー</a>（<span class="mono">J/K</span>）</li>

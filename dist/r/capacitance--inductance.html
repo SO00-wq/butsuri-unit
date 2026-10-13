@@ -29,7 +29,8 @@ p{margin-bottom:1rem}ul,ol{margin:0 0 1rem 1.3rem}li{margin-bottom:.35rem}
 .hero .big{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1.45rem;font-weight:600;overflow-wrap:anywhere}
 .hero .sub{color:var(--dim);font-size:.85rem;margin-top:.3rem}
 .step{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:.9rem 1rem;margin-bottom:.8rem}
-.step .no{display:inline-block;background:var(--accent);color:#fff;font-size:.75rem;font-weight:700;border-radius:3px;padding:0 .45rem;margin-right:.4rem}
+.step .st{margin-bottom:.35rem;font-size:.95rem}.step p{margin:.2rem 0 .3rem}.step .lead{font-size:.85rem}
+details.pre{margin-bottom:.9rem}details.pre summary{cursor:pointer;color:var(--dim);font-size:.9rem;margin-bottom:.6rem}
 .calc{font-family:'IBM Plex Mono',ui-monospace,monospace;background:var(--code);border-left:3px solid var(--accent);padding:.6rem .9rem;margin:.5rem 0 .2rem;border-radius:0 var(--r) var(--r) 0;overflow-x:auto;white-space:nowrap;font-size:.92rem;line-height:2}
 .ok{color:var(--ok);font-weight:700}
 table{width:100%;border-collapse:collapse;margin-bottom:1rem;font-size:.92rem}
@@ -52,15 +53,15 @@ footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);font-
 <h1>静電容量とインダクタンスの関係</h1>
 <div class="hero"><div class="big">F　と　H</div><div class="sub">[M⁻¹ L⁻² T⁴ I²]　と　[M L² T⁻² I⁻²]</div></div>
 <h2>単位の比から見る</h2>
-<div class="calc">[静電容量] ÷ [インダクタンス] = (s⁴·A²/(kg·m²)) ÷ (kg·m²/(s²·A²)) = s⁶·A⁴/(kg²·m⁴)</div>
+<div class="calc">[静電容量] ÷ [インダクタンス] = (A²·s⁴/(kg·m²)) ÷ (kg·m²/(A²·s²)) = A⁴·s⁶/(kg²·m⁴)</div>
 <h2>2つの量を結ぶ公式</h2>
 <div class="step"><b><a href="/f/lc_omega.html">LC回路の固有角振動数</a></b>：<span class="mono">ω = 1 / √(L C)</span>
-<div class="calc">C = 1 / (ω² L)　<span class="lead">（係数は単位に影響しないので省略）</span><br>[C] = (rad/s)⁻² × (H)⁻¹<br>　　= s²/H　<span class="lead">（rad は無次元なので省く）</span><br>　　= s⁴·A²/(kg·m²)<br>　　= F</div>
-<div class="calc">L = 1 / (ω² C)　<span class="lead">（係数は単位に影響しないので省略）</span><br>[L] = (rad/s)⁻² × (F)⁻¹<br>　　= s²/F　<span class="lead">（rad は無次元なので省く）</span><br>　　= kg·m²/(s²·A²)<br>　　= H</div>
+<div class="calc">C = 1 / (ω² L)　<span class="lead">（係数は単位に影響しないので省略）</span><br>[C] = 1 ÷ (rad/s)² ÷ H<br>　　= s²/H　<span class="lead">（rad は無次元なので省く）</span><br>　　= A²·s⁴/(kg·m²)<br>　　= F</div>
+<div class="calc">L = 1 / (ω² C)　<span class="lead">（係数は単位に影響しないので省略）</span><br>[L] = 1 ÷ (rad/s)² ÷ F<br>　　= s²/F　<span class="lead">（rad は無次元なので省く）</span><br>　　= kg·m²/(A²·s²)<br>　　= H</div>
 </div>
 <h2>それぞれの量のページ</h2><ul>
-<li><a href="/q/capacitance.html">静電容量</a>（<span class="mono">F = s⁴·A²/(kg·m²)</span>）</li>
-<li><a href="/q/inductance.html">インダクタンス</a>（<span class="mono">H = kg·m²/(s²·A²)</span>）</li>
+<li><a href="/q/capacitance.html">静電容量</a>（<span class="mono">F = A²·s⁴/(kg·m²)</span>）</li>
+<li><a href="/q/inductance.html">インダクタンス</a>（<span class="mono">H = kg·m²/(A²·s²)</span>）</li>
 </ul>
 <footer>ブツリ単位ラボ — SI単位と次元解析で物理を理解する。<br>単位はすべてSI（国際単位系）で表記しています。</footer>
 </body>

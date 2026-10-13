@@ -29,7 +29,8 @@ p{margin-bottom:1rem}ul,ol{margin:0 0 1rem 1.3rem}li{margin-bottom:.35rem}
 .hero .big{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1.45rem;font-weight:600;overflow-wrap:anywhere}
 .hero .sub{color:var(--dim);font-size:.85rem;margin-top:.3rem}
 .step{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:.9rem 1rem;margin-bottom:.8rem}
-.step .no{display:inline-block;background:var(--accent);color:#fff;font-size:.75rem;font-weight:700;border-radius:3px;padding:0 .45rem;margin-right:.4rem}
+.step .st{margin-bottom:.35rem;font-size:.95rem}.step p{margin:.2rem 0 .3rem}.step .lead{font-size:.85rem}
+details.pre{margin-bottom:.9rem}details.pre summary{cursor:pointer;color:var(--dim);font-size:.9rem;margin-bottom:.6rem}
 .calc{font-family:'IBM Plex Mono',ui-monospace,monospace;background:var(--code);border-left:3px solid var(--accent);padding:.6rem .9rem;margin:.5rem 0 .2rem;border-radius:0 var(--r) var(--r) 0;overflow-x:auto;white-space:nowrap;font-size:.92rem;line-height:2}
 .ok{color:var(--ok);font-weight:700}
 table{width:100%;border-collapse:collapse;margin-bottom:1rem;font-size:.92rem}
@@ -55,13 +56,15 @@ footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);font-
 <div class="hero">
 <div class="big">lx = cd/m²</div>
 <div class="sub">次元 [L⁻² J]</div></div>
-<h2>知っている公式から照度の単位を組み立てる</h2>
-<p>基本単位（m・kg・s・A・K・mol・cd）だけを出発点に、よく知られた公式を順にたどると、照度の単位が自然に出てきます。</p>
-<div class="step"><span class="no">STEP 1</span><a href="/q/area.html">面積</a>　—　<a href="/f/area_sq.html">面積と長さ</a>：<span class="mono">S = l²</span><div class="calc">[S] = (m)²<br>　　= m²</div></div>
-<div class="step"><span class="no">STEP 2</span><a href="/q/solid_angle.html">立体角</a>　—　<a href="/f/solid_angle_def.html">立体角（ステラジアン）の定義</a>：<span class="mono">Ω = S / r²</span><div class="calc">[Ω] = m² × (m)⁻²<br>　　= 1<br>　　= sr</div></div>
-<div class="step"><span class="no">STEP 3</span><a href="/q/luminous_flux.html">光束</a>　—　<a href="/f/lum_flux.html">光束と光度</a>：<span class="mono">Φ_v = I_v Ω</span><div class="calc">[Φ_v] = cd × sr<br>　　= cd　<span class="lead">（sr は無次元なので省く）</span><br>　　= lm</div></div>
-<div class="step"><span class="no">STEP 4</span><a href="/q/illuminance.html">照度</a>　—　<a href="/f/illum.html">照度</a>：<span class="mono">E_v = Φ_v / S</span><div class="calc">[E_v] = lm × (m²)⁻¹<br>　　= lm/m²<br>　　= cd/m²<br>　　= lx</div></div>
-<p>こうして <span class="mono">lx</span> は <span class="mono ok">cd/m²</span> と同じだとわかります。</p>
+<h2>照度の単位を、知っている公式から組み立てる</h2>
+<p>lx を基本単位までほどくには、面積 → 立体角 → 光束 → 照度 の順に単位をつないでいきます。</p>
+<details class="pre"><summary>前提：面積の単位（知っていれば飛ばしてOK）</summary>
+<div class="step"><div class="st"><b><a href="/q/area.html">面積</a></b> <span class="lead">— <a href="/f/area_sq.html">面積と長さ</a>　<span class="mono">S = l²</span></span></div><p>面積は長さ×長さなので m² です。</p><div class="calc">[S] = m²</div></div>
+</details>
+<div class="step"><div class="st"><b><a href="/q/solid_angle.html">立体角</a></b> <span class="lead">— <a href="/f/solid_angle_def.html">立体角（ステラジアン）の定義</a>　<span class="mono">Ω = S / r²</span></span></div><p>立体角は「球面上の面積 ÷ 半径の2乗」。m² を m² で割るので、sr も次元をもちません。</p><div class="calc">[Ω] = m² ÷ m² = 1 = sr</div></div>
+<div class="step"><div class="st"><b><a href="/q/luminous_flux.html">光束</a></b> <span class="lead">— <a href="/f/lum_flux.html">光束と光度</a>　<span class="mono">Φ_v = I_v Ω</span></span></div><p>光束は「光度 × 立体角」。cd に sr をかけた cd·sr が lm（ルーメン）です。sr には次元がありません。</p><div class="calc">[Φ_v] = cd × sr = cd = lm</div></div>
+<div class="step"><div class="st"><b><a href="/q/illuminance.html">照度</a></b> <span class="lead">— <a href="/f/illum.html">照度</a>　<span class="mono">E_v = Φ_v / S</span></span></div><p>照度は「面積あたりの光束」。lm を m² で割った lm/m² が lx（ルクス）です。</p><div class="calc">[E_v] = lm ÷ (m²) = lm/m² = cd/m² = lx</div></div>
+<p>まとめると、<span class="mono ok">lx = cd/m²</span> です。</p>
 <h2>lx の別の書き方</h2>
 <p>同じ量でも、使う公式によって単位の見え方が変わります。どれも基本単位にすると一致します。</p>
 <div class="tbl"><table><tr><th>書き方</th><th>根拠になる公式</th></tr>

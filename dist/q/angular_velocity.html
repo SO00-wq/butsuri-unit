@@ -29,7 +29,8 @@ p{margin-bottom:1rem}ul,ol{margin:0 0 1rem 1.3rem}li{margin-bottom:.35rem}
 .hero .big{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1.45rem;font-weight:600;overflow-wrap:anywhere}
 .hero .sub{color:var(--dim);font-size:.85rem;margin-top:.3rem}
 .step{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:.9rem 1rem;margin-bottom:.8rem}
-.step .no{display:inline-block;background:var(--accent);color:#fff;font-size:.75rem;font-weight:700;border-radius:3px;padding:0 .45rem;margin-right:.4rem}
+.step .st{margin-bottom:.35rem;font-size:.95rem}.step p{margin:.2rem 0 .3rem}.step .lead{font-size:.85rem}
+details.pre{margin-bottom:.9rem}details.pre summary{cursor:pointer;color:var(--dim);font-size:.9rem;margin-bottom:.6rem}
 .calc{font-family:'IBM Plex Mono',ui-monospace,monospace;background:var(--code);border-left:3px solid var(--accent);padding:.6rem .9rem;margin:.5rem 0 .2rem;border-radius:0 var(--r) var(--r) 0;overflow-x:auto;white-space:nowrap;font-size:.92rem;line-height:2}
 .ok{color:var(--ok);font-weight:700}
 table{width:100%;border-collapse:collapse;margin-bottom:1rem;font-size:.92rem}
@@ -55,11 +56,11 @@ footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);font-
 <div class="hero">
 <div class="big">rad/s = 1/s</div>
 <div class="sub">次元 [T⁻¹]</div></div>
-<h2>知っている公式から角速度の単位を組み立てる</h2>
-<p>基本単位（m・kg・s・A・K・mol・cd）だけを出発点に、よく知られた公式を順にたどると、角速度の単位が自然に出てきます。</p>
-<div class="step"><span class="no">STEP 1</span><a href="/q/angle.html">角度（平面角）</a>　—　<a href="/f/angle_arc.html">弧度法（ラジアン）の定義</a>：<span class="mono">θ = l / r</span><div class="calc">[θ] = m × (m)⁻¹<br>　　= 1<br>　　= rad</div></div>
-<div class="step"><span class="no">STEP 2</span><a href="/q/angular_velocity.html">角速度</a>　—　<a href="/f/omega_def.html">角速度の定義</a>：<span class="mono">ω = θ / t</span><div class="calc">[ω] = rad × (s)⁻¹<br>　　= rad/s<br>　　= 1/s</div></div>
-<p>こうして <span class="mono">rad/s</span> は <span class="mono ok">1/s</span> と同じだとわかります。</p>
+<h2>角速度の単位を、知っている公式から組み立てる</h2>
+<p>rad/s を基本単位までほどくには、角度（平面角） → 角速度 の順に単位をつないでいきます。</p>
+<div class="step"><div class="st"><b><a href="/q/angle.html">角度（平面角）</a></b> <span class="lead">— <a href="/f/angle_arc.html">弧度法（ラジアン）の定義</a>　<span class="mono">θ = l / r</span></span></div><p>角度（ラジアン）は「弧の長さ ÷ 半径」で決めます。m を m で割るので単位は消えてしまい、rad は実は次元をもちません。</p><div class="calc">[θ] = m ÷ m = 1 = rad</div></div>
+<div class="step"><div class="st"><b><a href="/q/angular_velocity.html">角速度</a></b> <span class="lead">— <a href="/f/omega_def.html">角速度の定義</a>　<span class="mono">ω = θ / t</span></span></div><p>角速度は「1秒あたりに回る角度」。rad を s で割って rad/s です。rad は次元をもたないので、次元だけ見れば s⁻¹ になります。</p><div class="calc">[ω] = rad ÷ s = rad/s = 1/s</div></div>
+<p>まとめると、<span class="mono ok">rad/s = 1/s</span> です。</p>
 <h2>同じ次元をもつ量</h2>
 <p>次の量は 角速度 と次元 [T⁻¹] が同じです。単位が同じでも意味が違う量があるので、式の検算では区別に注意しましょう。</p><ul>
 <li><a href="/q/frequency.html">振動数・周波数</a>（<span class="mono">Hz</span>）</li>

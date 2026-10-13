@@ -29,7 +29,8 @@ p{margin-bottom:1rem}ul,ol{margin:0 0 1rem 1.3rem}li{margin-bottom:.35rem}
 .hero .big{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1.45rem;font-weight:600;overflow-wrap:anywhere}
 .hero .sub{color:var(--dim);font-size:.85rem;margin-top:.3rem}
 .step{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:.9rem 1rem;margin-bottom:.8rem}
-.step .no{display:inline-block;background:var(--accent);color:#fff;font-size:.75rem;font-weight:700;border-radius:3px;padding:0 .45rem;margin-right:.4rem}
+.step .st{margin-bottom:.35rem;font-size:.95rem}.step p{margin:.2rem 0 .3rem}.step .lead{font-size:.85rem}
+details.pre{margin-bottom:.9rem}details.pre summary{cursor:pointer;color:var(--dim);font-size:.9rem;margin-bottom:.6rem}
 .calc{font-family:'IBM Plex Mono',ui-monospace,monospace;background:var(--code);border-left:3px solid var(--accent);padding:.6rem .9rem;margin:.5rem 0 .2rem;border-radius:0 var(--r) var(--r) 0;overflow-x:auto;white-space:nowrap;font-size:.92rem;line-height:2}
 .ok{color:var(--ok);font-weight:700}
 table{width:100%;border-collapse:collapse;margin-bottom:1rem;font-size:.92rem}
@@ -55,10 +56,8 @@ footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);font-
 <div class="hero">
 <div class="big">m³</div>
 <div class="sub">次元 [L³]</div></div>
-<h2>知っている公式から体積の単位を組み立てる</h2>
-<p>基本単位（m・kg・s・A・K・mol・cd）だけを出発点に、よく知られた公式を順にたどると、体積の単位が自然に出てきます。</p>
-<div class="step"><span class="no">STEP 1</span><a href="/q/volume.html">体積</a>　—　<a href="/f/vol_cube.html">体積と長さ</a>：<span class="mono">V = l³</span><div class="calc">[V] = (m)³<br>　　= m³</div></div>
-<p>こうして <span class="mono">m³</span> は <span class="mono ok">m³</span> と同じだとわかります。</p>
+<h2>体積の単位を、知っている公式から組み立てる</h2>
+<div class="step"><div class="st"><b><a href="/q/volume.html">体積</a></b> <span class="lead">— <a href="/f/vol_cube.html">体積と長さ</a>　<span class="mono">V = l³</span></span></div><p>体積は長さを3回かけるので m³ です。</p><div class="calc">[V] = m³</div></div>
 <h2>m³ の別の書き方</h2>
 <p>同じ量でも、使う公式によって単位の見え方が変わります。どれも基本単位にすると一致します。</p>
 <div class="tbl"><table><tr><th>書き方</th><th>根拠になる公式</th></tr>

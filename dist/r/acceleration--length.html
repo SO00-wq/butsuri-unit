@@ -29,7 +29,8 @@ p{margin-bottom:1rem}ul,ol{margin:0 0 1rem 1.3rem}li{margin-bottom:.35rem}
 .hero .big{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1.45rem;font-weight:600;overflow-wrap:anywhere}
 .hero .sub{color:var(--dim);font-size:.85rem;margin-top:.3rem}
 .step{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:.9rem 1rem;margin-bottom:.8rem}
-.step .no{display:inline-block;background:var(--accent);color:#fff;font-size:.75rem;font-weight:700;border-radius:3px;padding:0 .45rem;margin-right:.4rem}
+.step .st{margin-bottom:.35rem;font-size:.95rem}.step p{margin:.2rem 0 .3rem}.step .lead{font-size:.85rem}
+details.pre{margin-bottom:.9rem}details.pre summary{cursor:pointer;color:var(--dim);font-size:.9rem;margin-bottom:.6rem}
 .calc{font-family:'IBM Plex Mono',ui-monospace,monospace;background:var(--code);border-left:3px solid var(--accent);padding:.6rem .9rem;margin:.5rem 0 .2rem;border-radius:0 var(--r) var(--r) 0;overflow-x:auto;white-space:nowrap;font-size:.92rem;line-height:2}
 .ok{color:var(--ok);font-weight:700}
 table{width:100%;border-collapse:collapse;margin-bottom:1rem;font-size:.92rem}
@@ -56,24 +57,24 @@ footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);font-
 <p>つまり 加速度 は「長さ × <a href="/q/angular_acceleration.html">角加速度</a>」と同じ単位をもちます。</p>
 <h2>2つの量を結ぶ公式</h2>
 <div class="step"><b><a href="/f/potential.html">重力による位置エネルギー</a></b>：<span class="mono">U = m g h</span>
-<div class="calc">g = U / (m h)<br>[g] = J × (kg)⁻¹ × (m)⁻¹<br>　　= J/(kg·m)<br>　　= m/s²</div>
-<div class="calc">h = U / (m g)<br>[h] = J × (kg)⁻¹ × (m/s²)⁻¹<br>　　= J·s²/(kg·m)<br>　　= m</div>
+<div class="calc">g = U / (m h)<br>[g] = J ÷ kg ÷ m<br>　　= J/(kg·m)<br>　　= m/s²</div>
+<div class="calc">h = U / (m g)<br>[h] = J ÷ kg ÷ (m/s²)<br>　　= J·s²/(kg·m)<br>　　= m</div>
 </div>
 <div class="step"><b><a href="/f/hydrostatic.html">水圧（静水圧）</a></b>：<span class="mono">p = ρ g h</span>
-<div class="calc">g = p / (ρ h)<br>[g] = Pa × (kg/m³)⁻¹ × (m)⁻¹<br>　　= Pa·m²/kg<br>　　= m/s²</div>
-<div class="calc">h = p / (ρ g)<br>[h] = Pa × (kg/m³)⁻¹ × (m/s²)⁻¹<br>　　= Pa·m²·s²/kg<br>　　= m</div>
+<div class="calc">g = p / (ρ h)<br>[g] = Pa ÷ (kg/m³) ÷ m<br>　　= Pa·m²/kg<br>　　= m/s²</div>
+<div class="calc">h = p / (ρ g)<br>[h] = Pa ÷ (kg/m³) ÷ (m/s²)<br>　　= Pa·m²·s²/kg<br>　　= m</div>
 </div>
 <div class="step"><b><a href="/f/centripetal.html">向心加速度</a></b>：<span class="mono">a = v² / r</span>
-<div class="calc">[a] = (m/s)² × (m)⁻¹<br>　　= m/s²</div>
-<div class="calc">r = v² / a<br>[r] = (m/s²)⁻¹ × (m/s)²<br>　　= m</div>
+<div class="calc">[a] = (m/s)² ÷ m<br>　　= m/s²</div>
+<div class="calc">r = v² / a<br>[r] = (m/s)² ÷ (m/s²)<br>　　= m</div>
 </div>
 <div class="step"><b><a href="/f/pendulum.html">単振り子の周期</a></b>：<span class="mono">T = 2π √(l / g)</span>
-<div class="calc">g = l / T²　<span class="lead">（係数は単位に影響しないので省略）</span><br>[g] = (s)⁻² × m<br>　　= m/s²</div>
-<div class="calc">l = T² g　<span class="lead">（係数は単位に影響しないので省略）</span><br>[l] = (s)² × (m/s²)<br>　　= m</div>
+<div class="calc">g = l / T²　<span class="lead">（係数は単位に影響しないので省略）</span><br>[g] = m ÷ s²<br>　　= m/s²</div>
+<div class="calc">l = T² g　<span class="lead">（係数は単位に影響しないので省略）</span><br>[l] = s² × m/s²<br>　　= m</div>
 </div>
 <div class="step"><b><a href="/f/surface_gravity.html">重力加速度と天体の質量</a></b>：<span class="mono">g = G M / r²</span>
-<div class="calc">[g] = (N·m²/kg²) × kg × (m)⁻²<br>　　= N/kg<br>　　= m/s²</div>
-<div class="calc">r = G¹ᐟ² M¹ᐟ² / g¹ᐟ²<br>[r] = (m/s²)⁻¹ᐟ² × (N·m²/kg²)¹ᐟ² × (kg)¹ᐟ²<br>　　= m¹ᐟ²·s·N¹ᐟ²/kg¹ᐟ²<br>　　= m</div>
+<div class="calc">[g] = N·m²/kg² × kg ÷ m²<br>　　= N/kg<br>　　= m/s²</div>
+<div class="calc">r = G¹ᐟ² M¹ᐟ² / g¹ᐟ²<br>[r] = (N·m²/kg²)¹ᐟ² × kg¹ᐟ² ÷ (m/s²)¹ᐟ²<br>　　= m¹ᐟ²·s·N¹ᐟ²/kg¹ᐟ²<br>　　= m</div>
 </div>
 <h2>それぞれの量のページ</h2><ul>
 <li><a href="/q/acceleration.html">加速度</a>（<span class="mono">m/s² = m/s²</span>）</li>

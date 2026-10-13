@@ -29,7 +29,8 @@ p{margin-bottom:1rem}ul,ol{margin:0 0 1rem 1.3rem}li{margin-bottom:.35rem}
 .hero .big{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1.45rem;font-weight:600;overflow-wrap:anywhere}
 .hero .sub{color:var(--dim);font-size:.85rem;margin-top:.3rem}
 .step{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:.9rem 1rem;margin-bottom:.8rem}
-.step .no{display:inline-block;background:var(--accent);color:#fff;font-size:.75rem;font-weight:700;border-radius:3px;padding:0 .45rem;margin-right:.4rem}
+.step .st{margin-bottom:.35rem;font-size:.95rem}.step p{margin:.2rem 0 .3rem}.step .lead{font-size:.85rem}
+details.pre{margin-bottom:.9rem}details.pre summary{cursor:pointer;color:var(--dim);font-size:.9rem;margin-bottom:.6rem}
 .calc{font-family:'IBM Plex Mono',ui-monospace,monospace;background:var(--code);border-left:3px solid var(--accent);padding:.6rem .9rem;margin:.5rem 0 .2rem;border-radius:0 var(--r) var(--r) 0;overflow-x:auto;white-space:nowrap;font-size:.92rem;line-height:2}
 .ok{color:var(--ok);font-weight:700}
 table{width:100%;border-collapse:collapse;margin-bottom:1rem;font-size:.92rem}
@@ -52,19 +53,19 @@ footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);font-
 <h1>静電容量と電圧・電位の関係</h1>
 <div class="hero"><div class="big">F　と　V</div><div class="sub">[M⁻¹ L⁻² T⁴ I²]　と　[M L² T⁻³ I⁻¹]</div></div>
 <h2>単位の比から見る</h2>
-<div class="calc">[静電容量] ÷ [電圧・電位] = (s⁴·A²/(kg·m²)) ÷ (kg·m²/(s³·A)) = s⁷·A³/(kg²·m⁴)</div>
+<div class="calc">[静電容量] ÷ [電圧・電位] = (A²·s⁴/(kg·m²)) ÷ (kg·m²/(A·s³)) = A³·s⁷/(kg²·m⁴)</div>
 <h2>2つの量を結ぶ公式</h2>
 <div class="step"><b><a href="/f/capacitor.html">コンデンサーの電気量</a></b>：<span class="mono">q = C V</span>
-<div class="calc">C = q / V<br>[C] = C × (V)⁻¹<br>　　= C/V<br>　　= s⁴·A²/(kg·m²)<br>　　= F</div>
-<div class="calc">V = q / C<br>[V] = C × (F)⁻¹<br>　　= C/F<br>　　= kg·m²/(s³·A)<br>　　= V</div>
+<div class="calc">C = q / V<br>[C] = C ÷ V<br>　　= C/V<br>　　= A²·s⁴/(kg·m²)<br>　　= F</div>
+<div class="calc">V = q / C<br>[V] = C ÷ F<br>　　= C/F<br>　　= kg·m²/(A·s³)<br>　　= V</div>
 </div>
 <div class="step"><b><a href="/f/cap_energy.html">コンデンサーのエネルギー</a></b>：<span class="mono">U = ½ C V²</span>
-<div class="calc">C = U / V²　<span class="lead">（係数は単位に影響しないので省略）</span><br>[C] = J × (V)⁻²<br>　　= J/V²<br>　　= s⁴·A²/(kg·m²)<br>　　= F</div>
-<div class="calc">V = U¹ᐟ² / C¹ᐟ²　<span class="lead">（係数は単位に影響しないので省略）</span><br>[V] = (J)¹ᐟ² × (F)⁻¹ᐟ²<br>　　= J¹ᐟ²/F¹ᐟ²<br>　　= kg·m²/(s³·A)<br>　　= V</div>
+<div class="calc">C = U / V²　<span class="lead">（係数は単位に影響しないので省略）</span><br>[C] = J ÷ V²<br>　　= J/V²<br>　　= A²·s⁴/(kg·m²)<br>　　= F</div>
+<div class="calc">V = U¹ᐟ² / C¹ᐟ²　<span class="lead">（係数は単位に影響しないので省略）</span><br>[V] = J¹ᐟ² ÷ F¹ᐟ²<br>　　= J¹ᐟ²/F¹ᐟ²<br>　　= kg·m²/(A·s³)<br>　　= V</div>
 </div>
 <h2>それぞれの量のページ</h2><ul>
-<li><a href="/q/capacitance.html">静電容量</a>（<span class="mono">F = s⁴·A²/(kg·m²)</span>）</li>
-<li><a href="/q/voltage.html">電圧・電位</a>（<span class="mono">V = kg·m²/(s³·A)</span>）</li>
+<li><a href="/q/capacitance.html">静電容量</a>（<span class="mono">F = A²·s⁴/(kg·m²)</span>）</li>
+<li><a href="/q/voltage.html">電圧・電位</a>（<span class="mono">V = kg·m²/(A·s³)</span>）</li>
 </ul>
 <footer>ブツリ単位ラボ — SI単位と次元解析で物理を理解する。<br>単位はすべてSI（国際単位系）で表記しています。</footer>
 </body>

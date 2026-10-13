@@ -29,7 +29,8 @@ p{margin-bottom:1rem}ul,ol{margin:0 0 1rem 1.3rem}li{margin-bottom:.35rem}
 .hero .big{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1.45rem;font-weight:600;overflow-wrap:anywhere}
 .hero .sub{color:var(--dim);font-size:.85rem;margin-top:.3rem}
 .step{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:.9rem 1rem;margin-bottom:.8rem}
-.step .no{display:inline-block;background:var(--accent);color:#fff;font-size:.75rem;font-weight:700;border-radius:3px;padding:0 .45rem;margin-right:.4rem}
+.step .st{margin-bottom:.35rem;font-size:.95rem}.step p{margin:.2rem 0 .3rem}.step .lead{font-size:.85rem}
+details.pre{margin-bottom:.9rem}details.pre summary{cursor:pointer;color:var(--dim);font-size:.9rem;margin-bottom:.6rem}
 .calc{font-family:'IBM Plex Mono',ui-monospace,monospace;background:var(--code);border-left:3px solid var(--accent);padding:.6rem .9rem;margin:.5rem 0 .2rem;border-radius:0 var(--r) var(--r) 0;overflow-x:auto;white-space:nowrap;font-size:.92rem;line-height:2}
 .ok{color:var(--ok);font-weight:700}
 table{width:100%;border-collapse:collapse;margin-bottom:1rem;font-size:.92rem}
@@ -55,22 +56,22 @@ footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);font-
 <h2>出てくる記号と単位</h2>
 <div class="tbl"><table><tr><th>記号</th><th>量</th><th>SI単位</th><th>基本単位</th></tr>
 <tr><td class="mono">ω</td><td><a href="/q/angular_velocity.html">角速度</a></td><td class="mono">rad/s</td><td class="mono">1/s</td></tr>
-<tr><td class="mono">L</td><td><a href="/q/inductance.html">インダクタンス</a></td><td class="mono">H</td><td class="mono">kg·m²/(s²·A²)</td></tr>
-<tr><td class="mono">C</td><td><a href="/q/capacitance.html">静電容量</a></td><td class="mono">F</td><td class="mono">s⁴·A²/(kg·m²)</td></tr>
+<tr><td class="mono">L</td><td><a href="/q/inductance.html">インダクタンス</a></td><td class="mono">H</td><td class="mono">kg·m²/(A²·s²)</td></tr>
+<tr><td class="mono">C</td><td><a href="/q/capacitance.html">静電容量</a></td><td class="mono">F</td><td class="mono">A²·s⁴/(kg·m²)</td></tr>
 </table></div>
 <h2>両辺の単位が一致するか確かめる</h2>
-<div class="calc">左辺： ω<br>　→ (rad/s)<br>　= rad/s<br>　= 1/s</div>
-<div class="calc">右辺： 1 / (L¹ᐟ² C¹ᐟ²)<br>　→ (H)⁻¹ᐟ² × (F)⁻¹ᐟ²<br>　= 1/(H¹ᐟ²·F¹ᐟ²)<br>　= 1/s</div>
+<div class="calc">左辺： ω<br>　→ rad/s<br>　= 1/s</div>
+<div class="calc">右辺： 1 / (L¹ᐟ² C¹ᐟ²)<br>　→ 1 ÷ H¹ᐟ² ÷ F¹ᐟ²<br>　= 1/(H¹ᐟ²·F¹ᐟ²)<br>　= 1/s</div>
 <p><span class="ok">両辺とも 1/s で一致</span>します。単位が合わない式は、どこかが間違っているサインです。</p>
 <div class="note">💡 H·F が s² になるので、その −½乗で s⁻¹ になる。</div>
 <h2>この公式から読み取れる単位の関係</h2>
 <p>公式をある量について解くと、その量の単位をほかの量の単位で表せます。知らない量が出てきたときは、知っている量について解き直して単位を組み立てるのが近道です。</p>
 <h3><a href="/q/angular_velocity.html">角速度</a>について解く</h3>
-<div class="calc">ω = 1 / (L¹ᐟ² C¹ᐟ²)　<span class="lead">（係数は単位に影響しないので省略）</span><br>[ω] = (H)⁻¹ᐟ² × (F)⁻¹ᐟ²<br>　　= 1/(H¹ᐟ²·F¹ᐟ²)<br>　　= 1/s<br>　　= rad/s</div>
+<div class="calc">ω = 1 / (L¹ᐟ² C¹ᐟ²)　<span class="lead">（係数は単位に影響しないので省略）</span><br>[ω] = 1 ÷ H¹ᐟ² ÷ F¹ᐟ²<br>　　= 1/(H¹ᐟ²·F¹ᐟ²)<br>　　= 1/s<br>　　= rad/s</div>
 <h3><a href="/q/inductance.html">インダクタンス</a>について解く</h3>
-<div class="calc">L = 1 / (ω² C)　<span class="lead">（係数は単位に影響しないので省略）</span><br>[L] = (rad/s)⁻² × (F)⁻¹<br>　　= s²/F　<span class="lead">（rad は無次元なので省く）</span><br>　　= kg·m²/(s²·A²)<br>　　= H</div>
+<div class="calc">L = 1 / (ω² C)　<span class="lead">（係数は単位に影響しないので省略）</span><br>[L] = 1 ÷ (rad/s)² ÷ F<br>　　= s²/F　<span class="lead">（rad は無次元なので省く）</span><br>　　= kg·m²/(A²·s²)<br>　　= H</div>
 <h3><a href="/q/capacitance.html">静電容量</a>について解く</h3>
-<div class="calc">C = 1 / (ω² L)　<span class="lead">（係数は単位に影響しないので省略）</span><br>[C] = (rad/s)⁻² × (H)⁻¹<br>　　= s²/H　<span class="lead">（rad は無次元なので省く）</span><br>　　= s⁴·A²/(kg·m²)<br>　　= F</div>
+<div class="calc">C = 1 / (ω² L)　<span class="lead">（係数は単位に影響しないので省略）</span><br>[C] = 1 ÷ (rad/s)² ÷ H<br>　　= s²/H　<span class="lead">（rad は無次元なので省く）</span><br>　　= A²·s⁴/(kg·m²)<br>　　= F</div>
 <h2>電磁気のほかの公式</h2><ul>
 <li><a href="/f/charge_def.html">電荷と電流</a>：<span class="mono">q = I t</span></li>
 <li><a href="/f/voltage_def.html">電圧と仕事</a>：<span class="mono">W = q V</span></li>

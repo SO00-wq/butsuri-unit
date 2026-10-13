@@ -29,7 +29,8 @@ p{margin-bottom:1rem}ul,ol{margin:0 0 1rem 1.3rem}li{margin-bottom:.35rem}
 .hero .big{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1.45rem;font-weight:600;overflow-wrap:anywhere}
 .hero .sub{color:var(--dim);font-size:.85rem;margin-top:.3rem}
 .step{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:.9rem 1rem;margin-bottom:.8rem}
-.step .no{display:inline-block;background:var(--accent);color:#fff;font-size:.75rem;font-weight:700;border-radius:3px;padding:0 .45rem;margin-right:.4rem}
+.step .st{margin-bottom:.35rem;font-size:.95rem}.step p{margin:.2rem 0 .3rem}.step .lead{font-size:.85rem}
+details.pre{margin-bottom:.9rem}details.pre summary{cursor:pointer;color:var(--dim);font-size:.9rem;margin-bottom:.6rem}
 .calc{font-family:'IBM Plex Mono',ui-monospace,monospace;background:var(--code);border-left:3px solid var(--accent);padding:.6rem .9rem;margin:.5rem 0 .2rem;border-radius:0 var(--r) var(--r) 0;overflow-x:auto;white-space:nowrap;font-size:.92rem;line-height:2}
 .ok{color:var(--ok);font-weight:700}
 table{width:100%;border-collapse:collapse;margin-bottom:1rem;font-size:.92rem}
@@ -52,14 +53,14 @@ footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);font-
 <h1>電場（電界）と長さの関係</h1>
 <div class="hero"><div class="big">V/m　と　m</div><div class="sub">[M L T⁻³ I⁻¹]　と　[L]</div></div>
 <h2>単位の比から見る</h2>
-<div class="calc">[電場（電界）] ÷ [長さ] = (kg·m/(s³·A)) ÷ (m) = kg/(s³·A)</div>
+<div class="calc">[電場（電界）] ÷ [長さ] = (kg·m/(A·s³)) ÷ (m) = kg/(A·s³)</div>
 <h2>2つの量を結ぶ公式</h2>
 <div class="step"><b><a href="/f/uniform_field.html">一様な電場と電圧</a></b>：<span class="mono">V = E d</span>
-<div class="calc">E = V / d<br>[E] = V × (m)⁻¹<br>　　= V/m<br>　　= kg·m/(s³·A)</div>
-<div class="calc">d = V / E<br>[d] = V × (V/m)⁻¹<br>　　= m</div>
+<div class="calc">E = V / d<br>[E] = V ÷ m<br>　　= V/m<br>　　= kg·m/(A·s³)</div>
+<div class="calc">d = V / E<br>[d] = V ÷ (V/m)<br>　　= m</div>
 </div>
 <h2>それぞれの量のページ</h2><ul>
-<li><a href="/q/electric_field.html">電場（電界）</a>（<span class="mono">V/m = kg·m/(s³·A)</span>）</li>
+<li><a href="/q/electric_field.html">電場（電界）</a>（<span class="mono">V/m = kg·m/(A·s³)</span>）</li>
 <li><a href="/q/length.html">長さ</a>（<span class="mono">m = m</span>）</li>
 </ul>
 <footer>ブツリ単位ラボ — SI単位と次元解析で物理を理解する。<br>単位はすべてSI（国際単位系）で表記しています。</footer>
