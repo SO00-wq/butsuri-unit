@@ -9,7 +9,7 @@ from pathlib import Path
 
 OUT = Path("dist")
 SITE_NAME = "ブツリ単位ラボ"
-SITE_URL  = "https://butsuri-unit.example.com"  # ★デプロイ後に変更
+SITE_URL  = "https://butsuri-unit.pages.dev"  # ★独自ドメイン取得後に変更
 SITE_DESC = "物理単位の変換＆次元解析。なぜその変換式が成り立つのかを、SI基本単位への分解で理解する。"
 
 # ─── Load DB ───
