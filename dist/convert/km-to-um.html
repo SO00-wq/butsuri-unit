@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>kmからμmへの変換 | ブツリ単位ラボ</title>
+<meta name="description" content="キロメートル（km）をマイクロメートル（μm）に変換。次元解析による物理的意味の解説付き。">
+<link rel="canonical" href="https://tanitani.pages.dev/convert/km-to-um.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f7f7f5;
+  --fg: #1a1a1a;
+  --accent: #2563eb;
+  --accent-light: #dbeafe;
+  --dim: #6b7280;
+  --border: #d1d5db;
+  --card-bg: #ffffff;
+  --code-bg: #f3f4f6;
+  --radius: 6px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111113;
+    --fg: #e4e4e7;
+    --accent: #60a5fa;
+    --accent-light: #1e293b;
+    --dim: #9ca3af;
+    --border: #374151;
+    --card-bg: #1c1c1f;
+    --code-bg: #1e1e22;
+  }
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; }
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.75;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+h1 { font-size: 1.6rem; font-weight: 700; margin-bottom: .5rem; line-height: 1.35; }
+h2 { font-size: 1.15rem; font-weight: 700; margin: 2rem 0 .75rem; padding-bottom: .35rem; border-bottom: 2px solid var(--accent); }
+h3 { font-size: 1rem; font-weight: 700; margin: 1.5rem 0 .5rem; }
+p { margin-bottom: 1rem; }
+code, .mono { font-family: 'IBM Plex Mono', monospace; }
+.dim { color: var(--dim); font-size: .85rem; }
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.converter {
+  background: var(--accent-light);
+  border: 2px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  text-align: center;
+}
+.converter input {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 1.3rem;
+  width: 140px;
+  padding: .4rem .6rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--card-bg);
+  color: var(--fg);
+  text-align: right;
+}
+.converter .symbol {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 600;
+  margin: 0 .35rem;
+}
+.converter .arrow { font-size: 1.4rem; margin: 0 .75rem; }
+.dim-box {
+  background: var(--code-bg);
+  border-left: 3px solid var(--accent);
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: .95rem;
+  line-height: 1.9;
+}
+nav.breadcrumb {
+  font-size: .82rem;
+  color: var(--dim);
+  margin-bottom: 1rem;
+}
+nav.breadcrumb a { color: var(--dim); }
+.tag {
+  display: inline-block;
+  background: var(--accent-light);
+  color: var(--accent);
+  font-size: .75rem;
+  font-weight: 700;
+  padding: .15rem .5rem;
+  border-radius: 3px;
+  margin-right: .35rem;
+}
+footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  font-size: .8rem;
+  color: var(--dim);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: .75rem;
+}
+.grid a {
+  display: block;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: .75rem 1rem;
+  transition: border-color .15s;
+}
+.grid a:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+
+</style>
+</head>
+<body>
+
+<nav class="breadcrumb">
+  <a href="/">トップ</a> &gt; <a href="/category/length.html">長さ</a> &gt; km → μm
+</nav>
+
+<h1>キロメートル（km）から<br>マイクロメートル（μm）への変換</h1>
+<p class="dim">長さの単位変換 — 次元: L</p>
+
+<div class="converter" id="conv">
+  <input type="number" id="valA" value="1" oninput="calc()">
+  <span class="symbol">km</span>
+  <span class="arrow">＝</span>
+  <input type="number" id="valB" value="1.000000e+09" readonly>
+  <span class="symbol">μm</span>
+</div>
+<script>
+function calc() {
+  var v = parseFloat(document.getElementById('valA').value);
+  if (isNaN(v)) { document.getElementById('valB').value = ''; return; }
+  var result = v * 1000000000.0;
+  if (Math.abs(result) >= 1e6 || (Math.abs(result) < 1e-3 && result !== 0))
+    document.getElementById('valB').value = result.toExponential(6);
+  else
+    document.getElementById('valB').value = parseFloat(result.toPrecision(10));
+}
+</script>
+
+<div class="card">
+  <h3>変換結果</h3>
+  <p class="mono" style="font-size:1.15rem;">1 km = 1.000000e+09 μm</p>
+</div>
+
+<h2>なぜこの変換が成り立つのか — 次元解析</h2>
+<div class="dim-box">
+<strong>次元式:</strong> 長さの次元 = L<br><br>
+<strong>キロメートルのSI分解:</strong><br>
+　km = 10³ m<br><br>
+<strong>マイクロメートルのSI分解:</strong><br>
+　μm = 10⁻⁶ m
+</div>
+<p>両方の単位をSI基本単位（kg, m, s, A, K, mol, cd）まで分解すると、
+同じ次元を持つことが確認できます。変換係数は、それぞれのSI基本単位への
+換算値の比から機械的に導出されます。</p>
+<p>具体的には、キロメートルの定義値をSI単位で表したものと、
+マイクロメートルの定義値をSI単位で表したものの比をとると：</p>
+<div class="dim-box">
+1 km = 1.000000e+09 μm
+</div>
+
+
+<h2>キロメートルとは</h2>
+<div class="card">
+  <p><strong>SI分解:</strong> <code>10³ m</code></p>
+  <p>1000m。駅1〜2個分の距離（約1km）。東京〜大阪は約500km。</p>
+</div>
+
+<h2>マイクロメートルとは</h2>
+<div class="card">
+  <p><strong>SI分解:</strong> <code>10⁻⁶ m</code></p>
+  <p>0.001mm。赤血球の直径（約7μm）、髪の毛の太さ（約70μm）。半導体プロセスの寸法。</p>
+</div>
+
+<h2>逆変換</h2>
+<p><a href="/convert/um-to-km.html">μmからkmへの変換はこちら</a></p>
+
+<h2>同じカテゴリの変換</h2>
+<div class="grid">
+  <a href="/convert/km-to-m.html">km → m</a>
+  <a href="/convert/km-to-cm.html">km → cm</a>
+  <a href="/convert/km-to-mm.html">km → mm</a>
+  <a href="/convert/km-to-nm.html">km → nm</a>
+  <a href="/convert/km-to-Å.html">km → Å</a>
+  <a href="/convert/km-to-in.html">km → in</a>
+  <a href="/convert/km-to-ft.html">km → ft</a>
+</div>
+
+<footer>
+  <p><a href="/">トップ</a>に戻る</p>
+  <p>ブツリ単位ラボ — 物理単位の変換と次元解析による理解</p>
+</footer>
+</body>
+</html>
