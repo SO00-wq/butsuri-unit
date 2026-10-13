@@ -1,0 +1,2496 @@
+{
+ "dimension_labels": [
+  "M",
+  "L",
+  "T",
+  "I",
+  "Θ",
+  "N",
+  "J"
+ ],
+ "units": [
+  {
+   "symbol": "kg",
+   "name": "キログラム",
+   "dims": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "symbol": "m",
+   "name": "メートル",
+   "dims": [
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "symbol": "s",
+   "name": "秒",
+   "dims": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "symbol": "A",
+   "name": "アンペア",
+   "dims": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "symbol": "K",
+   "name": "ケルビン",
+   "dims": [
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0
+   ]
+  },
+  {
+   "symbol": "mol",
+   "name": "モル",
+   "dims": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0
+   ]
+  },
+  {
+   "symbol": "cd",
+   "name": "カンデラ",
+   "dims": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "symbol": "rad",
+   "name": "ラジアン",
+   "dims": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "symbol": "sr",
+   "name": "ステラジアン",
+   "dims": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "symbol": "Hz",
+   "name": "ヘルツ",
+   "dims": [
+    0,
+    0,
+    -1,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "symbol": "N",
+   "name": "ニュートン",
+   "dims": [
+    1,
+    1,
+    -2,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "symbol": "Pa",
+   "name": "パスカル",
+   "dims": [
+    1,
+    -1,
+    -2,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "symbol": "J",
+   "name": "ジュール",
+   "dims": [
+    1,
+    2,
+    -2,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "symbol": "W",
+   "name": "ワット",
+   "dims": [
+    1,
+    2,
+    -3,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "symbol": "C",
+   "name": "クーロン",
+   "dims": [
+    0,
+    0,
+    1,
+    1,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "symbol": "V",
+   "name": "ボルト",
+   "dims": [
+    1,
+    2,
+    -3,
+    -1,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "symbol": "F",
+   "name": "ファラド",
+   "dims": [
+    -1,
+    -2,
+    4,
+    2,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "symbol": "Ω",
+   "name": "オーム",
+   "dims": [
+    1,
+    2,
+    -3,
+    -2,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "symbol": "S",
+   "name": "ジーメンス",
+   "dims": [
+    -1,
+    -2,
+    3,
+    2,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "symbol": "Wb",
+   "name": "ウェーバ",
+   "dims": [
+    1,
+    2,
+    -2,
+    -1,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "symbol": "T",
+   "name": "テスラ",
+   "dims": [
+    1,
+    0,
+    -2,
+    -1,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "symbol": "H",
+   "name": "ヘンリー",
+   "dims": [
+    1,
+    2,
+    -2,
+    -2,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "symbol": "lm",
+   "name": "ルーメン",
+   "dims": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "symbol": "lx",
+   "name": "ルクス",
+   "dims": [
+    0,
+    -2,
+    0,
+    0,
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "symbol": "Bq",
+   "name": "ベクレル",
+   "dims": [
+    0,
+    0,
+    -1,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "symbol": "Gy",
+   "name": "グレイ",
+   "dims": [
+    0,
+    2,
+    -2,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "symbol": "Sv",
+   "name": "シーベルト",
+   "dims": [
+    0,
+    2,
+    -2,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "symbol": "kat",
+   "name": "カタール",
+   "dims": [
+    0,
+    0,
+    -1,
+    0,
+    0,
+    1,
+    0
+   ]
+  }
+ ],
+ "categories": [
+  {
+   "id": "base",
+   "name": "基本量",
+   "description": "SIの7つの基本単位と、角度などの無次元量。すべての単位はここから組み立てられる。"
+  },
+  {
+   "id": "mech",
+   "name": "力学",
+   "description": "速さ・力・エネルギー・圧力・回転など、運動を扱う量。"
+  },
+  {
+   "id": "thermo",
+   "name": "熱・気体",
+   "description": "温度・熱量・気体の状態・熱の伝わり方に関わる量。"
+  },
+  {
+   "id": "em",
+   "name": "電磁気",
+   "description": "電荷・電圧・抵抗・静電容量・磁場など、電気と磁気の量。"
+  },
+  {
+   "id": "wave",
+   "name": "波・光・量子",
+   "description": "波数・光子のエネルギー・光の明るさなど。"
+  },
+  {
+   "id": "misc",
+   "name": "放射線・化学",
+   "description": "放射能・被ばく線量・反応速度など。"
+  }
+ ],
+ "quantities": [
+  {
+   "id": "length",
+   "name": "長さ",
+   "category": "base",
+   "unit": "m",
+   "defined_by": null,
+   "description": "空間的な距離。SI基本単位のひとつで、光が真空中を進む距離をもとに定義される。"
+  },
+  {
+   "id": "mass",
+   "name": "質量",
+   "category": "base",
+   "unit": "kg",
+   "defined_by": null,
+   "description": "物体の動かしにくさ（慣性）と、重力の受けやすさを表す量。SI基本単位のひとつ。"
+  },
+  {
+   "id": "time",
+   "name": "時間",
+   "category": "base",
+   "unit": "s",
+   "defined_by": null,
+   "description": "出来事の間隔。セシウム原子の放つ電磁波の振動をもとに定義されるSI基本単位。"
+  },
+  {
+   "id": "current",
+   "name": "電流",
+   "category": "base",
+   "unit": "A",
+   "defined_by": null,
+   "description": "単位時間あたりに流れる電荷の量。SI基本単位のひとつで、電気素量をもとに定義される。"
+  },
+  {
+   "id": "temperature",
+   "name": "温度（熱力学温度）",
+   "category": "base",
+   "unit": "K",
+   "defined_by": null,
+   "description": "物体の熱さを表すSI基本単位。ボルツマン定数をもとに定義される。"
+  },
+  {
+   "id": "amount",
+   "name": "物質量",
+   "category": "base",
+   "unit": "mol",
+   "defined_by": null,
+   "description": "粒子の個数を「まとまり」で数える量。アボガドロ定数をもとに定義される。"
+  },
+  {
+   "id": "luminous_intensity",
+   "name": "光度",
+   "category": "base",
+   "unit": "cd",
+   "defined_by": null,
+   "description": "ある方向への光の明るさを、人の目の感じ方で重みづけして表すSI基本単位。"
+  },
+  {
+   "id": "angle",
+   "name": "角度（平面角）",
+   "category": "base",
+   "unit": "rad",
+   "defined_by": "angle_arc",
+   "description": "弧の長さを半径で割った量。長さ÷長さなので次元をもたない。"
+  },
+  {
+   "id": "solid_angle",
+   "name": "立体角",
+   "category": "base",
+   "unit": "sr",
+   "defined_by": "solid_angle_def",
+   "description": "球面上の面積を半径の2乗で割った量。面積÷面積なので次元をもたない。"
+  },
+  {
+   "id": "number",
+   "name": "個数・無次元数",
+   "category": "base",
+   "unit": "",
+   "defined_by": null,
+   "description": "個数や比率、レイノルズ数のように単位が打ち消しあって残らない量。"
+  },
+  {
+   "id": "area",
+   "name": "面積",
+   "category": "mech",
+   "unit": "m2",
+   "defined_by": "area_sq",
+   "description": "平面の広がり。長さの2乗。"
+  },
+  {
+   "id": "volume",
+   "name": "体積",
+   "category": "mech",
+   "unit": "m3",
+   "defined_by": "vol_cube",
+   "description": "空間の広がり。長さの3乗。"
+  },
+  {
+   "id": "velocity",
+   "name": "速度",
+   "category": "mech",
+   "unit": "m s-1",
+   "defined_by": "v_def",
+   "description": "単位時間あたりに進む距離。"
+  },
+  {
+   "id": "acceleration",
+   "name": "加速度",
+   "category": "mech",
+   "unit": "m s-2",
+   "defined_by": "a_def",
+   "description": "単位時間あたりの速度の変化。"
+  },
+  {
+   "id": "frequency",
+   "name": "振動数・周波数",
+   "category": "mech",
+   "unit": "Hz",
+   "defined_by": "f_def",
+   "description": "1秒あたりに繰り返す回数。周期の逆数。"
+  },
+  {
+   "id": "angular_velocity",
+   "name": "角速度",
+   "category": "mech",
+   "unit": "rad s-1",
+   "defined_by": "omega_def",
+   "description": "単位時間あたりに回転する角度。"
+  },
+  {
+   "id": "angular_acceleration",
+   "name": "角加速度",
+   "category": "mech",
+   "unit": "rad s-2",
+   "defined_by": "alpha_def",
+   "description": "単位時間あたりの角速度の変化。"
+  },
+  {
+   "id": "force",
+   "name": "力",
+   "category": "mech",
+   "unit": "N",
+   "defined_by": "newton2",
+   "description": "物体の運動状態を変える作用。運動方程式で質量と加速度に結びつく。"
+  },
+  {
+   "id": "momentum",
+   "name": "運動量",
+   "category": "mech",
+   "unit": "kg m s-1",
+   "defined_by": "p_def",
+   "description": "質量と速度の積。運動の「勢い」を表す。"
+  },
+  {
+   "id": "impulse",
+   "name": "力積",
+   "category": "mech",
+   "unit": "N s",
+   "defined_by": "impulse_def",
+   "description": "力とそれが働いた時間の積。運動量の変化に等しい。"
+  },
+  {
+   "id": "energy",
+   "name": "エネルギー・仕事・熱量",
+   "category": "mech",
+   "unit": "J",
+   "defined_by": "work",
+   "description": "仕事をする能力。力×距離で定義され、熱量も同じ単位で表す。"
+  },
+  {
+   "id": "power",
+   "name": "仕事率・電力",
+   "category": "mech",
+   "unit": "W",
+   "defined_by": "power_def",
+   "description": "単位時間あたりにする仕事、またはやりとりするエネルギー。"
+  },
+  {
+   "id": "pressure",
+   "name": "圧力",
+   "category": "mech",
+   "unit": "Pa",
+   "defined_by": "pressure_def",
+   "description": "単位面積あたりに垂直に働く力。"
+  },
+  {
+   "id": "density",
+   "name": "密度",
+   "category": "mech",
+   "unit": "kg m-3",
+   "defined_by": "density_def",
+   "description": "単位体積あたりの質量。"
+  },
+  {
+   "id": "torque",
+   "name": "力のモーメント（トルク）",
+   "category": "mech",
+   "unit": "N m",
+   "defined_by": "torque",
+   "description": "物体を回転させようとする働き。回転軸からの距離×力。"
+  },
+  {
+   "id": "moment_of_inertia",
+   "name": "慣性モーメント",
+   "category": "mech",
+   "unit": "kg m2",
+   "defined_by": "inertia_point",
+   "description": "回転させにくさ。回転運動における質量の役割をもつ。"
+  },
+  {
+   "id": "angular_momentum",
+   "name": "角運動量",
+   "category": "mech",
+   "unit": "kg m2 s-1",
+   "defined_by": "ang_mom",
+   "description": "回転運動の勢い。回転軸からの距離×運動量。"
+  },
+  {
+   "id": "spring_constant",
+   "name": "ばね定数",
+   "category": "mech",
+   "unit": "N m-1",
+   "defined_by": "hooke",
+   "description": "ばねを単位長さ伸ばすのに必要な力。ばねの硬さ。"
+  },
+  {
+   "id": "surface_tension",
+   "name": "表面張力",
+   "category": "mech",
+   "unit": "N m-1",
+   "defined_by": "surface",
+   "description": "液体の表面が単位長さあたりに縮もうとする力。"
+  },
+  {
+   "id": "viscosity",
+   "name": "粘性係数（粘度）",
+   "category": "mech",
+   "unit": "Pa s",
+   "defined_by": "newton_visc",
+   "description": "流体のねばりけ。流れの速さの差に逆らう力の大きさを決める。"
+  },
+  {
+   "id": "gravitational_constant",
+   "name": "万有引力定数",
+   "category": "mech",
+   "unit": "N m2 kg-2",
+   "defined_by": "gravity",
+   "description": "2つの質量の間に働く引力の強さを決める定数。"
+  },
+  {
+   "id": "number_density",
+   "name": "数密度",
+   "category": "mech",
+   "unit": "m-3",
+   "defined_by": "n_def",
+   "description": "単位体積あたりの粒子の個数。"
+  },
+  {
+   "id": "heat_capacity",
+   "name": "熱容量",
+   "category": "thermo",
+   "unit": "J K-1",
+   "defined_by": "heat_cap",
+   "description": "物体の温度を1 K上げるのに必要な熱量にあたる量。"
+  },
+  {
+   "id": "specific_heat",
+   "name": "比熱（比熱容量）",
+   "category": "thermo",
+   "unit": "J kg-1 K-1",
+   "defined_by": "spec_heat",
+   "description": "単位質量あたりの熱容量。物質ごとの温まりにくさ。"
+  },
+  {
+   "id": "latent_heat",
+   "name": "潜熱（比潜熱）",
+   "category": "thermo",
+   "unit": "J kg-1",
+   "defined_by": "latent",
+   "description": "状態変化（融解・蒸発など）に必要な単位質量あたりの熱量。"
+  },
+  {
+   "id": "entropy",
+   "name": "エントロピー",
+   "category": "thermo",
+   "unit": "J K-1",
+   "defined_by": "entropy",
+   "description": "受け取った熱量を温度で割って積み上げた量。乱雑さの尺度。"
+  },
+  {
+   "id": "molar_mass",
+   "name": "モル質量",
+   "category": "thermo",
+   "unit": "kg mol-1",
+   "defined_by": "molar_mass",
+   "description": "物質量あたりの質量。"
+  },
+  {
+   "id": "gas_constant",
+   "name": "気体定数",
+   "category": "thermo",
+   "unit": "J mol-1 K-1",
+   "defined_by": "ideal_gas",
+   "description": "理想気体の圧力・体積・物質量・温度を結ぶ定数。"
+  },
+  {
+   "id": "boltzmann",
+   "name": "ボルツマン定数",
+   "category": "thermo",
+   "unit": "J K-1",
+   "defined_by": "kinetic_temp",
+   "description": "温度を分子1個あたりのエネルギーに結びつける定数。"
+  },
+  {
+   "id": "avogadro",
+   "name": "アボガドロ定数",
+   "category": "thermo",
+   "unit": "mol-1",
+   "defined_by": "avogadro",
+   "description": "物質量（mol）と粒子の個数を結びつける定数。"
+  },
+  {
+   "id": "thermal_conductivity",
+   "name": "熱伝導率",
+   "category": "thermo",
+   "unit": "W m-1 K-1",
+   "defined_by": "fourier",
+   "description": "物質の熱の伝えやすさ。"
+  },
+  {
+   "id": "stefan_boltzmann",
+   "name": "シュテファン＝ボルツマン定数",
+   "category": "thermo",
+   "unit": "W m-2 K-4",
+   "defined_by": "stefan",
+   "description": "黒体が放射するエネルギーと温度の4乗を結ぶ定数。"
+  },
+  {
+   "id": "charge",
+   "name": "電荷（電気量）",
+   "category": "em",
+   "unit": "C",
+   "defined_by": "charge_def",
+   "description": "電気の量。電流×時間で表せる。"
+  },
+  {
+   "id": "voltage",
+   "name": "電圧・電位",
+   "category": "em",
+   "unit": "V",
+   "defined_by": "voltage_def",
+   "description": "単位電荷あたりのエネルギーの差。"
+  },
+  {
+   "id": "resistance",
+   "name": "電気抵抗",
+   "category": "em",
+   "unit": "Ω",
+   "defined_by": "ohm",
+   "description": "電流の流れにくさ。電圧÷電流。"
+  },
+  {
+   "id": "conductance",
+   "name": "コンダクタンス",
+   "category": "em",
+   "unit": "S",
+   "defined_by": "conductance",
+   "description": "電流の流れやすさ。電気抵抗の逆数。"
+  },
+  {
+   "id": "capacitance",
+   "name": "静電容量",
+   "category": "em",
+   "unit": "F",
+   "defined_by": "capacitor",
+   "description": "単位電圧あたりにためられる電荷。"
+  },
+  {
+   "id": "electric_field",
+   "name": "電場（電界）",
+   "category": "em",
+   "unit": "V m-1",
+   "defined_by": "efield_force",
+   "description": "単位電荷あたりに働く力。単位長さあたりの電位の変化でもある。"
+  },
+  {
+   "id": "coulomb_constant",
+   "name": "クーロンの法則の比例定数",
+   "category": "em",
+   "unit": "N m2 C-2",
+   "defined_by": "coulomb",
+   "description": "2つの電荷の間に働く力の強さを決める定数。"
+  },
+  {
+   "id": "permittivity",
+   "name": "誘電率",
+   "category": "em",
+   "unit": "F m-1",
+   "defined_by": "plate_cap",
+   "description": "物質中で電場がどれだけ弱められるか（電荷をためやすいか）を表す量。"
+  },
+  {
+   "id": "magnetic_flux_density",
+   "name": "磁束密度",
+   "category": "em",
+   "unit": "T",
+   "defined_by": "lorentz",
+   "description": "動く電荷や電流が受ける磁気的な力の強さを決める量。"
+  },
+  {
+   "id": "magnetic_flux",
+   "name": "磁束",
+   "category": "em",
+   "unit": "Wb",
+   "defined_by": "flux",
+   "description": "ある面を貫く磁束密度の総量。"
+  },
+  {
+   "id": "inductance",
+   "name": "インダクタンス",
+   "category": "em",
+   "unit": "H",
+   "defined_by": "self_induct",
+   "description": "電流の変化を妨げる電圧を生じる度合い。"
+  },
+  {
+   "id": "magnetic_field",
+   "name": "磁場（磁界）の強さ",
+   "category": "em",
+   "unit": "A m-1",
+   "defined_by": "ampere_wire",
+   "description": "電流がつくる磁気的な場。電流÷長さの単位をもつ。"
+  },
+  {
+   "id": "permeability",
+   "name": "透磁率",
+   "category": "em",
+   "unit": "H m-1",
+   "defined_by": "b_mu_h",
+   "description": "磁場から磁束密度がどれだけ生じるかを表す量。"
+  },
+  {
+   "id": "resistivity",
+   "name": "抵抗率",
+   "category": "em",
+   "unit": "Ω m",
+   "defined_by": "resistivity",
+   "description": "物質そのものの電流の流れにくさ。形によらない量。"
+  },
+  {
+   "id": "conductivity",
+   "name": "電気伝導率",
+   "category": "em",
+   "unit": "S m-1",
+   "defined_by": "conductivity",
+   "description": "物質そのものの電流の流れやすさ。抵抗率の逆数。"
+  },
+  {
+   "id": "current_density",
+   "name": "電流密度",
+   "category": "em",
+   "unit": "A m-2",
+   "defined_by": "current_density",
+   "description": "単位断面積あたりの電流。"
+  },
+  {
+   "id": "faraday",
+   "name": "ファラデー定数",
+   "category": "em",
+   "unit": "C mol-1",
+   "defined_by": "faraday",
+   "description": "電子1 molぶんの電荷。電気分解の計算に使う。"
+  },
+  {
+   "id": "wavenumber",
+   "name": "波数",
+   "category": "wave",
+   "unit": "m-1",
+   "defined_by": "wavenumber",
+   "description": "単位長さあたりの波の数（位相の変化）。"
+  },
+  {
+   "id": "planck",
+   "name": "プランク定数",
+   "category": "wave",
+   "unit": "J s",
+   "defined_by": "planck",
+   "description": "光子のエネルギーと振動数を結ぶ、量子力学の基本定数。"
+  },
+  {
+   "id": "intensity",
+   "name": "強度（エネルギー流束）",
+   "category": "wave",
+   "unit": "W m-2",
+   "defined_by": "intensity",
+   "description": "単位面積を単位時間に通過するエネルギー。"
+  },
+  {
+   "id": "luminous_flux",
+   "name": "光束",
+   "category": "wave",
+   "unit": "lm",
+   "defined_by": "lum_flux",
+   "description": "光源から出る光の量を人の目の感度で表したもの。"
+  },
+  {
+   "id": "illuminance",
+   "name": "照度",
+   "category": "wave",
+   "unit": "lx",
+   "defined_by": "illum",
+   "description": "面に届く単位面積あたりの光束。"
+  },
+  {
+   "id": "activity",
+   "name": "放射能",
+   "category": "misc",
+   "unit": "Bq",
+   "defined_by": "activity",
+   "description": "単位時間あたりに崩壊する原子核の数。"
+  },
+  {
+   "id": "absorbed_dose",
+   "name": "吸収線量",
+   "category": "misc",
+   "unit": "Gy",
+   "defined_by": "absorbed",
+   "description": "物質1 kgあたりが吸収した放射線のエネルギー。"
+  },
+  {
+   "id": "equivalent_dose",
+   "name": "等価線量",
+   "category": "misc",
+   "unit": "Sv",
+   "defined_by": "equivalent",
+   "description": "吸収線量に放射線の種類ごとの重みをかけた量。"
+  },
+  {
+   "id": "catalytic_activity",
+   "name": "触媒活性",
+   "category": "misc",
+   "unit": "kat",
+   "defined_by": "catalytic",
+   "description": "単位時間あたりに触媒が変化させる物質量。"
+  }
+ ],
+ "formulas": [
+  {
+   "id": "angle_arc",
+   "name": "弧度法（ラジアン）の定義",
+   "category": "base",
+   "expr": "θ = l / r",
+   "equation": "th = l r^-1",
+   "vars": {
+    "th": [
+     "angle",
+     "θ"
+    ],
+    "l": "length",
+    "r": "length"
+   },
+   "note": "長さ÷長さなので、ラジアンは次元をもたない。"
+  },
+  {
+   "id": "solid_angle_def",
+   "name": "立体角（ステラジアン）の定義",
+   "category": "base",
+   "expr": "Ω = S / r²",
+   "equation": "Om = S r^-2",
+   "vars": {
+    "Om": [
+     "solid_angle",
+     "Ω"
+    ],
+    "S": "area",
+    "r": "length"
+   },
+   "note": "面積÷長さの2乗なので、ステラジアンも次元をもたない。"
+  },
+  {
+   "id": "area_sq",
+   "name": "面積と長さ",
+   "category": "mech",
+   "expr": "S = l²",
+   "equation": "S = l^2",
+   "vars": {
+    "S": "area",
+    "l": "length"
+   },
+   "note": null
+  },
+  {
+   "id": "vol_cube",
+   "name": "体積と長さ",
+   "category": "mech",
+   "expr": "V = l³",
+   "equation": "V = l^3",
+   "vars": {
+    "V": "volume",
+    "l": "length"
+   },
+   "note": null
+  },
+  {
+   "id": "v_def",
+   "name": "速さの定義",
+   "category": "mech",
+   "expr": "v = x / t",
+   "equation": "v = x t^-1",
+   "vars": {
+    "v": "velocity",
+    "x": "length",
+    "t": "time"
+   },
+   "note": null
+  },
+  {
+   "id": "a_def",
+   "name": "加速度の定義",
+   "category": "mech",
+   "expr": "a = Δv / Δt",
+   "equation": "a = dv dt^-1",
+   "vars": {
+    "a": "acceleration",
+    "dv": [
+     "velocity",
+     "Δv"
+    ],
+    "dt": [
+     "time",
+     "Δt"
+    ]
+   },
+   "note": "Δ（変化量）がついても単位は元の量と同じ。"
+  },
+  {
+   "id": "f_def",
+   "name": "振動数と周期",
+   "category": "mech",
+   "expr": "f = 1 / T",
+   "equation": "f = T^-1",
+   "vars": {
+    "f": "frequency",
+    "T": "time"
+   },
+   "note": null
+  },
+  {
+   "id": "omega_def",
+   "name": "角速度の定義",
+   "category": "mech",
+   "expr": "ω = θ / t",
+   "equation": "w = th t^-1",
+   "vars": {
+    "w": [
+     "angular_velocity",
+     "ω"
+    ],
+    "th": [
+     "angle",
+     "θ"
+    ],
+    "t": "time"
+   },
+   "note": "ラジアンは無次元なので、角速度の次元は s⁻¹（Hzと同じ次元）になる。"
+  },
+  {
+   "id": "alpha_def",
+   "name": "角加速度の定義",
+   "category": "mech",
+   "expr": "α = Δω / Δt",
+   "equation": "al = dw dt^-1",
+   "vars": {
+    "al": [
+     "angular_acceleration",
+     "α"
+    ],
+    "dw": [
+     "angular_velocity",
+     "Δω"
+    ],
+    "dt": [
+     "time",
+     "Δt"
+    ]
+   },
+   "note": null
+  },
+  {
+   "id": "newton2",
+   "name": "運動方程式",
+   "category": "mech",
+   "expr": "F = m a",
+   "equation": "F = m a",
+   "vars": {
+    "F": "force",
+    "m": "mass",
+    "a": "acceleration"
+   },
+   "note": "N（ニュートン）は、この式で kg·m/s² に名前をつけた単位。"
+  },
+  {
+   "id": "p_def",
+   "name": "運動量の定義",
+   "category": "mech",
+   "expr": "p = m v",
+   "equation": "p = m v",
+   "vars": {
+    "p": "momentum",
+    "m": "mass",
+    "v": "velocity"
+   },
+   "note": null
+  },
+  {
+   "id": "impulse_def",
+   "name": "力積の定義",
+   "category": "mech",
+   "expr": "I = F Δt",
+   "equation": "I = F dt",
+   "vars": {
+    "I": "impulse",
+    "F": "force",
+    "dt": [
+     "time",
+     "Δt"
+    ]
+   },
+   "note": null
+  },
+  {
+   "id": "impulse_momentum",
+   "name": "力積と運動量の関係",
+   "category": "mech",
+   "expr": "F Δt = Δp",
+   "equation": "F dt = dp",
+   "vars": {
+    "F": "force",
+    "dt": [
+     "time",
+     "Δt"
+    ],
+    "dp": [
+     "momentum",
+     "Δp"
+    ]
+   },
+   "note": "N·s と kg·m/s が同じ単位であることがわかる。"
+  },
+  {
+   "id": "work",
+   "name": "仕事の定義",
+   "category": "mech",
+   "expr": "W = F x",
+   "equation": "W = F x",
+   "vars": {
+    "W": "energy",
+    "F": "force",
+    "x": "length"
+   },
+   "note": "J（ジュール）は N·m に名前をつけた単位。"
+  },
+  {
+   "id": "power_def",
+   "name": "仕事率の定義",
+   "category": "mech",
+   "expr": "P = W / t",
+   "equation": "P = W t^-1",
+   "vars": {
+    "P": "power",
+    "W": "energy",
+    "t": "time"
+   },
+   "note": "W（ワット）は J/s に名前をつけた単位。"
+  },
+  {
+   "id": "power_v",
+   "name": "仕事率と速さ",
+   "category": "mech",
+   "expr": "P = F v",
+   "equation": "P = F v",
+   "vars": {
+    "P": "power",
+    "F": "force",
+    "v": "velocity"
+   },
+   "note": null
+  },
+  {
+   "id": "kinetic",
+   "name": "運動エネルギー",
+   "category": "mech",
+   "expr": "K = ½ m v²",
+   "equation": "K = m v^2",
+   "vars": {
+    "K": "energy",
+    "m": "mass",
+    "v": "velocity"
+   },
+   "note": "係数 ½ は単なる数で単位をもたないので、次元解析では無視してよい。"
+  },
+  {
+   "id": "potential",
+   "name": "重力による位置エネルギー",
+   "category": "mech",
+   "expr": "U = m g h",
+   "equation": "U = m g h",
+   "vars": {
+    "U": "energy",
+    "m": "mass",
+    "g": "acceleration",
+    "h": "length"
+   },
+   "note": null
+  },
+  {
+   "id": "pressure_def",
+   "name": "圧力の定義",
+   "category": "mech",
+   "expr": "p = F / S",
+   "equation": "p = F S^-1",
+   "vars": {
+    "p": "pressure",
+    "F": "force",
+    "S": "area"
+   },
+   "note": "Pa（パスカル）は N/m² に名前をつけた単位。"
+  },
+  {
+   "id": "hydrostatic",
+   "name": "水圧（静水圧）",
+   "category": "mech",
+   "expr": "p = ρ g h",
+   "equation": "p = rho g h",
+   "vars": {
+    "p": "pressure",
+    "rho": [
+     "density",
+     "ρ"
+    ],
+    "g": "acceleration",
+    "h": "length"
+   },
+   "note": null
+  },
+  {
+   "id": "dynamic_p",
+   "name": "動圧（ベルヌーイの定理の項）",
+   "category": "mech",
+   "expr": "p = ½ ρ v²",
+   "equation": "p = rho v^2",
+   "vars": {
+    "p": "pressure",
+    "rho": [
+     "density",
+     "ρ"
+    ],
+    "v": "velocity"
+   },
+   "note": "Pa は J/m³ とも書ける。圧力は「単位体積あたりのエネルギー」でもある。"
+  },
+  {
+   "id": "density_def",
+   "name": "密度の定義",
+   "category": "mech",
+   "expr": "ρ = m / V",
+   "equation": "rho = m V^-1",
+   "vars": {
+    "rho": [
+     "density",
+     "ρ"
+    ],
+    "m": "mass",
+    "V": "volume"
+   },
+   "note": null
+  },
+  {
+   "id": "torque",
+   "name": "力のモーメント",
+   "category": "mech",
+   "expr": "τ = r F",
+   "equation": "tau = r F",
+   "vars": {
+    "tau": [
+     "torque",
+     "τ"
+    ],
+    "r": "length",
+    "F": "force"
+   },
+   "note": "トルクの単位 N·m はエネルギーの J と同じ次元だが、意味が違うので J とは書かない。"
+  },
+  {
+   "id": "inertia_point",
+   "name": "質点の慣性モーメント",
+   "category": "mech",
+   "expr": "I = m r²",
+   "equation": "I = m r^2",
+   "vars": {
+    "I": "moment_of_inertia",
+    "m": "mass",
+    "r": "length"
+   },
+   "note": null
+  },
+  {
+   "id": "ang_mom",
+   "name": "角運動量の定義",
+   "category": "mech",
+   "expr": "L = r p",
+   "equation": "L = r p",
+   "vars": {
+    "L": "angular_momentum",
+    "r": "length",
+    "p": "momentum"
+   },
+   "note": null
+  },
+  {
+   "id": "ang_mom_I",
+   "name": "角運動量と角速度",
+   "category": "mech",
+   "expr": "L = I ω",
+   "equation": "L = I w",
+   "vars": {
+    "L": "angular_momentum",
+    "I": "moment_of_inertia",
+    "w": [
+     "angular_velocity",
+     "ω"
+    ]
+   },
+   "note": null
+  },
+  {
+   "id": "rot_eq",
+   "name": "回転の運動方程式",
+   "category": "mech",
+   "expr": "τ = I α",
+   "equation": "tau = I al",
+   "vars": {
+    "tau": [
+     "torque",
+     "τ"
+    ],
+    "I": "moment_of_inertia",
+    "al": [
+     "angular_acceleration",
+     "α"
+    ]
+   },
+   "note": "F = ma の回転版。力→トルク、質量→慣性モーメント、加速度→角加速度と対応する。"
+  },
+  {
+   "id": "rot_ke",
+   "name": "回転の運動エネルギー",
+   "category": "mech",
+   "expr": "K = ½ I ω²",
+   "equation": "K = I w^2",
+   "vars": {
+    "K": "energy",
+    "I": "moment_of_inertia",
+    "w": [
+     "angular_velocity",
+     "ω"
+    ]
+   },
+   "note": null
+  },
+  {
+   "id": "work_rot",
+   "name": "トルクのする仕事",
+   "category": "mech",
+   "expr": "W = τ θ",
+   "equation": "W = tau th",
+   "vars": {
+    "W": "energy",
+    "tau": [
+     "torque",
+     "τ"
+    ],
+    "th": [
+     "angle",
+     "θ"
+    ]
+   },
+   "note": "ラジアンは無次元なので、N·m × rad = J となる。"
+  },
+  {
+   "id": "v_omega",
+   "name": "速さと角速度",
+   "category": "mech",
+   "expr": "v = r ω",
+   "equation": "v = r w",
+   "vars": {
+    "v": "velocity",
+    "r": "length",
+    "w": [
+     "angular_velocity",
+     "ω"
+    ]
+   },
+   "note": null
+  },
+  {
+   "id": "centripetal",
+   "name": "向心加速度",
+   "category": "mech",
+   "expr": "a = v² / r",
+   "equation": "a = v^2 r^-1",
+   "vars": {
+    "a": "acceleration",
+    "v": "velocity",
+    "r": "length"
+   },
+   "note": null
+  },
+  {
+   "id": "hooke",
+   "name": "フックの法則",
+   "category": "mech",
+   "expr": "F = k x",
+   "equation": "F = k x",
+   "vars": {
+    "F": "force",
+    "k": "spring_constant",
+    "x": "length"
+   },
+   "note": null
+  },
+  {
+   "id": "spring_energy",
+   "name": "弾性エネルギー",
+   "category": "mech",
+   "expr": "U = ½ k x²",
+   "equation": "U = k x^2",
+   "vars": {
+    "U": "energy",
+    "k": "spring_constant",
+    "x": "length"
+   },
+   "note": null
+  },
+  {
+   "id": "spring_period",
+   "name": "ばね振り子の周期",
+   "category": "mech",
+   "expr": "T = 2π √(m / k)",
+   "equation": "T = m^1/2 k^-1/2",
+   "vars": {
+    "T": "time",
+    "m": "mass",
+    "k": "spring_constant"
+   },
+   "note": "√ は「½乗」。kg ÷ (kg/s²) = s² なので、その½乗で s になる。"
+  },
+  {
+   "id": "pendulum",
+   "name": "単振り子の周期",
+   "category": "mech",
+   "expr": "T = 2π √(l / g)",
+   "equation": "T = l^1/2 g^-1/2",
+   "vars": {
+    "T": "time",
+    "l": "length",
+    "g": "acceleration"
+   },
+   "note": "m ÷ (m/s²) = s² なので、その½乗で s になる。"
+  },
+  {
+   "id": "surface",
+   "name": "表面張力",
+   "category": "mech",
+   "expr": "F = γ l",
+   "equation": "F = ga l",
+   "vars": {
+    "F": "force",
+    "ga": [
+     "surface_tension",
+     "γ"
+    ],
+    "l": "length"
+   },
+   "note": "表面張力の N/m は J/m² とも書ける（単位面積あたりの表面エネルギー）。"
+  },
+  {
+   "id": "newton_visc",
+   "name": "ニュートンの粘性法則",
+   "category": "mech",
+   "expr": "F = η S v / d",
+   "equation": "F = eta S v d^-1",
+   "vars": {
+    "F": "force",
+    "eta": [
+     "viscosity",
+     "η"
+    ],
+    "S": "area",
+    "v": "velocity",
+    "d": "length"
+   },
+   "note": null
+  },
+  {
+   "id": "stokes",
+   "name": "ストークスの法則",
+   "category": "mech",
+   "expr": "F = 6π η r v",
+   "equation": "F = eta r v",
+   "vars": {
+    "F": "force",
+    "eta": [
+     "viscosity",
+     "η"
+    ],
+    "r": "length",
+    "v": "velocity"
+   },
+   "note": null
+  },
+  {
+   "id": "reynolds",
+   "name": "レイノルズ数",
+   "category": "mech",
+   "expr": "Re = ρ v l / η",
+   "equation": "Re = rho v l eta^-1",
+   "vars": {
+    "Re": "number",
+    "rho": [
+     "density",
+     "ρ"
+    ],
+    "v": "velocity",
+    "l": "length",
+    "eta": [
+     "viscosity",
+     "η"
+    ]
+   },
+   "note": "すべての単位が打ち消しあう無次元数。流れが乱流になるかの目安に使う。"
+  },
+  {
+   "id": "gravity",
+   "name": "万有引力の法則",
+   "category": "mech",
+   "expr": "F = G M m / r²",
+   "equation": "F = G M m r^-2",
+   "vars": {
+    "F": "force",
+    "G": "gravitational_constant",
+    "M": "mass",
+    "m": "mass",
+    "r": "length"
+   },
+   "note": null
+  },
+  {
+   "id": "surface_gravity",
+   "name": "重力加速度と天体の質量",
+   "category": "mech",
+   "expr": "g = G M / r²",
+   "equation": "g = G M r^-2",
+   "vars": {
+    "g": "acceleration",
+    "G": "gravitational_constant",
+    "M": "mass",
+    "r": "length"
+   },
+   "note": null
+  },
+  {
+   "id": "escape",
+   "name": "脱出速度",
+   "category": "mech",
+   "expr": "v = √(2 G M / r)",
+   "equation": "v = G^1/2 M^1/2 r^-1/2",
+   "vars": {
+    "v": "velocity",
+    "G": "gravitational_constant",
+    "M": "mass",
+    "r": "length"
+   },
+   "note": null
+  },
+  {
+   "id": "n_def",
+   "name": "数密度の定義",
+   "category": "mech",
+   "expr": "n = N / V",
+   "equation": "n = N V^-1",
+   "vars": {
+    "n": "number_density",
+    "N": "number",
+    "V": "volume"
+   },
+   "note": null
+  },
+  {
+   "id": "heat_cap",
+   "name": "熱容量",
+   "category": "thermo",
+   "expr": "Q = C ΔT",
+   "equation": "Q = C dT",
+   "vars": {
+    "Q": "energy",
+    "C": "heat_capacity",
+    "dT": [
+     "temperature",
+     "ΔT"
+    ]
+   },
+   "note": null
+  },
+  {
+   "id": "spec_heat",
+   "name": "比熱",
+   "category": "thermo",
+   "expr": "Q = m c ΔT",
+   "equation": "Q = m c dT",
+   "vars": {
+    "Q": "energy",
+    "m": "mass",
+    "c": "specific_heat",
+    "dT": [
+     "temperature",
+     "ΔT"
+    ]
+   },
+   "note": null
+  },
+  {
+   "id": "latent",
+   "name": "潜熱",
+   "category": "thermo",
+   "expr": "Q = m L",
+   "equation": "Q = m L",
+   "vars": {
+    "Q": "energy",
+    "m": "mass",
+    "L": "latent_heat"
+   },
+   "note": null
+  },
+  {
+   "id": "entropy",
+   "name": "エントロピー変化",
+   "category": "thermo",
+   "expr": "ΔS = Q / T",
+   "equation": "dS = Q T^-1",
+   "vars": {
+    "dS": [
+     "entropy",
+     "ΔS"
+    ],
+    "Q": "energy",
+    "T": "temperature"
+   },
+   "note": null
+  },
+  {
+   "id": "molar_mass",
+   "name": "モル質量",
+   "category": "thermo",
+   "expr": "m = n M",
+   "equation": "m = n M",
+   "vars": {
+    "m": "mass",
+    "n": "amount",
+    "M": "molar_mass"
+   },
+   "note": null
+  },
+  {
+   "id": "ideal_gas",
+   "name": "理想気体の状態方程式",
+   "category": "thermo",
+   "expr": "p V = n R T",
+   "equation": "p V = n R T",
+   "vars": {
+    "p": "pressure",
+    "V": "volume",
+    "n": "amount",
+    "R": "gas_constant",
+    "T": "temperature"
+   },
+   "note": "左辺 pV の単位 Pa·m³ は J と同じ。気体の状態方程式はエネルギーの式でもある。"
+  },
+  {
+   "id": "ideal_gas_k",
+   "name": "理想気体の状態方程式（分子数）",
+   "category": "thermo",
+   "expr": "p V = N k_B T",
+   "equation": "p V = N kB T",
+   "vars": {
+    "p": "pressure",
+    "V": "volume",
+    "N": "number",
+    "kB": [
+     "boltzmann",
+     "k_B"
+    ],
+    "T": "temperature"
+   },
+   "note": null
+  },
+  {
+   "id": "kinetic_temp",
+   "name": "分子の平均運動エネルギー",
+   "category": "thermo",
+   "expr": "E = (3/2) k_B T",
+   "equation": "E = kB T",
+   "vars": {
+    "E": "energy",
+    "kB": [
+     "boltzmann",
+     "k_B"
+    ],
+    "T": "temperature"
+   },
+   "note": "係数 3/2 は次元をもたないので無視してよい。"
+  },
+  {
+   "id": "R_kNA",
+   "name": "気体定数とボルツマン定数",
+   "category": "thermo",
+   "expr": "R = N_A k_B",
+   "equation": "R = NA kB",
+   "vars": {
+    "R": "gas_constant",
+    "NA": [
+     "avogadro",
+     "N_A"
+    ],
+    "kB": [
+     "boltzmann",
+     "k_B"
+    ]
+   },
+   "note": null
+  },
+  {
+   "id": "avogadro",
+   "name": "アボガドロ定数",
+   "category": "thermo",
+   "expr": "N = n N_A",
+   "equation": "N = n NA",
+   "vars": {
+    "N": "number",
+    "n": "amount",
+    "NA": [
+     "avogadro",
+     "N_A"
+    ]
+   },
+   "note": "個数 N は無次元なので、N_A の単位は mol⁻¹ になる。"
+  },
+  {
+   "id": "fourier",
+   "name": "熱伝導（フーリエの法則）",
+   "category": "thermo",
+   "expr": "P = λ S ΔT / d",
+   "equation": "P = lam S dT d^-1",
+   "vars": {
+    "P": "power",
+    "lam": [
+     "thermal_conductivity",
+     "λ"
+    ],
+    "S": "area",
+    "dT": [
+     "temperature",
+     "ΔT"
+    ],
+    "d": "length"
+   },
+   "note": null
+  },
+  {
+   "id": "stefan",
+   "name": "シュテファン＝ボルツマンの法則",
+   "category": "thermo",
+   "expr": "P = σ S T⁴",
+   "equation": "P = sig S T^4",
+   "vars": {
+    "P": "power",
+    "sig": [
+     "stefan_boltzmann",
+     "σ"
+    ],
+    "S": "area",
+    "T": "temperature"
+   },
+   "note": null
+  },
+  {
+   "id": "charge_def",
+   "name": "電荷と電流",
+   "category": "em",
+   "expr": "q = I t",
+   "equation": "q = I t",
+   "vars": {
+    "q": "charge",
+    "I": "current",
+    "t": "time"
+   },
+   "note": "C（クーロン）は A·s に名前をつけた単位。"
+  },
+  {
+   "id": "voltage_def",
+   "name": "電圧と仕事",
+   "category": "em",
+   "expr": "W = q V",
+   "equation": "W = q V",
+   "vars": {
+    "W": "energy",
+    "q": "charge",
+    "V": "voltage"
+   },
+   "note": "V（ボルト）は J/C、つまり「1 Cあたりのエネルギー」。"
+  },
+  {
+   "id": "ohm",
+   "name": "オームの法則",
+   "category": "em",
+   "expr": "V = R I",
+   "equation": "V = R I",
+   "vars": {
+    "V": "voltage",
+    "R": "resistance",
+    "I": "current"
+   },
+   "note": null
+  },
+  {
+   "id": "power_iv",
+   "name": "電力",
+   "category": "em",
+   "expr": "P = I V",
+   "equation": "P = I V",
+   "vars": {
+    "P": "power",
+    "I": "current",
+    "V": "voltage"
+   },
+   "note": null
+  },
+  {
+   "id": "joule_heat",
+   "name": "ジュール熱（抵抗での消費電力）",
+   "category": "em",
+   "expr": "P = I² R",
+   "equation": "P = I^2 R",
+   "vars": {
+    "P": "power",
+    "I": "current",
+    "R": "resistance"
+   },
+   "note": null
+  },
+  {
+   "id": "conductance",
+   "name": "コンダクタンス",
+   "category": "em",
+   "expr": "G = 1 / R",
+   "equation": "G = R^-1",
+   "vars": {
+    "G": "conductance",
+    "R": "resistance"
+   },
+   "note": null
+  },
+  {
+   "id": "capacitor",
+   "name": "コンデンサーの電気量",
+   "category": "em",
+   "expr": "q = C V",
+   "equation": "q = C V",
+   "vars": {
+    "q": "charge",
+    "C": "capacitance",
+    "V": "voltage"
+   },
+   "note": null
+  },
+  {
+   "id": "cap_energy",
+   "name": "コンデンサーのエネルギー",
+   "category": "em",
+   "expr": "U = ½ C V²",
+   "equation": "U = C V^2",
+   "vars": {
+    "U": "energy",
+    "C": "capacitance",
+    "V": "voltage"
+   },
+   "note": null
+  },
+  {
+   "id": "rc_time",
+   "name": "RC回路の時定数",
+   "category": "em",
+   "expr": "τ = R C",
+   "equation": "tau = R C",
+   "vars": {
+    "tau": [
+     "time",
+     "τ"
+    ],
+    "R": "resistance",
+    "C": "capacitance"
+   },
+   "note": "Ω·F が s になる。抵抗と静電容量をかけると「時間」が出てくる。"
+  },
+  {
+   "id": "efield_force",
+   "name": "電場から受ける力",
+   "category": "em",
+   "expr": "F = q E",
+   "equation": "F = q E",
+   "vars": {
+    "F": "force",
+    "q": "charge",
+    "E": "electric_field"
+   },
+   "note": "電場の単位は N/C とも V/m とも書ける。"
+  },
+  {
+   "id": "uniform_field",
+   "name": "一様な電場と電圧",
+   "category": "em",
+   "expr": "V = E d",
+   "equation": "V = E d",
+   "vars": {
+    "V": "voltage",
+    "E": "electric_field",
+    "d": "length"
+   },
+   "note": null
+  },
+  {
+   "id": "coulomb",
+   "name": "クーロンの法則",
+   "category": "em",
+   "expr": "F = k q₁ q₂ / r²",
+   "equation": "F = k q1 q2 r^-2",
+   "vars": {
+    "F": "force",
+    "k": "coulomb_constant",
+    "q1": [
+     "charge",
+     "q₁"
+    ],
+    "q2": [
+     "charge",
+     "q₂"
+    ],
+    "r": "length"
+   },
+   "note": null
+  },
+  {
+   "id": "coulomb_eps",
+   "name": "クーロン定数と真空の誘電率",
+   "category": "em",
+   "expr": "k = 1 / (4π ε₀)",
+   "equation": "k = eps^-1",
+   "vars": {
+    "k": "coulomb_constant",
+    "eps": [
+     "permittivity",
+     "ε₀"
+    ]
+   },
+   "note": null
+  },
+  {
+   "id": "plate_cap",
+   "name": "平行板コンデンサーの静電容量",
+   "category": "em",
+   "expr": "C = ε S / d",
+   "equation": "C = eps S d^-1",
+   "vars": {
+    "C": "capacitance",
+    "eps": [
+     "permittivity",
+     "ε"
+    ],
+    "S": "area",
+    "d": "length"
+   },
+   "note": null
+  },
+  {
+   "id": "lorentz",
+   "name": "ローレンツ力（磁場の部分）",
+   "category": "em",
+   "expr": "F = q v B",
+   "equation": "F = q v B",
+   "vars": {
+    "F": "force",
+    "q": "charge",
+    "v": "velocity",
+    "B": "magnetic_flux_density"
+   },
+   "note": null
+  },
+  {
+   "id": "wire_force",
+   "name": "電流が磁場から受ける力",
+   "category": "em",
+   "expr": "F = I B l",
+   "equation": "F = I B l",
+   "vars": {
+    "F": "force",
+    "I": "current",
+    "B": "magnetic_flux_density",
+    "l": "length"
+   },
+   "note": null
+  },
+  {
+   "id": "flux",
+   "name": "磁束",
+   "category": "em",
+   "expr": "Φ = B S",
+   "equation": "Ph = B S",
+   "vars": {
+    "Ph": [
+     "magnetic_flux",
+     "Φ"
+    ],
+    "B": "magnetic_flux_density",
+    "S": "area"
+   },
+   "note": "T（テスラ）は Wb/m²、つまり単位面積あたりの磁束。"
+  },
+  {
+   "id": "faraday_law",
+   "name": "ファラデーの電磁誘導の法則",
+   "category": "em",
+   "expr": "V = ΔΦ / Δt",
+   "equation": "V = dPh dt^-1",
+   "vars": {
+    "V": "voltage",
+    "dPh": [
+     "magnetic_flux",
+     "ΔΦ"
+    ],
+    "dt": [
+     "time",
+     "Δt"
+    ]
+   },
+   "note": "Wb は V·s とも書ける。"
+  },
+  {
+   "id": "self_induct",
+   "name": "自己誘導",
+   "category": "em",
+   "expr": "V = L ΔI / Δt",
+   "equation": "V = L dI dt^-1",
+   "vars": {
+    "V": "voltage",
+    "L": "inductance",
+    "dI": [
+     "current",
+     "ΔI"
+    ],
+    "dt": [
+     "time",
+     "Δt"
+    ]
+   },
+   "note": null
+  },
+  {
+   "id": "flux_L",
+   "name": "磁束とインダクタンス",
+   "category": "em",
+   "expr": "Φ = L I",
+   "equation": "Ph = L I",
+   "vars": {
+    "Ph": [
+     "magnetic_flux",
+     "Φ"
+    ],
+    "L": "inductance",
+    "I": "current"
+   },
+   "note": null
+  },
+  {
+   "id": "ind_energy",
+   "name": "コイルのエネルギー",
+   "category": "em",
+   "expr": "U = ½ L I²",
+   "equation": "U = L I^2",
+   "vars": {
+    "U": "energy",
+    "L": "inductance",
+    "I": "current"
+   },
+   "note": null
+  },
+  {
+   "id": "rl_time",
+   "name": "RL回路の時定数",
+   "category": "em",
+   "expr": "τ = L / R",
+   "equation": "tau = L R^-1",
+   "vars": {
+    "tau": [
+     "time",
+     "τ"
+    ],
+    "L": "inductance",
+    "R": "resistance"
+   },
+   "note": null
+  },
+  {
+   "id": "lc_omega",
+   "name": "LC回路の固有角振動数",
+   "category": "em",
+   "expr": "ω = 1 / √(L C)",
+   "equation": "w = L^-1/2 C^-1/2",
+   "vars": {
+    "w": [
+     "angular_velocity",
+     "ω"
+    ],
+    "L": "inductance",
+    "C": "capacitance"
+   },
+   "note": "H·F が s² になるので、その −½乗で s⁻¹ になる。"
+  },
+  {
+   "id": "ampere_wire",
+   "name": "直線電流のつくる磁場",
+   "category": "em",
+   "expr": "H = I / (2π r)",
+   "equation": "H = I r^-1",
+   "vars": {
+    "H": "magnetic_field",
+    "I": "current",
+    "r": "length"
+   },
+   "note": null
+  },
+  {
+   "id": "b_mu_h",
+   "name": "磁束密度と磁場",
+   "category": "em",
+   "expr": "B = μ H",
+   "equation": "B = mu H",
+   "vars": {
+    "B": "magnetic_flux_density",
+    "mu": [
+     "permeability",
+     "μ"
+    ],
+    "H": "magnetic_field"
+   },
+   "note": null
+  },
+  {
+   "id": "light_speed",
+   "name": "光速と真空の誘電率・透磁率",
+   "category": "em",
+   "expr": "c = 1 / √(ε₀ μ₀)",
+   "equation": "c = eps^-1/2 mu^-1/2",
+   "vars": {
+    "c": "velocity",
+    "eps": [
+     "permittivity",
+     "ε₀"
+    ],
+    "mu": [
+     "permeability",
+     "μ₀"
+    ]
+   },
+   "note": "電気と磁気の定数だけから「速さ」が出てくる。光が電磁波であることの手がかりになった関係。"
+  },
+  {
+   "id": "resistivity",
+   "name": "抵抗率",
+   "category": "em",
+   "expr": "R = ρ l / S",
+   "equation": "R = rho l S^-1",
+   "vars": {
+    "R": "resistance",
+    "rho": [
+     "resistivity",
+     "ρ"
+    ],
+    "l": "length",
+    "S": "area"
+   },
+   "note": null
+  },
+  {
+   "id": "conductivity",
+   "name": "電気伝導率",
+   "category": "em",
+   "expr": "σ = 1 / ρ",
+   "equation": "sig = rho^-1",
+   "vars": {
+    "sig": [
+     "conductivity",
+     "σ"
+    ],
+    "rho": [
+     "resistivity",
+     "ρ"
+    ]
+   },
+   "note": null
+  },
+  {
+   "id": "current_density",
+   "name": "電流密度",
+   "category": "em",
+   "expr": "j = I / S",
+   "equation": "j = I S^-1",
+   "vars": {
+    "j": "current_density",
+    "I": "current",
+    "S": "area"
+   },
+   "note": null
+  },
+  {
+   "id": "ohm_micro",
+   "name": "オームの法則（局所形）",
+   "category": "em",
+   "expr": "j = σ E",
+   "equation": "j = sig E",
+   "vars": {
+    "j": "current_density",
+    "sig": [
+     "conductivity",
+     "σ"
+    ],
+    "E": "electric_field"
+   },
+   "note": null
+  },
+  {
+   "id": "drift",
+   "name": "電流密度とキャリアの運動",
+   "category": "em",
+   "expr": "j = n q v",
+   "equation": "j = n q v",
+   "vars": {
+    "j": "current_density",
+    "n": "number_density",
+    "q": "charge",
+    "v": "velocity"
+   },
+   "note": null
+  },
+  {
+   "id": "faraday",
+   "name": "ファラデー定数",
+   "category": "em",
+   "expr": "q = n F",
+   "equation": "q = n F",
+   "vars": {
+    "q": "charge",
+    "n": "amount",
+    "F": "faraday"
+   },
+   "note": null
+  },
+  {
+   "id": "faraday_e",
+   "name": "ファラデー定数と電気素量",
+   "category": "em",
+   "expr": "F = N_A e",
+   "equation": "F = NA e",
+   "vars": {
+    "F": "faraday",
+    "NA": [
+     "avogadro",
+     "N_A"
+    ],
+    "e": "charge"
+   },
+   "note": null
+  },
+  {
+   "id": "wave",
+   "name": "波の基本式",
+   "category": "wave",
+   "expr": "v = f λ",
+   "equation": "v = f lam",
+   "vars": {
+    "v": "velocity",
+    "f": "frequency",
+    "lam": [
+     "length",
+     "λ"
+    ]
+   },
+   "note": null
+  },
+  {
+   "id": "wavenumber",
+   "name": "波数",
+   "category": "wave",
+   "expr": "k = 2π / λ",
+   "equation": "k = lam^-1",
+   "vars": {
+    "k": "wavenumber",
+    "lam": [
+     "length",
+     "λ"
+    ]
+   },
+   "note": null
+  },
+  {
+   "id": "planck",
+   "name": "光子のエネルギー",
+   "category": "wave",
+   "expr": "E = h f",
+   "equation": "E = h f",
+   "vars": {
+    "E": "energy",
+    "h": "planck",
+    "f": "frequency"
+   },
+   "note": null
+  },
+  {
+   "id": "de_broglie",
+   "name": "ド・ブロイ波長",
+   "category": "wave",
+   "expr": "λ = h / p",
+   "equation": "lam = h p^-1",
+   "vars": {
+    "lam": [
+     "length",
+     "λ"
+    ],
+    "h": "planck",
+    "p": "momentum"
+   },
+   "note": null
+  },
+  {
+   "id": "mass_energy",
+   "name": "質量とエネルギーの等価性",
+   "category": "wave",
+   "expr": "E = m c²",
+   "equation": "E = m c^2",
+   "vars": {
+    "E": "energy",
+    "m": "mass",
+    "c": "velocity"
+   },
+   "note": "kg·(m/s)² は J そのもの。質量に速さの2乗をかけるとエネルギーの単位になる。"
+  },
+  {
+   "id": "intensity",
+   "name": "強度",
+   "category": "wave",
+   "expr": "I = P / S",
+   "equation": "I = P S^-1",
+   "vars": {
+    "I": "intensity",
+    "P": "power",
+    "S": "area"
+   },
+   "note": null
+  },
+  {
+   "id": "lum_flux",
+   "name": "光束と光度",
+   "category": "wave",
+   "expr": "Φ_v = I_v Ω",
+   "equation": "Pv = Iv Om",
+   "vars": {
+    "Pv": [
+     "luminous_flux",
+     "Φ_v"
+    ],
+    "Iv": [
+     "luminous_intensity",
+     "I_v"
+    ],
+    "Om": [
+     "solid_angle",
+     "Ω"
+    ]
+   },
+   "note": "lm（ルーメン）は cd·sr。sr は無次元なので次元は cd と同じ。"
+  },
+  {
+   "id": "illum",
+   "name": "照度",
+   "category": "wave",
+   "expr": "E_v = Φ_v / S",
+   "equation": "Ev = Pv S^-1",
+   "vars": {
+    "Ev": [
+     "illuminance",
+     "E_v"
+    ],
+    "Pv": [
+     "luminous_flux",
+     "Φ_v"
+    ],
+    "S": "area"
+   },
+   "note": null
+  },
+  {
+   "id": "activity",
+   "name": "放射能",
+   "category": "misc",
+   "expr": "A = ΔN / Δt",
+   "equation": "A = dN dt^-1",
+   "vars": {
+    "A": "activity",
+    "dN": [
+     "number",
+     "ΔN"
+    ],
+    "dt": [
+     "time",
+     "Δt"
+    ]
+   },
+   "note": "個数は無次元なので、Bq は s⁻¹。次元は Hz と同じだが、崩壊の数を数える場合は Bq を使う。"
+  },
+  {
+   "id": "absorbed",
+   "name": "吸収線量",
+   "category": "misc",
+   "expr": "D = E / m",
+   "equation": "D = E m^-1",
+   "vars": {
+    "D": "absorbed_dose",
+    "E": "energy",
+    "m": "mass"
+   },
+   "note": null
+  },
+  {
+   "id": "equivalent",
+   "name": "等価線量",
+   "category": "misc",
+   "expr": "H = w_R D",
+   "equation": "H = wR D",
+   "vars": {
+    "H": "equivalent_dose",
+    "wR": [
+     "number",
+     "w_R"
+    ],
+    "D": "absorbed_dose"
+   },
+   "note": "放射線加重係数 w_R は無次元なので、Sv と Gy は同じ次元（J/kg）になる。"
+  },
+  {
+   "id": "catalytic",
+   "name": "触媒活性",
+   "category": "misc",
+   "expr": "z = Δn / Δt",
+   "equation": "z = dn dt^-1",
+   "vars": {
+    "z": "catalytic_activity",
+    "dn": [
+     "amount",
+     "Δn"
+    ],
+    "dt": [
+     "time",
+     "Δt"
+    ]
+   },
+   "note": null
+  }
+ ]
+}

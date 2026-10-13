@@ -3,272 +3,73 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ブツリ単位ラボ | ブツリ単位ラボ</title>
-<meta name="description" content="物理単位の変換＆次元解析。なぜその変換式が成り立つのかを、SI基本単位への分解で理解する。">
-<link rel="canonical" href="https://tanitani.pages.dev/">
+<title>SI単位と次元解析で物理を理解する | ブツリ単位ラボ</title>
+<meta name="description" content="知らない単位や公式を、知っている公式と単位だけで理解する。SI単位と次元解析で物理量を基本単位まで分解するサイト。">
+<link rel="canonical" href="https://tanitani.amft00571.workers.dev/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg: #f7f7f5;
-  --fg: #1a1a1a;
-  --accent: #2563eb;
-  --accent-light: #dbeafe;
-  --dim: #6b7280;
-  --border: #d1d5db;
-  --card-bg: #ffffff;
-  --code-bg: #f3f4f6;
-  --radius: 6px;
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #111113;
-    --fg: #e4e4e7;
-    --accent: #60a5fa;
-    --accent-light: #1e293b;
-    --dim: #9ca3af;
-    --border: #374151;
-    --card-bg: #1c1c1f;
-    --code-bg: #1e1e22;
-  }
-}
-*, *::before, *::after { box-sizing: border-box; margin: 0; }
-body {
-  font-family: 'Noto Sans JP', sans-serif;
-  background: var(--bg);
-  color: var(--fg);
-  line-height: 1.75;
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 2rem 1.25rem 4rem;
-}
-a { color: var(--accent); text-decoration: none; }
-a:hover { text-decoration: underline; }
-h1 { font-size: 1.6rem; font-weight: 700; margin-bottom: .5rem; line-height: 1.35; }
-h2 { font-size: 1.15rem; font-weight: 700; margin: 2rem 0 .75rem; padding-bottom: .35rem; border-bottom: 2px solid var(--accent); }
-h3 { font-size: 1rem; font-weight: 700; margin: 1.5rem 0 .5rem; }
-p { margin-bottom: 1rem; }
-code, .mono { font-family: 'IBM Plex Mono', monospace; }
-.dim { color: var(--dim); font-size: .85rem; }
-.card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.25rem;
-  margin-bottom: 1.25rem;
-}
-.converter {
-  background: var(--accent-light);
-  border: 2px solid var(--accent);
-  border-radius: var(--radius);
-  padding: 1.5rem;
-  margin: 1.5rem 0;
-  text-align: center;
-}
-.converter input {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 1.3rem;
-  width: 140px;
-  padding: .4rem .6rem;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--card-bg);
-  color: var(--fg);
-  text-align: right;
-}
-.converter .symbol {
-  font-family: 'IBM Plex Mono', monospace;
-  font-weight: 600;
-  margin: 0 .35rem;
-}
-.converter .arrow { font-size: 1.4rem; margin: 0 .75rem; }
-.dim-box {
-  background: var(--code-bg);
-  border-left: 3px solid var(--accent);
-  padding: 1rem 1.25rem;
-  margin: 1rem 0;
-  border-radius: 0 var(--radius) var(--radius) 0;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: .95rem;
-  line-height: 1.9;
-}
-nav.breadcrumb {
-  font-size: .82rem;
-  color: var(--dim);
-  margin-bottom: 1rem;
-}
-nav.breadcrumb a { color: var(--dim); }
-.tag {
-  display: inline-block;
-  background: var(--accent-light);
-  color: var(--accent);
-  font-size: .75rem;
-  font-weight: 700;
-  padding: .15rem .5rem;
-  border-radius: 3px;
-  margin-right: .35rem;
-}
-footer {
-  margin-top: 3rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--border);
-  font-size: .8rem;
-  color: var(--dim);
-}
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: .75rem;
-}
-.grid a {
-  display: block;
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: .75rem 1rem;
-  transition: border-color .15s;
-}
-.grid a:hover {
-  border-color: var(--accent);
-  text-decoration: none;
-}
-
+:root{--bg:#f7f7f4;--fg:#1b1b1b;--accent:#1d5fd1;--accent-soft:#e3ecfb;--dim:#666b73;--border:#d7d9dc;--card:#fff;--code:#f1f2f3;--ok:#18794e;--r:6px}
+@media (prefers-color-scheme:dark){:root{--bg:#111214;--fg:#e6e6e8;--accent:#7aa7f5;--accent-soft:#1b2537;--dim:#9aa0a8;--border:#33363b;--card:#1a1b1e;--code:#1f2124;--ok:#4fc38a}}
+*,*::before,*::after{box-sizing:border-box;margin:0}
+body{font-family:'Noto Sans JP',system-ui,sans-serif;background:var(--bg);color:var(--fg);line-height:1.8;max-width:760px;margin:0 auto;padding:1.5rem 16px 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+header.site{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap;margin-bottom:1.25rem;font-size:.9rem}
+header.site .logo{font-weight:700;color:var(--fg);font-size:1rem}
+header.site nav a{margin-left:.9rem;color:var(--dim)}
+nav.bc{font-size:.8rem;color:var(--dim);margin-bottom:.75rem}nav.bc a{color:var(--dim)}
+h1{font-size:1.5rem;line-height:1.4;margin-bottom:.6rem}
+h2{font-size:1.12rem;margin:2.2rem 0 .8rem;padding-bottom:.3rem;border-bottom:2px solid var(--accent)}
+h3{font-size:1rem;margin:1.4rem 0 .5rem}
+p{margin-bottom:1rem}ul,ol{margin:0 0 1rem 1.3rem}li{margin-bottom:.35rem}
+.lead{color:var(--dim)}
+.mono,code{font-family:'IBM Plex Mono',ui-monospace,monospace}
+.hero{background:var(--accent-soft);border:2px solid var(--accent);border-radius:var(--r);padding:1.2rem 1.25rem;margin:1.2rem 0;text-align:center}
+.hero .big{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1.45rem;font-weight:600;overflow-wrap:anywhere}
+.hero .sub{color:var(--dim);font-size:.85rem;margin-top:.3rem}
+.step{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:.9rem 1rem;margin-bottom:.8rem}
+.step .no{display:inline-block;background:var(--accent);color:#fff;font-size:.75rem;font-weight:700;border-radius:3px;padding:0 .45rem;margin-right:.4rem}
+.calc{font-family:'IBM Plex Mono',ui-monospace,monospace;background:var(--code);border-left:3px solid var(--accent);padding:.6rem .9rem;margin:.5rem 0 .2rem;border-radius:0 var(--r) var(--r) 0;overflow-x:auto;white-space:nowrap;font-size:.92rem;line-height:2}
+.ok{color:var(--ok);font-weight:700}
+table{width:100%;border-collapse:collapse;margin-bottom:1rem;font-size:.92rem}
+th,td{text-align:left;padding:.45rem .5rem;border-bottom:1px solid var(--border);vertical-align:top}
+th{font-size:.8rem;color:var(--dim);font-weight:700}
+td.mono{white-space:nowrap}
+.tbl{overflow-x:auto}
+.note{background:var(--card);border:1px dashed var(--border);border-radius:var(--r);padding:.8rem 1rem;margin:1rem 0;font-size:.92rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:.6rem;margin-bottom:1rem}
+.grid a{display:block;background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:.6rem .8rem;color:var(--fg)}
+.grid a:hover{border-color:var(--accent);text-decoration:none}
+.grid .u{font-family:'IBM Plex Mono',ui-monospace,monospace;color:var(--accent);font-size:.9rem}
+.tag{display:inline-block;font-size:.72rem;font-weight:700;color:var(--accent);background:var(--accent-soft);border-radius:3px;padding:.05rem .45rem;margin-right:.3rem}
+footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.8rem;color:var(--dim)}
 </style>
 </head>
 <body>
+<header class="site"><a class="logo" href="/">ブツリ単位ラボ</a><nav><a href="/guide.html">使い方</a><a href="/#cats">分野一覧</a></nav></header>
 
-<h1 style="font-size:2rem; margin-bottom:.25rem;">ブツリ単位ラボ</h1>
-<p style="font-size:1.05rem; color:var(--dim); margin-bottom:2rem;">
-  単位を変換するだけでなく、<strong>なぜその変換が成り立つのか</strong>を次元解析で理解する。
-</p>
-
-<div class="card" style="border-color:var(--accent);">
-  <h3>このサイトの特徴</h3>
-  <p>一般的な単位変換サイトは「1Pa = ○○atm」と結果だけを表示します。
-  このサイトは、すべての単位をSI基本単位（kg, m, s, A, K, mol, cd）まで分解し、
-  変換係数がどこから来るのかを導出します。</p>
-  <p>公式を丸暗記するのではなく、次元から理解すれば、忘れても自分で導き出せます。</p>
-</div>
-<p class='dim'>全276ページの変換解説を収録</p>
-
-<h2><a href="/category/force.html">力</a></h2>
-<p class="dim">次元: M·L·T⁻² — 物体の運動状態を変える作用</p>
-<div class="grid">
-  <a href="/convert/N-to-kgf.html">N → kgf</a>
-  <a href="/convert/N-to-dyn.html">N → dyn</a>
-  <a href="/convert/N-to-lbf.html">N → lbf</a>
-  <a href="/convert/kgf-to-N.html">kgf → N</a>
-  <a href="/convert/kgf-to-dyn.html">kgf → dyn</a>
-  <a href="/convert/kgf-to-lbf.html">kgf → lbf</a>
-</div>
-<p class="dim"><a href="/category/force.html">他6件の変換を見る →</a></p>
-
-<h2><a href="/category/pressure.html">圧力</a></h2>
-<p class="dim">次元: M·L⁻¹·T⁻² — 単位面積あたりに働く力</p>
-<div class="grid">
-  <a href="/convert/Pa-to-kPa.html">Pa → kPa</a>
-  <a href="/convert/Pa-to-MPa.html">Pa → MPa</a>
-  <a href="/convert/Pa-to-atm.html">Pa → atm</a>
-  <a href="/convert/Pa-to-bar.html">Pa → bar</a>
-  <a href="/convert/Pa-to-mmHg.html">Pa → mmHg</a>
-  <a href="/convert/Pa-to-psi.html">Pa → psi</a>
-</div>
-<p class="dim"><a href="/category/pressure.html">他50件の変換を見る →</a></p>
-
-<h2><a href="/category/energy.html">エネルギー</a></h2>
-<p class="dim">次元: M·L²·T⁻² — 仕事をする能力、または物体の状態変化の指標</p>
-<div class="grid">
-  <a href="/convert/J-to-kJ.html">J → kJ</a>
-  <a href="/convert/J-to-cal.html">J → cal</a>
-  <a href="/convert/J-to-kcal.html">J → kcal</a>
-  <a href="/convert/J-to-eV.html">J → eV</a>
-  <a href="/convert/J-to-kWh.html">J → kWh</a>
-  <a href="/convert/J-to-erg.html">J → erg</a>
-</div>
-<p class="dim"><a href="/category/energy.html">他36件の変換を見る →</a></p>
-
-<h2><a href="/category/power.html">仕事率（パワー）</a></h2>
-<p class="dim">次元: M·L²·T⁻³ — 単位時間あたりのエネルギー変換量</p>
-<div class="grid">
-  <a href="/convert/W-to-kW.html">W → kW</a>
-  <a href="/convert/W-to-HP.html">W → HP</a>
-  <a href="/convert/W-to-PS.html">W → PS</a>
-  <a href="/convert/kW-to-W.html">kW → W</a>
-  <a href="/convert/kW-to-HP.html">kW → HP</a>
-  <a href="/convert/kW-to-PS.html">kW → PS</a>
-</div>
-<p class="dim"><a href="/category/power.html">他6件の変換を見る →</a></p>
-
-<h2><a href="/category/electric.html">電圧・電気抵抗・静電容量</a></h2>
-<p class="dim">次元: （量による） — 電磁気学の基本量</p>
-<div class="grid">
-  <a href="/convert/V-to-Ω.html">V → Ω</a>
-  <a href="/convert/V-to-F.html">V → F</a>
-  <a href="/convert/V-to-C.html">V → C</a>
-  <a href="/convert/Ω-to-V.html">Ω → V</a>
-  <a href="/convert/Ω-to-F.html">Ω → F</a>
-  <a href="/convert/Ω-to-C.html">Ω → C</a>
-</div>
-<p class="dim"><a href="/category/electric.html">他6件の変換を見る →</a></p>
-
-<h2><a href="/category/frequency.html">周波数</a></h2>
-<p class="dim">次元: T⁻¹ — 単位時間あたりの振動・回転の回数</p>
-<div class="grid">
-  <a href="/convert/Hz-to-rpm.html">Hz → rpm</a>
-  <a href="/convert/rpm-to-Hz.html">rpm → Hz</a>
-</div>
-
-<h2><a href="/category/temperature.html">温度</a></h2>
-<p class="dim">次元: Θ — 物体の熱的な状態を表す量</p>
-<div class="grid">
-  <a href="/convert/K-to-degC.html">K → ℃</a>
-  <a href="/convert/K-to-degF.html">K → ℉</a>
-  <a href="/convert/degC-to-K.html">℃ → K</a>
-  <a href="/convert/degC-to-degF.html">℃ → ℉</a>
-  <a href="/convert/degF-to-K.html">℉ → K</a>
-  <a href="/convert/degF-to-degC.html">℉ → ℃</a>
-</div>
-
-<h2><a href="/category/length.html">長さ</a></h2>
-<p class="dim">次元: L — 空間における2点間の距離</p>
-<div class="grid">
-  <a href="/convert/m-to-km.html">m → km</a>
-  <a href="/convert/m-to-cm.html">m → cm</a>
-  <a href="/convert/m-to-mm.html">m → mm</a>
-  <a href="/convert/m-to-um.html">m → μm</a>
-  <a href="/convert/m-to-nm.html">m → nm</a>
-  <a href="/convert/m-to-Å.html">m → Å</a>
-</div>
-<p class="dim"><a href="/category/length.html">他66件の変換を見る →</a></p>
-
-<h2><a href="/category/mass.html">質量</a></h2>
-<p class="dim">次元: M — 物体の慣性の大きさ</p>
-<div class="grid">
-  <a href="/convert/kg-to-g.html">kg → g</a>
-  <a href="/convert/kg-to-mg.html">kg → mg</a>
-  <a href="/convert/kg-to-t.html">kg → t</a>
-  <a href="/convert/kg-to-lb.html">kg → lb</a>
-  <a href="/convert/kg-to-oz.html">kg → oz</a>
-  <a href="/convert/kg-to-u.html">kg → u (amu)</a>
-</div>
-<p class="dim"><a href="/category/mass.html">他36件の変換を見る →</a></p>
-
-<h2><a href="/category/speed.html">速度</a></h2>
-<p class="dim">次元: L·T⁻¹ — 単位時間あたりに移動する距離</p>
-<div class="grid">
-  <a href="/convert/ms-to-kmh.html">m/s → km/h</a>
-  <a href="/convert/ms-to-mph.html">m/s → mph</a>
-  <a href="/convert/ms-to-knot.html">m/s → kn</a>
-  <a href="/convert/ms-to-c.html">m/s → c</a>
-  <a href="/convert/kmh-to-ms.html">km/h → m/s</a>
-  <a href="/convert/kmh-to-mph.html">km/h → mph</a>
-</div>
-<p class="dim"><a href="/category/speed.html">他14件の変換を見る →</a></p>
-
-<footer>
-  <p><a href="/">トップ</a>に戻る</p>
-  <p>ブツリ単位ラボ — 物理単位の変換と次元解析による理解</p>
-</footer>
+<h1>知らない単位も、知っている公式から組み立てればわかる</h1>
+<p class="lead">知らない単位や公式を、知っている公式と単位だけで理解する。SI単位と次元解析で物理量を基本単位まで分解するサイト。</p>
+<div class="hero"><div class="big">J = N·m = kg·m²/s²</div><div class="sub">F = ma と W = Fx を知っていれば、ジュールの中身は自分で導ける</div></div>
+<h2>このサイトの考え方</h2>
+<p>物理の単位は、たった7つの基本単位のかけ算・わり算でできています。初めて見る単位や公式も、知っている公式を使って基本単位まで分解すれば、その正体がわかります。このサイトでは数値の換算は扱わず、<b>SI単位と次元だけ</b>で説明します。</p>
+<p><a href="/guide.html">→ 次元解析の使い方を読む</a></p>
+<h2>7つの基本単位</h2><div class="grid"><a href="/q/length.html">長さ<div class="u">m</div></a><a href="/q/mass.html">質量<div class="u">kg</div></a><a href="/q/time.html">時間<div class="u">s</div></a><a href="/q/current.html">電流<div class="u">A</div></a><a href="/q/temperature.html">温度（熱力学温度）<div class="u">K</div></a><a href="/q/amount.html">物質量<div class="u">mol</div></a><a href="/q/luminous_intensity.html">光度<div class="u">cd</div></a></div>
+<h2>まずはここから</h2><div class="grid"><a href="/q/force.html">力<div class="u">N</div></a><a href="/q/energy.html">エネルギー・仕事・熱量<div class="u">J</div></a><a href="/q/power.html">仕事率・電力<div class="u">W</div></a><a href="/q/voltage.html">電圧・電位<div class="u">V</div></a><a href="/q/resistance.html">電気抵抗<div class="u">Ω</div></a><a href="/q/magnetic_flux_density.html">磁束密度<div class="u">T</div></a><a href="/q/planck.html">プランク定数<div class="u">J·s</div></a><a href="/q/gas_constant.html">気体定数<div class="u">J/(mol·K)</div></a></div>
+<h2 id="cats">分野から探す</h2>
+<h3><a href="/c/base.html">基本量</a> <span class="lead" style="font-size:.85rem;font-weight:400">量 10・公式 2</span></h3>
+<p class="lead">SIの7つの基本単位と、角度などの無次元量。すべての単位はここから組み立てられる。</p>
+<h3><a href="/c/mech.html">力学</a> <span class="lead" style="font-size:.85rem;font-weight:400">量 22・公式 41</span></h3>
+<p class="lead">速さ・力・エネルギー・圧力・回転など、運動を扱う量。</p>
+<h3><a href="/c/thermo.html">熱・気体</a> <span class="lead" style="font-size:.85rem;font-weight:400">量 10・公式 12</span></h3>
+<p class="lead">温度・熱量・気体の状態・熱の伝わり方に関わる量。</p>
+<h3><a href="/c/em.html">電磁気</a> <span class="lead" style="font-size:.85rem;font-weight:400">量 17・公式 33</span></h3>
+<p class="lead">電荷・電圧・抵抗・静電容量・磁場など、電気と磁気の量。</p>
+<h3><a href="/c/wave.html">波・光・量子</a> <span class="lead" style="font-size:.85rem;font-weight:400">量 5・公式 8</span></h3>
+<p class="lead">波数・光子のエネルギー・光の明るさなど。</p>
+<h3><a href="/c/misc.html">放射線・化学</a> <span class="lead" style="font-size:.85rem;font-weight:400">量 4・公式 4</span></h3>
+<p class="lead">放射能・被ばく線量・反応速度など。</p>
+<footer>ブツリ単位ラボ — SI単位と次元解析で物理を理解する。<br>単位はすべてSI（国際単位系）で表記しています。</footer>
 </body>
 </html>

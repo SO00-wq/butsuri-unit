@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>力と時間の関係｜N と s をつなぐ公式 | ブツリ単位ラボ</title>
+<meta name="description" content="力（N）と時間（s）を結ぶ公式と、単位どうしの関係を次元解析で整理。">
+<link rel="canonical" href="https://tanitani.amft00571.workers.dev/r/force--time.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f7f4;--fg:#1b1b1b;--accent:#1d5fd1;--accent-soft:#e3ecfb;--dim:#666b73;--border:#d7d9dc;--card:#fff;--code:#f1f2f3;--ok:#18794e;--r:6px}
+@media (prefers-color-scheme:dark){:root{--bg:#111214;--fg:#e6e6e8;--accent:#7aa7f5;--accent-soft:#1b2537;--dim:#9aa0a8;--border:#33363b;--card:#1a1b1e;--code:#1f2124;--ok:#4fc38a}}
+*,*::before,*::after{box-sizing:border-box;margin:0}
+body{font-family:'Noto Sans JP',system-ui,sans-serif;background:var(--bg);color:var(--fg);line-height:1.8;max-width:760px;margin:0 auto;padding:1.5rem 16px 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+header.site{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap;margin-bottom:1.25rem;font-size:.9rem}
+header.site .logo{font-weight:700;color:var(--fg);font-size:1rem}
+header.site nav a{margin-left:.9rem;color:var(--dim)}
+nav.bc{font-size:.8rem;color:var(--dim);margin-bottom:.75rem}nav.bc a{color:var(--dim)}
+h1{font-size:1.5rem;line-height:1.4;margin-bottom:.6rem}
+h2{font-size:1.12rem;margin:2.2rem 0 .8rem;padding-bottom:.3rem;border-bottom:2px solid var(--accent)}
+h3{font-size:1rem;margin:1.4rem 0 .5rem}
+p{margin-bottom:1rem}ul,ol{margin:0 0 1rem 1.3rem}li{margin-bottom:.35rem}
+.lead{color:var(--dim)}
+.mono,code{font-family:'IBM Plex Mono',ui-monospace,monospace}
+.hero{background:var(--accent-soft);border:2px solid var(--accent);border-radius:var(--r);padding:1.2rem 1.25rem;margin:1.2rem 0;text-align:center}
+.hero .big{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1.45rem;font-weight:600;overflow-wrap:anywhere}
+.hero .sub{color:var(--dim);font-size:.85rem;margin-top:.3rem}
+.step{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:.9rem 1rem;margin-bottom:.8rem}
+.step .no{display:inline-block;background:var(--accent);color:#fff;font-size:.75rem;font-weight:700;border-radius:3px;padding:0 .45rem;margin-right:.4rem}
+.calc{font-family:'IBM Plex Mono',ui-monospace,monospace;background:var(--code);border-left:3px solid var(--accent);padding:.6rem .9rem;margin:.5rem 0 .2rem;border-radius:0 var(--r) var(--r) 0;overflow-x:auto;white-space:nowrap;font-size:.92rem;line-height:2}
+.ok{color:var(--ok);font-weight:700}
+table{width:100%;border-collapse:collapse;margin-bottom:1rem;font-size:.92rem}
+th,td{text-align:left;padding:.45rem .5rem;border-bottom:1px solid var(--border);vertical-align:top}
+th{font-size:.8rem;color:var(--dim);font-weight:700}
+td.mono{white-space:nowrap}
+.tbl{overflow-x:auto}
+.note{background:var(--card);border:1px dashed var(--border);border-radius:var(--r);padding:.8rem 1rem;margin:1rem 0;font-size:.92rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:.6rem;margin-bottom:1rem}
+.grid a{display:block;background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:.6rem .8rem;color:var(--fg)}
+.grid a:hover{border-color:var(--accent);text-decoration:none}
+.grid .u{font-family:'IBM Plex Mono',ui-monospace,monospace;color:var(--accent);font-size:.9rem}
+.tag{display:inline-block;font-size:.72rem;font-weight:700;color:var(--accent);background:var(--accent-soft);border-radius:3px;padding:.05rem .45rem;margin-right:.3rem}
+footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.8rem;color:var(--dim)}
+</style>
+</head>
+<body>
+<header class="site"><a class="logo" href="/">ブツリ単位ラボ</a><nav><a href="/guide.html">使い方</a><a href="/#cats">分野一覧</a></nav></header>
+<nav class="bc"><a href="/">トップ</a> › <a href="/q/force.html">力</a> › 時間との関係</nav>
+<h1>力と時間の関係</h1>
+<div class="hero"><div class="big">N　と　s</div><div class="sub">[M L T⁻²]　と　[T]</div></div>
+<h2>単位の比から見る</h2>
+<div class="calc">[力] ÷ [時間] = (kg·m/s²) ÷ (s) = kg·m/s³</div>
+<h2>2つの量を結ぶ公式</h2>
+<div class="step"><b><a href="/f/impulse_def.html">力積の定義</a></b>：<span class="mono">I = F Δt</span>
+<div class="calc">F = I / Δt<br>[F] = (N·s) × (s)⁻¹<br>　　= N<br>　　= kg·m/s²</div>
+<div class="calc">Δt = I / F<br>[Δt] = (N·s) × (N)⁻¹<br>　　= s</div>
+</div>
+<div class="step"><b><a href="/f/impulse_momentum.html">力積と運動量の関係</a></b>：<span class="mono">F Δt = Δp</span>
+<div class="calc">F = Δp / Δt<br>[F] = (s)⁻¹ × (kg·m/s)<br>　　= kg·m/s²<br>　　= N</div>
+<div class="calc">Δt = Δp / F<br>[Δt] = (N)⁻¹ × (kg·m/s)<br>　　= kg·m/(N·s)<br>　　= s</div>
+</div>
+<h2>それぞれの量のページ</h2><ul>
+<li><a href="/q/force.html">力</a>（<span class="mono">N = kg·m/s²</span>）</li>
+<li><a href="/q/time.html">時間</a>（<span class="mono">s = s</span>）</li>
+</ul>
+<footer>ブツリ単位ラボ — SI単位と次元解析で物理を理解する。<br>単位はすべてSI（国際単位系）で表記しています。</footer>
+</body>
+</html>
