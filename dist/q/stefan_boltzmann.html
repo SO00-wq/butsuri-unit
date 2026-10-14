@@ -7,57 +7,47 @@
 <meta name="description" content="シュテファン＝ボルツマン定数の単位W/(m²·K⁴)を、知っている公式からSI基本単位kg/(s³·K⁴)まで分解して理解する。同じ単位の別の書き方と、同じ次元をもつ量も紹介。">
 <link rel="canonical" href="https://tanitani.butsuri-lab.workers.dev/q/stefan_boltzmann.html">
 <meta name="google-site-verification" content="kVE91IWkP86K1E_JpBQDklXXu5gz86ZOA64xcgtDUwc">
+<meta name="theme-color" content="#1d5fd1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#f7f7f4;--fg:#1b1b1b;--accent:#1d5fd1;--accent-soft:#e3ecfb;--dim:#666b73;--border:#d7d9dc;--card:#fff;--code:#f1f2f3;--ok:#18794e;--r:6px}
-@media (prefers-color-scheme:dark){:root{--bg:#111214;--fg:#e6e6e8;--accent:#7aa7f5;--accent-soft:#1b2537;--dim:#9aa0a8;--border:#33363b;--card:#1a1b1e;--code:#1f2124;--ok:#4fc38a}}
-*,*::before,*::after{box-sizing:border-box;margin:0}
-body{font-family:'Noto Sans JP',system-ui,sans-serif;background:var(--bg);color:var(--fg);line-height:1.8;max-width:760px;margin:0 auto;padding:1.5rem 16px 4rem}
-a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
-header.site{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap;margin-bottom:1.25rem;font-size:.9rem}
-header.site .logo{font-weight:700;color:var(--fg);font-size:1rem}
-header.site nav a{margin-left:.9rem;color:var(--dim)}
-nav.bc{font-size:.8rem;color:var(--dim);margin-bottom:.75rem}nav.bc a{color:var(--dim)}
-h1{font-size:1.5rem;line-height:1.4;margin-bottom:.6rem}
-h2{font-size:1.12rem;margin:2.2rem 0 .8rem;padding-bottom:.3rem;border-bottom:2px solid var(--accent)}
-h3{font-size:1rem;margin:1.4rem 0 .5rem}
-p{margin-bottom:1rem}ul,ol{margin:0 0 1rem 1.3rem}li{margin-bottom:.35rem}
-.lead{color:var(--dim)}
-.mono,code{font-family:'IBM Plex Mono',ui-monospace,monospace}
-.hero{background:var(--accent-soft);border:2px solid var(--accent);border-radius:var(--r);padding:1.2rem 1.25rem;margin:1.2rem 0;text-align:center}
-.hero .big{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1.45rem;font-weight:600;overflow-wrap:anywhere}
-.hero .sub{color:var(--dim);font-size:.85rem;margin-top:.3rem}
-.step{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:.9rem 1rem;margin-bottom:.8rem}
-.step .st{margin-bottom:.35rem;font-size:.95rem}.step p{margin:.2rem 0 .3rem}.step .lead{font-size:.85rem}
-details.pre{margin-bottom:.9rem}details.pre summary{cursor:pointer;color:var(--dim);font-size:.9rem;margin-bottom:.6rem}
-.calc{font-family:'IBM Plex Mono',ui-monospace,monospace;background:var(--code);border-left:3px solid var(--accent);padding:.6rem .9rem;margin:.5rem 0 .2rem;border-radius:0 var(--r) var(--r) 0;overflow-x:auto;white-space:nowrap;font-size:.92rem;line-height:2}
-.ok{color:var(--ok);font-weight:700}
-table{width:100%;border-collapse:collapse;margin-bottom:1rem;font-size:.92rem}
-th,td{text-align:left;padding:.45rem .5rem;border-bottom:1px solid var(--border);vertical-align:top}
-th{font-size:.8rem;color:var(--dim);font-weight:700}
-td.mono{white-space:nowrap}
-.tbl{overflow-x:auto}
-.note{background:var(--card);border:1px dashed var(--border);border-radius:var(--r);padding:.8rem 1rem;margin:1rem 0;font-size:.92rem}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:.6rem;margin-bottom:1rem}
-.grid a{display:block;background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:.6rem .8rem;color:var(--fg)}
-.grid a:hover{border-color:var(--accent);text-decoration:none}
-.grid .u{font-family:'IBM Plex Mono',ui-monospace,monospace;color:var(--accent);font-size:.9rem}
-.tag{display:inline-block;font-size:.72rem;font-weight:700;color:var(--accent);background:var(--accent-soft);border-radius:3px;padding:.05rem .45rem;margin-right:.3rem}
-footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.8rem;color:var(--dim)}
-</style>
+<link rel="stylesheet" href="/assets/site.css?v=2">
+<script src="/assets/site.js?v=2" defer></script>
 </head>
 <body>
-<header class="site"><a class="logo" href="/">ブツリ単位ラボ</a><nav><a href="/guide.html">使い方</a><a href="/#cats">分野一覧</a></nav></header>
-<nav class="bc"><a href="/">トップ</a> › <a href="/c/thermo.html">熱・気体</a> › シュテファン＝ボルツマン定数</nav>
+<a class="skip" href="#main">本文へ移動</a>
+<header class="site"><div class="wrap">
+  <a class="logo" href="/"><span class="mark">SI</span>ブツリ単位ラボ</a>
+  <nav class="hdr-nav" aria-label="メインメニュー">
+    <a class="txt" href="/guide.html">使い方</a>
+    <button class="icon-btn" data-open-search aria-label="検索"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
+    <button class="icon-btn" id="menu-btn" aria-label="メニューを開く" aria-controls="drawer" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </nav>
+</div></header>
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" inert aria-label="メニュー">
+  <div class="drawer-head">メニュー<button class="icon-btn" id="close-btn" aria-label="メニューを閉じる"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <div class="drawer-body">
+    <div class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="q" type="search" placeholder="量・単位・公式を検索（例：電圧、J/K）" autocomplete="off" aria-label="サイト内検索"></div>
+    <div class="search-hint">名前でも単位記号でも探せます。</div>
+    <ul class="results" id="results" aria-live="polite"></ul>
+    <div class="nav-sec"><h4>ページ</h4><ul>
+      <li><a href="/">トップ</a></li>
+      <li><a href="/guide.html">次元解析の使い方</a></li>
+    </ul></div>
+    <div class="nav-sec"><h4>分野</h4><ul><li><a href="/c/base.html">基本量<span class="n">10量</span></a></li><li><a href="/c/mech.html">力学<span class="n">22量</span></a></li><li><a href="/c/thermo.html">熱・気体<span class="n">10量</span></a></li><li><a href="/c/em.html">電磁気<span class="n">17量</span></a></li><li><a href="/c/wave.html">波・光・量子<span class="n">5量</span></a></li><li><a href="/c/misc.html">放射線・化学<span class="n">4量</span></a></li></ul></div>
+    <div class="nav-sec"><h4>よく使う量</h4><div class="chips"><a href="/q/force.html">力</a><a href="/q/energy.html">エネルギー</a><a href="/q/power.html">仕事率</a><a href="/q/pressure.html">圧力</a><a href="/q/voltage.html">電圧</a><a href="/q/resistance.html">電気抵抗</a><a href="/q/capacitance.html">静電容量</a><a href="/q/magnetic_flux_density.html">磁束密度</a><a href="/q/planck.html">プランク定数</a><a href="/q/gas_constant.html">気体定数</a></div></div>
+  </div>
+</aside>
+<main id="main"><div class="wrap">
+<nav class="bc" aria-label="パンくずリスト"><a href="/">トップ</a> › <a href="/c/thermo.html">熱・気体</a> › シュテファン＝ボルツマン定数</nav>
 <span class="tag">熱・気体</span>
 <h1>シュテファン＝ボルツマン定数の単位 W/(m²·K⁴) を基本単位で表すと kg/(s³·K⁴)</h1>
 <p class="lead">黒体が放射するエネルギーと温度の4乗を結ぶ定数。</p>
 <div class="hero">
 <div class="big">W/(m²·K⁴) = kg/(s³·K⁴)</div>
 <div class="sub">次元 [M T⁻³ Θ⁻⁴]</div></div>
-<h2>シュテファン＝ボルツマン定数の単位を、知っている公式から組み立てる</h2>
+<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">シュテファン＝ボルツマン定数の単位を、知っている公式から組み立てる</a><a href="#s2">シュテファン＝ボルツマン定数が出てくる公式</a><a href="#s3">シュテファン＝ボルツマン定数とほかの量の関係</a></div></nav><h2 id="s1">シュテファン＝ボルツマン定数の単位を、知っている公式から組み立てる</h2>
 <p>W/(m²·K⁴) を基本単位までほどくには、速度 → 加速度 → 力 → エネルギー・仕事・熱量 → 仕事率・電力 → 面積 → シュテファン＝ボルツマン定数 の順に単位をつないでいきます。</p>
 <details class="pre"><summary>前提：速度・加速度・力・エネルギー・仕事・熱量・仕事率・電力・面積の単位（知っていれば飛ばしてOK）</summary>
 <div class="step"><div class="st"><b><a href="/q/velocity.html">速度</a></b> <span class="lead">— <a href="/f/v_def.html">速さの定義</a>　<span class="mono">v = x / t</span></span></div><p>速さは「進んだ距離 ÷ かかった時間」。m を s で割って m/s です。</p><div class="calc">[v] = m ÷ s = m/s</div></div>
@@ -69,14 +59,19 @@ footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);font-
 </details>
 <div class="step"><div class="st"><b><a href="/q/stefan_boltzmann.html">シュテファン＝ボルツマン定数</a></b> <span class="lead">— <a href="/f/stefan.html">シュテファン＝ボルツマンの法則</a>　<span class="mono">P = σ S T⁴</span></span></div><p>黒体放射 P = σST⁴ から σ = P/(ST⁴)。W を m² と K⁴ で割って W/(m²·K⁴) です。</p><div class="calc">[σ] = W ÷ (m²) ÷ K⁴ = W/(m²·K⁴) = kg/(s³·K⁴)</div></div>
 <p>まとめると、<span class="mono ok">W/(m²·K⁴) = kg/(s³·K⁴)</span> です。</p>
-<h2>シュテファン＝ボルツマン定数が出てくる公式</h2><ul>
+<h2 id="s2">シュテファン＝ボルツマン定数が出てくる公式</h2><ul>
 <li><a href="/f/stefan.html">シュテファン＝ボルツマンの法則</a>：<span class="mono">P = σ S T⁴</span></li>
 </ul>
-<h2>シュテファン＝ボルツマン定数とほかの量の関係</h2><div class="grid">
+<h2 id="s3">シュテファン＝ボルツマン定数とほかの量の関係</h2><div class="grid">
 <a href="/r/power--stefan_boltzmann.html">シュテファン＝ボルツマン定数と仕事率・電力<div class="u">W/(m²·K⁴) と W</div></a>
 <a href="/r/stefan_boltzmann--temperature.html">シュテファン＝ボルツマン定数と温度（熱力学温度）<div class="u">W/(m²·K⁴) と K</div></a>
 <a href="/r/area--stefan_boltzmann.html">シュテファン＝ボルツマン定数と面積<div class="u">W/(m²·K⁴) と m²</div></a>
 </div>
-<footer>ブツリ単位ラボ — SI単位と次元解析で物理を理解する。<br>単位はすべてSI（国際単位系）で表記しています。</footer>
+</div></main>
+<footer class="site"><div class="wrap">
+  <div class="links"><a href="/">トップ</a><a href="/guide.html">次元解析の使い方</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>
+  ブツリ単位ラボ — SI単位と次元解析で物理を理解する。単位はすべてSI（国際単位系）で表記しています。
+</div></footer>
+<button class="to-top" id="to-top" aria-label="ページの先頭へ戻る"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></button>
 </body>
 </html>

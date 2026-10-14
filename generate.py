@@ -24,6 +24,7 @@ from itertools import combinations
 OUT = Path("dist")
 SITE_NAME = "ブツリ単位ラボ"
 SITE_URL = "https://tanitani.butsuri-lab.workers.dev"  # ★独自ドメイン取得後に変更
+ASSET_VER = "2"  # CSS/JS を変えたら上げる（ブラウザのキャッシュ対策）
 GOOGLE_VERIFICATION = "kVE91IWkP86K1E_JpBQDklXXu5gz86ZOA64xcgtDUwc"  # Search Console 所有権確認
 SITE_DESC = "知らない単位や公式を、知っている公式と単位だけで理解する。SI単位と次元解析で物理量を基本単位まで分解するサイト。"
 
@@ -275,21 +276,74 @@ def chain(qid, seen=None):
 E = html.escape
 
 CSS = """
-:root{--bg:#f7f7f4;--fg:#1b1b1b;--accent:#1d5fd1;--accent-soft:#e3ecfb;--dim:#666b73;--border:#d7d9dc;--card:#fff;--code:#f1f2f3;--ok:#18794e;--r:6px}
-@media (prefers-color-scheme:dark){:root{--bg:#111214;--fg:#e6e6e8;--accent:#7aa7f5;--accent-soft:#1b2537;--dim:#9aa0a8;--border:#33363b;--card:#1a1b1e;--code:#1f2124;--ok:#4fc38a}}
+:root{--bg:#f7f7f4;--fg:#1b1b1b;--accent:#1d5fd1;--accent-soft:#e3ecfb;--dim:#666b73;--border:#d7d9dc;--card:#fff;--code:#f1f2f3;--ok:#18794e;--r:8px;--hdr:56px;--shadow:0 6px 24px rgba(0,0,0,.12)}
+@media (prefers-color-scheme:dark){:root{--bg:#111214;--fg:#e6e6e8;--accent:#7aa7f5;--accent-soft:#1b2537;--dim:#9aa0a8;--border:#33363b;--card:#1a1b1e;--code:#1f2124;--ok:#4fc38a;--shadow:0 6px 24px rgba(0,0,0,.5)}}
 *,*::before,*::after{box-sizing:border-box;margin:0}
-body{font-family:'Noto Sans JP',system-ui,sans-serif;background:var(--bg);color:var(--fg);line-height:1.8;max-width:760px;margin:0 auto;padding:1.5rem 16px 4rem}
+html{scroll-padding-top:calc(var(--hdr) + 12px);-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{font-family:'Noto Sans JP',system-ui,sans-serif;background:var(--bg);color:var(--fg);line-height:1.8}
+body.nav-open{overflow:hidden}
 a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
-header.site{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap;margin-bottom:1.25rem;font-size:.9rem}
-header.site .logo{font-weight:700;color:var(--fg);font-size:1rem}
-header.site nav a{margin-left:.9rem;color:var(--dim)}
-nav.bc{font-size:.8rem;color:var(--dim);margin-bottom:.75rem}nav.bc a{color:var(--dim)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+.skip{position:absolute;left:-999px;top:0;background:var(--accent);color:#fff;padding:.5rem 1rem;z-index:100}.skip:focus{left:8px;top:8px}
+.wrap{max-width:780px;margin:0 auto;padding:0 16px}
+
+/* ヘッダー */
+header.site{position:sticky;top:0;z-index:30;height:var(--hdr);background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+header.site .wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:.5rem}
+.logo{display:flex;align-items:center;gap:.5rem;font-weight:700;color:var(--fg);font-size:1.02rem}
+.logo:hover{text-decoration:none}
+.logo .mark{display:grid;place-items:center;width:30px;height:30px;border-radius:7px;background:var(--accent);color:#fff;font-family:'IBM Plex Mono',monospace;font-size:.78rem;font-weight:600}
+.hdr-nav{display:flex;align-items:center;gap:.15rem}
+.hdr-nav .txt{color:var(--dim);font-size:.88rem;padding:.4rem .6rem;border-radius:6px}
+.hdr-nav .txt:hover{color:var(--fg);background:var(--code);text-decoration:none}
+.icon-btn{display:grid;place-items:center;width:42px;height:42px;border:0;border-radius:8px;background:transparent;color:var(--fg);cursor:pointer}
+.icon-btn:hover{background:var(--code)}
+.icon-btn svg{width:22px;height:22px}
+@media (max-width:560px){.hdr-nav .txt{display:none}}
+
+/* ハンバーガーメニュー（右から出る引き出し） */
+.overlay{position:fixed;inset:0;z-index:40;background:rgba(0,0,0,.4);opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s}
+.drawer{position:fixed;top:0;right:0;bottom:0;z-index:50;width:min(380px,88vw);background:var(--bg);box-shadow:var(--shadow);display:flex;flex-direction:column;transform:translateX(100%);visibility:hidden;transition:transform .25s ease,visibility .25s}
+body.nav-open .overlay{opacity:1;visibility:visible}
+body.nav-open .drawer{transform:none;visibility:visible}
+.drawer-head{display:flex;align-items:center;justify-content:space-between;padding:0 8px 0 18px;height:var(--hdr);border-bottom:1px solid var(--border);font-weight:700}
+.drawer-body{overflow-y:auto;padding:14px 18px 32px;flex:1}
+.search{position:relative;margin-bottom:.5rem}
+.search svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--dim)}
+.search input{width:100%;font:inherit;font-size:16px;padding:.65rem .8rem .65rem 2.4rem;border:1px solid var(--border);border-radius:10px;background:var(--card);color:var(--fg)}
+.search input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.search-hint{font-size:.78rem;color:var(--dim);margin-bottom:1rem}
+.results{list-style:none;margin:0 0 1rem;padding:0}
+.results li{margin:0}
+.results a{display:block;padding:.55rem .7rem;border-radius:8px;color:var(--fg)}
+.results a:hover,.results a.sel{background:var(--accent-soft);text-decoration:none}
+.results .k{display:inline-block;font-size:.68rem;font-weight:700;color:var(--accent);border:1px solid var(--accent);border-radius:3px;padding:0 .3rem;margin-right:.4rem;vertical-align:1px}
+.results .s{display:block;font-family:'IBM Plex Mono',monospace;font-size:.82rem;color:var(--dim)}
+.results .none{color:var(--dim);font-size:.9rem;padding:.5rem .2rem}
+.nav-sec{margin-top:1.1rem}
+.nav-sec h4{font-size:.75rem;color:var(--dim);letter-spacing:.06em;margin-bottom:.35rem}
+.nav-sec ul{list-style:none;margin:0;padding:0}
+.nav-sec li{margin:0}
+.nav-sec a{display:flex;justify-content:space-between;align-items:center;padding:.5rem .6rem;border-radius:8px;color:var(--fg)}
+.nav-sec a:hover{background:var(--code);text-decoration:none}
+.nav-sec a[aria-current]{background:var(--accent-soft);color:var(--accent);font-weight:700}
+.nav-sec .n{font-size:.75rem;color:var(--dim)}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem}
+.chips a{display:inline-block;padding:.25rem .65rem;border:1px solid var(--border);border-radius:999px;font-size:.85rem;color:var(--fg)}
+.chips a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+
+/* 本文 */
+main{padding:1.2rem 0 3rem}
+nav.bc{font-size:.8rem;color:var(--dim);margin-bottom:.75rem;overflow-x:auto;white-space:nowrap}nav.bc a{color:var(--dim)}
 h1{font-size:1.5rem;line-height:1.4;margin-bottom:.6rem}
 h2{font-size:1.12rem;margin:2.2rem 0 .8rem;padding-bottom:.3rem;border-bottom:2px solid var(--accent)}
 h3{font-size:1rem;margin:1.4rem 0 .5rem}
 p{margin-bottom:1rem}ul,ol{margin:0 0 1rem 1.3rem}li{margin-bottom:.35rem}
 .lead{color:var(--dim)}
 .mono,code{font-family:'IBM Plex Mono',ui-monospace,monospace}
+.toc{margin:1rem 0 .5rem;padding:.7rem .8rem;background:var(--card);border:1px solid var(--border);border-radius:var(--r)}
+.toc b{display:block;font-size:.75rem;color:var(--dim);margin-bottom:.4rem}
 .hero{background:var(--accent-soft);border:2px solid var(--accent);border-radius:var(--r);padding:1.2rem 1.25rem;margin:1.2rem 0;text-align:center}
 .hero .big{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:1.45rem;font-weight:600;overflow-wrap:anywhere}
 .hero .sub{color:var(--dim);font-size:.85rem;margin-top:.3rem}
@@ -304,19 +358,180 @@ th{font-size:.8rem;color:var(--dim);font-weight:700}
 td.mono{white-space:nowrap}
 .tbl{overflow-x:auto}
 .note{background:var(--card);border:1px dashed var(--border);border-radius:var(--r);padding:.8rem 1rem;margin:1rem 0;font-size:.92rem}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:.6rem;margin-bottom:1rem}
-.grid a{display:block;background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:.6rem .8rem;color:var(--fg)}
-.grid a:hover{border-color:var(--accent);text-decoration:none}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.6rem;margin-bottom:1rem}
+.grid a{display:block;background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:.6rem .8rem;color:var(--fg);transition:border-color .15s,transform .15s}
+.grid a:hover{border-color:var(--accent);text-decoration:none;transform:translateY(-1px)}
 .grid .u{font-family:'IBM Plex Mono',ui-monospace,monospace;color:var(--accent);font-size:.9rem}
+.cat-cards a{padding:.85rem 1rem}
+.cat-cards .t{font-weight:700}
+.cat-cards .d{font-size:.82rem;color:var(--dim);line-height:1.6;margin-top:.2rem}
+.cat-cards .n{font-size:.75rem;color:var(--accent);margin-top:.35rem}
 .tag{display:inline-block;font-size:.72rem;font-weight:700;color:var(--accent);background:var(--accent-soft);border-radius:3px;padding:.05rem .45rem;margin-right:.3rem}
-footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.8rem;color:var(--dim)}
+.home-search{display:flex;align-items:center;gap:.6rem;width:100%;margin:1rem 0 .5rem;padding:.8rem 1rem;border:1px solid var(--border);border-radius:12px;background:var(--card);color:var(--dim);font:inherit;font-size:.95rem;cursor:pointer;text-align:left}
+.home-search:hover{border-color:var(--accent)}
+.home-search svg{width:18px;height:18px;flex:none}
+
+/* フッター・トップへ戻る */
+footer.site{border-top:1px solid var(--border);padding:1.6rem 0 2.5rem;font-size:.82rem;color:var(--dim)}
+footer.site .links{display:flex;flex-wrap:wrap;gap:.4rem 1rem;margin-bottom:.8rem}
+footer.site a{color:var(--dim)}
+.to-top{position:fixed;right:16px;bottom:16px;z-index:20;width:44px;height:44px;border-radius:50%;border:1px solid var(--border);background:var(--card);color:var(--fg);box-shadow:var(--shadow);cursor:pointer;display:grid;place-items:center;opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s}
+.to-top.show{opacity:1;visibility:visible}
+.to-top svg{width:20px;height:20px}
 """
+
+JS = r"""
+(() => {
+  const d = document, body = d.body;
+  const drawer = d.getElementById('drawer'), overlay = d.getElementById('overlay');
+  const menuBtn = d.getElementById('menu-btn'), searchBtns = d.querySelectorAll('[data-open-search]');
+  const closeBtn = d.getElementById('close-btn'), q = d.getElementById('q'), list = d.getElementById('results');
+  let lastFocus = null, index = null, sel = -1;
+
+  const isOpen = () => body.classList.contains('nav-open');
+  function open(focusSearch) {
+    lastFocus = d.activeElement;
+    drawer.inert = false;
+    body.classList.add('nav-open');
+    menuBtn.setAttribute('aria-expanded', 'true');
+    setTimeout(() => (focusSearch ? q : closeBtn).focus(), 60);
+    loadIndex();
+  }
+  function close() {
+    body.classList.remove('nav-open');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    drawer.inert = true;
+    if (lastFocus) lastFocus.focus();
+  }
+  menuBtn.addEventListener('click', () => (isOpen() ? close() : open(false)));
+  searchBtns.forEach(b => b.addEventListener('click', () => open(true)));
+  closeBtn.addEventListener('click', close);
+  overlay.addEventListener('click', close);
+  d.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && isOpen()) { close(); return; }
+    if (e.key === '/' && !isOpen() && !/input|textarea/i.test(d.activeElement.tagName)) { e.preventDefault(); open(true); return; }
+    if (e.key === 'Tab' && isOpen()) {           // 引き出しの中でフォーカスを回す
+      const f = drawer.querySelectorAll('a[href],button,input');
+      const first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && d.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && d.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  });
+
+  // 検索
+  const norm = s => s.normalize('NFKC').toLowerCase().replace(/[\s・·]/g, '');
+  async function loadIndex() {
+    if (index) return;
+    try {
+      index = await (await fetch('/search.json')).json();
+      index.forEach(e => { e.n = norm(e.t); e.a = norm(e.t + e.s + e.k); });
+    } catch (_) { index = []; }
+  }
+  function render(hits, raw) {
+    list.innerHTML = ''; sel = -1;
+    if (!raw) return;
+    if (!hits.length) {
+      const li = d.createElement('li'); li.className = 'none';
+      li.textContent = '見つかりませんでした。量の名前（例：電圧）や単位（例：V、J/K）で探してみてください。';
+      list.appendChild(li); return;
+    }
+    hits.slice(0, 30).forEach(e => {
+      const li = d.createElement('li'), a = d.createElement('a'), k = d.createElement('span'), s = d.createElement('span');
+      a.href = e.u; k.className = 'k'; k.textContent = e.y; s.className = 's'; s.textContent = e.s;
+      a.append(k, d.createTextNode(e.t), s); li.appendChild(a); list.appendChild(li);
+    });
+  }
+  q.addEventListener('input', async () => {
+    await loadIndex();
+    const raw = q.value.trim(), v = norm(raw);
+    if (!v) { render([], ''); return; }
+    const hits = [];
+    for (const e of index) {
+      let score = -1;
+      if (e.units && e.units.includes(raw)) score = 0;          // 単位記号がぴったり一致（大文字小文字も区別）
+      else if (e.n.startsWith(v)) score = 1;
+      else if (e.n.includes(v)) score = 2;
+      else if (e.a.includes(v)) score = 3;
+      if (score >= 0) hits.push([score + (e.y === '量' ? 0 : 0.5), e]);
+    }
+    hits.sort((x, y) => x[0] - y[0]);
+    render(hits.map(h => h[1]), raw);
+  });
+  q.addEventListener('keydown', e => {
+    const items = list.querySelectorAll('a');
+    if (!items.length) return;
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+      e.preventDefault();
+      sel = (sel + (e.key === 'ArrowDown' ? 1 : -1) + items.length) % items.length;
+      items.forEach((a, i) => a.classList.toggle('sel', i === sel));
+      items[sel].scrollIntoView({ block: 'nearest' });
+    } else if (e.key === 'Enter') {
+      location.href = items[Math.max(sel, 0)].href;
+    }
+  });
+
+  // トップへ戻る
+  const top = d.getElementById('to-top');
+  const onScroll = () => top.classList.toggle('show', scrollY > 600);
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+  top.addEventListener('click', () => scrollTo({ top: 0 }));
+})();
+"""
+
+ICON_MENU = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>'
+ICON_CLOSE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>'
+ICON_SEARCH = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>'
+ICON_UP = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg>'
+POPULAR = ["force", "energy", "power", "pressure", "voltage", "resistance", "capacitance", "magnetic_flux_density", "planck", "gas_constant"]
+
+
+def drawer_html(path):
+    def cur(u):
+        return ' aria-current="page"' if u == path else ""
+    cats = "".join(
+        f'<li><a href="/c/{c["id"]}.html"{cur("/c/" + c["id"] + ".html")}>{E(c["name"])}'
+        f'<span class="n">{sum(1 for q in QS.values() if q["category"] == c["id"])}量</span></a></li>'
+        for c in CATS.values())
+    pop = "".join(f'<a href="/q/{x}.html">{E(QS[x]["name"].split("・")[0].split("（")[0])}</a>' for x in POPULAR)
+    return f"""<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" inert aria-label="メニュー">
+  <div class="drawer-head">メニュー<button class="icon-btn" id="close-btn" aria-label="メニューを閉じる">{ICON_CLOSE}</button></div>
+  <div class="drawer-body">
+    <div class="search">{ICON_SEARCH}<input id="q" type="search" placeholder="量・単位・公式を検索（例：電圧、J/K）" autocomplete="off" aria-label="サイト内検索"></div>
+    <div class="search-hint">名前でも単位記号でも探せます。</div>
+    <ul class="results" id="results" aria-live="polite"></ul>
+    <div class="nav-sec"><h4>ページ</h4><ul>
+      <li><a href="/"{cur("/")}>トップ</a></li>
+      <li><a href="/guide.html"{cur("/guide.html")}>次元解析の使い方</a></li>
+    </ul></div>
+    <div class="nav-sec"><h4>分野</h4><ul>{cats}</ul></div>
+    <div class="nav-sec"><h4>よく使う量</h4><div class="chips">{pop}</div></div>
+  </div>
+</aside>"""
+
+
+def add_toc(body):
+    """h2 に id をつけ、3つ以上あれば「このページの内容」を先頭の h2 の前に置く"""
+    heads = []
+    def repl(m):
+        heads.append(m.group(1))
+        return f'<h2 id="s{len(heads)}">{m.group(1)}</h2>'
+    body = re.sub(r"<h2>(.*?)</h2>", repl, body)
+    if len(heads) < 3:
+        return body
+    chips = "".join(f'<a href="#s{i}">{re.sub(r"<[^>]+>", "", h)}</a>' for i, h in enumerate(heads, 1))
+    toc = f'<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips">{chips}</div></nav>'
+    i = body.index('<h2 id="s1">')
+    return body[:i] + toc + body[i:]
+
 
 def page(path, title, desc, body, crumbs=()):
     bc = ""
     if crumbs:
         parts = ['<a href="/">トップ</a>'] + [f'<a href="{u}">{E(t)}</a>' if u else E(t) for t, u in crumbs]
-        bc = '<nav class="bc">' + " › ".join(parts) + "</nav>"
+        bc = '<nav class="bc" aria-label="パンくずリスト">' + " › ".join(parts) + "</nav>"
+    body = add_toc(body)
+    foot_links = "".join(f'<a href="/c/{c["id"]}.html">{E(c["name"])}</a>' for c in CATS.values())
     doc = f"""<!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -326,16 +541,33 @@ def page(path, title, desc, body, crumbs=()):
 <meta name="description" content="{E(desc)}">
 <link rel="canonical" href="{SITE_URL}{path}">
 <meta name="google-site-verification" content="{GOOGLE_VERIFICATION}">
+<meta name="theme-color" content="#1d5fd1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<style>{CSS}</style>
+<link rel="stylesheet" href="/assets/site.css?v={ASSET_VER}">
+<script src="/assets/site.js?v={ASSET_VER}" defer></script>
 </head>
 <body>
-<header class="site"><a class="logo" href="/">{SITE_NAME}</a><nav><a href="/guide.html">使い方</a><a href="/#cats">分野一覧</a></nav></header>
+<a class="skip" href="#main">本文へ移動</a>
+<header class="site"><div class="wrap">
+  <a class="logo" href="/"><span class="mark">SI</span>{SITE_NAME}</a>
+  <nav class="hdr-nav" aria-label="メインメニュー">
+    <a class="txt" href="/guide.html">使い方</a>
+    <button class="icon-btn" data-open-search aria-label="検索">{ICON_SEARCH}</button>
+    <button class="icon-btn" id="menu-btn" aria-label="メニューを開く" aria-controls="drawer" aria-expanded="false">{ICON_MENU}</button>
+  </nav>
+</div></header>
+{drawer_html(path)}
+<main id="main"><div class="wrap">
 {bc}
 {body}
-<footer>{SITE_NAME} — SI単位と次元解析で物理を理解する。<br>単位はすべてSI（国際単位系）で表記しています。</footer>
+</div></main>
+<footer class="site"><div class="wrap">
+  <div class="links"><a href="/">トップ</a><a href="/guide.html">次元解析の使い方</a>{foot_links}</div>
+  {SITE_NAME} — SI単位と次元解析で物理を理解する。単位はすべてSI（国際単位系）で表記しています。
+</div></footer>
+<button class="to-top" id="to-top" aria-label="ページの先頭へ戻る">{ICON_UP}</button>
 </body>
 </html>"""
     out = OUT / path.lstrip("/")
@@ -344,6 +576,26 @@ def page(path, title, desc, body, crumbs=()):
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(doc, encoding="utf-8")
     PATHS.append(path)
+
+
+def build_assets():
+    (OUT / "assets").mkdir(parents=True, exist_ok=True)
+    (OUT / "assets" / "site.css").write_text(CSS.strip() + "\n", encoding="utf-8")
+    (OUT / "assets" / "site.js").write_text(JS.strip() + "\n", encoding="utf-8")
+    idx = []
+    for q in QS.values():
+        names = " ".join(UNITS[s]["name"] for s in q["ud"])
+        idx.append({"y": "量", "t": q["name"], "s": q["unit_str"], "u": f"/q/{q['id']}.html",
+                    "units": [q["unit_str"], fmt_base(q["dims"])] + list(q["ud"]) if len(q["ud"]) == 1 else [q["unit_str"], fmt_base(q["dims"])],
+                    "k": f"{names} {fmt_base(q['dims'])} {CATS[q['category']]['name']}"})
+    for f in FS.values():
+        idx.append({"y": "公式", "t": f["name"], "s": f["expr"], "u": f"/f/{f['id']}.html",
+                    "k": " ".join(QS[x]["name"] for x in f["quantities"]) + " " + CATS[f["category"]]["name"]})
+    for c in CATS.values():
+        idx.append({"y": "分野", "t": c["name"], "s": c["description"], "u": f"/c/{c['id']}.html", "k": ""})
+    idx.append({"y": "解説", "t": "次元解析の使い方", "s": "基本単位・単位の分解・検算", "u": "/guide.html", "k": "次元解析 使い方 ガイド"})
+    (OUT / "search.json").write_text(json.dumps(idx, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+
 
 PATHS = []
 
@@ -644,6 +896,7 @@ def build_category(c):
 def build_index():
     b = ["<h1>知らない単位も、知っている公式から組み立てればわかる</h1>",
          f'<p class="lead">{E(SITE_DESC)}</p>',
+         f'<button class="home-search" data-open-search>{ICON_SEARCH}量・単位・公式を検索（例：電圧、J/K、オームの法則）</button>',
          '<div class="hero"><div class="big">J = N·m = kg·m²/s²</div>'
          '<div class="sub">F = ma と W = Fx を知っていれば、ジュールの中身は自分で導ける</div></div>',
          "<h2>このサイトの考え方</h2>",
@@ -657,12 +910,14 @@ def build_index():
          "<h2>まずはここから</h2><div class=\"grid\">"
          + "".join(qcard(x) for x in ["force", "energy", "power", "voltage", "resistance", "magnetic_flux_density", "planck", "gas_constant"])
          + "</div>",
-         '<h2 id="cats">分野から探す</h2>']
+         '<h2>分野から探す</h2>']
+    cards = []
     for c in CATS.values():
         n = sum(1 for q in QS.values() if q["category"] == c["id"])
         m = sum(1 for f in FS.values() if f["category"] == c["id"])
-        b.append(f'<h3><a href="/c/{c["id"]}.html">{E(c["name"])}</a> <span class="lead" style="font-size:.85rem;font-weight:400">量 {n}・公式 {m}</span></h3>')
-        b.append(f'<p class="lead">{E(c["description"])}</p>')
+        cards.append(f'<a href="/c/{c["id"]}.html"><div class="t">{E(c["name"])}</div>'
+                     f'<div class="d">{E(c["description"])}</div><div class="n">量 {n}・公式 {m}</div></a>')
+    b.append('<div class="grid cat-cards">' + "".join(cards) + "</div>")
     page("/", "SI単位と次元解析で物理を理解する", SITE_DESC, "\n".join(b))
 
 def build_guide():
@@ -714,6 +969,7 @@ def main():
         shutil.rmtree(OUT)
     OUT.mkdir(parents=True)
     print(f"✓ 全{len(FS)}公式の両辺の次元が一致することを確認")
+    build_assets()
     build_index()
     build_guide()
     for c in CATS.values():
