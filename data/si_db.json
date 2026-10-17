@@ -713,7 +713,7 @@
    "description": "単位時間あたりの角速度の変化。",
    "how": "角加速度は、角速度が1秒あたりどれだけ変わるか。rad/s をもう一度 s で割って rad/s² です。",
    "meaning": "1秒あたりに角速度がどれだけ変わるか。",
-   "level": "大学",
+   "level": "難関",
    "words": [
     [
      "角速度の変化",
@@ -920,7 +920,7 @@
    "description": "回転させにくさ。回転運動における質量の役割をもつ。",
    "how": "慣性モーメントは、質量に回転軸からの距離の2乗をかけたもの。kg × m² で kg·m² です。",
    "meaning": "回転のさせにくさ。質量に、回転軸からの距離の2乗をかけたもの。",
-   "level": "大学",
+   "level": "難関",
    "words": [
     [
      "物体の質量",
@@ -943,7 +943,7 @@
    "description": "回転運動の勢い。回転軸からの距離×運動量。",
    "how": "角運動量は「回転軸からの距離 × 運動量」。m に kg·m/s をかけて kg·m²/s です。",
    "meaning": "回転の勢い。回転軸からの距離と運動量の積。",
-   "level": "大学",
+   "level": "難関",
    "words": [
     [
      "回転軸からの距離",
@@ -1013,7 +1013,7 @@
    "description": "流体のねばりけ。流れの速さの差に逆らう力の大きさを決める。",
    "how": "粘性の法則 F = ηSv/d を η について解くと η = Fd/(Sv)。単位を当てはめて整理すると、N/m²（= Pa）に s をかけた Pa·s が残ります。",
    "meaning": "流体のねばりけ。流れの速さの差に逆らう力の大きさを決める。",
-   "level": "大学",
+   "level": "難関",
    "words": [
     [
      "流れを妨げる力",
@@ -1080,7 +1080,7 @@
    "description": "単位体積あたりの粒子の個数。",
    "how": "数密度は「体積あたりの個数」。個数には単位がないので、m³ で割った m⁻³ だけが残ります。",
    "meaning": "1 m³ あたりの粒子の個数。",
-   "level": "大学",
+   "level": "高校",
    "words": [
     [
      "粒子の個数",
@@ -1302,7 +1302,7 @@
    "description": "物質の熱の伝えやすさ。",
    "how": "伝わる熱の速さ P = λSΔT/d を λ について解くと λ = Pd/(SΔT)。W × m ÷ m² ÷ K を整理して W/(m·K) です。",
    "meaning": "物質の熱の伝えやすさ。厚さ 1 m・面積 1 m²・温度差 1 K のとき、1秒あたりに伝わる熱。",
-   "level": "大学",
+   "level": "難関",
    "words": [
     [
      "1秒あたりに伝わる熱",
@@ -1716,7 +1716,7 @@
    "description": "物質そのものの電流の流れやすさ。抵抗率の逆数。",
    "how": "電気伝導率は抵抗率の逆数。Ω·m をひっくり返して、Ω⁻¹ = S なので S/m です。",
    "meaning": "物質そのものの電流の流れやすさ。電場 1 V/m あたりに流れる電流密度。",
-   "level": "大学",
+   "level": "難関",
    "words": [
     [
      "流れる電流密度",
@@ -1739,7 +1739,7 @@
    "description": "単位断面積あたりの電流。",
    "how": "電流密度は「断面積あたりの電流」。A を m² で割って A/m² です。",
    "meaning": "断面 1 m² あたりを流れる電流。",
-   "level": "大学",
+   "level": "難関",
    "words": [
     [
      "流れる電流",
@@ -1982,6 +1982,621 @@
      -1
     ]
    ]
+  },
+  {
+   "id": "linear_charge_density",
+   "name": "線電荷密度",
+   "category": "em",
+   "unit": "C m-1",
+   "defined_by": "lcd_def",
+   "description": "導線や棒に沿って分布する電荷の、長さあたりの量。",
+   "meaning": "長さ 1 m あたりの電荷。",
+   "level": "難関",
+   "words": [
+    [
+     "ふくまれる電荷",
+     "charge",
+     1
+    ],
+    [
+     "その部分の長さ",
+     "length",
+     -1
+    ]
+   ],
+   "how": "線電荷密度は「長さあたりの電荷」。C を m で割って C/m です。長い直線状の電荷がつくる電場 E = λ/(2πε₀r) で出てきます。"
+  },
+  {
+   "id": "surface_charge_density",
+   "name": "面電荷密度",
+   "category": "em",
+   "unit": "C m-2",
+   "defined_by": "scd_def",
+   "description": "平面や導体表面に分布する電荷の、面積あたりの量。",
+   "meaning": "面積 1 m² あたりの電荷。",
+   "level": "難関",
+   "words": [
+    [
+     "ふくまれる電荷",
+     "charge",
+     1
+    ],
+    [
+     "その部分の面積",
+     "area",
+     -1
+    ]
+   ],
+   "how": "面電荷密度は「面積あたりの電荷」。C を m² で割って C/m² です。広い平面の電荷がつくる電場 E = σ/(2ε₀) や、コンデンサーの極板の電荷で出てきます。"
+  },
+  {
+   "id": "volume_charge_density",
+   "name": "体積電荷密度",
+   "category": "em",
+   "unit": "C m-3",
+   "defined_by": "vcd_def",
+   "description": "空間に分布する電荷の、体積あたりの量。",
+   "meaning": "体積 1 m³ あたりの電荷。",
+   "level": "難関",
+   "words": [
+    [
+     "ふくまれる電荷",
+     "charge",
+     1
+    ],
+    [
+     "その部分の体積",
+     "volume",
+     -1
+    ]
+   ],
+   "how": "体積電荷密度は「体積あたりの電荷」。C を m³ で割って C/m³ です。"
+  },
+  {
+   "id": "surface_current_density",
+   "name": "面電流密度（電流の線密度）",
+   "category": "em",
+   "unit": "A m-1",
+   "defined_by": "scurd_def",
+   "description": "板状に広がって流れる電流の、幅あたりの量。",
+   "meaning": "電流の流れに垂直な幅 1 m あたりを流れる電流。",
+   "level": "難関",
+   "words": [
+    [
+     "流れる電流",
+     "current",
+     1
+    ],
+    [
+     "電流が広がっている幅",
+     "length",
+     -1
+    ]
+   ],
+   "how": "面電流密度は「幅あたりの電流」。A を m で割って A/m です。無限に広い平面電流がつくる磁場で出てきます。磁場の強さ H と同じ単位になる点にも注目。"
+  },
+  {
+   "id": "turn_density",
+   "name": "単位長さあたりの巻き数",
+   "category": "em",
+   "unit": "m-1",
+   "defined_by": "turn_def",
+   "description": "ソレノイドで、長さ 1 m あたりに何回巻いてあるか。",
+   "meaning": "長さ 1 m あたりの巻き数。",
+   "level": "難関",
+   "words": [
+    [
+     "全体の巻き数",
+     "number",
+     1
+    ],
+    [
+     "コイルの長さ",
+     "length",
+     -1
+    ]
+   ],
+   "how": "巻き数は単位をもたない数なので、長さ m で割った m⁻¹ が残ります。ソレノイド内部の磁場 B = μ₀nI の n がこれです。",
+   "pitfall": "全体の巻き数 N（単位なし）と、単位長さあたりの巻き数 n（m⁻¹）は別の量です。B = μ₀NI と書くと右辺の単位が T にならず、間違いだとわかります。"
+  },
+  {
+   "id": "electric_dipole_moment",
+   "name": "電気双極子モーメント",
+   "category": "em",
+   "unit": "C m",
+   "defined_by": "dipole_def",
+   "description": "＋q と −q の電荷の組が、どれだけ強く向きをもっているか。",
+   "meaning": "電荷の大きさと、2つの電荷の間の距離の積。",
+   "level": "難関",
+   "words": [
+    [
+     "片方の電荷の大きさ",
+     "charge",
+     1
+    ],
+    [
+     "電荷の間の距離",
+     "length",
+     1
+    ]
+   ],
+   "how": "双極子モーメントは「電荷 × 距離」。C に m をかけて C·m です。"
+  },
+  {
+   "id": "magnetic_moment",
+   "name": "磁気モーメント",
+   "category": "em",
+   "unit": "A m2",
+   "defined_by": "mmoment_def",
+   "description": "円形電流（小さな磁石）の強さと向き。",
+   "meaning": "電流と、その電流が囲む面積の積。",
+   "level": "難関",
+   "words": [
+    [
+     "流れる電流",
+     "current",
+     1
+    ],
+    [
+     "電流が囲む面積",
+     "area",
+     1
+    ]
+   ],
+   "how": "磁気モーメントは「電流 × 囲む面積」。A に m² をかけて A·m² です。"
+  },
+  {
+   "id": "electric_energy_density",
+   "name": "電場のエネルギー密度",
+   "category": "em",
+   "unit": "J m-3",
+   "defined_by": "ued_def",
+   "description": "電場がある空間にたくわえられたエネルギーの、体積あたりの量。",
+   "meaning": "体積 1 m³ あたりに電場がたくわえているエネルギー。",
+   "level": "難関",
+   "words": [
+    [
+     "たくわえられたエネルギー",
+     "energy",
+     1
+    ],
+    [
+     "その空間の体積",
+     "volume",
+     -1
+    ]
+   ],
+   "how": "エネルギー密度は「体積あたりのエネルギー」。J を m³ で割って J/m³ です。式で書くと u = ½ε₀E²。J/m³ は圧力の Pa と同じ次元です。"
+  },
+  {
+   "id": "magnetic_energy_density",
+   "name": "磁場のエネルギー密度",
+   "category": "em",
+   "unit": "J m-3",
+   "defined_by": "umd_def",
+   "description": "磁場がある空間にたくわえられたエネルギーの、体積あたりの量。",
+   "meaning": "体積 1 m³ あたりに磁場がたくわえているエネルギー。",
+   "level": "難関",
+   "words": [
+    [
+     "たくわえられたエネルギー",
+     "energy",
+     1
+    ],
+    [
+     "その空間の体積",
+     "volume",
+     -1
+    ]
+   ],
+   "how": "磁場のエネルギー密度も「体積あたりのエネルギー」で J/m³。式で書くと u = B²/(2μ₀)。"
+  },
+  {
+   "id": "electric_flux_density",
+   "name": "電束密度",
+   "category": "em",
+   "unit": "C m-2",
+   "defined_by": "dfield_def",
+   "description": "誘電体の中も含めて、電気力線の混み具合を電荷の単位で表した量。",
+   "meaning": "誘電率と電場の強さの積。",
+   "level": "難関",
+   "words": [
+    [
+     "誘電率",
+     "permittivity",
+     1
+    ],
+    [
+     "電場の強さ",
+     "electric_field",
+     1
+    ]
+   ],
+   "how": "電束密度は D = εE。F/m と V/m をかけると F·V/m² = C/m² になり、面電荷密度と同じ単位です。"
+  },
+  {
+   "id": "mobility",
+   "name": "移動度",
+   "category": "em",
+   "unit": "m2 V-1 s-1",
+   "defined_by": "mobility_def",
+   "description": "電場をかけたとき、電子などのキャリアがどれだけ速く動くか。",
+   "meaning": "電場 1 V/m あたりに得られる平均の速さ。",
+   "level": "難関",
+   "words": [
+    [
+     "キャリアの平均の速さ",
+     "velocity",
+     1
+    ],
+    [
+     "かけた電場",
+     "electric_field",
+     -1
+    ]
+   ],
+   "how": "移動度は「速さ ÷ 電場」。m/s を V/m で割ると m²/(V·s) です。半導体やホール効果の問題で出てきます。"
+  },
+  {
+   "id": "hall_coefficient",
+   "name": "ホール係数",
+   "category": "em",
+   "unit": "m3 C-1",
+   "defined_by": "hall_def",
+   "description": "ホール効果の起こりやすさ。キャリアの数密度と電荷で決まる。",
+   "meaning": "キャリアの数密度と電荷の積の逆数。",
+   "level": "難関",
+   "words": [
+    [
+     "キャリアの数密度",
+     "number_density",
+     -1
+    ],
+    [
+     "キャリア1個の電荷",
+     "charge",
+     -1
+    ]
+   ],
+   "how": "ホール係数は R_H = 1/(nq)。数密度 m⁻³ と電荷 C の積の逆数なので m³/C です。"
+  },
+  {
+   "id": "resistance_per_length",
+   "name": "単位長さあたりの抵抗",
+   "category": "em",
+   "unit": "Ω m-1",
+   "defined_by": "rpl_def",
+   "description": "導線やレールの、長さ 1 m あたりの抵抗。",
+   "meaning": "長さ 1 m あたりの抵抗。",
+   "level": "難関",
+   "words": [
+    [
+     "その部分の抵抗",
+     "resistance",
+     1
+    ],
+    [
+     "その部分の長さ",
+     "length",
+     -1
+    ]
+   ],
+   "how": "「長さあたりの抵抗」なので Ω/m。レールの上を動く導体棒の問題などで出てきます。"
+  },
+  {
+   "id": "inductance_per_length",
+   "name": "単位長さあたりのインダクタンス",
+   "category": "em",
+   "unit": "H m-1",
+   "defined_by": "lpl_def",
+   "description": "長いソレノイドや同軸ケーブルの、長さ 1 m あたりの自己インダクタンス。",
+   "meaning": "長さ 1 m あたりの自己インダクタンス。",
+   "level": "難関",
+   "words": [
+    [
+     "自己インダクタンス",
+     "inductance",
+     1
+    ],
+    [
+     "その部分の長さ",
+     "length",
+     -1
+    ]
+   ],
+   "how": "「長さあたりのインダクタンス」なので H/m。透磁率と同じ単位になる点に注意しましょう。"
+  },
+  {
+   "id": "capacitance_per_length",
+   "name": "単位長さあたりの静電容量",
+   "category": "em",
+   "unit": "F m-1",
+   "defined_by": "cpl_def",
+   "description": "同軸ケーブルや平行導線の、長さ 1 m あたりの静電容量。",
+   "meaning": "長さ 1 m あたりの静電容量。",
+   "level": "難関",
+   "words": [
+    [
+     "静電容量",
+     "capacitance",
+     1
+    ],
+    [
+     "その部分の長さ",
+     "length",
+     -1
+    ]
+   ],
+   "how": "「長さあたりの静電容量」なので F/m。誘電率と同じ単位になります。"
+  },
+  {
+   "id": "force_per_length",
+   "name": "単位長さあたりの力",
+   "category": "em",
+   "unit": "N m-1",
+   "defined_by": "fpl_def",
+   "description": "平行な2本の電流の間に働く力などを、導線の長さ 1 m あたりで表したもの。",
+   "meaning": "長さ 1 m あたりに働く力。",
+   "level": "難関",
+   "words": [
+    [
+     "働く力",
+     "force",
+     1
+    ],
+    [
+     "その部分の長さ",
+     "length",
+     -1
+    ]
+   ],
+   "how": "「長さあたりの力」なので N/m。ばね定数や表面張力と同じ単位ですが、意味はまったく違います。"
+  },
+  {
+   "id": "specific_charge",
+   "name": "比電荷",
+   "category": "em",
+   "unit": "C kg-1",
+   "defined_by": "spcharge_def",
+   "description": "粒子の電荷を質量で割ったもの。電子の比電荷 e/m の測定で有名。",
+   "meaning": "質量 1 kg あたりの電荷。",
+   "level": "高校",
+   "words": [
+    [
+     "粒子の電荷",
+     "charge",
+     1
+    ],
+    [
+     "粒子の質量",
+     "mass",
+     -1
+    ]
+   ],
+   "how": "比電荷は「電荷 ÷ 質量」。C を kg で割って C/kg です。"
+  },
+  {
+   "id": "rydberg",
+   "name": "リュードベリ定数",
+   "category": "wave",
+   "unit": "m-1",
+   "defined_by": "rydberg",
+   "description": "水素原子が出す光の波長を決める定数。",
+   "meaning": "水素原子のスペクトルで、波長の逆数を決める定数。",
+   "level": "高校",
+   "words": [
+    [
+     "光の波長",
+     "length",
+     -1
+    ]
+   ],
+   "how": "1/λ = R(1/n² − 1/m²) の右辺のかっこの中はただの数なので、R の単位は波長の逆数で m⁻¹ です。"
+  },
+  {
+   "id": "linear_mass_density",
+   "name": "線密度（弦・ひも）",
+   "category": "mech",
+   "unit": "kg m-1",
+   "defined_by": "lmd_def",
+   "description": "弦やひもの、長さ 1 m あたりの質量。",
+   "meaning": "長さ 1 m あたりの質量。",
+   "level": "難関",
+   "words": [
+    [
+     "弦の質量",
+     "mass",
+     1
+    ],
+    [
+     "弦の長さ",
+     "length",
+     -1
+    ]
+   ],
+   "how": "線密度は「長さあたりの質量」。kg を m で割って kg/m です。弦を伝わる波の速さ v = √(T/ρ) で出てきます。"
+  },
+  {
+   "id": "surface_mass_density",
+   "name": "面密度",
+   "category": "mech",
+   "unit": "kg m-2",
+   "defined_by": "smd_def",
+   "description": "薄い板や膜の、面積 1 m² あたりの質量。",
+   "meaning": "面積 1 m² あたりの質量。",
+   "level": "難関",
+   "words": [
+    [
+     "板の質量",
+     "mass",
+     1
+    ],
+    [
+     "板の面積",
+     "area",
+     -1
+    ]
+   ],
+   "how": "面密度は「面積あたりの質量」。kg を m² で割って kg/m² です。"
+  },
+  {
+   "id": "drag_coeff_linear",
+   "name": "抵抗力の比例定数（速さに比例）",
+   "category": "mech",
+   "unit": "N s m-1",
+   "defined_by": "drag_lin",
+   "description": "空気や液体の抵抗力が速さに比例するとき（F = kv）の比例定数。",
+   "meaning": "速さ 1 m/s あたりの抵抗力。",
+   "level": "難関",
+   "words": [
+    [
+     "抵抗力",
+     "force",
+     1
+    ],
+    [
+     "物体の速さ",
+     "velocity",
+     -1
+    ]
+   ],
+   "how": "F = kv から k = F/v。N を m/s で割って N·s/m、基本単位では kg/s です。",
+   "pitfall": "「比例定数」にも単位があります。F = kv と F = kv² では k の単位が違い、kg/s と kg/m になります。"
+  },
+  {
+   "id": "drag_coeff_quad",
+   "name": "抵抗力の比例定数（速さの2乗に比例）",
+   "category": "mech",
+   "unit": "N s2 m-2",
+   "defined_by": "drag_quad",
+   "description": "抵抗力が速さの2乗に比例するとき（F = kv²）の比例定数。",
+   "meaning": "速さの2乗 1 m²/s² あたりの抵抗力。",
+   "level": "難関",
+   "words": [
+    [
+     "抵抗力",
+     "force",
+     1
+    ],
+    [
+     "物体の速さ",
+     "velocity",
+     -2
+    ]
+   ],
+   "how": "F = kv² から k = F/v²。N を (m/s)² で割って N·s²/m²、基本単位では kg/m です。弦の線密度と同じ次元になります。"
+  },
+  {
+   "id": "youngs_modulus",
+   "name": "ヤング率",
+   "category": "mech",
+   "unit": "Pa",
+   "defined_by": "young",
+   "description": "材料の伸びにくさ。同じ力で引いたとき、ヤング率が大きいほど伸びにくい。",
+   "meaning": "単位面積あたりの力（応力）を、のびの割合（ひずみ）で割ったもの。",
+   "level": "難関",
+   "words": [
+    [
+     "引っ張る力",
+     "force",
+     1
+    ],
+    [
+     "断面積",
+     "area",
+     -1
+    ],
+    [
+     "もとの長さ",
+     "length",
+     1
+    ],
+    [
+     "のび",
+     "length",
+     -1
+    ]
+   ],
+   "how": "応力（N/m²）をひずみ（m ÷ m なので単位なし）で割るので、単位は圧力と同じ Pa です。"
+  },
+  {
+   "id": "molar_heat_capacity",
+   "name": "モル比熱",
+   "category": "thermo",
+   "unit": "J mol-1 K-1",
+   "defined_by": "molar_heat",
+   "description": "物質 1 mol の温度を 1 K 上げるのに必要な熱量。定積モル比熱 C_V、定圧モル比熱 C_p がある。",
+   "meaning": "物質 1 mol の温度を 1 K 上げるのに必要な熱量。",
+   "level": "高校",
+   "words": [
+    [
+     "加えた熱量",
+     "energy",
+     1
+    ],
+    [
+     "物質量",
+     "amount",
+     -1
+    ],
+    [
+     "上がった温度",
+     "temperature",
+     -1
+    ]
+   ],
+   "how": "Q = nCΔT から C = Q/(nΔT)。J/(mol·K) で、気体定数 R と同じ単位です。単原子分子の理想気体では C_V = (3/2)R。"
+  },
+  {
+   "id": "particle_flux",
+   "name": "粒子の流束",
+   "category": "thermo",
+   "unit": "m-2 s-1",
+   "defined_by": "pflux_def",
+   "description": "単位面積を単位時間に通り抜ける（ぶつかる）粒子の数。",
+   "meaning": "面積 1 m² を1秒間に通る粒子の数。",
+   "level": "難関",
+   "words": [
+    [
+     "通り抜けた粒子の数",
+     "number",
+     1
+    ],
+    [
+     "面積",
+     "area",
+     -1
+    ],
+    [
+     "かかった時間",
+     "time",
+     -1
+    ]
+   ],
+   "how": "個数には単位がないので、面積 m² と時間 s で割った 1/(m²·s) が残ります。気体分子運動論で、壁にぶつかる分子の数を数えるときに出てきます。"
+  },
+  {
+   "id": "volume_flow_rate",
+   "name": "体積流量",
+   "category": "mech",
+   "unit": "m3 s-1",
+   "defined_by": "vflow_def",
+   "description": "管を1秒間に流れる流体の体積。",
+   "meaning": "1秒あたりに流れる体積。",
+   "level": "難関",
+   "words": [
+    [
+     "流れた体積",
+     "volume",
+     1
+    ],
+    [
+     "かかった時間",
+     "time",
+     -1
+    ]
+   ],
+   "how": "「1秒あたりの体積」なので m³/s。断面積 × 流速 S·v でも求められます。"
   }
  ],
  "formulas": [
@@ -3523,6 +4138,711 @@
     ]
    },
    "note": null
+  },
+  {
+   "id": "lcd_def",
+   "name": "線電荷密度の定義",
+   "category": "em",
+   "expr": "λ = q / l",
+   "equation": "lam = q l^-1",
+   "vars": {
+    "lam": [
+     "linear_charge_density",
+     "λ"
+    ],
+    "q": "charge",
+    "l": "length"
+   },
+   "note": null
+  },
+  {
+   "id": "scd_def",
+   "name": "面電荷密度の定義",
+   "category": "em",
+   "expr": "σ = q / S",
+   "equation": "sig = q S^-1",
+   "vars": {
+    "sig": [
+     "surface_charge_density",
+     "σ"
+    ],
+    "q": "charge",
+    "S": "area"
+   },
+   "note": null
+  },
+  {
+   "id": "vcd_def",
+   "name": "体積電荷密度の定義",
+   "category": "em",
+   "expr": "ρ = q / V",
+   "equation": "rho = q V^-1",
+   "vars": {
+    "rho": [
+     "volume_charge_density",
+     "ρ"
+    ],
+    "q": "charge",
+    "V": "volume"
+   },
+   "note": null
+  },
+  {
+   "id": "line_charge_field",
+   "name": "直線電荷のつくる電場",
+   "category": "em",
+   "expr": "E = λ / (2π ε₀ r)",
+   "equation": "E = lam eps^-1 r^-1",
+   "vars": {
+    "E": "electric_field",
+    "lam": [
+     "linear_charge_density",
+     "λ"
+    ],
+    "eps": [
+     "permittivity",
+     "ε₀"
+    ],
+    "r": "length"
+   },
+   "note": "点電荷の場合（r² で割る）と違い、r の1乗で割ります。単位で確かめると区別できます。"
+  },
+  {
+   "id": "sheet_charge_field",
+   "name": "広い平面の電荷のつくる電場",
+   "category": "em",
+   "expr": "E = σ / (2ε₀)",
+   "equation": "E = sig eps^-1",
+   "vars": {
+    "E": "electric_field",
+    "sig": [
+     "surface_charge_density",
+     "σ"
+    ],
+    "eps": [
+     "permittivity",
+     "ε₀"
+    ]
+   },
+   "note": "距離 r が出てこないのが特徴です。"
+  },
+  {
+   "id": "gauss_volume",
+   "name": "一様に帯電した球の内部の電場",
+   "category": "em",
+   "expr": "E = ρ r / (3ε₀)",
+   "equation": "E = rho r eps^-1",
+   "vars": {
+    "E": "electric_field",
+    "rho": [
+     "volume_charge_density",
+     "ρ"
+    ],
+    "r": "length",
+    "eps": [
+     "permittivity",
+     "ε₀"
+    ]
+   },
+   "note": null
+  },
+  {
+   "id": "scurd_def",
+   "name": "面電流密度の定義",
+   "category": "em",
+   "expr": "K = I / w",
+   "equation": "K = I w^-1",
+   "vars": {
+    "K": "surface_current_density",
+    "I": "current",
+    "w": "length"
+   },
+   "note": null
+  },
+  {
+   "id": "sheet_current_field",
+   "name": "広い平面電流のつくる磁場",
+   "category": "em",
+   "expr": "B = μ₀K / 2",
+   "equation": "B = mu K",
+   "vars": {
+    "B": "magnetic_flux_density",
+    "mu": [
+     "permeability",
+     "μ₀"
+    ],
+    "K": "surface_current_density"
+   },
+   "note": null
+  },
+  {
+   "id": "turn_def",
+   "name": "単位長さあたりの巻き数",
+   "category": "em",
+   "expr": "n = N / l",
+   "equation": "n = N l^-1",
+   "vars": {
+    "n": "turn_density",
+    "N": "number",
+    "l": "length"
+   },
+   "note": null
+  },
+  {
+   "id": "solenoid",
+   "name": "ソレノイド内部の磁場",
+   "category": "em",
+   "expr": "B = μ₀ n I",
+   "equation": "B = mu n I",
+   "vars": {
+    "B": "magnetic_flux_density",
+    "mu": [
+     "permeability",
+     "μ₀"
+    ],
+    "n": "turn_density",
+    "I": "current"
+   },
+   "note": "n は全体の巻き数ではなく、単位長さあたりの巻き数（m⁻¹）です。"
+  },
+  {
+   "id": "solenoid_L",
+   "name": "長いソレノイドの自己インダクタンス",
+   "category": "em",
+   "expr": "L = μ₀ n² S l",
+   "equation": "L = mu n^2 S l",
+   "vars": {
+    "L": "inductance",
+    "mu": [
+     "permeability",
+     "μ₀"
+    ],
+    "n": "turn_density",
+    "S": "area",
+    "l": "length"
+   },
+   "note": null
+  },
+  {
+   "id": "dipole_def",
+   "name": "電気双極子モーメントの定義",
+   "category": "em",
+   "expr": "p = q d",
+   "equation": "p = q d",
+   "vars": {
+    "p": "electric_dipole_moment",
+    "q": "charge",
+    "d": "length"
+   },
+   "note": null
+  },
+  {
+   "id": "dipole_torque",
+   "name": "電場中の双極子が受ける力のモーメント",
+   "category": "em",
+   "expr": "τ = p E sin θ",
+   "equation": "tau = p E",
+   "vars": {
+    "tau": [
+     "torque",
+     "τ"
+    ],
+    "p": "electric_dipole_moment",
+    "E": "electric_field"
+   },
+   "note": "sin θ は単位をもたない数です。"
+  },
+  {
+   "id": "mmoment_def",
+   "name": "磁気モーメントの定義",
+   "category": "em",
+   "expr": "m = I S",
+   "equation": "mm = I S",
+   "vars": {
+    "mm": [
+     "magnetic_moment",
+     "m"
+    ],
+    "I": "current",
+    "S": "area"
+   },
+   "note": null
+  },
+  {
+   "id": "mmoment_torque",
+   "name": "磁場中の電流ループが受ける力のモーメント",
+   "category": "em",
+   "expr": "τ = m B sin θ",
+   "equation": "tau = mm B",
+   "vars": {
+    "tau": [
+     "torque",
+     "τ"
+    ],
+    "mm": [
+     "magnetic_moment",
+     "m"
+    ],
+    "B": "magnetic_flux_density"
+   },
+   "note": null
+  },
+  {
+   "id": "ued_def",
+   "name": "電場のエネルギー密度",
+   "category": "em",
+   "expr": "u = ½ ε₀ E²",
+   "equation": "u = eps E^2",
+   "vars": {
+    "u": "electric_energy_density",
+    "eps": [
+     "permittivity",
+     "ε₀"
+    ],
+    "E": "electric_field"
+   },
+   "note": "係数 ½ は単位に影響しません。"
+  },
+  {
+   "id": "umd_def",
+   "name": "磁場のエネルギー密度",
+   "category": "em",
+   "expr": "u = B² / (2μ₀)",
+   "equation": "u = B^2 mu^-1",
+   "vars": {
+    "u": "magnetic_energy_density",
+    "B": "magnetic_flux_density",
+    "mu": [
+     "permeability",
+     "μ₀"
+    ]
+   },
+   "note": null
+  },
+  {
+   "id": "dfield_def",
+   "name": "電束密度と電場",
+   "category": "em",
+   "expr": "D = ε E",
+   "equation": "D = eps E",
+   "vars": {
+    "D": "electric_flux_density",
+    "eps": [
+     "permittivity",
+     "ε"
+    ],
+    "E": "electric_field"
+   },
+   "note": null
+  },
+  {
+   "id": "mobility_def",
+   "name": "移動度の定義",
+   "category": "em",
+   "expr": "v = μ E",
+   "equation": "v = mob E",
+   "vars": {
+    "v": "velocity",
+    "mob": [
+     "mobility",
+     "μ"
+    ],
+    "E": "electric_field"
+   },
+   "note": null
+  },
+  {
+   "id": "hall_def",
+   "name": "ホール係数",
+   "category": "em",
+   "expr": "R_H = 1 / (n q)",
+   "equation": "RH = n^-1 q^-1",
+   "vars": {
+    "RH": [
+     "hall_coefficient",
+     "R_H"
+    ],
+    "n": "number_density",
+    "q": "charge"
+   },
+   "note": null
+  },
+  {
+   "id": "hall_voltage",
+   "name": "ホール電圧",
+   "category": "em",
+   "expr": "V_H = I B / (n q d)",
+   "equation": "VH = I B n^-1 q^-1 d^-1",
+   "vars": {
+    "VH": [
+     "voltage",
+     "V_H"
+    ],
+    "I": "current",
+    "B": "magnetic_flux_density",
+    "n": "number_density",
+    "q": "charge",
+    "d": "length"
+   },
+   "note": "d は磁場の向きの、試料の厚さです。"
+  },
+  {
+   "id": "rpl_def",
+   "name": "単位長さあたりの抵抗",
+   "category": "em",
+   "expr": "r = R / l",
+   "equation": "rl = R l^-1",
+   "vars": {
+    "rl": [
+     "resistance_per_length",
+     "r"
+    ],
+    "R": "resistance",
+    "l": "length"
+   },
+   "note": null
+  },
+  {
+   "id": "lpl_def",
+   "name": "単位長さあたりのインダクタンス",
+   "category": "em",
+   "expr": "L′ = L / l",
+   "equation": "Lp = L l^-1",
+   "vars": {
+    "Lp": [
+     "inductance_per_length",
+     "L′"
+    ],
+    "L": "inductance",
+    "l": "length"
+   },
+   "note": null
+  },
+  {
+   "id": "cpl_def",
+   "name": "単位長さあたりの静電容量",
+   "category": "em",
+   "expr": "C′ = C / l",
+   "equation": "Cp = C l^-1",
+   "vars": {
+    "Cp": [
+     "capacitance_per_length",
+     "C′"
+    ],
+    "C": "capacitance",
+    "l": "length"
+   },
+   "note": null
+  },
+  {
+   "id": "fpl_def",
+   "name": "単位長さあたりの力",
+   "category": "em",
+   "expr": "f = F / l",
+   "equation": "fl = F l^-1",
+   "vars": {
+    "fl": [
+     "force_per_length",
+     "f"
+    ],
+    "F": "force",
+    "l": "length"
+   },
+   "note": null
+  },
+  {
+   "id": "parallel_wires",
+   "name": "平行電流の間に働く力（長さあたり）",
+   "category": "em",
+   "expr": "f = μ₀ I₁ I₂ / (2π d)",
+   "equation": "fl = mu I1 I2 d^-1",
+   "vars": {
+    "fl": [
+     "force_per_length",
+     "f"
+    ],
+    "mu": [
+     "permeability",
+     "μ₀"
+    ],
+    "I1": [
+     "current",
+     "I₁"
+    ],
+    "I2": [
+     "current",
+     "I₂"
+    ],
+    "d": "length"
+   },
+   "note": "左辺は導線全体に働く力ではなく、長さ 1 m あたりの力です。"
+  },
+  {
+   "id": "spcharge_def",
+   "name": "比電荷の定義",
+   "category": "em",
+   "expr": "e/m",
+   "equation": "sc = q m^-1",
+   "vars": {
+    "sc": [
+     "specific_charge",
+     "e/m"
+    ],
+    "q": "charge",
+    "m": "mass"
+   },
+   "note": null
+  },
+  {
+   "id": "rydberg",
+   "name": "リュードベリの式",
+   "category": "wave",
+   "expr": "1/λ = R (1/n² − 1/m²)",
+   "equation": "lam^-1 = R",
+   "vars": {
+    "lam": [
+     "length",
+     "λ"
+    ],
+    "R": "rydberg"
+   },
+   "note": "かっこの中の n、m は整数で、単位をもちません。"
+  },
+  {
+   "id": "lmd_def",
+   "name": "線密度の定義",
+   "category": "mech",
+   "expr": "ρ = m / l",
+   "equation": "rho = m l^-1",
+   "vars": {
+    "rho": [
+     "linear_mass_density",
+     "ρ"
+    ],
+    "m": "mass",
+    "l": "length"
+   },
+   "note": null
+  },
+  {
+   "id": "string_wave",
+   "name": "弦を伝わる波の速さ",
+   "category": "mech",
+   "expr": "v = √(T / ρ)",
+   "equation": "v = T^1/2 rho^-1/2",
+   "vars": {
+    "v": "velocity",
+    "T": [
+     "force",
+     "T"
+    ],
+    "rho": [
+     "linear_mass_density",
+     "ρ"
+    ]
+   },
+   "note": "T は弦の張力（力）、ρ は線密度です。√(N ÷ kg/m) ＝ √(m²/s²) ＝ m/s となり、速さの単位になります。"
+  },
+  {
+   "id": "smd_def",
+   "name": "面密度の定義",
+   "category": "mech",
+   "expr": "σ = m / S",
+   "equation": "sig = m S^-1",
+   "vars": {
+    "sig": [
+     "surface_mass_density",
+     "σ"
+    ],
+    "m": "mass",
+    "S": "area"
+   },
+   "note": null
+  },
+  {
+   "id": "drag_lin",
+   "name": "速さに比例する抵抗力",
+   "category": "mech",
+   "expr": "F = k v",
+   "equation": "F = b v",
+   "vars": {
+    "F": "force",
+    "b": [
+     "drag_coeff_linear",
+     "k"
+    ],
+    "v": "velocity"
+   },
+   "note": null
+  },
+  {
+   "id": "terminal_lin",
+   "name": "終端速度（抵抗力が速さに比例）",
+   "category": "mech",
+   "expr": "v = m g / k",
+   "equation": "v = m g b^-1",
+   "vars": {
+    "v": "velocity",
+    "m": "mass",
+    "g": "acceleration",
+    "b": [
+     "drag_coeff_linear",
+     "k"
+    ]
+   },
+   "note": null
+  },
+  {
+   "id": "drag_quad",
+   "name": "速さの2乗に比例する抵抗力",
+   "category": "mech",
+   "expr": "F = k v²",
+   "equation": "F = c v^2",
+   "vars": {
+    "F": "force",
+    "c": [
+     "drag_coeff_quad",
+     "k"
+    ],
+    "v": "velocity"
+   },
+   "note": null
+  },
+  {
+   "id": "terminal_quad",
+   "name": "終端速度（抵抗力が速さの2乗に比例）",
+   "category": "mech",
+   "expr": "v = √(m g / k)",
+   "equation": "v = m^1/2 g^1/2 c^-1/2",
+   "vars": {
+    "v": "velocity",
+    "m": "mass",
+    "g": "acceleration",
+    "c": [
+     "drag_coeff_quad",
+     "k"
+    ]
+   },
+   "note": null
+  },
+  {
+   "id": "young",
+   "name": "ヤング率（フックの法則の一般形）",
+   "category": "mech",
+   "expr": "F / S = E ΔL / L",
+   "equation": "F S^-1 = Y dL L^-1",
+   "vars": {
+    "F": "force",
+    "S": "area",
+    "Y": [
+     "youngs_modulus",
+     "E"
+    ],
+    "dL": [
+     "length",
+     "ΔL"
+    ],
+    "L": "length"
+   },
+   "note": "ΔL / L（ひずみ）は単位をもちません。"
+  },
+  {
+   "id": "molar_heat",
+   "name": "モル比熱",
+   "category": "thermo",
+   "expr": "Q = n C ΔT",
+   "equation": "Q = n Cm dT",
+   "vars": {
+    "Q": "energy",
+    "n": "amount",
+    "Cm": [
+     "molar_heat_capacity",
+     "C"
+    ],
+    "dT": [
+     "temperature",
+     "ΔT"
+    ]
+   },
+   "note": null
+  },
+  {
+   "id": "pflux_def",
+   "name": "粒子の流束の定義",
+   "category": "thermo",
+   "expr": "Φ = N / (S t)",
+   "equation": "Phi = N S^-1 t^-1",
+   "vars": {
+    "Phi": [
+     "particle_flux",
+     "Φ"
+    ],
+    "N": "number",
+    "S": "area",
+    "t": "time"
+   },
+   "note": null
+  },
+  {
+   "id": "pflux_nv",
+   "name": "粒子の流束と数密度・速さ",
+   "category": "thermo",
+   "expr": "Φ = n v",
+   "equation": "Phi = n v",
+   "vars": {
+    "Phi": [
+     "particle_flux",
+     "Φ"
+    ],
+    "n": "number_density",
+    "v": "velocity"
+   },
+   "note": "係数（1/6 や 1/4 など）は単位に影響しません。"
+  },
+  {
+   "id": "vflow_def",
+   "name": "体積流量の定義",
+   "category": "mech",
+   "expr": "Q = V / t",
+   "equation": "Qv = V t^-1",
+   "vars": {
+    "Qv": [
+     "volume_flow_rate",
+     "Q"
+    ],
+    "V": "volume",
+    "t": "time"
+   },
+   "note": null
+  },
+  {
+   "id": "continuity",
+   "name": "連続の式（体積流量）",
+   "category": "mech",
+   "expr": "Q = S v",
+   "equation": "Qv = S v",
+   "vars": {
+    "Qv": [
+     "volume_flow_rate",
+     "Q"
+    ],
+    "S": "area",
+    "v": "velocity"
+   },
+   "note": null
+  },
+  {
+   "id": "radiation_pressure",
+   "name": "光の放射圧",
+   "category": "wave",
+   "expr": "p = I / c",
+   "equation": "p = I c^-1",
+   "vars": {
+    "p": "pressure",
+    "I": "intensity",
+    "c": "velocity"
+   },
+   "note": "完全に反射する場合は 2I/c。係数 2 は単位に影響しません。"
   }
  ]
 }

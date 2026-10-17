@@ -160,6 +160,7 @@ footer.site .src{font-size:.78rem;margin:0 0 .5rem}
 .checkbox{margin:1rem 0;padding:.8rem 1rem;border-radius:var(--r);border:2px solid var(--ok);background:color-mix(in srgb,var(--ok) 6%,var(--card))}
 .checkbox b{font-size:.85rem;color:var(--ok)}
 .pitfall{border:2px solid #c2410c;border-style:solid;background:color-mix(in srgb,#c2410c 6%,var(--card))}.pitfall b{color:#c2410c}.checkbox p{margin:.3rem 0 0}
+.tag.adv{color:#7c3aed;background:color-mix(in srgb,#7c3aed 12%,var(--bg))}
 .tnav{margin:.5rem 0 1.2rem}.tnav a[aria-current]{background:var(--accent);color:#fff;border-color:var(--accent)}
 .pq .qt .given{margin-top:.5rem}
 /* 数式（ノート風の表記） */

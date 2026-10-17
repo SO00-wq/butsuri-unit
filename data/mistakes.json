@@ -933,6 +933,512 @@
    "cause": "sin θ も cos θ も単位をもたない数なので、取り違えても単位は変わらない。力の図を描いて向きを確かめる必要がある。",
    "detectable": false,
    "tip": "sin と cos の取り違えは、極端な場合を考えると見つかります。θ = 0° なら斜面は水平なので加速度は 0 のはず。a = g cos θ だと g になってしまうので間違いだとわかります。"
+  },
+  {
+   "id": "string_wave_speed",
+   "field": "mech",
+   "level": "難関",
+   "title": "弦を伝わる波の速さで張力と線密度を逆にする",
+   "problem": "線密度 ρ の弦が、張力 T で張られている。弦を伝わる横波の速さ v を求めよ。",
+   "given": {
+    "T": "force",
+    "ρ": "linear_mass_density"
+   },
+   "target": [
+    "v",
+    "velocity"
+   ],
+   "wrong": {
+    "text": "v = √(ρ/T)",
+    "expr": [
+     [
+      [
+       "ρ",
+       "1/2"
+      ],
+      [
+       "T",
+       "-1/2"
+      ]
+     ]
+    ]
+   },
+   "right": {
+    "text": "v = √(T/ρ)",
+    "expr": [
+     [
+      [
+       "T",
+       "1/2"
+      ],
+      [
+       "ρ",
+       "-1/2"
+      ]
+     ]
+    ]
+   },
+   "cause": "「重いほど遅い、強く張るほど速い」という向きを確かめずに、形だけで覚えていた。",
+   "detectable": true
+  },
+  {
+   "id": "solenoid_total_turns",
+   "field": "em",
+   "level": "難関",
+   "title": "ソレノイドの磁場で全体の巻き数 N を使う",
+   "problem": "長さ l、全体の巻き数 N のソレノイドに電流 I を流した。内部の磁束密度の大きさ B を求めよ。真空の透磁率を μ₀ とする。",
+   "given": {
+    "μ₀": "permeability",
+    "N": "number",
+    "I": "current",
+    "l": "length"
+   },
+   "target": [
+    "B",
+    "magnetic_flux_density"
+   ],
+   "wrong": {
+    "text": "B = μ₀NI",
+    "expr": [
+     [
+      [
+       "μ₀",
+       1
+      ],
+      [
+       "N",
+       1
+      ],
+      [
+       "I",
+       1
+      ]
+     ]
+    ]
+   },
+   "right": {
+    "text": "B = μ₀NI/l",
+    "expr": [
+     [
+      [
+       "μ₀",
+       1
+      ],
+      [
+       "N",
+       1
+      ],
+      [
+       "I",
+       1
+      ],
+      [
+       "l",
+       -1
+      ]
+     ]
+    ]
+   },
+   "cause": "公式 B = μ₀nI の n は「単位長さあたりの巻き数」（n = N/l）。全体の巻き数 N をそのまま入れてしまった。",
+   "detectable": true
+  },
+  {
+   "id": "parallel_wire_total_force",
+   "field": "em",
+   "level": "難関",
+   "title": "平行電流の力で「長さあたり」を忘れる",
+   "problem": "距離 d だけ離れた平行な2本の長い導線に、電流 I₁、I₂ が流れている。片方の導線の長さ l の部分が受ける力の大きさ F を求めよ。真空の透磁率を μ₀ とする。",
+   "given": {
+    "μ₀": "permeability",
+    "I₁": "current",
+    "I₂": "current",
+    "d": "length",
+    "l": "length"
+   },
+   "target": [
+    "F",
+    "force"
+   ],
+   "wrong": {
+    "text": "F = μ₀I₁I₂/(2πd)",
+    "expr": [
+     [
+      [
+       "μ₀",
+       1
+      ],
+      [
+       "I₁",
+       1
+      ],
+      [
+       "I₂",
+       1
+      ],
+      [
+       "d",
+       -1
+      ]
+     ]
+    ]
+   },
+   "right": {
+    "text": "F = μ₀I₁I₂l/(2πd)",
+    "expr": [
+     [
+      [
+       "μ₀",
+       1
+      ],
+      [
+       "I₁",
+       1
+      ],
+      [
+       "I₂",
+       1
+      ],
+      [
+       "l",
+       1
+      ],
+      [
+       "d",
+       -1
+      ]
+     ]
+    ]
+   },
+   "cause": "μ₀I₁I₂/(2πd) は長さ 1 m あたりの力（単位 N/m）。長さ l をかけ忘れた。",
+   "detectable": true
+  },
+  {
+   "id": "energy_density_square",
+   "field": "em",
+   "level": "難関",
+   "title": "電場のエネルギー密度で E を2乗し忘れる",
+   "problem": "真空中に強さ E の一様な電場がある。電場のエネルギー密度 u を求めよ。真空の誘電率を ε₀ とする。",
+   "given": {
+    "ε₀": "permittivity",
+    "E": "electric_field"
+   },
+   "target": [
+    "u",
+    "electric_energy_density"
+   ],
+   "wrong": {
+    "text": "u = ½ε₀E",
+    "expr": [
+     [
+      [
+       "ε₀",
+       1
+      ],
+      [
+       "E",
+       1
+      ]
+     ]
+    ]
+   },
+   "right": {
+    "text": "u = ½ε₀E²",
+    "expr": [
+     [
+      [
+       "ε₀",
+       1
+      ],
+      [
+       "E",
+       2
+      ]
+     ]
+    ]
+   },
+   "cause": "コンデンサーのエネルギー ½CV² から導くときに、2乗を落とした。ε₀E の単位は C/m²（電束密度と同じ）で、エネルギー密度ではない。",
+   "detectable": true
+  },
+  {
+   "id": "line_charge_r2",
+   "field": "em",
+   "level": "難関",
+   "title": "直線電荷の電場で r² で割る",
+   "problem": "線電荷密度 λ で一様に帯電した無限に長い直線から、距離 r の点の電場の強さ E を求めよ。真空の誘電率を ε₀ とする。",
+   "given": {
+    "λ": "linear_charge_density",
+    "ε₀": "permittivity",
+    "r": "length"
+   },
+   "target": [
+    "E",
+    "electric_field"
+   ],
+   "wrong": {
+    "text": "E = λ/(2πε₀r²)",
+    "expr": [
+     [
+      [
+       "λ",
+       1
+      ],
+      [
+       "ε₀",
+       -1
+      ],
+      [
+       "r",
+       -2
+      ]
+     ]
+    ]
+   },
+   "right": {
+    "text": "E = λ/(2πε₀r)",
+    "expr": [
+     [
+      [
+       "λ",
+       1
+      ],
+      [
+       "ε₀",
+       -1
+      ],
+      [
+       "r",
+       -1
+      ]
+     ]
+    ]
+   },
+   "cause": "点電荷の電場 q/(4πε₀r²) の形と混ざった。電荷が「長さあたり」になったぶん、r の次数が1つ下がる。",
+   "detectable": true
+  },
+  {
+   "id": "sheet_charge_r2",
+   "field": "em",
+   "level": "難関",
+   "title": "平面電荷の電場に距離を入れてしまう",
+   "problem": "面電荷密度 σ で一様に帯電した無限に広い平面から、距離 r の点の電場の強さ E を求めよ。真空の誘電率を ε₀ とする。",
+   "given": {
+    "σ": "surface_charge_density",
+    "ε₀": "permittivity",
+    "r": "length"
+   },
+   "target": [
+    "E",
+    "electric_field"
+   ],
+   "wrong": {
+    "text": "E = σ/(4πε₀r²)",
+    "expr": [
+     [
+      [
+       "σ",
+       1
+      ],
+      [
+       "ε₀",
+       -1
+      ],
+      [
+       "r",
+       -2
+      ]
+     ]
+    ]
+   },
+   "right": {
+    "text": "E = σ/(2ε₀)",
+    "expr": [
+     [
+      [
+       "σ",
+       1
+      ],
+      [
+       "ε₀",
+       -1
+      ]
+     ]
+    ]
+   },
+   "cause": "点電荷の式に σ を当てはめた。面電荷密度は C/m² なので、さらに r² で割ると単位が合わない。無限平面の電場は距離によらない。",
+   "detectable": true
+  },
+  {
+   "id": "hall_voltage_thickness",
+   "field": "em",
+   "level": "難関",
+   "title": "ホール電圧で試料の厚さを忘れる",
+   "problem": "磁束密度 B の磁場の向きの厚さが d の板状の試料に、電流 I を流した。キャリアの数密度を n、電荷を q とするとき、ホール電圧 V_H を求めよ。",
+   "given": {
+    "I": "current",
+    "B": "magnetic_flux_density",
+    "n": "number_density",
+    "q": "charge",
+    "d": "length"
+   },
+   "target": [
+    "V_H",
+    "voltage"
+   ],
+   "wrong": {
+    "text": "V_H = IB/(nq)",
+    "expr": [
+     [
+      [
+       "I",
+       1
+      ],
+      [
+       "B",
+       1
+      ],
+      [
+       "n",
+       -1
+      ],
+      [
+       "q",
+       -1
+      ]
+     ]
+    ]
+   },
+   "right": {
+    "text": "V_H = IB/(nqd)",
+    "expr": [
+     [
+      [
+       "I",
+       1
+      ],
+      [
+       "B",
+       1
+      ],
+      [
+       "n",
+       -1
+      ],
+      [
+       "q",
+       -1
+      ],
+      [
+       "d",
+       -1
+      ]
+     ]
+    ]
+   },
+   "cause": "電流密度（電流 ÷ 試料の断面積）を使うところで、断面積を幅だけにして、厚さ d で割るのを忘れた。",
+   "detectable": true
+  },
+  {
+   "id": "terminal_velocity_linear",
+   "field": "mech",
+   "level": "難関",
+   "title": "終端速度で抵抗の種類を取り違える",
+   "problem": "質量 m の物体が、速さ v に比例する抵抗力 kv を受けながら落下する。十分時間がたったときの速さ（終端速度）v を求めよ。重力加速度の大きさを g とする。",
+   "given": {
+    "m": "mass",
+    "g": "acceleration",
+    "k": "drag_coeff_linear"
+   },
+   "target": [
+    "v",
+    "velocity"
+   ],
+   "wrong": {
+    "text": "v = √(mg/k)",
+    "expr": [
+     [
+      [
+       "m",
+       "1/2"
+      ],
+      [
+       "g",
+       "1/2"
+      ],
+      [
+       "k",
+       "-1/2"
+      ]
+     ]
+    ]
+   },
+   "right": {
+    "text": "v = mg/k",
+    "expr": [
+     [
+      [
+       "m",
+       1
+      ],
+      [
+       "g",
+       1
+      ],
+      [
+       "k",
+       -1
+      ]
+     ]
+    ]
+   },
+   "cause": "抵抗力が速さの2乗に比例する（kv²）場合の答えと混ざった。比例定数 k の単位が違う（kg/s と kg/m）ので、単位で区別できる。",
+   "detectable": true
+  },
+  {
+   "id": "rotational_energy",
+   "field": "mech",
+   "level": "難関",
+   "title": "回転の運動エネルギーで ω を2乗し忘れる",
+   "problem": "慣性モーメント I の剛体が、角速度 ω で回転している。回転の運動エネルギー K を求めよ。",
+   "given": {
+    "I": "moment_of_inertia",
+    "ω": "angular_velocity"
+   },
+   "target": [
+    "K",
+    "energy"
+   ],
+   "wrong": {
+    "text": "K = ½Iω",
+    "expr": [
+     [
+      [
+       "I",
+       1
+      ],
+      [
+       "ω",
+       1
+      ]
+     ]
+    ]
+   },
+   "right": {
+    "text": "K = ½Iω²",
+    "expr": [
+     [
+      [
+       "I",
+       1
+      ],
+      [
+       "ω",
+       2
+      ]
+     ]
+    ]
+   },
+   "cause": "角運動量 L = Iω と混ざった。½mv² の m → I、v → ω と対応させれば2乗が必要だとわかる。",
+   "detectable": true
   }
  ]
 }

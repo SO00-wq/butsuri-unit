@@ -23,11 +23,21 @@
   <url><loc>https://tanitani.butsuri-lab.workers.dev/mistakes/photon_wavelength.html</loc></url>
   <url><loc>https://tanitani.butsuri-lab.workers.dev/mistakes/missing_half.html</loc></url>
   <url><loc>https://tanitani.butsuri-lab.workers.dev/mistakes/sin_cos.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/mistakes/string_wave_speed.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/mistakes/solenoid_total_turns.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/mistakes/parallel_wire_total_force.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/mistakes/energy_density_square.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/mistakes/line_charge_r2.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/mistakes/sheet_charge_r2.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/mistakes/hall_voltage_thickness.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/mistakes/terminal_velocity_linear.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/mistakes/rotational_energy.html</loc></url>
   <url><loc>https://tanitani.butsuri-lab.workers.dev/training/mech.html</loc></url>
   <url><loc>https://tanitani.butsuri-lab.workers.dev/training/thermo.html</loc></url>
   <url><loc>https://tanitani.butsuri-lab.workers.dev/training/em.html</loc></url>
   <url><loc>https://tanitani.butsuri-lab.workers.dev/training/wave.html</loc></url>
   <url><loc>https://tanitani.butsuri-lab.workers.dev/training/</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/advanced.html</loc></url>
   <url><loc>https://tanitani.butsuri-lab.workers.dev/c/base.html</loc></url>
   <url><loc>https://tanitani.butsuri-lab.workers.dev/c/mech.html</loc></url>
   <url><loc>https://tanitani.butsuri-lab.workers.dev/c/thermo.html</loc></url>
@@ -102,6 +112,32 @@
   <url><loc>https://tanitani.butsuri-lab.workers.dev/q/absorbed_dose.html</loc></url>
   <url><loc>https://tanitani.butsuri-lab.workers.dev/q/equivalent_dose.html</loc></url>
   <url><loc>https://tanitani.butsuri-lab.workers.dev/q/catalytic_activity.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/q/linear_charge_density.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/q/surface_charge_density.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/q/volume_charge_density.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/q/surface_current_density.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/q/turn_density.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/q/electric_dipole_moment.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/q/magnetic_moment.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/q/electric_energy_density.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/q/magnetic_energy_density.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/q/electric_flux_density.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/q/mobility.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/q/hall_coefficient.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/q/resistance_per_length.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/q/inductance_per_length.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/q/capacitance_per_length.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/q/force_per_length.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/q/specific_charge.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/q/rydberg.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/q/linear_mass_density.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/q/surface_mass_density.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/q/drag_coeff_linear.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/q/drag_coeff_quad.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/q/youngs_modulus.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/q/molar_heat_capacity.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/q/particle_flux.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/q/volume_flow_rate.html</loc></url>
   <url><loc>https://tanitani.butsuri-lab.workers.dev/f/angle_arc.html</loc></url>
   <url><loc>https://tanitani.butsuri-lab.workers.dev/f/solid_angle_def.html</loc></url>
   <url><loc>https://tanitani.butsuri-lab.workers.dev/f/area_sq.html</loc></url>
@@ -202,4 +238,46 @@
   <url><loc>https://tanitani.butsuri-lab.workers.dev/f/absorbed.html</loc></url>
   <url><loc>https://tanitani.butsuri-lab.workers.dev/f/equivalent.html</loc></url>
   <url><loc>https://tanitani.butsuri-lab.workers.dev/f/catalytic.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/f/lcd_def.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/f/scd_def.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/f/vcd_def.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/f/line_charge_field.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/f/sheet_charge_field.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/f/gauss_volume.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/f/scurd_def.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/f/sheet_current_field.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/f/turn_def.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/f/solenoid.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/f/solenoid_L.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/f/dipole_def.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/f/dipole_torque.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/f/mmoment_def.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/f/mmoment_torque.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/f/ued_def.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/f/umd_def.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/f/dfield_def.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/f/mobility_def.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/f/hall_def.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/f/hall_voltage.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/f/rpl_def.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/f/lpl_def.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/f/cpl_def.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/f/fpl_def.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/f/parallel_wires.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/f/spcharge_def.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/f/rydberg.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/f/lmd_def.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/f/string_wave.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/f/smd_def.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/f/drag_lin.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/f/terminal_lin.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/f/drag_quad.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/f/terminal_quad.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/f/young.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/f/molar_heat.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/f/pflux_def.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/f/pflux_nv.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/f/vflow_def.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/f/continuity.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/f/radiation_pressure.html</loc></url>
 </urlset>

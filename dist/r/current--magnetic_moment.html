@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>電流と磁気モーメントの関係｜A と m²·A をつなぐ公式 | ブツリ単位ラボ</title>
+<meta name="description" content="電流（A）と磁気モーメント（m²·A）を結ぶ公式と、単位どうしの関係を次元解析で整理。">
+<link rel="canonical" href="https://tanitani.butsuri-lab.workers.dev/r/current--magnetic_moment.html">
+<meta name="robots" content="noindex,follow">
+<meta name="google-site-verification" content="kVE91IWkP86K1E_JpBQDklXXu5gz86ZOA64xcgtDUwc">
+<meta name="theme-color" content="#1d5fd1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css?v=9">
+<script src="/assets/site.js?v=9" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+<header class="site"><div class="wrap">
+  <a class="logo" href="/"><span class="mark">SI</span>ブツリ単位ラボ</a>
+  <nav class="hdr-nav" aria-label="メインメニュー">
+    <a class="txt" href="/method.html">検算のやり方</a>
+    <a class="txt" href="/training/">トレーニング</a>
+    <button class="icon-btn" data-open-search aria-label="検索"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
+    <button class="icon-btn" id="menu-btn" aria-label="メニューを開く" aria-controls="drawer" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </nav>
+</div></header>
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" inert aria-label="メニュー">
+  <div class="drawer-head">メニュー<button class="icon-btn" id="close-btn" aria-label="メニューを閉じる"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <div class="drawer-body">
+    <div class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="q" type="search" placeholder="量・単位・公式を検索（例：電圧、J/K）" autocomplete="off" aria-label="サイト内検索"></div>
+    <div class="search-hint">名前でも単位記号でも探せます。</div>
+    <ul class="results" id="results" aria-live="polite"></ul>
+    <div class="nav-sec"><h4>検算する</h4><ul>
+      <li><a href="/">トップ</a></li>
+      <li><a href="/method.html">検算のやり方</a></li>
+      <li><a href="/mistakes/">よくあるミス集</a></li>
+      <li><a href="/training/">検算トレーニング</a></li>
+      <li><a href="/advanced.html">難関大レベル</a></li>
+    </ul></div>
+    <div class="nav-sec"><h4>単位を知る</h4><ul>
+      <li><a href="/guide.html">単位の読み方</a></li>
+      <li><a href="/about.html">このサイトについて</a></li>
+    </ul></div>
+    <div class="nav-sec"><h4>単位辞典（分野別）</h4><ul><li><a href="/c/base.html">基本量<span class="n">10量</span></a></li><li><a href="/c/mech.html">力学<span class="n">28量</span></a></li><li><a href="/c/thermo.html">熱・気体<span class="n">12量</span></a></li><li><a href="/c/em.html">電磁気<span class="n">34量</span></a></li><li><a href="/c/wave.html">波・光・量子<span class="n">6量</span></a></li><li><a href="/c/misc.html">放射線・化学<span class="n">4量</span></a></li></ul></div>
+    <div class="nav-sec"><h4>よく調べる単位</h4><div class="chips"><a href="/q/velocity.html">速度</a><a href="/q/acceleration.html">加速度</a><a href="/q/force.html">力</a><a href="/q/energy.html">エネルギー</a><a href="/q/power.html">仕事率</a><a href="/q/pressure.html">圧力</a><a href="/q/voltage.html">電圧</a><a href="/q/resistance.html">電気抵抗</a><a href="/q/capacitance.html">静電容量</a><a href="/q/spring_constant.html">ばね定数</a></div></div>
+  </div>
+</aside>
+<main id="main"><div class="wrap">
+<nav class="bc" aria-label="パンくずリスト"><a href="/">トップ</a> › <a href="/q/current.html">電流</a> › 磁気モーメントとの関係</nav>
+<h1>電流と磁気モーメントの関係</h1>
+<div class="hero"><div class="big"><math><mstyle displaystyle="true"><mi mathvariant="normal">A</mi></mstyle></math>　と　<math><mstyle displaystyle="true"><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup><mo>·</mo><mi mathvariant="normal">A</mi></mstyle></math></div><div class="sub">[I]　と　[L² I]</div></div>
+<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">単位の比から見る</a><a href="#s2">2つの量を結ぶ公式</a><a href="#s3">それぞれの量のページ</a></div></nav><h2 id="s1">単位の比から見る</h2>
+<div class="calc">[電流] ÷ [磁気モーメント] <math><mstyle displaystyle="true"><mo>=</mo><mo>(</mo><mi mathvariant="normal">A</mi><mo>)</mo><mo>÷</mo><mo>(</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup><mo>·</mo><mi mathvariant="normal">A</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></div>
+<p>つまり 電流 は「磁気モーメント ÷ <a href="/q/area.html">面積</a>」と同じ単位をもちます。</p>
+<h2 id="s2">2つの量を結ぶ公式</h2>
+<div class="step"><b><a href="/f/mmoment_def.html">磁気モーメントの定義</a></b>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">m</mi><mo>=</mo><mi mathvariant="normal">I</mi><mi mathvariant="normal">S</mi></mstyle></math></span>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">I</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">S</mi></mrow></mfrac></mstyle></math><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">I</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup><mo>·</mo><mi mathvariant="normal">A</mi><mo>÷</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">A</mi></mstyle></math></div>
+<div class="calc">[<math><mstyle displaystyle="true"><mi mathvariant="normal">m</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">A</mi><mo>×</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup><mo>·</mo><mi mathvariant="normal">A</mi></mstyle></math></div>
+</div>
+<h2 id="s3">それぞれの量のページ</h2><ul>
+<li><a href="/q/current.html">電流</a>（<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">A</mi><mo>=</mo><mi mathvariant="normal">A</mi></mstyle></math></span>）</li>
+<li><a href="/q/magnetic_moment.html">磁気モーメント</a>（<span class="mono"><math><mstyle displaystyle="true"><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup><mo>·</mo><mi mathvariant="normal">A</mi><mo>=</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup><mo>·</mo><mi mathvariant="normal">A</mi></mstyle></math></span>）</li>
+</ul>
+</div></main>
+<footer class="site"><div class="wrap">
+  <div class="links"><a href="/">トップ</a><a href="/method.html">検算のやり方</a><a href="/mistakes/">よくあるミス</a><a href="/training/">検算トレーニング</a><a href="/advanced.html">難関大レベル</a><a href="/guide.html">単位の読み方</a><a href="/about.html">このサイトについて</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>
+  <p class="src">単位の定義は、国際度量衡局（BIPM）の SI パンフレット第9版と、その日本語版（産業技術総合研究所 計量標準総合センター）に基づいています。</p>
+  ブツリ単位ラボ — 答えの単位で検算して、取れる問題を落とさない。最終更新日：2026-10-18
+</div></footer>
+<button class="to-top" id="to-top" aria-label="ページの先頭へ戻る"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></button>
+</body>
+</html>

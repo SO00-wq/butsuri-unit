@@ -25,7 +25,7 @@ from itertools import combinations
 OUT = Path("dist")
 SITE_NAME = "ブツリ単位ラボ"
 SITE_URL = "https://tanitani.butsuri-lab.workers.dev"  # ★独自ドメイン取得後に変更
-ASSET_VER = "8"  # CSS/JS を変えたら上げる（ブラウザのキャッシュ対策）
+ASSET_VER = "9"  # CSS/JS を変えたら上げる（ブラウザのキャッシュ対策）
 UPDATED = "2026-10-18"  # 最終更新日（内容を更新したら変える）
 GOOGLE_VERIFICATION = "kVE91IWkP86K1E_JpBQDklXXu5gz86ZOA64xcgtDUwc"  # Search Console 所有権確認
 SITE_DESC = "物理の計算で出した答えが正しいかを、答えの単位で確かめるためのサイト。検算の手順、よくあるミス、トレーニング、単位辞典。"
@@ -480,6 +480,7 @@ footer.site .src{font-size:.78rem;margin:0 0 .5rem}
 .checkbox{margin:1rem 0;padding:.8rem 1rem;border-radius:var(--r);border:2px solid var(--ok);background:color-mix(in srgb,var(--ok) 6%,var(--card))}
 .checkbox b{font-size:.85rem;color:var(--ok)}
 .pitfall{border:2px solid #c2410c;border-style:solid;background:color-mix(in srgb,#c2410c 6%,var(--card))}.pitfall b{color:#c2410c}.checkbox p{margin:.3rem 0 0}
+.tag.adv{color:#7c3aed;background:color-mix(in srgb,#7c3aed 12%,var(--bg))}
 .tnav{margin:.5rem 0 1.2rem}.tnav a[aria-current]{background:var(--accent);color:#fff;border-color:var(--accent)}
 .pq .qt .given{margin-top:.5rem}
 /* 数式（ノート風の表記） */
@@ -651,6 +652,7 @@ def drawer_html(path):
       <li><a href="/method.html"{cur("/method.html")}>検算のやり方</a></li>
       <li><a href="/mistakes/"{cur("/mistakes/")}>よくあるミス集</a></li>
       <li><a href="/training/"{cur("/training/")}>検算トレーニング</a></li>
+      <li><a href="/advanced.html"{cur("/advanced.html")}>難関大レベル</a></li>
     </ul></div>
     <div class="nav-sec"><h4>単位を知る</h4><ul>
       <li><a href="/guide.html"{cur("/guide.html")}>単位の読み方</a></li>
@@ -718,7 +720,7 @@ def page(path, title, desc, body, crumbs=(), noindex=False):
 {body}
 </div></main>
 <footer class="site"><div class="wrap">
-  <div class="links"><a href="/">トップ</a><a href="/method.html">検算のやり方</a><a href="/mistakes/">よくあるミス</a><a href="/training/">検算トレーニング</a><a href="/guide.html">単位の読み方</a><a href="/about.html">このサイトについて</a>{foot_links}</div>
+  <div class="links"><a href="/">トップ</a><a href="/method.html">検算のやり方</a><a href="/mistakes/">よくあるミス</a><a href="/training/">検算トレーニング</a><a href="/advanced.html">難関大レベル</a><a href="/guide.html">単位の読み方</a><a href="/about.html">このサイトについて</a>{foot_links}</div>
   <p class="src">単位の定義は、国際度量衡局（BIPM）の SI パンフレット第9版と、その日本語版（産業技術総合研究所 計量標準総合センター）に基づいています。</p>
   {SITE_NAME} — 答えの単位で検算して、取れる問題を落とさない。最終更新日：{UPDATED}
 </div></footer>
@@ -756,6 +758,7 @@ def build_assets():
         idx.append({"y": "ミス例", "t": m["title"].replace("【見抜けない例】", ""), "s": f'× {m["wrong"]["text"]} → ○ {m["right"]["text"]}',
                     "u": f"/mistakes/{m['id']}.html", "k": m["problem"]})
     idx.append({"y": "解説", "t": "検算のやり方", "s": "答えの単位で間違いを見つける3つの手順", "u": "/method.html", "k": "検算 次元解析 手順 確かめ"})
+    idx.append({"y": "解説", "t": "難関大レベルの単位と検算", "s": "線密度・面密度・エネルギー密度など", "u": "/advanced.html", "k": "難関 旧帝 二次 線密度 面密度"})
     idx.append({"y": "練習", "t": "検算トレーニング", "s": "単位が合う答えはどれ？", "u": "/training/", "k": "練習 問題 トレーニング"})
     for e_ in idx:
         h_ = mathify(E(e_["s"]))
@@ -873,7 +876,7 @@ def step_html(st):
             f'<p>{E(sq.get("how", ""))}</p>'
             f'<div class="calc">{E(one_line(f, sq["def_var"]))}</div></div>')
 
-LEVEL_NOTE = {"中学": "中学理科で出てくる", "高校": "高校物理・化学で出てくる", "大学": "大学の物理で出てくる"}
+LEVEL_NOTE = {"中学": "中学理科で出てくる", "高校": "高校物理・化学で出てくる", "難関": "難関大の二次試験で出てくる", "大学": "大学の物理で出てくる"}
 
 
 def word_label(w, e):
@@ -1303,7 +1306,8 @@ def given_list(given, used=None):
 
 def mistake_card(m):
     tq = QS[m["target"][1]]
-    flag = "" if m["detectable"] else '<span class="tag warn">単位では見抜けない</span>'
+    flag = ("" if m["detectable"] else '<span class="tag warn">単位では見抜けない</span>') + \
+           ('<span class="tag adv">難関大</span>' if m.get("level") == "難関" else "")
     return (f'<a href="/mistakes/{m["id"]}.html"><div class="t">{flag}{E(m["title"].replace("【見抜けない例】", ""))}</div>'
             f'<div class="u">× {E(m["wrong"]["text"])}　→　○ {E(m["right"]["text"])}</div></a>')
 
@@ -1315,7 +1319,8 @@ def build_mistake(m):
     wl, okw = check_lines(m["wrong"]["expr"], m["given"], tq["dims"])
     rl, _ = check_lines(m["right"]["expr"], m["given"], tq["dims"])
     title = m["title"].replace("【見抜けない例】", "")
-    b = [f'<span class="tag">{E(FIELD_NAMES[m["field"]])}</span>' + ("" if m["detectable"] else '<span class="tag warn">単位では見抜けない例</span>'),
+    b = [f'<span class="tag">{E(FIELD_NAMES[m["field"]])}</span>' + ("" if m["detectable"] else '<span class="tag warn">単位では見抜けない例</span>')
+         + ('<span class="tag adv">難関大レベル</span>' if m.get("level") == "難関" else ""),
          f"<h1>{E(title)}</h1>",
          f'<div class="problem"><b>問題</b><p>{E(m["problem"])}</p></div>',
          f'<div class="answer wrong-ans"><span class="lbl">ありがちな答え</span><span class="mono">{E(m["wrong"]["text"])}</span></div>',
@@ -1531,7 +1536,7 @@ def build_quantity(q):
     desc = (f"{q['name']}とは{q['meaning']}その言葉をそのまま単位に置き換えると {u}"
             + (f"（= {base}）" if base != u and d != ZERO else "") + " になる理由を、図式と確認問題でやさしく解説。")
     lvl = q.get("level", "高校")
-    b = [f'<span class="tag">{E(cat["name"])}</span><span class="tag lv">{E(LEVEL_NOTE[lvl])}</span>',
+    b = [f'<span class="tag">{E(cat["name"])}</span><span class="tag lv{" adv" if lvl == "難関" else ""}">{E(LEVEL_NOTE[lvl])}</span>',
          f"<h1>{E(title)}</h1>",
          '<div class="hero">',
          f'<div class="big">{E(u if d != ZERO else "1（無次元）")}{(" = " + E(base)) if base != u and d != ZERO else ""}</div>',
@@ -1776,6 +1781,7 @@ def build_index():
         f'<a href="/mistakes/"><div class="t">② よくあるミス集</div><div class="d">√ の付け忘れ、分子と分母の取り違えなど、{len(MISTAKES)} 個の実例。</div></a>'
         f'<a href="/training/"><div class="t">③ 検算トレーニング</div><div class="d">「単位が合う答えはどれ？」を {ntrain} 問。分野別に練習できます。</div></a>'
         f'<a href="#dict"><div class="t">④ 単位辞典</div><div class="d">{len(QS)} 個の量の単位を、意味を表す言葉から組み立てて理解します。</div></a>'
+        f'<a href="/advanced.html"><div class="t">⑤ 難関大レベル</div><div class="d">線密度・面密度・エネルギー密度など、二次試験で出る {sum(1 for q in QS.values() if q.get("level") == "難関")} 個の単位とミス例。</div></a>'
         "</div>",
         '<h2 id="dict">単位辞典：答えの単位とその意味を調べる</h2>',
         "<p>検算するには、求めた量の単位と、その単位が何を意味するかを知っている必要があります。"
@@ -1907,6 +1913,30 @@ def build_about():
 """
     page("/about.html", "このサイトについて", f"{SITE_NAME}を作ったきっかけ、できること、内容の正しさの確かめ方、出典について。", body, [("このサイトについて", None)])
 
+
+def build_advanced():
+    adv = [q for q in QS.values() if q.get("level") == "難関"]
+    b = ["<h1>難関大レベルの単位と検算</h1>",
+         '<p class="lead">旧帝大などの難関大の二次試験では、電荷や電流の<b>線密度・面密度</b>、<b>単位長さあたり</b>の量、'
+         "エネルギー密度など、教科書ではあまり見かけない単位が出てきます。見慣れない単位こそ、言葉の意味から組み立てれば怖くありません。</p>",
+         '<div class="note"><b>難関大の問題で単位がとくに役立つ場面</b><br>'
+         "・「長さあたり」「面積あたり」の量を、全体の量と取り違えていないか（N と n、F と F/l など）<br>"
+         "・点電荷・直線・平面で、距離 r の次数が変わる電場の式を混同していないか<br>"
+         "・抵抗力の比例定数のように、「定数」にも単位があることを忘れていないか</div>"]
+    for c in CATS.values():
+        qs = [q for q in adv if q["category"] == c["id"]]
+        if not qs:
+            continue
+        b.append(f"<h2>{E(c['name'])}</h2><div class=\"grid\">"
+                 + "".join(f'<a href="/q/{q["id"]}.html">{E(q["name"])}<div class="u">{E(q["unit_str"])}</div>'
+                           f'<div class="d">{E(q["meaning"])}</div></a>' for q in qs) + "</div>")
+    ms = [m for m in MISTAKES if m.get("level") == "難関"]
+    b.append("<h2>難関大レベルのミス例</h2><div class=\"grid mcards\">" + "".join(mistake_card(m) for m in ms) + "</div>")
+    b.append('<p><a href="/training/em.html">→ 電磁気の検算トレーニング</a>　<a href="/training/mech.html">→ 力学の検算トレーニング</a></p>')
+    page("/advanced.html", "難関大レベルの単位と検算｜線密度・面密度・エネルギー密度",
+         "線電荷密度・面電荷密度・面電流密度・単位長さあたりの巻き数・エネルギー密度・移動度・ホール係数など、難関大の二次試験に出る単位の意味と、答えの単位での検算。",
+         "\n".join(b), [("難関大レベル", None)])
+
 def build_sitemap():
     urls = "\n".join(f"  <url><loc>{SITE_URL}{p}</loc></url>" for p in PATHS)
     (OUT / "sitemap.xml").write_text(
@@ -1928,6 +1958,7 @@ def main():
     for m in MISTAKES:
         build_mistake(m)
     build_training()
+    build_advanced()
     for c in CATS.values():
         build_category(c)
     for q in QS.values():
