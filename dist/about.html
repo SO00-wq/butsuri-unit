@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>このサイトについて | ブツリ単位ラボ</title>
-<meta name="description" content="ブツリ単位ラボの目的、内容の正しさの確かめ方、出典について。">
+<meta name="description" content="ブツリ単位ラボを作ったきっかけ、できること、内容の正しさの確かめ方、出典について。">
 <link rel="canonical" href="https://tanitani.butsuri-lab.workers.dev/about.html">
 
 <meta name="google-site-verification" content="kVE91IWkP86K1E_JpBQDklXXu5gz86ZOA64xcgtDUwc">
@@ -12,15 +12,16 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=4">
-<script src="/assets/site.js?v=4" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=6">
+<script src="/assets/site.js?v=6" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
 <header class="site"><div class="wrap">
   <a class="logo" href="/"><span class="mark">SI</span>ブツリ単位ラボ</a>
   <nav class="hdr-nav" aria-label="メインメニュー">
-    <a class="txt" href="/guide.html">使い方</a>
+    <a class="txt" href="/method.html">検算のやり方</a>
+    <a class="txt" href="/training/">トレーニング</a>
     <button class="icon-btn" data-open-search aria-label="検索"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
     <button class="icon-btn" id="menu-btn" aria-label="メニューを開く" aria-controls="drawer" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
   </nav>
@@ -32,53 +33,65 @@
     <div class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="q" type="search" placeholder="量・単位・公式を検索（例：電圧、J/K）" autocomplete="off" aria-label="サイト内検索"></div>
     <div class="search-hint">名前でも単位記号でも探せます。</div>
     <ul class="results" id="results" aria-live="polite"></ul>
-    <div class="nav-sec"><h4>ページ</h4><ul>
+    <div class="nav-sec"><h4>検算する</h4><ul>
       <li><a href="/">トップ</a></li>
-      <li><a href="/guide.html">単位の読み方と次元解析</a></li>
+      <li><a href="/method.html">検算のやり方</a></li>
+      <li><a href="/mistakes/">よくあるミス集</a></li>
+      <li><a href="/training/">検算トレーニング</a></li>
+    </ul></div>
+    <div class="nav-sec"><h4>単位を知る</h4><ul>
+      <li><a href="/guide.html">単位の読み方</a></li>
       <li><a href="/about.html" aria-current="page">このサイトについて</a></li>
     </ul></div>
-    <div class="nav-sec"><h4>分野</h4><ul><li><a href="/c/base.html">基本量<span class="n">10量</span></a></li><li><a href="/c/mech.html">力学<span class="n">22量</span></a></li><li><a href="/c/thermo.html">熱・気体<span class="n">10量</span></a></li><li><a href="/c/em.html">電磁気<span class="n">17量</span></a></li><li><a href="/c/wave.html">波・光・量子<span class="n">5量</span></a></li><li><a href="/c/misc.html">放射線・化学<span class="n">4量</span></a></li></ul></div>
-    <div class="nav-sec"><h4>よく使う量</h4><div class="chips"><a href="/q/force.html">力</a><a href="/q/energy.html">エネルギー</a><a href="/q/power.html">仕事率</a><a href="/q/pressure.html">圧力</a><a href="/q/voltage.html">電圧</a><a href="/q/resistance.html">電気抵抗</a><a href="/q/capacitance.html">静電容量</a><a href="/q/magnetic_flux_density.html">磁束密度</a><a href="/q/planck.html">プランク定数</a><a href="/q/gas_constant.html">気体定数</a></div></div>
+    <div class="nav-sec"><h4>単位辞典（分野別）</h4><ul><li><a href="/c/base.html">基本量<span class="n">10量</span></a></li><li><a href="/c/mech.html">力学<span class="n">22量</span></a></li><li><a href="/c/thermo.html">熱・気体<span class="n">10量</span></a></li><li><a href="/c/em.html">電磁気<span class="n">17量</span></a></li><li><a href="/c/wave.html">波・光・量子<span class="n">5量</span></a></li><li><a href="/c/misc.html">放射線・化学<span class="n">4量</span></a></li></ul></div>
+    <div class="nav-sec"><h4>よく調べる単位</h4><div class="chips"><a href="/q/velocity.html">速度</a><a href="/q/acceleration.html">加速度</a><a href="/q/force.html">力</a><a href="/q/energy.html">エネルギー</a><a href="/q/power.html">仕事率</a><a href="/q/pressure.html">圧力</a><a href="/q/voltage.html">電圧</a><a href="/q/resistance.html">電気抵抗</a><a href="/q/capacitance.html">静電容量</a><a href="/q/spring_constant.html">ばね定数</a></div></div>
   </div>
 </aside>
 <main id="main"><div class="wrap">
 <nav class="bc" aria-label="パンくずリスト"><a href="/">トップ</a> › このサイトについて</nav>
 
 <h1>このサイトについて</h1>
-<p class="lead">ブツリ単位ラボは、物理の単位を「暗記」ではなく「意味から組み立てて理解する」ための学習サイトです。</p>
+<p class="lead">ブツリ単位ラボは、物理の計算で出した答えが正しいかどうかを、<b>答えの単位</b>で確かめられるようになるための学習サイトです。</p>
 
-<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">このサイトの考え方</a><a href="#s2">内容の正しさの確かめ方</a><a href="#s3">出典・参考資料</a><a href="#s4">運営</a></div></nav><h2 id="s1">このサイトの考え方</h2>
-<p>単位は、その量を言葉で言い表したものを、記号に置き換えたものです。速さが「1秒あたりに進む距離」だから m/s、圧力が「1 m² あたりの力」だから N/m²。
-このサイトのすべての量のページでは、まず言葉で意味をつかみ、その言葉を一つずつ単位に置き換えることで、単位が自然に出てくる流れを示しています。</p>
+<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">このサイトを作ったきっかけ</a><a href="#s2">このサイトでできること</a><a href="#s3">内容の正しさの確かめ方</a><a href="#s4">出典・参考資料</a><a href="#s5">運営</a></div></nav><h2 id="s1">このサイトを作ったきっかけ</h2>
+<p>予備校時代、数学の先生から「取れる問題を間違えることが、一番ダメージが大きい」と教わりました。
+難しい問題を解けないことより、解けるはずの問題を計算ミスや式の取り違えで落とすほうが、ずっともったいない、という教えです。</p>
+<p>物理では、答えが正しいかを確かめる方法のひとつに<b>次元解析</b>（答えの単位を確かめること）があります。
+単位が合わない答えは、必ずどこかが間違っています。ところが、そのためには求めた量の単位と、その単位の意味がわかっていなければいけません。
+このサイトは、その両方を身につける手助けをするために作りました。</p>
+
+<h2 id="s2">このサイトでできること</h2>
 <ul>
-<li>単位はすべてSI（国際単位系）で表しています</li>
-<li>数値の換算（km と m の換算など）は扱わず、単位と次元の関係だけに絞っています</li>
-<li>中学理科から大学の物理までの量を扱い、各ページに目安のレベルを表示しています</li>
+<li><a href="/method.html">検算のやり方</a>：答えの単位で間違いを見つける手順</li>
+<li><a href="/mistakes/">よくあるミス集</a>：単位で見つけられるミス・見つけられないミスの実例</li>
+<li><a href="/training/">検算トレーニング</a>：単位が合う答えを選ぶ練習問題</li>
+<li>単位辞典：68 個の量について、意味を表す言葉から単位を組み立てる解説（単位はすべてSI）</li>
 </ul>
 
-<h2 id="s2">内容の正しさの確かめ方</h2>
+<h2 id="s3">内容の正しさの確かめ方</h2>
 <p>ページはプログラムで作っており、公開する前に次の点を自動で検算しています。1つでも合わなければページは作られません。</p>
 <ul>
 <li>100 個のすべての公式で、左辺と右辺の次元が一致すること</li>
+<li>18 個のミス例で、正しい答えは単位が合い、誤った答えは単位が合わないこと（「見抜けない例」は単位が合うこと）</li>
 <li>60 個のすべての「言葉の式」で、言葉を単位に置き換えた結果が、その量の単位と一致すること</li>
 <li>各量の単位が、その量を定義する公式から導いた単位と一致すること</li>
 </ul>
 <p>説明文の誤りに気づいた場合は、お知らせいただけると助かります。</p>
 
-<h2 id="s3">出典・参考資料</h2>
+<h2 id="s4">出典・参考資料</h2>
 <ul>
 <li>国際度量衡局（BIPM）「The International System of Units (SI)」第9版</li>
 <li>産業技術総合研究所 計量標準総合センター「国際単位系（SI）第9版（2019）日本語版」</li>
 </ul>
 
-<h2 id="s4">運営</h2>
+<h2 id="s5">運営</h2>
 <p>物理を学ぶ大学生が運営しています。最終更新日：2026-10-17</p>
 
 </div></main>
 <footer class="site"><div class="wrap">
-  <div class="links"><a href="/">トップ</a><a href="/guide.html">単位の読み方</a><a href="/about.html">このサイトについて</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>
+  <div class="links"><a href="/">トップ</a><a href="/method.html">検算のやり方</a><a href="/mistakes/">よくあるミス</a><a href="/training/">検算トレーニング</a><a href="/guide.html">単位の読み方</a><a href="/about.html">このサイトについて</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>
   <p class="src">単位の定義は、国際度量衡局（BIPM）の SI パンフレット第9版と、その日本語版（産業技術総合研究所 計量標準総合センター）に基づいています。</p>
-  ブツリ単位ラボ — SI単位と次元解析で物理を理解する。最終更新日：2026-10-17
+  ブツリ単位ラボ — 答えの単位で検算して、取れる問題を落とさない。最終更新日：2026-10-17
 </div></footer>
 <button class="to-top" id="to-top" aria-label="ページの先頭へ戻る"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></button>
 </body>

@@ -12,15 +12,16 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=4">
-<script src="/assets/site.js?v=4" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=6">
+<script src="/assets/site.js?v=6" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
 <header class="site"><div class="wrap">
   <a class="logo" href="/"><span class="mark">SI</span>ブツリ単位ラボ</a>
   <nav class="hdr-nav" aria-label="メインメニュー">
-    <a class="txt" href="/guide.html">使い方</a>
+    <a class="txt" href="/method.html">検算のやり方</a>
+    <a class="txt" href="/training/">トレーニング</a>
     <button class="icon-btn" data-open-search aria-label="検索"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
     <button class="icon-btn" id="menu-btn" aria-label="メニューを開く" aria-controls="drawer" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
   </nav>
@@ -32,13 +33,18 @@
     <div class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="q" type="search" placeholder="量・単位・公式を検索（例：電圧、J/K）" autocomplete="off" aria-label="サイト内検索"></div>
     <div class="search-hint">名前でも単位記号でも探せます。</div>
     <ul class="results" id="results" aria-live="polite"></ul>
-    <div class="nav-sec"><h4>ページ</h4><ul>
+    <div class="nav-sec"><h4>検算する</h4><ul>
       <li><a href="/">トップ</a></li>
-      <li><a href="/guide.html">単位の読み方と次元解析</a></li>
+      <li><a href="/method.html">検算のやり方</a></li>
+      <li><a href="/mistakes/">よくあるミス集</a></li>
+      <li><a href="/training/">検算トレーニング</a></li>
+    </ul></div>
+    <div class="nav-sec"><h4>単位を知る</h4><ul>
+      <li><a href="/guide.html">単位の読み方</a></li>
       <li><a href="/about.html">このサイトについて</a></li>
     </ul></div>
-    <div class="nav-sec"><h4>分野</h4><ul><li><a href="/c/base.html">基本量<span class="n">10量</span></a></li><li><a href="/c/mech.html">力学<span class="n">22量</span></a></li><li><a href="/c/thermo.html">熱・気体<span class="n">10量</span></a></li><li><a href="/c/em.html">電磁気<span class="n">17量</span></a></li><li><a href="/c/wave.html">波・光・量子<span class="n">5量</span></a></li><li><a href="/c/misc.html">放射線・化学<span class="n">4量</span></a></li></ul></div>
-    <div class="nav-sec"><h4>よく使う量</h4><div class="chips"><a href="/q/force.html">力</a><a href="/q/energy.html">エネルギー</a><a href="/q/power.html">仕事率</a><a href="/q/pressure.html">圧力</a><a href="/q/voltage.html">電圧</a><a href="/q/resistance.html">電気抵抗</a><a href="/q/capacitance.html">静電容量</a><a href="/q/magnetic_flux_density.html">磁束密度</a><a href="/q/planck.html">プランク定数</a><a href="/q/gas_constant.html">気体定数</a></div></div>
+    <div class="nav-sec"><h4>単位辞典（分野別）</h4><ul><li><a href="/c/base.html">基本量<span class="n">10量</span></a></li><li><a href="/c/mech.html">力学<span class="n">22量</span></a></li><li><a href="/c/thermo.html">熱・気体<span class="n">10量</span></a></li><li><a href="/c/em.html">電磁気<span class="n">17量</span></a></li><li><a href="/c/wave.html">波・光・量子<span class="n">5量</span></a></li><li><a href="/c/misc.html">放射線・化学<span class="n">4量</span></a></li></ul></div>
+    <div class="nav-sec"><h4>よく調べる単位</h4><div class="chips"><a href="/q/velocity.html">速度</a><a href="/q/acceleration.html">加速度</a><a href="/q/force.html">力</a><a href="/q/energy.html">エネルギー</a><a href="/q/power.html">仕事率</a><a href="/q/pressure.html">圧力</a><a href="/q/voltage.html">電圧</a><a href="/q/resistance.html">電気抵抗</a><a href="/q/capacitance.html">静電容量</a><a href="/q/spring_constant.html">ばね定数</a></div></div>
   </div>
 </aside>
 <main id="main"><div class="wrap">
@@ -48,6 +54,7 @@
 <div class="hero">
 <div class="big">Gy = m²/s²</div>
 <div class="sub">次元 [L² T⁻²]</div></div>
+<div class="checkbox"><b>検算のポイント</b><p>答えが吸収線量なら、右辺の単位は <span class="mono ok">Gy</span>（＝ <span class="mono">m²/s²</span>） になっているはず。ならなければ、どこかが間違っています。</p></div>
 <div class="goals"><b>このページでわかること</b><ul><li>吸収線量を言葉でどう言い表すか</li><li>その言葉を単位に置き換えると、なぜ Gy になるのか</li><li>Gy のいろいろな書き方と、その根拠になる公式</li></ul></div>
 <nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">吸収線量とは？ 言葉で意味をつかむ</a><a href="#s2">基本単位までたどる</a><a href="#s3">Gy の別の書き方</a><a href="#s4">よくある間違い：同じ単位でも別の量</a><a href="#s5">吸収線量が出てくる公式</a><a href="#s6">練習問題：分子と分母を見きわめる</a><a href="#s7">次に読む：吸収線量を使って表される量</a></div></nav><h2 id="s1">吸収線量とは？ 言葉で意味をつかむ</h2>
 <p class="meaning"><b>吸収線量とは</b>　物質 1 kg あたりが吸収した放射線のエネルギー。</p>
@@ -90,9 +97,9 @@
 <h2 id="s7">次に読む：吸収線量を使って表される量</h2><div class="grid"><a href="/q/equivalent_dose.html">等価線量<div class="u">Sv</div></a></div>
 </div></main>
 <footer class="site"><div class="wrap">
-  <div class="links"><a href="/">トップ</a><a href="/guide.html">単位の読み方</a><a href="/about.html">このサイトについて</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>
+  <div class="links"><a href="/">トップ</a><a href="/method.html">検算のやり方</a><a href="/mistakes/">よくあるミス</a><a href="/training/">検算トレーニング</a><a href="/guide.html">単位の読み方</a><a href="/about.html">このサイトについて</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>
   <p class="src">単位の定義は、国際度量衡局（BIPM）の SI パンフレット第9版と、その日本語版（産業技術総合研究所 計量標準総合センター）に基づいています。</p>
-  ブツリ単位ラボ — SI単位と次元解析で物理を理解する。最終更新日：2026-10-17
+  ブツリ単位ラボ — 答えの単位で検算して、取れる問題を落とさない。最終更新日：2026-10-17
 </div></footer>
 <button class="to-top" id="to-top" aria-label="ページの先頭へ戻る"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></button>
 </body>

@@ -24,10 +24,10 @@ from itertools import combinations
 OUT = Path("dist")
 SITE_NAME = "ブツリ単位ラボ"
 SITE_URL = "https://tanitani.butsuri-lab.workers.dev"  # ★独自ドメイン取得後に変更
-ASSET_VER = "4"  # CSS/JS を変えたら上げる（ブラウザのキャッシュ対策）
+ASSET_VER = "6"  # CSS/JS を変えたら上げる（ブラウザのキャッシュ対策）
 UPDATED = "2026-10-17"  # 最終更新日（内容を更新したら変える）
 GOOGLE_VERIFICATION = "kVE91IWkP86K1E_JpBQDklXXu5gz86ZOA64xcgtDUwc"  # Search Console 所有権確認
-SITE_DESC = "知らない単位や公式を、知っている公式と単位だけで理解する。SI単位と次元解析で物理量を基本単位まで分解するサイト。"
+SITE_DESC = "物理の計算で出した答えが正しいかを、答えの単位で確かめるためのサイト。検算の手順、よくあるミス、トレーニング、単位辞典。"
 
 DB = json.load(open("data/si_db.json", encoding="utf-8"))
 
@@ -427,6 +427,31 @@ footer.site .src{font-size:.78rem;margin:0 0 .5rem}
 .pq .res{font-weight:700;margin:.2rem 0 .4rem}.pq .res.ng{color:#c2410c}
 .pq .exp summary{cursor:pointer;color:var(--accent);font-weight:700;font-size:.92rem}
 .pq .exp p{margin:.5rem 0 0;font-size:.95rem}
+.mission{margin:.6rem 0 1.4rem;padding:1.2rem 1.25rem;border-radius:var(--r);background:var(--card);border:1px solid var(--border)}
+.mission .quote{font-size:1.15rem;font-weight:700;line-height:1.6;margin:0}
+.mission .quote-src{color:var(--dim);font-size:.85rem;margin:.3rem 0 0}
+.steps3{margin:0 0 1rem 1.4rem}.steps3 li{margin:.6rem 0}
+.problem{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:.8rem 1rem;margin:1rem 0}
+.problem b{font-size:.8rem;color:var(--dim)}.problem p{margin:.2rem 0 0}
+.answer{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;padding:.7rem 1rem;border-radius:var(--r);margin:.8rem 0;font-size:1.1rem}
+.answer .lbl{font-size:.75rem;font-weight:700;border-radius:4px;padding:.1rem .5rem;color:#fff}
+.wrong-ans{background:color-mix(in srgb,#c2410c 8%,var(--card));border:1px solid #c2410c}.wrong-ans .lbl{background:#c2410c}
+.right-ans{background:color-mix(in srgb,var(--ok) 10%,var(--card));border:1px solid var(--ok)}.right-ans .lbl{background:var(--ok)}
+.ng{color:#c2410c;font-weight:700}
+.verdict{padding:.6rem .8rem;border-radius:8px;margin:.4rem 0 0}
+.verdict.ng{background:color-mix(in srgb,#c2410c 8%,var(--card));font-weight:400}
+.verdict.warn{background:color-mix(in srgb,#b45309 10%,var(--card))}
+.tag.warn{color:#b45309;background:color-mix(in srgb,#b45309 12%,var(--bg))}
+.given{list-style:none;margin:.3rem 0 .2rem;padding:0;display:flex;flex-wrap:wrap;gap:.3rem 1rem;font-size:.92rem}
+.given li{margin:0}
+.mcards .u{font-size:.82rem}
+.feat .d,.mcards .d{font-size:.85rem;color:var(--dim);line-height:1.6;margin-top:.2rem}
+.feat .t{font-weight:700}
+.checkbox{margin:1rem 0;padding:.8rem 1rem;border-radius:var(--r);border:2px solid var(--ok);background:color-mix(in srgb,var(--ok) 6%,var(--card))}
+.checkbox b{font-size:.85rem;color:var(--ok)}.checkbox p{margin:.3rem 0 0}
+.tnav{margin:.5rem 0 1.2rem}.tnav a[aria-current]{background:var(--accent);color:#fff;border-color:var(--accent)}
+.pq .qt .given{margin-top:.5rem}
+
 
 """
 
@@ -547,7 +572,7 @@ ICON_MENU = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-w
 ICON_CLOSE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>'
 ICON_SEARCH = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>'
 ICON_UP = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg>'
-POPULAR = ["force", "energy", "power", "pressure", "voltage", "resistance", "capacitance", "magnetic_flux_density", "planck", "gas_constant"]
+POPULAR = ["velocity", "acceleration", "force", "energy", "power", "pressure", "voltage", "resistance", "capacitance", "spring_constant"]
 
 
 def drawer_html(path):
@@ -565,13 +590,18 @@ def drawer_html(path):
     <div class="search">{ICON_SEARCH}<input id="q" type="search" placeholder="量・単位・公式を検索（例：電圧、J/K）" autocomplete="off" aria-label="サイト内検索"></div>
     <div class="search-hint">名前でも単位記号でも探せます。</div>
     <ul class="results" id="results" aria-live="polite"></ul>
-    <div class="nav-sec"><h4>ページ</h4><ul>
+    <div class="nav-sec"><h4>検算する</h4><ul>
       <li><a href="/"{cur("/")}>トップ</a></li>
-      <li><a href="/guide.html"{cur("/guide.html")}>単位の読み方と次元解析</a></li>
+      <li><a href="/method.html"{cur("/method.html")}>検算のやり方</a></li>
+      <li><a href="/mistakes/"{cur("/mistakes/")}>よくあるミス集</a></li>
+      <li><a href="/training/"{cur("/training/")}>検算トレーニング</a></li>
+    </ul></div>
+    <div class="nav-sec"><h4>単位を知る</h4><ul>
+      <li><a href="/guide.html"{cur("/guide.html")}>単位の読み方</a></li>
       <li><a href="/about.html"{cur("/about.html")}>このサイトについて</a></li>
     </ul></div>
-    <div class="nav-sec"><h4>分野</h4><ul>{cats}</ul></div>
-    <div class="nav-sec"><h4>よく使う量</h4><div class="chips">{pop}</div></div>
+    <div class="nav-sec"><h4>単位辞典（分野別）</h4><ul>{cats}</ul></div>
+    <div class="nav-sec"><h4>よく調べる単位</h4><div class="chips">{pop}</div></div>
   </div>
 </aside>"""
 
@@ -620,7 +650,8 @@ def page(path, title, desc, body, crumbs=(), noindex=False):
 <header class="site"><div class="wrap">
   <a class="logo" href="/"><span class="mark">SI</span>{SITE_NAME}</a>
   <nav class="hdr-nav" aria-label="メインメニュー">
-    <a class="txt" href="/guide.html">使い方</a>
+    <a class="txt" href="/method.html">検算のやり方</a>
+    <a class="txt" href="/training/">トレーニング</a>
     <button class="icon-btn" data-open-search aria-label="検索">{ICON_SEARCH}</button>
     <button class="icon-btn" id="menu-btn" aria-label="メニューを開く" aria-controls="drawer" aria-expanded="false">{ICON_MENU}</button>
   </nav>
@@ -631,9 +662,9 @@ def page(path, title, desc, body, crumbs=(), noindex=False):
 {body}
 </div></main>
 <footer class="site"><div class="wrap">
-  <div class="links"><a href="/">トップ</a><a href="/guide.html">単位の読み方</a><a href="/about.html">このサイトについて</a>{foot_links}</div>
+  <div class="links"><a href="/">トップ</a><a href="/method.html">検算のやり方</a><a href="/mistakes/">よくあるミス</a><a href="/training/">検算トレーニング</a><a href="/guide.html">単位の読み方</a><a href="/about.html">このサイトについて</a>{foot_links}</div>
   <p class="src">単位の定義は、国際度量衡局（BIPM）の SI パンフレット第9版と、その日本語版（産業技術総合研究所 計量標準総合センター）に基づいています。</p>
-  {SITE_NAME} — SI単位と次元解析で物理を理解する。最終更新日：{UPDATED}
+  {SITE_NAME} — 答えの単位で検算して、取れる問題を落とさない。最終更新日：{UPDATED}
 </div></footer>
 <button class="to-top" id="to-top" aria-label="ページの先頭へ戻る">{ICON_UP}</button>
 </body>
@@ -665,6 +696,11 @@ def build_assets():
         idx.append({"y": "分野", "t": c["name"], "s": c["description"], "u": f"/c/{c['id']}.html", "k": ""})
     idx.append({"y": "解説", "t": "単位の読み方と次元解析", "s": "言葉から単位を組み立てる・基本単位・検算", "u": "/guide.html", "k": "次元解析 使い方 ガイド 読み方 基本単位"})
     idx.append({"y": "解説", "t": "このサイトについて", "s": "目的・内容の確かめ方・出典", "u": "/about.html", "k": "運営 出典 参考文献"})
+    for m in MISTAKES:
+        idx.append({"y": "ミス例", "t": m["title"].replace("【見抜けない例】", ""), "s": f'× {m["wrong"]["text"]} → ○ {m["right"]["text"]}',
+                    "u": f"/mistakes/{m['id']}.html", "k": m["problem"]})
+    idx.append({"y": "解説", "t": "検算のやり方", "s": "答えの単位で間違いを見つける3つの手順", "u": "/method.html", "k": "検算 次元解析 手順 確かめ"})
+    idx.append({"y": "練習", "t": "検算トレーニング", "s": "単位が合う答えはどれ？", "u": "/training/", "k": "練習 問題 トレーニング"})
     (OUT / "search.json").write_text(json.dumps(idx, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
 
@@ -915,6 +951,8 @@ def _tok(u, e):
 def frac_str(tokens):
     """[(単位, 指数)] → 'J / C' や 'N·m / (m²·(m/s))' のような分数の形（約分しない）"""
     tokens = _merge(tokens)
+    if len(tokens) == 1 and tokens[0][1] == 1:
+        return tokens[0][0]
     num = [_tok(u, e) for u, e in tokens if e > 0]
     den = [_tok(u, e) for u, e in tokens if e < 0]
     n = "·".join(num) if num else "1"
@@ -1113,6 +1151,299 @@ def practice(q):
             '<div class="practice">' + "".join(blocks) + "</div>"]
 
 
+# ─────────────────────────── 答えの検算（ミス例・トレーニング） ───────────────────────────
+
+MISTAKES = json.load(open("data/mistakes.json", encoding="utf-8"))["mistakes"]
+FIELD_NAMES = {"mech": "力学", "thermo": "熱・気体", "em": "電磁気", "wave": "波・光・量子"}
+
+
+def _prod(prod):
+    return [(sym, Fr(e)) for sym, e in prod]
+
+
+def prod_dims(prod, given):
+    d = ZERO
+    for sym, e in _prod(prod):
+        d = dimadd(d, dimscale(QS[given[sym]]["dims"], e))
+    return d
+
+
+def prod_units_str(prod, given):
+    """[2gh] → '(m/s²)·m' のように、記号に単位を当てはめた形。√ を含む場合は √(...)"""
+    pr = _prod(prod)
+    half = any(e.denominator == 2 for _, e in pr)
+    if half:
+        inner = [(QS[given[s_]]["unit_str"], e * 2) for s_, e in pr if not is_one(QS[given[s_]]["unit_str"])]
+        return f"√({frac_str(inner)})", True
+    toks = [(QS[given[s_]]["unit_str"], e) for s_, e in pr if not is_one(QS[given[s_]]["unit_str"])]
+    return frac_str(toks) if toks else "1", False
+
+
+def prod_text(prod):
+    """記号の積の表示（係数なし）: g h, m v² / r"""
+    pr = _prod(prod)
+    half = any(e.denominator == 2 for _, e in pr)
+    def part(items):
+        num = [f"{s_}{sup(e)}" for s_, e in items if e > 0]
+        den = [f"{s_}{sup(-e)}" for s_, e in items if e < 0]
+        n = " ".join(num) if num else "1"
+        if not den:
+            return n
+        return f"{n}/{den[0]}" if len(den) == 1 else f"{n}/({' '.join(den)})"
+    if half:
+        return f"√({part([(s_, e * 2) for s_, e in pr])})"
+    return part(pr)
+
+
+def check_lines(expr, given, target_dims):
+    """各項について [項] = 単位 = 基本単位 → ○/× を並べる"""
+    lines, ok_all = [], True
+    for prod in expr:
+        us, half = prod_units_str(prod, given)
+        d = prod_dims(prod, given)
+        base = fmt_base(d) if d != ZERO else "1"
+        chain_ = [us]
+        if half:
+            chain_.append(f"√({fmt_base(dimscale(d, 2))})")
+        chain_.append(base)
+        ok = d == target_dims
+        ok_all &= ok
+        mark = '<span class="ok">○ 一致</span>' if ok else '<span class="ng">× 不一致</span>'
+        lines.append(f"[{E(prod_text(prod))}] ＝ " + " ＝ ".join(E(c) for c in dict.fromkeys(chain_)) + f"　{mark}")
+    return lines, ok_all
+
+
+for _m in MISTAKES:
+    tq = QS[_m["target"][1]]
+    for side in ("wrong", "right"):
+        for prod in _m[side]["expr"]:
+            for sym, _ in prod:
+                if sym not in _m["given"]:
+                    raise SystemExit(f"✗ ミス例 {_m['id']}: 記号 {sym} が given にない")
+    _, okr = check_lines(_m["right"]["expr"], _m["given"], tq["dims"])
+    _, okw = check_lines(_m["wrong"]["expr"], _m["given"], tq["dims"])
+    if not okr:
+        raise SystemExit(f"✗ ミス例 {_m['id']}: 正しい答えの単位が合わない")
+    if okw == _m["detectable"]:
+        raise SystemExit(f"✗ ミス例 {_m['id']}: 誤答が{'単位で見抜けない' if okw else '単位で見抜ける'}のに detectable={_m['detectable']}")
+
+
+def given_list(given, used=None):
+    items = []
+    for sym, qid in given.items():
+        if used is not None and sym not in used:
+            continue
+        u = QS[qid]["unit_str"]
+        if is_one(u):
+            items.append(f'<li><span class="mono">{E(sym)}</span>：単位のない数</li>')
+            continue
+        items.append(f'<li><span class="mono">{E(sym)}</span>：{qlink(qid)} <span class="mono u">[{E(u)}]</span></li>')
+    return '<ul class="given">' + "".join(items) + "</ul>"
+
+
+def mistake_card(m):
+    tq = QS[m["target"][1]]
+    flag = "" if m["detectable"] else '<span class="tag warn">単位では見抜けない</span>'
+    return (f'<a href="/mistakes/{m["id"]}.html"><div class="t">{flag}{E(m["title"].replace("【見抜けない例】", ""))}</div>'
+            f'<div class="u">× {E(m["wrong"]["text"])}　→　○ {E(m["right"]["text"])}</div></a>')
+
+
+def build_mistake(m):
+    tq = QS[m["target"][1]]
+    tsym = m["target"][0]
+    tbase = fmt_base(tq["dims"])
+    wl, okw = check_lines(m["wrong"]["expr"], m["given"], tq["dims"])
+    rl, _ = check_lines(m["right"]["expr"], m["given"], tq["dims"])
+    title = m["title"].replace("【見抜けない例】", "")
+    b = [f'<span class="tag">{E(FIELD_NAMES[m["field"]])}</span>' + ("" if m["detectable"] else '<span class="tag warn">単位では見抜けない例</span>'),
+         f"<h1>{E(title)}</h1>",
+         f'<div class="problem"><b>問題</b><p>{E(m["problem"])}</p></div>',
+         f'<div class="answer wrong-ans"><span class="lbl">ありがちな答え</span><span class="mono">{E(m["wrong"]["text"])}</span></div>',
+         "<h2>答えの単位で検算する</h2>",
+         '<div class="step"><div class="st"><b>手順1</b>　求めたい量の単位を確かめる</div>'
+         f'<p>求めたいのは{qlink(tq["id"])} <span class="mono">{E(tsym)}</span>。単位は <span class="mono">{E(tq["unit_str"])}</span>'
+         + (f"（＝ <span class=\"mono\">{E(tbase)}</span>）" if tbase != tq["unit_str"] else "") + "。</p>"
+         f'<p class="lead">使える量の単位：</p>{given_list(m["given"])}</div>',
+         '<div class="step"><div class="st"><b>手順2</b>　答えの右辺に単位を当てはめる</div>'
+         + ("<p>足し算の式は、<b>1つ1つの項</b>が求めたい量と同じ単位でなければいけません。</p>" if len(m["wrong"]["expr"]) > 1 else "")
+         + "<p>数字の係数（2、½、π など）は単位をもたないので無視します。</p>"
+         f'<div class="calc">' + "<br>".join(wl) + "</div></div>",
+         '<div class="step"><div class="st"><b>手順3</b>　比べる</div>']
+    if m["detectable"]:
+        b.append(f'<p class="verdict ng">求めたい量は <span class="mono">{E(tbase)}</span> なのに、答えの単位が合いません。<b>この答えはどこかが間違っています。</b></p></div>')
+    else:
+        b.append(f'<p class="verdict warn">単位は <span class="mono">{E(tbase)}</span> で合っています。<b>でも、この答えは間違いです。</b>次元解析では見つけられない種類のミスです。</p></div>')
+    b.append("<h2>どこで間違えやすいか</h2>")
+    b.append(f'<p>{E(m["cause"])}</p>')
+    b.append("<h2>正しい答え</h2>")
+    b.append(f'<div class="answer right-ans"><span class="lbl">正しい答え</span><span class="mono">{E(m["right"]["text"])}</span></div>')
+    b.append('<div class="calc">' + "<br>".join(rl) + "</div>")
+    if m["detectable"]:
+        b.append(f'<p>単位が <span class="mono">{E(tbase)}</span> になり、求めたい量と一致しました。</p>')
+        b.append('<div class="note">単位が合っても、答えが正しいとは限りません（係数や sin・cos の間違いは見つけられません）。'
+                 'ただ、<b>単位が合わなければ必ず間違い</b>なので、見直す場所を絞り込めます。</div>')
+    else:
+        b.append(f'<div class="note"><b>どうやって見つけるか</b><br>{E(m.get("tip", ""))}<br>単位の検算は、こうした確かめ方とあわせて使いましょう。</div>')
+    others = [x for x in MISTAKES if x["id"] != m["id"]][:6]
+    b.append("<h2>ほかのミス例</h2><div class=\"grid mcards\">" + "".join(mistake_card(x) for x in others) + "</div>")
+    b.append(f'<p><a href="/q/{tq["id"]}.html">→ {E(tq["name"])}の単位の意味を調べる</a>　<a href="/method.html">→ 検算のやり方</a></p>')
+    page(f"/mistakes/{m['id']}.html", f"{title}｜答えの単位で検算",
+         f"{m['problem'][:40]}… ありがちな答え {m['wrong']['text']} を、答えの単位で検算して間違いを見つける方法。",
+         "\n".join(b), [("よくあるミス", "/mistakes/"), (title, None)])
+
+
+def build_mistakes_index():
+    det = [m for m in MISTAKES if m["detectable"]]
+    und = [m for m in MISTAKES if not m["detectable"]]
+    b = ["<h1>よくあるミスと、答えの単位での見つけ方</h1>",
+         '<p class="lead">試験でよく見る間違いを集めました。どれも、答えが出たあとに単位を確かめるだけで見つけられます。</p>']
+    for fid, fname in FIELD_NAMES.items():
+        ms = [m for m in det if m["field"] == fid]
+        if ms:
+            b.append(f"<h2>{E(fname)}</h2><div class=\"grid mcards\">" + "".join(mistake_card(m) for m in ms) + "</div>")
+    b.append("<h2>単位では見抜けないミス</h2>")
+    b.append("<p>単位の検算は万能ではありません。見抜けない種類のミスも知っておきましょう。</p>")
+    b.append('<div class="grid mcards">' + "".join(mistake_card(m) for m in und) + "</div>")
+    page("/mistakes/", "よくあるミスと答えの単位での見つけ方",
+         "物理の計算で多い間違い（√ の付け忘れ、分子と分母の取り違え、2乗の落とし）を、答えの単位で見つける例を集めました。",
+         "\n".join(b), [("よくあるミス", None)])
+
+
+def build_method():
+    m = next(x for x in MISTAKES if x["id"] == "free_fall_speed")
+    tq = QS[m["target"][1]]
+    wl, _ = check_lines(m["wrong"]["expr"], m["given"], tq["dims"])
+    body = f"""
+<h1>答えの単位で検算する：3つの手順</h1>
+<p class="lead">答えが出たら、提出する前に単位を確かめる。それだけで、取れるはずの問題を落とすミスの多くを防げます。</p>
+
+<h2>3つの手順</h2>
+<ol class="steps3">
+<li><b>求めたい量の単位を確かめる</b><br>速さなら m/s、エネルギーなら J ＝ kg·m²/s²。わからなければ<a href="/#dict">単位辞典</a>で調べます。</li>
+<li><b>答えの右辺に、それぞれの記号の単位を当てはめる</b><br>数字の係数（2、½、π など）は単位をもたないので無視します。</li>
+<li><b>比べる</b><br>一致しなければ、<b>その答えは必ず間違い</b>です。式のどこかを見直します。</li>
+</ol>
+
+<h2>例：落下の速さ</h2>
+<div class="problem"><b>問題</b><p>{E(m["problem"])}</p></div>
+<div class="answer wrong-ans"><span class="lbl">答え</span><span class="mono">{E(m["wrong"]["text"])}</span></div>
+<p>求めたい速さ v の単位は m/s。右辺に単位を当てはめると、</p>
+<div class="calc">{"<br>".join(wl)}</div>
+<p>m²/s² は m/s と一致しません。v² を求めたところで止まり、√ を付け忘れていたことに気づけます。</p>
+
+<h2>気をつけるポイント</h2>
+<ul>
+<li><b>足し算・引き算は、項ごとに単位がそろう</b>：x = v₀t + ½at² なら、v₀t も ½at² もどちらも m。単位の違うものは足せません。</li>
+<li><b>sin・cos・指数関数・log の中身は単位をもたない</b>：sin(ωt) なら ωt に単位が残っていてはいけません。</li>
+<li><b>単位が合っても、正しいとは限らない</b>：½ の付け忘れや sin と cos の取り違えは見つけられません。
+<a href="/mistakes/">よくあるミス</a>の「見抜けない例」も見ておきましょう。</li>
+</ul>
+
+<h2>次にやること</h2>
+<div class="grid">
+<a href="/mistakes/"><div class="t"><b>よくあるミス集</b></div><div class="u">単位で見つけられる間違いの実例</div></a>
+<a href="/training/"><div class="t"><b>検算トレーニング</b></div><div class="u">単位が合う答えを選ぶ練習</div></a>
+<a href="/guide.html"><div class="t"><b>単位の読み方</b></div><div class="u">単位の意味を言葉から理解する</div></a>
+</div>
+"""
+    page("/method.html", "答えの単位で検算する3つの手順", "物理の計算で出た答えが正しいかを、単位（次元解析）で確かめる3つの手順。足し算の項、sin・cos の中身、見抜けないミスまで解説。",
+         body, [("検算のやり方", None)])
+
+
+# 検算トレーニング：公式から「単位が合う答えはどれ？」を作る
+def training_items(cat):
+    import hashlib
+    items = []
+    for f in FS.values():
+        if f["category"] != cat:
+            continue
+        made = 0
+        for x in solvable_vars(f):
+            if made >= 2:
+                break
+            q = QS[f["qof"][x]]
+            terms = solve(f, x)
+            if q["dims"] == ZERO or len(terms) < 2 or any(e.denominator != 1 for _, e in terms):
+                continue
+            if any(QS[f["qof"][v]]["dims"] == ZERO for v, _ in terms):
+                continue
+            def dims_of_terms(ts):
+                d = ZERO
+                for v, e in ts:
+                    d = dimadd(d, dimscale(QS[f["qof"][v]]["dims"], e))
+                return d
+            right = expr_for(f, terms)
+            cands = [[(v, -e if j == i else e) for j, (v, e) in enumerate(terms)] for i in range(len(terms))]
+            if any(e > 0 for _, e in terms) and any(e < 0 for _, e in terms):
+                cands.append([(v, -e) for v, e in terms])   # 分子と分母をまるごと入れかえる
+            cands += [[(v, 2 * e if j == i else e) for j, (v, e) in enumerate(terms)] for i in range(len(terms))]
+            wrong = []
+            for c in cands:
+                if dims_of_terms(c) == q["dims"]:
+                    continue
+                t_ = expr_for(f, c)
+                if t_ != right and t_ not in wrong:
+                    wrong.append(t_)
+            if len(wrong) < 2:
+                continue
+            h = int(hashlib.md5(f"{f['id']}{x}".encode()).hexdigest(), 16)
+            wrong = wrong[:3]
+            k = h % (len(wrong) + 1)
+            opts = wrong[:]
+            opts.insert(k, right)
+            used = list(dict.fromkeys(v for v, _ in terms))
+            given = {f["sym"][v]: f["qof"][v] for v in used}
+            tok = [(QS[f["qof"][v]]["unit_str"], e) for v, e in terms]
+            exp_ = (f"求めたい{E(q['name'])}の単位は <span class=\"mono\">{E(q['unit_str'])}</span>"
+                    + (f"（＝ <span class=\"mono\">{E(fmt_base(q['dims']))}</span>）" if fmt_base(q["dims"]) != q["unit_str"] else "")
+                    + f"。{E(f['sym'][x])} = {E(right)} に単位を当てはめると {chain_eq(frac_str(tok), _simplified(tok, q), q['unit_str'])} で一致します。"
+                    + "ほかの選択肢は単位が合いません。"
+                    + f'（元の公式：{flink(f["id"])} <span class="mono">{E(f["expr"])}</span>）')
+            ques = (f"求めたい量は{qlink(q['id'])} <span class=\"mono\">{E(f['sym'][x])}</span> "
+                    f"<span class=\"mono u\">[{E(q['unit_str'])}]</span>。次の量を使って求めた答えのうち、<b>単位が合っているもの</b>はどれ？"
+                    f"{given_list(given)}")
+            items.append((ques, opts, k, exp_))
+            made += 1
+    return items
+
+
+def choice_html(key, n, question, opts, k, explain):
+    letters = "ABCD"
+    lis = "".join(
+        f'<li><button type="button" class="ch" data-ok="{1 if i == k else 0}">'
+        f'<span class="opt">{letters[i]}</span><span class="mono">{E(o)}</span></button></li>' for i, o in enumerate(opts))
+    return (f'<div class="pq"><div class="qt"><span class="qn">問{n}</span>{question}</div>'
+            f'<ul class="opts">{lis}</ul>'
+            f'<details class="exp"><summary>答えと解説</summary><p><b>正解：{letters[k]}</b>　<span class="mono ok">{E(opts[k])}</span></p>'
+            f'<p>{explain}</p></details></div>')
+
+
+TRAIN_CATS = [c for c in ["mech", "thermo", "em", "wave"] if c in CATS]
+
+
+def build_training():
+    counts = {}
+    for cat in TRAIN_CATS:
+        items = training_items(cat)
+        counts[cat] = len(items)
+        blocks = [choice_html(cat, i + 1, *it) for i, it in enumerate(items)]
+        nav = "".join(f'<a href="/training/{c}.html"{" aria-current=\"page\"" if c == cat else ""}>{E(CATS[c]["name"])}</a>' for c in TRAIN_CATS)
+        b = [f"<h1>検算トレーニング：{E(CATS[cat]['name'])}</h1>",
+             '<p class="lead">計算はしなくてかまいません。答えの右辺に単位を当てはめて、<b>求めたい量と単位が合う答え</b>を選んでください。数字の係数は省いてあります。</p>',
+             f'<div class="chips tnav">{nav}</div>',
+             '<div class="practice">' + "".join(blocks) + "</div>"]
+        page(f"/training/{cat}.html", f"検算トレーニング（{CATS[cat]['name']}）｜単位が合う答えはどれ？",
+             f"{CATS[cat]['name']}の公式をもとに、答えの単位で正しい式を見分ける練習問題 {len(items)} 問。",
+             "\n".join(b), [("検算トレーニング", "/training/"), (CATS[cat]["name"], None)])
+    cards = "".join(f'<a href="/training/{c}.html"><div class="t">{E(CATS[c]["name"])}</div><div class="u">{counts[c]} 問</div></a>' for c in TRAIN_CATS)
+    b = ["<h1>検算トレーニング</h1>",
+         '<p class="lead">「単位が合う答えはどれ？」を繰り返し解いて、答えが出たら単位を確かめる習慣をつけましょう。</p>',
+         '<div class="grid">' + cards + "</div>",
+         '<p><a href="/method.html">→ まず検算のやり方を読む</a></p>']
+    page("/training/", "検算トレーニング｜単位が合う答えはどれ？", "物理の公式をもとに、答えの単位で正しい式を見分ける練習問題。力学・熱・電磁気・波の分野別。",
+         "\n".join(b), [("検算トレーニング", None)])
+
+
 # 量 → その量を材料にして作られる量（次に読む）
 DEPENDENTS = {qid: [] for qid in QS}
 for _q in QS.values():
@@ -1146,6 +1477,15 @@ def build_quantity(q):
          f'<div class="big">{E(u if d != ZERO else "1（無次元）")}{(" = " + E(base)) if base != u and d != ZERO else ""}</div>',
          f'<div class="sub">次元 {E(fmt_dim(d))}</div></div>']
 
+    if d != ZERO:
+        rel_m = [m for m in MISTAKES if m["target"][1] == qid]
+        chk = (f'<div class="checkbox"><b>検算のポイント</b><p>答えが{E(q["name"])}なら、右辺の単位は '
+               f'<span class="mono ok">{E(u)}</span>' + (f"（＝ <span class=\"mono\">{E(base)}</span>）" if base != u else "")
+               + ' になっているはず。ならなければ、どこかが間違っています。</p>')
+        if rel_m:
+            chk += "<p>関連するミス例：" + "、".join(f'<a href="/mistakes/{m["id"]}.html">{E(m["title"].replace("【見抜けない例】", ""))}</a>' for m in rel_m) + "</p>"
+        chk += "</div>"
+        b.append(chk)
     goals = [f"{q['name']}を言葉でどう言い表すか"]
     if q.get("words"):
         goals.append(f"その言葉を単位に置き換えると、なぜ {u} になるのか" if d != ZERO else "その言葉を単位に置き換えると、なぜ単位が消えるのか")
@@ -1335,33 +1675,54 @@ def build_category(c):
          [(c["name"], None)])
 
 def build_index():
-    b = ["<h1>知らない単位も、知っている公式から組み立てればわかる</h1>",
-         f'<p class="lead">{E(SITE_DESC)}</p>',
-         f'<button class="home-search" data-open-search>{ICON_SEARCH}量・単位・公式を検索（例：電圧、J/K、オームの法則）</button>',
-         '<div class="hero"><div class="big">J = N·m = kg·m²/s²</div>'
-         '<div class="sub">F = ma と W = Fx を知っていれば、ジュールの中身は自分で導ける</div></div>',
-         "<h2>このサイトの考え方</h2>",
-         "<p>物理の単位は、たった7つの基本単位のかけ算・わり算でできています。"
-         "初めて見る単位や公式も、知っている公式を使って基本単位まで分解すれば、その正体がわかります。"
-         "このサイトでは数値の換算は扱わず、<b>SI単位と次元だけ</b>で説明します。</p>",
-         '<p>たとえば速さは「1秒あたりに進む距離」＝「距離 ÷ 時間」。言葉をそのまま単位に置き換えると m ÷ s ＝ m/s になります。'
-         'すべての量のページで、まず<b>言葉で意味をつかみ、その言葉を単位に置き換える</b>流れで説明しています。</p>',
-         '<p><a href="/guide.html">→ はじめに：単位の読み方を読む</a></p>',
-         "<h2>7つの基本単位</h2><div class=\"grid\">"
-         + "".join(qcard(x) for x in ["length", "mass", "time", "current", "temperature", "amount", "luminous_intensity"])
-         + "</div>",
-         "<h2>まずはここから</h2><div class=\"grid\">"
-         + "".join(qcard(x) for x in ["force", "energy", "power", "voltage", "resistance", "magnetic_flux_density", "planck", "gas_constant"])
-         + "</div>",
-         '<h2>分野から探す</h2>']
-    cards = []
+    ff = next(x for x in MISTAKES if x["id"] == "spring_period")
+    tq = QS[ff["target"][1]]
+    wl, _ = check_lines(ff["wrong"]["expr"], ff["given"], tq["dims"])
+    cats = []
     for c in CATS.values():
         n = sum(1 for q in QS.values() if q["category"] == c["id"])
-        m = sum(1 for f in FS.values() if f["category"] == c["id"])
-        cards.append(f'<a href="/c/{c["id"]}.html"><div class="t">{E(c["name"])}</div>'
-                     f'<div class="d">{E(c["description"])}</div><div class="n">量 {n}・公式 {m}</div></a>')
-    b.append('<div class="grid cat-cards">' + "".join(cards) + "</div>")
-    page("/", "SI単位と次元解析で物理を理解する", SITE_DESC, "\n".join(b))
+        cats.append(f'<a href="/c/{c["id"]}.html"><div class="t">{E(c["name"])}</div>'
+                    f'<div class="d">{E(c["description"])}</div><div class="n">{n} 個の量</div></a>')
+    det = [m for m in MISTAKES if m["detectable"]][:6]
+    ntrain = sum(len(training_items(c)) for c in TRAIN_CATS)
+    b = [
+        '<section class="mission">',
+        '<p class="quote">「取れる問題を間違えることが、一番ダメージが大きい」</p>',
+        '<p class="quote-src">— 予備校時代の数学の先生の教え</p>',
+        "</section>",
+        "<h1>答えが出たら、単位で検算。</h1>",
+        '<p class="lead">物理の計算で出した答えが正しいかどうかを、<b>答えの単位</b>で確かめるためのサイトです。'
+        "単位が合わない答えは、必ずどこかが間違っています。そのためには、求めた量の単位と、その単位の意味がわかっていることが必要です。"
+        "このサイトは、その両方を身につける手助けをします。</p>",
+        f'<button class="home-search" data-open-search>{ICON_SEARCH}答えの単位を調べる（例：電圧、J/K、ばね定数）</button>',
+        "<h2>検算の3つの手順</h2>",
+        '<ol class="steps3">'
+        "<li><b>求めたい量の単位を確かめる</b><br>速さなら m/s、エネルギーなら J ＝ kg·m²/s²</li>"
+        "<li><b>答えの右辺に、記号の単位を当てはめる</b><br>2、½、π などの数は単位をもたないので無視</li>"
+        "<li><b>比べる</b><br>合わなければ、その答えは必ず間違い</li></ol>",
+        '<p><a href="/method.html">→ 検算のやり方をくわしく読む</a></p>',
+        "<h2>たとえば、こんなミスが見つかる</h2>",
+        f'<div class="problem"><b>問題</b><p>{E(ff["problem"])}</p></div>',
+        f'<div class="answer wrong-ans"><span class="lbl">ありがちな答え</span><span class="mono">{E(ff["wrong"]["text"])}</span></div>',
+        f'<p>求めたい周期 T の単位は s。右辺に単位を当てはめると、</p><div class="calc">{"<br>".join(wl)}</div>',
+        f'<p>s にならないので間違いだとわかります。正しくは <span class="mono ok">{E(ff["right"]["text"])}</span>。</p>',
+        '<div class="grid mcards">' + "".join(mistake_card(m) for m in det) + "</div>",
+        '<p><a href="/mistakes/">→ よくあるミスをすべて見る</a></p>',
+        "<h2>このサイトでできること</h2>",
+        '<div class="grid feat">'
+        '<a href="/method.html"><div class="t">① 検算のやり方</div><div class="d">答えの単位で間違いを見つける3つの手順と、見抜けないミスの見分け方。</div></a>'
+        f'<a href="/mistakes/"><div class="t">② よくあるミス集</div><div class="d">√ の付け忘れ、分子と分母の取り違えなど、{len(MISTAKES)} 個の実例。</div></a>'
+        f'<a href="/training/"><div class="t">③ 検算トレーニング</div><div class="d">「単位が合う答えはどれ？」を {ntrain} 問。分野別に練習できます。</div></a>'
+        f'<a href="#dict"><div class="t">④ 単位辞典</div><div class="d">{len(QS)} 個の量の単位を、意味を表す言葉から組み立てて理解します。</div></a>'
+        "</div>",
+        '<h2 id="dict">単位辞典：答えの単位とその意味を調べる</h2>',
+        "<p>検算するには、求めた量の単位と、その単位が何を意味するかを知っている必要があります。"
+        "それぞれの量のページでは、量の意味を言葉で表し、その言葉を単位に置き換えて、単位の正体を説明しています。</p>",
+        '<p><a href="/guide.html">→ はじめに：単位の読み方</a></p>',
+        '<div class="grid cat-cards">' + "".join(cats) + "</div>",
+    ]
+    page("/", "答えの単位で検算する物理サイト", "物理の計算で出した答えが正しいかを、答えの単位（次元解析）で確かめるためのサイト。検算の手順、よくあるミス集、検算トレーニング、単位辞典。", "\n".join(b))
+
 
 def unit_home(sym):
     """その単位をそのまま単位にもつ量（なければ None）"""
@@ -1446,21 +1807,28 @@ def build_about():
     nq = len(QS); nf = len(FS); nw = sum(1 for q in QS.values() if q.get("words"))
     body = f"""
 <h1>このサイトについて</h1>
-<p class="lead">{E(SITE_NAME)}は、物理の単位を「暗記」ではなく「意味から組み立てて理解する」ための学習サイトです。</p>
+<p class="lead">{E(SITE_NAME)}は、物理の計算で出した答えが正しいかどうかを、<b>答えの単位</b>で確かめられるようになるための学習サイトです。</p>
 
-<h2>このサイトの考え方</h2>
-<p>単位は、その量を言葉で言い表したものを、記号に置き換えたものです。速さが「1秒あたりに進む距離」だから m/s、圧力が「1 m² あたりの力」だから N/m²。
-このサイトのすべての量のページでは、まず言葉で意味をつかみ、その言葉を一つずつ単位に置き換えることで、単位が自然に出てくる流れを示しています。</p>
+<h2>このサイトを作ったきっかけ</h2>
+<p>予備校時代、数学の先生から「取れる問題を間違えることが、一番ダメージが大きい」と教わりました。
+難しい問題を解けないことより、解けるはずの問題を計算ミスや式の取り違えで落とすほうが、ずっともったいない、という教えです。</p>
+<p>物理では、答えが正しいかを確かめる方法のひとつに<b>次元解析</b>（答えの単位を確かめること）があります。
+単位が合わない答えは、必ずどこかが間違っています。ところが、そのためには求めた量の単位と、その単位の意味がわかっていなければいけません。
+このサイトは、その両方を身につける手助けをするために作りました。</p>
+
+<h2>このサイトでできること</h2>
 <ul>
-<li>単位はすべてSI（国際単位系）で表しています</li>
-<li>数値の換算（km と m の換算など）は扱わず、単位と次元の関係だけに絞っています</li>
-<li>中学理科から大学の物理までの量を扱い、各ページに目安のレベルを表示しています</li>
+<li><a href="/method.html">検算のやり方</a>：答えの単位で間違いを見つける手順</li>
+<li><a href="/mistakes/">よくあるミス集</a>：単位で見つけられるミス・見つけられないミスの実例</li>
+<li><a href="/training/">検算トレーニング</a>：単位が合う答えを選ぶ練習問題</li>
+<li>単位辞典：{nq} 個の量について、意味を表す言葉から単位を組み立てる解説（単位はすべてSI）</li>
 </ul>
 
 <h2>内容の正しさの確かめ方</h2>
 <p>ページはプログラムで作っており、公開する前に次の点を自動で検算しています。1つでも合わなければページは作られません。</p>
 <ul>
 <li>{nf} 個のすべての公式で、左辺と右辺の次元が一致すること</li>
+<li>{len(MISTAKES)} 個のミス例で、正しい答えは単位が合い、誤った答えは単位が合わないこと（「見抜けない例」は単位が合うこと）</li>
 <li>{nw} 個のすべての「言葉の式」で、言葉を単位に置き換えた結果が、その量の単位と一致すること</li>
 <li>各量の単位が、その量を定義する公式から導いた単位と一致すること</li>
 </ul>
@@ -1475,7 +1843,7 @@ def build_about():
 <h2>運営</h2>
 <p>物理を学ぶ大学生が運営しています。最終更新日：{UPDATED}</p>
 """
-    page("/about.html", "このサイトについて", f"{SITE_NAME}の目的、内容の正しさの確かめ方、出典について。", body, [("このサイトについて", None)])
+    page("/about.html", "このサイトについて", f"{SITE_NAME}を作ったきっかけ、できること、内容の正しさの確かめ方、出典について。", body, [("このサイトについて", None)])
 
 def build_sitemap():
     urls = "\n".join(f"  <url><loc>{SITE_URL}{p}</loc></url>" for p in PATHS)
@@ -1493,6 +1861,11 @@ def main():
     build_index()
     build_guide()
     build_about()
+    build_method()
+    build_mistakes_index()
+    for m in MISTAKES:
+        build_mistake(m)
+    build_training()
     for c in CATS.values():
         build_category(c)
     for q in QS.values():

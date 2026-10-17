@@ -1,0 +1,938 @@
+{
+ "_note": "答えの式のよくある間違い。expr は「項の足し算」で、各項は [記号, 指数] のかけ算。detectable=false は単位では見抜けない例。",
+ "mistakes": [
+  {
+   "id": "free_fall_speed",
+   "field": "mech",
+   "title": "落下の速さで √ を忘れる",
+   "problem": "高さ h から静かに落とした物体が、地面に着く直前の速さ v を求めよ。重力加速度の大きさを g とする。",
+   "given": {
+    "h": "length",
+    "g": "acceleration"
+   },
+   "target": [
+    "v",
+    "velocity"
+   ],
+   "wrong": {
+    "text": "v = 2gh",
+    "expr": [
+     [
+      [
+       "g",
+       1
+      ],
+      [
+       "h",
+       1
+      ]
+     ]
+    ]
+   },
+   "right": {
+    "text": "v = √(2gh)",
+    "expr": [
+     [
+      [
+       "g",
+       "1/2"
+      ],
+      [
+       "h",
+       "1/2"
+      ]
+     ]
+    ]
+   },
+   "cause": "エネルギー保存 mgh = ½mv² から v² = 2gh を出したところで止まり、√ をとり忘れた。",
+   "detectable": true
+  },
+  {
+   "id": "spring_period",
+   "field": "mech",
+   "title": "ばね振り子の周期で m と k を逆にする",
+   "problem": "ばね定数 k のばねに質量 m のおもりをつけて単振動させた。周期 T を求めよ。",
+   "given": {
+    "m": "mass",
+    "k": "spring_constant"
+   },
+   "target": [
+    "T",
+    "time"
+   ],
+   "wrong": {
+    "text": "T = 2π√(k/m)",
+    "expr": [
+     [
+      [
+       "k",
+       "1/2"
+      ],
+      [
+       "m",
+       "-1/2"
+      ]
+     ]
+    ]
+   },
+   "right": {
+    "text": "T = 2π√(m/k)",
+    "expr": [
+     [
+      [
+       "m",
+       "1/2"
+      ],
+      [
+       "k",
+       "-1/2"
+      ]
+     ]
+    ]
+   },
+   "cause": "角振動数 ω = √(k/m) と周期 T = 2π/ω を取り違えた。",
+   "detectable": true
+  },
+  {
+   "id": "pendulum_period",
+   "field": "mech",
+   "title": "単振り子の周期で l と g を逆にする",
+   "problem": "長さ l の糸におもりをつけた単振り子が小さく振動している。周期 T を求めよ。重力加速度の大きさを g とする。",
+   "given": {
+    "l": "length",
+    "g": "acceleration"
+   },
+   "target": [
+    "T",
+    "time"
+   ],
+   "wrong": {
+    "text": "T = 2π√(g/l)",
+    "expr": [
+     [
+      [
+       "g",
+       "1/2"
+      ],
+      [
+       "l",
+       "-1/2"
+      ]
+     ]
+    ]
+   },
+   "right": {
+    "text": "T = 2π√(l/g)",
+    "expr": [
+     [
+      [
+       "l",
+       "1/2"
+      ],
+      [
+       "g",
+       "-1/2"
+      ]
+     ]
+    ]
+   },
+   "cause": "ばね振り子の √(m/k) の形だけを覚えていて、どちらが分子か迷った。",
+   "detectable": true
+  },
+  {
+   "id": "kinetic_energy",
+   "field": "mech",
+   "title": "運動エネルギーで v を2乗し忘れる",
+   "problem": "質量 m の物体が速さ v で動いている。運動エネルギー K を求めよ。",
+   "given": {
+    "m": "mass",
+    "v": "velocity"
+   },
+   "target": [
+    "K",
+    "energy"
+   ],
+   "wrong": {
+    "text": "K = ½mv",
+    "expr": [
+     [
+      [
+       "m",
+       1
+      ],
+      [
+       "v",
+       1
+      ]
+     ]
+    ]
+   },
+   "right": {
+    "text": "K = ½mv²",
+    "expr": [
+     [
+      [
+       "m",
+       1
+      ],
+      [
+       "v",
+       2
+      ]
+     ]
+    ]
+   },
+   "cause": "運動量 p = mv と混ざった。",
+   "detectable": true
+  },
+  {
+   "id": "uniform_accel_distance",
+   "field": "mech",
+   "title": "等加速度運動の距離で t² を t にする",
+   "problem": "初速度 v₀ の物体が、一定の加速度 a で時間 t だけ進んだ。進んだ距離 x を求めよ。",
+   "given": {
+    "v₀": "velocity",
+    "a": "acceleration",
+    "t": "time"
+   },
+   "target": [
+    "x",
+    "length"
+   ],
+   "wrong": {
+    "text": "x = v₀t + ½at",
+    "expr": [
+     [
+      [
+       "v₀",
+       1
+      ],
+      [
+       "t",
+       1
+      ]
+     ],
+     [
+      [
+       "a",
+       1
+      ],
+      [
+       "t",
+       1
+      ]
+     ]
+    ]
+   },
+   "right": {
+    "text": "x = v₀t + ½at²",
+    "expr": [
+     [
+      [
+       "v₀",
+       1
+      ],
+      [
+       "t",
+       1
+      ]
+     ],
+     [
+      [
+       "a",
+       1
+      ],
+      [
+       "t",
+       2
+      ]
+     ]
+    ]
+   },
+   "cause": "速度の式 v = v₀ + at と混ざった。足し算の式は、項ごとに単位がそろっているかを確かめると見つかる。",
+   "detectable": true
+  },
+  {
+   "id": "horizontal_throw_range",
+   "field": "mech",
+   "title": "水平投射の飛距離で h と g を逆にする",
+   "problem": "高さ h の台から、速さ v₀ で水平に投げた物体が地面に落ちるまでに進む水平距離 x を求めよ。重力加速度の大きさを g とする。",
+   "given": {
+    "v₀": "velocity",
+    "h": "length",
+    "g": "acceleration"
+   },
+   "target": [
+    "x",
+    "length"
+   ],
+   "wrong": {
+    "text": "x = v₀√(2g/h)",
+    "expr": [
+     [
+      [
+       "v₀",
+       1
+      ],
+      [
+       "g",
+       "1/2"
+      ],
+      [
+       "h",
+       "-1/2"
+      ]
+     ]
+    ]
+   },
+   "right": {
+    "text": "x = v₀√(2h/g)",
+    "expr": [
+     [
+      [
+       "v₀",
+       1
+      ],
+      [
+       "h",
+       "1/2"
+      ],
+      [
+       "g",
+       "-1/2"
+      ]
+     ]
+    ]
+   },
+   "cause": "落下時間 t = √(2h/g) を出すときに、h と g の位置を逆にした。",
+   "detectable": true
+  },
+  {
+   "id": "centripetal_force",
+   "field": "mech",
+   "title": "向心力で v を2乗し忘れる",
+   "problem": "質量 m の物体が、半径 r の円周上を速さ v で等速円運動している。必要な向心力の大きさ F を求めよ。",
+   "given": {
+    "m": "mass",
+    "v": "velocity",
+    "r": "length"
+   },
+   "target": [
+    "F",
+    "force"
+   ],
+   "wrong": {
+    "text": "F = mv/r",
+    "expr": [
+     [
+      [
+       "m",
+       1
+      ],
+      [
+       "v",
+       1
+      ],
+      [
+       "r",
+       -1
+      ]
+     ]
+    ]
+   },
+   "right": {
+    "text": "F = mv²/r",
+    "expr": [
+     [
+      [
+       "m",
+       1
+      ],
+      [
+       "v",
+       2
+      ],
+      [
+       "r",
+       -1
+      ]
+     ]
+    ]
+   },
+   "cause": "向心加速度 v²/r の2乗を落とした。",
+   "detectable": true
+  },
+  {
+   "id": "circular_period",
+   "field": "mech",
+   "title": "等速円運動の周期で r と v を逆にする",
+   "problem": "半径 r の円周上を、速さ v で等速円運動している物体の周期 T を求めよ。",
+   "given": {
+    "r": "length",
+    "v": "velocity"
+   },
+   "target": [
+    "T",
+    "time"
+   ],
+   "wrong": {
+    "text": "T = 2πv/r",
+    "expr": [
+     [
+      [
+       "v",
+       1
+      ],
+      [
+       "r",
+       -1
+      ]
+     ]
+    ]
+   },
+   "right": {
+    "text": "T = 2πr/v",
+    "expr": [
+     [
+      [
+       "r",
+       1
+      ],
+      [
+       "v",
+       -1
+      ]
+     ]
+    ]
+   },
+   "cause": "「1周の長さ ÷ 速さ」の割る順番を逆にした。",
+   "detectable": true
+  },
+  {
+   "id": "gas_temperature",
+   "field": "thermo",
+   "title": "状態方程式を解くときに分子と分母を逆にする",
+   "problem": "圧力 p、体積 V、物質量 n の理想気体の温度 T を求めよ。気体定数を R とする。",
+   "given": {
+    "p": "pressure",
+    "V": "volume",
+    "n": "amount",
+    "R": "gas_constant"
+   },
+   "target": [
+    "T",
+    "temperature"
+   ],
+   "wrong": {
+    "text": "T = nR/(pV)",
+    "expr": [
+     [
+      [
+       "n",
+       1
+      ],
+      [
+       "R",
+       1
+      ],
+      [
+       "p",
+       -1
+      ],
+      [
+       "V",
+       -1
+      ]
+     ]
+    ]
+   },
+   "right": {
+    "text": "T = pV/(nR)",
+    "expr": [
+     [
+      [
+       "p",
+       1
+      ],
+      [
+       "V",
+       1
+      ],
+      [
+       "n",
+       -1
+      ],
+      [
+       "R",
+       -1
+      ]
+     ]
+    ]
+   },
+   "cause": "pV = nRT を T について解くときに、割る側とかける側を取り違えた。",
+   "detectable": true
+  },
+  {
+   "id": "heat_temperature_rise",
+   "field": "thermo",
+   "title": "温度上昇で比熱をかけてしまう",
+   "problem": "質量 m、比熱 c の物体に熱量 Q を与えた。上がった温度 ΔT を求めよ。",
+   "given": {
+    "Q": "energy",
+    "m": "mass",
+    "c": "specific_heat"
+   },
+   "target": [
+    "ΔT",
+    "temperature"
+   ],
+   "wrong": {
+    "text": "ΔT = Qc/m",
+    "expr": [
+     [
+      [
+       "Q",
+       1
+      ],
+      [
+       "c",
+       1
+      ],
+      [
+       "m",
+       -1
+      ]
+     ]
+    ]
+   },
+   "right": {
+    "text": "ΔT = Q/(mc)",
+    "expr": [
+     [
+      [
+       "Q",
+       1
+      ],
+      [
+       "m",
+       -1
+      ],
+      [
+       "c",
+       -1
+      ]
+     ]
+    ]
+   },
+   "cause": "Q = mcΔT を変形するときに、c を割るべきところでかけた。",
+   "detectable": true
+  },
+  {
+   "id": "capacitor_energy",
+   "field": "em",
+   "title": "コンデンサーのエネルギーで V を2乗し忘れる",
+   "problem": "静電容量 C のコンデンサーに電圧 V をかけて充電した。たくわえられたエネルギー U を求めよ。",
+   "given": {
+    "C": "capacitance",
+    "V": "voltage"
+   },
+   "target": [
+    "U",
+    "energy"
+   ],
+   "wrong": {
+    "text": "U = ½CV",
+    "expr": [
+     [
+      [
+       "C",
+       1
+      ],
+      [
+       "V",
+       1
+      ]
+     ]
+    ]
+   },
+   "right": {
+    "text": "U = ½CV²",
+    "expr": [
+     [
+      [
+       "C",
+       1
+      ],
+      [
+       "V",
+       2
+      ]
+     ]
+    ]
+   },
+   "cause": "電気量 q = CV と混ざった。CV の単位は C（クーロン）で、エネルギーではない。",
+   "detectable": true
+  },
+  {
+   "id": "rc_time_constant",
+   "field": "em",
+   "title": "RC回路の時定数で割ってしまう",
+   "problem": "抵抗 R とコンデンサー C を直列につないだ回路の時定数 τ を求めよ。",
+   "given": {
+    "R": "resistance",
+    "C": "capacitance"
+   },
+   "target": [
+    "τ",
+    "time"
+   ],
+   "wrong": {
+    "text": "τ = R/C",
+    "expr": [
+     [
+      [
+       "R",
+       1
+      ],
+      [
+       "C",
+       -1
+      ]
+     ]
+    ]
+   },
+   "right": {
+    "text": "τ = RC",
+    "expr": [
+     [
+      [
+       "R",
+       1
+      ],
+      [
+       "C",
+       1
+      ]
+     ]
+    ]
+   },
+   "cause": "RL回路の τ = L/R の形と混ざった。",
+   "detectable": true
+  },
+  {
+   "id": "joule_power",
+   "field": "em",
+   "title": "消費電力で R をかけてしまう",
+   "problem": "抵抗 R に電圧 V をかけたときの消費電力 P を求めよ。",
+   "given": {
+    "V": "voltage",
+    "R": "resistance"
+   },
+   "target": [
+    "P",
+    "power"
+   ],
+   "wrong": {
+    "text": "P = V²R",
+    "expr": [
+     [
+      [
+       "V",
+       2
+      ],
+      [
+       "R",
+       1
+      ]
+     ]
+    ]
+   },
+   "right": {
+    "text": "P = V²/R",
+    "expr": [
+     [
+      [
+       "V",
+       2
+      ],
+      [
+       "R",
+       -1
+      ]
+     ]
+    ]
+   },
+   "cause": "P = I²R の形と混ざった。",
+   "detectable": true
+  },
+  {
+   "id": "accel_by_voltage",
+   "field": "em",
+   "title": "電圧で加速した粒子の速さで √ を忘れる",
+   "problem": "静止していた質量 m、電荷 q の粒子を、電圧 V で加速した。粒子の速さ v を求めよ。",
+   "given": {
+    "q": "charge",
+    "V": "voltage",
+    "m": "mass"
+   },
+   "target": [
+    "v",
+    "velocity"
+   ],
+   "wrong": {
+    "text": "v = 2qV/m",
+    "expr": [
+     [
+      [
+       "q",
+       1
+      ],
+      [
+       "V",
+       1
+      ],
+      [
+       "m",
+       -1
+      ]
+     ]
+    ]
+   },
+   "right": {
+    "text": "v = √(2qV/m)",
+    "expr": [
+     [
+      [
+       "q",
+       "1/2"
+      ],
+      [
+       "V",
+       "1/2"
+      ],
+      [
+       "m",
+       "-1/2"
+      ]
+     ]
+    ]
+   },
+   "cause": "qV = ½mv² から v² を出したところで止まった。",
+   "detectable": true
+  },
+  {
+   "id": "cyclotron_radius",
+   "field": "em",
+   "title": "磁場中の円運動の半径で逆数にする",
+   "problem": "質量 m、電荷 q の粒子が、磁束密度 B の一様な磁場に垂直に速さ v で入射し、等速円運動をした。円の半径 r を求めよ。",
+   "given": {
+    "m": "mass",
+    "v": "velocity",
+    "q": "charge",
+    "B": "magnetic_flux_density"
+   },
+   "target": [
+    "r",
+    "length"
+   ],
+   "wrong": {
+    "text": "r = qB/(mv)",
+    "expr": [
+     [
+      [
+       "q",
+       1
+      ],
+      [
+       "B",
+       1
+      ],
+      [
+       "m",
+       -1
+      ],
+      [
+       "v",
+       -1
+      ]
+     ]
+    ]
+   },
+   "right": {
+    "text": "r = mv/(qB)",
+    "expr": [
+     [
+      [
+       "m",
+       1
+      ],
+      [
+       "v",
+       1
+      ],
+      [
+       "q",
+       -1
+      ],
+      [
+       "B",
+       -1
+      ]
+     ]
+    ]
+   },
+   "cause": "qvB = mv²/r を r について解くときに、分子と分母を取り違えた。",
+   "detectable": true
+  },
+  {
+   "id": "photon_wavelength",
+   "field": "wave",
+   "title": "光子のエネルギーで波長をかけてしまう",
+   "problem": "波長 λ の光子のエネルギー E を求めよ。プランク定数を h、光速を c とする。",
+   "given": {
+    "h": "planck",
+    "c": "velocity",
+    "λ": "length"
+   },
+   "target": [
+    "E",
+    "energy"
+   ],
+   "wrong": {
+    "text": "E = hcλ",
+    "expr": [
+     [
+      [
+       "h",
+       1
+      ],
+      [
+       "c",
+       1
+      ],
+      [
+       "λ",
+       1
+      ]
+     ]
+    ]
+   },
+   "right": {
+    "text": "E = hc/λ",
+    "expr": [
+     [
+      [
+       "h",
+       1
+      ],
+      [
+       "c",
+       1
+      ],
+      [
+       "λ",
+       -1
+      ]
+     ]
+    ]
+   },
+   "cause": "E = hf と c = fλ を組み合わせるときに、f = c/λ を f = cλ とした。",
+   "detectable": true
+  },
+  {
+   "id": "missing_half",
+   "field": "mech",
+   "title": "【見抜けない例】係数 ½ を落とす",
+   "problem": "質量 m の物体が速さ v で動いている。運動エネルギー K を求めよ。",
+   "given": {
+    "m": "mass",
+    "v": "velocity"
+   },
+   "target": [
+    "K",
+    "energy"
+   ],
+   "wrong": {
+    "text": "K = mv²",
+    "expr": [
+     [
+      [
+       "m",
+       1
+      ],
+      [
+       "v",
+       2
+      ]
+     ]
+    ]
+   },
+   "right": {
+    "text": "K = ½mv²",
+    "expr": [
+     [
+      [
+       "m",
+       1
+      ],
+      [
+       "v",
+       2
+      ]
+     ]
+    ]
+   },
+   "cause": "½ や 2、π のような数には単位がないので、落としても単位は変わらない。",
+   "detectable": false,
+   "tip": "係数のミスは、公式を導き直す（運動エネルギーなら、力 F で距離 x だけ加速したときの仕事 W = Fx から求める）か、v = 0 や m を2倍にしたときにどうなるはずかを考えて確かめます。"
+  },
+  {
+   "id": "sin_cos",
+   "field": "mech",
+   "title": "【見抜けない例】sin と cos を取り違える",
+   "problem": "傾きの角 θ のなめらかな斜面を、物体がすべり下りる。斜面に沿った加速度の大きさ a を求めよ。重力加速度の大きさを g とする。",
+   "given": {
+    "g": "acceleration",
+    "cosθ": "number",
+    "sinθ": "number"
+   },
+   "target": [
+    "a",
+    "acceleration"
+   ],
+   "wrong": {
+    "text": "a = g cos θ",
+    "expr": [
+     [
+      [
+       "g",
+       1
+      ],
+      [
+       "cosθ",
+       1
+      ]
+     ]
+    ]
+   },
+   "right": {
+    "text": "a = g sin θ",
+    "expr": [
+     [
+      [
+       "g",
+       1
+      ],
+      [
+       "sinθ",
+       1
+      ]
+     ]
+    ]
+   },
+   "cause": "sin θ も cos θ も単位をもたない数なので、取り違えても単位は変わらない。力の図を描いて向きを確かめる必要がある。",
+   "detectable": false,
+   "tip": "sin と cos の取り違えは、極端な場合を考えると見つかります。θ = 0° なら斜面は水平なので加速度は 0 のはず。a = g cos θ だと g になってしまうので間違いだとわかります。"
+  }
+ ]
+}

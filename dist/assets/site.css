@@ -137,3 +137,27 @@ footer.site .src{font-size:.78rem;margin:0 0 .5rem}
 .pq .res{font-weight:700;margin:.2rem 0 .4rem}.pq .res.ng{color:#c2410c}
 .pq .exp summary{cursor:pointer;color:var(--accent);font-weight:700;font-size:.92rem}
 .pq .exp p{margin:.5rem 0 0;font-size:.95rem}
+.mission{margin:.6rem 0 1.4rem;padding:1.2rem 1.25rem;border-radius:var(--r);background:var(--card);border:1px solid var(--border)}
+.mission .quote{font-size:1.15rem;font-weight:700;line-height:1.6;margin:0}
+.mission .quote-src{color:var(--dim);font-size:.85rem;margin:.3rem 0 0}
+.steps3{margin:0 0 1rem 1.4rem}.steps3 li{margin:.6rem 0}
+.problem{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:.8rem 1rem;margin:1rem 0}
+.problem b{font-size:.8rem;color:var(--dim)}.problem p{margin:.2rem 0 0}
+.answer{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;padding:.7rem 1rem;border-radius:var(--r);margin:.8rem 0;font-size:1.1rem}
+.answer .lbl{font-size:.75rem;font-weight:700;border-radius:4px;padding:.1rem .5rem;color:#fff}
+.wrong-ans{background:color-mix(in srgb,#c2410c 8%,var(--card));border:1px solid #c2410c}.wrong-ans .lbl{background:#c2410c}
+.right-ans{background:color-mix(in srgb,var(--ok) 10%,var(--card));border:1px solid var(--ok)}.right-ans .lbl{background:var(--ok)}
+.ng{color:#c2410c;font-weight:700}
+.verdict{padding:.6rem .8rem;border-radius:8px;margin:.4rem 0 0}
+.verdict.ng{background:color-mix(in srgb,#c2410c 8%,var(--card));font-weight:400}
+.verdict.warn{background:color-mix(in srgb,#b45309 10%,var(--card))}
+.tag.warn{color:#b45309;background:color-mix(in srgb,#b45309 12%,var(--bg))}
+.given{list-style:none;margin:.3rem 0 .2rem;padding:0;display:flex;flex-wrap:wrap;gap:.3rem 1rem;font-size:.92rem}
+.given li{margin:0}
+.mcards .u{font-size:.82rem}
+.feat .d,.mcards .d{font-size:.85rem;color:var(--dim);line-height:1.6;margin-top:.2rem}
+.feat .t{font-weight:700}
+.checkbox{margin:1rem 0;padding:.8rem 1rem;border-radius:var(--r);border:2px solid var(--ok);background:color-mix(in srgb,var(--ok) 6%,var(--card))}
+.checkbox b{font-size:.85rem;color:var(--ok)}.checkbox p{margin:.3rem 0 0}
+.tnav{margin:.5rem 0 1.2rem}.tnav a[aria-current]{background:var(--accent);color:#fff;border-color:var(--accent)}
+.pq .qt .given{margin-top:.5rem}

@@ -12,15 +12,16 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=4">
-<script src="/assets/site.js?v=4" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=6">
+<script src="/assets/site.js?v=6" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
 <header class="site"><div class="wrap">
   <a class="logo" href="/"><span class="mark">SI</span>ブツリ単位ラボ</a>
   <nav class="hdr-nav" aria-label="メインメニュー">
-    <a class="txt" href="/guide.html">使い方</a>
+    <a class="txt" href="/method.html">検算のやり方</a>
+    <a class="txt" href="/training/">トレーニング</a>
     <button class="icon-btn" data-open-search aria-label="検索"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
     <button class="icon-btn" id="menu-btn" aria-label="メニューを開く" aria-controls="drawer" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
   </nav>
@@ -32,13 +33,18 @@
     <div class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="q" type="search" placeholder="量・単位・公式を検索（例：電圧、J/K）" autocomplete="off" aria-label="サイト内検索"></div>
     <div class="search-hint">名前でも単位記号でも探せます。</div>
     <ul class="results" id="results" aria-live="polite"></ul>
-    <div class="nav-sec"><h4>ページ</h4><ul>
+    <div class="nav-sec"><h4>検算する</h4><ul>
       <li><a href="/">トップ</a></li>
-      <li><a href="/guide.html">単位の読み方と次元解析</a></li>
+      <li><a href="/method.html">検算のやり方</a></li>
+      <li><a href="/mistakes/">よくあるミス集</a></li>
+      <li><a href="/training/">検算トレーニング</a></li>
+    </ul></div>
+    <div class="nav-sec"><h4>単位を知る</h4><ul>
+      <li><a href="/guide.html">単位の読み方</a></li>
       <li><a href="/about.html">このサイトについて</a></li>
     </ul></div>
-    <div class="nav-sec"><h4>分野</h4><ul><li><a href="/c/base.html">基本量<span class="n">10量</span></a></li><li><a href="/c/mech.html">力学<span class="n">22量</span></a></li><li><a href="/c/thermo.html">熱・気体<span class="n">10量</span></a></li><li><a href="/c/em.html">電磁気<span class="n">17量</span></a></li><li><a href="/c/wave.html">波・光・量子<span class="n">5量</span></a></li><li><a href="/c/misc.html">放射線・化学<span class="n">4量</span></a></li></ul></div>
-    <div class="nav-sec"><h4>よく使う量</h4><div class="chips"><a href="/q/force.html">力</a><a href="/q/energy.html">エネルギー</a><a href="/q/power.html">仕事率</a><a href="/q/pressure.html">圧力</a><a href="/q/voltage.html">電圧</a><a href="/q/resistance.html">電気抵抗</a><a href="/q/capacitance.html">静電容量</a><a href="/q/magnetic_flux_density.html">磁束密度</a><a href="/q/planck.html">プランク定数</a><a href="/q/gas_constant.html">気体定数</a></div></div>
+    <div class="nav-sec"><h4>単位辞典（分野別）</h4><ul><li><a href="/c/base.html">基本量<span class="n">10量</span></a></li><li><a href="/c/mech.html">力学<span class="n">22量</span></a></li><li><a href="/c/thermo.html">熱・気体<span class="n">10量</span></a></li><li><a href="/c/em.html">電磁気<span class="n">17量</span></a></li><li><a href="/c/wave.html">波・光・量子<span class="n">5量</span></a></li><li><a href="/c/misc.html">放射線・化学<span class="n">4量</span></a></li></ul></div>
+    <div class="nav-sec"><h4>よく調べる単位</h4><div class="chips"><a href="/q/velocity.html">速度</a><a href="/q/acceleration.html">加速度</a><a href="/q/force.html">力</a><a href="/q/energy.html">エネルギー</a><a href="/q/power.html">仕事率</a><a href="/q/pressure.html">圧力</a><a href="/q/voltage.html">電圧</a><a href="/q/resistance.html">電気抵抗</a><a href="/q/capacitance.html">静電容量</a><a href="/q/spring_constant.html">ばね定数</a></div></div>
   </div>
 </aside>
 <main id="main"><div class="wrap">
@@ -48,6 +54,7 @@
 <div class="hero">
 <div class="big">Pa·s = kg/(m·s)</div>
 <div class="sub">次元 [M L⁻¹ T⁻¹]</div></div>
+<div class="checkbox"><b>検算のポイント</b><p>答えが粘性係数（粘度）なら、右辺の単位は <span class="mono ok">Pa·s</span>（＝ <span class="mono">kg/(m·s)</span>） になっているはず。ならなければ、どこかが間違っています。</p></div>
 <div class="goals"><b>このページでわかること</b><ul><li>粘性係数（粘度）を言葉でどう言い表すか</li><li>その言葉を単位に置き換えると、なぜ Pa·s になるのか</li></ul></div>
 <nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">粘性係数（粘度）とは？ 言葉で意味をつかむ</a><a href="#s2">基本単位までたどる</a><a href="#s3">粘性係数（粘度）が出てくる公式</a><a href="#s4">練習問題：分子と分母を見きわめる</a></div></nav><h2 id="s1">粘性係数（粘度）とは？ 言葉で意味をつかむ</h2>
 <p class="meaning"><b>粘性係数（粘度）とは</b>　流体のねばりけ。流れの速さの差に逆らう力の大きさを決める。</p>
@@ -81,9 +88,9 @@
 <div class="practice"><div class="pq"><p class="qt"><span class="qn">問1</span>粘性係数（粘度）は「流れを妨げる力 × 層の間隔 ÷ 触れ合う面積 ÷ 流れの速さの差」で求められます。「流れを妨げる力」<span class="mono u">[N]</span>、「触れ合う面積」<span class="mono u">[m²]</span>、「流れの速さの差」<span class="mono u">[m/s]</span>、「層の間隔」<span class="mono u">[m]</span> のとき、粘性係数（粘度）の単位はどれ？</p><ul class="opts"><li><button type="button" class="ch" data-ok="0"><span class="opt">A</span><span class="mono">m²·(m/s) / (N·m)</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">B</span><span class="mono">N·m²·(m/s)·m</span></button></li><li><button type="button" class="ch" data-ok="1"><span class="opt">C</span><span class="mono">N·m / (m²·(m/s))</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">D</span><span class="mono">1 / (N·m²·(m/s)·m)</span></button></li></ul><details class="exp"><summary>答えと解説</summary><p><b>正解：C</b>　<span class="mono ok">N·m / (m²·(m/s))</span></p><p>かける量（流れを妨げる力・層の間隔）の単位が分子、割る量（触れ合う面積・流れの速さの差）の単位が分母に来ます。まとめると <span class="mono">N·m / (m²·(m/s))</span> ＝ <span class="mono">N·s/m²</span> ＝ <span class="mono">Pa·s</span>。</p></details></div><div class="pq"><p class="qt"><span class="qn">問2</span>ストークスの法則 <span class="mono">F = 6π η r v</span> を使います。F 「力」<span class="mono u">[N]</span>、r 「長さ」<span class="mono u">[m]</span>、v 「速度」<span class="mono u">[m/s]</span> のとき、粘性係数（粘度） η の単位はどれ？</p><ul class="opts"><li><button type="button" class="ch" data-ok="0"><span class="opt">A</span><span class="mono">m·(m/s) / N</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">B</span><span class="mono">N·m·(m/s)</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">C</span><span class="mono">1 / (N·m·(m/s))</span></button></li><li><button type="button" class="ch" data-ok="1"><span class="opt">D</span><span class="mono">N / (m·(m/s))</span></button></li></ul><details class="exp"><summary>答えと解説</summary><p><b>正解：D</b>　<span class="mono ok">N / (m·(m/s))</span></p><p>式を η について解くと <span class="mono">η = F / (r v)</span>。分子・分母にそれぞれの単位を入れると <span class="mono">N / (m·(m/s))</span> ＝ <span class="mono">N·s/m²</span> ＝ <span class="mono">Pa·s</span>。</p></details></div><div class="pq"><p class="qt"><span class="qn">問3</span>粘性係数（粘度） ＝ 流れを妨げる力 × 層の間隔 ÷ 触れ合う面積 ÷ 流れの速さの差 です。「粘性係数（粘度）」<span class="mono u">[Pa·s]</span>、「触れ合う面積」<span class="mono u">[m²]</span>、「流れの速さの差」<span class="mono u">[m/s]</span>、「層の間隔」<span class="mono u">[m]</span> のとき、「流れを妨げる力」の単位はどれ？</p><ul class="opts"><li><button type="button" class="ch" data-ok="0"><span class="opt">A</span><span class="mono">m / ((Pa·s)·m²·(m/s))</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">B</span><span class="mono">(Pa·s)·m²·(m/s)·m</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">C</span><span class="mono">1 / ((Pa·s)·m²·(m/s)·m)</span></button></li><li><button type="button" class="ch" data-ok="1"><span class="opt">D</span><span class="mono">(Pa·s)·m²·(m/s) / m</span></button></li></ul><details class="exp"><summary>答えと解説</summary><p><b>正解：D</b>　<span class="mono ok">(Pa·s)·m²·(m/s) / m</span></p><p>言葉の式を「流れを妨げる力」について解き直すと「流れを妨げる力 ＝ 粘性係数（粘度） × 触れ合う面積 × 流れの速さの差 ÷ 層の間隔」。単位を入れると <span class="mono">(Pa·s)·m²·(m/s) / m</span> ＝ <span class="mono">Pa·m²</span> ＝ <span class="mono">N</span>。</p></details></div></div>
 </div></main>
 <footer class="site"><div class="wrap">
-  <div class="links"><a href="/">トップ</a><a href="/guide.html">単位の読み方</a><a href="/about.html">このサイトについて</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>
+  <div class="links"><a href="/">トップ</a><a href="/method.html">検算のやり方</a><a href="/mistakes/">よくあるミス</a><a href="/training/">検算トレーニング</a><a href="/guide.html">単位の読み方</a><a href="/about.html">このサイトについて</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>
   <p class="src">単位の定義は、国際度量衡局（BIPM）の SI パンフレット第9版と、その日本語版（産業技術総合研究所 計量標準総合センター）に基づいています。</p>
-  ブツリ単位ラボ — SI単位と次元解析で物理を理解する。最終更新日：2026-10-17
+  ブツリ単位ラボ — 答えの単位で検算して、取れる問題を落とさない。最終更新日：2026-10-17
 </div></footer>
 <button class="to-top" id="to-top" aria-label="ページの先頭へ戻る"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></button>
 </body>

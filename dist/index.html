@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SI単位と次元解析で物理を理解する | ブツリ単位ラボ</title>
-<meta name="description" content="知らない単位や公式を、知っている公式と単位だけで理解する。SI単位と次元解析で物理量を基本単位まで分解するサイト。">
+<title>答えの単位で検算する物理サイト | ブツリ単位ラボ</title>
+<meta name="description" content="物理の計算で出した答えが正しいかを、答えの単位（次元解析）で確かめるためのサイト。検算の手順、よくあるミス集、検算トレーニング、単位辞典。">
 <link rel="canonical" href="https://tanitani.butsuri-lab.workers.dev/">
 
 <meta name="google-site-verification" content="kVE91IWkP86K1E_JpBQDklXXu5gz86ZOA64xcgtDUwc">
@@ -12,15 +12,16 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=4">
-<script src="/assets/site.js?v=4" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=6">
+<script src="/assets/site.js?v=6" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
 <header class="site"><div class="wrap">
   <a class="logo" href="/"><span class="mark">SI</span>ブツリ単位ラボ</a>
   <nav class="hdr-nav" aria-label="メインメニュー">
-    <a class="txt" href="/guide.html">使い方</a>
+    <a class="txt" href="/method.html">検算のやり方</a>
+    <a class="txt" href="/training/">トレーニング</a>
     <button class="icon-btn" data-open-search aria-label="検索"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
     <button class="icon-btn" id="menu-btn" aria-label="メニューを開く" aria-controls="drawer" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
   </nav>
@@ -32,34 +33,50 @@
     <div class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="q" type="search" placeholder="量・単位・公式を検索（例：電圧、J/K）" autocomplete="off" aria-label="サイト内検索"></div>
     <div class="search-hint">名前でも単位記号でも探せます。</div>
     <ul class="results" id="results" aria-live="polite"></ul>
-    <div class="nav-sec"><h4>ページ</h4><ul>
+    <div class="nav-sec"><h4>検算する</h4><ul>
       <li><a href="/" aria-current="page">トップ</a></li>
-      <li><a href="/guide.html">単位の読み方と次元解析</a></li>
+      <li><a href="/method.html">検算のやり方</a></li>
+      <li><a href="/mistakes/">よくあるミス集</a></li>
+      <li><a href="/training/">検算トレーニング</a></li>
+    </ul></div>
+    <div class="nav-sec"><h4>単位を知る</h4><ul>
+      <li><a href="/guide.html">単位の読み方</a></li>
       <li><a href="/about.html">このサイトについて</a></li>
     </ul></div>
-    <div class="nav-sec"><h4>分野</h4><ul><li><a href="/c/base.html">基本量<span class="n">10量</span></a></li><li><a href="/c/mech.html">力学<span class="n">22量</span></a></li><li><a href="/c/thermo.html">熱・気体<span class="n">10量</span></a></li><li><a href="/c/em.html">電磁気<span class="n">17量</span></a></li><li><a href="/c/wave.html">波・光・量子<span class="n">5量</span></a></li><li><a href="/c/misc.html">放射線・化学<span class="n">4量</span></a></li></ul></div>
-    <div class="nav-sec"><h4>よく使う量</h4><div class="chips"><a href="/q/force.html">力</a><a href="/q/energy.html">エネルギー</a><a href="/q/power.html">仕事率</a><a href="/q/pressure.html">圧力</a><a href="/q/voltage.html">電圧</a><a href="/q/resistance.html">電気抵抗</a><a href="/q/capacitance.html">静電容量</a><a href="/q/magnetic_flux_density.html">磁束密度</a><a href="/q/planck.html">プランク定数</a><a href="/q/gas_constant.html">気体定数</a></div></div>
+    <div class="nav-sec"><h4>単位辞典（分野別）</h4><ul><li><a href="/c/base.html">基本量<span class="n">10量</span></a></li><li><a href="/c/mech.html">力学<span class="n">22量</span></a></li><li><a href="/c/thermo.html">熱・気体<span class="n">10量</span></a></li><li><a href="/c/em.html">電磁気<span class="n">17量</span></a></li><li><a href="/c/wave.html">波・光・量子<span class="n">5量</span></a></li><li><a href="/c/misc.html">放射線・化学<span class="n">4量</span></a></li></ul></div>
+    <div class="nav-sec"><h4>よく調べる単位</h4><div class="chips"><a href="/q/velocity.html">速度</a><a href="/q/acceleration.html">加速度</a><a href="/q/force.html">力</a><a href="/q/energy.html">エネルギー</a><a href="/q/power.html">仕事率</a><a href="/q/pressure.html">圧力</a><a href="/q/voltage.html">電圧</a><a href="/q/resistance.html">電気抵抗</a><a href="/q/capacitance.html">静電容量</a><a href="/q/spring_constant.html">ばね定数</a></div></div>
   </div>
 </aside>
 <main id="main"><div class="wrap">
 
-<h1>知らない単位も、知っている公式から組み立てればわかる</h1>
-<p class="lead">知らない単位や公式を、知っている公式と単位だけで理解する。SI単位と次元解析で物理量を基本単位まで分解するサイト。</p>
-<button class="home-search" data-open-search><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>量・単位・公式を検索（例：電圧、J/K、オームの法則）</button>
-<div class="hero"><div class="big">J = N·m = kg·m²/s²</div><div class="sub">F = ma と W = Fx を知っていれば、ジュールの中身は自分で導ける</div></div>
-<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">このサイトの考え方</a><a href="#s2">7つの基本単位</a><a href="#s3">まずはここから</a><a href="#s4">分野から探す</a></div></nav><h2 id="s1">このサイトの考え方</h2>
-<p>物理の単位は、たった7つの基本単位のかけ算・わり算でできています。初めて見る単位や公式も、知っている公式を使って基本単位まで分解すれば、その正体がわかります。このサイトでは数値の換算は扱わず、<b>SI単位と次元だけ</b>で説明します。</p>
-<p>たとえば速さは「1秒あたりに進む距離」＝「距離 ÷ 時間」。言葉をそのまま単位に置き換えると m ÷ s ＝ m/s になります。すべての量のページで、まず<b>言葉で意味をつかみ、その言葉を単位に置き換える</b>流れで説明しています。</p>
-<p><a href="/guide.html">→ はじめに：単位の読み方を読む</a></p>
-<h2 id="s2">7つの基本単位</h2><div class="grid"><a href="/q/length.html">長さ<div class="u">m</div></a><a href="/q/mass.html">質量<div class="u">kg</div></a><a href="/q/time.html">時間<div class="u">s</div></a><a href="/q/current.html">電流<div class="u">A</div></a><a href="/q/temperature.html">温度（熱力学温度）<div class="u">K</div></a><a href="/q/amount.html">物質量<div class="u">mol</div></a><a href="/q/luminous_intensity.html">光度<div class="u">cd</div></a></div>
-<h2 id="s3">まずはここから</h2><div class="grid"><a href="/q/force.html">力<div class="u">N</div></a><a href="/q/energy.html">エネルギー・仕事・熱量<div class="u">J</div></a><a href="/q/power.html">仕事率・電力<div class="u">W</div></a><a href="/q/voltage.html">電圧・電位<div class="u">V</div></a><a href="/q/resistance.html">電気抵抗<div class="u">Ω</div></a><a href="/q/magnetic_flux_density.html">磁束密度<div class="u">T</div></a><a href="/q/planck.html">プランク定数<div class="u">J·s</div></a><a href="/q/gas_constant.html">気体定数<div class="u">J/(mol·K)</div></a></div>
-<h2 id="s4">分野から探す</h2>
-<div class="grid cat-cards"><a href="/c/base.html"><div class="t">基本量</div><div class="d">SIの7つの基本単位と、角度などの無次元量。すべての単位はここから組み立てられる。</div><div class="n">量 10・公式 2</div></a><a href="/c/mech.html"><div class="t">力学</div><div class="d">速さ・力・エネルギー・圧力・回転など、運動を扱う量。</div><div class="n">量 22・公式 41</div></a><a href="/c/thermo.html"><div class="t">熱・気体</div><div class="d">温度・熱量・気体の状態・熱の伝わり方に関わる量。</div><div class="n">量 10・公式 12</div></a><a href="/c/em.html"><div class="t">電磁気</div><div class="d">電荷・電圧・抵抗・静電容量・磁場など、電気と磁気の量。</div><div class="n">量 17・公式 33</div></a><a href="/c/wave.html"><div class="t">波・光・量子</div><div class="d">波数・光子のエネルギー・光の明るさなど。</div><div class="n">量 5・公式 8</div></a><a href="/c/misc.html"><div class="t">放射線・化学</div><div class="d">放射能・被ばく線量・反応速度など。</div><div class="n">量 4・公式 4</div></a></div>
+<section class="mission">
+<p class="quote">「取れる問題を間違えることが、一番ダメージが大きい」</p>
+<p class="quote-src">— 予備校時代の数学の先生の教え</p>
+</section>
+<h1>答えが出たら、単位で検算。</h1>
+<p class="lead">物理の計算で出した答えが正しいかどうかを、<b>答えの単位</b>で確かめるためのサイトです。単位が合わない答えは、必ずどこかが間違っています。そのためには、求めた量の単位と、その単位の意味がわかっていることが必要です。このサイトは、その両方を身につける手助けをします。</p>
+<button class="home-search" data-open-search><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>答えの単位を調べる（例：電圧、J/K、ばね定数）</button>
+<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">検算の3つの手順</a><a href="#s2">たとえば、こんなミスが見つかる</a><a href="#s3">このサイトでできること</a></div></nav><h2 id="s1">検算の3つの手順</h2>
+<ol class="steps3"><li><b>求めたい量の単位を確かめる</b><br>速さなら m/s、エネルギーなら J ＝ kg·m²/s²</li><li><b>答えの右辺に、記号の単位を当てはめる</b><br>2、½、π などの数は単位をもたないので無視</li><li><b>比べる</b><br>合わなければ、その答えは必ず間違い</li></ol>
+<p><a href="/method.html">→ 検算のやり方をくわしく読む</a></p>
+<h2 id="s2">たとえば、こんなミスが見つかる</h2>
+<div class="problem"><b>問題</b><p>ばね定数 k のばねに質量 m のおもりをつけて単振動させた。周期 T を求めよ。</p></div>
+<div class="answer wrong-ans"><span class="lbl">ありがちな答え</span><span class="mono">T = 2π√(k/m)</span></div>
+<p>求めたい周期 T の単位は s。右辺に単位を当てはめると、</p><div class="calc">[√(k/m)] ＝ √((N/m) / kg) ＝ √(1/s²) ＝ 1/s　<span class="ng">× 不一致</span></div>
+<p>s にならないので間違いだとわかります。正しくは <span class="mono ok">T = 2π√(m/k)</span>。</p>
+<div class="grid mcards"><a href="/mistakes/free_fall_speed.html"><div class="t">落下の速さで √ を忘れる</div><div class="u">× v = 2gh　→　○ v = √(2gh)</div></a><a href="/mistakes/spring_period.html"><div class="t">ばね振り子の周期で m と k を逆にする</div><div class="u">× T = 2π√(k/m)　→　○ T = 2π√(m/k)</div></a><a href="/mistakes/pendulum_period.html"><div class="t">単振り子の周期で l と g を逆にする</div><div class="u">× T = 2π√(g/l)　→　○ T = 2π√(l/g)</div></a><a href="/mistakes/kinetic_energy.html"><div class="t">運動エネルギーで v を2乗し忘れる</div><div class="u">× K = ½mv　→　○ K = ½mv²</div></a><a href="/mistakes/uniform_accel_distance.html"><div class="t">等加速度運動の距離で t² を t にする</div><div class="u">× x = v₀t + ½at　→　○ x = v₀t + ½at²</div></a><a href="/mistakes/horizontal_throw_range.html"><div class="t">水平投射の飛距離で h と g を逆にする</div><div class="u">× x = v₀√(2g/h)　→　○ x = v₀√(2h/g)</div></a></div>
+<p><a href="/mistakes/">→ よくあるミスをすべて見る</a></p>
+<h2 id="s3">このサイトでできること</h2>
+<div class="grid feat"><a href="/method.html"><div class="t">① 検算のやり方</div><div class="d">答えの単位で間違いを見つける3つの手順と、見抜けないミスの見分け方。</div></a><a href="/mistakes/"><div class="t">② よくあるミス集</div><div class="d">√ の付け忘れ、分子と分母の取り違えなど、18 個の実例。</div></a><a href="/training/"><div class="t">③ 検算トレーニング</div><div class="d">「単位が合う答えはどれ？」を 160 問。分野別に練習できます。</div></a><a href="#dict"><div class="t">④ 単位辞典</div><div class="d">68 個の量の単位を、意味を表す言葉から組み立てて理解します。</div></a></div>
+<h2 id="dict">単位辞典：答えの単位とその意味を調べる</h2>
+<p>検算するには、求めた量の単位と、その単位が何を意味するかを知っている必要があります。それぞれの量のページでは、量の意味を言葉で表し、その言葉を単位に置き換えて、単位の正体を説明しています。</p>
+<p><a href="/guide.html">→ はじめに：単位の読み方</a></p>
+<div class="grid cat-cards"><a href="/c/base.html"><div class="t">基本量</div><div class="d">SIの7つの基本単位と、角度などの無次元量。すべての単位はここから組み立てられる。</div><div class="n">10 個の量</div></a><a href="/c/mech.html"><div class="t">力学</div><div class="d">速さ・力・エネルギー・圧力・回転など、運動を扱う量。</div><div class="n">22 個の量</div></a><a href="/c/thermo.html"><div class="t">熱・気体</div><div class="d">温度・熱量・気体の状態・熱の伝わり方に関わる量。</div><div class="n">10 個の量</div></a><a href="/c/em.html"><div class="t">電磁気</div><div class="d">電荷・電圧・抵抗・静電容量・磁場など、電気と磁気の量。</div><div class="n">17 個の量</div></a><a href="/c/wave.html"><div class="t">波・光・量子</div><div class="d">波数・光子のエネルギー・光の明るさなど。</div><div class="n">5 個の量</div></a><a href="/c/misc.html"><div class="t">放射線・化学</div><div class="d">放射能・被ばく線量・反応速度など。</div><div class="n">4 個の量</div></a></div>
 </div></main>
 <footer class="site"><div class="wrap">
-  <div class="links"><a href="/">トップ</a><a href="/guide.html">単位の読み方</a><a href="/about.html">このサイトについて</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>
+  <div class="links"><a href="/">トップ</a><a href="/method.html">検算のやり方</a><a href="/mistakes/">よくあるミス</a><a href="/training/">検算トレーニング</a><a href="/guide.html">単位の読み方</a><a href="/about.html">このサイトについて</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>
   <p class="src">単位の定義は、国際度量衡局（BIPM）の SI パンフレット第9版と、その日本語版（産業技術総合研究所 計量標準総合センター）に基づいています。</p>
-  ブツリ単位ラボ — SI単位と次元解析で物理を理解する。最終更新日：2026-10-17
+  ブツリ単位ラボ — 答えの単位で検算して、取れる問題を落とさない。最終更新日：2026-10-17
 </div></footer>
 <button class="to-top" id="to-top" aria-label="ページの先頭へ戻る"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></button>
 </body>
