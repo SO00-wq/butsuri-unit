@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>コイル・電磁誘導の問題でよくあるミスと検算のコツ | ブツリ単位ラボ</title>
+<meta name="description" content="コイル・電磁誘導の物理の問題で多い間違い7例と、答えの単位で見つけるコツ。巻き数 N（単位なし）と単位長さあたりの巻き数 n（1/m）、磁束 Φ（Wb）と磁束密度 B（T）を取り違えやすいテーマ">
+<link rel="canonical" href="https://tanitani.butsuri-lab.workers.dev/mistakes/t/coil.html">
+
+<meta name="google-site-verification" content="kVE91IWkP86K1E_JpBQDklXXu5gz86ZOA64xcgtDUwc">
+<meta name="theme-color" content="#1d5fd1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css?v=11">
+<script src="/assets/site.js?v=11" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+<header class="site"><div class="wrap">
+  <a class="logo" href="/"><span class="mark">SI</span>ブツリ単位ラボ</a>
+  <nav class="hdr-nav" aria-label="メインメニュー">
+    <a class="txt" href="/method.html">検算のやり方</a>
+    <a class="txt" href="/training/">トレーニング</a>
+    <button class="icon-btn" data-open-search aria-label="検索"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
+    <button class="icon-btn" id="menu-btn" aria-label="メニューを開く" aria-controls="drawer" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </nav>
+</div></header>
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" inert aria-label="メニュー">
+  <div class="drawer-head">メニュー<button class="icon-btn" id="close-btn" aria-label="メニューを閉じる"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <div class="drawer-body">
+    <div class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="q" type="search" placeholder="量・単位・公式を検索（例：電圧、J/K）" autocomplete="off" aria-label="サイト内検索"></div>
+    <div class="search-hint">名前でも単位記号でも探せます。</div>
+    <ul class="results" id="results" aria-live="polite"></ul>
+    <div class="nav-sec"><h4>検算する</h4><ul>
+      <li><a href="/">トップ</a></li>
+      <li><a href="/method.html">検算のやり方</a></li>
+      <li><a href="/mistakes/">よくあるミス集</a></li>
+      <li><a href="/training/">検算トレーニング</a></li>
+      <li><a href="/advanced.html">難関大レベル</a></li>
+    </ul></div>
+    <div class="nav-sec"><h4>単位を知る</h4><ul>
+      <li><a href="/guide.html">単位の読み方</a></li>
+      <li><a href="/about.html">このサイトについて</a></li>
+    </ul></div>
+    <div class="nav-sec"><h4>単位辞典（分野別）</h4><ul><li><a href="/c/base.html">基本量<span class="n">10量</span></a></li><li><a href="/c/mech.html">力学<span class="n">28量</span></a></li><li><a href="/c/thermo.html">熱・気体<span class="n">12量</span></a></li><li><a href="/c/em.html">電磁気<span class="n">34量</span></a></li><li><a href="/c/wave.html">波・光・量子<span class="n">6量</span></a></li><li><a href="/c/misc.html">放射線・化学<span class="n">4量</span></a></li></ul></div>
+    <div class="nav-sec"><h4>よく調べる単位</h4><div class="chips"><a href="/q/velocity.html">速度</a><a href="/q/acceleration.html">加速度</a><a href="/q/force.html">力</a><a href="/q/energy.html">エネルギー</a><a href="/q/power.html">仕事率</a><a href="/q/pressure.html">圧力</a><a href="/q/voltage.html">電圧</a><a href="/q/resistance.html">電気抵抗</a><a href="/q/capacitance.html">静電容量</a><a href="/q/spring_constant.html">ばね定数</a></div></div>
+  </div>
+</aside>
+<main id="main"><div class="wrap">
+<nav class="bc" aria-label="パンくずリスト"><a href="/">トップ</a> › <a href="/mistakes/">よくあるミス</a> › コイル・電磁誘導</nav>
+<span class="tag">電磁気</span>
+<h1>コイル・電磁誘導の問題でよくあるミス</h1>
+<div class="tipbox"><b>このテーマの検算のコツ</b><p>巻き数 N（単位なし）と単位長さあたりの巻き数 n（<math><mstyle displaystyle="true"><mfrac><mrow><mn>1</mn></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac></mstyle></math>）、磁束 Φ（Wb）と磁束密度 B（T）を取り違えやすいテーマです。<math><mstyle displaystyle="true"><mi mathvariant="normal">V</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">Wb</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math>、<math><mstyle displaystyle="true"><mi mathvariant="normal">H</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">Wb</mi></mrow><mrow><mi mathvariant="normal">A</mi></mrow></mfrac></mstyle></math>、<math><mstyle displaystyle="true"><mi mathvariant="normal">T</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">Wb</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math> の3つを覚えておくと、検算がぐっと速くなります。</p></div>
+<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">単位で見つけられるミス（7個）</a><a href="#s2">このテーマで使う単位</a><a href="#s3">ほかのテーマ</a></div></nav><h2 id="s1">単位で見つけられるミス（7個）</h2>
+<div class="grid mcards"><a href="/mistakes/solenoid_total_turns.html"><div class="t"><span class="tag adv">難関大</span>ソレノイドの磁場で全体の巻き数 N を使う</div><div class="mk-line"><span class="mk bad">誤</span><span class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">B</mi><mo>=</mo><msub><mrow><mi mathvariant="normal">μ</mi></mrow><mi mathvariant="normal">0</mi></msub><mi mathvariant="normal">NI</mi></mstyle></math></span><span class="mk good">正</span><span class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">B</mi><mo>=</mo><mfrac><mrow><msub><mrow><mi mathvariant="normal">μ</mi></mrow><mi mathvariant="normal">0</mi></msub><mi mathvariant="normal">NI</mi></mrow><mrow><mi mathvariant="normal">l</mi></mrow></mfrac></mstyle></math></span></div></a><a href="/mistakes/self_inductance_n2.html"><div class="t"><span class="tag adv">難関大</span>ソレノイドの自己インダクタンスで n を2乗し忘れる</div><div class="mk-line"><span class="mk bad">誤</span><span class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">L</mi><mo>=</mo><msub><mrow><mi mathvariant="normal">μ</mi></mrow><mi mathvariant="normal">0</mi></msub><mi mathvariant="normal">nSl</mi></mstyle></math></span><span class="mk good">正</span><span class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">L</mi><mo>=</mo><msub><mrow><mi mathvariant="normal">μ</mi></mrow><mi mathvariant="normal">0</mi></msub><msup><mrow><mi mathvariant="normal">n</mi></mrow><mn>2</mn></msup><mi mathvariant="normal">Sl</mi></mstyle></math></span></div></a><a href="/mistakes/induced_emf_flux.html"><div class="t">誘導起電力で時間をかけてしまう</div><div class="mk-line"><span class="mk bad">誤</span><span class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">V</mi><mo>=</mo><mi mathvariant="normal">NΔΦΔt</mi></mstyle></math></span><span class="mk good">正</span><span class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">V</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">NΔΦ</mi></mrow><mrow><mi mathvariant="normal">Δt</mi></mrow></mfrac></mstyle></math></span></div></a><a href="/mistakes/coil_energy.html"><div class="t">コイルのエネルギーで I を2乗し忘れる</div><div class="mk-line"><span class="mk bad">誤</span><span class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">U</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi mathvariant="normal">LI</mi></mstyle></math></span><span class="mk good">正</span><span class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">U</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><msup><mrow><mi mathvariant="normal">LI</mi></mrow><mn>2</mn></msup></mstyle></math></span></div></a><a href="/mistakes/rl_time_constant.html"><div class="t"><span class="tag adv">難関大</span>RL回路の時定数で R と L を逆にする</div><div class="mk-line"><span class="mk bad">誤</span><span class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">τ</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">R</mi></mrow><mrow><mi mathvariant="normal">L</mi></mrow></mfrac></mstyle></math></span><span class="mk good">正</span><span class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">τ</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">L</mi></mrow><mrow><mi mathvariant="normal">R</mi></mrow></mfrac></mstyle></math></span></div></a><a href="/mistakes/lc_period.html"><div class="t"><span class="tag adv">難関大</span>電気振動の周期で √ を分母に入れる</div><div class="mk-line"><span class="mk bad">誤</span><span class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">T</mi><mo>=</mo><mfrac><mrow><mn>2</mn><mi mathvariant="normal">π</mi></mrow><mrow><msqrt><mi mathvariant="normal">LC</mi></msqrt></mrow></mfrac></mstyle></math></span><span class="mk good">正</span><span class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">T</mi><mo>=</mo><mn>2</mn><mi mathvariant="normal">π</mi><msqrt><mi mathvariant="normal">LC</mi></msqrt></mstyle></math></span></div></a><a href="/mistakes/rod_emf.html"><div class="t">動く導体棒の起電力で長さをかけ忘れる</div><div class="mk-line"><span class="mk bad">誤</span><span class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">V</mi><mo>=</mo><mi mathvariant="normal">vB</mi></mstyle></math></span><span class="mk good">正</span><span class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">V</mi><mo>=</mo><mi mathvariant="normal">vBl</mi></mstyle></math></span></div></a></div>
+<h2 id="s2">このテーマで使う単位</h2><div class="grid"><a href="/q/inductance.html">インダクタンス<div class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">H</mi></mstyle></math></div></a><a href="/q/turn_density.html">単位長さあたりの巻き数<div class="u"><math><mstyle displaystyle="true"><mfrac><mrow><mn>1</mn></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac></mstyle></math></div></a><a href="/q/magnetic_flux.html">磁束<div class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">Wb</mi></mstyle></math></div></a><a href="/q/magnetic_flux_density.html">磁束密度<div class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">T</mi></mstyle></math></div></a><a href="/q/inductance_per_length.html">単位長さあたりのインダクタンス<div class="u"><math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">H</mi></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac></mstyle></math></div></a></div>
+<p><a href="/training/em.html">→ 電磁気の検算トレーニングで練習する</a></p>
+<h2 id="s3">ほかのテーマ</h2><div class="grid"><a href="/mistakes/t/capacitor.html"><div class="t">コンデンサー</div><div class="d">4 個のミス例</div></a><a href="/mistakes/t/field.html"><div class="t">電場・電位・ガウスの法則</div><div class="d">4 個のミス例</div></a><a href="/mistakes/t/current_field.html"><div class="t">電流と磁場・ホール効果</div><div class="d">2 個のミス例</div></a><a href="/mistakes/t/particle.html"><div class="t">電場・磁場中の荷電粒子</div><div class="d">3 個のミス例</div></a><a href="/mistakes/t/circuit.html"><div class="t">直流回路</div><div class="d">1 個のミス例</div></a><a href="/mistakes/t/shm.html"><div class="t">単振動・振り子</div><div class="d">3 個のミス例</div></a><a href="/mistakes/t/circular.html"><div class="t">円運動・剛体の回転</div><div class="d">3 個のミス例</div></a><a href="/mistakes/t/projectile.html"><div class="t">落下・放物運動・抵抗力</div><div class="d">4 個のミス例</div></a><a href="/mistakes/t/energy.html"><div class="t">力学的エネルギー・斜面</div><div class="d">3 個のミス例</div></a><a href="/mistakes/t/wave.html"><div class="t">波・光・原子</div><div class="d">2 個のミス例</div></a><a href="/mistakes/t/thermo.html"><div class="t">熱・気体</div><div class="d">2 個のミス例</div></a></div>
+</div></main>
+<footer class="site"><div class="wrap">
+  <div class="links"><a href="/">トップ</a><a href="/method.html">検算のやり方</a><a href="/mistakes/">よくあるミス</a><a href="/training/">検算トレーニング</a><a href="/advanced.html">難関大レベル</a><a href="/guide.html">単位の読み方</a><a href="/about.html">このサイトについて</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>
+  <p class="src">単位の定義は、国際度量衡局（BIPM）の SI パンフレット第9版と、その日本語版（産業技術総合研究所 計量標準総合センター）に基づいています。</p>
+  ブツリ単位ラボ — 答えの単位で検算して、取れる問題を落とさない。最終更新日：2026-10-18
+</div></footer>
+<button class="to-top" id="to-top" aria-label="ページの先頭へ戻る"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></button>
+</body>
+</html>

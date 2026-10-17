@@ -45,7 +45,9 @@
     ]
    },
    "cause": "エネルギー保存 mgh = ½mv² から v² = 2gh を出したところで止まり、√ をとり忘れた。",
-   "detectable": true
+   "detectable": true,
+   "theme": "projectile",
+   "level": "高校"
   },
   {
    "id": "spring_period",
@@ -91,7 +93,9 @@
     ]
    },
    "cause": "角振動数 ω = √(k/m) と周期 T = 2π/ω を取り違えた。",
-   "detectable": true
+   "detectable": true,
+   "theme": "shm",
+   "level": "高校"
   },
   {
    "id": "pendulum_period",
@@ -137,7 +141,9 @@
     ]
    },
    "cause": "ばね振り子の √(m/k) の形だけを覚えていて、どちらが分子か迷った。",
-   "detectable": true
+   "detectable": true,
+   "theme": "shm",
+   "level": "高校"
   },
   {
    "id": "kinetic_energy",
@@ -183,7 +189,9 @@
     ]
    },
    "cause": "運動量 p = mv と混ざった。",
-   "detectable": true
+   "detectable": true,
+   "theme": "energy",
+   "level": "高校"
   },
   {
    "id": "uniform_accel_distance",
@@ -250,7 +258,9 @@
     ]
    },
    "cause": "速度の式 v = v₀ + at と混ざった。足し算の式は、項ごとに単位がそろっているかを確かめると見つかる。",
-   "detectable": true
+   "detectable": true,
+   "theme": "projectile",
+   "level": "高校"
   },
   {
    "id": "horizontal_throw_range",
@@ -305,7 +315,9 @@
     ]
    },
    "cause": "落下時間 t = √(2h/g) を出すときに、h と g の位置を逆にした。",
-   "detectable": true
+   "detectable": true,
+   "theme": "projectile",
+   "level": "高校"
   },
   {
    "id": "centripetal_force",
@@ -360,7 +372,9 @@
     ]
    },
    "cause": "向心加速度 v²/r の2乗を落とした。",
-   "detectable": true
+   "detectable": true,
+   "theme": "circular",
+   "level": "高校"
   },
   {
    "id": "circular_period",
@@ -406,7 +420,9 @@
     ]
    },
    "cause": "「1周の長さ ÷ 速さ」の割る順番を逆にした。",
-   "detectable": true
+   "detectable": true,
+   "theme": "circular",
+   "level": "高校"
   },
   {
    "id": "gas_temperature",
@@ -470,7 +486,9 @@
     ]
    },
    "cause": "pV = nRT を T について解くときに、割る側とかける側を取り違えた。",
-   "detectable": true
+   "detectable": true,
+   "theme": "thermo",
+   "level": "高校"
   },
   {
    "id": "heat_temperature_rise",
@@ -525,7 +543,9 @@
     ]
    },
    "cause": "Q = mcΔT を変形するときに、c を割るべきところでかけた。",
-   "detectable": true
+   "detectable": true,
+   "theme": "thermo",
+   "level": "高校"
   },
   {
    "id": "capacitor_energy",
@@ -571,7 +591,9 @@
     ]
    },
    "cause": "電気量 q = CV と混ざった。CV の単位は C（クーロン）で、エネルギーではない。",
-   "detectable": true
+   "detectable": true,
+   "theme": "capacitor",
+   "level": "高校"
   },
   {
    "id": "rc_time_constant",
@@ -617,7 +639,9 @@
     ]
    },
    "cause": "RL回路の τ = L/R の形と混ざった。",
-   "detectable": true
+   "detectable": true,
+   "theme": "capacitor",
+   "level": "高校"
   },
   {
    "id": "joule_power",
@@ -663,7 +687,9 @@
     ]
    },
    "cause": "P = I²R の形と混ざった。",
-   "detectable": true
+   "detectable": true,
+   "theme": "circuit",
+   "level": "高校"
   },
   {
    "id": "accel_by_voltage",
@@ -718,7 +744,9 @@
     ]
    },
    "cause": "qV = ½mv² から v² を出したところで止まった。",
-   "detectable": true
+   "detectable": true,
+   "theme": "particle",
+   "level": "高校"
   },
   {
    "id": "cyclotron_radius",
@@ -782,7 +810,9 @@
     ]
    },
    "cause": "qvB = mv²/r を r について解くときに、分子と分母を取り違えた。",
-   "detectable": true
+   "detectable": true,
+   "theme": "particle",
+   "level": "高校"
   },
   {
    "id": "photon_wavelength",
@@ -837,7 +867,9 @@
     ]
    },
    "cause": "E = hf と c = fλ を組み合わせるときに、f = c/λ を f = cλ とした。",
-   "detectable": true
+   "detectable": true,
+   "theme": "wave",
+   "level": "高校"
   },
   {
    "id": "missing_half",
@@ -884,7 +916,9 @@
    },
    "cause": "½ や 2、π のような数には単位がないので、落としても単位は変わらない。",
    "detectable": false,
-   "tip": "係数のミスは、公式を導き直す（運動エネルギーなら、力 F で距離 x だけ加速したときの仕事 W = Fx から求める）か、v = 0 や m を2倍にしたときにどうなるはずかを考えて確かめます。"
+   "tip": "係数のミスは、公式を導き直す（運動エネルギーなら、力 F で距離 x だけ加速したときの仕事 W = Fx から求める）か、v = 0 や m を2倍にしたときにどうなるはずかを考えて確かめます。",
+   "theme": "energy",
+   "level": "高校"
   },
   {
    "id": "sin_cos",
@@ -932,7 +966,9 @@
    },
    "cause": "sin θ も cos θ も単位をもたない数なので、取り違えても単位は変わらない。力の図を描いて向きを確かめる必要がある。",
    "detectable": false,
-   "tip": "sin と cos の取り違えは、極端な場合を考えると見つかります。θ = 0° なら斜面は水平なので加速度は 0 のはず。a = g cos θ だと g になってしまうので間違いだとわかります。"
+   "tip": "sin と cos の取り違えは、極端な場合を考えると見つかります。θ = 0° なら斜面は水平なので加速度は 0 のはず。a = g cos θ だと g になってしまうので間違いだとわかります。",
+   "theme": "energy",
+   "level": "高校"
   },
   {
    "id": "string_wave_speed",
@@ -979,7 +1015,8 @@
     ]
    },
    "cause": "「重いほど遅い、強く張るほど速い」という向きを確かめずに、形だけで覚えていた。",
-   "detectable": true
+   "detectable": true,
+   "theme": "wave"
   },
   {
    "id": "solenoid_total_turns",
@@ -1040,7 +1077,8 @@
     ]
    },
    "cause": "公式 B = μ₀nI の n は「単位長さあたりの巻き数」（n = N/l）。全体の巻き数 N をそのまま入れてしまった。",
-   "detectable": true
+   "detectable": true,
+   "theme": "coil"
   },
   {
    "id": "parallel_wire_total_force",
@@ -1110,7 +1148,8 @@
     ]
    },
    "cause": "μ₀I₁I₂/(2πd) は長さ 1 m あたりの力（単位 N/m）。長さ l をかけ忘れた。",
-   "detectable": true
+   "detectable": true,
+   "theme": "current_field"
   },
   {
    "id": "energy_density_square",
@@ -1157,7 +1196,8 @@
     ]
    },
    "cause": "コンデンサーのエネルギー ½CV² から導くときに、2乗を落とした。ε₀E の単位は C/m²（電束密度と同じ）で、エネルギー密度ではない。",
-   "detectable": true
+   "detectable": true,
+   "theme": "field"
   },
   {
    "id": "line_charge_r2",
@@ -1213,7 +1253,8 @@
     ]
    },
    "cause": "点電荷の電場 q/(4πε₀r²) の形と混ざった。電荷が「長さあたり」になったぶん、r の次数が1つ下がる。",
-   "detectable": true
+   "detectable": true,
+   "theme": "field"
   },
   {
    "id": "sheet_charge_r2",
@@ -1265,7 +1306,8 @@
     ]
    },
    "cause": "点電荷の式に σ を当てはめた。面電荷密度は C/m² なので、さらに r² で割ると単位が合わない。無限平面の電場は距離によらない。",
-   "detectable": true
+   "detectable": true,
+   "theme": "field"
   },
   {
    "id": "hall_voltage_thickness",
@@ -1335,7 +1377,8 @@
     ]
    },
    "cause": "電流密度（電流 ÷ 試料の断面積）を使うところで、断面積を幅だけにして、厚さ d で割るのを忘れた。",
-   "detectable": true
+   "detectable": true,
+   "theme": "current_field"
   },
   {
    "id": "terminal_velocity_linear",
@@ -1391,7 +1434,8 @@
     ]
    },
    "cause": "抵抗力が速さの2乗に比例する（kv²）場合の答えと混ざった。比例定数 k の単位が違う（kg/s と kg/m）ので、単位で区別できる。",
-   "detectable": true
+   "detectable": true,
+   "theme": "projectile"
   },
   {
    "id": "rotational_energy",
@@ -1438,7 +1482,742 @@
     ]
    },
    "cause": "角運動量 L = Iω と混ざった。½mv² の m → I、v → ω と対応させれば2乗が必要だとわかる。",
+   "detectable": true,
+   "theme": "circular"
+  },
+  {
+   "id": "self_inductance_n2",
+   "field": "em",
+   "level": "難関",
+   "theme": "coil",
+   "title": "ソレノイドの自己インダクタンスで n を2乗し忘れる",
+   "problem": "断面積 S、長さ l、単位長さあたりの巻き数 n の長いソレノイドの自己インダクタンス L を求めよ。真空の透磁率を μ₀ とする。",
+   "given": {
+    "μ₀": "permeability",
+    "n": "turn_density",
+    "S": "area",
+    "l": "length"
+   },
+   "target": [
+    "L",
+    "inductance"
+   ],
+   "wrong": {
+    "text": "L = μ₀nSl",
+    "expr": [
+     [
+      [
+       "μ₀",
+       1
+      ],
+      [
+       "n",
+       1
+      ],
+      [
+       "S",
+       1
+      ],
+      [
+       "l",
+       1
+      ]
+     ]
+    ]
+   },
+   "right": {
+    "text": "L = μ₀n²Sl",
+    "expr": [
+     [
+      [
+       "μ₀",
+       1
+      ],
+      [
+       "n",
+       2
+      ],
+      [
+       "S",
+       1
+      ],
+      [
+       "l",
+       1
+      ]
+     ]
+    ]
+   },
+   "cause": "磁場 B = μ₀nI をつくるのに n が1回、その磁束を全巻き数 nl 回分数えるのにもう1回 n が出てくる。後の方を忘れた。",
    "detectable": true
+  },
+  {
+   "id": "induced_emf_flux",
+   "field": "em",
+   "level": "高校",
+   "theme": "coil",
+   "title": "誘導起電力で時間をかけてしまう",
+   "problem": "巻き数 N のコイルを貫く磁束が、時間 Δt の間に ΔΦ だけ変化した。コイルに生じる誘導起電力の大きさ V を求めよ。",
+   "given": {
+    "N": "number",
+    "ΔΦ": "magnetic_flux",
+    "Δt": "time"
+   },
+   "target": [
+    "V",
+    "voltage"
+   ],
+   "wrong": {
+    "text": "V = NΔΦΔt",
+    "expr": [
+     [
+      [
+       "N",
+       1
+      ],
+      [
+       "ΔΦ",
+       1
+      ],
+      [
+       "Δt",
+       1
+      ]
+     ]
+    ]
+   },
+   "right": {
+    "text": "V = NΔΦ/Δt",
+    "expr": [
+     [
+      [
+       "N",
+       1
+      ],
+      [
+       "ΔΦ",
+       1
+      ],
+      [
+       "Δt",
+       -1
+      ]
+     ]
+    ]
+   },
+   "cause": "「磁束の変化の速さ」は ΔΦ ÷ Δt。V = Wb/s を覚えておくと、時間は割ると気づける。",
+   "detectable": true
+  },
+  {
+   "id": "coil_energy",
+   "field": "em",
+   "level": "高校",
+   "theme": "coil",
+   "title": "コイルのエネルギーで I を2乗し忘れる",
+   "problem": "自己インダクタンス L のコイルに電流 I が流れている。コイルにたくわえられたエネルギー U を求めよ。",
+   "given": {
+    "L": "inductance",
+    "I": "current"
+   },
+   "target": [
+    "U",
+    "energy"
+   ],
+   "wrong": {
+    "text": "U = ½LI",
+    "expr": [
+     [
+      [
+       "L",
+       1
+      ],
+      [
+       "I",
+       1
+      ]
+     ]
+    ]
+   },
+   "right": {
+    "text": "U = ½LI²",
+    "expr": [
+     [
+      [
+       "L",
+       1
+      ],
+      [
+       "I",
+       2
+      ]
+     ]
+    ]
+   },
+   "cause": "磁束 Φ = LI と混ざった。LI の単位は Wb（磁束）で、エネルギーではない。",
+   "detectable": true
+  },
+  {
+   "id": "rl_time_constant",
+   "field": "em",
+   "level": "難関",
+   "theme": "coil",
+   "title": "RL回路の時定数で R と L を逆にする",
+   "problem": "抵抗 R とコイル L を直列につないだ回路の時定数 τ を求めよ。",
+   "given": {
+    "L": "inductance",
+    "R": "resistance"
+   },
+   "target": [
+    "τ",
+    "time"
+   ],
+   "wrong": {
+    "text": "τ = R/L",
+    "expr": [
+     [
+      [
+       "R",
+       1
+      ],
+      [
+       "L",
+       -1
+      ]
+     ]
+    ]
+   },
+   "right": {
+    "text": "τ = L/R",
+    "expr": [
+     [
+      [
+       "L",
+       1
+      ],
+      [
+       "R",
+       -1
+      ]
+     ]
+    ]
+   },
+   "cause": "微分方程式 L dI/dt + RI = V を解くときに、指数の中身 −(R/L)t の R/L（単位 1/s）をそのまま時定数にした。",
+   "detectable": true
+  },
+  {
+   "id": "lc_period",
+   "field": "em",
+   "level": "難関",
+   "theme": "coil",
+   "title": "電気振動の周期で √ を分母に入れる",
+   "problem": "自己インダクタンス L のコイルと静電容量 C のコンデンサーからなる回路で起こる電気振動の周期 T を求めよ。",
+   "given": {
+    "L": "inductance",
+    "C": "capacitance"
+   },
+   "target": [
+    "T",
+    "time"
+   ],
+   "wrong": {
+    "text": "T = 2π/√(LC)",
+    "expr": [
+     [
+      [
+       "L",
+       "-1/2"
+      ],
+      [
+       "C",
+       "-1/2"
+      ]
+     ]
+    ]
+   },
+   "right": {
+    "text": "T = 2π√(LC)",
+    "expr": [
+     [
+      [
+       "L",
+       "1/2"
+      ],
+      [
+       "C",
+       "1/2"
+      ]
+     ]
+    ]
+   },
+   "cause": "角振動数 ω = 1/√(LC) と周期 T = 2π/ω を取り違えた。ばね振り子の ω と T の取り違えと同じ形のミス。",
+   "detectable": true
+  },
+  {
+   "id": "rod_emf",
+   "field": "em",
+   "level": "高校",
+   "theme": "coil",
+   "title": "動く導体棒の起電力で長さをかけ忘れる",
+   "problem": "磁束密度 B の一様な磁場に垂直に、長さ l の導体棒を、棒と磁場の両方に垂直な向きに速さ v で動かした。棒に生じる誘導起電力の大きさ V を求めよ。",
+   "given": {
+    "v": "velocity",
+    "B": "magnetic_flux_density",
+    "l": "length"
+   },
+   "target": [
+    "V",
+    "voltage"
+   ],
+   "wrong": {
+    "text": "V = vB",
+    "expr": [
+     [
+      [
+       "v",
+       1
+      ],
+      [
+       "B",
+       1
+      ]
+     ]
+    ]
+   },
+   "right": {
+    "text": "V = vBl",
+    "expr": [
+     [
+      [
+       "v",
+       1
+      ],
+      [
+       "B",
+       1
+      ],
+      [
+       "l",
+       1
+      ]
+     ]
+    ]
+   },
+   "cause": "vB は電場（単位 V/m）にあたる量。棒の長さ l をかけて初めて電圧になる。",
+   "detectable": true
+  },
+  {
+   "id": "parallel_plate_capacitance",
+   "field": "em",
+   "level": "高校",
+   "theme": "capacitor",
+   "title": "平行板コンデンサーの容量で S と d を逆にする",
+   "problem": "面積 S の2枚の極板を、間隔 d で平行に置いたコンデンサーの静電容量 C を求めよ。真空の誘電率を ε₀ とする。",
+   "given": {
+    "ε₀": "permittivity",
+    "S": "area",
+    "d": "length"
+   },
+   "target": [
+    "C",
+    "capacitance"
+   ],
+   "wrong": {
+    "text": "C = ε₀d/S",
+    "expr": [
+     [
+      [
+       "ε₀",
+       1
+      ],
+      [
+       "d",
+       1
+      ],
+      [
+       "S",
+       -1
+      ]
+     ]
+    ]
+   },
+   "right": {
+    "text": "C = ε₀S/d",
+    "expr": [
+     [
+      [
+       "ε₀",
+       1
+      ],
+      [
+       "S",
+       1
+      ],
+      [
+       "d",
+       -1
+      ]
+     ]
+    ]
+   },
+   "cause": "「極板が広いほど、間が狭いほど電気をためやすい」という向きを確かめずに書いた。ε₀ の単位が F/m なので、F にするには m をもう1つかける（S/d）必要がある。",
+   "detectable": true
+  },
+  {
+   "id": "plate_force_half",
+   "field": "em",
+   "level": "難関",
+   "theme": "capacitor",
+   "title": "【見抜けない例】極板間の引力で ½ を落とす",
+   "problem": "電荷 ±Q をたくわえた平行板コンデンサーの極板間の電場の強さが E である。片方の極板が受ける力の大きさ F を求めよ。",
+   "given": {
+    "Q": "charge",
+    "E": "electric_field"
+   },
+   "target": [
+    "F",
+    "force"
+   ],
+   "wrong": {
+    "text": "F = QE",
+    "expr": [
+     [
+      [
+       "Q",
+       1
+      ],
+      [
+       "E",
+       1
+      ]
+     ]
+    ]
+   },
+   "right": {
+    "text": "F = ½QE",
+    "expr": [
+     [
+      [
+       "Q",
+       1
+      ],
+      [
+       "E",
+       1
+      ]
+     ]
+    ]
+   },
+   "cause": "極板間の電場 E は両方の極板がつくったもの。片方の極板が受けるのは、もう片方の極板がつくる電場（E の半分）による力だけ。",
+   "detectable": false,
+   "tip": "係数の間違いは単位では見つかりません。「その電荷に力をおよぼしている電場は、どの電荷がつくったものか」を考えると防げます。自分自身がつくる電場から、自分は力を受けません。"
+  },
+  {
+   "id": "point_potential_r2",
+   "field": "em",
+   "level": "高校",
+   "theme": "field",
+   "title": "点電荷の電位で r² で割る",
+   "problem": "点電荷 q から距離 r の点の電位 V を求めよ（無限遠を基準とする）。クーロンの法則の比例定数を k とする。",
+   "given": {
+    "k": "coulomb_constant",
+    "q": "charge",
+    "r": "length"
+   },
+   "target": [
+    "V",
+    "voltage"
+   ],
+   "wrong": {
+    "text": "V = kq/r²",
+    "expr": [
+     [
+      [
+       "k",
+       1
+      ],
+      [
+       "q",
+       1
+      ],
+      [
+       "r",
+       -2
+      ]
+     ]
+    ]
+   },
+   "right": {
+    "text": "V = kq/r",
+    "expr": [
+     [
+      [
+       "k",
+       1
+      ],
+      [
+       "q",
+       1
+      ],
+      [
+       "r",
+       -1
+      ]
+     ]
+    ]
+   },
+   "cause": "電場 E = kq/r² と混ざった。電場は V/m、電位は V なので、r の次数が1つ違う。",
+   "detectable": true
+  },
+  {
+   "id": "cyclotron_period",
+   "field": "em",
+   "level": "難関",
+   "theme": "particle",
+   "title": "磁場中の円運動の周期で逆数にする",
+   "problem": "質量 m、電荷 q の粒子が、磁束密度 B の一様な磁場の中で等速円運動している。周期 T を求めよ。",
+   "given": {
+    "m": "mass",
+    "q": "charge",
+    "B": "magnetic_flux_density"
+   },
+   "target": [
+    "T",
+    "time"
+   ],
+   "wrong": {
+    "text": "T = 2πqB/m",
+    "expr": [
+     [
+      [
+       "q",
+       1
+      ],
+      [
+       "B",
+       1
+      ],
+      [
+       "m",
+       -1
+      ]
+     ]
+    ]
+   },
+   "right": {
+    "text": "T = 2πm/(qB)",
+    "expr": [
+     [
+      [
+       "m",
+       1
+      ],
+      [
+       "q",
+       -1
+      ],
+      [
+       "B",
+       -1
+      ]
+     ]
+    ]
+   },
+   "cause": "角振動数 ω = qB/m（単位 1/s）と周期を取り違えた。",
+   "detectable": true
+  },
+  {
+   "id": "shm_max_speed",
+   "field": "mech",
+   "level": "高校",
+   "theme": "shm",
+   "title": "単振動の最大の速さで ω で割る",
+   "problem": "振幅 A、角振動数 ω で単振動している物体の、速さの最大値 v を求めよ。",
+   "given": {
+    "A": "length",
+    "ω": "angular_velocity"
+   },
+   "target": [
+    "v",
+    "velocity"
+   ],
+   "wrong": {
+    "text": "v = A/ω",
+    "expr": [
+     [
+      [
+       "A",
+       1
+      ],
+      [
+       "ω",
+       -1
+      ]
+     ]
+    ]
+   },
+   "right": {
+    "text": "v = Aω",
+    "expr": [
+     [
+      [
+       "A",
+       1
+      ],
+      [
+       "ω",
+       1
+      ]
+     ]
+    ]
+   },
+   "cause": "x = A sin ωt を時間で微分すると ω が前に出てくる（かけ算）。A/ω の単位は m·s で、速さではない。",
+   "detectable": true
+  }
+ ],
+ "themes": [
+  {
+   "id": "coil",
+   "name": "コイル・電磁誘導",
+   "field": "em",
+   "tip": "巻き数 N（単位なし）と単位長さあたりの巻き数 n（1/m）、磁束 Φ（Wb）と磁束密度 B（T）を取り違えやすいテーマです。V = Wb/s、H = Wb/A、T = Wb/m² の3つを覚えておくと、検算がぐっと速くなります。",
+   "quantities": [
+    "inductance",
+    "turn_density",
+    "magnetic_flux",
+    "magnetic_flux_density",
+    "inductance_per_length"
+   ]
+  },
+  {
+   "id": "capacitor",
+   "name": "コンデンサー",
+   "field": "em",
+   "tip": "C = Q/V、エネルギーは ½CV²（J）。CV は電荷（C）なのでエネルギーではありません。ε₀ の単位は F/m なので、容量 F を作るには長さを1つかける必要があります。時定数 RC は秒になります。",
+   "quantities": [
+    "capacitance",
+    "permittivity",
+    "charge",
+    "capacitance_per_length"
+   ]
+  },
+  {
+   "id": "field",
+   "name": "電場・電位・ガウスの法則",
+   "field": "em",
+   "tip": "電場は V/m、電位は V で、r の次数が1つ違います。点電荷の電場は r²、直線電荷は r、平面電荷は r によらない。電荷が「長さあたり」「面積あたり」になるたびに、r の次数が1つずつ下がります。",
+   "quantities": [
+    "electric_field",
+    "voltage",
+    "linear_charge_density",
+    "surface_charge_density",
+    "electric_energy_density"
+   ]
+  },
+  {
+   "id": "current_field",
+   "name": "電流と磁場・ホール効果",
+   "field": "em",
+   "tip": "平行電流の公式 μ₀I₁I₂/(2πd) は「長さあたりの力」（N/m）です。ホール効果では、電流密度を出すときに割る断面積（幅 × 厚さ）の取り違えに注意しましょう。",
+   "quantities": [
+    "force_per_length",
+    "hall_coefficient",
+    "current_density",
+    "magnetic_field",
+    "surface_current_density"
+   ]
+  },
+  {
+   "id": "particle",
+   "name": "電場・磁場中の荷電粒子",
+   "field": "em",
+   "tip": "円運動の半径 mv/(qB) は m、周期 2πm/(qB) は s、qB/m は 1/s（角振動数）です。電圧で加速した粒子のエネルギー qV は J なので、速さにするには √ が必要です。",
+   "quantities": [
+    "specific_charge",
+    "magnetic_flux_density",
+    "charge"
+   ]
+  },
+  {
+   "id": "circuit",
+   "name": "直流回路",
+   "field": "em",
+   "tip": "電力は P = IV = I²R = V²/R。どの形でも単位は W になるはずなので、R をかけるか割るか迷ったら単位で確かめましょう。",
+   "quantities": [
+    "power",
+    "resistance",
+    "current"
+   ]
+  },
+  {
+   "id": "shm",
+   "name": "単振動・振り子",
+   "field": "mech",
+   "tip": "周期 T（s）と角振動数 ω（1/s）は逆数の関係。√(k/m) や √(g/l) は ω の形で、周期はその逆数に 2π をかけたものです。微分すると ω がかけ算で前に出てきます。",
+   "quantities": [
+    "spring_constant",
+    "angular_velocity",
+    "frequency",
+    "time"
+   ]
+  },
+  {
+   "id": "circular",
+   "name": "円運動・剛体の回転",
+   "field": "mech",
+   "tip": "向心加速度 v²/r、回転の運動エネルギー ½Iω²。直線運動の式と「m → I、v → ω」と対応させると、2乗の付け忘れを防げます。",
+   "quantities": [
+    "angular_velocity",
+    "moment_of_inertia",
+    "angular_momentum",
+    "torque"
+   ]
+  },
+  {
+   "id": "projectile",
+   "name": "落下・放物運動・抵抗力",
+   "field": "mech",
+   "tip": "等加速度運動の距離は v₀t + ½at² のように項ごとに m になるはず。抵抗力の比例定数は kv 型と kv² 型で単位が違う（kg/s と kg/m）ので、終端速度の式も区別できます。",
+   "quantities": [
+    "velocity",
+    "acceleration",
+    "drag_coeff_linear",
+    "drag_coeff_quad"
+   ]
+  },
+  {
+   "id": "energy",
+   "name": "力学的エネルギー・斜面",
+   "field": "mech",
+   "tip": "エネルギーは kg·m²/s²。運動量 mv（kg·m/s）と混ざると単位が合わなくなります。一方で ½ の付け忘れや sin・cos の取り違えは単位では見つからないので、極端な場合を考えて確かめます。",
+   "quantities": [
+    "energy",
+    "momentum",
+    "power"
+   ]
+  },
+  {
+   "id": "wave",
+   "name": "波・光・原子",
+   "field": "wave",
+   "tip": "弦の波の速さ √(T/ρ) は「強く張るほど速く、重いほど遅い」。光子のエネルギー hf = hc/λ では、波長は割ります。",
+   "quantities": [
+    "linear_mass_density",
+    "planck",
+    "wavenumber",
+    "rydberg"
+   ]
+  },
+  {
+   "id": "thermo",
+   "name": "熱・気体",
+   "field": "thermo",
+   "tip": "pV の単位は J。状態方程式 pV = nRT を変形するときは、両辺の単位がそろうかで分子・分母を確かめましょう。モル比熱と気体定数は同じ単位（J/(mol·K)）です。",
+   "quantities": [
+    "gas_constant",
+    "specific_heat",
+    "molar_heat_capacity",
+    "pressure"
+   ]
   }
  ]
 }

@@ -5,6 +5,18 @@
   <url><loc>https://tanitani.butsuri-lab.workers.dev/about.html</loc></url>
   <url><loc>https://tanitani.butsuri-lab.workers.dev/method.html</loc></url>
   <url><loc>https://tanitani.butsuri-lab.workers.dev/mistakes/</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/mistakes/t/coil.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/mistakes/t/capacitor.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/mistakes/t/field.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/mistakes/t/current_field.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/mistakes/t/particle.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/mistakes/t/circuit.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/mistakes/t/shm.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/mistakes/t/circular.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/mistakes/t/projectile.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/mistakes/t/energy.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/mistakes/t/wave.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/mistakes/t/thermo.html</loc></url>
   <url><loc>https://tanitani.butsuri-lab.workers.dev/mistakes/free_fall_speed.html</loc></url>
   <url><loc>https://tanitani.butsuri-lab.workers.dev/mistakes/spring_period.html</loc></url>
   <url><loc>https://tanitani.butsuri-lab.workers.dev/mistakes/pendulum_period.html</loc></url>
@@ -32,6 +44,17 @@
   <url><loc>https://tanitani.butsuri-lab.workers.dev/mistakes/hall_voltage_thickness.html</loc></url>
   <url><loc>https://tanitani.butsuri-lab.workers.dev/mistakes/terminal_velocity_linear.html</loc></url>
   <url><loc>https://tanitani.butsuri-lab.workers.dev/mistakes/rotational_energy.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/mistakes/self_inductance_n2.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/mistakes/induced_emf_flux.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/mistakes/coil_energy.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/mistakes/rl_time_constant.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/mistakes/lc_period.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/mistakes/rod_emf.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/mistakes/parallel_plate_capacitance.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/mistakes/plate_force_half.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/mistakes/point_potential_r2.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/mistakes/cyclotron_period.html</loc></url>
+  <url><loc>https://tanitani.butsuri-lab.workers.dev/mistakes/shm_max_speed.html</loc></url>
   <url><loc>https://tanitani.butsuri-lab.workers.dev/training/mech.html</loc></url>
   <url><loc>https://tanitani.butsuri-lab.workers.dev/training/thermo.html</loc></url>
   <url><loc>https://tanitani.butsuri-lab.workers.dev/training/em.html</loc></url>

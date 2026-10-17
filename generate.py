@@ -25,7 +25,7 @@ from itertools import combinations
 OUT = Path("dist")
 SITE_NAME = "ブツリ単位ラボ"
 SITE_URL = "https://tanitani.butsuri-lab.workers.dev"  # ★独自ドメイン取得後に変更
-ASSET_VER = "9"  # CSS/JS を変えたら上げる（ブラウザのキャッシュ対策）
+ASSET_VER = "11"  # CSS/JS を変えたら上げる（ブラウザのキャッシュ対策）
 UPDATED = "2026-10-18"  # 最終更新日（内容を更新したら変える）
 GOOGLE_VERIFICATION = "kVE91IWkP86K1E_JpBQDklXXu5gz86ZOA64xcgtDUwc"  # Search Console 所有権確認
 SITE_DESC = "物理の計算で出した答えが正しいかを、答えの単位で確かめるためのサイト。検算の手順、よくあるミス、トレーニング、単位辞典。"
@@ -480,6 +480,14 @@ footer.site .src{font-size:.78rem;margin:0 0 .5rem}
 .checkbox{margin:1rem 0;padding:.8rem 1rem;border-radius:var(--r);border:2px solid var(--ok);background:color-mix(in srgb,var(--ok) 6%,var(--card))}
 .checkbox b{font-size:.85rem;color:var(--ok)}
 .pitfall{border:2px solid #c2410c;border-style:solid;background:color-mix(in srgb,#c2410c 6%,var(--card))}.pitfall b{color:#c2410c}.checkbox p{margin:.3rem 0 0}
+.tipbox{margin:1rem 0;padding:.9rem 1.1rem;border-radius:var(--r);border-left:5px solid var(--accent);background:var(--accent-soft)}
+.tipbox b{color:var(--accent);font-size:1.02rem}.tipbox p{margin:.35rem 0 0}
+.themes a .t{font-weight:700}.themes a .d{font-size:.8rem;color:var(--dim)}
+.lead.tiny{font-size:.88rem}
+.mk-line{display:flex;align-items:center;flex-wrap:wrap;gap:.35rem .5rem;margin-top:.35rem}
+.mk{display:inline-grid;place-items:center;width:1.4rem;height:1.4rem;border-radius:4px;font-size:.72rem;font-weight:700;color:#fff;flex:none}
+.mk.bad{background:#c2410c}.mk.good{background:var(--ok);margin-left:.4rem}
+.mk-line .u{color:var(--fg);font-size:.95rem}
 .tag.adv{color:#7c3aed;background:color-mix(in srgb,#7c3aed 12%,var(--bg))}
 .tnav{margin:.5rem 0 1.2rem}.tnav a[aria-current]{background:var(--accent);color:#fff;border-color:var(--accent)}
 .pq .qt .given{margin-top:.5rem}
@@ -757,6 +765,8 @@ def build_assets():
     for m in MISTAKES:
         idx.append({"y": "ミス例", "t": m["title"].replace("【見抜けない例】", ""), "s": f'× {m["wrong"]["text"]} → ○ {m["right"]["text"]}',
                     "u": f"/mistakes/{m['id']}.html", "k": m["problem"]})
+    for t in THEMES.values():
+        idx.append({"y": "テーマ", "t": f"{t['name']}のよくあるミス", "s": t["tip"][:40] + "…", "u": f"/mistakes/t/{t['id']}.html", "k": t["name"]})
     idx.append({"y": "解説", "t": "検算のやり方", "s": "答えの単位で間違いを見つける3つの手順", "u": "/method.html", "k": "検算 次元解析 手順 確かめ"})
     idx.append({"y": "解説", "t": "難関大レベルの単位と検算", "s": "線密度・面密度・エネルギー密度など", "u": "/advanced.html", "k": "難関 旧帝 二次 線密度 面密度"})
     idx.append({"y": "練習", "t": "検算トレーニング", "s": "単位が合う答えはどれ？", "u": "/training/", "k": "練習 問題 トレーニング"})
@@ -1216,7 +1226,9 @@ def practice(q):
 
 # ─────────────────────────── 答えの検算（ミス例・トレーニング） ───────────────────────────
 
-MISTAKES = json.load(open("data/mistakes.json", encoding="utf-8"))["mistakes"]
+_MD = json.load(open("data/mistakes.json", encoding="utf-8"))
+MISTAKES = _MD["mistakes"]
+THEMES = {t["id"]: t for t in _MD["themes"]}
 FIELD_NAMES = {"mech": "力学", "thermo": "熱・気体", "em": "電磁気", "wave": "波・光・量子"}
 
 
@@ -1309,7 +1321,8 @@ def mistake_card(m):
     flag = ("" if m["detectable"] else '<span class="tag warn">単位では見抜けない</span>') + \
            ('<span class="tag adv">難関大</span>' if m.get("level") == "難関" else "")
     return (f'<a href="/mistakes/{m["id"]}.html"><div class="t">{flag}{E(m["title"].replace("【見抜けない例】", ""))}</div>'
-            f'<div class="u">× {E(m["wrong"]["text"])}　→　○ {E(m["right"]["text"])}</div></a>')
+            f'<div class="mk-line"><span class="mk bad">誤</span><span class="u">{E(m["wrong"]["text"])}</span>'
+            f'<span class="mk good">正</span><span class="u">{E(m["right"]["text"])}</span></div></a>')
 
 
 def build_mistake(m):
@@ -1349,29 +1362,72 @@ def build_mistake(m):
                  'ただ、<span class="key">単位が合わなければ必ず間違い</span>なので、見直す場所を絞り込めます。</div>')
     else:
         b.append(f'<div class="note"><b>どうやって見つけるか</b><br>{E(m.get("tip", ""))}<br>単位の検算は、こうした確かめ方とあわせて使いましょう。</div>')
-    others = [x for x in MISTAKES if x["id"] != m["id"]][:6]
-    b.append("<h2>ほかのミス例</h2><div class=\"grid mcards\">" + "".join(mistake_card(x) for x in others) + "</div>")
+    same = [x for x in MISTAKES if x["id"] != m["id"] and x["theme"] == m["theme"]]
+    rest = [x for x in MISTAKES if x["id"] != m["id"] and x["theme"] != m["theme"]]
+    t = THEMES[m["theme"]]
+    if same:
+        b.append(f"<h2>{E(t['name'])}のほかのミス</h2><div class=\"grid mcards\">" + "".join(mistake_card(x) for x in same) + "</div>")
+    b.append(f'<div class="tipbox"><b>{E(t["name"])}の検算のコツ</b><p>{E(t["tip"])}</p>'
+             f'<p><a href="/mistakes/t/{m["theme"]}.html">→ {E(t["name"])}のミスをまとめて見る</a></p></div>')
+    if not same:
+        b.append("<h2>ほかのミス例</h2><div class=\"grid mcards\">" + "".join(mistake_card(x) for x in rest[:6]) + "</div>")
     b.append(f'<p><a href="/q/{tq["id"]}.html">→ {E(tq["name"])}の単位の意味を調べる</a>　<a href="/method.html">→ 検算のやり方</a></p>')
     page(f"/mistakes/{m['id']}.html", f"{title}｜答えの単位で検算",
          f"{m['problem'][:40]}… ありがちな答え {m['wrong']['text']} を、答えの単位で検算して間違いを見つける方法。",
-         "\n".join(b), [("よくあるミス", "/mistakes/"), (title, None)])
+         "\n".join(b), [("よくあるミス", "/mistakes/"), (THEMES[m["theme"]]["name"], f"/mistakes/t/{m['theme']}.html"), (title, None)])
+
+
+def theme_link(tid):
+    t = THEMES[tid]
+    n = sum(1 for m in MISTAKES if m["theme"] == tid)
+    return f'<a href="/mistakes/t/{tid}.html"><div class="t">{E(t["name"])}</div><div class="d">{n} 個のミス例</div></a>'
+
+
+def build_theme(tid):
+    t = THEMES[tid]
+    ms = [m for m in MISTAKES if m["theme"] == tid]
+    det = [m for m in ms if m["detectable"]]
+    und = [m for m in ms if not m["detectable"]]
+    b = [f'<span class="tag">{E(FIELD_NAMES[t["field"]])}</span>',
+         f"<h1>{E(t['name'])}の問題でよくあるミス</h1>",
+         f'<div class="tipbox"><b>このテーマの検算のコツ</b><p>{E(t["tip"])}</p></div>',
+         f"<h2>単位で見つけられるミス（{len(det)}個）</h2>",
+         '<div class="grid mcards">' + "".join(mistake_card(m) for m in det) + "</div>"]
+    if und:
+        b.append(f"<h2>単位では見抜けないミス（{len(und)}個）</h2>")
+        b.append('<div class="grid mcards">' + "".join(mistake_card(m) for m in und) + "</div>")
+    qs = [x for x in t.get("quantities", []) if x in QS]
+    if qs:
+        b.append("<h2>このテーマで使う単位</h2><div class=\"grid\">" + "".join(qcard(x) for x in qs) + "</div>")
+    cat = t["field"] if t["field"] in TRAIN_CATS else None
+    if cat:
+        b.append(f'<p><a href="/training/{cat}.html">→ {E(CATS[cat]["name"])}の検算トレーニングで練習する</a></p>')
+    others = [x for x in THEMES if x != tid]
+    b.append("<h2>ほかのテーマ</h2><div class=\"grid\">" + "".join(theme_link(x) for x in others) + "</div>")
+    page(f"/mistakes/t/{tid}.html", f"{t['name']}の問題でよくあるミスと検算のコツ",
+         f"{t['name']}の物理の問題で多い間違い{len(ms)}例と、答えの単位で見つけるコツ。{t['tip'][:60]}",
+         "\n".join(b), [("よくあるミス", "/mistakes/"), (t["name"], None)])
 
 
 def build_mistakes_index():
-    det = [m for m in MISTAKES if m["detectable"]]
-    und = [m for m in MISTAKES if not m["detectable"]]
     b = ["<h1>よくあるミスと、答えの単位での見つけ方</h1>",
-         '<p class="lead">試験でよく見る間違いを集めました。どれも、答えが出たあとに単位を確かめるだけで見つけられます。</p>']
+         '<p class="lead">試験でよく見る間違いを、問題のテーマごとに集めました。'
+         "解き終わったら、同じテーマのミスを見直してから答えを書く習慣をつけましょう。</p>",
+         "<h2>テーマから探す</h2>"]
     for fid, fname in FIELD_NAMES.items():
-        ms = [m for m in det if m["field"] == fid]
-        if ms:
-            b.append(f"<h2>{E(fname)}</h2><div class=\"grid mcards\">" + "".join(mistake_card(m) for m in ms) + "</div>")
-    b.append("<h2>単位では見抜けないミス</h2>")
-    b.append("<p>単位の検算は万能ではありません。見抜けない種類のミスも知っておきましょう。</p>")
-    b.append('<div class="grid mcards">' + "".join(mistake_card(m) for m in und) + "</div>")
-    page("/mistakes/", "よくあるミスと答えの単位での見つけ方",
-         "物理の計算で多い間違い（√ の付け忘れ、分子と分母の取り違え、2乗の落とし）を、答えの単位で見つける例を集めました。",
+        ts = [t for t in THEMES.values() if t["field"] == fid]
+        if ts:
+            b.append(f"<h3>{E(fname)}</h3><div class=\"grid themes\">" + "".join(theme_link(t["id"]) for t in ts) + "</div>")
+    for t in THEMES.values():
+        ms = [m for m in MISTAKES if m["theme"] == t["id"]]
+        b.append(f'<h2>{E(t["name"])}</h2><p class="lead tiny">{E(t["tip"])}</p>'
+                 '<div class="grid mcards">' + "".join(mistake_card(m) for m in ms) + "</div>"
+                 f'<p><a href="/mistakes/t/{t["id"]}.html">→ {E(t["name"])}のミスと検算のコツ</a></p>')
+    page("/mistakes/", "よくあるミスと答えの単位での見つけ方｜テーマ別",
+         "コイル・コンデンサー・電場・荷電粒子・単振動・円運動など、物理の問題のテーマごとに、よくある間違いと答えの単位での見つけ方をまとめました。",
          "\n".join(b), [("よくあるミス", None)])
+    for tid in THEMES:
+        build_theme(tid)
 
 
 def build_method():
@@ -1775,6 +1831,8 @@ def build_index():
         f'<p>s にならないので間違いだとわかります。正しくは <span class="mono ok">{E(ff["right"]["text"])}</span>。</p>',
         '<div class="grid mcards">' + "".join(mistake_card(m) for m in det) + "</div>",
         '<p><a href="/mistakes/">→ よくあるミスをすべて見る</a></p>',
+        "<h3>問題のテーマから探す</h3>",
+        '<div class="grid themes">' + "".join(theme_link(t) for t in THEMES) + "</div>",
         "<h2>このサイトでできること</h2>",
         '<div class="grid feat">'
         '<a href="/method.html"><div class="t">① 検算のやり方</div><div class="d">答えの単位で間違いを見つける3つの手順と、見抜けないミスの見分け方。</div></a>'
@@ -1930,8 +1988,11 @@ def build_advanced():
         b.append(f"<h2>{E(c['name'])}</h2><div class=\"grid\">"
                  + "".join(f'<a href="/q/{q["id"]}.html">{E(q["name"])}<div class="u">{E(q["unit_str"])}</div>'
                            f'<div class="d">{E(q["meaning"])}</div></a>' for q in qs) + "</div>")
-    ms = [m for m in MISTAKES if m.get("level") == "難関"]
-    b.append("<h2>難関大レベルのミス例</h2><div class=\"grid mcards\">" + "".join(mistake_card(m) for m in ms) + "</div>")
+    b.append("<h2>難関大レベルのミス例（テーマ別）</h2>")
+    for t in THEMES.values():
+        ms = [m for m in MISTAKES if m.get("level") == "難関" and m["theme"] == t["id"]]
+        if ms:
+            b.append(f'<h3><a href="/mistakes/t/{t["id"]}.html">{E(t["name"])}</a></h3><div class="grid mcards">' + "".join(mistake_card(m) for m in ms) + "</div>")
     b.append('<p><a href="/training/em.html">→ 電磁気の検算トレーニング</a>　<a href="/training/mech.html">→ 力学の検算トレーニング</a></p>')
     page("/advanced.html", "難関大レベルの単位と検算｜線密度・面密度・エネルギー密度",
          "線電荷密度・面電荷密度・面電流密度・単位長さあたりの巻き数・エネルギー密度・移動度・ホール係数など、難関大の二次試験に出る単位の意味と、答えの単位での検算。",
