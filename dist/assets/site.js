@@ -87,6 +87,21 @@
     }
   });
 
+  // 練習問題：選んだらその場で答え合わせ
+  d.querySelectorAll('.pq').forEach(pq => {
+    pq.querySelectorAll('.ch').forEach(btn => btn.addEventListener('click', () => {
+      if (pq.classList.contains('done')) return;
+      pq.classList.add('done');
+      const ok = btn.dataset.ok === '1';
+      btn.classList.add(ok ? 'right' : 'wrong');
+      pq.querySelectorAll('.ch').forEach(b => { b.disabled = true; if (b.dataset.ok === '1') b.classList.add('right'); });
+      const r = d.createElement('p'); r.className = 'res ' + (ok ? 'ok' : 'ng');
+      r.textContent = ok ? '正解！' : '惜しい！ 正しい組み立てを確認しましょう。';
+      pq.insertBefore(r, pq.querySelector('.exp'));
+      pq.querySelector('.exp').open = true;
+    }));
+  });
+
   // トップへ戻る
   const top = d.getElementById('to-top');
   const onScroll = () => top.classList.toggle('show', scrollY > 600);

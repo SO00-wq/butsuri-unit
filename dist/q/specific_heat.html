@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=3">
-<script src="/assets/site.js?v=3" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=4">
+<script src="/assets/site.js?v=4" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -49,7 +49,7 @@
 <div class="big">J/(kg·K) = m²/(s²·K)</div>
 <div class="sub">次元 [L² T⁻² Θ⁻¹]</div></div>
 <div class="goals"><b>このページでわかること</b><ul><li>比熱（比熱容量）を言葉でどう言い表すか</li><li>その言葉を単位に置き換えると、なぜ J/(kg·K) になるのか</li></ul></div>
-<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">比熱（比熱容量）とは？ 言葉で意味をつかむ</a><a href="#s2">基本単位までたどる</a><a href="#s3">比熱（比熱容量）が出てくる公式</a><a href="#s4">確認問題</a></div></nav><h2 id="s1">比熱（比熱容量）とは？ 言葉で意味をつかむ</h2>
+<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">比熱（比熱容量）とは？ 言葉で意味をつかむ</a><a href="#s2">基本単位までたどる</a><a href="#s3">比熱（比熱容量）が出てくる公式</a><a href="#s4">練習問題：分子と分母を見きわめる</a></div></nav><h2 id="s1">比熱（比熱容量）とは？ 言葉で意味をつかむ</h2>
 <p class="meaning"><b>比熱（比熱容量）とは</b>　物質 1 kg の温度を 1 K 上げるのに必要な熱量。</p>
 <div class="wordeq"><div class="lbl">言葉の式</div><div class="eq">比熱（比熱容量） ＝ 加えた熱量 ÷ 物質の質量 ÷ 上がった温度</div></div>
 <p>言葉の式に出てくるそれぞれの言葉は、すでに単位がわかっている量です。言葉を単位に置き換えてみましょう。</p>
@@ -73,8 +73,9 @@
 <li><a href="/f/spec_heat.html">比熱</a>：<span class="mono">Q = m c ΔT</span></li>
 </ul>
 <div class="summary"><b>まとめ</b><ul><li>比熱（比熱容量）とは、物質 1 kg の温度を 1 K 上げるのに必要な熱量。</li><li>言葉の式 比熱（比熱容量） ＝ 加えた熱量 ÷ 物質の質量 ÷ 上がった温度 を単位に置き換えると J/(kg·K)。</li><li>基本単位だけで書くと m²/(s²·K)。</li></ul></div>
-<h2 id="s4">確認問題</h2>
-<div class="quiz"><p><b>Q.</b> 比熱（比熱容量）の単位 <span class="mono">J/(kg·K)</span> を基本単位で表したものはどれ？</p><ul class="opts"><li><span class="opt">A</span><span class="mono">1/m³</span></li><li><span class="opt">B</span><span class="mono">1/s</span></li><li><span class="opt">C</span><span class="mono">m²/(s²·K)</span></li><li><span class="opt">D</span><span class="mono">1/m</span></li></ul><details><summary>答えを見る</summary><p><b>正解：C</b>　<span class="mono ok">m²/(s²·K)</span></p><p>比熱（比熱容量） ＝ 加えた熱量 ÷ 物質の質量 ÷ 上がった温度 なので、[比熱（比熱容量）] ＝ J ÷ kg ÷ K ＝ m²/(s²·K)。</p></details></div>
+<h2 id="s4">練習問題：分子と分母を見きわめる</h2>
+<p>問題文には単位が書いてあります。計算はしなくてかまいません。<b>どの単位が分子（上）に、どの単位が分母（下）に来るか</b>だけを考えて選んでください。</p>
+<div class="practice"><div class="pq"><p class="qt"><span class="qn">問1</span>比熱（比熱容量）は「加えた熱量 ÷ 物質の質量 ÷ 上がった温度」で求められます。「加えた熱量」<span class="mono u">[J]</span>、「物質の質量」<span class="mono u">[kg]</span>、「上がった温度」<span class="mono u">[K]</span> のとき、比熱（比熱容量）の単位はどれ？</p><ul class="opts"><li><button type="button" class="ch" data-ok="0"><span class="opt">A</span><span class="mono">kg·K / J</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">B</span><span class="mono">J·kg·K</span></button></li><li><button type="button" class="ch" data-ok="1"><span class="opt">C</span><span class="mono">J / (kg·K)</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">D</span><span class="mono">1 / (J·kg·K)</span></button></li></ul><details class="exp"><summary>答えと解説</summary><p><b>正解：C</b>　<span class="mono ok">J / (kg·K)</span></p><p>かける量（加えた熱量）の単位が分子、割る量（物質の質量・上がった温度）の単位が分母に来ます。まとめると <span class="mono">J / (kg·K)</span>。</p></details></div><div class="pq"><p class="qt"><span class="qn">問2</span>比熱（比熱容量） ＝ 加えた熱量 ÷ 物質の質量 ÷ 上がった温度 です。「比熱（比熱容量）」<span class="mono u">[J/(kg·K)]</span>、「物質の質量」<span class="mono u">[kg]</span>、「上がった温度」<span class="mono u">[K]</span> のとき、「加えた熱量」の単位はどれ？</p><ul class="opts"><li><button type="button" class="ch" data-ok="0"><span class="opt">A</span><span class="mono">1 / ((J/(kg·K))·kg·K)</span></button></li><li><button type="button" class="ch" data-ok="1"><span class="opt">B</span><span class="mono">(J/(kg·K))·kg·K</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">C</span><span class="mono">kg·K / (J/(kg·K))</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">D</span><span class="mono">(J/(kg·K))·K / kg</span></button></li></ul><details class="exp"><summary>答えと解説</summary><p><b>正解：B</b>　<span class="mono ok">(J/(kg·K))·kg·K</span></p><p>言葉の式を「加えた熱量」について解き直すと「加えた熱量 ＝ 比熱（比熱容量） × 物質の質量 × 上がった温度」。単位を入れると <span class="mono">(J/(kg·K))·kg·K</span> ＝ <span class="mono">J</span>。</p></details></div><div class="pq"><p class="qt"><span class="qn">問3</span>比熱（比熱容量） ＝ 加えた熱量 ÷ 物質の質量 ÷ 上がった温度 です。「比熱（比熱容量）」<span class="mono u">[J/(kg·K)]</span>、「加えた熱量」<span class="mono u">[J]</span>、「上がった温度」<span class="mono u">[K]</span> のとき、「物質の質量」の単位はどれ？</p><ul class="opts"><li><button type="button" class="ch" data-ok="0"><span class="opt">A</span><span class="mono">(J/(kg·K))·K / J</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">B</span><span class="mono">(J/(kg·K))·J·K</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">C</span><span class="mono">1 / ((J/(kg·K))·J·K)</span></button></li><li><button type="button" class="ch" data-ok="1"><span class="opt">D</span><span class="mono">J / ((J/(kg·K))·K)</span></button></li></ul><details class="exp"><summary>答えと解説</summary><p><b>正解：D</b>　<span class="mono ok">J / ((J/(kg·K))·K)</span></p><p>言葉の式を「物質の質量」について解き直すと「物質の質量 ＝ 加えた熱量 ÷ 比熱（比熱容量） ÷ 上がった温度」。単位を入れると <span class="mono">J / ((J/(kg·K))·K)</span> ＝ <span class="mono">kg</span>。</p></details></div></div>
 </div></main>
 <footer class="site"><div class="wrap">
   <div class="links"><a href="/">トップ</a><a href="/guide.html">単位の読み方</a><a href="/about.html">このサイトについて</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>

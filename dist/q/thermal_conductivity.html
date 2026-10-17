@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=3">
-<script src="/assets/site.js?v=3" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=4">
+<script src="/assets/site.js?v=4" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -49,7 +49,7 @@
 <div class="big">W/(m·K) = kg·m/(s³·K)</div>
 <div class="sub">次元 [M L T⁻³ Θ⁻¹]</div></div>
 <div class="goals"><b>このページでわかること</b><ul><li>熱伝導率を言葉でどう言い表すか</li><li>その言葉を単位に置き換えると、なぜ W/(m·K) になるのか</li></ul></div>
-<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">熱伝導率とは？ 言葉で意味をつかむ</a><a href="#s2">基本単位までたどる</a><a href="#s3">熱伝導率が出てくる公式</a><a href="#s4">確認問題</a></div></nav><h2 id="s1">熱伝導率とは？ 言葉で意味をつかむ</h2>
+<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">熱伝導率とは？ 言葉で意味をつかむ</a><a href="#s2">基本単位までたどる</a><a href="#s3">熱伝導率が出てくる公式</a><a href="#s4">練習問題：分子と分母を見きわめる</a></div></nav><h2 id="s1">熱伝導率とは？ 言葉で意味をつかむ</h2>
 <p class="meaning"><b>熱伝導率とは</b>　物質の熱の伝えやすさ。厚さ 1 m・面積 1 m²・温度差 1 K のとき、1秒あたりに伝わる熱。</p>
 <div class="wordeq"><div class="lbl">言葉の式</div><div class="eq">熱伝導率 ＝ 1秒あたりに伝わる熱 × 板の厚さ ÷ 板の面積 ÷ 両面の温度差</div></div>
 <p>言葉の式に出てくるそれぞれの言葉は、すでに単位がわかっている量です。言葉を単位に置き換えてみましょう。</p>
@@ -76,8 +76,9 @@
 <li><a href="/f/fourier.html">熱伝導（フーリエの法則）</a>：<span class="mono">P = λ S ΔT / d</span></li>
 </ul>
 <div class="summary"><b>まとめ</b><ul><li>熱伝導率とは、物質の熱の伝えやすさ。厚さ 1 m・面積 1 m²・温度差 1 K のとき、1秒あたりに伝わる熱。</li><li>言葉の式 熱伝導率 ＝ 1秒あたりに伝わる熱 × 板の厚さ ÷ 板の面積 ÷ 両面の温度差 を単位に置き換えると W/(m·K)。</li><li>基本単位だけで書くと kg·m/(s³·K)。</li></ul></div>
-<h2 id="s4">確認問題</h2>
-<div class="quiz"><p><b>Q.</b> 熱伝導率の単位 <span class="mono">W/(m·K)</span> を基本単位で表したものはどれ？</p><ul class="opts"><li><span class="opt">A</span><span class="mono">kg/(m·s²)</span></li><li><span class="opt">B</span><span class="mono">kg/(m·s)</span></li><li><span class="opt">C</span><span class="mono">kg·m/(s³·K)</span></li><li><span class="opt">D</span><span class="mono">kg·m²/(s²·K)</span></li></ul><details><summary>答えを見る</summary><p><b>正解：C</b>　<span class="mono ok">kg·m/(s³·K)</span></p><p>熱伝導率 ＝ 1秒あたりに伝わる熱 × 板の厚さ ÷ 板の面積 ÷ 両面の温度差 なので、[熱伝導率] ＝ W × m ÷ m² ÷ K ＝ kg·m/(s³·K)。</p></details></div>
+<h2 id="s4">練習問題：分子と分母を見きわめる</h2>
+<p>問題文には単位が書いてあります。計算はしなくてかまいません。<b>どの単位が分子（上）に、どの単位が分母（下）に来るか</b>だけを考えて選んでください。</p>
+<div class="practice"><div class="pq"><p class="qt"><span class="qn">問1</span>熱伝導率は「1秒あたりに伝わる熱 × 板の厚さ ÷ 板の面積 ÷ 両面の温度差」で求められます。「1秒あたりに伝わる熱」<span class="mono u">[W]</span>、「板の厚さ」<span class="mono u">[m]</span>、「板の面積」<span class="mono u">[m²]</span>、「両面の温度差」<span class="mono u">[K]</span> のとき、熱伝導率の単位はどれ？</p><ul class="opts"><li><button type="button" class="ch" data-ok="0"><span class="opt">A</span><span class="mono">m²·K / (W·m)</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">B</span><span class="mono">W·m·m²·K</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">C</span><span class="mono">1 / (W·m·m²·K)</span></button></li><li><button type="button" class="ch" data-ok="1"><span class="opt">D</span><span class="mono">W·m / (m²·K)</span></button></li></ul><details class="exp"><summary>答えと解説</summary><p><b>正解：D</b>　<span class="mono ok">W·m / (m²·K)</span></p><p>かける量（1秒あたりに伝わる熱・板の厚さ）の単位が分子、割る量（板の面積・両面の温度差）の単位が分母に来ます。まとめると <span class="mono">W·m / (m²·K)</span> ＝ <span class="mono">W/(m·K)</span>。</p></details></div><div class="pq"><p class="qt"><span class="qn">問2</span>熱伝導率 ＝ 1秒あたりに伝わる熱 × 板の厚さ ÷ 板の面積 ÷ 両面の温度差 です。「熱伝導率」<span class="mono u">[W/(m·K)]</span>、「板の厚さ」<span class="mono u">[m]</span>、「板の面積」<span class="mono u">[m²]</span>、「両面の温度差」<span class="mono u">[K]</span> のとき、「1秒あたりに伝わる熱」の単位はどれ？</p><ul class="opts"><li><button type="button" class="ch" data-ok="0"><span class="opt">A</span><span class="mono">m / ((W/(m·K))·m²·K)</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">B</span><span class="mono">(W/(m·K))·m·m²·K</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">C</span><span class="mono">1 / ((W/(m·K))·m·m²·K)</span></button></li><li><button type="button" class="ch" data-ok="1"><span class="opt">D</span><span class="mono">(W/(m·K))·m²·K / m</span></button></li></ul><details class="exp"><summary>答えと解説</summary><p><b>正解：D</b>　<span class="mono ok">(W/(m·K))·m²·K / m</span></p><p>言葉の式を「1秒あたりに伝わる熱」について解き直すと「1秒あたりに伝わる熱 ＝ 熱伝導率 × 板の面積 × 両面の温度差 ÷ 板の厚さ」。単位を入れると <span class="mono">(W/(m·K))·m²·K / m</span> ＝ <span class="mono">W</span>。</p></details></div><div class="pq"><p class="qt"><span class="qn">問3</span>熱伝導率 ＝ 1秒あたりに伝わる熱 × 板の厚さ ÷ 板の面積 ÷ 両面の温度差 です。「熱伝導率」<span class="mono u">[W/(m·K)]</span>、「1秒あたりに伝わる熱」<span class="mono u">[W]</span>、「板の面積」<span class="mono u">[m²]</span>、「両面の温度差」<span class="mono u">[K]</span> のとき、「板の厚さ」の単位はどれ？</p><ul class="opts"><li><button type="button" class="ch" data-ok="1"><span class="opt">A</span><span class="mono">(W/(m·K))·m²·K / W</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">B</span><span class="mono">W / ((W/(m·K))·m²·K)</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">C</span><span class="mono">(W/(m·K))·W·m²·K</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">D</span><span class="mono">1 / ((W/(m·K))·W·m²·K)</span></button></li></ul><details class="exp"><summary>答えと解説</summary><p><b>正解：A</b>　<span class="mono ok">(W/(m·K))·m²·K / W</span></p><p>言葉の式を「板の厚さ」について解き直すと「板の厚さ ＝ 熱伝導率 × 板の面積 × 両面の温度差 ÷ 1秒あたりに伝わる熱」。単位を入れると <span class="mono">(W/(m·K))·m²·K / W</span> ＝ <span class="mono">m</span>。</p></details></div></div>
 </div></main>
 <footer class="site"><div class="wrap">
   <div class="links"><a href="/">トップ</a><a href="/guide.html">単位の読み方</a><a href="/about.html">このサイトについて</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>

@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=3">
-<script src="/assets/site.js?v=3" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=4">
+<script src="/assets/site.js?v=4" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -49,7 +49,7 @@
 <div class="big">Gy = m²/s²</div>
 <div class="sub">次元 [L² T⁻²]</div></div>
 <div class="goals"><b>このページでわかること</b><ul><li>吸収線量を言葉でどう言い表すか</li><li>その言葉を単位に置き換えると、なぜ Gy になるのか</li><li>Gy のいろいろな書き方と、その根拠になる公式</li></ul></div>
-<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">吸収線量とは？ 言葉で意味をつかむ</a><a href="#s2">基本単位までたどる</a><a href="#s3">Gy の別の書き方</a><a href="#s4">よくある間違い：同じ単位でも別の量</a><a href="#s5">吸収線量が出てくる公式</a><a href="#s6">確認問題</a><a href="#s7">次に読む：吸収線量を使って表される量</a></div></nav><h2 id="s1">吸収線量とは？ 言葉で意味をつかむ</h2>
+<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">吸収線量とは？ 言葉で意味をつかむ</a><a href="#s2">基本単位までたどる</a><a href="#s3">Gy の別の書き方</a><a href="#s4">よくある間違い：同じ単位でも別の量</a><a href="#s5">吸収線量が出てくる公式</a><a href="#s6">練習問題：分子と分母を見きわめる</a><a href="#s7">次に読む：吸収線量を使って表される量</a></div></nav><h2 id="s1">吸収線量とは？ 言葉で意味をつかむ</h2>
 <p class="meaning"><b>吸収線量とは</b>　物質 1 kg あたりが吸収した放射線のエネルギー。</p>
 <div class="wordeq"><div class="lbl">言葉の式</div><div class="eq">吸収線量 ＝ 吸収したエネルギー ÷ 物質の質量</div></div>
 <p>言葉の式に出てくるそれぞれの言葉は、すでに単位がわかっている量です。言葉を単位に置き換えてみましょう。</p>
@@ -84,8 +84,9 @@
 <li><a href="/f/equivalent.html">等価線量</a>：<span class="mono">H = w_R D</span></li>
 </ul>
 <div class="summary"><b>まとめ</b><ul><li>吸収線量とは、物質 1 kg あたりが吸収した放射線のエネルギー。</li><li>言葉の式 吸収線量 ＝ 吸収したエネルギー ÷ 物質の質量 を単位に置き換えると J/kg。</li><li>基本単位だけで書くと m²/s²。</li></ul></div>
-<h2 id="s6">確認問題</h2>
-<div class="quiz"><p><b>Q.</b> 吸収線量の単位 <span class="mono">Gy</span> を基本単位で表したものはどれ？</p><ul class="opts"><li><span class="opt">A</span><span class="mono">kg/(m·s²)</span></li><li><span class="opt">B</span><span class="mono">m/s</span></li><li><span class="opt">C</span><span class="mono">1/s²</span></li><li><span class="opt">D</span><span class="mono">m²/s²</span></li></ul><details><summary>答えを見る</summary><p><b>正解：D</b>　<span class="mono ok">m²/s²</span></p><p>吸収線量 ＝ 吸収したエネルギー ÷ 物質の質量 なので、[吸収線量] ＝ J ÷ kg ＝ m²/s²。</p></details></div>
+<h2 id="s6">練習問題：分子と分母を見きわめる</h2>
+<p>問題文には単位が書いてあります。計算はしなくてかまいません。<b>どの単位が分子（上）に、どの単位が分母（下）に来るか</b>だけを考えて選んでください。</p>
+<div class="practice"><div class="pq"><p class="qt"><span class="qn">問1</span>吸収線量は「吸収したエネルギー ÷ 物質の質量」で求められます。「吸収したエネルギー」<span class="mono u">[J]</span>、「物質の質量」<span class="mono u">[kg]</span> のとき、吸収線量の単位はどれ？</p><ul class="opts"><li><button type="button" class="ch" data-ok="0"><span class="opt">A</span><span class="mono">kg / J</span></button></li><li><button type="button" class="ch" data-ok="1"><span class="opt">B</span><span class="mono">J / kg</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">C</span><span class="mono">J·kg</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">D</span><span class="mono">1 / (J·kg)</span></button></li></ul><details class="exp"><summary>答えと解説</summary><p><b>正解：B</b>　<span class="mono ok">J / kg</span></p><p>かける量（吸収したエネルギー）の単位が分子、割る量（物質の質量）の単位が分母に来ます。まとめると <span class="mono">J / kg</span> ＝ <span class="mono">Gy</span>。</p></details></div><div class="pq"><p class="qt"><span class="qn">問2</span>等価線量 <span class="mono">H = w_R D</span> を使います。H 「等価線量」<span class="mono u">[Sv]</span>、w_R 「個数・無次元数」<span class="mono u">[単位なし]</span> のとき、吸収線量 D の単位はどれ？</p><ul class="opts"><li><button type="button" class="ch" data-ok="0"><span class="opt">A</span><span class="mono">1 / Sv</span></button></li><li><button type="button" class="ch" data-ok="1"><span class="opt">B</span><span class="mono">Sv</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">C</span><span class="mono">Sv²</span></button></li></ul><details class="exp"><summary>答えと解説</summary><p><b>正解：B</b>　<span class="mono ok">Sv</span></p><p>式を D について解くと <span class="mono">D = H / w_R</span>。分子・分母にそれぞれの単位を入れると <span class="mono">Sv</span> ＝ <span class="mono">Gy</span>。</p></details></div><div class="pq"><p class="qt"><span class="qn">問3</span>吸収線量 ＝ 吸収したエネルギー ÷ 物質の質量 です。「吸収線量」<span class="mono u">[Gy]</span>、「物質の質量」<span class="mono u">[kg]</span> のとき、「吸収したエネルギー」の単位はどれ？</p><ul class="opts"><li><button type="button" class="ch" data-ok="1"><span class="opt">A</span><span class="mono">Gy·kg</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">B</span><span class="mono">1 / (Gy·kg)</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">C</span><span class="mono">kg / Gy</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">D</span><span class="mono">Gy / kg</span></button></li></ul><details class="exp"><summary>答えと解説</summary><p><b>正解：A</b>　<span class="mono ok">Gy·kg</span></p><p>言葉の式を「吸収したエネルギー」について解き直すと「吸収したエネルギー ＝ 吸収線量 × 物質の質量」。単位を入れると <span class="mono">Gy·kg</span> ＝ <span class="mono">J</span>。</p></details></div></div>
 <h2 id="s7">次に読む：吸収線量を使って表される量</h2><div class="grid"><a href="/q/equivalent_dose.html">等価線量<div class="u">Sv</div></a></div>
 </div></main>
 <footer class="site"><div class="wrap">

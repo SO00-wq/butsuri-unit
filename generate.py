@@ -24,7 +24,7 @@ from itertools import combinations
 OUT = Path("dist")
 SITE_NAME = "ブツリ単位ラボ"
 SITE_URL = "https://tanitani.butsuri-lab.workers.dev"  # ★独自ドメイン取得後に変更
-ASSET_VER = "3"  # CSS/JS を変えたら上げる（ブラウザのキャッシュ対策）
+ASSET_VER = "4"  # CSS/JS を変えたら上げる（ブラウザのキャッシュ対策）
 UPDATED = "2026-10-17"  # 最終更新日（内容を更新したら変える）
 GOOGLE_VERIFICATION = "kVE91IWkP86K1E_JpBQDklXXu5gz86ZOA64xcgtDUwc"  # Search Console 所有権確認
 SITE_DESC = "知らない単位や公式を、知っている公式と単位だけで理解する。SI単位と次元解析で物理量を基本単位まで分解するサイト。"
@@ -409,6 +409,25 @@ table.swap th:last-child,table.swap td:last-child{white-space:nowrap}
 .quiz details summary{cursor:pointer;color:var(--accent);font-weight:700}
 .quiz details p{margin:.5rem 0 0}
 footer.site .src{font-size:.78rem;margin:0 0 .5rem}
+.practice{display:grid;gap:1rem}
+.pq{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1rem}
+.pq .qt{margin-bottom:.6rem}
+.pq .qn{display:inline-block;background:var(--accent);color:#fff;font-size:.75rem;font-weight:700;border-radius:4px;padding:.05rem .45rem;margin-right:.45rem}
+.pq .u{color:var(--accent);font-size:.9em;white-space:nowrap}
+.pq .opts{list-style:none;margin:0 0 .7rem;padding:0;display:grid;gap:.45rem}
+.pq .opts li{margin:0}
+.ch{display:flex;align-items:center;gap:.6rem;width:100%;text-align:left;font:inherit;color:var(--fg);background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:.55rem .7rem;cursor:pointer;transition:border-color .15s,background .15s}
+.ch:hover:not(:disabled){border-color:var(--accent)}
+.ch:disabled{cursor:default}
+.ch .opt{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--code);font-size:.78rem;font-weight:700;flex:none}
+.ch.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 12%,var(--bg))}
+.ch.right .opt{background:var(--ok);color:#fff}
+.ch.wrong{border-color:#c2410c;background:color-mix(in srgb,#c2410c 10%,var(--bg))}
+.ch.wrong .opt{background:#c2410c;color:#fff}
+.pq .res{font-weight:700;margin:.2rem 0 .4rem}.pq .res.ng{color:#c2410c}
+.pq .exp summary{cursor:pointer;color:var(--accent);font-weight:700;font-size:.92rem}
+.pq .exp p{margin:.5rem 0 0;font-size:.95rem}
+
 """
 
 JS = r"""
@@ -499,6 +518,21 @@ JS = r"""
     } else if (e.key === 'Enter') {
       location.href = items[Math.max(sel, 0)].href;
     }
+  });
+
+  // 練習問題：選んだらその場で答え合わせ
+  d.querySelectorAll('.pq').forEach(pq => {
+    pq.querySelectorAll('.ch').forEach(btn => btn.addEventListener('click', () => {
+      if (pq.classList.contains('done')) return;
+      pq.classList.add('done');
+      const ok = btn.dataset.ok === '1';
+      btn.classList.add(ok ? 'right' : 'wrong');
+      pq.querySelectorAll('.ch').forEach(b => { b.disabled = true; if (b.dataset.ok === '1') b.classList.add('right'); });
+      const r = d.createElement('p'); r.className = 'res ' + (ok ? 'ok' : 'ng');
+      r.textContent = ok ? '正解！' : '惜しい！ 正しい組み立てを確認しましょう。';
+      pq.insertBefore(r, pq.querySelector('.exp'));
+      pq.querySelector('.exp').open = true;
+    }));
   });
 
   // トップへ戻る
@@ -868,6 +902,217 @@ def quiz(q):
             f'<p>{why}</p></details></div>']
 
 
+# ─────────────────────────── 練習問題（分子・分母の確認） ───────────────────────────
+
+def _tok(u, e):
+    """1つの単位を表示用に（m², (m/s) など）"""
+    simple = re.fullmatch(r"[A-Za-zΩ⁰¹²³⁴⁵⁶⁷⁸⁹]+", u) is not None
+    a = abs(Fr(e))
+    t = u if simple else f"({u})"
+    return t + (sup(a) if a != 1 else "")
+
+
+def frac_str(tokens):
+    """[(単位, 指数)] → 'J / C' や 'N·m / (m²·(m/s))' のような分数の形（約分しない）"""
+    tokens = _merge(tokens)
+    num = [_tok(u, e) for u, e in tokens if e > 0]
+    den = [_tok(u, e) for u, e in tokens if e < 0]
+    n = "·".join(num) if num else "1"
+    if not den:
+        return n
+    d = "·".join(den)
+    return f"{n} / ({d})" if len(den) > 1 else f"{n} / {d}"
+
+
+def is_one(u):
+    """単位なし（無次元）の表示かどうか（'1/mol' は単位あり）"""
+    return u == "1" or u.startswith("1（")
+
+
+def _merge(tokens):
+    """同じ単位が分子どうし・分母どうしにあればまとめる（分子と分母で打ち消しはしない）"""
+    out = {}
+    for u, e in tokens:
+        e = Fr(e)
+        if is_one(u) or e == 0:
+            continue
+        k = (u, e > 0)
+        out[k] = out.get(k, 0) + e
+    return [(u, e) for (u, _), e in out.items()]
+
+
+def distractors(tokens):
+    """分子と分母を取り違えた選択肢"""
+    t = _merge(tokens)
+    cands = [
+        [(u, -e) for u, e in t],                         # 全部ひっくり返す
+        [(u, abs(e)) for u, e in t],                     # 全部かけ算にする
+        [(u, -abs(e)) for u, e in t],                    # 全部割り算にする
+    ]
+    for i in range(len(t)):                              # 1つだけひっくり返す
+        cands.append([(u, -e if j == i else e) for j, (u, e) in enumerate(t)])
+    for i in range(len(t)):                              # 1つだけ2乗にする
+        cands.append([(u, 2 * e if j == i else e) for j, (u, e) in enumerate(t)])
+    right = frac_str(t)
+    seen, out = {right}, []
+    for c in cands:
+        f = frac_str(c)
+        if f not in seen:
+            seen.add(f)
+            out.append(f)
+    return right, out[:3]
+
+
+def _choice_block(qid, n, question, tokens, explain):
+    import hashlib
+    right, wrong = distractors(tokens)
+    if len(wrong) < 2:
+        return ""
+    opts = wrong[:]
+    h = int(hashlib.md5(f"{qid}{n}".encode()).hexdigest(), 16)
+    k = h % (len(opts) + 1)
+    opts.insert(k, right)
+    letters = "ABCD"
+    lis = "".join(
+        f'<li><button type="button" class="ch" data-ok="{1 if i == k else 0}">'
+        f'<span class="opt">{letters[i]}</span><span class="mono">{E(o)}</span></button></li>'
+        for i, o in enumerate(opts))
+    return (f'<div class="pq"><p class="qt"><span class="qn">問{n}</span>{question}</p>'
+            f'<ul class="opts">{lis}</ul>'
+            f'<details class="exp"><summary>答えと解説</summary><p><b>正解：{letters[k]}</b>　<span class="mono ok">{E(right)}</span></p>'
+            f'<p>{explain}</p></details></div>')
+
+
+def _simplified(tokens, q=None):
+    ud = {}
+    for u, e in tokens:
+        if is_one(u):
+            continue
+        ud = add_ud(ud, parse_display(u), Fr(e))
+    if q is not None:
+        ud, _ = tidy(ud, q)
+    return fmt_ud(ud) if ud else "1"
+
+
+def parse_display(u):
+    """表示用の単位文字列（'kg·m/s²' など）を {記号: 指数} に戻す"""
+    for qq in QS.values():
+        if qq["unit_str"] == u:
+            return dict(qq["ud"])
+    raise ValueError(u)
+
+
+def wq(w, u):
+    if is_one(u):
+        u = "単位なし"
+    return f"「{E(w)}」<span class=\"mono u\">[{E(u)}]</span>"
+
+
+def chain_eq(*parts):
+    """'A ＝ B ＝ C' の重複を除いてつなぐ"""
+    out, keys = [], []
+    for p_ in parts:
+        if p_ and is_one(p_):
+            p_ = "1"
+        k_ = re.sub(r"\s+", "", p_ or "")
+        if k_ and k_ not in keys:
+            keys.append(k_)
+            out.append(p_)
+    return " ＝ ".join(f'<span class="mono">{E(x)}</span>' for x in out)
+
+
+def practice(q):
+    """その量の単位を、分子・分母を意識して組み立てる3問"""
+    if not q.get("words"):
+        return []
+    name, unit = q["name"], q["unit_str"]
+    ws = [(w, wq_, Fr(e)) for w, wq_, e in q["words"]]
+    probs = []
+
+    # 問1：言葉の式をそのまま単位に
+    tokens = [(QS[x]["unit_str"], e) for _, x, e in ws]
+    given = "、".join(wq(w, QS[x]["unit_str"]) for w, x, _ in dict((w, (w, x, e)) for w, x, e in ws).values())
+    eq, _ = word_equation(q)
+    ques = f"{E(name)}は「{E(eq)}」で求められます。{given} のとき、{E(name)}の単位はどれ？"
+    num = [w for w, _, e in ws if e > 0 and not is_one(QS[_]["unit_str"])]
+    den = [w for w, _, e in ws if e < 0 and not is_one(QS[_]["unit_str"])]
+    exp = ((f"かける量（{'・'.join(num)}）の単位が分子、" if num else "分子に来る単位はなく（1）、")
+           + (f"割る量（{'・'.join(den)}）の単位が分母に来ます。" if den else "分母に来る単位はありません。")
+           +
+           f"まとめると {chain_eq(frac_str(tokens), _simplified(tokens, q), unit)}。")
+    probs.append((ques, tokens, exp))
+
+    # 問2：別の公式から
+    alt = None
+    for fid in Q_FORMS[q["id"]]:
+        f = FS[fid]
+        if fid == q["defined_by"]:
+            continue
+        for x in solvable_vars(f):
+            if f["qof"][x] != q["id"]:
+                continue
+            terms = solve(f, x)
+            if any(t[1].denominator != 1 for t in terms) or len(terms) < 2:
+                continue
+            alt = (f, x, terms)
+            break
+        if alt:
+            break
+    if alt:
+        f, x, terms = alt
+        tk = [(QS[f["qof"][v]]["unit_str"], e) for v, e in terms]
+        given = "、".join(f'{E(f["sym"][v])} {wq(QS[f["qof"][v]]["name"], QS[f["qof"][v]]["unit_str"])}'
+                          for v in dict.fromkeys(v for v, _ in terms))
+        ques = f"{E(f['name'])} <span class=\"mono\">{E(f['expr'])}</span> を使います。{given} のとき、{E(name)} {E(f['sym'][x])} の単位はどれ？"
+        exp = (f"式を {E(f['sym'][x])} について解くと <span class=\"mono\">{E(f['sym'][x])} = {E(expr_for(f, terms))}</span>。"
+               f"分子・分母にそれぞれの単位を入れると {chain_eq(frac_str(tk), _simplified(tk, q), unit)}。")
+        probs.append((ques, tk, exp))
+
+    # 問3（と、問2がなければその代わり）：言葉の式を逆に使って、材料の単位を求める
+    done_words = set()
+    for strict in (True, False):
+      for w, x, e in ws:
+        if len(probs) >= 3:
+            break
+        if w in done_words or abs(e) != 1 or sum(1 for w2, _, _ in ws if w2 == w) > 1:
+            continue
+        if strict and (is_one(QS[x]["unit_str"]) or sum(1 for _, x2, _ in ws if x2 == x) > 1):
+            continue
+        done_words.add(w)
+        others = [(w2, x2, e2) for w2, x2, e2 in ws if w2 != w]
+        tk = [(unit, Fr(1) / e)] + [(QS[x2]["unit_str"], -e2 / e) for _, x2, e2 in others]
+        if any(Fr(t[1]).denominator != 1 for t in tk):
+            continue
+        given = "、".join([wq(name, unit)] + [wq(w2, QS[x2]["unit_str"]) for w2, x2, _ in others if not is_one(QS[x2]["unit_str"])])
+        ques = f"{E(name)} ＝ {E(eq)} です。{given} のとき、「{E(w)}」の単位はどれ？"
+        solved = [(name, Fr(1) / e)] + [(w2, -e2 / e) for w2, _, e2 in others]
+        sw = " ".join(
+            (word_label(a_, b_) if i == 0 and b_ > 0 else ("1 ÷ " + word_label(a_, b_) if i == 0 else ("× " if b_ > 0 else "÷ ") + word_label(a_, b_)))
+            for i, (a_, b_) in enumerate(sorted(solved, key=lambda t: t[1] < 0)))
+        exp = (f"言葉の式を「{E(w)}」について解き直すと「{E(w)} ＝ {E(sw)}」。"
+               f"単位を入れると {chain_eq(frac_str(tk), _simplified(tk), QS[x]['unit_str'])}。")
+        probs.append((ques, tk, exp))
+
+    if len(probs) < 3 and q["dims"] != ZERO:
+        btk = [(sym, e) for sym, e in base_ud(q["dims"]).items()]
+        btk = sorted(btk, key=lambda t: DISPLAY_ORDER.index(t[0]))
+        route = " → ".join(QS[sid]["name"] for sid, _, _ in chain(q["id"]))
+        ques = (f"{E(name)}の単位 <span class=\"mono\">[{E(unit)}]</span> を、基本単位"
+                f"（<span class=\"mono\">{'・'.join(sym for sym, _ in btk)}</span>）だけで表したものはどれ？")
+        exp = (f"{E(route)} の順に言葉の式をたどると、{chain_eq(unit, fmt_base(q['dims']))}。"
+               "指数が正の基本単位が分子、負の基本単位が分母に来ます。")
+        probs.append((ques, btk, exp))
+    blocks = [_choice_block(q["id"], i + 1, qu, tk, ex) for i, (qu, tk, ex) in enumerate(probs[:3])]
+    blocks = [b_ for b_ in blocks if b_]
+    if not blocks:
+        return []
+    for i in range(len(blocks)):
+        blocks[i] = re.sub(r'<span class="qn">問\d+</span>', f'<span class="qn">問{i + 1}</span>', blocks[i], count=1)
+    return ["<h2>練習問題：分子と分母を見きわめる</h2>",
+            "<p>問題文には単位が書いてあります。計算はしなくてかまいません。<b>どの単位が分子（上）に、どの単位が分母（下）に来るか</b>だけを考えて選んでください。</p>",
+            '<div class="practice">' + "".join(blocks) + "</div>"]
+
+
 # 量 → その量を材料にして作られる量（次に読む）
 DEPENDENTS = {qid: [] for qid in QS}
 for _q in QS.values():
@@ -960,7 +1205,7 @@ def build_quantity(q):
         summ.append(f"基本単位だけで書くと {base}。")
     b.append('<div class="summary"><b>まとめ</b><ul>' + "".join(f"<li>{E(x)}</li>" for x in summ) + "</ul></div>")
 
-    b += quiz(q)
+    b += practice(q)
 
     nxt = DEPENDENTS.get(qid, [])
     if nxt:

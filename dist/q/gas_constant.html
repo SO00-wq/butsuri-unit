@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=3">
-<script src="/assets/site.js?v=3" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=4">
+<script src="/assets/site.js?v=4" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -49,7 +49,7 @@
 <div class="big">J/(mol·K) = kg·m²/(s²·K·mol)</div>
 <div class="sub">次元 [M L² T⁻² Θ⁻¹ N⁻¹]</div></div>
 <div class="goals"><b>このページでわかること</b><ul><li>気体定数を言葉でどう言い表すか</li><li>その言葉を単位に置き換えると、なぜ J/(mol·K) になるのか</li></ul></div>
-<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">気体定数とは？ 言葉で意味をつかむ</a><a href="#s2">基本単位までたどる</a><a href="#s3">気体定数が出てくる公式</a><a href="#s4">確認問題</a></div></nav><h2 id="s1">気体定数とは？ 言葉で意味をつかむ</h2>
+<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">気体定数とは？ 言葉で意味をつかむ</a><a href="#s2">基本単位までたどる</a><a href="#s3">気体定数が出てくる公式</a><a href="#s4">練習問題：分子と分母を見きわめる</a></div></nav><h2 id="s1">気体定数とは？ 言葉で意味をつかむ</h2>
 <p class="meaning"><b>気体定数とは</b>　理想気体の圧力・体積・物質量・温度を結びつける定数。</p>
 <div class="wordeq"><div class="lbl">言葉の式</div><div class="eq">気体定数 ＝ 気体の圧力 × 気体の体積 ÷ 物質量 ÷ 温度</div></div>
 <p>言葉の式に出てくるそれぞれの言葉は、すでに単位がわかっている量です。言葉を単位に置き換えてみましょう。</p>
@@ -77,8 +77,9 @@
 <li><a href="/f/R_kNA.html">気体定数とボルツマン定数</a>：<span class="mono">R = N_A k_B</span></li>
 </ul>
 <div class="summary"><b>まとめ</b><ul><li>気体定数とは、理想気体の圧力・体積・物質量・温度を結びつける定数。</li><li>言葉の式 気体定数 ＝ 気体の圧力 × 気体の体積 ÷ 物質量 ÷ 温度 を単位に置き換えると Pa·m³/(mol·K)。</li><li>基本単位だけで書くと kg·m²/(s²·K·mol)。</li></ul></div>
-<h2 id="s4">確認問題</h2>
-<div class="quiz"><p><b>Q.</b> 気体定数の単位 <span class="mono">J/(mol·K)</span> を基本単位で表したものはどれ？</p><ul class="opts"><li><span class="opt">A</span><span class="mono">kg·m/s</span></li><li><span class="opt">B</span><span class="mono">kg·m²/(s²·K·mol)</span></li><li><span class="opt">C</span><span class="mono">kg·m²/s</span></li><li><span class="opt">D</span><span class="mono">kg/(m·s)</span></li></ul><details><summary>答えを見る</summary><p><b>正解：B</b>　<span class="mono ok">kg·m²/(s²·K·mol)</span></p><p>気体定数 ＝ 気体の圧力 × 気体の体積 ÷ 物質量 ÷ 温度 なので、[気体定数] ＝ Pa × m³ ÷ mol ÷ K ＝ kg·m²/(s²·K·mol)。</p></details></div>
+<h2 id="s4">練習問題：分子と分母を見きわめる</h2>
+<p>問題文には単位が書いてあります。計算はしなくてかまいません。<b>どの単位が分子（上）に、どの単位が分母（下）に来るか</b>だけを考えて選んでください。</p>
+<div class="practice"><div class="pq"><p class="qt"><span class="qn">問1</span>気体定数は「気体の圧力 × 気体の体積 ÷ 物質量 ÷ 温度」で求められます。「気体の圧力」<span class="mono u">[Pa]</span>、「気体の体積」<span class="mono u">[m³]</span>、「物質量」<span class="mono u">[mol]</span>、「温度」<span class="mono u">[K]</span> のとき、気体定数の単位はどれ？</p><ul class="opts"><li><button type="button" class="ch" data-ok="0"><span class="opt">A</span><span class="mono">mol·K / (Pa·m³)</span></button></li><li><button type="button" class="ch" data-ok="1"><span class="opt">B</span><span class="mono">Pa·m³ / (mol·K)</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">C</span><span class="mono">Pa·m³·mol·K</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">D</span><span class="mono">1 / (Pa·m³·mol·K)</span></button></li></ul><details class="exp"><summary>答えと解説</summary><p><b>正解：B</b>　<span class="mono ok">Pa·m³ / (mol·K)</span></p><p>かける量（気体の圧力・気体の体積）の単位が分子、割る量（物質量・温度）の単位が分母に来ます。まとめると <span class="mono">Pa·m³ / (mol·K)</span> ＝ <span class="mono">J/(mol·K)</span>。</p></details></div><div class="pq"><p class="qt"><span class="qn">問2</span>気体定数とボルツマン定数 <span class="mono">R = N_A k_B</span> を使います。N_A 「アボガドロ定数」<span class="mono u">[1/mol]</span>、k_B 「ボルツマン定数」<span class="mono u">[J/K]</span> のとき、気体定数 R の単位はどれ？</p><ul class="opts"><li><button type="button" class="ch" data-ok="1"><span class="opt">A</span><span class="mono">(1/mol)·(J/K)</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">B</span><span class="mono">1 / ((1/mol)·(J/K))</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">C</span><span class="mono">(J/K) / (1/mol)</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">D</span><span class="mono">(1/mol) / (J/K)</span></button></li></ul><details class="exp"><summary>答えと解説</summary><p><b>正解：A</b>　<span class="mono ok">(1/mol)·(J/K)</span></p><p>式を R について解くと <span class="mono">R = N_A k_B</span>。分子・分母にそれぞれの単位を入れると <span class="mono">(1/mol)·(J/K)</span> ＝ <span class="mono">J/(mol·K)</span>。</p></details></div><div class="pq"><p class="qt"><span class="qn">問3</span>気体定数 ＝ 気体の圧力 × 気体の体積 ÷ 物質量 ÷ 温度 です。「気体定数」<span class="mono u">[J/(mol·K)]</span>、「気体の体積」<span class="mono u">[m³]</span>、「物質量」<span class="mono u">[mol]</span>、「温度」<span class="mono u">[K]</span> のとき、「気体の圧力」の単位はどれ？</p><ul class="opts"><li><button type="button" class="ch" data-ok="1"><span class="opt">A</span><span class="mono">(J/(mol·K))·mol·K / m³</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">B</span><span class="mono">m³ / ((J/(mol·K))·mol·K)</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">C</span><span class="mono">(J/(mol·K))·m³·mol·K</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">D</span><span class="mono">1 / ((J/(mol·K))·m³·mol·K)</span></button></li></ul><details class="exp"><summary>答えと解説</summary><p><b>正解：A</b>　<span class="mono ok">(J/(mol·K))·mol·K / m³</span></p><p>言葉の式を「気体の圧力」について解き直すと「気体の圧力 ＝ 気体定数 × 物質量 × 温度 ÷ 気体の体積」。単位を入れると <span class="mono">(J/(mol·K))·mol·K / m³</span> ＝ <span class="mono">J/m³</span> ＝ <span class="mono">Pa</span>。</p></details></div></div>
 </div></main>
 <footer class="site"><div class="wrap">
   <div class="links"><a href="/">トップ</a><a href="/guide.html">単位の読み方</a><a href="/about.html">このサイトについて</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>

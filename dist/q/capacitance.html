@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=3">
-<script src="/assets/site.js?v=3" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=4">
+<script src="/assets/site.js?v=4" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -49,7 +49,7 @@
 <div class="big">F = A²·s⁴/(kg·m²)</div>
 <div class="sub">次元 [M⁻¹ L⁻² T⁴ I²]</div></div>
 <div class="goals"><b>このページでわかること</b><ul><li>静電容量を言葉でどう言い表すか</li><li>その言葉を単位に置き換えると、なぜ F になるのか</li><li>F のいろいろな書き方と、その根拠になる公式</li></ul></div>
-<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">静電容量とは？ 言葉で意味をつかむ</a><a href="#s2">基本単位までたどる</a><a href="#s3">F の別の書き方</a><a href="#s4">静電容量が出てくる公式</a><a href="#s5">確認問題</a><a href="#s6">次に読む：静電容量を使って表される量</a></div></nav><h2 id="s1">静電容量とは？ 言葉で意味をつかむ</h2>
+<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">静電容量とは？ 言葉で意味をつかむ</a><a href="#s2">基本単位までたどる</a><a href="#s3">F の別の書き方</a><a href="#s4">静電容量が出てくる公式</a><a href="#s5">練習問題：分子と分母を見きわめる</a><a href="#s6">次に読む：静電容量を使って表される量</a></div></nav><h2 id="s1">静電容量とは？ 言葉で意味をつかむ</h2>
 <p class="meaning"><b>静電容量とは</b>　電圧 1 V あたりにためられる電荷。</p>
 <div class="wordeq"><div class="lbl">言葉の式</div><div class="eq">静電容量 ＝ ためた電荷 ÷ かけた電圧</div></div>
 <p>言葉の式に出てくるそれぞれの言葉は、すでに単位がわかっている量です。言葉を単位に置き換えてみましょう。</p>
@@ -85,8 +85,9 @@
 <li><a href="/f/lc_omega.html">LC回路の固有角振動数</a>：<span class="mono">ω = 1 / √(L C)</span></li>
 </ul>
 <div class="summary"><b>まとめ</b><ul><li>静電容量とは、電圧 1 V あたりにためられる電荷。</li><li>言葉の式 静電容量 ＝ ためた電荷 ÷ かけた電圧 を単位に置き換えると C/V。</li><li>基本単位だけで書くと A²·s⁴/(kg·m²)。</li></ul></div>
-<h2 id="s5">確認問題</h2>
-<div class="quiz"><p><b>Q.</b> 静電容量の単位 <span class="mono">F</span> を基本単位で表したものはどれ？</p><ul class="opts"><li><span class="opt">A</span><span class="mono">kg·m²/(A²·s³)</span></li><li><span class="opt">B</span><span class="mono">kg·m²/(A²·s²)</span></li><li><span class="opt">C</span><span class="mono">A²·s⁴/(kg·m²)</span></li><li><span class="opt">D</span><span class="mono">A²·s³/(kg·m²)</span></li></ul><details><summary>答えを見る</summary><p><b>正解：C</b>　<span class="mono ok">A²·s⁴/(kg·m²)</span></p><p>静電容量 ＝ ためた電荷 ÷ かけた電圧 なので、[静電容量] ＝ C ÷ V ＝ A²·s⁴/(kg·m²)。</p></details></div>
+<h2 id="s5">練習問題：分子と分母を見きわめる</h2>
+<p>問題文には単位が書いてあります。計算はしなくてかまいません。<b>どの単位が分子（上）に、どの単位が分母（下）に来るか</b>だけを考えて選んでください。</p>
+<div class="practice"><div class="pq"><p class="qt"><span class="qn">問1</span>静電容量は「ためた電荷 ÷ かけた電圧」で求められます。「ためた電荷」<span class="mono u">[C]</span>、「かけた電圧」<span class="mono u">[V]</span> のとき、静電容量の単位はどれ？</p><ul class="opts"><li><button type="button" class="ch" data-ok="0"><span class="opt">A</span><span class="mono">V / C</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">B</span><span class="mono">C·V</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">C</span><span class="mono">1 / (C·V)</span></button></li><li><button type="button" class="ch" data-ok="1"><span class="opt">D</span><span class="mono">C / V</span></button></li></ul><details class="exp"><summary>答えと解説</summary><p><b>正解：D</b>　<span class="mono ok">C / V</span></p><p>かける量（ためた電荷）の単位が分子、割る量（かけた電圧）の単位が分母に来ます。まとめると <span class="mono">C / V</span> ＝ <span class="mono">F</span>。</p></details></div><div class="pq"><p class="qt"><span class="qn">問2</span>コンデンサーのエネルギー <span class="mono">U = ½ C V²</span> を使います。U 「エネルギー・仕事・熱量」<span class="mono u">[J]</span>、V 「電圧・電位」<span class="mono u">[V]</span> のとき、静電容量 C の単位はどれ？</p><ul class="opts"><li><button type="button" class="ch" data-ok="0"><span class="opt">A</span><span class="mono">V² / J</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">B</span><span class="mono">J·V²</span></button></li><li><button type="button" class="ch" data-ok="1"><span class="opt">C</span><span class="mono">J / V²</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">D</span><span class="mono">1 / (J·V²)</span></button></li></ul><details class="exp"><summary>答えと解説</summary><p><b>正解：C</b>　<span class="mono ok">J / V²</span></p><p>式を C について解くと <span class="mono">C = U / V²</span>。分子・分母にそれぞれの単位を入れると <span class="mono">J / V²</span> ＝ <span class="mono">F</span>。</p></details></div><div class="pq"><p class="qt"><span class="qn">問3</span>静電容量 ＝ ためた電荷 ÷ かけた電圧 です。「静電容量」<span class="mono u">[F]</span>、「かけた電圧」<span class="mono u">[V]</span> のとき、「ためた電荷」の単位はどれ？</p><ul class="opts"><li><button type="button" class="ch" data-ok="1"><span class="opt">A</span><span class="mono">F·V</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">B</span><span class="mono">1 / (F·V)</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">C</span><span class="mono">V / F</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">D</span><span class="mono">F / V</span></button></li></ul><details class="exp"><summary>答えと解説</summary><p><b>正解：A</b>　<span class="mono ok">F·V</span></p><p>言葉の式を「ためた電荷」について解き直すと「ためた電荷 ＝ 静電容量 × かけた電圧」。単位を入れると <span class="mono">F·V</span> ＝ <span class="mono">C</span>。</p></details></div></div>
 <h2 id="s6">次に読む：静電容量を使って表される量</h2><div class="grid"><a href="/q/permittivity.html">誘電率<div class="u">F/m</div></a></div>
 </div></main>
 <footer class="site"><div class="wrap">

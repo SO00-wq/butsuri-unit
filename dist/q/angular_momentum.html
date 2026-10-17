@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=3">
-<script src="/assets/site.js?v=3" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=4">
+<script src="/assets/site.js?v=4" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -49,7 +49,7 @@
 <div class="big">kg·m²/s</div>
 <div class="sub">次元 [M L² T⁻¹]</div></div>
 <div class="goals"><b>このページでわかること</b><ul><li>角運動量を言葉でどう言い表すか</li><li>その言葉を単位に置き換えると、なぜ kg·m²/s になるのか</li></ul></div>
-<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">角運動量とは？ 言葉で意味をつかむ</a><a href="#s2">基本単位までたどる</a><a href="#s3">よくある間違い：同じ単位でも別の量</a><a href="#s4">角運動量が出てくる公式</a><a href="#s5">確認問題</a></div></nav><h2 id="s1">角運動量とは？ 言葉で意味をつかむ</h2>
+<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">角運動量とは？ 言葉で意味をつかむ</a><a href="#s2">基本単位までたどる</a><a href="#s3">よくある間違い：同じ単位でも別の量</a><a href="#s4">角運動量が出てくる公式</a><a href="#s5">練習問題：分子と分母を見きわめる</a></div></nav><h2 id="s1">角運動量とは？ 言葉で意味をつかむ</h2>
 <p class="meaning"><b>角運動量とは</b>　回転の勢い。回転軸からの距離と運動量の積。</p>
 <div class="wordeq"><div class="lbl">言葉の式</div><div class="eq">角運動量 ＝ 回転軸からの距離 × 物体の運動量</div></div>
 <p>言葉の式に出てくるそれぞれの言葉は、すでに単位がわかっている量です。言葉を単位に置き換えてみましょう。</p>
@@ -73,8 +73,9 @@
 <li><a href="/f/ang_mom_I.html">角運動量と角速度</a>：<span class="mono">L = I ω</span></li>
 </ul>
 <div class="summary"><b>まとめ</b><ul><li>角運動量とは、回転の勢い。回転軸からの距離と運動量の積。</li><li>言葉の式 角運動量 ＝ 回転軸からの距離 × 物体の運動量 を単位に置き換えると kg·m²/s。</li></ul></div>
-<h2 id="s5">確認問題</h2>
-<div class="quiz"><p><b>Q.</b> 角運動量の単位 <span class="mono">kg·m²/s</span> を基本単位で表したものはどれ？</p><ul class="opts"><li><span class="opt">A</span><span class="mono">kg·m/s</span></li><li><span class="opt">B</span><span class="mono">kg/(m·s)</span></li><li><span class="opt">C</span><span class="mono">kg·m²/s</span></li><li><span class="opt">D</span><span class="mono">m³/(kg·s²)</span></li></ul><details><summary>答えを見る</summary><p><b>正解：C</b>　<span class="mono ok">kg·m²/s</span></p><p>角運動量 ＝ 回転軸からの距離 × 物体の運動量 なので、[角運動量] ＝ m × (kg·m/s) ＝ kg·m²/s。</p></details></div>
+<h2 id="s5">練習問題：分子と分母を見きわめる</h2>
+<p>問題文には単位が書いてあります。計算はしなくてかまいません。<b>どの単位が分子（上）に、どの単位が分母（下）に来るか</b>だけを考えて選んでください。</p>
+<div class="practice"><div class="pq"><p class="qt"><span class="qn">問1</span>角運動量は「回転軸からの距離 × 物体の運動量」で求められます。「回転軸からの距離」<span class="mono u">[m]</span>、「物体の運動量」<span class="mono u">[kg·m/s]</span> のとき、角運動量の単位はどれ？</p><ul class="opts"><li><button type="button" class="ch" data-ok="0"><span class="opt">A</span><span class="mono">1 / (m·(kg·m/s))</span></button></li><li><button type="button" class="ch" data-ok="1"><span class="opt">B</span><span class="mono">m·(kg·m/s)</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">C</span><span class="mono">(kg·m/s) / m</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">D</span><span class="mono">m / (kg·m/s)</span></button></li></ul><details class="exp"><summary>答えと解説</summary><p><b>正解：B</b>　<span class="mono ok">m·(kg·m/s)</span></p><p>かける量（回転軸からの距離・物体の運動量）の単位が分子、分母に来る単位はありません。まとめると <span class="mono">m·(kg·m/s)</span> ＝ <span class="mono">kg·m²/s</span>。</p></details></div><div class="pq"><p class="qt"><span class="qn">問2</span>角運動量と角速度 <span class="mono">L = I ω</span> を使います。I 「慣性モーメント」<span class="mono u">[kg·m²]</span>、ω 「角速度」<span class="mono u">[rad/s]</span> のとき、角運動量 L の単位はどれ？</p><ul class="opts"><li><button type="button" class="ch" data-ok="0"><span class="opt">A</span><span class="mono">1 / ((kg·m²)·(rad/s))</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">B</span><span class="mono">(rad/s) / (kg·m²)</span></button></li><li><button type="button" class="ch" data-ok="1"><span class="opt">C</span><span class="mono">(kg·m²)·(rad/s)</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">D</span><span class="mono">(kg·m²) / (rad/s)</span></button></li></ul><details class="exp"><summary>答えと解説</summary><p><b>正解：C</b>　<span class="mono ok">(kg·m²)·(rad/s)</span></p><p>式を L について解くと <span class="mono">L = I ω</span>。分子・分母にそれぞれの単位を入れると <span class="mono">(kg·m²)·(rad/s)</span> ＝ <span class="mono">kg·m²/s</span>。</p></details></div><div class="pq"><p class="qt"><span class="qn">問3</span>角運動量 ＝ 回転軸からの距離 × 物体の運動量 です。「角運動量」<span class="mono u">[kg·m²/s]</span>、「物体の運動量」<span class="mono u">[kg·m/s]</span> のとき、「回転軸からの距離」の単位はどれ？</p><ul class="opts"><li><button type="button" class="ch" data-ok="0"><span class="opt">A</span><span class="mono">(kg·m/s) / (kg·m²/s)</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">B</span><span class="mono">(kg·m²/s)·(kg·m/s)</span></button></li><li><button type="button" class="ch" data-ok="1"><span class="opt">C</span><span class="mono">(kg·m²/s) / (kg·m/s)</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">D</span><span class="mono">1 / ((kg·m²/s)·(kg·m/s))</span></button></li></ul><details class="exp"><summary>答えと解説</summary><p><b>正解：C</b>　<span class="mono ok">(kg·m²/s) / (kg·m/s)</span></p><p>言葉の式を「回転軸からの距離」について解き直すと「回転軸からの距離 ＝ 角運動量 ÷ 物体の運動量」。単位を入れると <span class="mono">(kg·m²/s) / (kg·m/s)</span> ＝ <span class="mono">m</span>。</p></details></div></div>
 </div></main>
 <footer class="site"><div class="wrap">
   <div class="links"><a href="/">トップ</a><a href="/guide.html">単位の読み方</a><a href="/about.html">このサイトについて</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>

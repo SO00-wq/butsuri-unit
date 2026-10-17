@@ -119,3 +119,21 @@ table.swap th:last-child,table.swap td:last-child{white-space:nowrap}
 .quiz details summary{cursor:pointer;color:var(--accent);font-weight:700}
 .quiz details p{margin:.5rem 0 0}
 footer.site .src{font-size:.78rem;margin:0 0 .5rem}
+.practice{display:grid;gap:1rem}
+.pq{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1rem}
+.pq .qt{margin-bottom:.6rem}
+.pq .qn{display:inline-block;background:var(--accent);color:#fff;font-size:.75rem;font-weight:700;border-radius:4px;padding:.05rem .45rem;margin-right:.45rem}
+.pq .u{color:var(--accent);font-size:.9em;white-space:nowrap}
+.pq .opts{list-style:none;margin:0 0 .7rem;padding:0;display:grid;gap:.45rem}
+.pq .opts li{margin:0}
+.ch{display:flex;align-items:center;gap:.6rem;width:100%;text-align:left;font:inherit;color:var(--fg);background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:.55rem .7rem;cursor:pointer;transition:border-color .15s,background .15s}
+.ch:hover:not(:disabled){border-color:var(--accent)}
+.ch:disabled{cursor:default}
+.ch .opt{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--code);font-size:.78rem;font-weight:700;flex:none}
+.ch.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 12%,var(--bg))}
+.ch.right .opt{background:var(--ok);color:#fff}
+.ch.wrong{border-color:#c2410c;background:color-mix(in srgb,#c2410c 10%,var(--bg))}
+.ch.wrong .opt{background:#c2410c;color:#fff}
+.pq .res{font-weight:700;margin:.2rem 0 .4rem}.pq .res.ng{color:#c2410c}
+.pq .exp summary{cursor:pointer;color:var(--accent);font-weight:700;font-size:.92rem}
+.pq .exp p{margin:.5rem 0 0;font-size:.95rem}

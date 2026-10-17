@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=3">
-<script src="/assets/site.js?v=3" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=4">
+<script src="/assets/site.js?v=4" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -49,7 +49,7 @@
 <div class="big">lm = cd</div>
 <div class="sub">次元 [J]</div></div>
 <div class="goals"><b>このページでわかること</b><ul><li>光束を言葉でどう言い表すか</li><li>その言葉を単位に置き換えると、なぜ lm になるのか</li><li>lm のいろいろな書き方と、その根拠になる公式</li></ul></div>
-<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">光束とは？ 言葉で意味をつかむ</a><a href="#s2">基本単位までたどる</a><a href="#s3">lm の別の書き方</a><a href="#s4">よくある間違い：同じ単位でも別の量</a><a href="#s5">光束が出てくる公式</a><a href="#s6">確認問題</a><a href="#s7">次に読む：光束を使って表される量</a></div></nav><h2 id="s1">光束とは？ 言葉で意味をつかむ</h2>
+<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">光束とは？ 言葉で意味をつかむ</a><a href="#s2">基本単位までたどる</a><a href="#s3">lm の別の書き方</a><a href="#s4">よくある間違い：同じ単位でも別の量</a><a href="#s5">光束が出てくる公式</a><a href="#s6">練習問題：分子と分母を見きわめる</a><a href="#s7">次に読む：光束を使って表される量</a></div></nav><h2 id="s1">光束とは？ 言葉で意味をつかむ</h2>
 <p class="meaning"><b>光束とは</b>　光源から出る光の量を、人の目の感度で表したもの。</p>
 <div class="wordeq"><div class="lbl">言葉の式</div><div class="eq">光束 ＝ 光度 × 光が広がる立体角</div></div>
 <p>言葉の式に出てくるそれぞれの言葉は、すでに単位がわかっている量です。言葉を単位に置き換えてみましょう。</p>
@@ -78,8 +78,9 @@
 <li><a href="/f/illum.html">照度</a>：<span class="mono">E_v = Φ_v / S</span></li>
 </ul>
 <div class="summary"><b>まとめ</b><ul><li>光束とは、光源から出る光の量を、人の目の感度で表したもの。</li><li>言葉の式 光束 ＝ 光度 × 光が広がる立体角 を単位に置き換えると cd。</li><li>基本単位だけで書くと cd。</li></ul></div>
-<h2 id="s6">確認問題</h2>
-<div class="quiz"><p><b>Q.</b> 光束の単位 <span class="mono">lm</span> を基本単位で表したものはどれ？</p><ul class="opts"><li><span class="opt">A</span><span class="mono">1/m</span></li><li><span class="opt">B</span><span class="mono">cd</span></li><li><span class="opt">C</span><span class="mono">1/s</span></li><li><span class="opt">D</span><span class="mono">cd/m²</span></li></ul><details><summary>答えを見る</summary><p><b>正解：B</b>　<span class="mono ok">cd</span></p><p>光束 ＝ 光度 × 光が広がる立体角 なので、[光束] ＝ cd × sr ＝ cd。</p></details></div>
+<h2 id="s6">練習問題：分子と分母を見きわめる</h2>
+<p>問題文には単位が書いてあります。計算はしなくてかまいません。<b>どの単位が分子（上）に、どの単位が分母（下）に来るか</b>だけを考えて選んでください。</p>
+<div class="practice"><div class="pq"><p class="qt"><span class="qn">問1</span>光束は「光度 × 光が広がる立体角」で求められます。「光度」<span class="mono u">[cd]</span>、「光が広がる立体角」<span class="mono u">[sr]</span> のとき、光束の単位はどれ？</p><ul class="opts"><li><button type="button" class="ch" data-ok="1"><span class="opt">A</span><span class="mono">cd·sr</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">B</span><span class="mono">1 / (cd·sr)</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">C</span><span class="mono">sr / cd</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">D</span><span class="mono">cd / sr</span></button></li></ul><details class="exp"><summary>答えと解説</summary><p><b>正解：A</b>　<span class="mono ok">cd·sr</span></p><p>かける量（光度・光が広がる立体角）の単位が分子、分母に来る単位はありません。まとめると <span class="mono">cd·sr</span> ＝ <span class="mono">cd</span> ＝ <span class="mono">lm</span>。</p></details></div><div class="pq"><p class="qt"><span class="qn">問2</span>照度 <span class="mono">E_v = Φ_v / S</span> を使います。E_v 「照度」<span class="mono u">[lx]</span>、S 「面積」<span class="mono u">[m²]</span> のとき、光束 Φ_v の単位はどれ？</p><ul class="opts"><li><button type="button" class="ch" data-ok="0"><span class="opt">A</span><span class="mono">1 / (lx·m²)</span></button></li><li><button type="button" class="ch" data-ok="1"><span class="opt">B</span><span class="mono">lx·m²</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">C</span><span class="mono">m² / lx</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">D</span><span class="mono">lx / m²</span></button></li></ul><details class="exp"><summary>答えと解説</summary><p><b>正解：B</b>　<span class="mono ok">lx·m²</span></p><p>式を Φ_v について解くと <span class="mono">Φ_v = E_v S</span>。分子・分母にそれぞれの単位を入れると <span class="mono">lx·m²</span> ＝ <span class="mono">lm</span>。</p></details></div><div class="pq"><p class="qt"><span class="qn">問3</span>光束 ＝ 光度 × 光が広がる立体角 です。「光束」<span class="mono u">[lm]</span>、「光が広がる立体角」<span class="mono u">[sr]</span> のとき、「光度」の単位はどれ？</p><ul class="opts"><li><button type="button" class="ch" data-ok="1"><span class="opt">A</span><span class="mono">lm / sr</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">B</span><span class="mono">sr / lm</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">C</span><span class="mono">lm·sr</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">D</span><span class="mono">1 / (lm·sr)</span></button></li></ul><details class="exp"><summary>答えと解説</summary><p><b>正解：A</b>　<span class="mono ok">lm / sr</span></p><p>言葉の式を「光度」について解き直すと「光度 ＝ 光束 ÷ 光が広がる立体角」。単位を入れると <span class="mono">lm / sr</span> ＝ <span class="mono">cd</span>。</p></details></div></div>
 <h2 id="s7">次に読む：光束を使って表される量</h2><div class="grid"><a href="/q/illuminance.html">照度<div class="u">lx</div></a></div>
 </div></main>
 <footer class="site"><div class="wrap">

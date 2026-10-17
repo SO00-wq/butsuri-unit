@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=3">
-<script src="/assets/site.js?v=3" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=4">
+<script src="/assets/site.js?v=4" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -49,7 +49,7 @@
 <div class="big">Ω = kg·m²/(A²·s³)</div>
 <div class="sub">次元 [M L² T⁻³ I⁻²]</div></div>
 <div class="goals"><b>このページでわかること</b><ul><li>電気抵抗を言葉でどう言い表すか</li><li>その言葉を単位に置き換えると、なぜ Ω になるのか</li><li>Ω のいろいろな書き方と、その根拠になる公式</li></ul></div>
-<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">電気抵抗とは？ 言葉で意味をつかむ</a><a href="#s2">基本単位までたどる</a><a href="#s3">Ω の別の書き方</a><a href="#s4">電気抵抗が出てくる公式</a><a href="#s5">確認問題</a><a href="#s6">次に読む：電気抵抗を使って表される量</a></div></nav><h2 id="s1">電気抵抗とは？ 言葉で意味をつかむ</h2>
+<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">電気抵抗とは？ 言葉で意味をつかむ</a><a href="#s2">基本単位までたどる</a><a href="#s3">Ω の別の書き方</a><a href="#s4">電気抵抗が出てくる公式</a><a href="#s5">練習問題：分子と分母を見きわめる</a><a href="#s6">次に読む：電気抵抗を使って表される量</a></div></nav><h2 id="s1">電気抵抗とは？ 言葉で意味をつかむ</h2>
 <p class="meaning"><b>電気抵抗とは</b>　電流の流れにくさ。1 A 流すのに必要な電圧。</p>
 <div class="wordeq"><div class="lbl">言葉の式</div><div class="eq">電気抵抗 ＝ かけた電圧 ÷ 流れた電流</div></div>
 <p>言葉の式に出てくるそれぞれの言葉は、すでに単位がわかっている量です。言葉を単位に置き換えてみましょう。</p>
@@ -88,8 +88,9 @@
 <li><a href="/f/resistivity.html">抵抗率</a>：<span class="mono">R = ρ l / S</span></li>
 </ul>
 <div class="summary"><b>まとめ</b><ul><li>電気抵抗とは、電流の流れにくさ。1 A 流すのに必要な電圧。</li><li>言葉の式 電気抵抗 ＝ かけた電圧 ÷ 流れた電流 を単位に置き換えると V/A。</li><li>基本単位だけで書くと kg·m²/(A²·s³)。</li></ul></div>
-<h2 id="s5">確認問題</h2>
-<div class="quiz"><p><b>Q.</b> 電気抵抗の単位 <span class="mono">Ω</span> を基本単位で表したものはどれ？</p><ul class="opts"><li><span class="opt">A</span><span class="mono">A²·s⁴/(kg·m²)</span></li><li><span class="opt">B</span><span class="mono">A²·s³/(kg·m²)</span></li><li><span class="opt">C</span><span class="mono">kg·m²/(A²·s³)</span></li><li><span class="opt">D</span><span class="mono">kg·m/(A²·s²)</span></li></ul><details><summary>答えを見る</summary><p><b>正解：C</b>　<span class="mono ok">kg·m²/(A²·s³)</span></p><p>電気抵抗 ＝ かけた電圧 ÷ 流れた電流 なので、[電気抵抗] ＝ V ÷ A ＝ kg·m²/(A²·s³)。</p></details></div>
+<h2 id="s5">練習問題：分子と分母を見きわめる</h2>
+<p>問題文には単位が書いてあります。計算はしなくてかまいません。<b>どの単位が分子（上）に、どの単位が分母（下）に来るか</b>だけを考えて選んでください。</p>
+<div class="practice"><div class="pq"><p class="qt"><span class="qn">問1</span>電気抵抗は「かけた電圧 ÷ 流れた電流」で求められます。「かけた電圧」<span class="mono u">[V]</span>、「流れた電流」<span class="mono u">[A]</span> のとき、電気抵抗の単位はどれ？</p><ul class="opts"><li><button type="button" class="ch" data-ok="0"><span class="opt">A</span><span class="mono">A / V</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">B</span><span class="mono">V·A</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">C</span><span class="mono">1 / (V·A)</span></button></li><li><button type="button" class="ch" data-ok="1"><span class="opt">D</span><span class="mono">V / A</span></button></li></ul><details class="exp"><summary>答えと解説</summary><p><b>正解：D</b>　<span class="mono ok">V / A</span></p><p>かける量（かけた電圧）の単位が分子、割る量（流れた電流）の単位が分母に来ます。まとめると <span class="mono">V / A</span> ＝ <span class="mono">Ω</span>。</p></details></div><div class="pq"><p class="qt"><span class="qn">問2</span>ジュール熱（抵抗での消費電力） <span class="mono">P = I² R</span> を使います。P 「仕事率・電力」<span class="mono u">[W]</span>、I 「電流」<span class="mono u">[A]</span> のとき、電気抵抗 R の単位はどれ？</p><ul class="opts"><li><button type="button" class="ch" data-ok="0"><span class="opt">A</span><span class="mono">A² / W</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">B</span><span class="mono">W·A²</span></button></li><li><button type="button" class="ch" data-ok="1"><span class="opt">C</span><span class="mono">W / A²</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">D</span><span class="mono">1 / (W·A²)</span></button></li></ul><details class="exp"><summary>答えと解説</summary><p><b>正解：C</b>　<span class="mono ok">W / A²</span></p><p>式を R について解くと <span class="mono">R = P / I²</span>。分子・分母にそれぞれの単位を入れると <span class="mono">W / A²</span> ＝ <span class="mono">Ω</span>。</p></details></div><div class="pq"><p class="qt"><span class="qn">問3</span>電気抵抗 ＝ かけた電圧 ÷ 流れた電流 です。「電気抵抗」<span class="mono u">[Ω]</span>、「流れた電流」<span class="mono u">[A]</span> のとき、「かけた電圧」の単位はどれ？</p><ul class="opts"><li><button type="button" class="ch" data-ok="0"><span class="opt">A</span><span class="mono">1 / (Ω·A)</span></button></li><li><button type="button" class="ch" data-ok="1"><span class="opt">B</span><span class="mono">Ω·A</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">C</span><span class="mono">A / Ω</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">D</span><span class="mono">Ω / A</span></button></li></ul><details class="exp"><summary>答えと解説</summary><p><b>正解：B</b>　<span class="mono ok">Ω·A</span></p><p>言葉の式を「かけた電圧」について解き直すと「かけた電圧 ＝ 電気抵抗 × 流れた電流」。単位を入れると <span class="mono">Ω·A</span> ＝ <span class="mono">V</span>。</p></details></div></div>
 <h2 id="s6">次に読む：電気抵抗を使って表される量</h2><div class="grid"><a href="/q/resistivity.html">抵抗率<div class="u">Ω·m</div></a></div>
 </div></main>
 <footer class="site"><div class="wrap">

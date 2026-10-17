@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=3">
-<script src="/assets/site.js?v=3" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=4">
+<script src="/assets/site.js?v=4" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -49,7 +49,7 @@
 <div class="big">V/m = kg·m/(A·s³)</div>
 <div class="sub">次元 [M L T⁻³ I⁻¹]</div></div>
 <div class="goals"><b>このページでわかること</b><ul><li>電場（電界）を言葉でどう言い表すか</li><li>その言葉を単位に置き換えると、なぜ V/m になるのか</li><li>V/m のいろいろな書き方と、その根拠になる公式</li></ul></div>
-<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">電場（電界）とは？ 言葉で意味をつかむ</a><a href="#s2">基本単位までたどる</a><a href="#s3">V/m の別の書き方</a><a href="#s4">電場（電界）が出てくる公式</a><a href="#s5">確認問題</a><a href="#s6">次に読む：電場（電界）を使って表される量</a></div></nav><h2 id="s1">電場（電界）とは？ 言葉で意味をつかむ</h2>
+<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">電場（電界）とは？ 言葉で意味をつかむ</a><a href="#s2">基本単位までたどる</a><a href="#s3">V/m の別の書き方</a><a href="#s4">電場（電界）が出てくる公式</a><a href="#s5">練習問題：分子と分母を見きわめる</a><a href="#s6">次に読む：電場（電界）を使って表される量</a></div></nav><h2 id="s1">電場（電界）とは？ 言葉で意味をつかむ</h2>
 <p class="meaning"><b>電場（電界）とは</b>　電荷 1 C あたりに働く力。</p>
 <div class="wordeq"><div class="lbl">言葉の式</div><div class="eq">電場（電界） ＝ 電荷が受ける力 ÷ 電荷</div></div>
 <p>言葉の式に出てくるそれぞれの言葉は、すでに単位がわかっている量です。言葉を単位に置き換えてみましょう。</p>
@@ -79,8 +79,9 @@
 <li><a href="/f/ohm_micro.html">オームの法則（局所形）</a>：<span class="mono">j = σ E</span></li>
 </ul>
 <div class="summary"><b>まとめ</b><ul><li>電場（電界）とは、電荷 1 C あたりに働く力。</li><li>言葉の式 電場（電界） ＝ 電荷が受ける力 ÷ 電荷 を単位に置き換えると N/C。</li><li>基本単位だけで書くと kg·m/(A·s³)。</li></ul></div>
-<h2 id="s5">確認問題</h2>
-<div class="quiz"><p><b>Q.</b> 電場（電界）の単位 <span class="mono">V/m</span> を基本単位で表したものはどれ？</p><ul class="opts"><li><span class="opt">A</span><span class="mono">A²·s⁴/(kg·m²)</span></li><li><span class="opt">B</span><span class="mono">A²·s⁴/(kg·m³)</span></li><li><span class="opt">C</span><span class="mono">kg·m/(A·s³)</span></li><li><span class="opt">D</span><span class="mono">A²·s³/(kg·m³)</span></li></ul><details><summary>答えを見る</summary><p><b>正解：C</b>　<span class="mono ok">kg·m/(A·s³)</span></p><p>電場（電界） ＝ 電荷が受ける力 ÷ 電荷 なので、[電場（電界）] ＝ N ÷ C ＝ kg·m/(A·s³)。</p></details></div>
+<h2 id="s5">練習問題：分子と分母を見きわめる</h2>
+<p>問題文には単位が書いてあります。計算はしなくてかまいません。<b>どの単位が分子（上）に、どの単位が分母（下）に来るか</b>だけを考えて選んでください。</p>
+<div class="practice"><div class="pq"><p class="qt"><span class="qn">問1</span>電場（電界）は「電荷が受ける力 ÷ 電荷」で求められます。「電荷が受ける力」<span class="mono u">[N]</span>、「電荷」<span class="mono u">[C]</span> のとき、電場（電界）の単位はどれ？</p><ul class="opts"><li><button type="button" class="ch" data-ok="0"><span class="opt">A</span><span class="mono">C / N</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">B</span><span class="mono">N·C</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">C</span><span class="mono">1 / (N·C)</span></button></li><li><button type="button" class="ch" data-ok="1"><span class="opt">D</span><span class="mono">N / C</span></button></li></ul><details class="exp"><summary>答えと解説</summary><p><b>正解：D</b>　<span class="mono ok">N / C</span></p><p>かける量（電荷が受ける力）の単位が分子、割る量（電荷）の単位が分母に来ます。まとめると <span class="mono">N / C</span> ＝ <span class="mono">V/m</span>。</p></details></div><div class="pq"><p class="qt"><span class="qn">問2</span>一様な電場と電圧 <span class="mono">V = E d</span> を使います。V 「電圧・電位」<span class="mono u">[V]</span>、d 「長さ」<span class="mono u">[m]</span> のとき、電場（電界） E の単位はどれ？</p><ul class="opts"><li><button type="button" class="ch" data-ok="0"><span class="opt">A</span><span class="mono">m / V</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">B</span><span class="mono">V·m</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">C</span><span class="mono">1 / (V·m)</span></button></li><li><button type="button" class="ch" data-ok="1"><span class="opt">D</span><span class="mono">V / m</span></button></li></ul><details class="exp"><summary>答えと解説</summary><p><b>正解：D</b>　<span class="mono ok">V / m</span></p><p>式を E について解くと <span class="mono">E = V / d</span>。分子・分母にそれぞれの単位を入れると <span class="mono">V / m</span>。</p></details></div><div class="pq"><p class="qt"><span class="qn">問3</span>電場（電界） ＝ 電荷が受ける力 ÷ 電荷 です。「電場（電界）」<span class="mono u">[V/m]</span>、「電荷」<span class="mono u">[C]</span> のとき、「電荷が受ける力」の単位はどれ？</p><ul class="opts"><li><button type="button" class="ch" data-ok="0"><span class="opt">A</span><span class="mono">1 / ((V/m)·C)</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">B</span><span class="mono">C / (V/m)</span></button></li><li><button type="button" class="ch" data-ok="1"><span class="opt">C</span><span class="mono">(V/m)·C</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">D</span><span class="mono">(V/m) / C</span></button></li></ul><details class="exp"><summary>答えと解説</summary><p><b>正解：C</b>　<span class="mono ok">(V/m)·C</span></p><p>言葉の式を「電荷が受ける力」について解き直すと「電荷が受ける力 ＝ 電場（電界） × 電荷」。単位を入れると <span class="mono">(V/m)·C</span> ＝ <span class="mono">V·C/m</span> ＝ <span class="mono">N</span>。</p></details></div></div>
 <h2 id="s6">次に読む：電場（電界）を使って表される量</h2><div class="grid"><a href="/q/conductivity.html">電気伝導率<div class="u">S/m</div></a></div>
 </div></main>
 <footer class="site"><div class="wrap">

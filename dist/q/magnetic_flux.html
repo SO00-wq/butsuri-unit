@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=3">
-<script src="/assets/site.js?v=3" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=4">
+<script src="/assets/site.js?v=4" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -49,7 +49,7 @@
 <div class="big">Wb = kg·m²/(A·s²)</div>
 <div class="sub">次元 [M L² T⁻² I⁻¹]</div></div>
 <div class="goals"><b>このページでわかること</b><ul><li>磁束を言葉でどう言い表すか</li><li>その言葉を単位に置き換えると、なぜ Wb になるのか</li><li>Wb のいろいろな書き方と、その根拠になる公式</li></ul></div>
-<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">磁束とは？ 言葉で意味をつかむ</a><a href="#s2">基本単位までたどる</a><a href="#s3">Wb の別の書き方</a><a href="#s4">磁束が出てくる公式</a><a href="#s5">確認問題</a></div></nav><h2 id="s1">磁束とは？ 言葉で意味をつかむ</h2>
+<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">磁束とは？ 言葉で意味をつかむ</a><a href="#s2">基本単位までたどる</a><a href="#s3">Wb の別の書き方</a><a href="#s4">磁束が出てくる公式</a><a href="#s5">練習問題：分子と分母を見きわめる</a></div></nav><h2 id="s1">磁束とは？ 言葉で意味をつかむ</h2>
 <p class="meaning"><b>磁束とは</b>　ある面を貫く磁場の総量。磁束密度と面積の積。</p>
 <div class="wordeq"><div class="lbl">言葉の式</div><div class="eq">磁束 ＝ 磁束密度 × 貫かれる面の面積</div></div>
 <p>言葉の式に出てくるそれぞれの言葉は、すでに単位がわかっている量です。言葉を単位に置き換えてみましょう。</p>
@@ -83,8 +83,9 @@
 <li><a href="/f/flux_L.html">磁束とインダクタンス</a>：<span class="mono">Φ = L I</span></li>
 </ul>
 <div class="summary"><b>まとめ</b><ul><li>磁束とは、ある面を貫く磁場の総量。磁束密度と面積の積。</li><li>言葉の式 磁束 ＝ 磁束密度 × 貫かれる面の面積 を単位に置き換えると T·m²。</li><li>基本単位だけで書くと kg·m²/(A·s²)。</li></ul></div>
-<h2 id="s5">確認問題</h2>
-<div class="quiz"><p><b>Q.</b> 磁束の単位 <span class="mono">Wb</span> を基本単位で表したものはどれ？</p><ul class="opts"><li><span class="opt">A</span><span class="mono">A²·s³/(kg·m³)</span></li><li><span class="opt">B</span><span class="mono">kg·m²/(A·s²)</span></li><li><span class="opt">C</span><span class="mono">A²·s⁴/(kg·m³)</span></li><li><span class="opt">D</span><span class="mono">A²·s⁴/(kg·m²)</span></li></ul><details><summary>答えを見る</summary><p><b>正解：B</b>　<span class="mono ok">kg·m²/(A·s²)</span></p><p>磁束 ＝ 磁束密度 × 貫かれる面の面積 なので、[磁束] ＝ T × m² ＝ kg·m²/(A·s²)。</p></details></div>
+<h2 id="s5">練習問題：分子と分母を見きわめる</h2>
+<p>問題文には単位が書いてあります。計算はしなくてかまいません。<b>どの単位が分子（上）に、どの単位が分母（下）に来るか</b>だけを考えて選んでください。</p>
+<div class="practice"><div class="pq"><p class="qt"><span class="qn">問1</span>磁束は「磁束密度 × 貫かれる面の面積」で求められます。「磁束密度」<span class="mono u">[T]</span>、「貫かれる面の面積」<span class="mono u">[m²]</span> のとき、磁束の単位はどれ？</p><ul class="opts"><li><button type="button" class="ch" data-ok="0"><span class="opt">A</span><span class="mono">1 / (T·m²)</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">B</span><span class="mono">m² / T</span></button></li><li><button type="button" class="ch" data-ok="1"><span class="opt">C</span><span class="mono">T·m²</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">D</span><span class="mono">T / m²</span></button></li></ul><details class="exp"><summary>答えと解説</summary><p><b>正解：C</b>　<span class="mono ok">T·m²</span></p><p>かける量（磁束密度・貫かれる面の面積）の単位が分子、分母に来る単位はありません。まとめると <span class="mono">T·m²</span> ＝ <span class="mono">Wb</span>。</p></details></div><div class="pq"><p class="qt"><span class="qn">問2</span>ファラデーの電磁誘導の法則 <span class="mono">V = ΔΦ / Δt</span> を使います。V 「電圧・電位」<span class="mono u">[V]</span>、Δt 「時間」<span class="mono u">[s]</span> のとき、磁束 ΔΦ の単位はどれ？</p><ul class="opts"><li><button type="button" class="ch" data-ok="0"><span class="opt">A</span><span class="mono">1 / (V·s)</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">B</span><span class="mono">s / V</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">C</span><span class="mono">V / s</span></button></li><li><button type="button" class="ch" data-ok="1"><span class="opt">D</span><span class="mono">V·s</span></button></li></ul><details class="exp"><summary>答えと解説</summary><p><b>正解：D</b>　<span class="mono ok">V·s</span></p><p>式を ΔΦ について解くと <span class="mono">ΔΦ = V Δt</span>。分子・分母にそれぞれの単位を入れると <span class="mono">V·s</span> ＝ <span class="mono">Wb</span>。</p></details></div><div class="pq"><p class="qt"><span class="qn">問3</span>磁束 ＝ 磁束密度 × 貫かれる面の面積 です。「磁束」<span class="mono u">[Wb]</span>、「貫かれる面の面積」<span class="mono u">[m²]</span> のとき、「磁束密度」の単位はどれ？</p><ul class="opts"><li><button type="button" class="ch" data-ok="0"><span class="opt">A</span><span class="mono">m² / Wb</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">B</span><span class="mono">Wb·m²</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">C</span><span class="mono">1 / (Wb·m²)</span></button></li><li><button type="button" class="ch" data-ok="1"><span class="opt">D</span><span class="mono">Wb / m²</span></button></li></ul><details class="exp"><summary>答えと解説</summary><p><b>正解：D</b>　<span class="mono ok">Wb / m²</span></p><p>言葉の式を「磁束密度」について解き直すと「磁束密度 ＝ 磁束 ÷ 貫かれる面の面積」。単位を入れると <span class="mono">Wb / m²</span> ＝ <span class="mono">T</span>。</p></details></div></div>
 </div></main>
 <footer class="site"><div class="wrap">
   <div class="links"><a href="/">トップ</a><a href="/guide.html">単位の読み方</a><a href="/about.html">このサイトについて</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>

@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=3">
-<script src="/assets/site.js?v=3" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=4">
+<script src="/assets/site.js?v=4" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -49,7 +49,7 @@
 <div class="big">Sv = m²/s²</div>
 <div class="sub">次元 [L² T⁻²]</div></div>
 <div class="goals"><b>このページでわかること</b><ul><li>等価線量を言葉でどう言い表すか</li><li>その言葉を単位に置き換えると、なぜ Sv になるのか</li><li>Sv のいろいろな書き方と、その根拠になる公式</li></ul></div>
-<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">等価線量とは？ 言葉で意味をつかむ</a><a href="#s2">基本単位までたどる</a><a href="#s3">Sv の別の書き方</a><a href="#s4">よくある間違い：同じ単位でも別の量</a><a href="#s5">等価線量が出てくる公式</a><a href="#s6">確認問題</a></div></nav><h2 id="s1">等価線量とは？ 言葉で意味をつかむ</h2>
+<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">等価線量とは？ 言葉で意味をつかむ</a><a href="#s2">基本単位までたどる</a><a href="#s3">Sv の別の書き方</a><a href="#s4">よくある間違い：同じ単位でも別の量</a><a href="#s5">等価線量が出てくる公式</a><a href="#s6">練習問題：分子と分母を見きわめる</a></div></nav><h2 id="s1">等価線量とは？ 言葉で意味をつかむ</h2>
 <p class="meaning"><b>等価線量とは</b>　吸収線量に、放射線の種類ごとの重み（ただの数）をかけたもの。</p>
 <div class="wordeq"><div class="lbl">言葉の式</div><div class="eq">等価線量 ＝ 放射線の重み × 吸収線量</div></div>
 <p>言葉の式に出てくるそれぞれの言葉は、すでに単位がわかっている量です。言葉を単位に置き換えてみましょう。</p>
@@ -83,8 +83,9 @@
 <li><a href="/f/equivalent.html">等価線量</a>：<span class="mono">H = w_R D</span></li>
 </ul>
 <div class="summary"><b>まとめ</b><ul><li>等価線量とは、吸収線量に、放射線の種類ごとの重み（ただの数）をかけたもの。</li><li>言葉の式 等価線量 ＝ 放射線の重み × 吸収線量 を単位に置き換えると Gy。</li><li>基本単位だけで書くと m²/s²。</li></ul></div>
-<h2 id="s6">確認問題</h2>
-<div class="quiz"><p><b>Q.</b> 等価線量の単位 <span class="mono">Sv</span> を基本単位で表したものはどれ？</p><ul class="opts"><li><span class="opt">A</span><span class="mono">1/m³</span></li><li><span class="opt">B</span><span class="mono">m/s</span></li><li><span class="opt">C</span><span class="mono">1/s</span></li><li><span class="opt">D</span><span class="mono">m²/s²</span></li></ul><details><summary>答えを見る</summary><p><b>正解：D</b>　<span class="mono ok">m²/s²</span></p><p>等価線量 ＝ 放射線の重み × 吸収線量 なので、[等価線量] ＝ 1 × Gy ＝ m²/s²。</p></details></div>
+<h2 id="s6">練習問題：分子と分母を見きわめる</h2>
+<p>問題文には単位が書いてあります。計算はしなくてかまいません。<b>どの単位が分子（上）に、どの単位が分母（下）に来るか</b>だけを考えて選んでください。</p>
+<div class="practice"><div class="pq"><p class="qt"><span class="qn">問1</span>等価線量は「放射線の重み × 吸収線量」で求められます。「放射線の重み」<span class="mono u">[単位なし]</span>、「吸収線量」<span class="mono u">[Gy]</span> のとき、等価線量の単位はどれ？</p><ul class="opts"><li><button type="button" class="ch" data-ok="0"><span class="opt">A</span><span class="mono">1 / Gy</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">B</span><span class="mono">Gy²</span></button></li><li><button type="button" class="ch" data-ok="1"><span class="opt">C</span><span class="mono">Gy</span></button></li></ul><details class="exp"><summary>答えと解説</summary><p><b>正解：C</b>　<span class="mono ok">Gy</span></p><p>かける量（吸収線量）の単位が分子、分母に来る単位はありません。まとめると <span class="mono">Gy</span> ＝ <span class="mono">Sv</span>。</p></details></div><div class="pq"><p class="qt"><span class="qn">問2</span>等価線量 ＝ 放射線の重み × 吸収線量 です。「等価線量」<span class="mono u">[Sv]</span> のとき、「吸収線量」の単位はどれ？</p><ul class="opts"><li><button type="button" class="ch" data-ok="0"><span class="opt">A</span><span class="mono">1 / Sv</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">B</span><span class="mono">Sv²</span></button></li><li><button type="button" class="ch" data-ok="1"><span class="opt">C</span><span class="mono">Sv</span></button></li></ul><details class="exp"><summary>答えと解説</summary><p><b>正解：C</b>　<span class="mono ok">Sv</span></p><p>言葉の式を「吸収線量」について解き直すと「吸収線量 ＝ 等価線量 ÷ 放射線の重み」。単位を入れると <span class="mono">Sv</span> ＝ <span class="mono">Gy</span>。</p></details></div><div class="pq"><p class="qt"><span class="qn">問3</span>等価線量 ＝ 放射線の重み × 吸収線量 です。「等価線量」<span class="mono u">[Sv]</span>、「吸収線量」<span class="mono u">[Gy]</span> のとき、「放射線の重み」の単位はどれ？</p><ul class="opts"><li><button type="button" class="ch" data-ok="1"><span class="opt">A</span><span class="mono">Sv / Gy</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">B</span><span class="mono">Gy / Sv</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">C</span><span class="mono">Sv·Gy</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">D</span><span class="mono">1 / (Sv·Gy)</span></button></li></ul><details class="exp"><summary>答えと解説</summary><p><b>正解：A</b>　<span class="mono ok">Sv / Gy</span></p><p>言葉の式を「放射線の重み」について解き直すと「放射線の重み ＝ 等価線量 ÷ 吸収線量」。単位を入れると <span class="mono">Sv / Gy</span> ＝ <span class="mono">1</span>。</p></details></div></div>
 </div></main>
 <footer class="site"><div class="wrap">
   <div class="links"><a href="/">トップ</a><a href="/guide.html">単位の読み方</a><a href="/about.html">このサイトについて</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>

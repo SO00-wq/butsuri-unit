@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=3">
-<script src="/assets/site.js?v=3" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=4">
+<script src="/assets/site.js?v=4" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -49,7 +49,7 @@
 <div class="big">C/mol = A·s/mol</div>
 <div class="sub">次元 [T I N⁻¹]</div></div>
 <div class="goals"><b>このページでわかること</b><ul><li>ファラデー定数を言葉でどう言い表すか</li><li>その言葉を単位に置き換えると、なぜ C/mol になるのか</li></ul></div>
-<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">ファラデー定数とは？ 言葉で意味をつかむ</a><a href="#s2">基本単位までたどる</a><a href="#s3">ファラデー定数が出てくる公式</a><a href="#s4">確認問題</a></div></nav><h2 id="s1">ファラデー定数とは？ 言葉で意味をつかむ</h2>
+<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">ファラデー定数とは？ 言葉で意味をつかむ</a><a href="#s2">基本単位までたどる</a><a href="#s3">ファラデー定数が出てくる公式</a><a href="#s4">練習問題：分子と分母を見きわめる</a></div></nav><h2 id="s1">ファラデー定数とは？ 言葉で意味をつかむ</h2>
 <p class="meaning"><b>ファラデー定数とは</b>　電子 1 mol ぶんの電荷。</p>
 <div class="wordeq"><div class="lbl">言葉の式</div><div class="eq">ファラデー定数 ＝ 電荷 ÷ 電子の物質量</div></div>
 <p>言葉の式に出てくるそれぞれの言葉は、すでに単位がわかっている量です。言葉を単位に置き換えてみましょう。</p>
@@ -68,8 +68,9 @@
 <li><a href="/f/faraday_e.html">ファラデー定数と電気素量</a>：<span class="mono">F = N_A e</span></li>
 </ul>
 <div class="summary"><b>まとめ</b><ul><li>ファラデー定数とは、電子 1 mol ぶんの電荷。</li><li>言葉の式 ファラデー定数 ＝ 電荷 ÷ 電子の物質量 を単位に置き換えると C/mol。</li><li>基本単位だけで書くと A·s/mol。</li></ul></div>
-<h2 id="s4">確認問題</h2>
-<div class="quiz"><p><b>Q.</b> ファラデー定数の単位 <span class="mono">C/mol</span> を基本単位で表したものはどれ？</p><ul class="opts"><li><span class="opt">A</span><span class="mono">A·s/mol</span></li><li><span class="opt">B</span><span class="mono">1/s²</span></li><li><span class="opt">C</span><span class="mono">A·s</span></li><li><span class="opt">D</span><span class="mono">mol</span></li></ul><details><summary>答えを見る</summary><p><b>正解：A</b>　<span class="mono ok">A·s/mol</span></p><p>ファラデー定数 ＝ 電荷 ÷ 電子の物質量 なので、[ファラデー定数] ＝ C ÷ mol ＝ A·s/mol。</p></details></div>
+<h2 id="s4">練習問題：分子と分母を見きわめる</h2>
+<p>問題文には単位が書いてあります。計算はしなくてかまいません。<b>どの単位が分子（上）に、どの単位が分母（下）に来るか</b>だけを考えて選んでください。</p>
+<div class="practice"><div class="pq"><p class="qt"><span class="qn">問1</span>ファラデー定数は「電荷 ÷ 電子の物質量」で求められます。「電荷」<span class="mono u">[C]</span>、「電子の物質量」<span class="mono u">[mol]</span> のとき、ファラデー定数の単位はどれ？</p><ul class="opts"><li><button type="button" class="ch" data-ok="1"><span class="opt">A</span><span class="mono">C / mol</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">B</span><span class="mono">mol / C</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">C</span><span class="mono">C·mol</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">D</span><span class="mono">1 / (C·mol)</span></button></li></ul><details class="exp"><summary>答えと解説</summary><p><b>正解：A</b>　<span class="mono ok">C / mol</span></p><p>かける量（電荷）の単位が分子、割る量（電子の物質量）の単位が分母に来ます。まとめると <span class="mono">C / mol</span>。</p></details></div><div class="pq"><p class="qt"><span class="qn">問2</span>ファラデー定数と電気素量 <span class="mono">F = N_A e</span> を使います。N_A 「アボガドロ定数」<span class="mono u">[1/mol]</span>、e 「電荷（電気量）」<span class="mono u">[C]</span> のとき、ファラデー定数 F の単位はどれ？</p><ul class="opts"><li><button type="button" class="ch" data-ok="0"><span class="opt">A</span><span class="mono">1 / ((1/mol)·C)</span></button></li><li><button type="button" class="ch" data-ok="1"><span class="opt">B</span><span class="mono">(1/mol)·C</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">C</span><span class="mono">C / (1/mol)</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">D</span><span class="mono">(1/mol) / C</span></button></li></ul><details class="exp"><summary>答えと解説</summary><p><b>正解：B</b>　<span class="mono ok">(1/mol)·C</span></p><p>式を F について解くと <span class="mono">F = N_A e</span>。分子・分母にそれぞれの単位を入れると <span class="mono">(1/mol)·C</span> ＝ <span class="mono">C/mol</span>。</p></details></div><div class="pq"><p class="qt"><span class="qn">問3</span>ファラデー定数 ＝ 電荷 ÷ 電子の物質量 です。「ファラデー定数」<span class="mono u">[C/mol]</span>、「電子の物質量」<span class="mono u">[mol]</span> のとき、「電荷」の単位はどれ？</p><ul class="opts"><li><button type="button" class="ch" data-ok="0"><span class="opt">A</span><span class="mono">1 / ((C/mol)·mol)</span></button></li><li><button type="button" class="ch" data-ok="1"><span class="opt">B</span><span class="mono">(C/mol)·mol</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">C</span><span class="mono">mol / (C/mol)</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">D</span><span class="mono">(C/mol) / mol</span></button></li></ul><details class="exp"><summary>答えと解説</summary><p><b>正解：B</b>　<span class="mono ok">(C/mol)·mol</span></p><p>言葉の式を「電荷」について解き直すと「電荷 ＝ ファラデー定数 × 電子の物質量」。単位を入れると <span class="mono">(C/mol)·mol</span> ＝ <span class="mono">C</span>。</p></details></div></div>
 </div></main>
 <footer class="site"><div class="wrap">
   <div class="links"><a href="/">トップ</a><a href="/guide.html">単位の読み方</a><a href="/about.html">このサイトについて</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>

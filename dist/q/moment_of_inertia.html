@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=3">
-<script src="/assets/site.js?v=3" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=4">
+<script src="/assets/site.js?v=4" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -49,7 +49,7 @@
 <div class="big">kg·m²</div>
 <div class="sub">次元 [M L²]</div></div>
 <div class="goals"><b>このページでわかること</b><ul><li>慣性モーメントを言葉でどう言い表すか</li><li>その言葉を単位に置き換えると、なぜ kg·m² になるのか</li></ul></div>
-<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">慣性モーメントとは？ 言葉で意味をつかむ</a><a href="#s2">慣性モーメントが出てくる公式</a><a href="#s3">確認問題</a></div></nav><h2 id="s1">慣性モーメントとは？ 言葉で意味をつかむ</h2>
+<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">慣性モーメントとは？ 言葉で意味をつかむ</a><a href="#s2">慣性モーメントが出てくる公式</a><a href="#s3">練習問題：分子と分母を見きわめる</a></div></nav><h2 id="s1">慣性モーメントとは？ 言葉で意味をつかむ</h2>
 <p class="meaning"><b>慣性モーメントとは</b>　回転のさせにくさ。質量に、回転軸からの距離の2乗をかけたもの。</p>
 <div class="wordeq"><div class="lbl">言葉の式</div><div class="eq">慣性モーメント ＝ 物体の質量 × （回転軸からの距離）²</div></div>
 <p>言葉の式に出てくるそれぞれの言葉は、すでに単位がわかっている量です。言葉を単位に置き換えてみましょう。</p>
@@ -66,8 +66,9 @@
 <li><a href="/f/rot_ke.html">回転の運動エネルギー</a>：<span class="mono">K = ½ I ω²</span></li>
 </ul>
 <div class="summary"><b>まとめ</b><ul><li>慣性モーメントとは、回転のさせにくさ。質量に、回転軸からの距離の2乗をかけたもの。</li><li>言葉の式 慣性モーメント ＝ 物体の質量 × （回転軸からの距離）² を単位に置き換えると kg·m²。</li></ul></div>
-<h2 id="s3">確認問題</h2>
-<div class="quiz"><p><b>Q.</b> 慣性モーメントの単位 <span class="mono">kg·m²</span> を基本単位で表したものはどれ？</p><ul class="opts"><li><span class="opt">A</span><span class="mono">kg·m²</span></li><li><span class="opt">B</span><span class="mono">kg/(m·s)</span></li><li><span class="opt">C</span><span class="mono">kg·m/s²</span></li><li><span class="opt">D</span><span class="mono">1/m³</span></li></ul><details><summary>答えを見る</summary><p><b>正解：A</b>　<span class="mono ok">kg·m²</span></p><p>慣性モーメント ＝ 物体の質量 × （回転軸からの距離）² なので、[慣性モーメント] ＝ kg × m² ＝ kg·m²。</p></details></div>
+<h2 id="s3">練習問題：分子と分母を見きわめる</h2>
+<p>問題文には単位が書いてあります。計算はしなくてかまいません。<b>どの単位が分子（上）に、どの単位が分母（下）に来るか</b>だけを考えて選んでください。</p>
+<div class="practice"><div class="pq"><p class="qt"><span class="qn">問1</span>慣性モーメントは「物体の質量 × （回転軸からの距離）²」で求められます。「物体の質量」<span class="mono u">[kg]</span>、「回転軸からの距離」<span class="mono u">[m]</span> のとき、慣性モーメントの単位はどれ？</p><ul class="opts"><li><button type="button" class="ch" data-ok="1"><span class="opt">A</span><span class="mono">kg·m²</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">B</span><span class="mono">1 / (kg·m²)</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">C</span><span class="mono">m² / kg</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">D</span><span class="mono">kg / m²</span></button></li></ul><details class="exp"><summary>答えと解説</summary><p><b>正解：A</b>　<span class="mono ok">kg·m²</span></p><p>かける量（物体の質量・回転軸からの距離）の単位が分子、分母に来る単位はありません。まとめると <span class="mono">kg·m²</span>。</p></details></div><div class="pq"><p class="qt"><span class="qn">問2</span>角運動量と角速度 <span class="mono">L = I ω</span> を使います。L 「角運動量」<span class="mono u">[kg·m²/s]</span>、ω 「角速度」<span class="mono u">[rad/s]</span> のとき、慣性モーメント I の単位はどれ？</p><ul class="opts"><li><button type="button" class="ch" data-ok="0"><span class="opt">A</span><span class="mono">(rad/s) / (kg·m²/s)</span></button></li><li><button type="button" class="ch" data-ok="1"><span class="opt">B</span><span class="mono">(kg·m²/s) / (rad/s)</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">C</span><span class="mono">(kg·m²/s)·(rad/s)</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">D</span><span class="mono">1 / ((kg·m²/s)·(rad/s))</span></button></li></ul><details class="exp"><summary>答えと解説</summary><p><b>正解：B</b>　<span class="mono ok">(kg·m²/s) / (rad/s)</span></p><p>式を I について解くと <span class="mono">I = L / ω</span>。分子・分母にそれぞれの単位を入れると <span class="mono">(kg·m²/s) / (rad/s)</span> ＝ <span class="mono">kg·m²</span>。</p></details></div><div class="pq"><p class="qt"><span class="qn">問3</span>慣性モーメント ＝ 物体の質量 × （回転軸からの距離）² です。「慣性モーメント」<span class="mono u">[kg·m²]</span>、「回転軸からの距離」<span class="mono u">[m]</span> のとき、「物体の質量」の単位はどれ？</p><ul class="opts"><li><button type="button" class="ch" data-ok="0"><span class="opt">A</span><span class="mono">m² / (kg·m²)</span></button></li><li><button type="button" class="ch" data-ok="1"><span class="opt">B</span><span class="mono">(kg·m²) / m²</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">C</span><span class="mono">(kg·m²)·m²</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">D</span><span class="mono">1 / ((kg·m²)·m²)</span></button></li></ul><details class="exp"><summary>答えと解説</summary><p><b>正解：B</b>　<span class="mono ok">(kg·m²) / m²</span></p><p>言葉の式を「物体の質量」について解き直すと「物体の質量 ＝ 慣性モーメント ÷ （回転軸からの距離）²」。単位を入れると <span class="mono">(kg·m²) / m²</span> ＝ <span class="mono">kg</span>。</p></details></div></div>
 </div></main>
 <footer class="site"><div class="wrap">
   <div class="links"><a href="/">トップ</a><a href="/guide.html">単位の読み方</a><a href="/about.html">このサイトについて</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>

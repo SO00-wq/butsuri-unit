@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=3">
-<script src="/assets/site.js?v=3" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=4">
+<script src="/assets/site.js?v=4" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -49,7 +49,7 @@
 <div class="big">J/K = kg·m²/(s²·K)</div>
 <div class="sub">次元 [M L² T⁻² Θ⁻¹]</div></div>
 <div class="goals"><b>このページでわかること</b><ul><li>ボルツマン定数を言葉でどう言い表すか</li><li>その言葉を単位に置き換えると、なぜ J/K になるのか</li></ul></div>
-<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">ボルツマン定数とは？ 言葉で意味をつかむ</a><a href="#s2">基本単位までたどる</a><a href="#s3">よくある間違い：同じ単位でも別の量</a><a href="#s4">ボルツマン定数が出てくる公式</a><a href="#s5">確認問題</a></div></nav><h2 id="s1">ボルツマン定数とは？ 言葉で意味をつかむ</h2>
+<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">ボルツマン定数とは？ 言葉で意味をつかむ</a><a href="#s2">基本単位までたどる</a><a href="#s3">よくある間違い：同じ単位でも別の量</a><a href="#s4">ボルツマン定数が出てくる公式</a><a href="#s5">練習問題：分子と分母を見きわめる</a></div></nav><h2 id="s1">ボルツマン定数とは？ 言葉で意味をつかむ</h2>
 <p class="meaning"><b>ボルツマン定数とは</b>　温度 1 K あたりの、分子1個のエネルギーの目安。</p>
 <div class="wordeq"><div class="lbl">言葉の式</div><div class="eq">ボルツマン定数 ＝ 分子1個のエネルギー ÷ 温度</div></div>
 <p>言葉の式に出てくるそれぞれの言葉は、すでに単位がわかっている量です。言葉を単位に置き換えてみましょう。</p>
@@ -79,8 +79,9 @@
 <li><a href="/f/R_kNA.html">気体定数とボルツマン定数</a>：<span class="mono">R = N_A k_B</span></li>
 </ul>
 <div class="summary"><b>まとめ</b><ul><li>ボルツマン定数とは、温度 1 K あたりの、分子1個のエネルギーの目安。</li><li>言葉の式 ボルツマン定数 ＝ 分子1個のエネルギー ÷ 温度 を単位に置き換えると J/K。</li><li>基本単位だけで書くと kg·m²/(s²·K)。</li></ul></div>
-<h2 id="s5">確認問題</h2>
-<div class="quiz"><p><b>Q.</b> ボルツマン定数の単位 <span class="mono">J/K</span> を基本単位で表したものはどれ？</p><ul class="opts"><li><span class="opt">A</span><span class="mono">kg·m²/(s²·K)</span></li><li><span class="opt">B</span><span class="mono">kg·m/s</span></li><li><span class="opt">C</span><span class="mono">kg·m/(s³·K)</span></li><li><span class="opt">D</span><span class="mono">kg/(m·s)</span></li></ul><details><summary>答えを見る</summary><p><b>正解：A</b>　<span class="mono ok">kg·m²/(s²·K)</span></p><p>ボルツマン定数 ＝ 分子1個のエネルギー ÷ 温度 なので、[ボルツマン定数] ＝ J ÷ K ＝ kg·m²/(s²·K)。</p></details></div>
+<h2 id="s5">練習問題：分子と分母を見きわめる</h2>
+<p>問題文には単位が書いてあります。計算はしなくてかまいません。<b>どの単位が分子（上）に、どの単位が分母（下）に来るか</b>だけを考えて選んでください。</p>
+<div class="practice"><div class="pq"><p class="qt"><span class="qn">問1</span>ボルツマン定数は「分子1個のエネルギー ÷ 温度」で求められます。「分子1個のエネルギー」<span class="mono u">[J]</span>、「温度」<span class="mono u">[K]</span> のとき、ボルツマン定数の単位はどれ？</p><ul class="opts"><li><button type="button" class="ch" data-ok="1"><span class="opt">A</span><span class="mono">J / K</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">B</span><span class="mono">K / J</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">C</span><span class="mono">J·K</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">D</span><span class="mono">1 / (J·K)</span></button></li></ul><details class="exp"><summary>答えと解説</summary><p><b>正解：A</b>　<span class="mono ok">J / K</span></p><p>かける量（分子1個のエネルギー）の単位が分子、割る量（温度）の単位が分母に来ます。まとめると <span class="mono">J / K</span>。</p></details></div><div class="pq"><p class="qt"><span class="qn">問2</span>理想気体の状態方程式（分子数） <span class="mono">p V = N k_B T</span> を使います。p 「圧力」<span class="mono u">[Pa]</span>、V 「体積」<span class="mono u">[m³]</span>、N 「個数・無次元数」<span class="mono u">[単位なし]</span>、T 「温度（熱力学温度）」<span class="mono u">[K]</span> のとき、ボルツマン定数 k_B の単位はどれ？</p><ul class="opts"><li><button type="button" class="ch" data-ok="0"><span class="opt">A</span><span class="mono">K / (Pa·m³)</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">B</span><span class="mono">Pa·m³·K</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">C</span><span class="mono">1 / (Pa·m³·K)</span></button></li><li><button type="button" class="ch" data-ok="1"><span class="opt">D</span><span class="mono">Pa·m³ / K</span></button></li></ul><details class="exp"><summary>答えと解説</summary><p><b>正解：D</b>　<span class="mono ok">Pa·m³ / K</span></p><p>式を k_B について解くと <span class="mono">k_B = p V / (N T)</span>。分子・分母にそれぞれの単位を入れると <span class="mono">Pa·m³ / K</span> ＝ <span class="mono">J/K</span>。</p></details></div><div class="pq"><p class="qt"><span class="qn">問3</span>ボルツマン定数 ＝ 分子1個のエネルギー ÷ 温度 です。「ボルツマン定数」<span class="mono u">[J/K]</span>、「温度」<span class="mono u">[K]</span> のとき、「分子1個のエネルギー」の単位はどれ？</p><ul class="opts"><li><button type="button" class="ch" data-ok="1"><span class="opt">A</span><span class="mono">(J/K)·K</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">B</span><span class="mono">1 / ((J/K)·K)</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">C</span><span class="mono">K / (J/K)</span></button></li><li><button type="button" class="ch" data-ok="0"><span class="opt">D</span><span class="mono">(J/K) / K</span></button></li></ul><details class="exp"><summary>答えと解説</summary><p><b>正解：A</b>　<span class="mono ok">(J/K)·K</span></p><p>言葉の式を「分子1個のエネルギー」について解き直すと「分子1個のエネルギー ＝ ボルツマン定数 × 温度」。単位を入れると <span class="mono">(J/K)·K</span> ＝ <span class="mono">J</span>。</p></details></div></div>
 </div></main>
 <footer class="site"><div class="wrap">
   <div class="links"><a href="/">トップ</a><a href="/guide.html">単位の読み方</a><a href="/about.html">このサイトについて</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>
