@@ -3,16 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>力の単位 ニュートン（N） を基本単位で表すと kg·m/s² | ブツリ単位ラボ</title>
-<meta name="description" content="力の単位Nを、知っている公式からSI基本単位kg·m/s²まで分解して理解する。同じ単位の別の書き方と、同じ次元をもつ量も紹介。">
+<title>力の単位 ニュートン（N） の意味｜基本単位で表すと kg·m/s² | ブツリ単位ラボ</title>
+<meta name="description" content="力とは物体の速さや向きを変える働き。質量と、生じる加速度の積で決まる。その言葉をそのまま単位に置き換えると N（= kg·m/s²） になる理由を、図式と確認問題でやさしく解説。">
 <link rel="canonical" href="https://tanitani.butsuri-lab.workers.dev/q/force.html">
+
 <meta name="google-site-verification" content="kVE91IWkP86K1E_JpBQDklXXu5gz86ZOA64xcgtDUwc">
 <meta name="theme-color" content="#1d5fd1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=2">
-<script src="/assets/site.js?v=2" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=3">
+<script src="/assets/site.js?v=3" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -33,7 +34,8 @@
     <ul class="results" id="results" aria-live="polite"></ul>
     <div class="nav-sec"><h4>ページ</h4><ul>
       <li><a href="/">トップ</a></li>
-      <li><a href="/guide.html">次元解析の使い方</a></li>
+      <li><a href="/guide.html">単位の読み方と次元解析</a></li>
+      <li><a href="/about.html">このサイトについて</a></li>
     </ul></div>
     <div class="nav-sec"><h4>分野</h4><ul><li><a href="/c/base.html">基本量<span class="n">10量</span></a></li><li><a href="/c/mech.html">力学<span class="n">22量</span></a></li><li><a href="/c/thermo.html">熱・気体<span class="n">10量</span></a></li><li><a href="/c/em.html">電磁気<span class="n">17量</span></a></li><li><a href="/c/wave.html">波・光・量子<span class="n">5量</span></a></li><li><a href="/c/misc.html">放射線・化学<span class="n">4量</span></a></li></ul></div>
     <div class="nav-sec"><h4>よく使う量</h4><div class="chips"><a href="/q/force.html">力</a><a href="/q/energy.html">エネルギー</a><a href="/q/power.html">仕事率</a><a href="/q/pressure.html">圧力</a><a href="/q/voltage.html">電圧</a><a href="/q/resistance.html">電気抵抗</a><a href="/q/capacitance.html">静電容量</a><a href="/q/magnetic_flux_density.html">磁束密度</a><a href="/q/planck.html">プランク定数</a><a href="/q/gas_constant.html">気体定数</a></div></div>
@@ -41,29 +43,37 @@
 </aside>
 <main id="main"><div class="wrap">
 <nav class="bc" aria-label="パンくずリスト"><a href="/">トップ</a> › <a href="/c/mech.html">力学</a> › 力</nav>
-<span class="tag">力学</span>
-<h1>力の単位 ニュートン（N） を基本単位で表すと kg·m/s²</h1>
-<p class="lead">物体の運動状態を変える作用。運動方程式で質量と加速度に結びつく。</p>
+<span class="tag">力学</span><span class="tag lv">中学理科で出てくる</span>
+<h1>力の単位 ニュートン（N） の意味｜基本単位で表すと kg·m/s²</h1>
 <div class="hero">
 <div class="big">N = kg·m/s²</div>
 <div class="sub">次元 [M L T⁻²]</div></div>
-<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">力の単位を、知っている公式から組み立てる</a><a href="#s2">N の別の書き方</a><a href="#s3">力が出てくる公式</a><a href="#s4">力とほかの量の関係</a></div></nav><h2 id="s1">力の単位を、知っている公式から組み立てる</h2>
-<p>N を基本単位までほどくには、速度 → 加速度 → 力 の順に単位をつないでいきます。</p>
+<div class="goals"><b>このページでわかること</b><ul><li>力を言葉でどう言い表すか</li><li>その言葉を単位に置き換えると、なぜ N になるのか</li><li>N のいろいろな書き方と、その根拠になる公式</li></ul></div>
+<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">力とは？ 言葉で意味をつかむ</a><a href="#s2">基本単位までたどる</a><a href="#s3">N の別の書き方</a><a href="#s4">力が出てくる公式</a><a href="#s5">確認問題</a><a href="#s6">次に読む：力を使って表される量</a></div></nav><h2 id="s1">力とは？ 言葉で意味をつかむ</h2>
+<p class="meaning"><b>力とは</b>　物体の速さや向きを変える働き。質量と、生じる加速度の積で決まる。</p>
+<div class="wordeq"><div class="lbl">言葉の式</div><div class="eq">力 ＝ 物体の質量 × 生じる加速度</div></div>
+<p>言葉の式に出てくるそれぞれの言葉は、すでに単位がわかっている量です。言葉を単位に置き換えてみましょう。</p>
+<div class="tbl"><table class="swap"><tr><th>言葉</th><th>何の量か</th><th>単位</th></tr>
+<tr><td>物体の質量</td><td><a href="/q/mass.html">質量</a></td><td class="mono">kg</td></tr>
+<tr><td>生じる加速度</td><td><a href="/q/acceleration.html">加速度</a></td><td class="mono">m/s²</td></tr>
+</table></div>
+<div class="calc">[力] ＝ kg × (m/s²)<br>　　　＝ kg·m/s²<br>　　　＝ N</div>
+<div class="note unitname"><b>ニュートン（N）</b>は、この組み合わせ <span class="mono">kg·m/s²</span> に付けられた名前です。<br>1 kg の物体に 1 m/s² の加速度を生じさせる力が 1 N。</div>
+<h2 id="s2">基本単位までたどる</h2>
+<p>言葉の式に出てきた量も、さらに言葉の式で分解できます。速度 → 加速度 → 力 の順にたどると、すべて基本単位（m・kg・s・A・K・mol・cd）だけで表せます。</p>
 <div class="step"><div class="st"><b><a href="/q/velocity.html">速度</a></b> <span class="lead">— <a href="/f/v_def.html">速さの定義</a>　<span class="mono">v = x / t</span></span></div><p>速さは「進んだ距離 ÷ かかった時間」。m を s で割って m/s です。</p><div class="calc">[v] = m ÷ s = m/s</div></div>
 <div class="step"><div class="st"><b><a href="/q/acceleration.html">加速度</a></b> <span class="lead">— <a href="/f/a_def.html">加速度の定義</a>　<span class="mono">a = Δv / Δt</span></span></div><p>加速度は「1秒あたりに速さがどれだけ変わるか」。速さの m/s をさらに s で割るので m/s² になります。</p><div class="calc">[a] = m/s ÷ s = m/s²</div></div>
 <div class="step"><div class="st"><b><a href="/q/force.html">力</a></b> <span class="lead">— <a href="/f/newton2.html">運動方程式</a>　<span class="mono">F = m a</span></span></div><p>運動方程式 F = ma で、質量 kg と加速度 m/s² をかけると kg·m/s²。この組み合わせに N（ニュートン）という名前がついています。</p><div class="calc">[F] = kg × m/s² = kg·m/s² = N</div></div>
-<p>まとめると、<span class="mono ok">N = kg·m/s²</span> です。</p>
-<h2 id="s2">N の別の書き方</h2>
+<h2 id="s3">N の別の書き方</h2>
 <p>同じ量でも、使う公式によって単位の見え方が変わります。どれも基本単位にすると一致します。</p>
 <div class="tbl"><table><tr><th>書き方</th><th>根拠になる公式</th></tr>
 <tr><td class="mono">N = J/m</td><td><a href="/f/work.html">仕事の定義</a><br><span class="mono">W = F x</span></td></tr>
 <tr><td class="mono">N = W·s/m</td><td><a href="/f/power_v.html">仕事率と速さ</a><br><span class="mono">P = F v</span></td></tr>
 <tr><td class="mono">N = Pa·m²</td><td><a href="/f/pressure_def.html">圧力の定義</a><br><span class="mono">p = F / S</span></td></tr>
 <tr><td class="mono">N = C·V/m</td><td><a href="/f/efield_force.html">電場から受ける力</a><br><span class="mono">F = q E</span></td></tr>
-<tr><td class="mono">N = C·m·T/s</td><td><a href="/f/lorentz.html">ローレンツ力（磁場の部分）</a><br><span class="mono">F = q v B</span></td></tr>
 <tr><td class="mono">N = A·T·m</td><td><a href="/f/wire_force.html">電流が磁場から受ける力</a><br><span class="mono">F = I B l</span></td></tr>
 </table></div>
-<h2 id="s3">力が出てくる公式</h2><ul>
+<h2 id="s4">力が出てくる公式</h2><ul>
 <li><a href="/f/newton2.html">運動方程式</a>：<span class="mono">F = m a</span></li>
 <li><a href="/f/impulse_def.html">力積の定義</a>：<span class="mono">I = F Δt</span></li>
 <li><a href="/f/impulse_momentum.html">力積と運動量の関係</a>：<span class="mono">F Δt = Δp</span></li>
@@ -81,33 +91,15 @@
 <li><a href="/f/lorentz.html">ローレンツ力（磁場の部分）</a>：<span class="mono">F = q v B</span></li>
 <li><a href="/f/wire_force.html">電流が磁場から受ける力</a>：<span class="mono">F = I B l</span></li>
 </ul>
-<h2 id="s4">力とほかの量の関係</h2><div class="grid">
-<a href="/r/force--spring_constant.html">力とばね定数<div class="u">N と N/m</div></a>
-<a href="/r/energy--force.html">力とエネルギー・仕事・熱量<div class="u">N と J</div></a>
-<a href="/r/coulomb_constant--force.html">力とクーロンの法則の比例定数<div class="u">N と N·m²/C²</div></a>
-<a href="/r/force--gravitational_constant.html">力と万有引力定数<div class="u">N と N·m²/kg²</div></a>
-<a href="/r/force--power.html">力と仕事率・電力<div class="u">N と W</div></a>
-<a href="/r/force--torque.html">力と力のモーメント（トルク）<div class="u">N と N·m</div></a>
-<a href="/r/force--impulse.html">力と力積<div class="u">N と N·s</div></a>
-<a href="/r/acceleration--force.html">力と加速度<div class="u">N と m/s²</div></a>
-<a href="/r/force--pressure.html">力と圧力<div class="u">N と Pa</div></a>
-<a href="/r/force--time.html">力と時間<div class="u">N と s</div></a>
-<a href="/r/force--magnetic_flux_density.html">力と磁束密度<div class="u">N と T</div></a>
-<a href="/r/force--viscosity.html">力と粘性係数（粘度）<div class="u">N と Pa·s</div></a>
-<a href="/r/force--surface_tension.html">力と表面張力<div class="u">N と N/m</div></a>
-<a href="/r/force--mass.html">力と質量<div class="u">N と kg</div></a>
-<a href="/r/force--velocity.html">力と速度<div class="u">N と m/s</div></a>
-<a href="/r/force--momentum.html">力と運動量<div class="u">N と kg·m/s</div></a>
-<a href="/r/force--length.html">力と長さ<div class="u">N と m</div></a>
-<a href="/r/electric_field--force.html">力と電場（電界）<div class="u">N と V/m</div></a>
-<a href="/r/current--force.html">力と電流<div class="u">N と A</div></a>
-<a href="/r/charge--force.html">力と電荷（電気量）<div class="u">N と C</div></a>
-<a href="/r/area--force.html">力と面積<div class="u">N と m²</div></a>
-</div>
+<div class="summary"><b>まとめ</b><ul><li>力とは、物体の速さや向きを変える働き。質量と、生じる加速度の積で決まる。</li><li>言葉の式 力 ＝ 物体の質量 × 生じる加速度 を単位に置き換えると kg·m/s²。</li><li>基本単位だけで書くと kg·m/s²。</li></ul></div>
+<h2 id="s5">確認問題</h2>
+<div class="quiz"><p><b>Q.</b> 力の単位 <span class="mono">N</span> を基本単位で表したものはどれ？</p><ul class="opts"><li><span class="opt">A</span><span class="mono">kg·m/s²</span></li><li><span class="opt">B</span><span class="mono">kg/(m·s)</span></li><li><span class="opt">C</span><span class="mono">m³/(kg·s²)</span></li><li><span class="opt">D</span><span class="mono">kg·m²/s</span></li></ul><details><summary>答えを見る</summary><p><b>正解：A</b>　<span class="mono ok">kg·m/s²</span></p><p>力 ＝ 物体の質量 × 生じる加速度 なので、[力] ＝ kg × (m/s²) ＝ kg·m/s²。</p></details></div>
+<h2 id="s6">次に読む：力を使って表される量</h2><div class="grid"><a href="/q/impulse.html">力積<div class="u">N·s</div></a><a href="/q/energy.html">エネルギー・仕事・熱量<div class="u">J</div></a><a href="/q/pressure.html">圧力<div class="u">Pa</div></a><a href="/q/torque.html">力のモーメント（トルク）<div class="u">N·m</div></a><a href="/q/spring_constant.html">ばね定数<div class="u">N/m</div></a><a href="/q/surface_tension.html">表面張力<div class="u">N/m</div></a><a href="/q/viscosity.html">粘性係数（粘度）<div class="u">Pa·s</div></a><a href="/q/gravitational_constant.html">万有引力定数<div class="u">N·m²/kg²</div></a><a href="/q/electric_field.html">電場（電界）<div class="u">V/m</div></a></div>
 </div></main>
 <footer class="site"><div class="wrap">
-  <div class="links"><a href="/">トップ</a><a href="/guide.html">次元解析の使い方</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>
-  ブツリ単位ラボ — SI単位と次元解析で物理を理解する。単位はすべてSI（国際単位系）で表記しています。
+  <div class="links"><a href="/">トップ</a><a href="/guide.html">単位の読み方</a><a href="/about.html">このサイトについて</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>
+  <p class="src">単位の定義は、国際度量衡局（BIPM）の SI パンフレット第9版と、その日本語版（産業技術総合研究所 計量標準総合センター）に基づいています。</p>
+  ブツリ単位ラボ — SI単位と次元解析で物理を理解する。最終更新日：2026-10-17
 </div></footer>
 <button class="to-top" id="to-top" aria-label="ページの先頭へ戻る"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></button>
 </body>

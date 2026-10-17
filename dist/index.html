@@ -6,13 +6,14 @@
 <title>SI単位と次元解析で物理を理解する | ブツリ単位ラボ</title>
 <meta name="description" content="知らない単位や公式を、知っている公式と単位だけで理解する。SI単位と次元解析で物理量を基本単位まで分解するサイト。">
 <link rel="canonical" href="https://tanitani.butsuri-lab.workers.dev/">
+
 <meta name="google-site-verification" content="kVE91IWkP86K1E_JpBQDklXXu5gz86ZOA64xcgtDUwc">
 <meta name="theme-color" content="#1d5fd1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=2">
-<script src="/assets/site.js?v=2" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=3">
+<script src="/assets/site.js?v=3" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -33,7 +34,8 @@
     <ul class="results" id="results" aria-live="polite"></ul>
     <div class="nav-sec"><h4>ページ</h4><ul>
       <li><a href="/" aria-current="page">トップ</a></li>
-      <li><a href="/guide.html">次元解析の使い方</a></li>
+      <li><a href="/guide.html">単位の読み方と次元解析</a></li>
+      <li><a href="/about.html">このサイトについて</a></li>
     </ul></div>
     <div class="nav-sec"><h4>分野</h4><ul><li><a href="/c/base.html">基本量<span class="n">10量</span></a></li><li><a href="/c/mech.html">力学<span class="n">22量</span></a></li><li><a href="/c/thermo.html">熱・気体<span class="n">10量</span></a></li><li><a href="/c/em.html">電磁気<span class="n">17量</span></a></li><li><a href="/c/wave.html">波・光・量子<span class="n">5量</span></a></li><li><a href="/c/misc.html">放射線・化学<span class="n">4量</span></a></li></ul></div>
     <div class="nav-sec"><h4>よく使う量</h4><div class="chips"><a href="/q/force.html">力</a><a href="/q/energy.html">エネルギー</a><a href="/q/power.html">仕事率</a><a href="/q/pressure.html">圧力</a><a href="/q/voltage.html">電圧</a><a href="/q/resistance.html">電気抵抗</a><a href="/q/capacitance.html">静電容量</a><a href="/q/magnetic_flux_density.html">磁束密度</a><a href="/q/planck.html">プランク定数</a><a href="/q/gas_constant.html">気体定数</a></div></div>
@@ -47,15 +49,17 @@
 <div class="hero"><div class="big">J = N·m = kg·m²/s²</div><div class="sub">F = ma と W = Fx を知っていれば、ジュールの中身は自分で導ける</div></div>
 <nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">このサイトの考え方</a><a href="#s2">7つの基本単位</a><a href="#s3">まずはここから</a><a href="#s4">分野から探す</a></div></nav><h2 id="s1">このサイトの考え方</h2>
 <p>物理の単位は、たった7つの基本単位のかけ算・わり算でできています。初めて見る単位や公式も、知っている公式を使って基本単位まで分解すれば、その正体がわかります。このサイトでは数値の換算は扱わず、<b>SI単位と次元だけ</b>で説明します。</p>
-<p><a href="/guide.html">→ 次元解析の使い方を読む</a></p>
+<p>たとえば速さは「1秒あたりに進む距離」＝「距離 ÷ 時間」。言葉をそのまま単位に置き換えると m ÷ s ＝ m/s になります。すべての量のページで、まず<b>言葉で意味をつかみ、その言葉を単位に置き換える</b>流れで説明しています。</p>
+<p><a href="/guide.html">→ はじめに：単位の読み方を読む</a></p>
 <h2 id="s2">7つの基本単位</h2><div class="grid"><a href="/q/length.html">長さ<div class="u">m</div></a><a href="/q/mass.html">質量<div class="u">kg</div></a><a href="/q/time.html">時間<div class="u">s</div></a><a href="/q/current.html">電流<div class="u">A</div></a><a href="/q/temperature.html">温度（熱力学温度）<div class="u">K</div></a><a href="/q/amount.html">物質量<div class="u">mol</div></a><a href="/q/luminous_intensity.html">光度<div class="u">cd</div></a></div>
 <h2 id="s3">まずはここから</h2><div class="grid"><a href="/q/force.html">力<div class="u">N</div></a><a href="/q/energy.html">エネルギー・仕事・熱量<div class="u">J</div></a><a href="/q/power.html">仕事率・電力<div class="u">W</div></a><a href="/q/voltage.html">電圧・電位<div class="u">V</div></a><a href="/q/resistance.html">電気抵抗<div class="u">Ω</div></a><a href="/q/magnetic_flux_density.html">磁束密度<div class="u">T</div></a><a href="/q/planck.html">プランク定数<div class="u">J·s</div></a><a href="/q/gas_constant.html">気体定数<div class="u">J/(mol·K)</div></a></div>
 <h2 id="s4">分野から探す</h2>
 <div class="grid cat-cards"><a href="/c/base.html"><div class="t">基本量</div><div class="d">SIの7つの基本単位と、角度などの無次元量。すべての単位はここから組み立てられる。</div><div class="n">量 10・公式 2</div></a><a href="/c/mech.html"><div class="t">力学</div><div class="d">速さ・力・エネルギー・圧力・回転など、運動を扱う量。</div><div class="n">量 22・公式 41</div></a><a href="/c/thermo.html"><div class="t">熱・気体</div><div class="d">温度・熱量・気体の状態・熱の伝わり方に関わる量。</div><div class="n">量 10・公式 12</div></a><a href="/c/em.html"><div class="t">電磁気</div><div class="d">電荷・電圧・抵抗・静電容量・磁場など、電気と磁気の量。</div><div class="n">量 17・公式 33</div></a><a href="/c/wave.html"><div class="t">波・光・量子</div><div class="d">波数・光子のエネルギー・光の明るさなど。</div><div class="n">量 5・公式 8</div></a><a href="/c/misc.html"><div class="t">放射線・化学</div><div class="d">放射能・被ばく線量・反応速度など。</div><div class="n">量 4・公式 4</div></a></div>
 </div></main>
 <footer class="site"><div class="wrap">
-  <div class="links"><a href="/">トップ</a><a href="/guide.html">次元解析の使い方</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>
-  ブツリ単位ラボ — SI単位と次元解析で物理を理解する。単位はすべてSI（国際単位系）で表記しています。
+  <div class="links"><a href="/">トップ</a><a href="/guide.html">単位の読み方</a><a href="/about.html">このサイトについて</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>
+  <p class="src">単位の定義は、国際度量衡局（BIPM）の SI パンフレット第9版と、その日本語版（産業技術総合研究所 計量標準総合センター）に基づいています。</p>
+  ブツリ単位ラボ — SI単位と次元解析で物理を理解する。最終更新日：2026-10-17
 </div></footer>
 <button class="to-top" id="to-top" aria-label="ページの先頭へ戻る"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></button>
 </body>

@@ -3,16 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>角速度の単位 rad/s を基本単位で表すと 1/s | ブツリ単位ラボ</title>
-<meta name="description" content="角速度の単位rad/sを、知っている公式からSI基本単位1/sまで分解して理解する。同じ単位の別の書き方と、同じ次元をもつ量も紹介。">
+<title>角速度の単位 rad/s の意味｜基本単位で表すと 1/s | ブツリ単位ラボ</title>
+<meta name="description" content="角速度とは1秒あたりに回る角度。その言葉をそのまま単位に置き換えると rad/s（= 1/s） になる理由を、図式と確認問題でやさしく解説。">
 <link rel="canonical" href="https://tanitani.butsuri-lab.workers.dev/q/angular_velocity.html">
+
 <meta name="google-site-verification" content="kVE91IWkP86K1E_JpBQDklXXu5gz86ZOA64xcgtDUwc">
 <meta name="theme-color" content="#1d5fd1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=2">
-<script src="/assets/site.js?v=2" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=3">
+<script src="/assets/site.js?v=3" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -33,7 +34,8 @@
     <ul class="results" id="results" aria-live="polite"></ul>
     <div class="nav-sec"><h4>ページ</h4><ul>
       <li><a href="/">トップ</a></li>
-      <li><a href="/guide.html">次元解析の使い方</a></li>
+      <li><a href="/guide.html">単位の読み方と次元解析</a></li>
+      <li><a href="/about.html">このサイトについて</a></li>
     </ul></div>
     <div class="nav-sec"><h4>分野</h4><ul><li><a href="/c/base.html">基本量<span class="n">10量</span></a></li><li><a href="/c/mech.html">力学<span class="n">22量</span></a></li><li><a href="/c/thermo.html">熱・気体<span class="n">10量</span></a></li><li><a href="/c/em.html">電磁気<span class="n">17量</span></a></li><li><a href="/c/wave.html">波・光・量子<span class="n">5量</span></a></li><li><a href="/c/misc.html">放射線・化学<span class="n">4量</span></a></li></ul></div>
     <div class="nav-sec"><h4>よく使う量</h4><div class="chips"><a href="/q/force.html">力</a><a href="/q/energy.html">エネルギー</a><a href="/q/power.html">仕事率</a><a href="/q/pressure.html">圧力</a><a href="/q/voltage.html">電圧</a><a href="/q/resistance.html">電気抵抗</a><a href="/q/capacitance.html">静電容量</a><a href="/q/magnetic_flux_density.html">磁束密度</a><a href="/q/planck.html">プランク定数</a><a href="/q/gas_constant.html">気体定数</a></div></div>
@@ -41,23 +43,32 @@
 </aside>
 <main id="main"><div class="wrap">
 <nav class="bc" aria-label="パンくずリスト"><a href="/">トップ</a> › <a href="/c/mech.html">力学</a> › 角速度</nav>
-<span class="tag">力学</span>
-<h1>角速度の単位 rad/s を基本単位で表すと 1/s</h1>
-<p class="lead">単位時間あたりに回転する角度。</p>
+<span class="tag">力学</span><span class="tag lv">高校物理・化学で出てくる</span>
+<h1>角速度の単位 rad/s の意味｜基本単位で表すと 1/s</h1>
 <div class="hero">
 <div class="big">rad/s = 1/s</div>
 <div class="sub">次元 [T⁻¹]</div></div>
-<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">角速度の単位を、知っている公式から組み立てる</a><a href="#s2">同じ次元をもつ量</a><a href="#s3">角速度が出てくる公式</a><a href="#s4">角速度とほかの量の関係</a></div></nav><h2 id="s1">角速度の単位を、知っている公式から組み立てる</h2>
-<p>rad/s を基本単位までほどくには、角度（平面角） → 角速度 の順に単位をつないでいきます。</p>
+<div class="goals"><b>このページでわかること</b><ul><li>角速度を言葉でどう言い表すか</li><li>その言葉を単位に置き換えると、なぜ rad/s になるのか</li></ul></div>
+<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">角速度とは？ 言葉で意味をつかむ</a><a href="#s2">基本単位までたどる</a><a href="#s3">よくある間違い：同じ単位でも別の量</a><a href="#s4">角速度が出てくる公式</a><a href="#s5">確認問題</a><a href="#s6">次に読む：角速度を使って表される量</a></div></nav><h2 id="s1">角速度とは？ 言葉で意味をつかむ</h2>
+<p class="meaning"><b>角速度とは</b>　1秒あたりに回る角度。</p>
+<div class="wordeq"><div class="lbl">言葉の式</div><div class="eq">角速度 ＝ 回った角度 ÷ かかった時間</div></div>
+<p>言葉の式に出てくるそれぞれの言葉は、すでに単位がわかっている量です。言葉を単位に置き換えてみましょう。</p>
+<div class="tbl"><table class="swap"><tr><th>言葉</th><th>何の量か</th><th>単位</th></tr>
+<tr><td>回った角度</td><td><a href="/q/angle.html">角度（平面角）</a></td><td class="mono">rad</td></tr>
+<tr><td>かかった時間</td><td><a href="/q/time.html">時間</a></td><td class="mono">s</td></tr>
+</table></div>
+<div class="calc">[角速度] ＝ rad ÷ s<br>　　　＝ rad/s<br>　　　＝ 1/s</div>
+<p>言葉の通りに単位を並べるだけで、<span class="mono ok">rad/s</span> が出てきました。</p>
+<h2 id="s2">基本単位までたどる</h2>
+<p>言葉の式に出てきた量も、さらに言葉の式で分解できます。角度（平面角） → 角速度 の順にたどると、すべて基本単位（m・kg・s・A・K・mol・cd）だけで表せます。</p>
 <div class="step"><div class="st"><b><a href="/q/angle.html">角度（平面角）</a></b> <span class="lead">— <a href="/f/angle_arc.html">弧度法（ラジアン）の定義</a>　<span class="mono">θ = l / r</span></span></div><p>角度（ラジアン）は「弧の長さ ÷ 半径」で決めます。m を m で割るので単位は消えてしまい、rad は実は次元をもちません。</p><div class="calc">[θ] = m ÷ m = 1 = rad</div></div>
 <div class="step"><div class="st"><b><a href="/q/angular_velocity.html">角速度</a></b> <span class="lead">— <a href="/f/omega_def.html">角速度の定義</a>　<span class="mono">ω = θ / t</span></span></div><p>角速度は「1秒あたりに回る角度」。rad を s で割って rad/s です。rad は次元をもたないので、次元だけ見れば s⁻¹ になります。</p><div class="calc">[ω] = rad ÷ s = rad/s = 1/s</div></div>
-<p>まとめると、<span class="mono ok">rad/s = 1/s</span> です。</p>
-<h2 id="s2">同じ次元をもつ量</h2>
-<p>次の量は 角速度 と次元 [T⁻¹] が同じです。単位が同じでも意味が違う量があるので、式の検算では区別に注意しましょう。</p><ul>
-<li><a href="/q/frequency.html">振動数・周波数</a>（<span class="mono">Hz</span>）</li>
-<li><a href="/q/activity.html">放射能</a>（<span class="mono">Bq</span>）</li>
+<h2 id="s3">よくある間違い：同じ単位でも別の量</h2>
+<p>次の量は 角速度 と次元 [T⁻¹] が同じです。単位が一致しても意味が違うことがあるので、検算のときは「何を表す量か」も確かめましょう。</p><ul>
+<li><a href="/q/frequency.html">振動数・周波数</a>（<span class="mono">Hz</span>）— 1秒あたりに繰り返す回数。</li>
+<li><a href="/q/activity.html">放射能</a>（<span class="mono">Bq</span>）— 1秒あたりに崩壊する原子核の数。</li>
 </ul>
-<h2 id="s3">角速度が出てくる公式</h2><ul>
+<h2 id="s4">角速度が出てくる公式</h2><ul>
 <li><a href="/f/omega_def.html">角速度の定義</a>：<span class="mono">ω = θ / t</span></li>
 <li><a href="/f/alpha_def.html">角加速度の定義</a>：<span class="mono">α = Δω / Δt</span></li>
 <li><a href="/f/ang_mom_I.html">角運動量と角速度</a>：<span class="mono">L = I ω</span></li>
@@ -65,21 +76,15 @@
 <li><a href="/f/v_omega.html">速さと角速度</a>：<span class="mono">v = r ω</span></li>
 <li><a href="/f/lc_omega.html">LC回路の固有角振動数</a>：<span class="mono">ω = 1 / √(L C)</span></li>
 </ul>
-<h2 id="s4">角速度とほかの量の関係</h2><div class="grid">
-<a href="/r/angular_velocity--inductance.html">角速度とインダクタンス<div class="u">rad/s と H</div></a>
-<a href="/r/angular_velocity--energy.html">角速度とエネルギー・仕事・熱量<div class="u">rad/s と J</div></a>
-<a href="/r/angular_velocity--moment_of_inertia.html">角速度と慣性モーメント<div class="u">rad/s と kg·m²</div></a>
-<a href="/r/angular_velocity--time.html">角速度と時間<div class="u">rad/s と s</div></a>
-<a href="/r/angular_acceleration--angular_velocity.html">角速度と角加速度<div class="u">rad/s と rad/s²</div></a>
-<a href="/r/angular_momentum--angular_velocity.html">角速度と角運動量<div class="u">rad/s と kg·m²/s</div></a>
-<a href="/r/angular_velocity--velocity.html">角速度と速度<div class="u">rad/s と m/s</div></a>
-<a href="/r/angular_velocity--length.html">角速度と長さ<div class="u">rad/s と m</div></a>
-<a href="/r/angular_velocity--capacitance.html">角速度と静電容量<div class="u">rad/s と F</div></a>
-</div>
+<div class="summary"><b>まとめ</b><ul><li>角速度とは、1秒あたりに回る角度。</li><li>言葉の式 角速度 ＝ 回った角度 ÷ かかった時間 を単位に置き換えると rad/s。</li><li>基本単位だけで書くと 1/s。</li></ul></div>
+<h2 id="s5">確認問題</h2>
+<div class="quiz"><p><b>Q.</b> 角速度の単位 <span class="mono">rad/s</span> を基本単位で表したものはどれ？</p><ul class="opts"><li><span class="opt">A</span><span class="mono">1/s</span></li><li><span class="opt">B</span><span class="mono">1/s²</span></li><li><span class="opt">C</span><span class="mono">m/s²</span></li><li><span class="opt">D</span><span class="mono">kg/s²</span></li></ul><details><summary>答えを見る</summary><p><b>正解：A</b>　<span class="mono ok">1/s</span></p><p>角速度 ＝ 回った角度 ÷ かかった時間 なので、[角速度] ＝ rad ÷ s ＝ 1/s。</p></details></div>
+<h2 id="s6">次に読む：角速度を使って表される量</h2><div class="grid"><a href="/q/angular_acceleration.html">角加速度<div class="u">rad/s²</div></a></div>
 </div></main>
 <footer class="site"><div class="wrap">
-  <div class="links"><a href="/">トップ</a><a href="/guide.html">次元解析の使い方</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>
-  ブツリ単位ラボ — SI単位と次元解析で物理を理解する。単位はすべてSI（国際単位系）で表記しています。
+  <div class="links"><a href="/">トップ</a><a href="/guide.html">単位の読み方</a><a href="/about.html">このサイトについて</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>
+  <p class="src">単位の定義は、国際度量衡局（BIPM）の SI パンフレット第9版と、その日本語版（産業技術総合研究所 計量標準総合センター）に基づいています。</p>
+  ブツリ単位ラボ — SI単位と次元解析で物理を理解する。最終更新日：2026-10-17
 </div></footer>
 <button class="to-top" id="to-top" aria-label="ページの先頭へ戻る"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></button>
 </body>

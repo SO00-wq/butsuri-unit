@@ -3,16 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>磁束密度の単位 テスラ（T） を基本単位で表すと kg/(A·s²) | ブツリ単位ラボ</title>
-<meta name="description" content="磁束密度の単位Tを、知っている公式からSI基本単位kg/(A·s²)まで分解して理解する。同じ単位の別の書き方と、同じ次元をもつ量も紹介。">
+<title>磁束密度の単位 テスラ（T） の意味｜基本単位で表すと kg/(A·s²) | ブツリ単位ラボ</title>
+<meta name="description" content="磁束密度とは磁場の強さ。1 C の電荷が 1 m/s で動いたときに受ける力の大きさ。その言葉をそのまま単位に置き換えると T（= kg/(A·s²)） になる理由を、図式と確認問題でやさしく解説。">
 <link rel="canonical" href="https://tanitani.butsuri-lab.workers.dev/q/magnetic_flux_density.html">
+
 <meta name="google-site-verification" content="kVE91IWkP86K1E_JpBQDklXXu5gz86ZOA64xcgtDUwc">
 <meta name="theme-color" content="#1d5fd1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=2">
-<script src="/assets/site.js?v=2" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=3">
+<script src="/assets/site.js?v=3" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -33,7 +34,8 @@
     <ul class="results" id="results" aria-live="polite"></ul>
     <div class="nav-sec"><h4>ページ</h4><ul>
       <li><a href="/">トップ</a></li>
-      <li><a href="/guide.html">次元解析の使い方</a></li>
+      <li><a href="/guide.html">単位の読み方と次元解析</a></li>
+      <li><a href="/about.html">このサイトについて</a></li>
     </ul></div>
     <div class="nav-sec"><h4>分野</h4><ul><li><a href="/c/base.html">基本量<span class="n">10量</span></a></li><li><a href="/c/mech.html">力学<span class="n">22量</span></a></li><li><a href="/c/thermo.html">熱・気体<span class="n">10量</span></a></li><li><a href="/c/em.html">電磁気<span class="n">17量</span></a></li><li><a href="/c/wave.html">波・光・量子<span class="n">5量</span></a></li><li><a href="/c/misc.html">放射線・化学<span class="n">4量</span></a></li></ul></div>
     <div class="nav-sec"><h4>よく使う量</h4><div class="chips"><a href="/q/force.html">力</a><a href="/q/energy.html">エネルギー</a><a href="/q/power.html">仕事率</a><a href="/q/pressure.html">圧力</a><a href="/q/voltage.html">電圧</a><a href="/q/resistance.html">電気抵抗</a><a href="/q/capacitance.html">静電容量</a><a href="/q/magnetic_flux_density.html">磁束密度</a><a href="/q/planck.html">プランク定数</a><a href="/q/gas_constant.html">気体定数</a></div></div>
@@ -41,14 +43,25 @@
 </aside>
 <main id="main"><div class="wrap">
 <nav class="bc" aria-label="パンくずリスト"><a href="/">トップ</a> › <a href="/c/em.html">電磁気</a> › 磁束密度</nav>
-<span class="tag">電磁気</span>
-<h1>磁束密度の単位 テスラ（T） を基本単位で表すと kg/(A·s²)</h1>
-<p class="lead">動く電荷や電流が受ける磁気的な力の強さを決める量。</p>
+<span class="tag">電磁気</span><span class="tag lv">高校物理・化学で出てくる</span>
+<h1>磁束密度の単位 テスラ（T） の意味｜基本単位で表すと kg/(A·s²)</h1>
 <div class="hero">
 <div class="big">T = kg/(A·s²)</div>
 <div class="sub">次元 [M T⁻² I⁻¹]</div></div>
-<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">磁束密度の単位を、知っている公式から組み立てる</a><a href="#s2">T の別の書き方</a><a href="#s3">磁束密度が出てくる公式</a><a href="#s4">磁束密度とほかの量の関係</a></div></nav><h2 id="s1">磁束密度の単位を、知っている公式から組み立てる</h2>
-<p>T を基本単位までほどくには、速度 → 加速度 → 力 → 電荷（電気量） → 磁束密度 の順に単位をつないでいきます。</p>
+<div class="goals"><b>このページでわかること</b><ul><li>磁束密度を言葉でどう言い表すか</li><li>その言葉を単位に置き換えると、なぜ T になるのか</li><li>T のいろいろな書き方と、その根拠になる公式</li></ul></div>
+<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">磁束密度とは？ 言葉で意味をつかむ</a><a href="#s2">基本単位までたどる</a><a href="#s3">T の別の書き方</a><a href="#s4">磁束密度が出てくる公式</a><a href="#s5">確認問題</a><a href="#s6">次に読む：磁束密度を使って表される量</a></div></nav><h2 id="s1">磁束密度とは？ 言葉で意味をつかむ</h2>
+<p class="meaning"><b>磁束密度とは</b>　磁場の強さ。1 C の電荷が 1 m/s で動いたときに受ける力の大きさ。</p>
+<div class="wordeq"><div class="lbl">言葉の式</div><div class="eq">磁束密度 ＝ 動く電荷が受ける力 ÷ 電荷 ÷ 電荷の速さ</div></div>
+<p>言葉の式に出てくるそれぞれの言葉は、すでに単位がわかっている量です。言葉を単位に置き換えてみましょう。</p>
+<div class="tbl"><table class="swap"><tr><th>言葉</th><th>何の量か</th><th>単位</th></tr>
+<tr><td>動く電荷が受ける力</td><td><a href="/q/force.html">力</a></td><td class="mono">N</td></tr>
+<tr><td>電荷</td><td><a href="/q/charge.html">電荷（電気量）</a></td><td class="mono">C</td></tr>
+<tr><td>電荷の速さ</td><td><a href="/q/velocity.html">速度</a></td><td class="mono">m/s</td></tr>
+</table></div>
+<div class="calc">[磁束密度] ＝ N ÷ C ÷ (m/s)<br>　　　＝ N·s/(C·m)<br>　　　＝ kg/(A·s²)<br>　　　＝ T</div>
+<div class="note unitname"><b>テスラ（T）</b>は、この組み合わせ <span class="mono">N·s/(C·m)</span> に付けられた名前です。<br>1 m² の面を 1 Wb の磁束が垂直に貫くときの磁束密度が 1 T。</div>
+<h2 id="s2">基本単位までたどる</h2>
+<p>言葉の式に出てきた量も、さらに言葉の式で分解できます。速度 → 加速度 → 力 → 電荷（電気量） → 磁束密度 の順にたどると、すべて基本単位（m・kg・s・A・K・mol・cd）だけで表せます。</p>
 <details class="pre"><summary>前提：速度・加速度・力・電荷（電気量）の単位（知っていれば飛ばしてOK）</summary>
 <div class="step"><div class="st"><b><a href="/q/velocity.html">速度</a></b> <span class="lead">— <a href="/f/v_def.html">速さの定義</a>　<span class="mono">v = x / t</span></span></div><p>速さは「進んだ距離 ÷ かかった時間」。m を s で割って m/s です。</p><div class="calc">[v] = m ÷ s = m/s</div></div>
 <div class="step"><div class="st"><b><a href="/q/acceleration.html">加速度</a></b> <span class="lead">— <a href="/f/a_def.html">加速度の定義</a>　<span class="mono">a = Δv / Δt</span></span></div><p>加速度は「1秒あたりに速さがどれだけ変わるか」。速さの m/s をさらに s で割るので m/s² になります。</p><div class="calc">[a] = m/s ÷ s = m/s²</div></div>
@@ -56,36 +69,28 @@
 <div class="step"><div class="st"><b><a href="/q/charge.html">電荷（電気量）</a></b> <span class="lead">— <a href="/f/charge_def.html">電荷と電流</a>　<span class="mono">q = I t</span></span></div><p>電荷は「電流 × 流れた時間」。A に s をかけた A·s が C（クーロン）です。</p><div class="calc">[q] = A × s = A·s = C</div></div>
 </details>
 <div class="step"><div class="st"><b><a href="/q/magnetic_flux_density.html">磁束密度</a></b> <span class="lead">— <a href="/f/lorentz.html">ローレンツ力（磁場の部分）</a>　<span class="mono">F = q v B</span></span></div><p>磁場の中を動く電荷が受ける力 F = qvB から B = F/(qv)。N を C と m/s で割った組み合わせが T（テスラ）です。</p><div class="calc">[B] = N ÷ C ÷ (m/s) = N·s/(C·m) = kg/(A·s²) = T</div></div>
-<p>まとめると、<span class="mono ok">T = kg/(A·s²)</span> です。</p>
-<h2 id="s2">T の別の書き方</h2>
+<h2 id="s3">T の別の書き方</h2>
 <p>同じ量でも、使う公式によって単位の見え方が変わります。どれも基本単位にすると一致します。</p>
 <div class="tbl"><table><tr><th>書き方</th><th>根拠になる公式</th></tr>
-<tr><td class="mono">T = N·s/(C·m)</td><td><a href="/f/lorentz.html">ローレンツ力（磁場の部分）</a><br><span class="mono">F = q v B</span></td></tr>
 <tr><td class="mono">T = N/(A·m)</td><td><a href="/f/wire_force.html">電流が磁場から受ける力</a><br><span class="mono">F = I B l</span></td></tr>
 <tr><td class="mono">T = Wb/m²</td><td><a href="/f/flux.html">磁束</a><br><span class="mono">Φ = B S</span></td></tr>
 <tr><td class="mono">T = H·A/m²</td><td><a href="/f/b_mu_h.html">磁束密度と磁場</a><br><span class="mono">B = μ H</span></td></tr>
 </table></div>
-<h2 id="s3">磁束密度が出てくる公式</h2><ul>
+<h2 id="s4">磁束密度が出てくる公式</h2><ul>
 <li><a href="/f/lorentz.html">ローレンツ力（磁場の部分）</a>：<span class="mono">F = q v B</span></li>
 <li><a href="/f/wire_force.html">電流が磁場から受ける力</a>：<span class="mono">F = I B l</span></li>
 <li><a href="/f/flux.html">磁束</a>：<span class="mono">Φ = B S</span></li>
 <li><a href="/f/b_mu_h.html">磁束密度と磁場</a>：<span class="mono">B = μ H</span></li>
 </ul>
-<h2 id="s4">磁束密度とほかの量の関係</h2><div class="grid">
-<a href="/r/force--magnetic_flux_density.html">磁束密度と力<div class="u">T と N</div></a>
-<a href="/r/magnetic_field--magnetic_flux_density.html">磁束密度と磁場（磁界）の強さ<div class="u">T と A/m</div></a>
-<a href="/r/magnetic_flux--magnetic_flux_density.html">磁束密度と磁束<div class="u">T と Wb</div></a>
-<a href="/r/magnetic_flux_density--permeability.html">磁束密度と透磁率<div class="u">T と H/m</div></a>
-<a href="/r/magnetic_flux_density--velocity.html">磁束密度と速度<div class="u">T と m/s</div></a>
-<a href="/r/length--magnetic_flux_density.html">磁束密度と長さ<div class="u">T と m</div></a>
-<a href="/r/current--magnetic_flux_density.html">磁束密度と電流<div class="u">T と A</div></a>
-<a href="/r/charge--magnetic_flux_density.html">磁束密度と電荷（電気量）<div class="u">T と C</div></a>
-<a href="/r/area--magnetic_flux_density.html">磁束密度と面積<div class="u">T と m²</div></a>
-</div>
+<div class="summary"><b>まとめ</b><ul><li>磁束密度とは、磁場の強さ。1 C の電荷が 1 m/s で動いたときに受ける力の大きさ。</li><li>言葉の式 磁束密度 ＝ 動く電荷が受ける力 ÷ 電荷 ÷ 電荷の速さ を単位に置き換えると N·s/(C·m)。</li><li>基本単位だけで書くと kg/(A·s²)。</li></ul></div>
+<h2 id="s5">確認問題</h2>
+<div class="quiz"><p><b>Q.</b> 磁束密度の単位 <span class="mono">T</span> を基本単位で表したものはどれ？</p><ul class="opts"><li><span class="opt">A</span><span class="mono">A²·s⁴/(kg·m²)</span></li><li><span class="opt">B</span><span class="mono">A²·s³/(kg·m³)</span></li><li><span class="opt">C</span><span class="mono">kg/(A·s²)</span></li><li><span class="opt">D</span><span class="mono">A²·s³/(kg·m²)</span></li></ul><details><summary>答えを見る</summary><p><b>正解：C</b>　<span class="mono ok">kg/(A·s²)</span></p><p>磁束密度 ＝ 動く電荷が受ける力 ÷ 電荷 ÷ 電荷の速さ なので、[磁束密度] ＝ N ÷ C ÷ (m/s) ＝ kg/(A·s²)。</p></details></div>
+<h2 id="s6">次に読む：磁束密度を使って表される量</h2><div class="grid"><a href="/q/magnetic_flux.html">磁束<div class="u">Wb</div></a><a href="/q/permeability.html">透磁率<div class="u">H/m</div></a></div>
 </div></main>
 <footer class="site"><div class="wrap">
-  <div class="links"><a href="/">トップ</a><a href="/guide.html">次元解析の使い方</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>
-  ブツリ単位ラボ — SI単位と次元解析で物理を理解する。単位はすべてSI（国際単位系）で表記しています。
+  <div class="links"><a href="/">トップ</a><a href="/guide.html">単位の読み方</a><a href="/about.html">このサイトについて</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>
+  <p class="src">単位の定義は、国際度量衡局（BIPM）の SI パンフレット第9版と、その日本語版（産業技術総合研究所 計量標準総合センター）に基づいています。</p>
+  ブツリ単位ラボ — SI単位と次元解析で物理を理解する。最終更新日：2026-10-17
 </div></footer>
 <button class="to-top" id="to-top" aria-label="ページの先頭へ戻る"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></button>
 </body>

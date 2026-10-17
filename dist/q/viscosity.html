@@ -3,16 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>粘性係数（粘度）の単位 Pa·s を基本単位で表すと kg/(m·s) | ブツリ単位ラボ</title>
-<meta name="description" content="粘性係数（粘度）の単位Pa·sを、知っている公式からSI基本単位kg/(m·s)まで分解して理解する。同じ単位の別の書き方と、同じ次元をもつ量も紹介。">
+<title>粘性係数（粘度）の単位 Pa·s の意味｜基本単位で表すと kg/(m·s) | ブツリ単位ラボ</title>
+<meta name="description" content="粘性係数（粘度）とは流体のねばりけ。流れの速さの差に逆らう力の大きさを決める。その言葉をそのまま単位に置き換えると Pa·s（= kg/(m·s)） になる理由を、図式と確認問題でやさしく解説。">
 <link rel="canonical" href="https://tanitani.butsuri-lab.workers.dev/q/viscosity.html">
+
 <meta name="google-site-verification" content="kVE91IWkP86K1E_JpBQDklXXu5gz86ZOA64xcgtDUwc">
 <meta name="theme-color" content="#1d5fd1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=2">
-<script src="/assets/site.js?v=2" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=3">
+<script src="/assets/site.js?v=3" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -33,7 +34,8 @@
     <ul class="results" id="results" aria-live="polite"></ul>
     <div class="nav-sec"><h4>ページ</h4><ul>
       <li><a href="/">トップ</a></li>
-      <li><a href="/guide.html">次元解析の使い方</a></li>
+      <li><a href="/guide.html">単位の読み方と次元解析</a></li>
+      <li><a href="/about.html">このサイトについて</a></li>
     </ul></div>
     <div class="nav-sec"><h4>分野</h4><ul><li><a href="/c/base.html">基本量<span class="n">10量</span></a></li><li><a href="/c/mech.html">力学<span class="n">22量</span></a></li><li><a href="/c/thermo.html">熱・気体<span class="n">10量</span></a></li><li><a href="/c/em.html">電磁気<span class="n">17量</span></a></li><li><a href="/c/wave.html">波・光・量子<span class="n">5量</span></a></li><li><a href="/c/misc.html">放射線・化学<span class="n">4量</span></a></li></ul></div>
     <div class="nav-sec"><h4>よく使う量</h4><div class="chips"><a href="/q/force.html">力</a><a href="/q/energy.html">エネルギー</a><a href="/q/power.html">仕事率</a><a href="/q/pressure.html">圧力</a><a href="/q/voltage.html">電圧</a><a href="/q/resistance.html">電気抵抗</a><a href="/q/capacitance.html">静電容量</a><a href="/q/magnetic_flux_density.html">磁束密度</a><a href="/q/planck.html">プランク定数</a><a href="/q/gas_constant.html">気体定数</a></div></div>
@@ -41,43 +43,46 @@
 </aside>
 <main id="main"><div class="wrap">
 <nav class="bc" aria-label="パンくずリスト"><a href="/">トップ</a> › <a href="/c/mech.html">力学</a> › 粘性係数（粘度）</nav>
-<span class="tag">力学</span>
-<h1>粘性係数（粘度）の単位 Pa·s を基本単位で表すと kg/(m·s)</h1>
-<p class="lead">流体のねばりけ。流れの速さの差に逆らう力の大きさを決める。</p>
+<span class="tag">力学</span><span class="tag lv">大学の物理で出てくる</span>
+<h1>粘性係数（粘度）の単位 Pa·s の意味｜基本単位で表すと kg/(m·s)</h1>
 <div class="hero">
 <div class="big">Pa·s = kg/(m·s)</div>
 <div class="sub">次元 [M L⁻¹ T⁻¹]</div></div>
-<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">粘性係数（粘度）の単位を、知っている公式から組み立てる</a><a href="#s2">Pa·s の別の書き方</a><a href="#s3">粘性係数（粘度）が出てくる公式</a><a href="#s4">粘性係数（粘度）とほかの量の関係</a></div></nav><h2 id="s1">粘性係数（粘度）の単位を、知っている公式から組み立てる</h2>
-<p>Pa·s を基本単位までほどくには、速度 → 加速度 → 力 → 面積 → 粘性係数（粘度） の順に単位をつないでいきます。</p>
+<div class="goals"><b>このページでわかること</b><ul><li>粘性係数（粘度）を言葉でどう言い表すか</li><li>その言葉を単位に置き換えると、なぜ Pa·s になるのか</li></ul></div>
+<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">粘性係数（粘度）とは？ 言葉で意味をつかむ</a><a href="#s2">基本単位までたどる</a><a href="#s3">粘性係数（粘度）が出てくる公式</a><a href="#s4">確認問題</a></div></nav><h2 id="s1">粘性係数（粘度）とは？ 言葉で意味をつかむ</h2>
+<p class="meaning"><b>粘性係数（粘度）とは</b>　流体のねばりけ。流れの速さの差に逆らう力の大きさを決める。</p>
+<div class="wordeq"><div class="lbl">言葉の式</div><div class="eq">粘性係数（粘度） ＝ 流れを妨げる力 × 層の間隔 ÷ 触れ合う面積 ÷ 流れの速さの差</div></div>
+<p>言葉の式に出てくるそれぞれの言葉は、すでに単位がわかっている量です。言葉を単位に置き換えてみましょう。</p>
+<div class="tbl"><table class="swap"><tr><th>言葉</th><th>何の量か</th><th>単位</th></tr>
+<tr><td>流れを妨げる力</td><td><a href="/q/force.html">力</a></td><td class="mono">N</td></tr>
+<tr><td>層の間隔</td><td><a href="/q/length.html">長さ</a></td><td class="mono">m</td></tr>
+<tr><td>触れ合う面積</td><td><a href="/q/area.html">面積</a></td><td class="mono">m²</td></tr>
+<tr><td>流れの速さの差</td><td><a href="/q/velocity.html">速度</a></td><td class="mono">m/s</td></tr>
+</table></div>
+<div class="calc">[粘性係数（粘度）] ＝ N × m ÷ m² ÷ (m/s)<br>　　　＝ N·s/m²<br>　　　＝ kg/(m·s)<br>　　　＝ Pa·s</div>
+<p>言葉の通りに単位を並べるだけで、<span class="mono ok">Pa·s</span> が出てきました。</p>
+<h2 id="s2">基本単位までたどる</h2>
+<p>言葉の式に出てきた量も、さらに言葉の式で分解できます。速度 → 加速度 → 力 → 面積 → 粘性係数（粘度） の順にたどると、すべて基本単位（m・kg・s・A・K・mol・cd）だけで表せます。</p>
 <details class="pre"><summary>前提：速度・加速度・力・面積の単位（知っていれば飛ばしてOK）</summary>
 <div class="step"><div class="st"><b><a href="/q/velocity.html">速度</a></b> <span class="lead">— <a href="/f/v_def.html">速さの定義</a>　<span class="mono">v = x / t</span></span></div><p>速さは「進んだ距離 ÷ かかった時間」。m を s で割って m/s です。</p><div class="calc">[v] = m ÷ s = m/s</div></div>
 <div class="step"><div class="st"><b><a href="/q/acceleration.html">加速度</a></b> <span class="lead">— <a href="/f/a_def.html">加速度の定義</a>　<span class="mono">a = Δv / Δt</span></span></div><p>加速度は「1秒あたりに速さがどれだけ変わるか」。速さの m/s をさらに s で割るので m/s² になります。</p><div class="calc">[a] = m/s ÷ s = m/s²</div></div>
 <div class="step"><div class="st"><b><a href="/q/force.html">力</a></b> <span class="lead">— <a href="/f/newton2.html">運動方程式</a>　<span class="mono">F = m a</span></span></div><p>運動方程式 F = ma で、質量 kg と加速度 m/s² をかけると kg·m/s²。この組み合わせに N（ニュートン）という名前がついています。</p><div class="calc">[F] = kg × m/s² = kg·m/s² = N</div></div>
 <div class="step"><div class="st"><b><a href="/q/area.html">面積</a></b> <span class="lead">— <a href="/f/area_sq.html">面積と長さ</a>　<span class="mono">S = l²</span></span></div><p>面積は長さ×長さなので m² です。</p><div class="calc">[S] = m²</div></div>
 </details>
-<div class="step"><div class="st"><b><a href="/q/viscosity.html">粘性係数（粘度）</a></b> <span class="lead">— <a href="/f/newton_visc.html">ニュートンの粘性法則</a>　<span class="mono">F = η S v / d</span></span></div><p>粘性の法則 F = ηSv/d を η について解くと η = Fd/(Sv)。単位を当てはめて整理すると、N/m²（= Pa）に s をかけた Pa·s が残ります。</p><div class="calc">[η] = N × m ÷ (m²) ÷ (m/s) = N·s/m² = kg/(m·s) = Pa·s</div></div>
-<p>まとめると、<span class="mono ok">Pa·s = kg/(m·s)</span> です。</p>
-<h2 id="s2">Pa·s の別の書き方</h2>
-<p>同じ量でも、使う公式によって単位の見え方が変わります。どれも基本単位にすると一致します。</p>
-<div class="tbl"><table><tr><th>書き方</th><th>根拠になる公式</th></tr>
-<tr><td class="mono">Pa·s = N·s/m²</td><td><a href="/f/newton_visc.html">ニュートンの粘性法則</a><br><span class="mono">F = η S v / d</span></td></tr>
-</table></div>
+<div class="step"><div class="st"><b><a href="/q/viscosity.html">粘性係数（粘度）</a></b> <span class="lead">— <a href="/f/newton_visc.html">ニュートンの粘性法則</a>　<span class="mono">F = η S v / d</span></span></div><p>粘性の法則 F = ηSv/d を η について解くと η = Fd/(Sv)。単位を当てはめて整理すると、N/m²（= Pa）に s をかけた Pa·s が残ります。</p><div class="calc">[η] = N × m ÷ m² ÷ (m/s) = N·s/m² = kg/(m·s) = Pa·s</div></div>
 <h2 id="s3">粘性係数（粘度）が出てくる公式</h2><ul>
 <li><a href="/f/newton_visc.html">ニュートンの粘性法則</a>：<span class="mono">F = η S v / d</span></li>
 <li><a href="/f/stokes.html">ストークスの法則</a>：<span class="mono">F = 6π η r v</span></li>
 <li><a href="/f/reynolds.html">レイノルズ数</a>：<span class="mono">Re = ρ v l / η</span></li>
 </ul>
-<h2 id="s4">粘性係数（粘度）とほかの量の関係</h2><div class="grid">
-<a href="/r/force--viscosity.html">粘性係数（粘度）と力<div class="u">Pa·s と N</div></a>
-<a href="/r/density--viscosity.html">粘性係数（粘度）と密度<div class="u">Pa·s と kg/m³</div></a>
-<a href="/r/velocity--viscosity.html">粘性係数（粘度）と速度<div class="u">Pa·s と m/s</div></a>
-<a href="/r/length--viscosity.html">粘性係数（粘度）と長さ<div class="u">Pa·s と m</div></a>
-<a href="/r/area--viscosity.html">粘性係数（粘度）と面積<div class="u">Pa·s と m²</div></a>
-</div>
+<div class="summary"><b>まとめ</b><ul><li>粘性係数（粘度）とは、流体のねばりけ。流れの速さの差に逆らう力の大きさを決める。</li><li>言葉の式 粘性係数（粘度） ＝ 流れを妨げる力 × 層の間隔 ÷ 触れ合う面積 ÷ 流れの速さの差 を単位に置き換えると N·s/m²。</li><li>基本単位だけで書くと kg/(m·s)。</li></ul></div>
+<h2 id="s4">確認問題</h2>
+<div class="quiz"><p><b>Q.</b> 粘性係数（粘度）の単位 <span class="mono">Pa·s</span> を基本単位で表したものはどれ？</p><ul class="opts"><li><span class="opt">A</span><span class="mono">A²·s³/(kg·m²)</span></li><li><span class="opt">B</span><span class="mono">kg/(m·s²)</span></li><li><span class="opt">C</span><span class="mono">kg·m/s²</span></li><li><span class="opt">D</span><span class="mono">kg/(m·s)</span></li></ul><details><summary>答えを見る</summary><p><b>正解：D</b>　<span class="mono ok">kg/(m·s)</span></p><p>粘性係数（粘度） ＝ 流れを妨げる力 × 層の間隔 ÷ 触れ合う面積 ÷ 流れの速さの差 なので、[粘性係数（粘度）] ＝ N × m ÷ m² ÷ (m/s) ＝ kg/(m·s)。</p></details></div>
 </div></main>
 <footer class="site"><div class="wrap">
-  <div class="links"><a href="/">トップ</a><a href="/guide.html">次元解析の使い方</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>
-  ブツリ単位ラボ — SI単位と次元解析で物理を理解する。単位はすべてSI（国際単位系）で表記しています。
+  <div class="links"><a href="/">トップ</a><a href="/guide.html">単位の読み方</a><a href="/about.html">このサイトについて</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>
+  <p class="src">単位の定義は、国際度量衡局（BIPM）の SI パンフレット第9版と、その日本語版（産業技術総合研究所 計量標準総合センター）に基づいています。</p>
+  ブツリ単位ラボ — SI単位と次元解析で物理を理解する。最終更新日：2026-10-17
 </div></footer>
 <button class="to-top" id="to-top" aria-label="ページの先頭へ戻る"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></button>
 </body>

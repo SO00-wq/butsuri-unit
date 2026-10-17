@@ -3,16 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>エネルギー・仕事・熱量の単位 ジュール（J） を基本単位で表すと kg·m²/s² | ブツリ単位ラボ</title>
-<meta name="description" content="エネルギー・仕事・熱量の単位Jを、知っている公式からSI基本単位kg·m²/s²まで分解して理解する。同じ単位の別の書き方と、同じ次元をもつ量も紹介。">
+<title>エネルギー・仕事・熱量の単位 ジュール（J） の意味｜基本単位で表すと kg·m²/s² | ブツリ単位ラボ</title>
+<meta name="description" content="エネルギー・仕事・熱量とは仕事をする能力。力を加えて物を動かしたときの「力 × 距離」で測る。その言葉をそのまま単位に置き換えると J（= kg·m²/s²） になる理由を、図式と確認問題でやさしく解説。">
 <link rel="canonical" href="https://tanitani.butsuri-lab.workers.dev/q/energy.html">
+
 <meta name="google-site-verification" content="kVE91IWkP86K1E_JpBQDklXXu5gz86ZOA64xcgtDUwc">
 <meta name="theme-color" content="#1d5fd1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=2">
-<script src="/assets/site.js?v=2" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=3">
+<script src="/assets/site.js?v=3" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -33,7 +34,8 @@
     <ul class="results" id="results" aria-live="polite"></ul>
     <div class="nav-sec"><h4>ページ</h4><ul>
       <li><a href="/">トップ</a></li>
-      <li><a href="/guide.html">次元解析の使い方</a></li>
+      <li><a href="/guide.html">単位の読み方と次元解析</a></li>
+      <li><a href="/about.html">このサイトについて</a></li>
     </ul></div>
     <div class="nav-sec"><h4>分野</h4><ul><li><a href="/c/base.html">基本量<span class="n">10量</span></a></li><li><a href="/c/mech.html">力学<span class="n">22量</span></a></li><li><a href="/c/thermo.html">熱・気体<span class="n">10量</span></a></li><li><a href="/c/em.html">電磁気<span class="n">17量</span></a></li><li><a href="/c/wave.html">波・光・量子<span class="n">5量</span></a></li><li><a href="/c/misc.html">放射線・化学<span class="n">4量</span></a></li></ul></div>
     <div class="nav-sec"><h4>よく使う量</h4><div class="chips"><a href="/q/force.html">力</a><a href="/q/energy.html">エネルギー</a><a href="/q/power.html">仕事率</a><a href="/q/pressure.html">圧力</a><a href="/q/voltage.html">電圧</a><a href="/q/resistance.html">電気抵抗</a><a href="/q/capacitance.html">静電容量</a><a href="/q/magnetic_flux_density.html">磁束密度</a><a href="/q/planck.html">プランク定数</a><a href="/q/gas_constant.html">気体定数</a></div></div>
@@ -41,22 +43,31 @@
 </aside>
 <main id="main"><div class="wrap">
 <nav class="bc" aria-label="パンくずリスト"><a href="/">トップ</a> › <a href="/c/mech.html">力学</a> › エネルギー・仕事・熱量</nav>
-<span class="tag">力学</span>
-<h1>エネルギー・仕事・熱量の単位 ジュール（J） を基本単位で表すと kg·m²/s²</h1>
-<p class="lead">仕事をする能力。力×距離で定義され、熱量も同じ単位で表す。</p>
+<span class="tag">力学</span><span class="tag lv">中学理科で出てくる</span>
+<h1>エネルギー・仕事・熱量の単位 ジュール（J） の意味｜基本単位で表すと kg·m²/s²</h1>
 <div class="hero">
 <div class="big">J = kg·m²/s²</div>
 <div class="sub">次元 [M L² T⁻²]</div></div>
-<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">エネルギー・仕事・熱量の単位を、知っている公式から組み立てる</a><a href="#s2">J の別の書き方</a><a href="#s3">同じ次元をもつ量</a><a href="#s4">エネルギー・仕事・熱量が出てくる公式</a><a href="#s5">エネルギー・仕事・熱量とほかの量の関係</a></div></nav><h2 id="s1">エネルギー・仕事・熱量の単位を、知っている公式から組み立てる</h2>
-<p>J を基本単位までほどくには、速度 → 加速度 → 力 → エネルギー・仕事・熱量 の順に単位をつないでいきます。</p>
+<div class="goals"><b>このページでわかること</b><ul><li>エネルギー・仕事・熱量を言葉でどう言い表すか</li><li>その言葉を単位に置き換えると、なぜ J になるのか</li><li>J のいろいろな書き方と、その根拠になる公式</li></ul></div>
+<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">エネルギー・仕事・熱量とは？ 言葉で意味をつかむ</a><a href="#s2">基本単位までたどる</a><a href="#s3">J の別の書き方</a><a href="#s4">よくある間違い：同じ単位でも別の量</a><a href="#s5">エネルギー・仕事・熱量が出てくる公式</a><a href="#s6">確認問題</a><a href="#s7">次に読む：エネルギー・仕事・熱量を使って表される量</a></div></nav><h2 id="s1">エネルギー・仕事・熱量とは？ 言葉で意味をつかむ</h2>
+<p class="meaning"><b>エネルギー・仕事・熱量とは</b>　仕事をする能力。力を加えて物を動かしたときの「力 × 距離」で測る。</p>
+<div class="wordeq"><div class="lbl">言葉の式</div><div class="eq">エネルギー・仕事・熱量 ＝ 加えた力 × 力の向きに動かした距離</div></div>
+<p>言葉の式に出てくるそれぞれの言葉は、すでに単位がわかっている量です。言葉を単位に置き換えてみましょう。</p>
+<div class="tbl"><table class="swap"><tr><th>言葉</th><th>何の量か</th><th>単位</th></tr>
+<tr><td>加えた力</td><td><a href="/q/force.html">力</a></td><td class="mono">N</td></tr>
+<tr><td>力の向きに動かした距離</td><td><a href="/q/length.html">長さ</a></td><td class="mono">m</td></tr>
+</table></div>
+<div class="calc">[エネルギー・仕事・熱量] ＝ N × m<br>　　　＝ N·m<br>　　　＝ kg·m²/s²<br>　　　＝ J</div>
+<div class="note unitname"><b>ジュール（J）</b>は、この組み合わせ <span class="mono">N·m</span> に付けられた名前です。<br>1 N の力で物体を力の向きに 1 m 動かしたときの仕事が 1 J。</div>
+<h2 id="s2">基本単位までたどる</h2>
+<p>言葉の式に出てきた量も、さらに言葉の式で分解できます。速度 → 加速度 → 力 → エネルギー・仕事・熱量 の順にたどると、すべて基本単位（m・kg・s・A・K・mol・cd）だけで表せます。</p>
 <details class="pre"><summary>前提：速度・加速度・力の単位（知っていれば飛ばしてOK）</summary>
 <div class="step"><div class="st"><b><a href="/q/velocity.html">速度</a></b> <span class="lead">— <a href="/f/v_def.html">速さの定義</a>　<span class="mono">v = x / t</span></span></div><p>速さは「進んだ距離 ÷ かかった時間」。m を s で割って m/s です。</p><div class="calc">[v] = m ÷ s = m/s</div></div>
 <div class="step"><div class="st"><b><a href="/q/acceleration.html">加速度</a></b> <span class="lead">— <a href="/f/a_def.html">加速度の定義</a>　<span class="mono">a = Δv / Δt</span></span></div><p>加速度は「1秒あたりに速さがどれだけ変わるか」。速さの m/s をさらに s で割るので m/s² になります。</p><div class="calc">[a] = m/s ÷ s = m/s²</div></div>
 <div class="step"><div class="st"><b><a href="/q/force.html">力</a></b> <span class="lead">— <a href="/f/newton2.html">運動方程式</a>　<span class="mono">F = m a</span></span></div><p>運動方程式 F = ma で、質量 kg と加速度 m/s² をかけると kg·m/s²。この組み合わせに N（ニュートン）という名前がついています。</p><div class="calc">[F] = kg × m/s² = kg·m/s² = N</div></div>
 </details>
 <div class="step"><div class="st"><b><a href="/q/energy.html">エネルギー・仕事・熱量</a></b> <span class="lead">— <a href="/f/work.html">仕事の定義</a>　<span class="mono">W = F x</span></span></div><p>仕事は「力 × 動かした距離」。N に m をかけた N·m に、J（ジュール）という名前がついています。</p><div class="calc">[W] = N × m = N·m = kg·m²/s² = J</div></div>
-<p>まとめると、<span class="mono ok">J = kg·m²/s²</span> です。</p>
-<h2 id="s2">J の別の書き方</h2>
+<h2 id="s3">J の別の書き方</h2>
 <p>同じ量でも、使う公式によって単位の見え方が変わります。どれも基本単位にすると一致します。</p>
 <div class="tbl"><table><tr><th>書き方</th><th>根拠になる公式</th></tr>
 <tr><td class="mono">J = N·m</td><td><a href="/f/work.html">仕事の定義</a><br><span class="mono">W = F x</span></td></tr>
@@ -64,14 +75,13 @@
 <tr><td class="mono">J = C·V</td><td><a href="/f/voltage_def.html">電圧と仕事</a><br><span class="mono">W = q V</span></td></tr>
 <tr><td class="mono">J = F·V²</td><td><a href="/f/cap_energy.html">コンデンサーのエネルギー</a><br><span class="mono">U = ½ C V²</span></td></tr>
 <tr><td class="mono">J = H·A²</td><td><a href="/f/ind_energy.html">コイルのエネルギー</a><br><span class="mono">U = ½ L I²</span></td></tr>
-<tr><td class="mono">J = J·s·Hz</td><td><a href="/f/planck.html">光子のエネルギー</a><br><span class="mono">E = h f</span></td></tr>
 <tr><td class="mono">J = Gy·kg</td><td><a href="/f/absorbed.html">吸収線量</a><br><span class="mono">D = E / m</span></td></tr>
 </table></div>
-<h2 id="s3">同じ次元をもつ量</h2>
-<p>次の量は エネルギー・仕事・熱量 と次元 [M L² T⁻²] が同じです。単位が同じでも意味が違う量があるので、式の検算では区別に注意しましょう。</p><ul>
-<li><a href="/q/torque.html">力のモーメント（トルク）</a>（<span class="mono">N·m</span>）</li>
+<h2 id="s4">よくある間違い：同じ単位でも別の量</h2>
+<p>次の量は エネルギー・仕事・熱量 と次元 [M L² T⁻²] が同じです。単位が一致しても意味が違うことがあるので、検算のときは「何を表す量か」も確かめましょう。</p><ul>
+<li><a href="/q/torque.html">力のモーメント（トルク）</a>（<span class="mono">N·m</span>）— 物体を回そうとする働き。回転軸からの距離と力の積。</li>
 </ul>
-<h2 id="s4">エネルギー・仕事・熱量が出てくる公式</h2><ul>
+<h2 id="s5">エネルギー・仕事・熱量が出てくる公式</h2><ul>
 <li><a href="/f/work.html">仕事の定義</a>：<span class="mono">W = F x</span></li>
 <li><a href="/f/power_def.html">仕事率の定義</a>：<span class="mono">P = W / t</span></li>
 <li><a href="/f/kinetic.html">運動エネルギー</a>：<span class="mono">K = ½ m v²</span></li>
@@ -91,37 +101,15 @@
 <li><a href="/f/mass_energy.html">質量とエネルギーの等価性</a>：<span class="mono">E = m c²</span></li>
 <li><a href="/f/absorbed.html">吸収線量</a>：<span class="mono">D = E / m</span></li>
 </ul>
-<h2 id="s5">エネルギー・仕事・熱量とほかの量の関係</h2><div class="grid">
-<a href="/r/energy--spring_constant.html">エネルギー・仕事・熱量とばね定数<div class="u">J と N/m</div></a>
-<a href="/r/energy--inductance.html">エネルギー・仕事・熱量とインダクタンス<div class="u">J と H</div></a>
-<a href="/r/energy--entropy.html">エネルギー・仕事・熱量とエントロピー<div class="u">J と J/K</div></a>
-<a href="/r/energy--planck.html">エネルギー・仕事・熱量とプランク定数<div class="u">J と J·s</div></a>
-<a href="/r/boltzmann--energy.html">エネルギー・仕事・熱量とボルツマン定数<div class="u">J と J/K</div></a>
-<a href="/r/energy--power.html">エネルギー・仕事・熱量と仕事率・電力<div class="u">J と W</div></a>
-<a href="/r/energy--force.html">エネルギー・仕事・熱量と力<div class="u">J と N</div></a>
-<a href="/r/energy--torque.html">エネルギー・仕事・熱量と力のモーメント（トルク）<div class="u">J と N·m</div></a>
-<a href="/r/acceleration--energy.html">エネルギー・仕事・熱量と加速度<div class="u">J と m/s²</div></a>
-<a href="/r/absorbed_dose--energy.html">エネルギー・仕事・熱量と吸収線量<div class="u">J と Gy</div></a>
-<a href="/r/energy--moment_of_inertia.html">エネルギー・仕事・熱量と慣性モーメント<div class="u">J と kg·m²</div></a>
-<a href="/r/energy--frequency.html">エネルギー・仕事・熱量と振動数・周波数<div class="u">J と Hz</div></a>
-<a href="/r/energy--time.html">エネルギー・仕事・熱量と時間<div class="u">J と s</div></a>
-<a href="/r/energy--specific_heat.html">エネルギー・仕事・熱量と比熱（比熱容量）<div class="u">J と J/(kg·K)</div></a>
-<a href="/r/energy--temperature.html">エネルギー・仕事・熱量と温度（熱力学温度）<div class="u">J と K</div></a>
-<a href="/r/energy--latent_heat.html">エネルギー・仕事・熱量と潜熱（比潜熱）<div class="u">J と J/kg</div></a>
-<a href="/r/energy--heat_capacity.html">エネルギー・仕事・熱量と熱容量<div class="u">J と J/K</div></a>
-<a href="/r/angular_velocity--energy.html">エネルギー・仕事・熱量と角速度<div class="u">J と rad/s</div></a>
-<a href="/r/energy--mass.html">エネルギー・仕事・熱量と質量<div class="u">J と kg</div></a>
-<a href="/r/energy--velocity.html">エネルギー・仕事・熱量と速度<div class="u">J と m/s</div></a>
-<a href="/r/energy--length.html">エネルギー・仕事・熱量と長さ<div class="u">J と m</div></a>
-<a href="/r/energy--voltage.html">エネルギー・仕事・熱量と電圧・電位<div class="u">J と V</div></a>
-<a href="/r/current--energy.html">エネルギー・仕事・熱量と電流<div class="u">J と A</div></a>
-<a href="/r/charge--energy.html">エネルギー・仕事・熱量と電荷（電気量）<div class="u">J と C</div></a>
-<a href="/r/capacitance--energy.html">エネルギー・仕事・熱量と静電容量<div class="u">J と F</div></a>
-</div>
+<div class="summary"><b>まとめ</b><ul><li>エネルギー・仕事・熱量とは、仕事をする能力。力を加えて物を動かしたときの「力 × 距離」で測る。</li><li>言葉の式 エネルギー・仕事・熱量 ＝ 加えた力 × 力の向きに動かした距離 を単位に置き換えると N·m。</li><li>基本単位だけで書くと kg·m²/s²。</li></ul></div>
+<h2 id="s6">確認問題</h2>
+<div class="quiz"><p><b>Q.</b> エネルギー・仕事・熱量の単位 <span class="mono">J</span> を基本単位で表したものはどれ？</p><ul class="opts"><li><span class="opt">A</span><span class="mono">m³/(kg·s²)</span></li><li><span class="opt">B</span><span class="mono">kg·m/s</span></li><li><span class="opt">C</span><span class="mono">kg·m²/s²</span></li><li><span class="opt">D</span><span class="mono">kg·m²/s</span></li></ul><details><summary>答えを見る</summary><p><b>正解：C</b>　<span class="mono ok">kg·m²/s²</span></p><p>エネルギー・仕事・熱量 ＝ 加えた力 × 力の向きに動かした距離 なので、[エネルギー・仕事・熱量] ＝ N × m ＝ kg·m²/s²。</p></details></div>
+<h2 id="s7">次に読む：エネルギー・仕事・熱量を使って表される量</h2><div class="grid"><a href="/q/power.html">仕事率・電力<div class="u">W</div></a><a href="/q/heat_capacity.html">熱容量<div class="u">J/K</div></a><a href="/q/specific_heat.html">比熱（比熱容量）<div class="u">J/(kg·K)</div></a><a href="/q/latent_heat.html">潜熱（比潜熱）<div class="u">J/kg</div></a><a href="/q/entropy.html">エントロピー<div class="u">J/K</div></a><a href="/q/boltzmann.html">ボルツマン定数<div class="u">J/K</div></a><a href="/q/voltage.html">電圧・電位<div class="u">V</div></a><a href="/q/planck.html">プランク定数<div class="u">J·s</div></a><a href="/q/absorbed_dose.html">吸収線量<div class="u">Gy</div></a></div>
 </div></main>
 <footer class="site"><div class="wrap">
-  <div class="links"><a href="/">トップ</a><a href="/guide.html">次元解析の使い方</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>
-  ブツリ単位ラボ — SI単位と次元解析で物理を理解する。単位はすべてSI（国際単位系）で表記しています。
+  <div class="links"><a href="/">トップ</a><a href="/guide.html">単位の読み方</a><a href="/about.html">このサイトについて</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>
+  <p class="src">単位の定義は、国際度量衡局（BIPM）の SI パンフレット第9版と、その日本語版（産業技術総合研究所 計量標準総合センター）に基づいています。</p>
+  ブツリ単位ラボ — SI単位と次元解析で物理を理解する。最終更新日：2026-10-17
 </div></footer>
 <button class="to-top" id="to-top" aria-label="ページの先頭へ戻る"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></button>
 </body>

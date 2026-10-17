@@ -3,16 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>電流の単位 A の意味 | ブツリ単位ラボ</title>
-<meta name="description" content="電流の単位Aを、知っている公式からSI基本単位Aまで分解して理解する。同じ単位の別の書き方と、同じ次元をもつ量も紹介。">
+<title>電流の単位 A の意味｜SI基本単位 | ブツリ単位ラボ</title>
+<meta name="description" content="電流とは1秒あたりに導線の断面を通る電気の量。その言葉をそのまま単位に置き換えると A になる理由を、図式と確認問題でやさしく解説。">
 <link rel="canonical" href="https://tanitani.butsuri-lab.workers.dev/q/current.html">
+
 <meta name="google-site-verification" content="kVE91IWkP86K1E_JpBQDklXXu5gz86ZOA64xcgtDUwc">
 <meta name="theme-color" content="#1d5fd1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=2">
-<script src="/assets/site.js?v=2" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=3">
+<script src="/assets/site.js?v=3" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -33,7 +34,8 @@
     <ul class="results" id="results" aria-live="polite"></ul>
     <div class="nav-sec"><h4>ページ</h4><ul>
       <li><a href="/">トップ</a></li>
-      <li><a href="/guide.html">次元解析の使い方</a></li>
+      <li><a href="/guide.html">単位の読み方と次元解析</a></li>
+      <li><a href="/about.html">このサイトについて</a></li>
     </ul></div>
     <div class="nav-sec"><h4>分野</h4><ul><li><a href="/c/base.html">基本量<span class="n">10量</span></a></li><li><a href="/c/mech.html">力学<span class="n">22量</span></a></li><li><a href="/c/thermo.html">熱・気体<span class="n">10量</span></a></li><li><a href="/c/em.html">電磁気<span class="n">17量</span></a></li><li><a href="/c/wave.html">波・光・量子<span class="n">5量</span></a></li><li><a href="/c/misc.html">放射線・化学<span class="n">4量</span></a></li></ul></div>
     <div class="nav-sec"><h4>よく使う量</h4><div class="chips"><a href="/q/force.html">力</a><a href="/q/energy.html">エネルギー</a><a href="/q/power.html">仕事率</a><a href="/q/pressure.html">圧力</a><a href="/q/voltage.html">電圧</a><a href="/q/resistance.html">電気抵抗</a><a href="/q/capacitance.html">静電容量</a><a href="/q/magnetic_flux_density.html">磁束密度</a><a href="/q/planck.html">プランク定数</a><a href="/q/gas_constant.html">気体定数</a></div></div>
@@ -41,25 +43,17 @@
 </aside>
 <main id="main"><div class="wrap">
 <nav class="bc" aria-label="パンくずリスト"><a href="/">トップ</a> › <a href="/c/base.html">基本量</a> › 電流</nav>
-<span class="tag">基本量</span>
-<h1>電流の単位 A の意味</h1>
-<p class="lead">単位時間あたりに流れる電荷の量。SI基本単位のひとつで、電気素量をもとに定義される。</p>
+<span class="tag">基本量</span><span class="tag lv">中学理科で出てくる</span>
+<h1>電流の単位 A の意味｜SI基本単位</h1>
 <div class="hero">
 <div class="big">A</div>
 <div class="sub">次元 [I]</div></div>
-<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">基本単位として</a><a href="#s2">A の別の書き方</a><a href="#s3">電流が出てくる公式</a><a href="#s4">電流とほかの量の関係</a></div></nav><h2 id="s1">基本単位として</h2>
-<p>電流はSIの基本量で、その単位 <span class="mono">A</span> はこれ以上分解できません。ほかのすべての単位は、基本単位のかけ算・わり算で表されます。</p>
-<h2 id="s2">A の別の書き方</h2>
-<p>同じ量でも、使う公式によって単位の見え方が変わります。どれも基本単位にすると一致します。</p>
-<div class="tbl"><table><tr><th>書き方</th><th>根拠になる公式</th></tr>
-<tr><td class="mono">A = C/s</td><td><a href="/f/charge_def.html">電荷と電流</a><br><span class="mono">q = I t</span></td></tr>
-<tr><td class="mono">A = V/Ω</td><td><a href="/f/ohm.html">オームの法則</a><br><span class="mono">V = R I</span></td></tr>
-<tr><td class="mono">A = W/V</td><td><a href="/f/power_iv.html">電力</a><br><span class="mono">P = I V</span></td></tr>
-<tr><td class="mono">A = N/(T·m)</td><td><a href="/f/wire_force.html">電流が磁場から受ける力</a><br><span class="mono">F = I B l</span></td></tr>
-<tr><td class="mono">A = V·s/H</td><td><a href="/f/self_induct.html">自己誘導</a><br><span class="mono">V = L ΔI / Δt</span></td></tr>
-<tr><td class="mono">A = Wb/H</td><td><a href="/f/flux_L.html">磁束とインダクタンス</a><br><span class="mono">Φ = L I</span></td></tr>
-</table></div>
-<h2 id="s3">電流が出てくる公式</h2><ul>
+<div class="goals"><b>このページでわかること</b><ul><li>電流を言葉でどう言い表すか</li><li>基本単位 A がどのように決められているか</li></ul></div>
+<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">電流とは？ 言葉で意味をつかむ</a><a href="#s2">電流が出てくる公式</a><a href="#s3">次に読む：電流を使って表される量</a></div></nav><h2 id="s1">電流とは？ 言葉で意味をつかむ</h2>
+<p class="meaning"><b>電流とは</b>　1秒あたりに導線の断面を通る電気の量。</p>
+<div class="note unitname"><b>アンペア（A）</b>はSIの基本単位のひとつで、ほかの単位に分解できません。<br>電気素量（電子1個の電荷の大きさ）をもとに、1秒あたりに流れる電荷の量として決められている。</div>
+<p>ほかのすべての単位は、7つの基本単位を「かける」「割る」で組み合わせて作られています。電流を含む単位の例は、下の「電流が出てくる公式」から見られます。</p>
+<h2 id="s2">電流が出てくる公式</h2><ul>
 <li><a href="/f/charge_def.html">電荷と電流</a>：<span class="mono">q = I t</span></li>
 <li><a href="/f/ohm.html">オームの法則</a>：<span class="mono">V = R I</span></li>
 <li><a href="/f/power_iv.html">電力</a>：<span class="mono">P = I V</span></li>
@@ -71,26 +65,13 @@
 <li><a href="/f/ampere_wire.html">直線電流のつくる磁場</a>：<span class="mono">H = I / (2π r)</span></li>
 <li><a href="/f/current_density.html">電流密度</a>：<span class="mono">j = I / S</span></li>
 </ul>
-<h2 id="s4">電流とほかの量の関係</h2><div class="grid">
-<a href="/r/current--inductance.html">電流とインダクタンス<div class="u">A と H</div></a>
-<a href="/r/current--energy.html">電流とエネルギー・仕事・熱量<div class="u">A と J</div></a>
-<a href="/r/current--power.html">電流と仕事率・電力<div class="u">A と W</div></a>
-<a href="/r/current--force.html">電流と力<div class="u">A と N</div></a>
-<a href="/r/current--time.html">電流と時間<div class="u">A と s</div></a>
-<a href="/r/current--magnetic_field.html">電流と磁場（磁界）の強さ<div class="u">A と A/m</div></a>
-<a href="/r/current--magnetic_flux.html">電流と磁束<div class="u">A と Wb</div></a>
-<a href="/r/current--magnetic_flux_density.html">電流と磁束密度<div class="u">A と T</div></a>
-<a href="/r/current--length.html">電流と長さ<div class="u">A と m</div></a>
-<a href="/r/current--voltage.html">電流と電圧・電位<div class="u">A と V</div></a>
-<a href="/r/current--resistance.html">電流と電気抵抗<div class="u">A と Ω</div></a>
-<a href="/r/current--current_density.html">電流と電流密度<div class="u">A と A/m²</div></a>
-<a href="/r/charge--current.html">電流と電荷（電気量）<div class="u">A と C</div></a>
-<a href="/r/area--current.html">電流と面積<div class="u">A と m²</div></a>
-</div>
+<div class="summary"><b>まとめ</b><ul><li>電流とは、1秒あたりに導線の断面を通る電気の量。</li></ul></div>
+<h2 id="s3">次に読む：電流を使って表される量</h2><div class="grid"><a href="/q/charge.html">電荷（電気量）<div class="u">C</div></a><a href="/q/resistance.html">電気抵抗<div class="u">Ω</div></a><a href="/q/conductance.html">コンダクタンス<div class="u">S</div></a><a href="/q/inductance.html">インダクタンス<div class="u">H</div></a><a href="/q/magnetic_field.html">磁場（磁界）の強さ<div class="u">A/m</div></a><a href="/q/current_density.html">電流密度<div class="u">A/m²</div></a></div>
 </div></main>
 <footer class="site"><div class="wrap">
-  <div class="links"><a href="/">トップ</a><a href="/guide.html">次元解析の使い方</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>
-  ブツリ単位ラボ — SI単位と次元解析で物理を理解する。単位はすべてSI（国際単位系）で表記しています。
+  <div class="links"><a href="/">トップ</a><a href="/guide.html">単位の読み方</a><a href="/about.html">このサイトについて</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>
+  <p class="src">単位の定義は、国際度量衡局（BIPM）の SI パンフレット第9版と、その日本語版（産業技術総合研究所 計量標準総合センター）に基づいています。</p>
+  ブツリ単位ラボ — SI単位と次元解析で物理を理解する。最終更新日：2026-10-17
 </div></footer>
 <button class="to-top" id="to-top" aria-label="ページの先頭へ戻る"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></button>
 </body>

@@ -3,16 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>透磁率の単位 H/m を基本単位で表すと kg·m/(A²·s²) | ブツリ単位ラボ</title>
-<meta name="description" content="透磁率の単位H/mを、知っている公式からSI基本単位kg·m/(A²·s²)まで分解して理解する。同じ単位の別の書き方と、同じ次元をもつ量も紹介。">
+<title>透磁率の単位 H/m の意味｜基本単位で表すと kg·m/(A²·s²) | ブツリ単位ラボ</title>
+<meta name="description" content="透磁率とは磁場から、どれだけの磁束密度が生まれるか。その言葉をそのまま単位に置き換えると H/m（= kg·m/(A²·s²)） になる理由を、図式と確認問題でやさしく解説。">
 <link rel="canonical" href="https://tanitani.butsuri-lab.workers.dev/q/permeability.html">
+
 <meta name="google-site-verification" content="kVE91IWkP86K1E_JpBQDklXXu5gz86ZOA64xcgtDUwc">
 <meta name="theme-color" content="#1d5fd1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=2">
-<script src="/assets/site.js?v=2" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=3">
+<script src="/assets/site.js?v=3" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -33,7 +34,8 @@
     <ul class="results" id="results" aria-live="polite"></ul>
     <div class="nav-sec"><h4>ページ</h4><ul>
       <li><a href="/">トップ</a></li>
-      <li><a href="/guide.html">次元解析の使い方</a></li>
+      <li><a href="/guide.html">単位の読み方と次元解析</a></li>
+      <li><a href="/about.html">このサイトについて</a></li>
     </ul></div>
     <div class="nav-sec"><h4>分野</h4><ul><li><a href="/c/base.html">基本量<span class="n">10量</span></a></li><li><a href="/c/mech.html">力学<span class="n">22量</span></a></li><li><a href="/c/thermo.html">熱・気体<span class="n">10量</span></a></li><li><a href="/c/em.html">電磁気<span class="n">17量</span></a></li><li><a href="/c/wave.html">波・光・量子<span class="n">5量</span></a></li><li><a href="/c/misc.html">放射線・化学<span class="n">4量</span></a></li></ul></div>
     <div class="nav-sec"><h4>よく使う量</h4><div class="chips"><a href="/q/force.html">力</a><a href="/q/energy.html">エネルギー</a><a href="/q/power.html">仕事率</a><a href="/q/pressure.html">圧力</a><a href="/q/voltage.html">電圧</a><a href="/q/resistance.html">電気抵抗</a><a href="/q/capacitance.html">静電容量</a><a href="/q/magnetic_flux_density.html">磁束密度</a><a href="/q/planck.html">プランク定数</a><a href="/q/gas_constant.html">気体定数</a></div></div>
@@ -41,14 +43,24 @@
 </aside>
 <main id="main"><div class="wrap">
 <nav class="bc" aria-label="パンくずリスト"><a href="/">トップ</a> › <a href="/c/em.html">電磁気</a> › 透磁率</nav>
-<span class="tag">電磁気</span>
-<h1>透磁率の単位 H/m を基本単位で表すと kg·m/(A²·s²)</h1>
-<p class="lead">磁場から磁束密度がどれだけ生じるかを表す量。</p>
+<span class="tag">電磁気</span><span class="tag lv">高校物理・化学で出てくる</span>
+<h1>透磁率の単位 H/m の意味｜基本単位で表すと kg·m/(A²·s²)</h1>
 <div class="hero">
 <div class="big">H/m = kg·m/(A²·s²)</div>
 <div class="sub">次元 [M L T⁻² I⁻²]</div></div>
-<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">透磁率の単位を、知っている公式から組み立てる</a><a href="#s2">H/m の別の書き方</a><a href="#s3">透磁率が出てくる公式</a><a href="#s4">透磁率とほかの量の関係</a></div></nav><h2 id="s1">透磁率の単位を、知っている公式から組み立てる</h2>
-<p>H/m を基本単位までほどくには、速度 → 加速度 → 力 → 電荷（電気量） → 磁束密度 → 磁場（磁界）の強さ → 透磁率 の順に単位をつないでいきます。</p>
+<div class="goals"><b>このページでわかること</b><ul><li>透磁率を言葉でどう言い表すか</li><li>その言葉を単位に置き換えると、なぜ H/m になるのか</li></ul></div>
+<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">透磁率とは？ 言葉で意味をつかむ</a><a href="#s2">基本単位までたどる</a><a href="#s3">透磁率が出てくる公式</a><a href="#s4">確認問題</a></div></nav><h2 id="s1">透磁率とは？ 言葉で意味をつかむ</h2>
+<p class="meaning"><b>透磁率とは</b>　磁場から、どれだけの磁束密度が生まれるか。</p>
+<div class="wordeq"><div class="lbl">言葉の式</div><div class="eq">透磁率 ＝ 生まれる磁束密度 ÷ 磁場の強さ</div></div>
+<p>言葉の式に出てくるそれぞれの言葉は、すでに単位がわかっている量です。言葉を単位に置き換えてみましょう。</p>
+<div class="tbl"><table class="swap"><tr><th>言葉</th><th>何の量か</th><th>単位</th></tr>
+<tr><td>生まれる磁束密度</td><td><a href="/q/magnetic_flux_density.html">磁束密度</a></td><td class="mono">T</td></tr>
+<tr><td>磁場の強さ</td><td><a href="/q/magnetic_field.html">磁場（磁界）の強さ</a></td><td class="mono">A/m</td></tr>
+</table></div>
+<div class="calc">[透磁率] ＝ T ÷ (A/m)<br>　　　＝ T·m/A<br>　　　＝ kg·m/(A²·s²)<br>　　　＝ H/m</div>
+<p>言葉の通りに単位を並べるだけで、<span class="mono ok">H/m</span> が出てきました。</p>
+<h2 id="s2">基本単位までたどる</h2>
+<p>言葉の式に出てきた量も、さらに言葉の式で分解できます。速度 → 加速度 → 力 → 電荷（電気量） → 磁束密度 → 磁場（磁界）の強さ → 透磁率 の順にたどると、すべて基本単位（m・kg・s・A・K・mol・cd）だけで表せます。</p>
 <details class="pre"><summary>前提：速度・加速度・力・電荷（電気量）の単位（知っていれば飛ばしてOK）</summary>
 <div class="step"><div class="st"><b><a href="/q/velocity.html">速度</a></b> <span class="lead">— <a href="/f/v_def.html">速さの定義</a>　<span class="mono">v = x / t</span></span></div><p>速さは「進んだ距離 ÷ かかった時間」。m を s で割って m/s です。</p><div class="calc">[v] = m ÷ s = m/s</div></div>
 <div class="step"><div class="st"><b><a href="/q/acceleration.html">加速度</a></b> <span class="lead">— <a href="/f/a_def.html">加速度の定義</a>　<span class="mono">a = Δv / Δt</span></span></div><p>加速度は「1秒あたりに速さがどれだけ変わるか」。速さの m/s をさらに s で割るので m/s² になります。</p><div class="calc">[a] = m/s ÷ s = m/s²</div></div>
@@ -58,27 +70,18 @@
 <div class="step"><div class="st"><b><a href="/q/magnetic_flux_density.html">磁束密度</a></b> <span class="lead">— <a href="/f/lorentz.html">ローレンツ力（磁場の部分）</a>　<span class="mono">F = q v B</span></span></div><p>磁場の中を動く電荷が受ける力 F = qvB から B = F/(qv)。N を C と m/s で割った組み合わせが T（テスラ）です。</p><div class="calc">[B] = N ÷ C ÷ (m/s) = N·s/(C·m) = kg/(A·s²) = T</div></div>
 <div class="step"><div class="st"><b><a href="/q/magnetic_field.html">磁場（磁界）の強さ</a></b> <span class="lead">— <a href="/f/ampere_wire.html">直線電流のつくる磁場</a>　<span class="mono">H = I / (2π r)</span></span></div><p>直線電流のまわりの磁場は H = I/(2πr)。A を m で割って A/m です。2π はただの数なので単位には関係ありません。</p><div class="calc">[H] = A ÷ m = A/m</div></div>
 <div class="step"><div class="st"><b><a href="/q/permeability.html">透磁率</a></b> <span class="lead">— <a href="/f/b_mu_h.html">磁束密度と磁場</a>　<span class="mono">B = μ H</span></span></div><p>B = μH から μ = B/H。T を A/m で割ったものを整理すると H/m になります。</p><div class="calc">[μ] = T ÷ (A/m) = T·m/A = kg·m/(A²·s²) = H/m</div></div>
-<p>まとめると、<span class="mono ok">H/m = kg·m/(A²·s²)</span> です。</p>
-<h2 id="s2">H/m の別の書き方</h2>
-<p>同じ量でも、使う公式によって単位の見え方が変わります。どれも基本単位にすると一致します。</p>
-<div class="tbl"><table><tr><th>書き方</th><th>根拠になる公式</th></tr>
-<tr><td class="mono">H/m = T·m/A</td><td><a href="/f/b_mu_h.html">磁束密度と磁場</a><br><span class="mono">B = μ H</span></td></tr>
-<tr><td class="mono">H/m = s²/(m·F)</td><td><a href="/f/light_speed.html">光速と真空の誘電率・透磁率</a><br><span class="mono">c = 1 / √(ε₀ μ₀)</span></td></tr>
-</table></div>
 <h2 id="s3">透磁率が出てくる公式</h2><ul>
 <li><a href="/f/b_mu_h.html">磁束密度と磁場</a>：<span class="mono">B = μ H</span></li>
 <li><a href="/f/light_speed.html">光速と真空の誘電率・透磁率</a>：<span class="mono">c = 1 / √(ε₀ μ₀)</span></li>
 </ul>
-<h2 id="s4">透磁率とほかの量の関係</h2><div class="grid">
-<a href="/r/magnetic_field--permeability.html">透磁率と磁場（磁界）の強さ<div class="u">H/m と A/m</div></a>
-<a href="/r/magnetic_flux_density--permeability.html">透磁率と磁束密度<div class="u">H/m と T</div></a>
-<a href="/r/permeability--permittivity.html">透磁率と誘電率<div class="u">H/m と F/m</div></a>
-<a href="/r/permeability--velocity.html">透磁率と速度<div class="u">H/m と m/s</div></a>
-</div>
+<div class="summary"><b>まとめ</b><ul><li>透磁率とは、磁場から、どれだけの磁束密度が生まれるか。</li><li>言葉の式 透磁率 ＝ 生まれる磁束密度 ÷ 磁場の強さ を単位に置き換えると T·m/A。</li><li>基本単位だけで書くと kg·m/(A²·s²)。</li></ul></div>
+<h2 id="s4">確認問題</h2>
+<div class="quiz"><p><b>Q.</b> 透磁率の単位 <span class="mono">H/m</span> を基本単位で表したものはどれ？</p><ul class="opts"><li><span class="opt">A</span><span class="mono">A²·s³/(kg·m³)</span></li><li><span class="opt">B</span><span class="mono">kg·m/(A²·s²)</span></li><li><span class="opt">C</span><span class="mono">A²·s⁴/(kg·m³)</span></li><li><span class="opt">D</span><span class="mono">A²·s³/(kg·m²)</span></li></ul><details><summary>答えを見る</summary><p><b>正解：B</b>　<span class="mono ok">kg·m/(A²·s²)</span></p><p>透磁率 ＝ 生まれる磁束密度 ÷ 磁場の強さ なので、[透磁率] ＝ T ÷ (A/m) ＝ kg·m/(A²·s²)。</p></details></div>
 </div></main>
 <footer class="site"><div class="wrap">
-  <div class="links"><a href="/">トップ</a><a href="/guide.html">次元解析の使い方</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>
-  ブツリ単位ラボ — SI単位と次元解析で物理を理解する。単位はすべてSI（国際単位系）で表記しています。
+  <div class="links"><a href="/">トップ</a><a href="/guide.html">単位の読み方</a><a href="/about.html">このサイトについて</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>
+  <p class="src">単位の定義は、国際度量衡局（BIPM）の SI パンフレット第9版と、その日本語版（産業技術総合研究所 計量標準総合センター）に基づいています。</p>
+  ブツリ単位ラボ — SI単位と次元解析で物理を理解する。最終更新日：2026-10-17
 </div></footer>
 <button class="to-top" id="to-top" aria-label="ページの先頭へ戻る"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></button>
 </body>

@@ -3,16 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>速度の単位 m/s の意味 | ブツリ単位ラボ</title>
-<meta name="description" content="速度の単位m/sを、知っている公式からSI基本単位m/sまで分解して理解する。同じ単位の別の書き方と、同じ次元をもつ量も紹介。">
+<title>速度の単位 m/s の意味を言葉から理解する | ブツリ単位ラボ</title>
+<meta name="description" content="速度とは1秒あたりに進む距離。その言葉をそのまま単位に置き換えると m/s になる理由を、図式と確認問題でやさしく解説。">
 <link rel="canonical" href="https://tanitani.butsuri-lab.workers.dev/q/velocity.html">
+
 <meta name="google-site-verification" content="kVE91IWkP86K1E_JpBQDklXXu5gz86ZOA64xcgtDUwc">
 <meta name="theme-color" content="#1d5fd1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=2">
-<script src="/assets/site.js?v=2" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=3">
+<script src="/assets/site.js?v=3" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -33,7 +34,8 @@
     <ul class="results" id="results" aria-live="polite"></ul>
     <div class="nav-sec"><h4>ページ</h4><ul>
       <li><a href="/">トップ</a></li>
-      <li><a href="/guide.html">次元解析の使い方</a></li>
+      <li><a href="/guide.html">単位の読み方と次元解析</a></li>
+      <li><a href="/about.html">このサイトについて</a></li>
     </ul></div>
     <div class="nav-sec"><h4>分野</h4><ul><li><a href="/c/base.html">基本量<span class="n">10量</span></a></li><li><a href="/c/mech.html">力学<span class="n">22量</span></a></li><li><a href="/c/thermo.html">熱・気体<span class="n">10量</span></a></li><li><a href="/c/em.html">電磁気<span class="n">17量</span></a></li><li><a href="/c/wave.html">波・光・量子<span class="n">5量</span></a></li><li><a href="/c/misc.html">放射線・化学<span class="n">4量</span></a></li></ul></div>
     <div class="nav-sec"><h4>よく使う量</h4><div class="chips"><a href="/q/force.html">力</a><a href="/q/energy.html">エネルギー</a><a href="/q/power.html">仕事率</a><a href="/q/pressure.html">圧力</a><a href="/q/voltage.html">電圧</a><a href="/q/resistance.html">電気抵抗</a><a href="/q/capacitance.html">静電容量</a><a href="/q/magnetic_flux_density.html">磁束密度</a><a href="/q/planck.html">プランク定数</a><a href="/q/gas_constant.html">気体定数</a></div></div>
@@ -41,23 +43,27 @@
 </aside>
 <main id="main"><div class="wrap">
 <nav class="bc" aria-label="パンくずリスト"><a href="/">トップ</a> › <a href="/c/mech.html">力学</a> › 速度</nav>
-<span class="tag">力学</span>
-<h1>速度の単位 m/s の意味</h1>
-<p class="lead">単位時間あたりに進む距離。</p>
+<span class="tag">力学</span><span class="tag lv">中学理科で出てくる</span>
+<h1>速度の単位 m/s の意味を言葉から理解する</h1>
 <div class="hero">
 <div class="big">m/s</div>
 <div class="sub">次元 [L T⁻¹]</div></div>
-<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">速度の単位を、知っている公式から組み立てる</a><a href="#s2">m/s の別の書き方</a><a href="#s3">速度が出てくる公式</a><a href="#s4">速度とほかの量の関係</a></div></nav><h2 id="s1">速度の単位を、知っている公式から組み立てる</h2>
-<div class="step"><div class="st"><b><a href="/q/velocity.html">速度</a></b> <span class="lead">— <a href="/f/v_def.html">速さの定義</a>　<span class="mono">v = x / t</span></span></div><p>速さは「進んだ距離 ÷ かかった時間」。m を s で割って m/s です。</p><div class="calc">[v] = m ÷ s = m/s</div></div>
+<div class="goals"><b>このページでわかること</b><ul><li>速度を言葉でどう言い表すか</li><li>その言葉を単位に置き換えると、なぜ m/s になるのか</li><li>m/s のいろいろな書き方と、その根拠になる公式</li></ul></div>
+<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">速度とは？ 言葉で意味をつかむ</a><a href="#s2">m/s の別の書き方</a><a href="#s3">速度が出てくる公式</a><a href="#s4">確認問題</a><a href="#s5">次に読む：速度を使って表される量</a></div></nav><h2 id="s1">速度とは？ 言葉で意味をつかむ</h2>
+<p class="meaning"><b>速度とは</b>　1秒あたりに進む距離。</p>
+<div class="wordeq"><div class="lbl">言葉の式</div><div class="eq">速度 ＝ 進んだ距離 ÷ かかった時間</div></div>
+<p>言葉の式に出てくるそれぞれの言葉は、すでに単位がわかっている量です。言葉を単位に置き換えてみましょう。</p>
+<div class="tbl"><table class="swap"><tr><th>言葉</th><th>何の量か</th><th>単位</th></tr>
+<tr><td>進んだ距離</td><td><a href="/q/length.html">長さ</a></td><td class="mono">m</td></tr>
+<tr><td>かかった時間</td><td><a href="/q/time.html">時間</a></td><td class="mono">s</td></tr>
+</table></div>
+<div class="calc">[速度] ＝ m ÷ s<br>　　　＝ m/s</div>
+<p>言葉の通りに単位を並べるだけで、<span class="mono ok">m/s</span> が出てきました。</p>
 <h2 id="s2">m/s の別の書き方</h2>
 <p>同じ量でも、使う公式によって単位の見え方が変わります。どれも基本単位にすると一致します。</p>
 <div class="tbl"><table><tr><th>書き方</th><th>根拠になる公式</th></tr>
 <tr><td class="mono">m/s = W/N</td><td><a href="/f/power_v.html">仕事率と速さ</a><br><span class="mono">P = F v</span></td></tr>
-<tr><td class="mono">m/s = N/(Pa·s·m)</td><td><a href="/f/newton_visc.html">ニュートンの粘性法則</a><br><span class="mono">F = η S v / d</span></td></tr>
-<tr><td class="mono">m/s = m²·Pa·s/kg</td><td><a href="/f/reynolds.html">レイノルズ数</a><br><span class="mono">Re = ρ v l / η</span></td></tr>
 <tr><td class="mono">m/s = N/(C·T)</td><td><a href="/f/lorentz.html">ローレンツ力（磁場の部分）</a><br><span class="mono">F = q v B</span></td></tr>
-<tr><td class="mono">m/s = A·m/C</td><td><a href="/f/drift.html">電流密度とキャリアの運動</a><br><span class="mono">j = n q v</span></td></tr>
-<tr><td class="mono">m/s = Hz·m</td><td><a href="/f/wave.html">波の基本式</a><br><span class="mono">v = f λ</span></td></tr>
 </table></div>
 <h2 id="s3">速度が出てくる公式</h2><ul>
 <li><a href="/f/v_def.html">速さの定義</a>：<span class="mono">v = x / t</span></li>
@@ -78,33 +84,15 @@
 <li><a href="/f/wave.html">波の基本式</a>：<span class="mono">v = f λ</span></li>
 <li><a href="/f/mass_energy.html">質量とエネルギーの等価性</a>：<span class="mono">E = m c²</span></li>
 </ul>
-<h2 id="s4">速度とほかの量の関係</h2><div class="grid">
-<a href="/r/energy--velocity.html">速度とエネルギー・仕事・熱量<div class="u">m/s と J</div></a>
-<a href="/r/gravitational_constant--velocity.html">速度と万有引力定数<div class="u">m/s と N·m²/kg²</div></a>
-<a href="/r/power--velocity.html">速度と仕事率・電力<div class="u">m/s と W</div></a>
-<a href="/r/force--velocity.html">速度と力<div class="u">m/s と N</div></a>
-<a href="/r/acceleration--velocity.html">速度と加速度<div class="u">m/s と m/s²</div></a>
-<a href="/r/pressure--velocity.html">速度と圧力<div class="u">m/s と Pa</div></a>
-<a href="/r/density--velocity.html">速度と密度<div class="u">m/s と kg/m³</div></a>
-<a href="/r/frequency--velocity.html">速度と振動数・周波数<div class="u">m/s と Hz</div></a>
-<a href="/r/number_density--velocity.html">速度と数密度<div class="u">m/s と 1/m³</div></a>
-<a href="/r/time--velocity.html">速度と時間<div class="u">m/s と s</div></a>
-<a href="/r/magnetic_flux_density--velocity.html">速度と磁束密度<div class="u">m/s と T</div></a>
-<a href="/r/velocity--viscosity.html">速度と粘性係数（粘度）<div class="u">m/s と Pa·s</div></a>
-<a href="/r/angular_velocity--velocity.html">速度と角速度<div class="u">m/s と rad/s</div></a>
-<a href="/r/permittivity--velocity.html">速度と誘電率<div class="u">m/s と F/m</div></a>
-<a href="/r/mass--velocity.html">速度と質量<div class="u">m/s と kg</div></a>
-<a href="/r/permeability--velocity.html">速度と透磁率<div class="u">m/s と H/m</div></a>
-<a href="/r/momentum--velocity.html">速度と運動量<div class="u">m/s と kg·m/s</div></a>
-<a href="/r/length--velocity.html">速度と長さ<div class="u">m/s と m</div></a>
-<a href="/r/current_density--velocity.html">速度と電流密度<div class="u">m/s と A/m²</div></a>
-<a href="/r/charge--velocity.html">速度と電荷（電気量）<div class="u">m/s と C</div></a>
-<a href="/r/area--velocity.html">速度と面積<div class="u">m/s と m²</div></a>
-</div>
+<div class="summary"><b>まとめ</b><ul><li>速度とは、1秒あたりに進む距離。</li><li>言葉の式 速度 ＝ 進んだ距離 ÷ かかった時間 を単位に置き換えると m/s。</li></ul></div>
+<h2 id="s4">確認問題</h2>
+<div class="quiz"><p><b>Q.</b> 速度の単位 <span class="mono">m/s</span> を基本単位で表したものはどれ？</p><ul class="opts"><li><span class="opt">A</span><span class="mono">m/s</span></li><li><span class="opt">B</span><span class="mono">1/s</span></li><li><span class="opt">C</span><span class="mono">1/m</span></li><li><span class="opt">D</span><span class="mono">m/s²</span></li></ul><details><summary>答えを見る</summary><p><b>正解：A</b>　<span class="mono ok">m/s</span></p><p>速度 ＝ 進んだ距離 ÷ かかった時間 なので、[速度] ＝ m ÷ s ＝ m/s。</p></details></div>
+<h2 id="s5">次に読む：速度を使って表される量</h2><div class="grid"><a href="/q/acceleration.html">加速度<div class="u">m/s²</div></a><a href="/q/momentum.html">運動量<div class="u">kg·m/s</div></a><a href="/q/viscosity.html">粘性係数（粘度）<div class="u">Pa·s</div></a><a href="/q/magnetic_flux_density.html">磁束密度<div class="u">T</div></a></div>
 </div></main>
 <footer class="site"><div class="wrap">
-  <div class="links"><a href="/">トップ</a><a href="/guide.html">次元解析の使い方</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>
-  ブツリ単位ラボ — SI単位と次元解析で物理を理解する。単位はすべてSI（国際単位系）で表記しています。
+  <div class="links"><a href="/">トップ</a><a href="/guide.html">単位の読み方</a><a href="/about.html">このサイトについて</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>
+  <p class="src">単位の定義は、国際度量衡局（BIPM）の SI パンフレット第9版と、その日本語版（産業技術総合研究所 計量標準総合センター）に基づいています。</p>
+  ブツリ単位ラボ — SI単位と次元解析で物理を理解する。最終更新日：2026-10-17
 </div></footer>
 <button class="to-top" id="to-top" aria-label="ページの先頭へ戻る"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></button>
 </body>

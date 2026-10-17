@@ -100,3 +100,22 @@ footer.site a{color:var(--dim)}
 .to-top{position:fixed;right:16px;bottom:16px;z-index:20;width:44px;height:44px;border-radius:50%;border:1px solid var(--border);background:var(--card);color:var(--fg);box-shadow:var(--shadow);cursor:pointer;display:grid;place-items:center;opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s}
 .to-top.show{opacity:1;visibility:visible}
 .to-top svg{width:20px;height:20px}
+.tag.lv{color:var(--dim);background:var(--code)}
+.goals{margin:1rem 0;padding:.8rem 1rem;border-left:4px solid var(--ok);background:var(--card);border-radius:0 var(--r) var(--r) 0}
+.goals b{font-size:.85rem}.goals ul{margin:.3rem 0 0 1.2rem}.goals li{margin:.15rem 0;font-size:.92rem}
+.meaning{font-size:1.05rem;padding:.2rem 0}
+.wordeq{margin:1rem 0;padding:.9rem 1rem;border:2px dashed var(--accent);border-radius:var(--r);background:var(--card)}
+.wordeq .lbl{font-size:.75rem;font-weight:700;color:var(--accent);margin-bottom:.2rem}
+.wordeq .eq{font-size:1.08rem;font-weight:700;line-height:1.7}
+table.swap td:first-child{font-weight:700}
+table.swap th:last-child,table.swap td:last-child{white-space:nowrap}
+.unitname{border-style:solid;border-color:var(--accent);background:var(--accent-soft)}
+.summary{margin:2rem 0 1rem;padding:.9rem 1.1rem;background:var(--accent-soft);border-radius:var(--r)}
+.summary ul{margin:.3rem 0 0 1.2rem}.summary li{margin:.2rem 0}
+.quiz{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1rem}
+.quiz .opts{list-style:none;margin:.4rem 0 .8rem;padding:0;display:grid;gap:.4rem}
+.quiz .opts li{display:flex;align-items:center;gap:.6rem;padding:.45rem .7rem;border:1px solid var(--border);border-radius:8px;margin:0}
+.quiz .opt{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--code);font-size:.78rem;font-weight:700;flex:none}
+.quiz details summary{cursor:pointer;color:var(--accent);font-weight:700}
+.quiz details p{margin:.5rem 0 0}
+footer.site .src{font-size:.78rem;margin:0 0 .5rem}

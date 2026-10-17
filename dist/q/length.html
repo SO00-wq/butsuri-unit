@@ -3,16 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>長さの単位 m の意味 | ブツリ単位ラボ</title>
-<meta name="description" content="長さの単位mを、知っている公式からSI基本単位mまで分解して理解する。同じ単位の別の書き方と、同じ次元をもつ量も紹介。">
+<title>長さの単位 m の意味｜SI基本単位 | ブツリ単位ラボ</title>
+<meta name="description" content="長さとは2つの点がどれだけ離れているか。その言葉をそのまま単位に置き換えると m になる理由を、図式と確認問題でやさしく解説。">
 <link rel="canonical" href="https://tanitani.butsuri-lab.workers.dev/q/length.html">
+
 <meta name="google-site-verification" content="kVE91IWkP86K1E_JpBQDklXXu5gz86ZOA64xcgtDUwc">
 <meta name="theme-color" content="#1d5fd1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=2">
-<script src="/assets/site.js?v=2" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=3">
+<script src="/assets/site.js?v=3" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -33,7 +34,8 @@
     <ul class="results" id="results" aria-live="polite"></ul>
     <div class="nav-sec"><h4>ページ</h4><ul>
       <li><a href="/">トップ</a></li>
-      <li><a href="/guide.html">次元解析の使い方</a></li>
+      <li><a href="/guide.html">単位の読み方と次元解析</a></li>
+      <li><a href="/about.html">このサイトについて</a></li>
     </ul></div>
     <div class="nav-sec"><h4>分野</h4><ul><li><a href="/c/base.html">基本量<span class="n">10量</span></a></li><li><a href="/c/mech.html">力学<span class="n">22量</span></a></li><li><a href="/c/thermo.html">熱・気体<span class="n">10量</span></a></li><li><a href="/c/em.html">電磁気<span class="n">17量</span></a></li><li><a href="/c/wave.html">波・光・量子<span class="n">5量</span></a></li><li><a href="/c/misc.html">放射線・化学<span class="n">4量</span></a></li></ul></div>
     <div class="nav-sec"><h4>よく使う量</h4><div class="chips"><a href="/q/force.html">力</a><a href="/q/energy.html">エネルギー</a><a href="/q/power.html">仕事率</a><a href="/q/pressure.html">圧力</a><a href="/q/voltage.html">電圧</a><a href="/q/resistance.html">電気抵抗</a><a href="/q/capacitance.html">静電容量</a><a href="/q/magnetic_flux_density.html">磁束密度</a><a href="/q/planck.html">プランク定数</a><a href="/q/gas_constant.html">気体定数</a></div></div>
@@ -41,28 +43,17 @@
 </aside>
 <main id="main"><div class="wrap">
 <nav class="bc" aria-label="パンくずリスト"><a href="/">トップ</a> › <a href="/c/base.html">基本量</a> › 長さ</nav>
-<span class="tag">基本量</span>
-<h1>長さの単位 m の意味</h1>
-<p class="lead">空間的な距離。SI基本単位のひとつで、光が真空中を進む距離をもとに定義される。</p>
+<span class="tag">基本量</span><span class="tag lv">中学理科で出てくる</span>
+<h1>長さの単位 m の意味｜SI基本単位</h1>
 <div class="hero">
 <div class="big">m</div>
 <div class="sub">次元 [L]</div></div>
-<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">基本単位として</a><a href="#s2">m の別の書き方</a><a href="#s3">長さが出てくる公式</a><a href="#s4">長さとほかの量の関係</a></div></nav><h2 id="s1">基本単位として</h2>
-<p>長さはSIの基本量で、その単位 <span class="mono">m</span> はこれ以上分解できません。ほかのすべての単位は、基本単位のかけ算・わり算で表されます。</p>
-<h2 id="s2">m の別の書き方</h2>
-<p>同じ量でも、使う公式によって単位の見え方が変わります。どれも基本単位にすると一致します。</p>
-<div class="tbl"><table><tr><th>書き方</th><th>根拠になる公式</th></tr>
-<tr><td class="mono">m = J/N</td><td><a href="/f/work.html">仕事の定義</a><br><span class="mono">W = F x</span></td></tr>
-<tr><td class="mono">m = J·s²/(kg·m)</td><td><a href="/f/potential.html">重力による位置エネルギー</a><br><span class="mono">U = m g h</span></td></tr>
-<tr><td class="mono">m = Pa·m²·s²/kg</td><td><a href="/f/hydrostatic.html">水圧（静水圧）</a><br><span class="mono">p = ρ g h</span></td></tr>
-<tr><td class="mono">m = Pa·m³/N</td><td><a href="/f/newton_visc.html">ニュートンの粘性法則</a><br><span class="mono">F = η S v / d</span></td></tr>
-<tr><td class="mono">m = N/(Pa·m)</td><td><a href="/f/stokes.html">ストークスの法則</a><br><span class="mono">F = 6π η r v</span></td></tr>
-<tr><td class="mono">m = m²·s²·Pa/kg</td><td><a href="/f/reynolds.html">レイノルズ数</a><br><span class="mono">Re = ρ v l / η</span></td></tr>
-<tr><td class="mono">m = s²·N/kg</td><td><a href="/f/escape.html">脱出速度</a><br><span class="mono">v = √(2 G M / r)</span></td></tr>
-<tr><td class="mono">m = N/(A·T)</td><td><a href="/f/wire_force.html">電流が磁場から受ける力</a><br><span class="mono">F = I B l</span></td></tr>
-<tr><td class="mono">m = m/(s·Hz)</td><td><a href="/f/wave.html">波の基本式</a><br><span class="mono">v = f λ</span></td></tr>
-</table></div>
-<h2 id="s3">長さが出てくる公式</h2><ul>
+<div class="goals"><b>このページでわかること</b><ul><li>長さを言葉でどう言い表すか</li><li>基本単位 m がどのように決められているか</li></ul></div>
+<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">長さとは？ 言葉で意味をつかむ</a><a href="#s2">長さが出てくる公式</a><a href="#s3">次に読む：長さを使って表される量</a></div></nav><h2 id="s1">長さとは？ 言葉で意味をつかむ</h2>
+<p class="meaning"><b>長さとは</b>　2つの点がどれだけ離れているか。</p>
+<div class="note unitname"><b>メートル（m）</b>はSIの基本単位のひとつで、ほかの単位に分解できません。<br>光が真空中を、ある決まったごく短い時間に進む距離をもとに決められている。</div>
+<p>ほかのすべての単位は、7つの基本単位を「かける」「割る」で組み合わせて作られています。長さを含む単位の例は、下の「長さが出てくる公式」から見られます。</p>
+<h2 id="s2">長さが出てくる公式</h2><ul>
 <li><a href="/f/angle_arc.html">弧度法（ラジアン）の定義</a>：<span class="mono">θ = l / r</span></li>
 <li><a href="/f/solid_angle_def.html">立体角（ステラジアン）の定義</a>：<span class="mono">Ω = S / r²</span></li>
 <li><a href="/f/area_sq.html">面積と長さ</a>：<span class="mono">S = l²</span></li>
@@ -97,48 +88,13 @@
 <li><a href="/f/wavenumber.html">波数</a>：<span class="mono">k = 2π / λ</span></li>
 <li><a href="/f/de_broglie.html">ド・ブロイ波長</a>：<span class="mono">λ = h / p</span></li>
 </ul>
-<h2 id="s4">長さとほかの量の関係</h2><div class="grid">
-<a href="/r/length--spring_constant.html">長さとばね定数<div class="u">m と N/m</div></a>
-<a href="/r/energy--length.html">長さとエネルギー・仕事・熱量<div class="u">m と J</div></a>
-<a href="/r/coulomb_constant--length.html">長さとクーロンの法則の比例定数<div class="u">m と N·m²/C²</div></a>
-<a href="/r/length--planck.html">長さとプランク定数<div class="u">m と J·s</div></a>
-<a href="/r/gravitational_constant--length.html">長さと万有引力定数<div class="u">m と N·m²/kg²</div></a>
-<a href="/r/length--power.html">長さと仕事率・電力<div class="u">m と W</div></a>
-<a href="/r/length--volume.html">長さと体積<div class="u">m と m³</div></a>
-<a href="/r/force--length.html">長さと力<div class="u">m と N</div></a>
-<a href="/r/length--torque.html">長さと力のモーメント（トルク）<div class="u">m と N·m</div></a>
-<a href="/r/acceleration--length.html">長さと加速度<div class="u">m と m/s²</div></a>
-<a href="/r/length--pressure.html">長さと圧力<div class="u">m と Pa</div></a>
-<a href="/r/density--length.html">長さと密度<div class="u">m と kg/m³</div></a>
-<a href="/r/length--moment_of_inertia.html">長さと慣性モーメント<div class="u">m と kg·m²</div></a>
-<a href="/r/length--resistivity.html">長さと抵抗率<div class="u">m と Ω·m</div></a>
-<a href="/r/frequency--length.html">長さと振動数・周波数<div class="u">m と Hz</div></a>
-<a href="/r/length--time.html">長さと時間<div class="u">m と s</div></a>
-<a href="/r/length--wavenumber.html">長さと波数<div class="u">m と 1/m</div></a>
-<a href="/r/length--temperature.html">長さと温度（熱力学温度）<div class="u">m と K</div></a>
-<a href="/r/length--thermal_conductivity.html">長さと熱伝導率<div class="u">m と W/(m·K)</div></a>
-<a href="/r/length--magnetic_field.html">長さと磁場（磁界）の強さ<div class="u">m と A/m</div></a>
-<a href="/r/length--magnetic_flux_density.html">長さと磁束密度<div class="u">m と T</div></a>
-<a href="/r/length--viscosity.html">長さと粘性係数（粘度）<div class="u">m と Pa·s</div></a>
-<a href="/r/length--surface_tension.html">長さと表面張力<div class="u">m と N/m</div></a>
-<a href="/r/angular_velocity--length.html">長さと角速度<div class="u">m と rad/s</div></a>
-<a href="/r/angular_momentum--length.html">長さと角運動量<div class="u">m と kg·m²/s</div></a>
-<a href="/r/length--permittivity.html">長さと誘電率<div class="u">m と F/m</div></a>
-<a href="/r/length--mass.html">長さと質量<div class="u">m と kg</div></a>
-<a href="/r/length--velocity.html">長さと速度<div class="u">m と m/s</div></a>
-<a href="/r/length--momentum.html">長さと運動量<div class="u">m と kg·m/s</div></a>
-<a href="/r/length--voltage.html">長さと電圧・電位<div class="u">m と V</div></a>
-<a href="/r/electric_field--length.html">長さと電場（電界）<div class="u">m と V/m</div></a>
-<a href="/r/length--resistance.html">長さと電気抵抗<div class="u">m と Ω</div></a>
-<a href="/r/current--length.html">長さと電流<div class="u">m と A</div></a>
-<a href="/r/charge--length.html">長さと電荷（電気量）<div class="u">m と C</div></a>
-<a href="/r/capacitance--length.html">長さと静電容量<div class="u">m と F</div></a>
-<a href="/r/area--length.html">長さと面積<div class="u">m と m²</div></a>
-</div>
+<div class="summary"><b>まとめ</b><ul><li>長さとは、2つの点がどれだけ離れているか。</li></ul></div>
+<h2 id="s3">次に読む：長さを使って表される量</h2><div class="grid"><a href="/q/angle.html">角度（平面角）<div class="u">rad</div></a><a href="/q/solid_angle.html">立体角<div class="u">sr</div></a><a href="/q/area.html">面積<div class="u">m²</div></a><a href="/q/volume.html">体積<div class="u">m³</div></a><a href="/q/velocity.html">速度<div class="u">m/s</div></a><a href="/q/energy.html">エネルギー・仕事・熱量<div class="u">J</div></a><a href="/q/torque.html">力のモーメント（トルク）<div class="u">N·m</div></a><a href="/q/moment_of_inertia.html">慣性モーメント<div class="u">kg·m²</div></a><a href="/q/angular_momentum.html">角運動量<div class="u">kg·m²/s</div></a></div>
 </div></main>
 <footer class="site"><div class="wrap">
-  <div class="links"><a href="/">トップ</a><a href="/guide.html">次元解析の使い方</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>
-  ブツリ単位ラボ — SI単位と次元解析で物理を理解する。単位はすべてSI（国際単位系）で表記しています。
+  <div class="links"><a href="/">トップ</a><a href="/guide.html">単位の読み方</a><a href="/about.html">このサイトについて</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>
+  <p class="src">単位の定義は、国際度量衡局（BIPM）の SI パンフレット第9版と、その日本語版（産業技術総合研究所 計量標準総合センター）に基づいています。</p>
+  ブツリ単位ラボ — SI単位と次元解析で物理を理解する。最終更新日：2026-10-17
 </div></footer>
 <button class="to-top" id="to-top" aria-label="ページの先頭へ戻る"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></button>
 </body>

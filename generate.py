@@ -24,7 +24,8 @@ from itertools import combinations
 OUT = Path("dist")
 SITE_NAME = "ブツリ単位ラボ"
 SITE_URL = "https://tanitani.butsuri-lab.workers.dev"  # ★独自ドメイン取得後に変更
-ASSET_VER = "2"  # CSS/JS を変えたら上げる（ブラウザのキャッシュ対策）
+ASSET_VER = "3"  # CSS/JS を変えたら上げる（ブラウザのキャッシュ対策）
+UPDATED = "2026-10-17"  # 最終更新日（内容を更新したら変える）
 GOOGLE_VERIFICATION = "kVE91IWkP86K1E_JpBQDklXXu5gz86ZOA64xcgtDUwc"  # Search Console 所有権確認
 SITE_DESC = "知らない単位や公式を、知っている公式と単位だけで理解する。SI単位と次元解析で物理量を基本単位まで分解するサイト。"
 
@@ -187,7 +188,7 @@ def factors_str(f, terms):
         if u.startswith("1"):
             u = "1"
         a = abs(e)
-        simple = re.fullmatch(r"[A-Za-zΩ]+", u) is not None
+        simple = re.fullmatch(r"[A-Za-zΩ⁰¹²³⁴⁵⁶⁷⁸⁹]+", u) is not None
         if a == 1:
             disp = u if (e > 0 or simple) else f"({u})"
         else:
@@ -230,6 +231,17 @@ for q in QS.values():
         d = dims_of(combine(f, solve(f, xs[0])))
         if d != q["dims"]:
             raise SystemExit(f"✗ {q['id']} の単位が定義式と一致しない")
+
+# 言葉の式のチェック：言葉を単位に置き換えた結果が、その量の単位と一致するか
+for q in QS.values():
+    if q.get("words"):
+        d = ZERO
+        for _, wq, e in q["words"]:
+            if wq not in QS:
+                raise SystemExit(f"✗ {q['id']} の言葉の式に未知の量 {wq}")
+            d = dimadd(d, dimscale(QS[wq]["dims"], Fr(e)))
+        if d != q["dims"]:
+            raise SystemExit(f"✗ {q['id']} の言葉の式の単位が一致しない: {fmt_dim(d)} ≠ {fmt_dim(q['dims'])}")
 
 # 量 → 登場する公式
 Q_FORMS = {qid: [] for qid in QS}
@@ -378,6 +390,25 @@ footer.site a{color:var(--dim)}
 .to-top{position:fixed;right:16px;bottom:16px;z-index:20;width:44px;height:44px;border-radius:50%;border:1px solid var(--border);background:var(--card);color:var(--fg);box-shadow:var(--shadow);cursor:pointer;display:grid;place-items:center;opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s}
 .to-top.show{opacity:1;visibility:visible}
 .to-top svg{width:20px;height:20px}
+.tag.lv{color:var(--dim);background:var(--code)}
+.goals{margin:1rem 0;padding:.8rem 1rem;border-left:4px solid var(--ok);background:var(--card);border-radius:0 var(--r) var(--r) 0}
+.goals b{font-size:.85rem}.goals ul{margin:.3rem 0 0 1.2rem}.goals li{margin:.15rem 0;font-size:.92rem}
+.meaning{font-size:1.05rem;padding:.2rem 0}
+.wordeq{margin:1rem 0;padding:.9rem 1rem;border:2px dashed var(--accent);border-radius:var(--r);background:var(--card)}
+.wordeq .lbl{font-size:.75rem;font-weight:700;color:var(--accent);margin-bottom:.2rem}
+.wordeq .eq{font-size:1.08rem;font-weight:700;line-height:1.7}
+table.swap td:first-child{font-weight:700}
+table.swap th:last-child,table.swap td:last-child{white-space:nowrap}
+.unitname{border-style:solid;border-color:var(--accent);background:var(--accent-soft)}
+.summary{margin:2rem 0 1rem;padding:.9rem 1.1rem;background:var(--accent-soft);border-radius:var(--r)}
+.summary ul{margin:.3rem 0 0 1.2rem}.summary li{margin:.2rem 0}
+.quiz{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1rem}
+.quiz .opts{list-style:none;margin:.4rem 0 .8rem;padding:0;display:grid;gap:.4rem}
+.quiz .opts li{display:flex;align-items:center;gap:.6rem;padding:.45rem .7rem;border:1px solid var(--border);border-radius:8px;margin:0}
+.quiz .opt{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--code);font-size:.78rem;font-weight:700;flex:none}
+.quiz details summary{cursor:pointer;color:var(--accent);font-weight:700}
+.quiz details p{margin:.5rem 0 0}
+footer.site .src{font-size:.78rem;margin:0 0 .5rem}
 """
 
 JS = r"""
@@ -502,7 +533,8 @@ def drawer_html(path):
     <ul class="results" id="results" aria-live="polite"></ul>
     <div class="nav-sec"><h4>ページ</h4><ul>
       <li><a href="/"{cur("/")}>トップ</a></li>
-      <li><a href="/guide.html"{cur("/guide.html")}>次元解析の使い方</a></li>
+      <li><a href="/guide.html"{cur("/guide.html")}>単位の読み方と次元解析</a></li>
+      <li><a href="/about.html"{cur("/about.html")}>このサイトについて</a></li>
     </ul></div>
     <div class="nav-sec"><h4>分野</h4><ul>{cats}</ul></div>
     <div class="nav-sec"><h4>よく使う量</h4><div class="chips">{pop}</div></div>
@@ -525,7 +557,7 @@ def add_toc(body):
     return body[:i] + toc + body[i:]
 
 
-def page(path, title, desc, body, crumbs=()):
+def page(path, title, desc, body, crumbs=(), noindex=False):
     bc = ""
     if crumbs:
         parts = ['<a href="/">トップ</a>'] + [f'<a href="{u}">{E(t)}</a>' if u else E(t) for t, u in crumbs]
@@ -540,6 +572,7 @@ def page(path, title, desc, body, crumbs=()):
 <title>{E(title)} | {SITE_NAME}</title>
 <meta name="description" content="{E(desc)}">
 <link rel="canonical" href="{SITE_URL}{path}">
+{'<meta name="robots" content="noindex,follow">' if noindex else ''}
 <meta name="google-site-verification" content="{GOOGLE_VERIFICATION}">
 <meta name="theme-color" content="#1d5fd1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -564,8 +597,9 @@ def page(path, title, desc, body, crumbs=()):
 {body}
 </div></main>
 <footer class="site"><div class="wrap">
-  <div class="links"><a href="/">トップ</a><a href="/guide.html">次元解析の使い方</a>{foot_links}</div>
-  {SITE_NAME} — SI単位と次元解析で物理を理解する。単位はすべてSI（国際単位系）で表記しています。
+  <div class="links"><a href="/">トップ</a><a href="/guide.html">単位の読み方</a><a href="/about.html">このサイトについて</a>{foot_links}</div>
+  <p class="src">単位の定義は、国際度量衡局（BIPM）の SI パンフレット第9版と、その日本語版（産業技術総合研究所 計量標準総合センター）に基づいています。</p>
+  {SITE_NAME} — SI単位と次元解析で物理を理解する。最終更新日：{UPDATED}
 </div></footer>
 <button class="to-top" id="to-top" aria-label="ページの先頭へ戻る">{ICON_UP}</button>
 </body>
@@ -575,7 +609,9 @@ def page(path, title, desc, body, crumbs=()):
         out = out / "index.html"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(doc, encoding="utf-8")
-    PATHS.append(path)
+    ALL_PAGES.append(path)
+    if not noindex:
+        PATHS.append(path)
 
 
 def build_assets():
@@ -593,11 +629,13 @@ def build_assets():
                     "k": " ".join(QS[x]["name"] for x in f["quantities"]) + " " + CATS[f["category"]]["name"]})
     for c in CATS.values():
         idx.append({"y": "分野", "t": c["name"], "s": c["description"], "u": f"/c/{c['id']}.html", "k": ""})
-    idx.append({"y": "解説", "t": "次元解析の使い方", "s": "基本単位・単位の分解・検算", "u": "/guide.html", "k": "次元解析 使い方 ガイド"})
+    idx.append({"y": "解説", "t": "単位の読み方と次元解析", "s": "言葉から単位を組み立てる・基本単位・検算", "u": "/guide.html", "k": "次元解析 使い方 ガイド 読み方 基本単位"})
+    idx.append({"y": "解説", "t": "このサイトについて", "s": "目的・内容の確かめ方・出典", "u": "/about.html", "k": "運営 出典 参考文献"})
     (OUT / "search.json").write_text(json.dumps(idx, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
 
-PATHS = []
+PATHS = []       # サイトマップに載せるページ
+ALL_PAGES = []   # 生成したすべてのページ
 
 def qlink(qid):
     return f'<a href="/q/{qid}.html">{E(QS[qid]["name"])}</a>'
@@ -658,6 +696,8 @@ def calc_block(f, x):
 def alt_expressions(qid):
     """この量の単位の別の書き方（公式ごと）"""
     q = QS[qid]
+    if not q["defined_by"]:
+        return []
     seen = {q["unit_str"], fmt_base(q["dims"])}
     out = []
     for fid in Q_FORMS[qid]:
@@ -667,6 +707,8 @@ def alt_expressions(qid):
                 continue
             ud, dropped = tidy(combine(f, solve(f, x)), q)
             if dropped or ud == q["ud"] or any(e.denominator != 1 for e in ud.values()):
+                continue
+            if set(ud) & set(q["ud"]) or len(ud) > 3:      # 自分自身を含む書き方や、記号が多すぎる書き方は省く
                 continue
             s = fmt_ud(ud)
             if s in seen or s == "1":
@@ -701,35 +743,181 @@ def step_html(st):
             f'<p>{E(sq.get("how", ""))}</p>'
             f'<div class="calc">{E(one_line(f, sq["def_var"]))}</div></div>')
 
+LEVEL_NOTE = {"中学": "中学理科で出てくる", "高校": "高校物理・化学で出てくる", "大学": "大学の物理で出てくる"}
+
+
+def word_label(w, e):
+    """言葉の式での表示：『半径』² のように"""
+    e = Fr(e)
+    a = abs(e)
+    return f"（{w}）{sup(a)}" if a != 1 else w
+
+
+def word_equation(q):
+    """'進んだ距離 ÷ かかった時間' のような言葉の式（かける物を先に）"""
+    ws = sorted(q["words"], key=lambda t: t[2] < 0)
+    out = []
+    for i, (w, _, e) in enumerate(ws):
+        lab = word_label(w, e)
+        if e > 0:
+            out.append(lab if i == 0 else f"× {lab}")
+        else:
+            out.append(f"1 ÷ {lab}" if i == 0 else f"÷ {lab}")
+    return " ".join(out), ws
+
+
+def unit_equation(ws):
+    out = []
+    for i, (_, wq, e) in enumerate(ws):
+        u = QS[wq]["unit_str"]
+        if u.startswith("1"):
+            u = "1"
+        a = abs(Fr(e))
+        simple = re.fullmatch(r"[A-Za-zΩ⁰¹²³⁴⁵⁶⁷⁸⁹]+|1", u) is not None
+        disp = (u if simple else f"({u})") + (sup(a) if a != 1 else "")
+        if e > 0:
+            out.append(disp if i == 0 else f"× {disp}")
+        else:
+            out.append(f"1 ÷ {disp}" if i == 0 else f"÷ {disp}")
+    return " ".join(out)
+
+
+def words_section(q):
+    """言葉で意味をつかみ、言葉を単位に置き換える"""
+    b = [f"<h2>{E(q['name'])}とは？ 言葉で意味をつかむ</h2>",
+         f'<p class="meaning"><b>{E(q["name"])}とは</b>　{E(q["meaning"])}</p>']
+    if not q.get("words"):
+        return b
+    eq, ws = word_equation(q)
+    b.append('<div class="wordeq"><div class="lbl">言葉の式</div>'
+             f'<div class="eq">{E(q["name"])} ＝ {E(eq)}</div></div>')
+    b.append("<p>言葉の式に出てくるそれぞれの言葉は、すでに単位がわかっている量です。言葉を単位に置き換えてみましょう。</p>")
+    b.append('<div class="tbl"><table class="swap"><tr><th>言葉</th><th>何の量か</th><th>単位</th></tr>')
+    seen = set()
+    for w, wq, e in ws:
+        if w in seen:
+            continue
+        seen.add(w)
+        u = QS[wq]["unit_str"]
+        b.append(f'<tr><td>{E(w)}</td><td>{qlink(wq)}</td><td class="mono">{E(u)}</td></tr>')
+    b.append("</table></div>")
+    combined = {}
+    for _, wq, e in ws:
+        combined = add_ud(combined, QS[wq]["ud"], Fr(e))
+    combined, dropped = tidy(combined, q)
+    lines = [f"[{E(q['name'])}] ＝ {E(unit_equation(ws))}"]
+    c = fmt_ud(combined) if combined else "1"
+    if c != unit_equation(ws):
+        lines.append(f"　　　＝ {E(c)}" + (f"　<span class=\"lead\">（{'・'.join(dropped)} は次元をもたないので省く）</span>" if dropped else ""))
+    base = fmt_base(q["dims"]) if q["dims"] != ZERO else "1"
+    if base not in (c,):
+        lines.append(f"　　　＝ {E(base)}")
+    if q["dims"] != ZERO and q["unit_str"] not in (c, base):
+        lines.append(f"　　　＝ {E(q['unit_str'])}")
+    b.append('<div class="calc">' + "<br>".join(lines) + "</div>")
+    named = [s_ for s_ in q["ud"] if s_ not in BASE_SYMS and s_ not in ("rad", "sr")]
+    if len(q["ud"]) == 1 and named:
+        sym = named[0]
+        b.append(f'<div class="note unitname"><b>{E(UNITS[sym]["name"])}（{E(sym)}）</b>は、この組み合わせ '
+                 f'<span class="mono">{E(c)}</span> に付けられた名前です。<br>{E(UNITS[sym]["meaning"])}</div>')
+    elif q["dims"] == ZERO:
+        b.append('<div class="note">単位どうしが打ち消しあって何も残りません。だから「次元をもたない量」なのです。</div>')
+    else:
+        b.append(f'<p>言葉の通りに単位を並べるだけで、<span class="mono ok">{E(q["unit_str"])}</span> が出てきました。</p>')
+    return b
+
+
+def base_section(q):
+    sym = next(iter(q["ud"]))
+    return [f"<h2>{E(q['name'])}とは？ 言葉で意味をつかむ</h2>",
+            f'<p class="meaning"><b>{E(q["name"])}とは</b>　{E(q["meaning"])}</p>',
+            f'<div class="note unitname"><b>{E(UNITS[sym]["name"])}（{E(sym)}）</b>はSIの基本単位のひとつで、'
+            f"ほかの単位に分解できません。<br>{E(UNITS[sym]['meaning'])}</div>",
+            "<p>ほかのすべての単位は、7つの基本単位を「かける」「割る」で組み合わせて作られています。"
+            f"{E(q['name'])}を含む単位の例は、下の「{E(q['name'])}が出てくる公式」から見られます。</p>"]
+
+
+def quiz(q):
+    """基本単位での表し方を選ぶ確認問題（答えは開くと見える）"""
+    if q["dims"] == ZERO or not q["defined_by"]:
+        return []
+    right = fmt_base(q["dims"])
+    import hashlib
+    pool = sorted({fmt_base(o["dims"]) for o in QS.values() if o["dims"] not in (ZERO, q["dims"])})
+    h = int(hashlib.md5(q["id"].encode()).hexdigest(), 16)
+    # 次元の近いもの（基本単位の種類が似ているもの）を優先してまぎらわしくする
+    def closeness(x):
+        return (len(set(re.findall(r"[a-zA-Z]+", x)) ^ set(re.findall(r"[a-zA-Z]+", right))), x)
+    cand = sorted(pool, key=closeness)[:8]
+    picks = [cand[(h >> (4 * i)) % len(cand)] for i in range(12)]
+    wrong = list(dict.fromkeys(p_ for p_ in picks if p_ != right))[:3]
+    opts = wrong + [right]
+    k = h % 4
+    opts = opts[:3]
+    opts.insert(k, right)
+    letters = "ABCD"
+    lis = "".join(f'<li><span class="opt">{letters[i]}</span><span class="mono">{E(o)}</span></li>' for i, o in enumerate(opts))
+    why = ""
+    if q.get("words"):
+        eq, ws = word_equation(q)
+        why = f"{E(q['name'])} ＝ {E(eq)} なので、[{E(q['name'])}] ＝ {E(unit_equation(ws))} ＝ {E(right)}。"
+    return [f"<h2>確認問題</h2>",
+            f'<div class="quiz"><p><b>Q.</b> {E(q["name"])}の単位 <span class="mono">{E(q["unit_str"])}</span> を基本単位で表したものはどれ？</p>'
+            f'<ul class="opts">{lis}</ul>'
+            f'<details><summary>答えを見る</summary><p><b>正解：{letters[k]}</b>　<span class="mono ok">{E(right)}</span></p>'
+            f'<p>{why}</p></details></div>']
+
+
+# 量 → その量を材料にして作られる量（次に読む）
+DEPENDENTS = {qid: [] for qid in QS}
+for _q in QS.values():
+    for _w in _q.get("words") or []:
+        if _w[1] != _q["id"] and _q["id"] not in DEPENDENTS[_w[1]] and QS[_w[1]]["dims"] != ZERO:
+            DEPENDENTS[_w[1]].append(_q["id"])
+
+
 def build_quantity(q):
     qid = q["id"]
     cat = CATS[q["category"]]
     d = q["dims"]
     u = q["unit_str"]
     base = fmt_base(d)
-    named = [s for s in q["ud"] if s not in BASE_SYMS]
-    uname = "・".join(UNITS[s]["name"] for s in q["ud"]) if len(q["ud"]) == 1 else ""
+    uname = "・".join(UNITS[s_]["name"] for s_ in q["ud"]) if len(q["ud"]) == 1 else ""
     utitle = f"{uname}（{u}）" if uname and u != base else u
     if d == ZERO:
-        title = f"{q['name']}の単位はなぜ無次元？"
+        title = f"{q['name']}の単位はなぜ無次元？意味と仕組み"
+    elif not q["defined_by"]:
+        title = f"{q['name']}の単位 {utitle} の意味｜SI基本単位"
     elif u == base:
-        title = f"{q['name']}の単位 {u} の意味"
+        title = f"{q['name']}の単位 {u} の意味を言葉から理解する"
     else:
-        title = f"{q['name']}の単位 {utitle} を基本単位で表すと {base}"
-    desc = f"{q['name']}の単位{u}を、知っている公式からSI基本単位{base}まで分解して理解する。同じ単位の別の書き方と、同じ次元をもつ量も紹介。"
-    b = [f'<span class="tag">{E(cat["name"])}</span>',
+        title = f"{q['name']}の単位 {utitle} の意味｜基本単位で表すと {base}"
+    desc = (f"{q['name']}とは{q['meaning']}その言葉をそのまま単位に置き換えると {u}"
+            + (f"（= {base}）" if base != u and d != ZERO else "") + " になる理由を、図式と確認問題でやさしく解説。")
+    lvl = q.get("level", "高校")
+    b = [f'<span class="tag">{E(cat["name"])}</span><span class="tag lv">{E(LEVEL_NOTE[lvl])}</span>',
          f"<h1>{E(title)}</h1>",
-         f'<p class="lead">{E(q["description"])}</p>',
          '<div class="hero">',
-         f'<div class="big">{E(u)}{(" = " + E(base)) if base != u and d != ZERO else ""}</div>',
+         f'<div class="big">{E(u if d != ZERO else "1（無次元）")}{(" = " + E(base)) if base != u and d != ZERO else ""}</div>',
          f'<div class="sub">次元 {E(fmt_dim(d))}</div></div>']
 
+    goals = [f"{q['name']}を言葉でどう言い表すか"]
+    if q.get("words"):
+        goals.append(f"その言葉を単位に置き換えると、なぜ {u} になるのか" if d != ZERO else "その言葉を単位に置き換えると、なぜ単位が消えるのか")
+    elif d != ZERO:
+        goals.append(f"基本単位 {u} がどのように決められているか")
+    if alt_expressions(qid):
+        goals.append(f"{u} のいろいろな書き方と、その根拠になる公式")
+    b.append('<div class="goals"><b>このページでわかること</b><ul>' + "".join(f"<li>{E(g)}</li>" for g in goals) + "</ul></div>")
+
+    b += words_section(q) if q["defined_by"] or d == ZERO and q.get("words") else (base_section(q) if q["ud"] else words_section(q))
+
     steps = chain(qid)
-    if steps:
-        b.append(f"<h2>{E(q['name'])}の単位を、知っている公式から組み立てる</h2>")
-        if len(steps) > 1:
-            route = " → ".join(E(QS[sid]["name"]) for sid, _, _ in steps)
-            b.append(f"<p>{E(u)} を基本単位までほどくには、{route} の順に単位をつないでいきます。</p>")
+    if len(steps) > 1:
+        b.append(f"<h2>基本単位までたどる</h2>")
+        route = " → ".join(E(QS[sid]["name"]) for sid, _, _ in steps)
+        b.append(f"<p>言葉の式に出てきた量も、さらに言葉の式で分解できます。{route} の順にたどると、"
+                 "すべて基本単位（m・kg・s・A・K・mol・cd）だけで表せます。</p>")
         basics = [st for st in steps[:-1] if st[0] in BASICS] if len(steps) >= 4 else []
         rest = [st for st in steps if st not in basics]
         if basics:
@@ -738,29 +926,23 @@ def build_quantity(q):
             b += [step_html(st) for st in basics]
             b.append("</details>")
         b += [step_html(st) for st in rest]
-        if base != u:
-            b.append(f'<p>まとめると、<span class="mono ok">{E(u)} = {E(base)}</span> です。</p>')
-    elif d != ZERO:
-        b.append("<h2>基本単位として</h2>")
-        b.append(f"<p>{E(q['name'])}はSIの基本量で、その単位 <span class=\"mono\">{E(u)}</span> はこれ以上分解できません。"
-                 "ほかのすべての単位は、基本単位のかけ算・わり算で表されます。</p>")
 
     alts = alt_expressions(qid)
     if alts:
         b.append(f"<h2>{E(u)} の別の書き方</h2>")
         b.append("<p>同じ量でも、使う公式によって単位の見え方が変わります。どれも基本単位にすると一致します。</p>")
         b.append('<div class="tbl"><table><tr><th>書き方</th><th>根拠になる公式</th></tr>')
-        for s, fid, x in alts:
-            b.append(f'<tr><td class="mono">{E(u)} = {E(s)}</td><td>{flink(fid)}<br><span class="mono">{E(FS[fid]["expr"])}</span></td></tr>')
+        for s_, fid, x in alts:
+            b.append(f'<tr><td class="mono">{E(u)} = {E(s_)}</td><td>{flink(fid)}<br><span class="mono">{E(FS[fid]["expr"])}</span></td></tr>')
         b.append("</table></div>")
 
     same = [x for x in SAME_DIM[d] if x != qid]
-    if same:
-        b.append("<h2>同じ次元をもつ量</h2>")
-        b.append(f"<p>次の量は {E(q['name'])} と次元 {E(fmt_dim(d))} が同じです。単位が同じでも意味が違う量があるので、"
-                 "式の検算では区別に注意しましょう。</p><ul>")
+    if same and d != ZERO:
+        b.append("<h2>よくある間違い：同じ単位でも別の量</h2>")
+        b.append(f"<p>次の量は {E(q['name'])} と次元 {E(fmt_dim(d))} が同じです。単位が一致しても意味が違うことがあるので、"
+                 "検算のときは「何を表す量か」も確かめましょう。</p><ul>")
         for x in same:
-            b.append(f'<li>{qlink(x)}（<span class="mono">{E(QS[x]["unit_str"])}</span>）</li>')
+            b.append(f'<li>{qlink(x)}（<span class="mono">{E(QS[x]["unit_str"])}</span>）— {E(QS[x]["meaning"])}</li>')
         b.append("</ul>")
 
     forms = Q_FORMS[qid]
@@ -770,15 +952,29 @@ def build_quantity(q):
             b.append(f'<li>{flink(fid)}：<span class="mono">{E(FS[fid]["expr"])}</span></li>')
         b.append("</ul>")
 
-    rel = sorted({(a if a != qid else bb) for (a, bb) in PAIRS if qid in (a, bb)}, key=lambda x: QS[x]["name"])
-    if rel:
-        b.append(f"<h2>{E(q['name'])}とほかの量の関係</h2><div class=\"grid\">")
-        for o in rel:
-            b.append(f'<a href="/r/{pair_slug(qid, o)}.html">{E(q["name"])}と{E(QS[o]["name"])}'
-                     f'<div class="u">{E(u)} と {E(QS[o]["unit_str"])}</div></a>')
-        b.append("</div>")
+    summ = [f"{q['name']}とは、{q['meaning']}"]
+    if q.get("words"):
+        eq, ws = word_equation(q)
+        summ.append(f"言葉の式 {q['name']} ＝ {eq} を単位に置き換えると {fmt_ud(tidy(combine_words(q), q)[0]) or '1'}。")
+    if d != ZERO and base != u:
+        summ.append(f"基本単位だけで書くと {base}。")
+    b.append('<div class="summary"><b>まとめ</b><ul>' + "".join(f"<li>{E(x)}</li>" for x in summ) + "</ul></div>")
+
+    b += quiz(q)
+
+    nxt = DEPENDENTS.get(qid, [])
+    if nxt:
+        b.append(f"<h2>次に読む：{E(q['name'])}を使って表される量</h2><div class=\"grid\">"
+                 + "".join(qcard(x) for x in nxt[:9]) + "</div>")
 
     page(f"/q/{qid}.html", title, desc, "\n".join(b), [cat_crumb(q["category"]), (q["name"], None)])
+
+
+def combine_words(q):
+    c = {}
+    for _, wq, e in q["words"]:
+        c = add_ud(c, QS[wq]["ud"], Fr(e))
+    return c
 
 # ─────────────────────────── 公式ページ ───────────────────────────
 
@@ -871,7 +1067,7 @@ def build_pair(a, bq, fids):
     for qid in (a, bq):
         b.append(f'<li>{qlink(qid)}（<span class="mono">{E(QS[qid]["unit_str"])} = {E(fmt_base(QS[qid]["dims"]))}</span>）</li>')
     b.append("</ul>")
-    page(f"/r/{pair_slug(a, bq)}.html", title, desc, "\n".join(b),
+    page(f"/r/{pair_slug(a, bq)}.html", title, desc, "\n".join(b), noindex=True, crumbs=
          [(A["name"], f"/q/{a}.html"), (f"{B['name']}との関係", None)])
 
 # ─────────────────────────── 分野・トップ・使い方 ───────────────────────────
@@ -903,7 +1099,9 @@ def build_index():
          "<p>物理の単位は、たった7つの基本単位のかけ算・わり算でできています。"
          "初めて見る単位や公式も、知っている公式を使って基本単位まで分解すれば、その正体がわかります。"
          "このサイトでは数値の換算は扱わず、<b>SI単位と次元だけ</b>で説明します。</p>",
-         '<p><a href="/guide.html">→ 次元解析の使い方を読む</a></p>',
+         '<p>たとえば速さは「1秒あたりに進む距離」＝「距離 ÷ 時間」。言葉をそのまま単位に置き換えると m ÷ s ＝ m/s になります。'
+         'すべての量のページで、まず<b>言葉で意味をつかみ、その言葉を単位に置き換える</b>流れで説明しています。</p>',
+         '<p><a href="/guide.html">→ はじめに：単位の読み方を読む</a></p>',
          "<h2>7つの基本単位</h2><div class=\"grid\">"
          + "".join(qcard(x) for x in ["length", "mass", "time", "current", "temperature", "amount", "luminous_intensity"])
          + "</div>",
@@ -920,42 +1118,119 @@ def build_index():
     b.append('<div class="grid cat-cards">' + "".join(cards) + "</div>")
     page("/", "SI単位と次元解析で物理を理解する", SITE_DESC, "\n".join(b))
 
+def unit_home(sym):
+    """その単位をそのまま単位にもつ量（なければ None）"""
+    for q in QS.values():
+        if list(q["ud"]) == [sym] and q["ud"][sym] == 1:
+            return q
+    return None
+
+
 def build_guide():
-    body = """
-<h1>次元解析の使い方：知らない単位を基本単位に分解する</h1>
-<p class="lead">次元解析は、式に出てくる量の「単位」だけに注目して、式の意味を読み取ったり、間違いを見つけたりする方法です。</p>
+    base_rows = "".join(
+        f'<tr><td class="mono">{E(sym)}</td><td>{E(UNITS[sym]["name"])}</td>'
+        f'<td>{qlink(unit_home(sym)["id"]) if unit_home(sym) else ""}</td><td>{E(UNITS[sym]["meaning"])}</td></tr>'
+        for sym in ["m", "kg", "s", "A", "K", "mol", "cd"])
+    named = [sym for sym in UNITS if sym not in BASE_SYMS]
+    named_rows = []
+    for sym in named:
+        hq = unit_home(sym)
+        bse = fmt_base(UDIMS[sym]) if UDIMS[sym] != ZERO else "1（無次元）"
+        named_rows.append(f'<tr><td class="mono">{E(sym)}</td><td>{qlink(hq["id"]) if hq else E(UNITS[sym]["name"])}</td>'
+                          f'<td>{E(UNITS[sym]["meaning"])}</td><td class="mono">{E(bse)}</td></tr>')
+    body = f"""
+<h1>単位の読み方：言葉の意味から単位を組み立てる</h1>
+<p class="lead">物理の単位は、暗記するものではなく「その量を言葉で言い表したもの」を記号に置き換えたものです。このページでは、言葉から単位を組み立てる方法と、次元解析の使い方を説明します。</p>
+<div class="goals"><b>このページでわかること</b><ul>
+<li>量の意味を表す言葉が、どのように単位の記号に置き換わるか</li>
+<li>7つの基本単位と、名前のついた単位の意味</li>
+<li>次元解析で、式の検算や公式の推測をする方法</li></ul></div>
 
-<h2>1. すべての単位は7つの基本単位からできている</h2>
-<p>SI（国際単位系）では、長さ m・質量 kg・時間 s・電流 A・温度 K・物質量 mol・光度 cd の7つが基本単位です。
-N（ニュートン）や V（ボルト）のような単位は、基本単位の組み合わせに名前をつけたものにすぎません。</p>
-<div class="calc">N = kg·m/s²　　J = kg·m²/s²　　V = kg·m²/(s³·A)</div>
+<h2>1. 単位は「言葉の式」から生まれる</h2>
+<p>たとえば速さは「1秒あたりに進む距離」、つまり<b>「進んだ距離 ÷ かかった時間」</b>です。言葉をそれぞれの単位に置き換えると、</p>
+<div class="wordeq"><div class="lbl">言葉の式</div><div class="eq">速さ ＝ 進んだ距離 ÷ かかった時間</div></div>
+<div class="calc">[速さ] ＝ m ÷ s ＝ m/s</div>
+<p>となり、速さの単位 m/s がそのまま出てきます。どんなに難しそうな単位も、同じやり方で組み立てられます。</p>
+<h3>言葉と記号の対応</h3>
+<div class="tbl"><table>
+<tr><th>言葉</th><th>記号</th><th>例</th></tr>
+<tr><td>「〜あたり」「1〜につき」</td><td class="mono">÷（/）</td><td>1秒あたりに進む距離 → m/s</td></tr>
+<tr><td>「〜と〜の積」「〜をかけた」</td><td class="mono">×（·）</td><td>力 × 距離 → N·m</td></tr>
+<tr><td>「〜の2乗」「〜の3乗」</td><td class="mono">² ³</td><td>長さ × 長さ → m²</td></tr>
+<tr><td>「〜の逆数」「1回にかかる時間をひっくり返す」</td><td class="mono">⁻¹</td><td>周期の逆数 → s⁻¹ ＝ Hz</td></tr>
+<tr><td>「〜は〜の何倍か」「〜の比」</td><td class="mono">÷（単位が消える）</td><td>弧の長さ ÷ 半径 → m/m ＝ 1</td></tr>
+</table></div>
 
-<h2>2. 知っている公式を使って分解する</h2>
+<h2>2. 7つの基本単位</h2>
+<p>SI（国際単位系）では、次の7つが基本単位です。ほかのすべての単位は、この7つのかけ算・わり算で作られています。</p>
+<div class="tbl"><table><tr><th>記号</th><th>名前</th><th>量</th><th>どう決められているか</th></tr>{base_rows}</table></div>
+
+<h2>3. 名前のついた単位</h2>
+<p>よく使う組み合わせには名前がついています。名前のついた単位も、言葉の意味を読めば中身がわかります。</p>
+<div class="tbl"><table><tr><th>記号</th><th>量</th><th>言葉での意味</th><th>基本単位</th></tr>{"".join(named_rows)}</table></div>
+
+<h2>4. 知っている公式を使って分解する</h2>
 <p>知らない単位が出てきたら、その量が出てくる「知っている公式」を探し、その量について解きます。
 たとえば電圧 V を知らなくても、電力の式 P = IV を知っていれば、</p>
-<div class="calc">V = P / I　→　[V] = W / A = (kg·m²/s³) / A = kg·m²/(s³·A)</div>
+<div class="calc">V = P / I　→　[V] = W / A = (kg·m²/s³) / A = kg·m²/(A·s³)</div>
 <p>と分解できます。W（ワット）がわからなければ、さらに P = W/t、W = Fx、F = ma とたどればよいのです。</p>
 
-<h2>3. 両辺の単位が一致するか確かめる</h2>
+<h2>5. 両辺の単位が一致するか確かめる</h2>
 <p>正しい公式では、左辺と右辺の単位が必ず一致します。たとえば運動エネルギー K = ½mv² では、</p>
 <div class="calc">左辺 [K] = J = kg·m²/s²<br>右辺 [m v²] = kg × (m/s)² = kg·m²/s²　<span class="ok">一致</span></div>
 <p>½ のような係数は単なる数で単位をもたないので、次元解析では無視してかまいません。
 単位が合わなければ、式のどこかが間違っています。</p>
 
-<h2>4. 単位が同じでも、同じ量とは限らない</h2>
+<h2>6. 単位が同じでも、同じ量とは限らない</h2>
 <p>トルク（N·m）とエネルギー（J）は基本単位にするとどちらも kg·m²/s² です。
 ヘルツ（Hz）とベクレル（Bq）もどちらも s⁻¹ です。次元解析は式の検算に強力ですが、
 次元が同じだからといって同じ意味の量とは限らない点には注意しましょう。</p>
 
-<h2>5. 単位から公式を推測する</h2>
+<h2>7. 単位から公式を推測する</h2>
 <p>単位の組み合わせから、式の形を推測することもできます。たとえば単振り子の周期 T が、ひもの長さ l [m] と
 重力加速度 g [m/s²] だけで決まるとすると、秒 s をつくる組み合わせは</p>
 <div class="calc">√(l / g)　→　√(m ÷ (m/s²)) = √(s²) = s</div>
 <p>しかありません。実際の公式 T = 2π√(l/g) と、係数 2π を除いて一致します。</p>
 <p><a href="/">→ トップに戻って物理量を探す</a></p>
 """
-    page("/guide.html", "次元解析の使い方", "次元解析の基本：7つの基本単位、公式を使った単位の分解、両辺の単位の検算、単位から公式を推測する方法を解説。",
-         body, [("次元解析の使い方", None)])
+    page("/guide.html", "単位の読み方と次元解析の使い方", "物理の単位を、量の意味を表す言葉から組み立てる方法を解説。7つの基本単位と名前のついた単位の意味、次元解析での検算や公式の推測まで。",
+         body, [("単位の読み方と次元解析", None)])
+
+
+def build_about():
+    nq = len(QS); nf = len(FS); nw = sum(1 for q in QS.values() if q.get("words"))
+    body = f"""
+<h1>このサイトについて</h1>
+<p class="lead">{E(SITE_NAME)}は、物理の単位を「暗記」ではなく「意味から組み立てて理解する」ための学習サイトです。</p>
+
+<h2>このサイトの考え方</h2>
+<p>単位は、その量を言葉で言い表したものを、記号に置き換えたものです。速さが「1秒あたりに進む距離」だから m/s、圧力が「1 m² あたりの力」だから N/m²。
+このサイトのすべての量のページでは、まず言葉で意味をつかみ、その言葉を一つずつ単位に置き換えることで、単位が自然に出てくる流れを示しています。</p>
+<ul>
+<li>単位はすべてSI（国際単位系）で表しています</li>
+<li>数値の換算（km と m の換算など）は扱わず、単位と次元の関係だけに絞っています</li>
+<li>中学理科から大学の物理までの量を扱い、各ページに目安のレベルを表示しています</li>
+</ul>
+
+<h2>内容の正しさの確かめ方</h2>
+<p>ページはプログラムで作っており、公開する前に次の点を自動で検算しています。1つでも合わなければページは作られません。</p>
+<ul>
+<li>{nf} 個のすべての公式で、左辺と右辺の次元が一致すること</li>
+<li>{nw} 個のすべての「言葉の式」で、言葉を単位に置き換えた結果が、その量の単位と一致すること</li>
+<li>各量の単位が、その量を定義する公式から導いた単位と一致すること</li>
+</ul>
+<p>説明文の誤りに気づいた場合は、お知らせいただけると助かります。</p>
+
+<h2>出典・参考資料</h2>
+<ul>
+<li>国際度量衡局（BIPM）「The International System of Units (SI)」第9版</li>
+<li>産業技術総合研究所 計量標準総合センター「国際単位系（SI）第9版（2019）日本語版」</li>
+</ul>
+
+<h2>運営</h2>
+<p>物理を学ぶ大学生が運営しています。最終更新日：{UPDATED}</p>
+"""
+    page("/about.html", "このサイトについて", f"{SITE_NAME}の目的、内容の正しさの確かめ方、出典について。", body, [("このサイトについて", None)])
 
 def build_sitemap():
     urls = "\n".join(f"  <url><loc>{SITE_URL}{p}</loc></url>" for p in PATHS)
@@ -972,6 +1247,7 @@ def main():
     build_assets()
     build_index()
     build_guide()
+    build_about()
     for c in CATS.values():
         build_category(c)
     for q in QS.values():
@@ -982,7 +1258,8 @@ def main():
         build_pair(a, bq, fids)
     build_sitemap()
     print(f"✓ 物理量 {len(QS)}・公式 {len(FS)}・関係 {len(PAIRS)}・分野 {len(CATS)} ページ")
-    print(f"合計: {len(PATHS)} ページ生成完了 → {OUT}/")
+    print(f"✓ 言葉の式 {sum(1 for q in QS.values() if q.get('words'))} 個の単位が一致することを確認")
+    print(f"合計: {len(ALL_PAGES)} ページ生成完了（うち検索に載せる {len(PATHS)} ページ）→ {OUT}/")
 
 if __name__ == "__main__":
     main()

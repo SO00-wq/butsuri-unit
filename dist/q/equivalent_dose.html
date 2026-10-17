@@ -3,16 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>等価線量の単位 シーベルト（Sv） を基本単位で表すと m²/s² | ブツリ単位ラボ</title>
-<meta name="description" content="等価線量の単位Svを、知っている公式からSI基本単位m²/s²まで分解して理解する。同じ単位の別の書き方と、同じ次元をもつ量も紹介。">
+<title>等価線量の単位 シーベルト（Sv） の意味｜基本単位で表すと m²/s² | ブツリ単位ラボ</title>
+<meta name="description" content="等価線量とは吸収線量に、放射線の種類ごとの重み（ただの数）をかけたもの。その言葉をそのまま単位に置き換えると Sv（= m²/s²） になる理由を、図式と確認問題でやさしく解説。">
 <link rel="canonical" href="https://tanitani.butsuri-lab.workers.dev/q/equivalent_dose.html">
+
 <meta name="google-site-verification" content="kVE91IWkP86K1E_JpBQDklXXu5gz86ZOA64xcgtDUwc">
 <meta name="theme-color" content="#1d5fd1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=2">
-<script src="/assets/site.js?v=2" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=3">
+<script src="/assets/site.js?v=3" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -33,7 +34,8 @@
     <ul class="results" id="results" aria-live="polite"></ul>
     <div class="nav-sec"><h4>ページ</h4><ul>
       <li><a href="/">トップ</a></li>
-      <li><a href="/guide.html">次元解析の使い方</a></li>
+      <li><a href="/guide.html">単位の読み方と次元解析</a></li>
+      <li><a href="/about.html">このサイトについて</a></li>
     </ul></div>
     <div class="nav-sec"><h4>分野</h4><ul><li><a href="/c/base.html">基本量<span class="n">10量</span></a></li><li><a href="/c/mech.html">力学<span class="n">22量</span></a></li><li><a href="/c/thermo.html">熱・気体<span class="n">10量</span></a></li><li><a href="/c/em.html">電磁気<span class="n">17量</span></a></li><li><a href="/c/wave.html">波・光・量子<span class="n">5量</span></a></li><li><a href="/c/misc.html">放射線・化学<span class="n">4量</span></a></li></ul></div>
     <div class="nav-sec"><h4>よく使う量</h4><div class="chips"><a href="/q/force.html">力</a><a href="/q/energy.html">エネルギー</a><a href="/q/power.html">仕事率</a><a href="/q/pressure.html">圧力</a><a href="/q/voltage.html">電圧</a><a href="/q/resistance.html">電気抵抗</a><a href="/q/capacitance.html">静電容量</a><a href="/q/magnetic_flux_density.html">磁束密度</a><a href="/q/planck.html">プランク定数</a><a href="/q/gas_constant.html">気体定数</a></div></div>
@@ -41,14 +43,24 @@
 </aside>
 <main id="main"><div class="wrap">
 <nav class="bc" aria-label="パンくずリスト"><a href="/">トップ</a> › <a href="/c/misc.html">放射線・化学</a> › 等価線量</nav>
-<span class="tag">放射線・化学</span>
-<h1>等価線量の単位 シーベルト（Sv） を基本単位で表すと m²/s²</h1>
-<p class="lead">吸収線量に放射線の種類ごとの重みをかけた量。</p>
+<span class="tag">放射線・化学</span><span class="tag lv">大学の物理で出てくる</span>
+<h1>等価線量の単位 シーベルト（Sv） の意味｜基本単位で表すと m²/s²</h1>
 <div class="hero">
 <div class="big">Sv = m²/s²</div>
 <div class="sub">次元 [L² T⁻²]</div></div>
-<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">等価線量の単位を、知っている公式から組み立てる</a><a href="#s2">Sv の別の書き方</a><a href="#s3">同じ次元をもつ量</a><a href="#s4">等価線量が出てくる公式</a><a href="#s5">等価線量とほかの量の関係</a></div></nav><h2 id="s1">等価線量の単位を、知っている公式から組み立てる</h2>
-<p>Sv を基本単位までほどくには、速度 → 加速度 → 力 → エネルギー・仕事・熱量 → 吸収線量 → 等価線量 の順に単位をつないでいきます。</p>
+<div class="goals"><b>このページでわかること</b><ul><li>等価線量を言葉でどう言い表すか</li><li>その言葉を単位に置き換えると、なぜ Sv になるのか</li><li>Sv のいろいろな書き方と、その根拠になる公式</li></ul></div>
+<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">等価線量とは？ 言葉で意味をつかむ</a><a href="#s2">基本単位までたどる</a><a href="#s3">Sv の別の書き方</a><a href="#s4">よくある間違い：同じ単位でも別の量</a><a href="#s5">等価線量が出てくる公式</a><a href="#s6">確認問題</a></div></nav><h2 id="s1">等価線量とは？ 言葉で意味をつかむ</h2>
+<p class="meaning"><b>等価線量とは</b>　吸収線量に、放射線の種類ごとの重み（ただの数）をかけたもの。</p>
+<div class="wordeq"><div class="lbl">言葉の式</div><div class="eq">等価線量 ＝ 放射線の重み × 吸収線量</div></div>
+<p>言葉の式に出てくるそれぞれの言葉は、すでに単位がわかっている量です。言葉を単位に置き換えてみましょう。</p>
+<div class="tbl"><table class="swap"><tr><th>言葉</th><th>何の量か</th><th>単位</th></tr>
+<tr><td>放射線の重み</td><td><a href="/q/number.html">個数・無次元数</a></td><td class="mono">1（無次元）</td></tr>
+<tr><td>吸収線量</td><td><a href="/q/absorbed_dose.html">吸収線量</a></td><td class="mono">Gy</td></tr>
+</table></div>
+<div class="calc">[等価線量] ＝ 1 × Gy<br>　　　＝ Gy<br>　　　＝ m²/s²<br>　　　＝ Sv</div>
+<div class="note unitname"><b>シーベルト（Sv）</b>は、この組み合わせ <span class="mono">Gy</span> に付けられた名前です。<br>吸収線量に放射線の重みをかけた等価線量の単位。次元は J/kg で Gy と同じ。</div>
+<h2 id="s2">基本単位までたどる</h2>
+<p>言葉の式に出てきた量も、さらに言葉の式で分解できます。速度 → 加速度 → 力 → エネルギー・仕事・熱量 → 吸収線量 → 等価線量 の順にたどると、すべて基本単位（m・kg・s・A・K・mol・cd）だけで表せます。</p>
 <details class="pre"><summary>前提：速度・加速度・力・エネルギー・仕事・熱量の単位（知っていれば飛ばしてOK）</summary>
 <div class="step"><div class="st"><b><a href="/q/velocity.html">速度</a></b> <span class="lead">— <a href="/f/v_def.html">速さの定義</a>　<span class="mono">v = x / t</span></span></div><p>速さは「進んだ距離 ÷ かかった時間」。m を s で割って m/s です。</p><div class="calc">[v] = m ÷ s = m/s</div></div>
 <div class="step"><div class="st"><b><a href="/q/acceleration.html">加速度</a></b> <span class="lead">— <a href="/f/a_def.html">加速度の定義</a>　<span class="mono">a = Δv / Δt</span></span></div><p>加速度は「1秒あたりに速さがどれだけ変わるか」。速さの m/s をさらに s で割るので m/s² になります。</p><div class="calc">[a] = m/s ÷ s = m/s²</div></div>
@@ -57,27 +69,27 @@
 </details>
 <div class="step"><div class="st"><b><a href="/q/absorbed_dose.html">吸収線量</a></b> <span class="lead">— <a href="/f/absorbed.html">吸収線量</a>　<span class="mono">D = E / m</span></span></div><p>吸収線量は「1 kg あたりに吸収したエネルギー」。J を kg で割った J/kg が Gy（グレイ）です。</p><div class="calc">[D] = J ÷ kg = J/kg = m²/s² = Gy</div></div>
 <div class="step"><div class="st"><b><a href="/q/equivalent_dose.html">等価線量</a></b> <span class="lead">— <a href="/f/equivalent.html">等価線量</a>　<span class="mono">H = w_R D</span></span></div><p>等価線量は、吸収線量に放射線ごとの重み（ただの数）をかけたもの。単位は Gy と同じ J/kg ですが、Sv と呼んで区別します。</p><div class="calc">[H] = 1 × Gy = Gy = m²/s² = Sv</div></div>
-<p>まとめると、<span class="mono ok">Sv = m²/s²</span> です。</p>
-<h2 id="s2">Sv の別の書き方</h2>
+<h2 id="s3">Sv の別の書き方</h2>
 <p>同じ量でも、使う公式によって単位の見え方が変わります。どれも基本単位にすると一致します。</p>
 <div class="tbl"><table><tr><th>書き方</th><th>根拠になる公式</th></tr>
 <tr><td class="mono">Sv = Gy</td><td><a href="/f/equivalent.html">等価線量</a><br><span class="mono">H = w_R D</span></td></tr>
 </table></div>
-<h2 id="s3">同じ次元をもつ量</h2>
-<p>次の量は 等価線量 と次元 [L² T⁻²] が同じです。単位が同じでも意味が違う量があるので、式の検算では区別に注意しましょう。</p><ul>
-<li><a href="/q/latent_heat.html">潜熱（比潜熱）</a>（<span class="mono">J/kg</span>）</li>
-<li><a href="/q/absorbed_dose.html">吸収線量</a>（<span class="mono">Gy</span>）</li>
+<h2 id="s4">よくある間違い：同じ単位でも別の量</h2>
+<p>次の量は 等価線量 と次元 [L² T⁻²] が同じです。単位が一致しても意味が違うことがあるので、検算のときは「何を表す量か」も確かめましょう。</p><ul>
+<li><a href="/q/latent_heat.html">潜熱（比潜熱）</a>（<span class="mono">J/kg</span>）— 物質 1 kg を溶かす・蒸発させるなど、状態を変えるのに必要な熱量。</li>
+<li><a href="/q/absorbed_dose.html">吸収線量</a>（<span class="mono">Gy</span>）— 物質 1 kg あたりが吸収した放射線のエネルギー。</li>
 </ul>
-<h2 id="s4">等価線量が出てくる公式</h2><ul>
+<h2 id="s5">等価線量が出てくる公式</h2><ul>
 <li><a href="/f/equivalent.html">等価線量</a>：<span class="mono">H = w_R D</span></li>
 </ul>
-<h2 id="s5">等価線量とほかの量の関係</h2><div class="grid">
-<a href="/r/absorbed_dose--equivalent_dose.html">等価線量と吸収線量<div class="u">Sv と Gy</div></a>
-</div>
+<div class="summary"><b>まとめ</b><ul><li>等価線量とは、吸収線量に、放射線の種類ごとの重み（ただの数）をかけたもの。</li><li>言葉の式 等価線量 ＝ 放射線の重み × 吸収線量 を単位に置き換えると Gy。</li><li>基本単位だけで書くと m²/s²。</li></ul></div>
+<h2 id="s6">確認問題</h2>
+<div class="quiz"><p><b>Q.</b> 等価線量の単位 <span class="mono">Sv</span> を基本単位で表したものはどれ？</p><ul class="opts"><li><span class="opt">A</span><span class="mono">1/m³</span></li><li><span class="opt">B</span><span class="mono">m/s</span></li><li><span class="opt">C</span><span class="mono">1/s</span></li><li><span class="opt">D</span><span class="mono">m²/s²</span></li></ul><details><summary>答えを見る</summary><p><b>正解：D</b>　<span class="mono ok">m²/s²</span></p><p>等価線量 ＝ 放射線の重み × 吸収線量 なので、[等価線量] ＝ 1 × Gy ＝ m²/s²。</p></details></div>
 </div></main>
 <footer class="site"><div class="wrap">
-  <div class="links"><a href="/">トップ</a><a href="/guide.html">次元解析の使い方</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>
-  ブツリ単位ラボ — SI単位と次元解析で物理を理解する。単位はすべてSI（国際単位系）で表記しています。
+  <div class="links"><a href="/">トップ</a><a href="/guide.html">単位の読み方</a><a href="/about.html">このサイトについて</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>
+  <p class="src">単位の定義は、国際度量衡局（BIPM）の SI パンフレット第9版と、その日本語版（産業技術総合研究所 計量標準総合センター）に基づいています。</p>
+  ブツリ単位ラボ — SI単位と次元解析で物理を理解する。最終更新日：2026-10-17
 </div></footer>
 <button class="to-top" id="to-top" aria-label="ページの先頭へ戻る"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></button>
 </body>
