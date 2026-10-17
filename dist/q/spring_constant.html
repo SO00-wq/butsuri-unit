@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=7">
-<script src="/assets/site.js?v=7" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=8">
+<script src="/assets/site.js?v=8" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -66,6 +66,7 @@
 </table></div>
 <div class="calc">[ばね定数] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">N</mi><mo>÷</mo><mi mathvariant="normal">m</mi></mstyle></math><br>　　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">N</mi></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac></mstyle></math><br>　　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></div>
 <p>言葉の通りに単位を並べるだけで、<span class="mono ok"><math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">N</mi></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac></mstyle></math></span> が出てきました。</p>
+<div class="note pitfall"><b>よくある誤解：ばね定数に単位はない？</b><br>「定数」という名前ですが、ただの数ではありません。ばね定数には <math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">N</mi></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac></mstyle></math> という単位があります。もし単位がなかったら、ばね振り子の周期 <math><mstyle displaystyle="true"><mi mathvariant="normal">T</mi><mo>=</mo><mn>2</mn><mi mathvariant="normal">π</mi><msqrt><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">k</mi></mrow></mfrac></msqrt></mstyle></math> の右辺は <math><mstyle displaystyle="true"><msqrt><mi mathvariant="normal">kg</mi></msqrt></mstyle></math> になり、時間の単位 s になりません。単位がないのは、摩擦係数 μ や屈折率 n のような「同じ種類の量の比」です。</div>
 <h2 id="s2">基本単位までたどる</h2>
 <p>言葉の式に出てきた量も、さらに言葉の式で分解できます。速度 → 加速度 → 力 → ばね定数 の順にたどると、すべて基本単位（m・kg・s・A・K・mol・cd）だけで表せます。</p>
 <details class="pre"><summary>前提：速度・加速度・力の単位（知っていれば飛ばしてOK）</summary>
@@ -91,7 +92,7 @@
 <footer class="site"><div class="wrap">
   <div class="links"><a href="/">トップ</a><a href="/method.html">検算のやり方</a><a href="/mistakes/">よくあるミス</a><a href="/training/">検算トレーニング</a><a href="/guide.html">単位の読み方</a><a href="/about.html">このサイトについて</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>
   <p class="src">単位の定義は、国際度量衡局（BIPM）の SI パンフレット第9版と、その日本語版（産業技術総合研究所 計量標準総合センター）に基づいています。</p>
-  ブツリ単位ラボ — 答えの単位で検算して、取れる問題を落とさない。最終更新日：2026-10-17
+  ブツリ単位ラボ — 答えの単位で検算して、取れる問題を落とさない。最終更新日：2026-10-18
 </div></footer>
 <button class="to-top" id="to-top" aria-label="ページの先頭へ戻る"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></button>
 </body>

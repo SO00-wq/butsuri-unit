@@ -25,8 +25,8 @@ from itertools import combinations
 OUT = Path("dist")
 SITE_NAME = "ブツリ単位ラボ"
 SITE_URL = "https://tanitani.butsuri-lab.workers.dev"  # ★独自ドメイン取得後に変更
-ASSET_VER = "7"  # CSS/JS を変えたら上げる（ブラウザのキャッシュ対策）
-UPDATED = "2026-10-17"  # 最終更新日（内容を更新したら変える）
+ASSET_VER = "8"  # CSS/JS を変えたら上げる（ブラウザのキャッシュ対策）
+UPDATED = "2026-10-18"  # 最終更新日（内容を更新したら変える）
 GOOGLE_VERIFICATION = "kVE91IWkP86K1E_JpBQDklXXu5gz86ZOA64xcgtDUwc"  # Search Console 所有権確認
 SITE_DESC = "物理の計算で出した答えが正しいかを、答えの単位で確かめるためのサイト。検算の手順、よくあるミス、トレーニング、単位辞典。"
 
@@ -478,7 +478,8 @@ footer.site .src{font-size:.78rem;margin:0 0 .5rem}
 .feat .d,.mcards .d{font-size:.85rem;color:var(--dim);line-height:1.6;margin-top:.2rem}
 .feat .t{font-weight:700}
 .checkbox{margin:1rem 0;padding:.8rem 1rem;border-radius:var(--r);border:2px solid var(--ok);background:color-mix(in srgb,var(--ok) 6%,var(--card))}
-.checkbox b{font-size:.85rem;color:var(--ok)}.checkbox p{margin:.3rem 0 0}
+.checkbox b{font-size:.85rem;color:var(--ok)}
+.pitfall{border:2px solid #c2410c;border-style:solid;background:color-mix(in srgb,#c2410c 6%,var(--card))}.pitfall b{color:#c2410c}.checkbox p{margin:.3rem 0 0}
 .tnav{margin:.5rem 0 1.2rem}.tnav a[aria-current]{background:var(--accent);color:#fff;border-color:var(--accent)}
 .pq .qt .given{margin-top:.5rem}
 /* 数式（ノート風の表記） */
@@ -1556,6 +1557,8 @@ def build_quantity(q):
 
     b += words_section(q) if q["defined_by"] or d == ZERO and q.get("words") else (base_section(q) if q["ud"] else words_section(q))
 
+    if q.get("pitfall"):
+        b.append(f'<div class="note pitfall"><b>よくある誤解：{E(q["name"])}に単位はない？</b><br>{E(q["pitfall"])}</div>')
     steps = chain(qid)
     if len(steps) > 1:
         b.append(f"<h2>基本単位までたどる</h2>")
