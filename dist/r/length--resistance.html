@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=6">
-<script src="/assets/site.js?v=6" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=7">
+<script src="/assets/site.js?v=7" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -50,17 +50,17 @@
 <main id="main"><div class="wrap">
 <nav class="bc" aria-label="パンくずリスト"><a href="/">トップ</a> › <a href="/q/length.html">長さ</a> › 電気抵抗との関係</nav>
 <h1>長さと電気抵抗の関係</h1>
-<div class="hero"><div class="big">m　と　Ω</div><div class="sub">[L]　と　[M L² T⁻³ I⁻²]</div></div>
+<div class="hero"><div class="big"><math><mstyle displaystyle="true"><mi mathvariant="normal">m</mi></mstyle></math>　と　<math><mstyle displaystyle="true"><mi mathvariant="normal">Ω</mi></mstyle></math></div><div class="sub">[L]　と　[M L² T⁻³ I⁻²]</div></div>
 <nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">単位の比から見る</a><a href="#s2">2つの量を結ぶ公式</a><a href="#s3">それぞれの量のページ</a></div></nav><h2 id="s1">単位の比から見る</h2>
-<div class="calc">[長さ] ÷ [電気抵抗] = (m) ÷ (kg·m²/(A²·s³)) = A²·s³/(kg·m)</div>
+<div class="calc">[長さ] ÷ [電気抵抗] <math><mstyle displaystyle="true"><mo>=</mo><mo>(</mo><mi mathvariant="normal">m</mi><mo>)</mo><mo>÷</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">A</mi></mrow><mn>2</mn></msup><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>3</mn></msup></mrow></mfrac><mo>=</mo><mfrac><mrow><msup><mrow><mi mathvariant="normal">A</mi></mrow><mn>2</mn></msup><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>3</mn></msup></mrow><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><mi mathvariant="normal">m</mi></mrow></mfrac></mstyle></math></div>
 <h2 id="s2">2つの量を結ぶ公式</h2>
-<div class="step"><b><a href="/f/resistivity.html">抵抗率</a></b>：<span class="mono">R = ρ l / S</span>
-<div class="calc">l = R S / ρ<br>[l] = Ω × m² ÷ (Ω·m)<br>　　= m</div>
-<div class="calc">[R] = Ω·m × m ÷ m²<br>　　= Ω<br>　　= kg·m²/(A²·s³)</div>
+<div class="step"><b><a href="/f/resistivity.html">抵抗率</a></b>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">R</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">ρ</mi><mi mathvariant="normal">l</mi></mrow><mrow><mi mathvariant="normal">S</mi></mrow></mfrac></mstyle></math></span>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">l</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">R</mi><mi mathvariant="normal">S</mi></mrow><mrow><mi mathvariant="normal">ρ</mi></mrow></mfrac></mstyle></math><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">l</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">Ω</mi><mo>×</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup><mo>÷</mo><mo>(</mo><mi mathvariant="normal">Ω</mi><mo>·</mo><mi mathvariant="normal">m</mi><mo>)</mo></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">m</mi></mstyle></math></div>
+<div class="calc">[<math><mstyle displaystyle="true"><mi mathvariant="normal">R</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">Ω</mi><mo>·</mo><mi mathvariant="normal">m</mi><mo>×</mo><mi mathvariant="normal">m</mi><mo>÷</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">Ω</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">A</mi></mrow><mn>2</mn></msup><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>3</mn></msup></mrow></mfrac></mstyle></math></div>
 </div>
 <h2 id="s3">それぞれの量のページ</h2><ul>
-<li><a href="/q/length.html">長さ</a>（<span class="mono">m = m</span>）</li>
-<li><a href="/q/resistance.html">電気抵抗</a>（<span class="mono">Ω = kg·m²/(A²·s³)</span>）</li>
+<li><a href="/q/length.html">長さ</a>（<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">m</mi><mo>=</mo><mi mathvariant="normal">m</mi></mstyle></math></span>）</li>
+<li><a href="/q/resistance.html">電気抵抗</a>（<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">Ω</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">A</mi></mrow><mn>2</mn></msup><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>3</mn></msup></mrow></mfrac></mstyle></math></span>）</li>
 </ul>
 </div></main>
 <footer class="site"><div class="wrap">

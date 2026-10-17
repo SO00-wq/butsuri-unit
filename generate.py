@@ -17,6 +17,7 @@ data/si_db.json（物理量・公式・SI単位のデータ）から、
 """
 
 import json, re, shutil, html
+from mathml import mathify
 from fractions import Fraction as Fr
 from pathlib import Path
 from itertools import combinations
@@ -24,7 +25,7 @@ from itertools import combinations
 OUT = Path("dist")
 SITE_NAME = "ブツリ単位ラボ"
 SITE_URL = "https://tanitani.butsuri-lab.workers.dev"  # ★独自ドメイン取得後に変更
-ASSET_VER = "6"  # CSS/JS を変えたら上げる（ブラウザのキャッシュ対策）
+ASSET_VER = "7"  # CSS/JS を変えたら上げる（ブラウザのキャッシュ対策）
 UPDATED = "2026-10-17"  # 最終更新日（内容を更新したら変える）
 GOOGLE_VERIFICATION = "kVE91IWkP86K1E_JpBQDklXXu5gz86ZOA64xcgtDUwc"  # Search Console 所有権確認
 SITE_DESC = "物理の計算で出した答えが正しいかを、答えの単位で確かめるためのサイト。検算の手順、よくあるミス、トレーニング、単位辞典。"
@@ -86,6 +87,22 @@ def sup(e):
     s = str(e.numerator) if e.denominator == 1 else f"{e.numerator}/{e.denominator}"
     return s.translate(SUP)
 
+
+def split_half(items):
+    """[(記号, 指数)] を、根号の外に出す部分と、√ の中に入れる部分に分ける。
+    例：v₀¹ h^(1/2) g^(-1/2) → 外 [(v₀,1)]、中 [(h,1),(g,-1)]（= v₀√(h/g)）"""
+    out_, in_ = [], []
+    for s_, e in items:
+        e = Fr(e)
+        if e.denominator == 2:
+            k = int(e)                 # 0 の方向に切り捨て
+            if k:
+                out_.append((s_, Fr(k)))
+            in_.append((s_, (e - k) * 2))
+        else:
+            out_.append((s_, e))
+    return out_, in_
+
 def fmt_ud(ud, mode="frac"):
     """単位の辞書を表示用文字列へ。mode='frac' は分数形、'pow' は指数形"""
     items = [(s, e) for s, e in ud.items() if e != 0 and s not in ("rad", "sr") or (s in ("rad", "sr") and e != 0)]
@@ -96,6 +113,11 @@ def fmt_ud(ud, mode="frac"):
         items.sort(key=lambda t: DISPLAY_ORDER.index(t[0]))
     if mode == "pow":
         return "·".join(f"{s}{sup(Fr(e))}" for s, e in items)
+    if any(Fr(e).denominator == 2 for _, e in items):
+        out_, in_ = split_half(items)
+        o = fmt_ud(dict(out_)) if out_ else ""
+        r = f"√({fmt_ud(dict(in_))})"
+        return f"{o}·{r}" if o and o != "1" else r
     num = [f"{s}{sup(Fr(e))}" for s, e in items if e > 0]
     den = [f"{s}{sup(Fr(-e))}" for s, e in items if e < 0]
     n = "·".join(num) if num else "1"
@@ -181,6 +203,10 @@ def solve(f, x):
 
 def factors_str(f, terms):
     """[(var, exp)] → 'N·m²/C² × C × C ÷ m²' のような、手で計算するときの書き方"""
+    if any(Fr(e).denominator == 2 for _, e in terms):
+        out_, in_ = split_half(terms)
+        r = f"√({factors_str(f, in_)})"
+        return f"{factors_str(f, out_)} × {r}" if out_ else r
     terms = sorted(terms, key=lambda t: t[1] < 0)
     out = []
     for i, (v, e) in enumerate(terms):
@@ -207,6 +233,10 @@ def combine(f, terms):
 
 def expr_for(f, terms):
     """式としての右辺 '(F)·(x)' のような記号表示"""
+    if any(Fr(e).denominator == 2 for _, e in terms):
+        out_, in_ = split_half(terms)
+        r = f"√({expr_for(f, in_)})"
+        return f"{expr_for(f, out_)} {r}" if out_ else r
     num, den = [], []
     for v, e in terms:
         s = f["sym"][v]
@@ -451,6 +481,31 @@ footer.site .src{font-size:.78rem;margin:0 0 .5rem}
 .checkbox b{font-size:.85rem;color:var(--ok)}.checkbox p{margin:.3rem 0 0}
 .tnav{margin:.5rem 0 1.2rem}.tnav a[aria-current]{background:var(--accent);color:#fff;border-color:var(--accent)}
 .pq .qt .given{margin-top:.5rem}
+/* 数式（ノート風の表記） */
+math{font-family:"Cambria Math","STIX Two Math","Latin Modern Math","Noto Sans Math",math;font-size:1.12em}
+.calc{line-height:2.6;white-space:nowrap}
+.calc math{font-size:1.18em}
+.hero .big math{font-size:1.2em}
+.pq .ch math{font-size:1.15em}
+.u math,.grid .u math{font-size:1em}
+.results .s math{font-size:1em}
+td math{font-size:1.05em}
+
+/* 重要な部分を目立たせる */
+.ok{color:var(--ok);font-weight:700;font-size:1.08em}
+.ng{color:#c2410c;font-weight:700;font-size:1.08em}
+.key{color:#c2410c;font-weight:700;font-size:1.08em}
+.steps3 b{color:var(--accent);font-size:1.08em}
+.meaning b{color:var(--accent);font-size:1.1em}
+.wordeq .eq{font-size:1.18rem}
+.answer .mono{font-size:1.3rem;font-weight:700}
+.verdict{font-size:1.05rem}.verdict.ng b{color:#c2410c;font-size:1.1em}.verdict.warn b{color:#b45309}
+.checkbox .ok{font-size:1.2em}
+.summary li{font-size:1.02rem}
+main .lead b{color:var(--accent)}
+h1{color:var(--fg)}
+.mission .quote{color:var(--accent);font-size:1.25rem}
+
 
 
 """
@@ -512,7 +567,7 @@ JS = r"""
     }
     hits.slice(0, 30).forEach(e => {
       const li = d.createElement('li'), a = d.createElement('a'), k = d.createElement('span'), s = d.createElement('span');
-      a.href = e.u; k.className = 'k'; k.textContent = e.y; s.className = 's'; s.textContent = e.s;
+      a.href = e.u; k.className = 'k'; k.textContent = e.y; s.className = 's'; if (e.h) s.innerHTML = e.h; else s.textContent = e.s;
       a.append(k, d.createTextNode(e.t), s); li.appendChild(a); list.appendChild(li);
     });
   }
@@ -625,8 +680,8 @@ def page(path, title, desc, body, crumbs=(), noindex=False):
     bc = ""
     if crumbs:
         parts = ['<a href="/">トップ</a>'] + [f'<a href="{u}">{E(t)}</a>' if u else E(t) for t, u in crumbs]
-        bc = '<nav class="bc" aria-label="パンくずリスト">' + " › ".join(parts) + "</nav>"
-    body = add_toc(body)
+        bc = mathify('<nav class="bc" aria-label="パンくずリスト">' + " › ".join(parts) + "</nav>")
+    body = mathify(add_toc(body))
     foot_links = "".join(f'<a href="/c/{c["id"]}.html">{E(c["name"])}</a>' for c in CATS.values())
     doc = f"""<!DOCTYPE html>
 <html lang="ja">
@@ -701,6 +756,10 @@ def build_assets():
                     "u": f"/mistakes/{m['id']}.html", "k": m["problem"]})
     idx.append({"y": "解説", "t": "検算のやり方", "s": "答えの単位で間違いを見つける3つの手順", "u": "/method.html", "k": "検算 次元解析 手順 確かめ"})
     idx.append({"y": "練習", "t": "検算トレーニング", "s": "単位が合う答えはどれ？", "u": "/training/", "k": "練習 問題 トレーニング"})
+    for e_ in idx:
+        h_ = mathify(E(e_["s"]))
+        if h_ != E(e_["s"]):
+            e_["h"] = h_
     (OUT / "search.json").write_text(json.dumps(idx, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
 
@@ -1281,7 +1340,7 @@ def build_mistake(m):
     if m["detectable"]:
         b.append(f'<p>単位が <span class="mono">{E(tbase)}</span> になり、求めたい量と一致しました。</p>')
         b.append('<div class="note">単位が合っても、答えが正しいとは限りません（係数や sin・cos の間違いは見つけられません）。'
-                 'ただ、<b>単位が合わなければ必ず間違い</b>なので、見直す場所を絞り込めます。</div>')
+                 'ただ、<span class="key">単位が合わなければ必ず間違い</span>なので、見直す場所を絞り込めます。</div>')
     else:
         b.append(f'<div class="note"><b>どうやって見つけるか</b><br>{E(m.get("tip", ""))}<br>単位の検算は、こうした確かめ方とあわせて使いましょう。</div>')
     others = [x for x in MISTAKES if x["id"] != m["id"]][:6]
@@ -1321,7 +1380,7 @@ def build_method():
 <ol class="steps3">
 <li><b>求めたい量の単位を確かめる</b><br>速さなら m/s、エネルギーなら J ＝ kg·m²/s²。わからなければ<a href="/#dict">単位辞典</a>で調べます。</li>
 <li><b>答えの右辺に、それぞれの記号の単位を当てはめる</b><br>数字の係数（2、½、π など）は単位をもたないので無視します。</li>
-<li><b>比べる</b><br>一致しなければ、<b>その答えは必ず間違い</b>です。式のどこかを見直します。</li>
+<li><b>比べる</b><br>一致しなければ、<span class="key">その答えは必ず間違い</span>です。式のどこかを見直します。</li>
 </ol>
 
 <h2>例：落下の速さ</h2>
@@ -1699,7 +1758,7 @@ def build_index():
         '<ol class="steps3">'
         "<li><b>求めたい量の単位を確かめる</b><br>速さなら m/s、エネルギーなら J ＝ kg·m²/s²</li>"
         "<li><b>答えの右辺に、記号の単位を当てはめる</b><br>2、½、π などの数は単位をもたないので無視</li>"
-        "<li><b>比べる</b><br>合わなければ、その答えは必ず間違い</li></ol>",
+        "<li><b>比べる</b><br><span class=\"key\">合わなければ、その答えは必ず間違い</span></li></ol>",
         '<p><a href="/method.html">→ 検算のやり方をくわしく読む</a></p>',
         "<h2>たとえば、こんなミスが見つかる</h2>",
         f'<div class="problem"><b>問題</b><p>{E(ff["problem"])}</p></div>',
@@ -1760,7 +1819,7 @@ def build_guide():
 <h3>言葉と記号の対応</h3>
 <div class="tbl"><table>
 <tr><th>言葉</th><th>記号</th><th>例</th></tr>
-<tr><td>「〜あたり」「1〜につき」</td><td class="mono">÷（/）</td><td>1秒あたりに進む距離 → m/s</td></tr>
+<tr><td>「〜あたり」「1〜につき」</td><td class="mono">÷（分数の横線）</td><td>1秒あたりに進む距離 → m/s</td></tr>
 <tr><td>「〜と〜の積」「〜をかけた」</td><td class="mono">×（·）</td><td>力 × 距離 → N·m</td></tr>
 <tr><td>「〜の2乗」「〜の3乗」</td><td class="mono">² ³</td><td>長さ × 長さ → m²</td></tr>
 <tr><td>「〜の逆数」「1回にかかる時間をひっくり返す」</td><td class="mono">⁻¹</td><td>周期の逆数 → s⁻¹ ＝ Hz</td></tr>

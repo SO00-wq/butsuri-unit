@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=6">
-<script src="/assets/site.js?v=6" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=7">
+<script src="/assets/site.js?v=7" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -50,22 +50,22 @@
 <main id="main"><div class="wrap">
 <nav class="bc" aria-label="パンくずリスト"><a href="/">トップ</a> › <a href="/q/inductance.html">インダクタンス</a> › 時間との関係</nav>
 <h1>インダクタンスと時間の関係</h1>
-<div class="hero"><div class="big">H　と　s</div><div class="sub">[M L² T⁻² I⁻²]　と　[T]</div></div>
+<div class="hero"><div class="big"><math><mstyle displaystyle="true"><mi mathvariant="normal">H</mi></mstyle></math>　と　<math><mstyle displaystyle="true"><mi mathvariant="normal">s</mi></mstyle></math></div><div class="sub">[M L² T⁻² I⁻²]　と　[T]</div></div>
 <nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">単位の比から見る</a><a href="#s2">2つの量を結ぶ公式</a><a href="#s3">それぞれの量のページ</a></div></nav><h2 id="s1">単位の比から見る</h2>
-<div class="calc">[インダクタンス] ÷ [時間] = (kg·m²/(A²·s²)) ÷ (s) = kg·m²/(A²·s³)</div>
+<div class="calc">[インダクタンス] ÷ [時間] <math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">A</mi></mrow><mn>2</mn></msup><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac><mo>÷</mo><mo>(</mo><mi mathvariant="normal">s</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">A</mi></mrow><mn>2</mn></msup><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>3</mn></msup></mrow></mfrac></mstyle></math></div>
 <p>つまり インダクタンス は「時間 × <a href="/q/resistance.html">電気抵抗</a>」と同じ単位をもちます。</p>
 <h2 id="s2">2つの量を結ぶ公式</h2>
-<div class="step"><b><a href="/f/self_induct.html">自己誘導</a></b>：<span class="mono">V = L ΔI / Δt</span>
-<div class="calc">L = V Δt / ΔI<br>[L] = V × s ÷ A<br>　　= V·s/A<br>　　= kg·m²/(A²·s²)<br>　　= H</div>
-<div class="calc">Δt = L ΔI / V<br>[Δt] = H × A ÷ V<br>　　= H·A/V<br>　　= s</div>
+<div class="step"><b><a href="/f/self_induct.html">自己誘導</a></b>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">V</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">L</mi><mi mathvariant="normal">ΔI</mi></mrow><mrow><mi mathvariant="normal">Δt</mi></mrow></mfrac></mstyle></math></span>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">L</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">V</mi><mi mathvariant="normal">Δt</mi></mrow><mrow><mi mathvariant="normal">ΔI</mi></mrow></mfrac></mstyle></math><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">L</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">V</mi><mo>×</mo><mi mathvariant="normal">s</mi><mo>÷</mo><mi mathvariant="normal">A</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">V</mi><mo>·</mo><mi mathvariant="normal">s</mi></mrow><mrow><mi mathvariant="normal">A</mi></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">A</mi></mrow><mn>2</mn></msup><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">H</mi></mstyle></math></div>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">Δt</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">L</mi><mi mathvariant="normal">ΔI</mi></mrow><mrow><mi mathvariant="normal">V</mi></mrow></mfrac></mstyle></math><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">Δt</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">H</mi><mo>×</mo><mi mathvariant="normal">A</mi><mo>÷</mo><mi mathvariant="normal">V</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">H</mi><mo>·</mo><mi mathvariant="normal">A</mi></mrow><mrow><mi mathvariant="normal">V</mi></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">s</mi></mstyle></math></div>
 </div>
-<div class="step"><b><a href="/f/rl_time.html">RL回路の時定数</a></b>：<span class="mono">τ = L / R</span>
-<div class="calc">L = τ R<br>[L] = s × Ω<br>　　= s·Ω<br>　　= kg·m²/(A²·s²)<br>　　= H</div>
-<div class="calc">[τ] = H ÷ Ω<br>　　= H/Ω<br>　　= s</div>
+<div class="step"><b><a href="/f/rl_time.html">RL回路の時定数</a></b>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">τ</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">L</mi></mrow><mrow><mi mathvariant="normal">R</mi></mrow></mfrac></mstyle></math></span>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">L</mi><mo>=</mo><mi mathvariant="normal">τ</mi><mi mathvariant="normal">R</mi></mstyle></math><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">L</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">s</mi><mo>×</mo><mi mathvariant="normal">Ω</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">s</mi><mo>·</mo><mi mathvariant="normal">Ω</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">A</mi></mrow><mn>2</mn></msup><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">H</mi></mstyle></math></div>
+<div class="calc">[<math><mstyle displaystyle="true"><mi mathvariant="normal">τ</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">H</mi><mo>÷</mo><mi mathvariant="normal">Ω</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">H</mi></mrow><mrow><mi mathvariant="normal">Ω</mi></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">s</mi></mstyle></math></div>
 </div>
 <h2 id="s3">それぞれの量のページ</h2><ul>
-<li><a href="/q/inductance.html">インダクタンス</a>（<span class="mono">H = kg·m²/(A²·s²)</span>）</li>
-<li><a href="/q/time.html">時間</a>（<span class="mono">s = s</span>）</li>
+<li><a href="/q/inductance.html">インダクタンス</a>（<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">H</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">A</mi></mrow><mn>2</mn></msup><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></span>）</li>
+<li><a href="/q/time.html">時間</a>（<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">s</mi><mo>=</mo><mi mathvariant="normal">s</mi></mstyle></math></span>）</li>
 </ul>
 </div></main>
 <footer class="site"><div class="wrap">

@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=6">
-<script src="/assets/site.js?v=6" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=7">
+<script src="/assets/site.js?v=7" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -50,22 +50,22 @@
 <main id="main"><div class="wrap">
 <nav class="bc" aria-label="パンくずリスト"><a href="/">トップ</a> › <a href="/q/length.html">長さ</a> › ばね定数との関係</nav>
 <h1>長さとばね定数の関係</h1>
-<div class="hero"><div class="big">m　と　N/m</div><div class="sub">[L]　と　[M T⁻²]</div></div>
+<div class="hero"><div class="big"><math><mstyle displaystyle="true"><mi mathvariant="normal">m</mi></mstyle></math>　と　<math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">N</mi></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac></mstyle></math></div><div class="sub">[L]　と　[M T⁻²]</div></div>
 <nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">単位の比から見る</a><a href="#s2">2つの量を結ぶ公式</a><a href="#s3">それぞれの量のページ</a></div></nav><h2 id="s1">単位の比から見る</h2>
-<div class="calc">[長さ] ÷ [ばね定数] = (m) ÷ (kg/s²) = m·s²/kg</div>
+<div class="calc">[長さ] ÷ [ばね定数] <math><mstyle displaystyle="true"><mo>=</mo><mo>(</mo><mi mathvariant="normal">m</mi><mo>)</mo><mo>÷</mo><mfrac><mrow><mi mathvariant="normal">kg</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac><mo>=</mo><mfrac><mrow><mi mathvariant="normal">m</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow><mrow><mi mathvariant="normal">kg</mi></mrow></mfrac></mstyle></math></div>
 <p>つまり 長さ は「ばね定数 ÷ <a href="/q/pressure.html">圧力</a>」と同じ単位をもちます。</p>
 <h2 id="s2">2つの量を結ぶ公式</h2>
-<div class="step"><b><a href="/f/hooke.html">フックの法則</a></b>：<span class="mono">F = k x</span>
-<div class="calc">x = F / k<br>[x] = N ÷ (N/m)<br>　　= m</div>
-<div class="calc">k = F / x<br>[k] = N ÷ m<br>　　= N/m<br>　　= kg/s²</div>
+<div class="step"><b><a href="/f/hooke.html">フックの法則</a></b>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">F</mi><mo>=</mo><mi mathvariant="normal">k</mi><mi mathvariant="normal">x</mi></mstyle></math></span>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">x</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">F</mi></mrow><mrow><mi mathvariant="normal">k</mi></mrow></mfrac></mstyle></math><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">x</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">N</mi><mo>÷</mo><mfrac><mrow><mi mathvariant="normal">N</mi></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">m</mi></mstyle></math></div>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">k</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">F</mi></mrow><mrow><mi mathvariant="normal">x</mi></mrow></mfrac></mstyle></math><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">k</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">N</mi><mo>÷</mo><mi mathvariant="normal">m</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">N</mi></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></div>
 </div>
-<div class="step"><b><a href="/f/spring_energy.html">弾性エネルギー</a></b>：<span class="mono">U = ½ k x²</span>
-<div class="calc">x = U¹ᐟ² / k¹ᐟ²　<span class="lead">（係数は単位に影響しないので省略）</span><br>[x] = J¹ᐟ² ÷ (N/m)¹ᐟ²<br>　　= J¹ᐟ²·m¹ᐟ²/N¹ᐟ²<br>　　= m</div>
-<div class="calc">k = U / x²　<span class="lead">（係数は単位に影響しないので省略）</span><br>[k] = J ÷ m²<br>　　= J/m²<br>　　= kg/s²<br>　　= N/m</div>
+<div class="step"><b><a href="/f/spring_energy.html">弾性エネルギー</a></b>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">U</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi mathvariant="normal">k</mi><msup><mrow><mi mathvariant="normal">x</mi></mrow><mn>2</mn></msup></mstyle></math></span>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">x</mi><mo>=</mo><msqrt><mfrac><mrow><mi mathvariant="normal">U</mi></mrow><mrow><mi mathvariant="normal">k</mi></mrow></mfrac></msqrt></mstyle></math>　<span class="lead">（係数は単位に影響しないので省略）</span><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">x</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><msqrt><mi mathvariant="normal">J</mi><mo>÷</mo><mfrac><mrow><mi mathvariant="normal">N</mi></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac></msqrt></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><msqrt><mfrac><mrow><mi mathvariant="normal">J</mi><mo>·</mo><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">N</mi></mrow></mfrac></msqrt></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">m</mi></mstyle></math></div>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">k</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">U</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">x</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math>　<span class="lead">（係数は単位に影響しないので省略）</span><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">k</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">J</mi><mo>÷</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">J</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">N</mi></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac></mstyle></math></div>
 </div>
 <h2 id="s3">それぞれの量のページ</h2><ul>
-<li><a href="/q/length.html">長さ</a>（<span class="mono">m = m</span>）</li>
-<li><a href="/q/spring_constant.html">ばね定数</a>（<span class="mono">N/m = kg/s²</span>）</li>
+<li><a href="/q/length.html">長さ</a>（<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">m</mi><mo>=</mo><mi mathvariant="normal">m</mi></mstyle></math></span>）</li>
+<li><a href="/q/spring_constant.html">ばね定数</a>（<span class="mono"><math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">N</mi></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></span>）</li>
 </ul>
 </div></main>
 <footer class="site"><div class="wrap">

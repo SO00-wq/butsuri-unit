@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=6">
-<script src="/assets/site.js?v=6" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=7">
+<script src="/assets/site.js?v=7" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -51,29 +51,29 @@
 <nav class="bc" aria-label="パンくずリスト"><a href="/">トップ</a> › <a href="/c/misc.html">放射線・化学</a> › 吸収線量</nav>
 <span class="tag">放射線・化学</span>
 <h1>吸収線量</h1>
-<div class="hero"><div class="big">D = E / m</div></div>
+<div class="hero"><div class="big"><math><mstyle displaystyle="true"><mi mathvariant="normal">D</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">E</mi></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac></mstyle></math></div></div>
 <nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">出てくる記号と単位</a><a href="#s2">両辺の単位が一致するか確かめる</a><a href="#s3">この公式から読み取れる単位の関係</a><a href="#s4">放射線・化学のほかの公式</a></div></nav><h2 id="s1">出てくる記号と単位</h2>
 <div class="tbl"><table><tr><th>記号</th><th>量</th><th>SI単位</th><th>基本単位</th></tr>
-<tr><td class="mono">D</td><td><a href="/q/absorbed_dose.html">吸収線量</a></td><td class="mono">Gy</td><td class="mono">m²/s²</td></tr>
-<tr><td class="mono">E</td><td><a href="/q/energy.html">エネルギー・仕事・熱量</a></td><td class="mono">J</td><td class="mono">kg·m²/s²</td></tr>
-<tr><td class="mono">m</td><td><a href="/q/mass.html">質量</a></td><td class="mono">kg</td><td class="mono">kg</td></tr>
+<tr><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">D</mi></mstyle></math></td><td><a href="/q/absorbed_dose.html">吸収線量</a></td><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">Gy</mi></mstyle></math></td><td class="mono"><math><mstyle displaystyle="true"><mfrac><mrow><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></td></tr>
+<tr><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">E</mi></mstyle></math></td><td><a href="/q/energy.html">エネルギー・仕事・熱量</a></td><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">J</mi></mstyle></math></td><td class="mono"><math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></td></tr>
+<tr><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">m</mi></mstyle></math></td><td><a href="/q/mass.html">質量</a></td><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">kg</mi></mstyle></math></td><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">kg</mi></mstyle></math></td></tr>
 </table></div>
 <h2 id="s2">両辺の単位が一致するか確かめる</h2>
-<div class="calc">左辺： D<br>　→ Gy<br>　= m²/s²</div>
-<div class="calc">右辺： E / m<br>　→ J ÷ kg<br>　= J/kg<br>　= m²/s²</div>
-<p><span class="ok">両辺とも m²/s² で一致</span>します。単位が合わない式は、どこかが間違っているサインです。</p>
+<div class="calc">左辺： <math><mstyle displaystyle="true"><mi mathvariant="normal">D</mi></mstyle></math><br>　→ <math><mstyle displaystyle="true"><mi mathvariant="normal">Gy</mi></mstyle></math><br>　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></div>
+<div class="calc">右辺： <math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">E</mi></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac></mstyle></math><br>　→ <math><mstyle displaystyle="true"><mi mathvariant="normal">J</mi><mo>÷</mo><mi mathvariant="normal">kg</mi></mstyle></math><br>　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">J</mi></mrow><mrow><mi mathvariant="normal">kg</mi></mrow></mfrac></mstyle></math><br>　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></div>
+<p><span class="ok">両辺とも <math><mstyle displaystyle="true"><mfrac><mrow><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math> で一致</span>します。単位が合わない式は、どこかが間違っているサインです。</p>
 <h2 id="s3">この公式から読み取れる単位の関係</h2>
 <p>公式をある量について解くと、その量の単位をほかの量の単位で表せます。知らない量が出てきたときは、知っている量について解き直して単位を組み立てるのが近道です。</p>
 <h3><a href="/q/absorbed_dose.html">吸収線量</a>について解く</h3>
-<div class="calc">[D] = J ÷ kg<br>　　= J/kg<br>　　= m²/s²<br>　　= Gy</div>
+<div class="calc">[<math><mstyle displaystyle="true"><mi mathvariant="normal">D</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">J</mi><mo>÷</mo><mi mathvariant="normal">kg</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">J</mi></mrow><mrow><mi mathvariant="normal">kg</mi></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">Gy</mi></mstyle></math></div>
 <h3><a href="/q/energy.html">エネルギー・仕事・熱量</a>について解く</h3>
-<div class="calc">E = D m<br>[E] = Gy × kg<br>　　= Gy·kg<br>　　= kg·m²/s²<br>　　= J</div>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">E</mi><mo>=</mo><mi mathvariant="normal">D</mi><mi mathvariant="normal">m</mi></mstyle></math><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">E</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">Gy</mi><mo>×</mo><mi mathvariant="normal">kg</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">Gy</mi><mo>·</mo><mi mathvariant="normal">kg</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">J</mi></mstyle></math></div>
 <h3><a href="/q/mass.html">質量</a>について解く</h3>
-<div class="calc">m = E / D<br>[m] = J ÷ Gy<br>　　= J/Gy<br>　　= kg</div>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">m</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">E</mi></mrow><mrow><mi mathvariant="normal">D</mi></mrow></mfrac></mstyle></math><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">m</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">J</mi><mo>÷</mo><mi mathvariant="normal">Gy</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">J</mi></mrow><mrow><mi mathvariant="normal">Gy</mi></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">kg</mi></mstyle></math></div>
 <h2 id="s4">放射線・化学のほかの公式</h2><ul>
-<li><a href="/f/activity.html">放射能</a>：<span class="mono">A = ΔN / Δt</span></li>
-<li><a href="/f/equivalent.html">等価線量</a>：<span class="mono">H = w_R D</span></li>
-<li><a href="/f/catalytic.html">触媒活性</a>：<span class="mono">z = Δn / Δt</span></li>
+<li><a href="/f/activity.html">放射能</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">A</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">ΔN</mi></mrow><mrow><mi mathvariant="normal">Δt</mi></mrow></mfrac></mstyle></math></span></li>
+<li><a href="/f/equivalent.html">等価線量</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">H</mi><mo>=</mo><msub><mrow><mi mathvariant="normal">w</mi></mrow><mi mathvariant="normal">R</mi></msub><mi mathvariant="normal">D</mi></mstyle></math></span></li>
+<li><a href="/f/catalytic.html">触媒活性</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">z</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">Δn</mi></mrow><mrow><mi mathvariant="normal">Δt</mi></mrow></mfrac></mstyle></math></span></li>
 </ul>
 </div></main>
 <footer class="site"><div class="wrap">

@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=6">
-<script src="/assets/site.js?v=6" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=7">
+<script src="/assets/site.js?v=7" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -52,28 +52,28 @@
 <span class="tag">基本量</span><span class="tag lv">中学理科で出てくる</span>
 <h1>電流の単位 A の意味｜SI基本単位</h1>
 <div class="hero">
-<div class="big">A</div>
+<div class="big"><math><mstyle displaystyle="true"><mi mathvariant="normal">A</mi></mstyle></math></div>
 <div class="sub">次元 [I]</div></div>
-<div class="checkbox"><b>検算のポイント</b><p>答えが電流なら、右辺の単位は <span class="mono ok">A</span> になっているはず。ならなければ、どこかが間違っています。</p></div>
+<div class="checkbox"><b>検算のポイント</b><p>答えが電流なら、右辺の単位は <span class="mono ok"><math><mstyle displaystyle="true"><mi mathvariant="normal">A</mi></mstyle></math></span> になっているはず。ならなければ、どこかが間違っています。</p></div>
 <div class="goals"><b>このページでわかること</b><ul><li>電流を言葉でどう言い表すか</li><li>基本単位 A がどのように決められているか</li></ul></div>
 <nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">電流とは？ 言葉で意味をつかむ</a><a href="#s2">電流が出てくる公式</a><a href="#s3">次に読む：電流を使って表される量</a></div></nav><h2 id="s1">電流とは？ 言葉で意味をつかむ</h2>
 <p class="meaning"><b>電流とは</b>　1秒あたりに導線の断面を通る電気の量。</p>
 <div class="note unitname"><b>アンペア（A）</b>はSIの基本単位のひとつで、ほかの単位に分解できません。<br>電気素量（電子1個の電荷の大きさ）をもとに、1秒あたりに流れる電荷の量として決められている。</div>
 <p>ほかのすべての単位は、7つの基本単位を「かける」「割る」で組み合わせて作られています。電流を含む単位の例は、下の「電流が出てくる公式」から見られます。</p>
 <h2 id="s2">電流が出てくる公式</h2><ul>
-<li><a href="/f/charge_def.html">電荷と電流</a>：<span class="mono">q = I t</span></li>
-<li><a href="/f/ohm.html">オームの法則</a>：<span class="mono">V = R I</span></li>
-<li><a href="/f/power_iv.html">電力</a>：<span class="mono">P = I V</span></li>
-<li><a href="/f/joule_heat.html">ジュール熱（抵抗での消費電力）</a>：<span class="mono">P = I² R</span></li>
-<li><a href="/f/wire_force.html">電流が磁場から受ける力</a>：<span class="mono">F = I B l</span></li>
-<li><a href="/f/self_induct.html">自己誘導</a>：<span class="mono">V = L ΔI / Δt</span></li>
-<li><a href="/f/flux_L.html">磁束とインダクタンス</a>：<span class="mono">Φ = L I</span></li>
-<li><a href="/f/ind_energy.html">コイルのエネルギー</a>：<span class="mono">U = ½ L I²</span></li>
-<li><a href="/f/ampere_wire.html">直線電流のつくる磁場</a>：<span class="mono">H = I / (2π r)</span></li>
-<li><a href="/f/current_density.html">電流密度</a>：<span class="mono">j = I / S</span></li>
+<li><a href="/f/charge_def.html">電荷と電流</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">q</mi><mo>=</mo><mi mathvariant="normal">I</mi><mi mathvariant="normal">t</mi></mstyle></math></span></li>
+<li><a href="/f/ohm.html">オームの法則</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">V</mi><mo>=</mo><mi mathvariant="normal">R</mi><mi mathvariant="normal">I</mi></mstyle></math></span></li>
+<li><a href="/f/power_iv.html">電力</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">P</mi><mo>=</mo><mi mathvariant="normal">I</mi><mi mathvariant="normal">V</mi></mstyle></math></span></li>
+<li><a href="/f/joule_heat.html">ジュール熱（抵抗での消費電力）</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">P</mi><mo>=</mo><msup><mrow><mi mathvariant="normal">I</mi></mrow><mn>2</mn></msup><mi mathvariant="normal">R</mi></mstyle></math></span></li>
+<li><a href="/f/wire_force.html">電流が磁場から受ける力</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">F</mi><mo>=</mo><mi mathvariant="normal">I</mi><mi mathvariant="normal">B</mi><mi mathvariant="normal">l</mi></mstyle></math></span></li>
+<li><a href="/f/self_induct.html">自己誘導</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">V</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">L</mi><mi mathvariant="normal">ΔI</mi></mrow><mrow><mi mathvariant="normal">Δt</mi></mrow></mfrac></mstyle></math></span></li>
+<li><a href="/f/flux_L.html">磁束とインダクタンス</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">Φ</mi><mo>=</mo><mi mathvariant="normal">L</mi><mi mathvariant="normal">I</mi></mstyle></math></span></li>
+<li><a href="/f/ind_energy.html">コイルのエネルギー</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">U</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi mathvariant="normal">L</mi><msup><mrow><mi mathvariant="normal">I</mi></mrow><mn>2</mn></msup></mstyle></math></span></li>
+<li><a href="/f/ampere_wire.html">直線電流のつくる磁場</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">H</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">I</mi></mrow><mrow><mn>2</mn><mi mathvariant="normal">π</mi><mi mathvariant="normal">r</mi></mrow></mfrac></mstyle></math></span></li>
+<li><a href="/f/current_density.html">電流密度</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">j</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">I</mi></mrow><mrow><mi mathvariant="normal">S</mi></mrow></mfrac></mstyle></math></span></li>
 </ul>
 <div class="summary"><b>まとめ</b><ul><li>電流とは、1秒あたりに導線の断面を通る電気の量。</li></ul></div>
-<h2 id="s3">次に読む：電流を使って表される量</h2><div class="grid"><a href="/q/charge.html">電荷（電気量）<div class="u">C</div></a><a href="/q/resistance.html">電気抵抗<div class="u">Ω</div></a><a href="/q/conductance.html">コンダクタンス<div class="u">S</div></a><a href="/q/inductance.html">インダクタンス<div class="u">H</div></a><a href="/q/magnetic_field.html">磁場（磁界）の強さ<div class="u">A/m</div></a><a href="/q/current_density.html">電流密度<div class="u">A/m²</div></a></div>
+<h2 id="s3">次に読む：電流を使って表される量</h2><div class="grid"><a href="/q/charge.html">電荷（電気量）<div class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">C</mi></mstyle></math></div></a><a href="/q/resistance.html">電気抵抗<div class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">Ω</mi></mstyle></math></div></a><a href="/q/conductance.html">コンダクタンス<div class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">S</mi></mstyle></math></div></a><a href="/q/inductance.html">インダクタンス<div class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">H</mi></mstyle></math></div></a><a href="/q/magnetic_field.html">磁場（磁界）の強さ<div class="u"><math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">A</mi></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac></mstyle></math></div></a><a href="/q/current_density.html">電流密度<div class="u"><math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">A</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></div></a></div>
 </div></main>
 <footer class="site"><div class="wrap">
   <div class="links"><a href="/">トップ</a><a href="/method.html">検算のやり方</a><a href="/mistakes/">よくあるミス</a><a href="/training/">検算トレーニング</a><a href="/guide.html">単位の読み方</a><a href="/about.html">このサイトについて</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>

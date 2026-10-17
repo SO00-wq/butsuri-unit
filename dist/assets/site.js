@@ -54,7 +54,7 @@
     }
     hits.slice(0, 30).forEach(e => {
       const li = d.createElement('li'), a = d.createElement('a'), k = d.createElement('span'), s = d.createElement('span');
-      a.href = e.u; k.className = 'k'; k.textContent = e.y; s.className = 's'; s.textContent = e.s;
+      a.href = e.u; k.className = 'k'; k.textContent = e.y; s.className = 's'; if (e.h) s.innerHTML = e.h; else s.textContent = e.s;
       a.append(k, d.createTextNode(e.t), s); li.appendChild(a); list.appendChild(li);
     });
   }

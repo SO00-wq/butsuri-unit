@@ -161,3 +161,27 @@ footer.site .src{font-size:.78rem;margin:0 0 .5rem}
 .checkbox b{font-size:.85rem;color:var(--ok)}.checkbox p{margin:.3rem 0 0}
 .tnav{margin:.5rem 0 1.2rem}.tnav a[aria-current]{background:var(--accent);color:#fff;border-color:var(--accent)}
 .pq .qt .given{margin-top:.5rem}
+/* 数式（ノート風の表記） */
+math{font-family:"Cambria Math","STIX Two Math","Latin Modern Math","Noto Sans Math",math;font-size:1.12em}
+.calc{line-height:2.6;white-space:nowrap}
+.calc math{font-size:1.18em}
+.hero .big math{font-size:1.2em}
+.pq .ch math{font-size:1.15em}
+.u math,.grid .u math{font-size:1em}
+.results .s math{font-size:1em}
+td math{font-size:1.05em}
+
+/* 重要な部分を目立たせる */
+.ok{color:var(--ok);font-weight:700;font-size:1.08em}
+.ng{color:#c2410c;font-weight:700;font-size:1.08em}
+.key{color:#c2410c;font-weight:700;font-size:1.08em}
+.steps3 b{color:var(--accent);font-size:1.08em}
+.meaning b{color:var(--accent);font-size:1.1em}
+.wordeq .eq{font-size:1.18rem}
+.answer .mono{font-size:1.3rem;font-weight:700}
+.verdict{font-size:1.05rem}.verdict.ng b{color:#c2410c;font-size:1.1em}.verdict.warn b{color:#b45309}
+.checkbox .ok{font-size:1.2em}
+.summary li{font-size:1.02rem}
+main .lead b{color:var(--accent)}
+h1{color:var(--fg)}
+.mission .quote{color:var(--accent);font-size:1.25rem}

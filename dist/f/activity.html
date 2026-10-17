@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=6">
-<script src="/assets/site.js?v=6" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=7">
+<script src="/assets/site.js?v=7" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -51,30 +51,30 @@
 <nav class="bc" aria-label="パンくずリスト"><a href="/">トップ</a> › <a href="/c/misc.html">放射線・化学</a> › 放射能</nav>
 <span class="tag">放射線・化学</span>
 <h1>放射能</h1>
-<div class="hero"><div class="big">A = ΔN / Δt</div></div>
+<div class="hero"><div class="big"><math><mstyle displaystyle="true"><mi mathvariant="normal">A</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">ΔN</mi></mrow><mrow><mi mathvariant="normal">Δt</mi></mrow></mfrac></mstyle></math></div></div>
 <nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">出てくる記号と単位</a><a href="#s2">両辺の単位が一致するか確かめる</a><a href="#s3">この公式から読み取れる単位の関係</a><a href="#s4">放射線・化学のほかの公式</a></div></nav><h2 id="s1">出てくる記号と単位</h2>
 <div class="tbl"><table><tr><th>記号</th><th>量</th><th>SI単位</th><th>基本単位</th></tr>
-<tr><td class="mono">A</td><td><a href="/q/activity.html">放射能</a></td><td class="mono">Bq</td><td class="mono">1/s</td></tr>
-<tr><td class="mono">ΔN</td><td><a href="/q/number.html">個数・無次元数</a></td><td class="mono">1（無次元）</td><td class="mono">1</td></tr>
-<tr><td class="mono">Δt</td><td><a href="/q/time.html">時間</a></td><td class="mono">s</td><td class="mono">s</td></tr>
+<tr><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">A</mi></mstyle></math></td><td><a href="/q/activity.html">放射能</a></td><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">Bq</mi></mstyle></math></td><td class="mono"><math><mstyle displaystyle="true"><mfrac><mrow><mn>1</mn></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math></td></tr>
+<tr><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">ΔN</mi></mstyle></math></td><td><a href="/q/number.html">個数・無次元数</a></td><td class="mono"><math><mstyle displaystyle="true"><mn>1</mn></mstyle></math>（無次元）</td><td class="mono"><math><mstyle displaystyle="true"><mn>1</mn></mstyle></math></td></tr>
+<tr><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">Δt</mi></mstyle></math></td><td><a href="/q/time.html">時間</a></td><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">s</mi></mstyle></math></td><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">s</mi></mstyle></math></td></tr>
 </table></div>
 <h2 id="s2">両辺の単位が一致するか確かめる</h2>
-<div class="calc">左辺： A<br>　→ Bq<br>　= 1/s</div>
-<div class="calc">右辺： ΔN / Δt<br>　→ 1 ÷ s<br>　= 1/s</div>
-<p><span class="ok">両辺とも 1/s で一致</span>します。単位が合わない式は、どこかが間違っているサインです。</p>
+<div class="calc">左辺： <math><mstyle displaystyle="true"><mi mathvariant="normal">A</mi></mstyle></math><br>　→ <math><mstyle displaystyle="true"><mi mathvariant="normal">Bq</mi></mstyle></math><br>　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math></div>
+<div class="calc">右辺： <math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">ΔN</mi></mrow><mrow><mi mathvariant="normal">Δt</mi></mrow></mfrac></mstyle></math><br>　→ <math><mstyle displaystyle="true"><mn>1</mn><mo>÷</mo><mi mathvariant="normal">s</mi></mstyle></math><br>　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math></div>
+<p><span class="ok">両辺とも <math><mstyle displaystyle="true"><mfrac><mrow><mn>1</mn></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math> で一致</span>します。単位が合わない式は、どこかが間違っているサインです。</p>
 <div class="note">💡 個数は無次元なので、Bq は s⁻¹。次元は Hz と同じだが、崩壊の数を数える場合は Bq を使う。</div>
 <h2 id="s3">この公式から読み取れる単位の関係</h2>
 <p>公式をある量について解くと、その量の単位をほかの量の単位で表せます。知らない量が出てきたときは、知っている量について解き直して単位を組み立てるのが近道です。</p>
 <h3><a href="/q/activity.html">放射能</a>について解く</h3>
-<div class="calc">[A] = 1 ÷ s<br>　　= 1/s<br>　　= Bq</div>
+<div class="calc">[<math><mstyle displaystyle="true"><mi mathvariant="normal">A</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mn>1</mn><mo>÷</mo><mi mathvariant="normal">s</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">Bq</mi></mstyle></math></div>
 <h3><a href="/q/number.html">個数・無次元数</a>について解く</h3>
-<div class="calc">ΔN = A Δt<br>[ΔN] = Bq × s<br>　　= Bq·s<br>　　= 1</div>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">ΔN</mi><mo>=</mo><mi mathvariant="normal">A</mi><mi mathvariant="normal">Δt</mi></mstyle></math><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">ΔN</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">Bq</mi><mo>×</mo><mi mathvariant="normal">s</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">Bq</mi><mo>·</mo><mi mathvariant="normal">s</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mn>1</mn></mstyle></math></div>
 <h3><a href="/q/time.html">時間</a>について解く</h3>
-<div class="calc">Δt = ΔN / A<br>[Δt] = 1 ÷ Bq<br>　　= 1/Bq<br>　　= s</div>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">Δt</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">ΔN</mi></mrow><mrow><mi mathvariant="normal">A</mi></mrow></mfrac></mstyle></math><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">Δt</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mn>1</mn><mo>÷</mo><mi mathvariant="normal">Bq</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi mathvariant="normal">Bq</mi></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">s</mi></mstyle></math></div>
 <h2 id="s4">放射線・化学のほかの公式</h2><ul>
-<li><a href="/f/absorbed.html">吸収線量</a>：<span class="mono">D = E / m</span></li>
-<li><a href="/f/equivalent.html">等価線量</a>：<span class="mono">H = w_R D</span></li>
-<li><a href="/f/catalytic.html">触媒活性</a>：<span class="mono">z = Δn / Δt</span></li>
+<li><a href="/f/absorbed.html">吸収線量</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">D</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">E</mi></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac></mstyle></math></span></li>
+<li><a href="/f/equivalent.html">等価線量</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">H</mi><mo>=</mo><msub><mrow><mi mathvariant="normal">w</mi></mrow><mi mathvariant="normal">R</mi></msub><mi mathvariant="normal">D</mi></mstyle></math></span></li>
+<li><a href="/f/catalytic.html">触媒活性</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">z</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">Δn</mi></mrow><mrow><mi mathvariant="normal">Δt</mi></mrow></mfrac></mstyle></math></span></li>
 </ul>
 </div></main>
 <footer class="site"><div class="wrap">

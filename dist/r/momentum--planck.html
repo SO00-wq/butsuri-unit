@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=6">
-<script src="/assets/site.js?v=6" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=7">
+<script src="/assets/site.js?v=7" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -50,18 +50,18 @@
 <main id="main"><div class="wrap">
 <nav class="bc" aria-label="パンくずリスト"><a href="/">トップ</a> › <a href="/q/momentum.html">運動量</a> › プランク定数との関係</nav>
 <h1>運動量とプランク定数の関係</h1>
-<div class="hero"><div class="big">kg·m/s　と　J·s</div><div class="sub">[M L T⁻¹]　と　[M L² T⁻¹]</div></div>
+<div class="hero"><div class="big"><math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math>　と　<math><mstyle displaystyle="true"><mi mathvariant="normal">J</mi><mo>·</mo><mi mathvariant="normal">s</mi></mstyle></math></div><div class="sub">[M L T⁻¹]　と　[M L² T⁻¹]</div></div>
 <nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">単位の比から見る</a><a href="#s2">2つの量を結ぶ公式</a><a href="#s3">それぞれの量のページ</a></div></nav><h2 id="s1">単位の比から見る</h2>
-<div class="calc">[運動量] ÷ [プランク定数] = (kg·m/s) ÷ (kg·m²/s) = 1/m</div>
+<div class="calc">[運動量] ÷ [プランク定数] <math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac><mo>÷</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac></mstyle></math></div>
 <p>つまり 運動量 は「プランク定数 × <a href="/q/wavenumber.html">波数</a>」と同じ単位をもちます。</p>
 <h2 id="s2">2つの量を結ぶ公式</h2>
-<div class="step"><b><a href="/f/de_broglie.html">ド・ブロイ波長</a></b>：<span class="mono">λ = h / p</span>
-<div class="calc">p = h / λ<br>[p] = J·s ÷ m<br>　　= J·s/m<br>　　= kg·m/s</div>
-<div class="calc">h = λ p<br>[h] = m × kg·m/s<br>　　= kg·m²/s<br>　　= J·s</div>
+<div class="step"><b><a href="/f/de_broglie.html">ド・ブロイ波長</a></b>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">λ</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">h</mi></mrow><mrow><mi mathvariant="normal">p</mi></mrow></mfrac></mstyle></math></span>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">p</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">h</mi></mrow><mrow><mi mathvariant="normal">λ</mi></mrow></mfrac></mstyle></math><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">p</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">J</mi><mo>·</mo><mi mathvariant="normal">s</mi><mo>÷</mo><mi mathvariant="normal">m</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">J</mi><mo>·</mo><mi mathvariant="normal">s</mi></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math></div>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">h</mi><mo>=</mo><mi mathvariant="normal">λ</mi><mi mathvariant="normal">p</mi></mstyle></math><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">h</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">m</mi><mo>×</mo><mi mathvariant="normal">kg</mi><mo>·</mo><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">J</mi><mo>·</mo><mi mathvariant="normal">s</mi></mstyle></math></div>
 </div>
 <h2 id="s3">それぞれの量のページ</h2><ul>
-<li><a href="/q/momentum.html">運動量</a>（<span class="mono">kg·m/s = kg·m/s</span>）</li>
-<li><a href="/q/planck.html">プランク定数</a>（<span class="mono">J·s = kg·m²/s</span>）</li>
+<li><a href="/q/momentum.html">運動量</a>（<span class="mono"><math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math></span>）</li>
+<li><a href="/q/planck.html">プランク定数</a>（<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">J</mi><mo>·</mo><mi mathvariant="normal">s</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math></span>）</li>
 </ul>
 </div></main>
 <footer class="site"><div class="wrap">

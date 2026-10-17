@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=6">
-<script src="/assets/site.js?v=6" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=7">
+<script src="/assets/site.js?v=7" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -50,18 +50,18 @@
 <main id="main"><div class="wrap">
 <nav class="bc" aria-label="パンくずリスト"><a href="/">トップ</a> › <a href="/q/capacitance.html">静電容量</a> › 長さとの関係</nav>
 <h1>静電容量と長さの関係</h1>
-<div class="hero"><div class="big">F　と　m</div><div class="sub">[M⁻¹ L⁻² T⁴ I²]　と　[L]</div></div>
+<div class="hero"><div class="big"><math><mstyle displaystyle="true"><mi mathvariant="normal">F</mi></mstyle></math>　と　<math><mstyle displaystyle="true"><mi mathvariant="normal">m</mi></mstyle></math></div><div class="sub">[M⁻¹ L⁻² T⁴ I²]　と　[L]</div></div>
 <nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">単位の比から見る</a><a href="#s2">2つの量を結ぶ公式</a><a href="#s3">それぞれの量のページ</a></div></nav><h2 id="s1">単位の比から見る</h2>
-<div class="calc">[静電容量] ÷ [長さ] = (A²·s⁴/(kg·m²)) ÷ (m) = A²·s⁴/(kg·m³)</div>
+<div class="calc">[静電容量] ÷ [長さ] <math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><msup><mrow><mi mathvariant="normal">A</mi></mrow><mn>2</mn></msup><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>4</mn></msup></mrow><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow></mfrac><mo>÷</mo><mo>(</mo><mi mathvariant="normal">m</mi><mo>)</mo><mo>=</mo><mfrac><mrow><msup><mrow><mi mathvariant="normal">A</mi></mrow><mn>2</mn></msup><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>4</mn></msup></mrow><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>3</mn></msup></mrow></mfrac></mstyle></math></div>
 <p>つまり 静電容量 は「長さ × <a href="/q/permittivity.html">誘電率</a>」と同じ単位をもちます。</p>
 <h2 id="s2">2つの量を結ぶ公式</h2>
-<div class="step"><b><a href="/f/plate_cap.html">平行板コンデンサーの静電容量</a></b>：<span class="mono">C = ε S / d</span>
-<div class="calc">[C] = F/m × m² ÷ m<br>　　= F<br>　　= A²·s⁴/(kg·m²)</div>
-<div class="calc">d = ε S / C<br>[d] = F/m × m² ÷ F<br>　　= m</div>
+<div class="step"><b><a href="/f/plate_cap.html">平行板コンデンサーの静電容量</a></b>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">C</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">ε</mi><mi mathvariant="normal">S</mi></mrow><mrow><mi mathvariant="normal">d</mi></mrow></mfrac></mstyle></math></span>
+<div class="calc">[<math><mstyle displaystyle="true"><mi mathvariant="normal">C</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">F</mi></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac><mo>×</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup><mo>÷</mo><mi mathvariant="normal">m</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">F</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><msup><mrow><mi mathvariant="normal">A</mi></mrow><mn>2</mn></msup><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>4</mn></msup></mrow><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></div>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">d</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">ε</mi><mi mathvariant="normal">S</mi></mrow><mrow><mi mathvariant="normal">C</mi></mrow></mfrac></mstyle></math><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">d</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">F</mi></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac><mo>×</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup><mo>÷</mo><mi mathvariant="normal">F</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">m</mi></mstyle></math></div>
 </div>
 <h2 id="s3">それぞれの量のページ</h2><ul>
-<li><a href="/q/capacitance.html">静電容量</a>（<span class="mono">F = A²·s⁴/(kg·m²)</span>）</li>
-<li><a href="/q/length.html">長さ</a>（<span class="mono">m = m</span>）</li>
+<li><a href="/q/capacitance.html">静電容量</a>（<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">F</mi><mo>=</mo><mfrac><mrow><msup><mrow><mi mathvariant="normal">A</mi></mrow><mn>2</mn></msup><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>4</mn></msup></mrow><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></span>）</li>
+<li><a href="/q/length.html">長さ</a>（<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">m</mi><mo>=</mo><mi mathvariant="normal">m</mi></mstyle></math></span>）</li>
 </ul>
 </div></main>
 <footer class="site"><div class="wrap">

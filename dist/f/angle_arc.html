@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=6">
-<script src="/assets/site.js?v=6" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=7">
+<script src="/assets/site.js?v=7" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -51,24 +51,24 @@
 <nav class="bc" aria-label="パンくずリスト"><a href="/">トップ</a> › <a href="/c/base.html">基本量</a> › 弧度法（ラジアン）の定義</nav>
 <span class="tag">基本量</span>
 <h1>弧度法（ラジアン）の定義</h1>
-<div class="hero"><div class="big">θ = l / r</div></div>
+<div class="hero"><div class="big"><math><mstyle displaystyle="true"><mi mathvariant="normal">θ</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">l</mi></mrow><mrow><mi mathvariant="normal">r</mi></mrow></mfrac></mstyle></math></div></div>
 <nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">出てくる記号と単位</a><a href="#s2">両辺の単位が一致するか確かめる</a><a href="#s3">この公式から読み取れる単位の関係</a><a href="#s4">基本量のほかの公式</a></div></nav><h2 id="s1">出てくる記号と単位</h2>
 <div class="tbl"><table><tr><th>記号</th><th>量</th><th>SI単位</th><th>基本単位</th></tr>
-<tr><td class="mono">θ</td><td><a href="/q/angle.html">角度（平面角）</a></td><td class="mono">rad</td><td class="mono">1</td></tr>
-<tr><td class="mono">l</td><td><a href="/q/length.html">長さ</a></td><td class="mono">m</td><td class="mono">m</td></tr>
-<tr><td class="mono">r</td><td><a href="/q/length.html">長さ</a></td><td class="mono">m</td><td class="mono">m</td></tr>
+<tr><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">θ</mi></mstyle></math></td><td><a href="/q/angle.html">角度（平面角）</a></td><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">rad</mi></mstyle></math></td><td class="mono"><math><mstyle displaystyle="true"><mn>1</mn></mstyle></math></td></tr>
+<tr><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">l</mi></mstyle></math></td><td><a href="/q/length.html">長さ</a></td><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">m</mi></mstyle></math></td><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">m</mi></mstyle></math></td></tr>
+<tr><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">r</mi></mstyle></math></td><td><a href="/q/length.html">長さ</a></td><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">m</mi></mstyle></math></td><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">m</mi></mstyle></math></td></tr>
 </table></div>
 <h2 id="s2">両辺の単位が一致するか確かめる</h2>
-<div class="calc">左辺： θ<br>　→ rad<br>　= 1</div>
-<div class="calc">右辺： l / r<br>　→ m ÷ m<br>　= 1</div>
+<div class="calc">左辺： <math><mstyle displaystyle="true"><mi mathvariant="normal">θ</mi></mstyle></math><br>　→ <math><mstyle displaystyle="true"><mi mathvariant="normal">rad</mi></mstyle></math><br>　<math><mstyle displaystyle="true"><mo>=</mo><mn>1</mn></mstyle></math></div>
+<div class="calc">右辺： <math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">l</mi></mrow><mrow><mi mathvariant="normal">r</mi></mrow></mfrac></mstyle></math><br>　→ <math><mstyle displaystyle="true"><mi mathvariant="normal">m</mi><mo>÷</mo><mi mathvariant="normal">m</mi></mstyle></math><br>　<math><mstyle displaystyle="true"><mo>=</mo><mn>1</mn></mstyle></math></div>
 <p class="ok">両辺とも単位がすべて打ち消しあい、無次元で一致します。</p>
 <div class="note">💡 長さ÷長さなので、ラジアンは次元をもたない。</div>
 <h2 id="s3">この公式から読み取れる単位の関係</h2>
 <p>公式をある量について解くと、その量の単位をほかの量の単位で表せます。知らない量が出てきたときは、知っている量について解き直して単位を組み立てるのが近道です。</p>
 <h3><a href="/q/angle.html">角度（平面角）</a>について解く</h3>
-<div class="calc">[θ] = m ÷ m<br>　　= 1<br>　　= rad</div>
+<div class="calc">[<math><mstyle displaystyle="true"><mi mathvariant="normal">θ</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">m</mi><mo>÷</mo><mi mathvariant="normal">m</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mn>1</mn></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">rad</mi></mstyle></math></div>
 <h2 id="s4">基本量のほかの公式</h2><ul>
-<li><a href="/f/solid_angle_def.html">立体角（ステラジアン）の定義</a>：<span class="mono">Ω = S / r²</span></li>
+<li><a href="/f/solid_angle_def.html">立体角（ステラジアン）の定義</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">Ω</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">S</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">r</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></span></li>
 </ul>
 </div></main>
 <footer class="site"><div class="wrap">

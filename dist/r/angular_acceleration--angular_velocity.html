@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=6">
-<script src="/assets/site.js?v=6" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=7">
+<script src="/assets/site.js?v=7" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -50,18 +50,18 @@
 <main id="main"><div class="wrap">
 <nav class="bc" aria-label="パンくずリスト"><a href="/">トップ</a> › <a href="/q/angular_acceleration.html">角加速度</a> › 角速度との関係</nav>
 <h1>角加速度と角速度の関係</h1>
-<div class="hero"><div class="big">rad/s²　と　rad/s</div><div class="sub">[T⁻²]　と　[T⁻¹]</div></div>
+<div class="hero"><div class="big"><math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">rad</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math>　と　<math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">rad</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math></div><div class="sub">[T⁻²]　と　[T⁻¹]</div></div>
 <nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">単位の比から見る</a><a href="#s2">2つの量を結ぶ公式</a><a href="#s3">それぞれの量のページ</a></div></nav><h2 id="s1">単位の比から見る</h2>
-<div class="calc">[角加速度] ÷ [角速度] = (1/s²) ÷ (1/s) = 1/s</div>
+<div class="calc">[角加速度] ÷ [角速度] <math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac><mo>÷</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math></div>
 <p>つまり 角加速度 は「角速度 × <a href="/q/frequency.html">振動数・周波数</a>・<a href="/q/activity.html">放射能</a>」と同じ単位をもちます。</p>
 <h2 id="s2">2つの量を結ぶ公式</h2>
-<div class="step"><b><a href="/f/alpha_def.html">角加速度の定義</a></b>：<span class="mono">α = Δω / Δt</span>
-<div class="calc">[α] = rad/s ÷ s<br>　　= rad/s²<br>　　= 1/s²</div>
-<div class="calc">Δω = α Δt<br>[Δω] = rad/s² × s<br>　　= rad/s<br>　　= 1/s</div>
+<div class="step"><b><a href="/f/alpha_def.html">角加速度の定義</a></b>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">α</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">Δω</mi></mrow><mrow><mi mathvariant="normal">Δt</mi></mrow></mfrac></mstyle></math></span>
+<div class="calc">[<math><mstyle displaystyle="true"><mi mathvariant="normal">α</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">rad</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac><mo>÷</mo><mi mathvariant="normal">s</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">rad</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></div>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">Δω</mi><mo>=</mo><mi mathvariant="normal">α</mi><mi mathvariant="normal">Δt</mi></mstyle></math><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">Δω</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">rad</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac><mo>×</mo><mi mathvariant="normal">s</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">rad</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math></div>
 </div>
 <h2 id="s3">それぞれの量のページ</h2><ul>
-<li><a href="/q/angular_acceleration.html">角加速度</a>（<span class="mono">rad/s² = 1/s²</span>）</li>
-<li><a href="/q/angular_velocity.html">角速度</a>（<span class="mono">rad/s = 1/s</span>）</li>
+<li><a href="/q/angular_acceleration.html">角加速度</a>（<span class="mono"><math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">rad</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></span>）</li>
+<li><a href="/q/angular_velocity.html">角速度</a>（<span class="mono"><math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">rad</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math></span>）</li>
 </ul>
 </div></main>
 <footer class="site"><div class="wrap">

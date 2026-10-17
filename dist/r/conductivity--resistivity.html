@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=6">
-<script src="/assets/site.js?v=6" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=7">
+<script src="/assets/site.js?v=7" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -50,17 +50,17 @@
 <main id="main"><div class="wrap">
 <nav class="bc" aria-label="パンくずリスト"><a href="/">トップ</a> › <a href="/q/conductivity.html">電気伝導率</a> › 抵抗率との関係</nav>
 <h1>電気伝導率と抵抗率の関係</h1>
-<div class="hero"><div class="big">S/m　と　Ω·m</div><div class="sub">[M⁻¹ L⁻³ T³ I²]　と　[M L³ T⁻³ I⁻²]</div></div>
+<div class="hero"><div class="big"><math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">S</mi></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac></mstyle></math>　と　<math><mstyle displaystyle="true"><mi mathvariant="normal">Ω</mi><mo>·</mo><mi mathvariant="normal">m</mi></mstyle></math></div><div class="sub">[M⁻¹ L⁻³ T³ I²]　と　[M L³ T⁻³ I⁻²]</div></div>
 <nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">単位の比から見る</a><a href="#s2">2つの量を結ぶ公式</a><a href="#s3">それぞれの量のページ</a></div></nav><h2 id="s1">単位の比から見る</h2>
-<div class="calc">[電気伝導率] ÷ [抵抗率] = (A²·s³/(kg·m³)) ÷ (kg·m³/(A²·s³)) = A⁴·s⁶/(kg²·m⁶)</div>
+<div class="calc">[電気伝導率] ÷ [抵抗率] <math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><msup><mrow><mi mathvariant="normal">A</mi></mrow><mn>2</mn></msup><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>3</mn></msup></mrow><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>3</mn></msup></mrow></mfrac><mo>÷</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>3</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">A</mi></mrow><mn>2</mn></msup><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>3</mn></msup></mrow></mfrac><mo>=</mo><mfrac><mrow><msup><mrow><mi mathvariant="normal">A</mi></mrow><mn>4</mn></msup><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>6</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">kg</mi></mrow><mn>2</mn></msup><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>6</mn></msup></mrow></mfrac></mstyle></math></div>
 <h2 id="s2">2つの量を結ぶ公式</h2>
-<div class="step"><b><a href="/f/conductivity.html">電気伝導率</a></b>：<span class="mono">σ = 1 / ρ</span>
-<div class="calc">[σ] = 1 ÷ (Ω·m)<br>　　= 1/(Ω·m)<br>　　= A²·s³/(kg·m³)<br>　　= S/m</div>
-<div class="calc">ρ = 1 / σ　<span class="lead">（係数は単位に影響しないので省略）</span><br>[ρ] = 1 ÷ (S/m)<br>　　= m/S<br>　　= kg·m³/(A²·s³)<br>　　= Ω·m</div>
+<div class="step"><b><a href="/f/conductivity.html">電気伝導率</a></b>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">σ</mi><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi mathvariant="normal">ρ</mi></mrow></mfrac></mstyle></math></span>
+<div class="calc">[<math><mstyle displaystyle="true"><mi mathvariant="normal">σ</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mn>1</mn><mo>÷</mo><mo>(</mo><mi mathvariant="normal">Ω</mi><mo>·</mo><mi mathvariant="normal">m</mi><mo>)</mo></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi mathvariant="normal">Ω</mi><mo>·</mo><mi mathvariant="normal">m</mi></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><msup><mrow><mi mathvariant="normal">A</mi></mrow><mn>2</mn></msup><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>3</mn></msup></mrow><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>3</mn></msup></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">S</mi></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac></mstyle></math></div>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">ρ</mi><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi mathvariant="normal">σ</mi></mrow></mfrac></mstyle></math>　<span class="lead">（係数は単位に影響しないので省略）</span><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">ρ</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mn>1</mn><mo>÷</mo><mfrac><mrow><mi mathvariant="normal">S</mi></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">S</mi></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>3</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">A</mi></mrow><mn>2</mn></msup><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>3</mn></msup></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">Ω</mi><mo>·</mo><mi mathvariant="normal">m</mi></mstyle></math></div>
 </div>
 <h2 id="s3">それぞれの量のページ</h2><ul>
-<li><a href="/q/conductivity.html">電気伝導率</a>（<span class="mono">S/m = A²·s³/(kg·m³)</span>）</li>
-<li><a href="/q/resistivity.html">抵抗率</a>（<span class="mono">Ω·m = kg·m³/(A²·s³)</span>）</li>
+<li><a href="/q/conductivity.html">電気伝導率</a>（<span class="mono"><math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">S</mi></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><msup><mrow><mi mathvariant="normal">A</mi></mrow><mn>2</mn></msup><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>3</mn></msup></mrow><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>3</mn></msup></mrow></mfrac></mstyle></math></span>）</li>
+<li><a href="/q/resistivity.html">抵抗率</a>（<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">Ω</mi><mo>·</mo><mi mathvariant="normal">m</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>3</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">A</mi></mrow><mn>2</mn></msup><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>3</mn></msup></mrow></mfrac></mstyle></math></span>）</li>
 </ul>
 </div></main>
 <footer class="site"><div class="wrap">

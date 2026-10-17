@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=6">
-<script src="/assets/site.js?v=6" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=7">
+<script src="/assets/site.js?v=7" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -50,18 +50,18 @@
 <main id="main"><div class="wrap">
 <nav class="bc" aria-label="パンくずリスト"><a href="/">トップ</a> › <a href="/q/current.html">電流</a> › エネルギー・仕事・熱量との関係</nav>
 <h1>電流とエネルギー・仕事・熱量の関係</h1>
-<div class="hero"><div class="big">A　と　J</div><div class="sub">[I]　と　[M L² T⁻²]</div></div>
+<div class="hero"><div class="big"><math><mstyle displaystyle="true"><mi mathvariant="normal">A</mi></mstyle></math>　と　<math><mstyle displaystyle="true"><mi mathvariant="normal">J</mi></mstyle></math></div><div class="sub">[I]　と　[M L² T⁻²]</div></div>
 <nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">単位の比から見る</a><a href="#s2">2つの量を結ぶ公式</a><a href="#s3">それぞれの量のページ</a></div></nav><h2 id="s1">単位の比から見る</h2>
-<div class="calc">[電流] ÷ [エネルギー・仕事・熱量] = (A) ÷ (kg·m²/s²) = A·s²/(kg·m²)</div>
+<div class="calc">[電流] ÷ [エネルギー・仕事・熱量] <math><mstyle displaystyle="true"><mo>=</mo><mo>(</mo><mi mathvariant="normal">A</mi><mo>)</mo><mo>÷</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac><mo>=</mo><mfrac><mrow><mi mathvariant="normal">A</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></div>
 <p>つまり 電流 は「エネルギー・仕事・熱量 ÷ <a href="/q/magnetic_flux.html">磁束</a>」と同じ単位をもちます。</p>
 <h2 id="s2">2つの量を結ぶ公式</h2>
-<div class="step"><b><a href="/f/ind_energy.html">コイルのエネルギー</a></b>：<span class="mono">U = ½ L I²</span>
-<div class="calc">I = U¹ᐟ² / L¹ᐟ²　<span class="lead">（係数は単位に影響しないので省略）</span><br>[I] = J¹ᐟ² ÷ H¹ᐟ²<br>　　= J¹ᐟ²/H¹ᐟ²<br>　　= A</div>
-<div class="calc">U = L I²　<span class="lead">（係数は単位に影響しないので省略）</span><br>[U] = H × A²<br>　　= H·A²<br>　　= kg·m²/s²<br>　　= J</div>
+<div class="step"><b><a href="/f/ind_energy.html">コイルのエネルギー</a></b>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">U</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi mathvariant="normal">L</mi><msup><mrow><mi mathvariant="normal">I</mi></mrow><mn>2</mn></msup></mstyle></math></span>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">I</mi><mo>=</mo><msqrt><mfrac><mrow><mi mathvariant="normal">U</mi></mrow><mrow><mi mathvariant="normal">L</mi></mrow></mfrac></msqrt></mstyle></math>　<span class="lead">（係数は単位に影響しないので省略）</span><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">I</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><msqrt><mi mathvariant="normal">J</mi><mo>÷</mo><mi mathvariant="normal">H</mi></msqrt></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><msqrt><mfrac><mrow><mi mathvariant="normal">J</mi></mrow><mrow><mi mathvariant="normal">H</mi></mrow></mfrac></msqrt></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">A</mi></mstyle></math></div>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">U</mi><mo>=</mo><mi mathvariant="normal">L</mi><msup><mrow><mi mathvariant="normal">I</mi></mrow><mn>2</mn></msup></mstyle></math>　<span class="lead">（係数は単位に影響しないので省略）</span><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">U</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">H</mi><mo>×</mo><msup><mrow><mi mathvariant="normal">A</mi></mrow><mn>2</mn></msup></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">H</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">A</mi></mrow><mn>2</mn></msup></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">J</mi></mstyle></math></div>
 </div>
 <h2 id="s3">それぞれの量のページ</h2><ul>
-<li><a href="/q/current.html">電流</a>（<span class="mono">A = A</span>）</li>
-<li><a href="/q/energy.html">エネルギー・仕事・熱量</a>（<span class="mono">J = kg·m²/s²</span>）</li>
+<li><a href="/q/current.html">電流</a>（<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">A</mi><mo>=</mo><mi mathvariant="normal">A</mi></mstyle></math></span>）</li>
+<li><a href="/q/energy.html">エネルギー・仕事・熱量</a>（<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">J</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></span>）</li>
 </ul>
 </div></main>
 <footer class="site"><div class="wrap">

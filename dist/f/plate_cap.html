@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=6">
-<script src="/assets/site.js?v=6" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=7">
+<script src="/assets/site.js?v=7" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -51,41 +51,41 @@
 <nav class="bc" aria-label="パンくずリスト"><a href="/">トップ</a> › <a href="/c/em.html">電磁気</a> › 平行板コンデンサーの静電容量</nav>
 <span class="tag">電磁気</span>
 <h1>平行板コンデンサーの静電容量</h1>
-<div class="hero"><div class="big">C = ε S / d</div></div>
+<div class="hero"><div class="big"><math><mstyle displaystyle="true"><mi mathvariant="normal">C</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">ε</mi><mi mathvariant="normal">S</mi></mrow><mrow><mi mathvariant="normal">d</mi></mrow></mfrac></mstyle></math></div></div>
 <nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">出てくる記号と単位</a><a href="#s2">両辺の単位が一致するか確かめる</a><a href="#s3">この公式から読み取れる単位の関係</a><a href="#s4">電磁気のほかの公式</a></div></nav><h2 id="s1">出てくる記号と単位</h2>
 <div class="tbl"><table><tr><th>記号</th><th>量</th><th>SI単位</th><th>基本単位</th></tr>
-<tr><td class="mono">C</td><td><a href="/q/capacitance.html">静電容量</a></td><td class="mono">F</td><td class="mono">A²·s⁴/(kg·m²)</td></tr>
-<tr><td class="mono">ε</td><td><a href="/q/permittivity.html">誘電率</a></td><td class="mono">F/m</td><td class="mono">A²·s⁴/(kg·m³)</td></tr>
-<tr><td class="mono">S</td><td><a href="/q/area.html">面積</a></td><td class="mono">m²</td><td class="mono">m²</td></tr>
-<tr><td class="mono">d</td><td><a href="/q/length.html">長さ</a></td><td class="mono">m</td><td class="mono">m</td></tr>
+<tr><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">C</mi></mstyle></math></td><td><a href="/q/capacitance.html">静電容量</a></td><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">F</mi></mstyle></math></td><td class="mono"><math><mstyle displaystyle="true"><mfrac><mrow><msup><mrow><mi mathvariant="normal">A</mi></mrow><mn>2</mn></msup><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>4</mn></msup></mrow><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></td></tr>
+<tr><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">ε</mi></mstyle></math></td><td><a href="/q/permittivity.html">誘電率</a></td><td class="mono"><math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">F</mi></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac></mstyle></math></td><td class="mono"><math><mstyle displaystyle="true"><mfrac><mrow><msup><mrow><mi mathvariant="normal">A</mi></mrow><mn>2</mn></msup><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>4</mn></msup></mrow><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>3</mn></msup></mrow></mfrac></mstyle></math></td></tr>
+<tr><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">S</mi></mstyle></math></td><td><a href="/q/area.html">面積</a></td><td class="mono"><math><mstyle displaystyle="true"><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mstyle></math></td><td class="mono"><math><mstyle displaystyle="true"><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mstyle></math></td></tr>
+<tr><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">d</mi></mstyle></math></td><td><a href="/q/length.html">長さ</a></td><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">m</mi></mstyle></math></td><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">m</mi></mstyle></math></td></tr>
 </table></div>
 <h2 id="s2">両辺の単位が一致するか確かめる</h2>
-<div class="calc">左辺： C<br>　→ F<br>　= A²·s⁴/(kg·m²)</div>
-<div class="calc">右辺： ε S / d<br>　→ F/m × m² ÷ m<br>　= F<br>　= A²·s⁴/(kg·m²)</div>
-<p><span class="ok">両辺とも A²·s⁴/(kg·m²) で一致</span>します。単位が合わない式は、どこかが間違っているサインです。</p>
+<div class="calc">左辺： <math><mstyle displaystyle="true"><mi mathvariant="normal">C</mi></mstyle></math><br>　→ <math><mstyle displaystyle="true"><mi mathvariant="normal">F</mi></mstyle></math><br>　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><msup><mrow><mi mathvariant="normal">A</mi></mrow><mn>2</mn></msup><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>4</mn></msup></mrow><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></div>
+<div class="calc">右辺： <math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">ε</mi><mi mathvariant="normal">S</mi></mrow><mrow><mi mathvariant="normal">d</mi></mrow></mfrac></mstyle></math><br>　→ <math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">F</mi></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac><mo>×</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup><mo>÷</mo><mi mathvariant="normal">m</mi></mstyle></math><br>　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">F</mi></mstyle></math><br>　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><msup><mrow><mi mathvariant="normal">A</mi></mrow><mn>2</mn></msup><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>4</mn></msup></mrow><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></div>
+<p><span class="ok">両辺とも <math><mstyle displaystyle="true"><mfrac><mrow><msup><mrow><mi mathvariant="normal">A</mi></mrow><mn>2</mn></msup><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>4</mn></msup></mrow><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math> で一致</span>します。単位が合わない式は、どこかが間違っているサインです。</p>
 <h2 id="s3">この公式から読み取れる単位の関係</h2>
 <p>公式をある量について解くと、その量の単位をほかの量の単位で表せます。知らない量が出てきたときは、知っている量について解き直して単位を組み立てるのが近道です。</p>
 <h3><a href="/q/capacitance.html">静電容量</a>について解く</h3>
-<div class="calc">[C] = F/m × m² ÷ m<br>　　= F<br>　　= A²·s⁴/(kg·m²)</div>
+<div class="calc">[<math><mstyle displaystyle="true"><mi mathvariant="normal">C</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">F</mi></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac><mo>×</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup><mo>÷</mo><mi mathvariant="normal">m</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">F</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><msup><mrow><mi mathvariant="normal">A</mi></mrow><mn>2</mn></msup><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>4</mn></msup></mrow><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></div>
 <h3><a href="/q/permittivity.html">誘電率</a>について解く</h3>
-<div class="calc">ε = C d / S<br>[ε] = F × m ÷ m²<br>　　= F/m<br>　　= A²·s⁴/(kg·m³)</div>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">ε</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">C</mi><mi mathvariant="normal">d</mi></mrow><mrow><mi mathvariant="normal">S</mi></mrow></mfrac></mstyle></math><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">ε</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">F</mi><mo>×</mo><mi mathvariant="normal">m</mi><mo>÷</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">F</mi></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><msup><mrow><mi mathvariant="normal">A</mi></mrow><mn>2</mn></msup><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>4</mn></msup></mrow><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>3</mn></msup></mrow></mfrac></mstyle></math></div>
 <h3><a href="/q/area.html">面積</a>について解く</h3>
-<div class="calc">S = C d / ε<br>[S] = F × m ÷ (F/m)<br>　　= m²</div>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">S</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">C</mi><mi mathvariant="normal">d</mi></mrow><mrow><mi mathvariant="normal">ε</mi></mrow></mfrac></mstyle></math><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">S</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">F</mi><mo>×</mo><mi mathvariant="normal">m</mi><mo>÷</mo><mfrac><mrow><mi mathvariant="normal">F</mi></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mstyle></math></div>
 <h3><a href="/q/length.html">長さ</a>について解く</h3>
-<div class="calc">d = ε S / C<br>[d] = F/m × m² ÷ F<br>　　= m</div>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">d</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">ε</mi><mi mathvariant="normal">S</mi></mrow><mrow><mi mathvariant="normal">C</mi></mrow></mfrac></mstyle></math><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">d</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">F</mi></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac><mo>×</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup><mo>÷</mo><mi mathvariant="normal">F</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">m</mi></mstyle></math></div>
 <h2 id="s4">電磁気のほかの公式</h2><ul>
-<li><a href="/f/charge_def.html">電荷と電流</a>：<span class="mono">q = I t</span></li>
-<li><a href="/f/voltage_def.html">電圧と仕事</a>：<span class="mono">W = q V</span></li>
-<li><a href="/f/ohm.html">オームの法則</a>：<span class="mono">V = R I</span></li>
-<li><a href="/f/power_iv.html">電力</a>：<span class="mono">P = I V</span></li>
-<li><a href="/f/joule_heat.html">ジュール熱（抵抗での消費電力）</a>：<span class="mono">P = I² R</span></li>
-<li><a href="/f/conductance.html">コンダクタンス</a>：<span class="mono">G = 1 / R</span></li>
-<li><a href="/f/capacitor.html">コンデンサーの電気量</a>：<span class="mono">q = C V</span></li>
-<li><a href="/f/cap_energy.html">コンデンサーのエネルギー</a>：<span class="mono">U = ½ C V²</span></li>
-<li><a href="/f/rc_time.html">RC回路の時定数</a>：<span class="mono">τ = R C</span></li>
-<li><a href="/f/efield_force.html">電場から受ける力</a>：<span class="mono">F = q E</span></li>
-<li><a href="/f/uniform_field.html">一様な電場と電圧</a>：<span class="mono">V = E d</span></li>
-<li><a href="/f/coulomb.html">クーロンの法則</a>：<span class="mono">F = k q₁ q₂ / r²</span></li>
+<li><a href="/f/charge_def.html">電荷と電流</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">q</mi><mo>=</mo><mi mathvariant="normal">I</mi><mi mathvariant="normal">t</mi></mstyle></math></span></li>
+<li><a href="/f/voltage_def.html">電圧と仕事</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">W</mi><mo>=</mo><mi mathvariant="normal">q</mi><mi mathvariant="normal">V</mi></mstyle></math></span></li>
+<li><a href="/f/ohm.html">オームの法則</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">V</mi><mo>=</mo><mi mathvariant="normal">R</mi><mi mathvariant="normal">I</mi></mstyle></math></span></li>
+<li><a href="/f/power_iv.html">電力</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">P</mi><mo>=</mo><mi mathvariant="normal">I</mi><mi mathvariant="normal">V</mi></mstyle></math></span></li>
+<li><a href="/f/joule_heat.html">ジュール熱（抵抗での消費電力）</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">P</mi><mo>=</mo><msup><mrow><mi mathvariant="normal">I</mi></mrow><mn>2</mn></msup><mi mathvariant="normal">R</mi></mstyle></math></span></li>
+<li><a href="/f/conductance.html">コンダクタンス</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">G</mi><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi mathvariant="normal">R</mi></mrow></mfrac></mstyle></math></span></li>
+<li><a href="/f/capacitor.html">コンデンサーの電気量</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">q</mi><mo>=</mo><mi mathvariant="normal">C</mi><mi mathvariant="normal">V</mi></mstyle></math></span></li>
+<li><a href="/f/cap_energy.html">コンデンサーのエネルギー</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">U</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi mathvariant="normal">C</mi><msup><mrow><mi mathvariant="normal">V</mi></mrow><mn>2</mn></msup></mstyle></math></span></li>
+<li><a href="/f/rc_time.html">RC回路の時定数</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">τ</mi><mo>=</mo><mi mathvariant="normal">R</mi><mi mathvariant="normal">C</mi></mstyle></math></span></li>
+<li><a href="/f/efield_force.html">電場から受ける力</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">F</mi><mo>=</mo><mi mathvariant="normal">q</mi><mi mathvariant="normal">E</mi></mstyle></math></span></li>
+<li><a href="/f/uniform_field.html">一様な電場と電圧</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">V</mi><mo>=</mo><mi mathvariant="normal">E</mi><mi mathvariant="normal">d</mi></mstyle></math></span></li>
+<li><a href="/f/coulomb.html">クーロンの法則</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">F</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">k</mi><msub><mrow><mi mathvariant="normal">q</mi></mrow><mi mathvariant="normal">1</mi></msub><msub><mrow><mi mathvariant="normal">q</mi></mrow><mi mathvariant="normal">2</mi></msub></mrow><mrow><msup><mrow><mi mathvariant="normal">r</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></span></li>
 </ul>
 </div></main>
 <footer class="site"><div class="wrap">

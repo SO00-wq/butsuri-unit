@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=6">
-<script src="/assets/site.js?v=6" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=7">
+<script src="/assets/site.js?v=7" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -51,28 +51,28 @@
 <nav class="bc" aria-label="パンくずリスト"><a href="/">トップ</a> › <a href="/c/base.html">基本量</a> › 立体角（ステラジアン）の定義</nav>
 <span class="tag">基本量</span>
 <h1>立体角（ステラジアン）の定義</h1>
-<div class="hero"><div class="big">Ω = S / r²</div></div>
+<div class="hero"><div class="big"><math><mstyle displaystyle="true"><mi mathvariant="normal">Ω</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">S</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">r</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></div></div>
 <nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">出てくる記号と単位</a><a href="#s2">両辺の単位が一致するか確かめる</a><a href="#s3">この公式から読み取れる単位の関係</a><a href="#s4">基本量のほかの公式</a></div></nav><h2 id="s1">出てくる記号と単位</h2>
 <div class="tbl"><table><tr><th>記号</th><th>量</th><th>SI単位</th><th>基本単位</th></tr>
-<tr><td class="mono">Ω</td><td><a href="/q/solid_angle.html">立体角</a></td><td class="mono">sr</td><td class="mono">1</td></tr>
-<tr><td class="mono">S</td><td><a href="/q/area.html">面積</a></td><td class="mono">m²</td><td class="mono">m²</td></tr>
-<tr><td class="mono">r</td><td><a href="/q/length.html">長さ</a></td><td class="mono">m</td><td class="mono">m</td></tr>
+<tr><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">Ω</mi></mstyle></math></td><td><a href="/q/solid_angle.html">立体角</a></td><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">sr</mi></mstyle></math></td><td class="mono"><math><mstyle displaystyle="true"><mn>1</mn></mstyle></math></td></tr>
+<tr><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">S</mi></mstyle></math></td><td><a href="/q/area.html">面積</a></td><td class="mono"><math><mstyle displaystyle="true"><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mstyle></math></td><td class="mono"><math><mstyle displaystyle="true"><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mstyle></math></td></tr>
+<tr><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">r</mi></mstyle></math></td><td><a href="/q/length.html">長さ</a></td><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">m</mi></mstyle></math></td><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">m</mi></mstyle></math></td></tr>
 </table></div>
 <h2 id="s2">両辺の単位が一致するか確かめる</h2>
-<div class="calc">左辺： Ω<br>　→ sr<br>　= 1</div>
-<div class="calc">右辺： S / r²<br>　→ m² ÷ m²<br>　= 1</div>
+<div class="calc">左辺： <math><mstyle displaystyle="true"><mi mathvariant="normal">Ω</mi></mstyle></math><br>　→ <math><mstyle displaystyle="true"><mi mathvariant="normal">sr</mi></mstyle></math><br>　<math><mstyle displaystyle="true"><mo>=</mo><mn>1</mn></mstyle></math></div>
+<div class="calc">右辺： <math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">S</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">r</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math><br>　→ <math><mstyle displaystyle="true"><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup><mo>÷</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mstyle></math><br>　<math><mstyle displaystyle="true"><mo>=</mo><mn>1</mn></mstyle></math></div>
 <p class="ok">両辺とも単位がすべて打ち消しあい、無次元で一致します。</p>
 <div class="note">💡 面積÷長さの2乗なので、ステラジアンも次元をもたない。</div>
 <h2 id="s3">この公式から読み取れる単位の関係</h2>
 <p>公式をある量について解くと、その量の単位をほかの量の単位で表せます。知らない量が出てきたときは、知っている量について解き直して単位を組み立てるのが近道です。</p>
 <h3><a href="/q/solid_angle.html">立体角</a>について解く</h3>
-<div class="calc">[Ω] = m² ÷ m²<br>　　= 1<br>　　= sr</div>
+<div class="calc">[<math><mstyle displaystyle="true"><mi mathvariant="normal">Ω</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup><mo>÷</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mn>1</mn></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">sr</mi></mstyle></math></div>
 <h3><a href="/q/area.html">面積</a>について解く</h3>
-<div class="calc">S = Ω r²<br>[S] = sr × m²<br>　　= m²　<span class="lead">（sr は無次元なので省く）</span></div>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">S</mi><mo>=</mo><mi mathvariant="normal">Ω</mi><msup><mrow><mi mathvariant="normal">r</mi></mrow><mn>2</mn></msup></mstyle></math><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">S</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">sr</mi><mo>×</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mstyle></math>　<span class="lead">（<math><mstyle displaystyle="true"><mi mathvariant="normal">sr</mi></mstyle></math> は無次元なので省く）</span></div>
 <h3><a href="/q/length.html">長さ</a>について解く</h3>
-<div class="calc">r = S¹ᐟ² / Ω¹ᐟ²<br>[r] = m²¹ᐟ² ÷ sr¹ᐟ²<br>　　= m　<span class="lead">（sr は無次元なので省く）</span></div>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">r</mi><mo>=</mo><msqrt><mfrac><mrow><mi mathvariant="normal">S</mi></mrow><mrow><mi mathvariant="normal">Ω</mi></mrow></mfrac></msqrt></mstyle></math><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">r</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><msqrt><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup><mo>÷</mo><mi mathvariant="normal">sr</mi></msqrt></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">m</mi></mstyle></math>　<span class="lead">（<math><mstyle displaystyle="true"><mi mathvariant="normal">sr</mi></mstyle></math> は無次元なので省く）</span></div>
 <h2 id="s4">基本量のほかの公式</h2><ul>
-<li><a href="/f/angle_arc.html">弧度法（ラジアン）の定義</a>：<span class="mono">θ = l / r</span></li>
+<li><a href="/f/angle_arc.html">弧度法（ラジアン）の定義</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">θ</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">l</mi></mrow><mrow><mi mathvariant="normal">r</mi></mrow></mfrac></mstyle></math></span></li>
 </ul>
 </div></main>
 <footer class="site"><div class="wrap">

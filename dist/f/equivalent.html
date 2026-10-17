@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=6">
-<script src="/assets/site.js?v=6" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=7">
+<script src="/assets/site.js?v=7" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -51,30 +51,30 @@
 <nav class="bc" aria-label="パンくずリスト"><a href="/">トップ</a> › <a href="/c/misc.html">放射線・化学</a> › 等価線量</nav>
 <span class="tag">放射線・化学</span>
 <h1>等価線量</h1>
-<div class="hero"><div class="big">H = w_R D</div></div>
+<div class="hero"><div class="big"><math><mstyle displaystyle="true"><mi mathvariant="normal">H</mi><mo>=</mo><msub><mrow><mi mathvariant="normal">w</mi></mrow><mi mathvariant="normal">R</mi></msub><mi mathvariant="normal">D</mi></mstyle></math></div></div>
 <nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">出てくる記号と単位</a><a href="#s2">両辺の単位が一致するか確かめる</a><a href="#s3">この公式から読み取れる単位の関係</a><a href="#s4">放射線・化学のほかの公式</a></div></nav><h2 id="s1">出てくる記号と単位</h2>
 <div class="tbl"><table><tr><th>記号</th><th>量</th><th>SI単位</th><th>基本単位</th></tr>
-<tr><td class="mono">H</td><td><a href="/q/equivalent_dose.html">等価線量</a></td><td class="mono">Sv</td><td class="mono">m²/s²</td></tr>
-<tr><td class="mono">w_R</td><td><a href="/q/number.html">個数・無次元数</a></td><td class="mono">1（無次元）</td><td class="mono">1</td></tr>
-<tr><td class="mono">D</td><td><a href="/q/absorbed_dose.html">吸収線量</a></td><td class="mono">Gy</td><td class="mono">m²/s²</td></tr>
+<tr><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">H</mi></mstyle></math></td><td><a href="/q/equivalent_dose.html">等価線量</a></td><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">Sv</mi></mstyle></math></td><td class="mono"><math><mstyle displaystyle="true"><mfrac><mrow><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></td></tr>
+<tr><td class="mono"><math><mstyle displaystyle="true"><msub><mrow><mi mathvariant="normal">w</mi></mrow><mi mathvariant="normal">R</mi></msub></mstyle></math></td><td><a href="/q/number.html">個数・無次元数</a></td><td class="mono"><math><mstyle displaystyle="true"><mn>1</mn></mstyle></math>（無次元）</td><td class="mono"><math><mstyle displaystyle="true"><mn>1</mn></mstyle></math></td></tr>
+<tr><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">D</mi></mstyle></math></td><td><a href="/q/absorbed_dose.html">吸収線量</a></td><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">Gy</mi></mstyle></math></td><td class="mono"><math><mstyle displaystyle="true"><mfrac><mrow><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></td></tr>
 </table></div>
 <h2 id="s2">両辺の単位が一致するか確かめる</h2>
-<div class="calc">左辺： H<br>　→ Sv<br>　= m²/s²</div>
-<div class="calc">右辺： w_R D<br>　→ 1 × Gy<br>　= Gy<br>　= m²/s²</div>
-<p><span class="ok">両辺とも m²/s² で一致</span>します。単位が合わない式は、どこかが間違っているサインです。</p>
-<div class="note">💡 放射線加重係数 w_R は無次元なので、Sv と Gy は同じ次元（J/kg）になる。</div>
+<div class="calc">左辺： <math><mstyle displaystyle="true"><mi mathvariant="normal">H</mi></mstyle></math><br>　→ <math><mstyle displaystyle="true"><mi mathvariant="normal">Sv</mi></mstyle></math><br>　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></div>
+<div class="calc">右辺： <math><mstyle displaystyle="true"><msub><mrow><mi mathvariant="normal">w</mi></mrow><mi mathvariant="normal">R</mi></msub><mi mathvariant="normal">D</mi></mstyle></math><br>　→ <math><mstyle displaystyle="true"><mn>1</mn><mo>×</mo><mi mathvariant="normal">Gy</mi></mstyle></math><br>　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">Gy</mi></mstyle></math><br>　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></div>
+<p><span class="ok">両辺とも <math><mstyle displaystyle="true"><mfrac><mrow><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math> で一致</span>します。単位が合わない式は、どこかが間違っているサインです。</p>
+<div class="note">💡 放射線加重係数 <math><mstyle displaystyle="true"><msub><mrow><mi mathvariant="normal">w</mi></mrow><mi mathvariant="normal">R</mi></msub></mstyle></math> は無次元なので、Sv と Gy は同じ次元（<math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">J</mi></mrow><mrow><mi mathvariant="normal">kg</mi></mrow></mfrac></mstyle></math>）になる。</div>
 <h2 id="s3">この公式から読み取れる単位の関係</h2>
 <p>公式をある量について解くと、その量の単位をほかの量の単位で表せます。知らない量が出てきたときは、知っている量について解き直して単位を組み立てるのが近道です。</p>
 <h3><a href="/q/equivalent_dose.html">等価線量</a>について解く</h3>
-<div class="calc">[H] = 1 × Gy<br>　　= Gy<br>　　= m²/s²<br>　　= Sv</div>
+<div class="calc">[<math><mstyle displaystyle="true"><mi mathvariant="normal">H</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mn>1</mn><mo>×</mo><mi mathvariant="normal">Gy</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">Gy</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">Sv</mi></mstyle></math></div>
 <h3><a href="/q/number.html">個数・無次元数</a>について解く</h3>
-<div class="calc">w_R = H / D<br>[w_R] = Sv ÷ Gy<br>　　= Sv/Gy<br>　　= 1</div>
+<div class="calc"><math><mstyle displaystyle="true"><msub><mrow><mi mathvariant="normal">w</mi></mrow><mi mathvariant="normal">R</mi></msub><mo>=</mo><mfrac><mrow><mi mathvariant="normal">H</mi></mrow><mrow><mi mathvariant="normal">D</mi></mrow></mfrac></mstyle></math><br>[<math><mstyle displaystyle="true"><msub><mrow><mi mathvariant="normal">w</mi></mrow><mi mathvariant="normal">R</mi></msub></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">Sv</mi><mo>÷</mo><mi mathvariant="normal">Gy</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">Sv</mi></mrow><mrow><mi mathvariant="normal">Gy</mi></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mn>1</mn></mstyle></math></div>
 <h3><a href="/q/absorbed_dose.html">吸収線量</a>について解く</h3>
-<div class="calc">D = H / w_R<br>[D] = Sv ÷ (1)<br>　　= Sv<br>　　= m²/s²<br>　　= Gy</div>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">D</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">H</mi></mrow><mrow><msub><mrow><mi mathvariant="normal">w</mi></mrow><mi mathvariant="normal">R</mi></msub></mrow></mfrac></mstyle></math><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">D</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">Sv</mi><mo>÷</mo><mo>(</mo><mn>1</mn><mo>)</mo></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">Sv</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">Gy</mi></mstyle></math></div>
 <h2 id="s4">放射線・化学のほかの公式</h2><ul>
-<li><a href="/f/activity.html">放射能</a>：<span class="mono">A = ΔN / Δt</span></li>
-<li><a href="/f/absorbed.html">吸収線量</a>：<span class="mono">D = E / m</span></li>
-<li><a href="/f/catalytic.html">触媒活性</a>：<span class="mono">z = Δn / Δt</span></li>
+<li><a href="/f/activity.html">放射能</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">A</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">ΔN</mi></mrow><mrow><mi mathvariant="normal">Δt</mi></mrow></mfrac></mstyle></math></span></li>
+<li><a href="/f/absorbed.html">吸収線量</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">D</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">E</mi></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac></mstyle></math></span></li>
+<li><a href="/f/catalytic.html">触媒活性</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">z</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">Δn</mi></mrow><mrow><mi mathvariant="normal">Δt</mi></mrow></mfrac></mstyle></math></span></li>
 </ul>
 </div></main>
 <footer class="site"><div class="wrap">

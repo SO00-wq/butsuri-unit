@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=6">
-<script src="/assets/site.js?v=6" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=7">
+<script src="/assets/site.js?v=7" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -50,17 +50,17 @@
 <main id="main"><div class="wrap">
 <nav class="bc" aria-label="パンくずリスト"><a href="/">トップ</a> › <a href="/q/pressure.html">圧力</a> › 速度との関係</nav>
 <h1>圧力と速度の関係</h1>
-<div class="hero"><div class="big">Pa　と　m/s</div><div class="sub">[M L⁻¹ T⁻²]　と　[L T⁻¹]</div></div>
+<div class="hero"><div class="big"><math><mstyle displaystyle="true"><mi mathvariant="normal">Pa</mi></mstyle></math>　と　<math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math></div><div class="sub">[M L⁻¹ T⁻²]　と　[L T⁻¹]</div></div>
 <nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">単位の比から見る</a><a href="#s2">2つの量を結ぶ公式</a><a href="#s3">それぞれの量のページ</a></div></nav><h2 id="s1">単位の比から見る</h2>
-<div class="calc">[圧力] ÷ [速度] = (kg/(m·s²)) ÷ (m/s) = kg/(m²·s)</div>
+<div class="calc">[圧力] ÷ [速度] <math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi></mrow><mrow><mi mathvariant="normal">m</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac><mo>÷</mo><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup><mo>·</mo><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math></div>
 <h2 id="s2">2つの量を結ぶ公式</h2>
-<div class="step"><b><a href="/f/dynamic_p.html">動圧（ベルヌーイの定理の項）</a></b>：<span class="mono">p = ½ ρ v²</span>
-<div class="calc">p = ρ v²　<span class="lead">（係数は単位に影響しないので省略）</span><br>[p] = kg/m³ × (m/s)²<br>　　= kg/(m·s²)<br>　　= Pa</div>
-<div class="calc">v = p¹ᐟ² / ρ¹ᐟ²　<span class="lead">（係数は単位に影響しないので省略）</span><br>[v] = Pa¹ᐟ² ÷ (kg/m³)¹ᐟ²<br>　　= Pa¹ᐟ²·m³ᐟ²/kg¹ᐟ²<br>　　= m/s</div>
+<div class="step"><b><a href="/f/dynamic_p.html">動圧（ベルヌーイの定理の項）</a></b>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">p</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi mathvariant="normal">ρ</mi><msup><mrow><mi mathvariant="normal">v</mi></mrow><mn>2</mn></msup></mstyle></math></span>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">p</mi><mo>=</mo><mi mathvariant="normal">ρ</mi><msup><mrow><mi mathvariant="normal">v</mi></mrow><mn>2</mn></msup></mstyle></math>　<span class="lead">（係数は単位に影響しないので省略）</span><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">p</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>3</mn></msup></mrow></mfrac><mo>×</mo><msup><mrow><mo>(</mo><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac><mo>)</mo></mrow><mn>2</mn></msup></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi></mrow><mrow><mi mathvariant="normal">m</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">Pa</mi></mstyle></math></div>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">v</mi><mo>=</mo><msqrt><mfrac><mrow><mi mathvariant="normal">p</mi></mrow><mrow><mi mathvariant="normal">ρ</mi></mrow></mfrac></msqrt></mstyle></math>　<span class="lead">（係数は単位に影響しないので省略）</span><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">v</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><msqrt><mi mathvariant="normal">Pa</mi><mo>÷</mo><mfrac><mrow><mi mathvariant="normal">kg</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>3</mn></msup></mrow></mfrac></msqrt></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">m</mi><mo>·</mo><msqrt><mfrac><mrow><mi mathvariant="normal">Pa</mi><mo>·</mo><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">kg</mi></mrow></mfrac></msqrt></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math></div>
 </div>
 <h2 id="s3">それぞれの量のページ</h2><ul>
-<li><a href="/q/pressure.html">圧力</a>（<span class="mono">Pa = kg/(m·s²)</span>）</li>
-<li><a href="/q/velocity.html">速度</a>（<span class="mono">m/s = m/s</span>）</li>
+<li><a href="/q/pressure.html">圧力</a>（<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">Pa</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi></mrow><mrow><mi mathvariant="normal">m</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></span>）</li>
+<li><a href="/q/velocity.html">速度</a>（<span class="mono"><math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math></span>）</li>
 </ul>
 </div></main>
 <footer class="site"><div class="wrap">

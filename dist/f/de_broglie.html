@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=6">
-<script src="/assets/site.js?v=6" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=7">
+<script src="/assets/site.js?v=7" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -51,33 +51,33 @@
 <nav class="bc" aria-label="パンくずリスト"><a href="/">トップ</a> › <a href="/c/wave.html">波・光・量子</a> › ド・ブロイ波長</nav>
 <span class="tag">波・光・量子</span>
 <h1>ド・ブロイ波長</h1>
-<div class="hero"><div class="big">λ = h / p</div></div>
+<div class="hero"><div class="big"><math><mstyle displaystyle="true"><mi mathvariant="normal">λ</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">h</mi></mrow><mrow><mi mathvariant="normal">p</mi></mrow></mfrac></mstyle></math></div></div>
 <nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">出てくる記号と単位</a><a href="#s2">両辺の単位が一致するか確かめる</a><a href="#s3">この公式から読み取れる単位の関係</a><a href="#s4">波・光・量子のほかの公式</a></div></nav><h2 id="s1">出てくる記号と単位</h2>
 <div class="tbl"><table><tr><th>記号</th><th>量</th><th>SI単位</th><th>基本単位</th></tr>
-<tr><td class="mono">λ</td><td><a href="/q/length.html">長さ</a></td><td class="mono">m</td><td class="mono">m</td></tr>
-<tr><td class="mono">h</td><td><a href="/q/planck.html">プランク定数</a></td><td class="mono">J·s</td><td class="mono">kg·m²/s</td></tr>
-<tr><td class="mono">p</td><td><a href="/q/momentum.html">運動量</a></td><td class="mono">kg·m/s</td><td class="mono">kg·m/s</td></tr>
+<tr><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">λ</mi></mstyle></math></td><td><a href="/q/length.html">長さ</a></td><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">m</mi></mstyle></math></td><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">m</mi></mstyle></math></td></tr>
+<tr><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">h</mi></mstyle></math></td><td><a href="/q/planck.html">プランク定数</a></td><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">J</mi><mo>·</mo><mi mathvariant="normal">s</mi></mstyle></math></td><td class="mono"><math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math></td></tr>
+<tr><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">p</mi></mstyle></math></td><td><a href="/q/momentum.html">運動量</a></td><td class="mono"><math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math></td><td class="mono"><math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math></td></tr>
 </table></div>
 <h2 id="s2">両辺の単位が一致するか確かめる</h2>
-<div class="calc">左辺： λ<br>　→ m</div>
-<div class="calc">右辺： h / p<br>　→ J·s ÷ (kg·m/s)<br>　= J·s²/(kg·m)<br>　= m</div>
+<div class="calc">左辺： <math><mstyle displaystyle="true"><mi mathvariant="normal">λ</mi></mstyle></math><br>　→ <math><mstyle displaystyle="true"><mi mathvariant="normal">m</mi></mstyle></math></div>
+<div class="calc">右辺： <math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">h</mi></mrow><mrow><mi mathvariant="normal">p</mi></mrow></mfrac></mstyle></math><br>　→ <math><mstyle displaystyle="true"><mi mathvariant="normal">J</mi><mo>·</mo><mi mathvariant="normal">s</mi><mo>÷</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math><br>　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">J</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><mi mathvariant="normal">m</mi></mrow></mfrac></mstyle></math><br>　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">m</mi></mstyle></math></div>
 <p><span class="ok">両辺とも m で一致</span>します。単位が合わない式は、どこかが間違っているサインです。</p>
 <h2 id="s3">この公式から読み取れる単位の関係</h2>
 <p>公式をある量について解くと、その量の単位をほかの量の単位で表せます。知らない量が出てきたときは、知っている量について解き直して単位を組み立てるのが近道です。</p>
 <h3><a href="/q/length.html">長さ</a>について解く</h3>
-<div class="calc">[λ] = J·s ÷ (kg·m/s)<br>　　= J·s²/(kg·m)<br>　　= m</div>
+<div class="calc">[<math><mstyle displaystyle="true"><mi mathvariant="normal">λ</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">J</mi><mo>·</mo><mi mathvariant="normal">s</mi><mo>÷</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">J</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><mi mathvariant="normal">m</mi></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">m</mi></mstyle></math></div>
 <h3><a href="/q/planck.html">プランク定数</a>について解く</h3>
-<div class="calc">h = λ p<br>[h] = m × kg·m/s<br>　　= kg·m²/s<br>　　= J·s</div>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">h</mi><mo>=</mo><mi mathvariant="normal">λ</mi><mi mathvariant="normal">p</mi></mstyle></math><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">h</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">m</mi><mo>×</mo><mi mathvariant="normal">kg</mi><mo>·</mo><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">J</mi><mo>·</mo><mi mathvariant="normal">s</mi></mstyle></math></div>
 <h3><a href="/q/momentum.html">運動量</a>について解く</h3>
-<div class="calc">p = h / λ<br>[p] = J·s ÷ m<br>　　= J·s/m<br>　　= kg·m/s</div>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">p</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">h</mi></mrow><mrow><mi mathvariant="normal">λ</mi></mrow></mfrac></mstyle></math><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">p</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">J</mi><mo>·</mo><mi mathvariant="normal">s</mi><mo>÷</mo><mi mathvariant="normal">m</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">J</mi><mo>·</mo><mi mathvariant="normal">s</mi></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math></div>
 <h2 id="s4">波・光・量子のほかの公式</h2><ul>
-<li><a href="/f/wave.html">波の基本式</a>：<span class="mono">v = f λ</span></li>
-<li><a href="/f/wavenumber.html">波数</a>：<span class="mono">k = 2π / λ</span></li>
-<li><a href="/f/planck.html">光子のエネルギー</a>：<span class="mono">E = h f</span></li>
-<li><a href="/f/mass_energy.html">質量とエネルギーの等価性</a>：<span class="mono">E = m c²</span></li>
-<li><a href="/f/intensity.html">強度</a>：<span class="mono">I = P / S</span></li>
-<li><a href="/f/lum_flux.html">光束と光度</a>：<span class="mono">Φ_v = I_v Ω</span></li>
-<li><a href="/f/illum.html">照度</a>：<span class="mono">E_v = Φ_v / S</span></li>
+<li><a href="/f/wave.html">波の基本式</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">v</mi><mo>=</mo><mi mathvariant="normal">f</mi><mi mathvariant="normal">λ</mi></mstyle></math></span></li>
+<li><a href="/f/wavenumber.html">波数</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">k</mi><mo>=</mo><mfrac><mrow><mn>2</mn><mi mathvariant="normal">π</mi></mrow><mrow><mi mathvariant="normal">λ</mi></mrow></mfrac></mstyle></math></span></li>
+<li><a href="/f/planck.html">光子のエネルギー</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">E</mi><mo>=</mo><mi mathvariant="normal">h</mi><mi mathvariant="normal">f</mi></mstyle></math></span></li>
+<li><a href="/f/mass_energy.html">質量とエネルギーの等価性</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">E</mi><mo>=</mo><mi mathvariant="normal">m</mi><msup><mrow><mi mathvariant="normal">c</mi></mrow><mn>2</mn></msup></mstyle></math></span></li>
+<li><a href="/f/intensity.html">強度</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">I</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">P</mi></mrow><mrow><mi mathvariant="normal">S</mi></mrow></mfrac></mstyle></math></span></li>
+<li><a href="/f/lum_flux.html">光束と光度</a>：<span class="mono"><math><mstyle displaystyle="true"><msub><mrow><mi mathvariant="normal">Φ</mi></mrow><mi mathvariant="normal">v</mi></msub><mo>=</mo><msub><mrow><mi mathvariant="normal">I</mi></mrow><mi mathvariant="normal">v</mi></msub><mi mathvariant="normal">Ω</mi></mstyle></math></span></li>
+<li><a href="/f/illum.html">照度</a>：<span class="mono"><math><mstyle displaystyle="true"><msub><mrow><mi mathvariant="normal">E</mi></mrow><mi mathvariant="normal">v</mi></msub><mo>=</mo><mfrac><mrow><msub><mrow><mi mathvariant="normal">Φ</mi></mrow><mi mathvariant="normal">v</mi></msub></mrow><mrow><mi mathvariant="normal">S</mi></mrow></mfrac></mstyle></math></span></li>
 </ul>
 </div></main>
 <footer class="site"><div class="wrap">

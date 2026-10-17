@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=6">
-<script src="/assets/site.js?v=6" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=7">
+<script src="/assets/site.js?v=7" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -50,21 +50,21 @@
 <main id="main"><div class="wrap">
 <nav class="bc" aria-label="パンくずリスト"><a href="/">トップ</a> › <a href="/q/force.html">力</a> › 質量との関係</nav>
 <h1>力と質量の関係</h1>
-<div class="hero"><div class="big">N　と　kg</div><div class="sub">[M L T⁻²]　と　[M]</div></div>
+<div class="hero"><div class="big"><math><mstyle displaystyle="true"><mi mathvariant="normal">N</mi></mstyle></math>　と　<math><mstyle displaystyle="true"><mi mathvariant="normal">kg</mi></mstyle></math></div><div class="sub">[M L T⁻²]　と　[M]</div></div>
 <nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">単位の比から見る</a><a href="#s2">2つの量を結ぶ公式</a><a href="#s3">それぞれの量のページ</a></div></nav><h2 id="s1">単位の比から見る</h2>
-<div class="calc">[力] ÷ [質量] = (kg·m/s²) ÷ (kg) = m/s²</div>
+<div class="calc">[力] ÷ [質量] <math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><mi mathvariant="normal">m</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac><mo>÷</mo><mo>(</mo><mi mathvariant="normal">kg</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></div>
 <p>つまり 力 は「質量 × <a href="/q/acceleration.html">加速度</a>」と同じ単位をもちます。</p>
 <h2 id="s2">2つの量を結ぶ公式</h2>
-<div class="step"><b><a href="/f/newton2.html">運動方程式</a></b>：<span class="mono">F = m a</span>
-<div class="calc">[F] = kg × m/s²<br>　　= kg·m/s²<br>　　= N</div>
-<div class="calc">m = F / a<br>[m] = N ÷ (m/s²)<br>　　= N·s²/m<br>　　= kg</div>
+<div class="step"><b><a href="/f/newton2.html">運動方程式</a></b>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">F</mi><mo>=</mo><mi mathvariant="normal">m</mi><mi mathvariant="normal">a</mi></mstyle></math></span>
+<div class="calc">[<math><mstyle displaystyle="true"><mi mathvariant="normal">F</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>×</mo><mi mathvariant="normal">m</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><mi mathvariant="normal">m</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">N</mi></mstyle></math></div>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">m</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">F</mi></mrow><mrow><mi mathvariant="normal">a</mi></mrow></mfrac></mstyle></math><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">m</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">N</mi><mo>÷</mo><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">N</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">kg</mi></mstyle></math></div>
 </div>
-<div class="step"><b><a href="/f/gravity.html">万有引力の法則</a></b>：<span class="mono">F = G M m / r²</span>
-<div class="calc">[F] = N·m²/kg² × kg × kg ÷ m²<br>　　= N<br>　　= kg·m/s²</div>
+<div class="step"><b><a href="/f/gravity.html">万有引力の法則</a></b>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">F</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">G</mi><mi mathvariant="normal">M</mi><mi mathvariant="normal">m</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">r</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></span>
+<div class="calc">[<math><mstyle displaystyle="true"><mi mathvariant="normal">F</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">N</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">kg</mi></mrow><mn>2</mn></msup></mrow></mfrac><mo>×</mo><mi mathvariant="normal">kg</mi><mo>×</mo><mi mathvariant="normal">kg</mi><mo>÷</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">N</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><mi mathvariant="normal">m</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></div>
 </div>
 <h2 id="s3">それぞれの量のページ</h2><ul>
-<li><a href="/q/force.html">力</a>（<span class="mono">N = kg·m/s²</span>）</li>
-<li><a href="/q/mass.html">質量</a>（<span class="mono">kg = kg</span>）</li>
+<li><a href="/q/force.html">力</a>（<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">N</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><mi mathvariant="normal">m</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></span>）</li>
+<li><a href="/q/mass.html">質量</a>（<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">kg</mi><mo>=</mo><mi mathvariant="normal">kg</mi></mstyle></math></span>）</li>
 </ul>
 </div></main>
 <footer class="site"><div class="wrap">

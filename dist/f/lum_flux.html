@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=6">
-<script src="/assets/site.js?v=6" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=7">
+<script src="/assets/site.js?v=7" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -51,34 +51,34 @@
 <nav class="bc" aria-label="パンくずリスト"><a href="/">トップ</a> › <a href="/c/wave.html">波・光・量子</a> › 光束と光度</nav>
 <span class="tag">波・光・量子</span>
 <h1>光束と光度</h1>
-<div class="hero"><div class="big">Φ_v = I_v Ω</div></div>
+<div class="hero"><div class="big"><math><mstyle displaystyle="true"><msub><mrow><mi mathvariant="normal">Φ</mi></mrow><mi mathvariant="normal">v</mi></msub><mo>=</mo><msub><mrow><mi mathvariant="normal">I</mi></mrow><mi mathvariant="normal">v</mi></msub><mi mathvariant="normal">Ω</mi></mstyle></math></div></div>
 <nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">出てくる記号と単位</a><a href="#s2">両辺の単位が一致するか確かめる</a><a href="#s3">この公式から読み取れる単位の関係</a><a href="#s4">波・光・量子のほかの公式</a></div></nav><h2 id="s1">出てくる記号と単位</h2>
 <div class="tbl"><table><tr><th>記号</th><th>量</th><th>SI単位</th><th>基本単位</th></tr>
-<tr><td class="mono">Φ_v</td><td><a href="/q/luminous_flux.html">光束</a></td><td class="mono">lm</td><td class="mono">cd</td></tr>
-<tr><td class="mono">I_v</td><td><a href="/q/luminous_intensity.html">光度</a></td><td class="mono">cd</td><td class="mono">cd</td></tr>
-<tr><td class="mono">Ω</td><td><a href="/q/solid_angle.html">立体角</a></td><td class="mono">sr</td><td class="mono">1</td></tr>
+<tr><td class="mono"><math><mstyle displaystyle="true"><msub><mrow><mi mathvariant="normal">Φ</mi></mrow><mi mathvariant="normal">v</mi></msub></mstyle></math></td><td><a href="/q/luminous_flux.html">光束</a></td><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">lm</mi></mstyle></math></td><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">cd</mi></mstyle></math></td></tr>
+<tr><td class="mono"><math><mstyle displaystyle="true"><msub><mrow><mi mathvariant="normal">I</mi></mrow><mi mathvariant="normal">v</mi></msub></mstyle></math></td><td><a href="/q/luminous_intensity.html">光度</a></td><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">cd</mi></mstyle></math></td><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">cd</mi></mstyle></math></td></tr>
+<tr><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">Ω</mi></mstyle></math></td><td><a href="/q/solid_angle.html">立体角</a></td><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">sr</mi></mstyle></math></td><td class="mono"><math><mstyle displaystyle="true"><mn>1</mn></mstyle></math></td></tr>
 </table></div>
 <h2 id="s2">両辺の単位が一致するか確かめる</h2>
-<div class="calc">左辺： Φ_v<br>　→ lm<br>　= cd</div>
-<div class="calc">右辺： I_v Ω<br>　→ cd × sr<br>　= cd·sr<br>　= cd</div>
+<div class="calc">左辺： <math><mstyle displaystyle="true"><msub><mrow><mi mathvariant="normal">Φ</mi></mrow><mi mathvariant="normal">v</mi></msub></mstyle></math><br>　→ <math><mstyle displaystyle="true"><mi mathvariant="normal">lm</mi></mstyle></math><br>　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">cd</mi></mstyle></math></div>
+<div class="calc">右辺： <math><mstyle displaystyle="true"><msub><mrow><mi mathvariant="normal">I</mi></mrow><mi mathvariant="normal">v</mi></msub><mi mathvariant="normal">Ω</mi></mstyle></math><br>　→ <math><mstyle displaystyle="true"><mi mathvariant="normal">cd</mi><mo>×</mo><mi mathvariant="normal">sr</mi></mstyle></math><br>　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">cd</mi><mo>·</mo><mi mathvariant="normal">sr</mi></mstyle></math><br>　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">cd</mi></mstyle></math></div>
 <p><span class="ok">両辺とも cd で一致</span>します。単位が合わない式は、どこかが間違っているサインです。</p>
 <div class="note">💡 lm（ルーメン）は cd·sr。sr は無次元なので次元は cd と同じ。</div>
 <h2 id="s3">この公式から読み取れる単位の関係</h2>
 <p>公式をある量について解くと、その量の単位をほかの量の単位で表せます。知らない量が出てきたときは、知っている量について解き直して単位を組み立てるのが近道です。</p>
 <h3><a href="/q/luminous_flux.html">光束</a>について解く</h3>
-<div class="calc">[Φ_v] = cd × sr<br>　　= cd　<span class="lead">（sr は無次元なので省く）</span><br>　　= lm</div>
+<div class="calc">[<math><mstyle displaystyle="true"><msub><mrow><mi mathvariant="normal">Φ</mi></mrow><mi mathvariant="normal">v</mi></msub></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">cd</mi><mo>×</mo><mi mathvariant="normal">sr</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">cd</mi></mstyle></math>　<span class="lead">（<math><mstyle displaystyle="true"><mi mathvariant="normal">sr</mi></mstyle></math> は無次元なので省く）</span><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">lm</mi></mstyle></math></div>
 <h3><a href="/q/luminous_intensity.html">光度</a>について解く</h3>
-<div class="calc">I_v = Φ_v / Ω<br>[I_v] = lm ÷ sr<br>　　= lm　<span class="lead">（sr は無次元なので省く）</span><br>　　= cd</div>
+<div class="calc"><math><mstyle displaystyle="true"><msub><mrow><mi mathvariant="normal">I</mi></mrow><mi mathvariant="normal">v</mi></msub><mo>=</mo><mfrac><mrow><msub><mrow><mi mathvariant="normal">Φ</mi></mrow><mi mathvariant="normal">v</mi></msub></mrow><mrow><mi mathvariant="normal">Ω</mi></mrow></mfrac></mstyle></math><br>[<math><mstyle displaystyle="true"><msub><mrow><mi mathvariant="normal">I</mi></mrow><mi mathvariant="normal">v</mi></msub></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">lm</mi><mo>÷</mo><mi mathvariant="normal">sr</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">lm</mi></mstyle></math>　<span class="lead">（<math><mstyle displaystyle="true"><mi mathvariant="normal">sr</mi></mstyle></math> は無次元なので省く）</span><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">cd</mi></mstyle></math></div>
 <h3><a href="/q/solid_angle.html">立体角</a>について解く</h3>
-<div class="calc">Ω = Φ_v / I_v<br>[Ω] = lm ÷ cd<br>　　= lm/cd<br>　　= 1<br>　　= sr</div>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">Ω</mi><mo>=</mo><mfrac><mrow><msub><mrow><mi mathvariant="normal">Φ</mi></mrow><mi mathvariant="normal">v</mi></msub></mrow><mrow><msub><mrow><mi mathvariant="normal">I</mi></mrow><mi mathvariant="normal">v</mi></msub></mrow></mfrac></mstyle></math><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">Ω</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">lm</mi><mo>÷</mo><mi mathvariant="normal">cd</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">lm</mi></mrow><mrow><mi mathvariant="normal">cd</mi></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mn>1</mn></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">sr</mi></mstyle></math></div>
 <h2 id="s4">波・光・量子のほかの公式</h2><ul>
-<li><a href="/f/wave.html">波の基本式</a>：<span class="mono">v = f λ</span></li>
-<li><a href="/f/wavenumber.html">波数</a>：<span class="mono">k = 2π / λ</span></li>
-<li><a href="/f/planck.html">光子のエネルギー</a>：<span class="mono">E = h f</span></li>
-<li><a href="/f/de_broglie.html">ド・ブロイ波長</a>：<span class="mono">λ = h / p</span></li>
-<li><a href="/f/mass_energy.html">質量とエネルギーの等価性</a>：<span class="mono">E = m c²</span></li>
-<li><a href="/f/intensity.html">強度</a>：<span class="mono">I = P / S</span></li>
-<li><a href="/f/illum.html">照度</a>：<span class="mono">E_v = Φ_v / S</span></li>
+<li><a href="/f/wave.html">波の基本式</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">v</mi><mo>=</mo><mi mathvariant="normal">f</mi><mi mathvariant="normal">λ</mi></mstyle></math></span></li>
+<li><a href="/f/wavenumber.html">波数</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">k</mi><mo>=</mo><mfrac><mrow><mn>2</mn><mi mathvariant="normal">π</mi></mrow><mrow><mi mathvariant="normal">λ</mi></mrow></mfrac></mstyle></math></span></li>
+<li><a href="/f/planck.html">光子のエネルギー</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">E</mi><mo>=</mo><mi mathvariant="normal">h</mi><mi mathvariant="normal">f</mi></mstyle></math></span></li>
+<li><a href="/f/de_broglie.html">ド・ブロイ波長</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">λ</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">h</mi></mrow><mrow><mi mathvariant="normal">p</mi></mrow></mfrac></mstyle></math></span></li>
+<li><a href="/f/mass_energy.html">質量とエネルギーの等価性</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">E</mi><mo>=</mo><mi mathvariant="normal">m</mi><msup><mrow><mi mathvariant="normal">c</mi></mrow><mn>2</mn></msup></mstyle></math></span></li>
+<li><a href="/f/intensity.html">強度</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">I</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">P</mi></mrow><mrow><mi mathvariant="normal">S</mi></mrow></mfrac></mstyle></math></span></li>
+<li><a href="/f/illum.html">照度</a>：<span class="mono"><math><mstyle displaystyle="true"><msub><mrow><mi mathvariant="normal">E</mi></mrow><mi mathvariant="normal">v</mi></msub><mo>=</mo><mfrac><mrow><msub><mrow><mi mathvariant="normal">Φ</mi></mrow><mi mathvariant="normal">v</mi></msub></mrow><mrow><mi mathvariant="normal">S</mi></mrow></mfrac></mstyle></math></span></li>
 </ul>
 </div></main>
 <footer class="site"><div class="wrap">

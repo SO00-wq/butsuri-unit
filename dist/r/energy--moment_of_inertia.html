@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=6">
-<script src="/assets/site.js?v=6" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=7">
+<script src="/assets/site.js?v=7" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -50,18 +50,18 @@
 <main id="main"><div class="wrap">
 <nav class="bc" aria-label="パンくずリスト"><a href="/">トップ</a> › <a href="/q/energy.html">エネルギー・仕事・熱量</a> › 慣性モーメントとの関係</nav>
 <h1>エネルギー・仕事・熱量と慣性モーメントの関係</h1>
-<div class="hero"><div class="big">J　と　kg·m²</div><div class="sub">[M L² T⁻²]　と　[M L²]</div></div>
+<div class="hero"><div class="big"><math><mstyle displaystyle="true"><mi mathvariant="normal">J</mi></mstyle></math>　と　<math><mstyle displaystyle="true"><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mstyle></math></div><div class="sub">[M L² T⁻²]　と　[M L²]</div></div>
 <nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">単位の比から見る</a><a href="#s2">2つの量を結ぶ公式</a><a href="#s3">それぞれの量のページ</a></div></nav><h2 id="s1">単位の比から見る</h2>
-<div class="calc">[エネルギー・仕事・熱量] ÷ [慣性モーメント] = (kg·m²/s²) ÷ (kg·m²) = 1/s²</div>
+<div class="calc">[エネルギー・仕事・熱量] ÷ [慣性モーメント] <math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac><mo>÷</mo><mo>(</mo><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup><mo>)</mo><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></div>
 <p>つまり エネルギー・仕事・熱量 は「慣性モーメント × <a href="/q/angular_acceleration.html">角加速度</a>」と同じ単位をもちます。</p>
 <h2 id="s2">2つの量を結ぶ公式</h2>
-<div class="step"><b><a href="/f/rot_ke.html">回転の運動エネルギー</a></b>：<span class="mono">K = ½ I ω²</span>
-<div class="calc">K = I ω²　<span class="lead">（係数は単位に影響しないので省略）</span><br>[K] = kg·m² × (rad/s)²<br>　　= kg·m²/s²　<span class="lead">（rad は無次元なので省く）</span><br>　　= J</div>
-<div class="calc">I = K / ω²　<span class="lead">（係数は単位に影響しないので省略）</span><br>[I] = J ÷ (rad/s)²<br>　　= J·s²　<span class="lead">（rad は無次元なので省く）</span><br>　　= kg·m²</div>
+<div class="step"><b><a href="/f/rot_ke.html">回転の運動エネルギー</a></b>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">K</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi mathvariant="normal">I</mi><msup><mrow><mi mathvariant="normal">ω</mi></mrow><mn>2</mn></msup></mstyle></math></span>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">K</mi><mo>=</mo><mi mathvariant="normal">I</mi><msup><mrow><mi mathvariant="normal">ω</mi></mrow><mn>2</mn></msup></mstyle></math>　<span class="lead">（係数は単位に影響しないので省略）</span><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">K</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup><mo>×</mo><msup><mrow><mo>(</mo><mfrac><mrow><mi mathvariant="normal">rad</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac><mo>)</mo></mrow><mn>2</mn></msup></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math>　<span class="lead">（<math><mstyle displaystyle="true"><mi mathvariant="normal">rad</mi></mstyle></math> は無次元なので省く）</span><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">J</mi></mstyle></math></div>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">I</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">K</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">ω</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math>　<span class="lead">（係数は単位に影響しないので省略）</span><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">I</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">J</mi><mo>÷</mo><msup><mrow><mo>(</mo><mfrac><mrow><mi mathvariant="normal">rad</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac><mo>)</mo></mrow><mn>2</mn></msup></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">J</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mstyle></math>　<span class="lead">（<math><mstyle displaystyle="true"><mi mathvariant="normal">rad</mi></mstyle></math> は無次元なので省く）</span><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mstyle></math></div>
 </div>
 <h2 id="s3">それぞれの量のページ</h2><ul>
-<li><a href="/q/energy.html">エネルギー・仕事・熱量</a>（<span class="mono">J = kg·m²/s²</span>）</li>
-<li><a href="/q/moment_of_inertia.html">慣性モーメント</a>（<span class="mono">kg·m² = kg·m²</span>）</li>
+<li><a href="/q/energy.html">エネルギー・仕事・熱量</a>（<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">J</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></span>）</li>
+<li><a href="/q/moment_of_inertia.html">慣性モーメント</a>（<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup><mo>=</mo><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mstyle></math></span>）</li>
 </ul>
 </div></main>
 <footer class="site"><div class="wrap">

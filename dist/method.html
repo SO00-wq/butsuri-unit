@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=6">
-<script src="/assets/site.js?v=6" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=7">
+<script src="/assets/site.js?v=7" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -55,23 +55,23 @@
 
 <nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">3つの手順</a><a href="#s2">例：落下の速さ</a><a href="#s3">気をつけるポイント</a><a href="#s4">次にやること</a></div></nav><h2 id="s1">3つの手順</h2>
 <ol class="steps3">
-<li><b>求めたい量の単位を確かめる</b><br>速さなら m/s、エネルギーなら J ＝ kg·m²/s²。わからなければ<a href="/#dict">単位辞典</a>で調べます。</li>
-<li><b>答えの右辺に、それぞれの記号の単位を当てはめる</b><br>数字の係数（2、½、π など）は単位をもたないので無視します。</li>
-<li><b>比べる</b><br>一致しなければ、<b>その答えは必ず間違い</b>です。式のどこかを見直します。</li>
+<li><b>求めたい量の単位を確かめる</b><br>速さなら <math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math>、エネルギーなら <math><mstyle displaystyle="true"><mi mathvariant="normal">J</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math>。わからなければ<a href="/#dict">単位辞典</a>で調べます。</li>
+<li><b>答えの右辺に、それぞれの記号の単位を当てはめる</b><br>数字の係数（2、<math><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle></math>、π など）は単位をもたないので無視します。</li>
+<li><b>比べる</b><br>一致しなければ、<span class="key">その答えは必ず間違い</span>です。式のどこかを見直します。</li>
 </ol>
 
 <h2 id="s2">例：落下の速さ</h2>
 <div class="problem"><b>問題</b><p>高さ h から静かに落とした物体が、地面に着く直前の速さ v を求めよ。重力加速度の大きさを g とする。</p></div>
-<div class="answer wrong-ans"><span class="lbl">答え</span><span class="mono">v = 2gh</span></div>
-<p>求めたい速さ v の単位は m/s。右辺に単位を当てはめると、</p>
-<div class="calc">[g h] ＝ (m/s²)·m ＝ m²/s²　<span class="ng">× 不一致</span></div>
-<p>m²/s² は m/s と一致しません。v² を求めたところで止まり、√ を付け忘れていたことに気づけます。</p>
+<div class="answer wrong-ans"><span class="lbl">答え</span><span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">v</mi><mo>=</mo><mn>2</mn><mi mathvariant="normal">gh</mi></mstyle></math></span></div>
+<p>求めたい速さ v の単位は <math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math>。右辺に単位を当てはめると、</p>
+<div class="calc">[<math><mstyle displaystyle="true"><mi mathvariant="normal">g</mi><mi mathvariant="normal">h</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac><mo>·</mo><mi mathvariant="normal">m</mi><mo>=</mo><mfrac><mrow><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math>　<span class="ng">× 不一致</span></div>
+<p><math><mstyle displaystyle="true"><mfrac><mrow><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math> は <math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math> と一致しません。v² を求めたところで止まり、√ を付け忘れていたことに気づけます。</p>
 
 <h2 id="s3">気をつけるポイント</h2>
 <ul>
-<li><b>足し算・引き算は、項ごとに単位がそろう</b>：x = v₀t + ½at² なら、v₀t も ½at² もどちらも m。単位の違うものは足せません。</li>
+<li><b>足し算・引き算は、項ごとに単位がそろう</b>：<math><mstyle displaystyle="true"><mi mathvariant="normal">x</mi><mo>=</mo><msub><mrow><mi mathvariant="normal">v</mi></mrow><mi mathvariant="normal">0</mi></msub><mi mathvariant="normal">t</mi><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><msup><mrow><mi mathvariant="normal">at</mi></mrow><mn>2</mn></msup></mstyle></math> なら、v₀t も <math><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac><msup><mrow><mi mathvariant="normal">at</mi></mrow><mn>2</mn></msup></mstyle></math> もどちらも m。単位の違うものは足せません。</li>
 <li><b>sin・cos・指数関数・log の中身は単位をもたない</b>：sin(ωt) なら ωt に単位が残っていてはいけません。</li>
-<li><b>単位が合っても、正しいとは限らない</b>：½ の付け忘れや sin と cos の取り違えは見つけられません。
+<li><b>単位が合っても、正しいとは限らない</b>：<math><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle></math> の付け忘れや sin と cos の取り違えは見つけられません。
 <a href="/mistakes/">よくあるミス</a>の「見抜けない例」も見ておきましょう。</li>
 </ul>
 

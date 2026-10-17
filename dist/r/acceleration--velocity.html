@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=6">
-<script src="/assets/site.js?v=6" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=7">
+<script src="/assets/site.js?v=7" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -50,22 +50,22 @@
 <main id="main"><div class="wrap">
 <nav class="bc" aria-label="パンくずリスト"><a href="/">トップ</a> › <a href="/q/acceleration.html">加速度</a> › 速度との関係</nav>
 <h1>加速度と速度の関係</h1>
-<div class="hero"><div class="big">m/s²　と　m/s</div><div class="sub">[L T⁻²]　と　[L T⁻¹]</div></div>
+<div class="hero"><div class="big"><math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math>　と　<math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math></div><div class="sub">[L T⁻²]　と　[L T⁻¹]</div></div>
 <nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">単位の比から見る</a><a href="#s2">2つの量を結ぶ公式</a><a href="#s3">それぞれの量のページ</a></div></nav><h2 id="s1">単位の比から見る</h2>
-<div class="calc">[加速度] ÷ [速度] = (m/s²) ÷ (m/s) = 1/s</div>
+<div class="calc">[加速度] ÷ [速度] <math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac><mo>÷</mo><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math></div>
 <p>つまり 加速度 は「速度 × <a href="/q/frequency.html">振動数・周波数</a>・<a href="/q/angular_velocity.html">角速度</a>・<a href="/q/activity.html">放射能</a>」と同じ単位をもちます。</p>
 <h2 id="s2">2つの量を結ぶ公式</h2>
-<div class="step"><b><a href="/f/a_def.html">加速度の定義</a></b>：<span class="mono">a = Δv / Δt</span>
-<div class="calc">[a] = m/s ÷ s<br>　　= m/s²</div>
-<div class="calc">Δv = a Δt<br>[Δv] = m/s² × s<br>　　= m/s</div>
+<div class="step"><b><a href="/f/a_def.html">加速度の定義</a></b>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">a</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">Δv</mi></mrow><mrow><mi mathvariant="normal">Δt</mi></mrow></mfrac></mstyle></math></span>
+<div class="calc">[<math><mstyle displaystyle="true"><mi mathvariant="normal">a</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac><mo>÷</mo><mi mathvariant="normal">s</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></div>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">Δv</mi><mo>=</mo><mi mathvariant="normal">a</mi><mi mathvariant="normal">Δt</mi></mstyle></math><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">Δv</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac><mo>×</mo><mi mathvariant="normal">s</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math></div>
 </div>
-<div class="step"><b><a href="/f/centripetal.html">向心加速度</a></b>：<span class="mono">a = v² / r</span>
-<div class="calc">[a] = (m/s)² ÷ m<br>　　= m/s²</div>
-<div class="calc">v = a¹ᐟ² r¹ᐟ²<br>[v] = (m/s²)¹ᐟ² × m¹ᐟ²<br>　　= m/s</div>
+<div class="step"><b><a href="/f/centripetal.html">向心加速度</a></b>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">a</mi><mo>=</mo><mfrac><mrow><msup><mrow><mi mathvariant="normal">v</mi></mrow><mn>2</mn></msup></mrow><mrow><mi mathvariant="normal">r</mi></mrow></mfrac></mstyle></math></span>
+<div class="calc">[<math><mstyle displaystyle="true"><mi mathvariant="normal">a</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><msup><mrow><mo>(</mo><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac><mo>)</mo></mrow><mn>2</mn></msup><mo>÷</mo><mi mathvariant="normal">m</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></div>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">v</mi><mo>=</mo><msqrt><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi></msqrt></mstyle></math><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">v</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><msqrt><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac><mo>×</mo><mi mathvariant="normal">m</mi></msqrt></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math></div>
 </div>
 <h2 id="s3">それぞれの量のページ</h2><ul>
-<li><a href="/q/acceleration.html">加速度</a>（<span class="mono">m/s² = m/s²</span>）</li>
-<li><a href="/q/velocity.html">速度</a>（<span class="mono">m/s = m/s</span>）</li>
+<li><a href="/q/acceleration.html">加速度</a>（<span class="mono"><math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac><mo>=</mo><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></span>）</li>
+<li><a href="/q/velocity.html">速度</a>（<span class="mono"><math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math></span>）</li>
 </ul>
 </div></main>
 <footer class="site"><div class="wrap">

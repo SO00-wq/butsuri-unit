@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=6">
-<script src="/assets/site.js?v=6" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=7">
+<script src="/assets/site.js?v=7" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -50,18 +50,18 @@
 <main id="main"><div class="wrap">
 <nav class="bc" aria-label="パンくずリスト"><a href="/">トップ</a> › <a href="/q/resistance.html">電気抵抗</a> › 電圧・電位との関係</nav>
 <h1>電気抵抗と電圧・電位の関係</h1>
-<div class="hero"><div class="big">Ω　と　V</div><div class="sub">[M L² T⁻³ I⁻²]　と　[M L² T⁻³ I⁻¹]</div></div>
+<div class="hero"><div class="big"><math><mstyle displaystyle="true"><mi mathvariant="normal">Ω</mi></mstyle></math>　と　<math><mstyle displaystyle="true"><mi mathvariant="normal">V</mi></mstyle></math></div><div class="sub">[M L² T⁻³ I⁻²]　と　[M L² T⁻³ I⁻¹]</div></div>
 <nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">単位の比から見る</a><a href="#s2">2つの量を結ぶ公式</a><a href="#s3">それぞれの量のページ</a></div></nav><h2 id="s1">単位の比から見る</h2>
-<div class="calc">[電気抵抗] ÷ [電圧・電位] = (kg·m²/(A²·s³)) ÷ (kg·m²/(A·s³)) = 1/A</div>
+<div class="calc">[電気抵抗] ÷ [電圧・電位] <math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">A</mi></mrow><mn>2</mn></msup><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>3</mn></msup></mrow></mfrac><mo>÷</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><mi mathvariant="normal">A</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>3</mn></msup></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi mathvariant="normal">A</mi></mrow></mfrac></mstyle></math></div>
 <p>つまり 電気抵抗 は「電圧・電位 ÷ <a href="/q/current.html">電流</a>」と同じ単位をもちます。</p>
 <h2 id="s2">2つの量を結ぶ公式</h2>
-<div class="step"><b><a href="/f/ohm.html">オームの法則</a></b>：<span class="mono">V = R I</span>
-<div class="calc">R = V / I<br>[R] = V ÷ A<br>　　= V/A<br>　　= kg·m²/(A²·s³)<br>　　= Ω</div>
-<div class="calc">[V] = Ω × A<br>　　= Ω·A<br>　　= kg·m²/(A·s³)<br>　　= V</div>
+<div class="step"><b><a href="/f/ohm.html">オームの法則</a></b>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">V</mi><mo>=</mo><mi mathvariant="normal">R</mi><mi mathvariant="normal">I</mi></mstyle></math></span>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">R</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">V</mi></mrow><mrow><mi mathvariant="normal">I</mi></mrow></mfrac></mstyle></math><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">R</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">V</mi><mo>÷</mo><mi mathvariant="normal">A</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">V</mi></mrow><mrow><mi mathvariant="normal">A</mi></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">A</mi></mrow><mn>2</mn></msup><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>3</mn></msup></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">Ω</mi></mstyle></math></div>
+<div class="calc">[<math><mstyle displaystyle="true"><mi mathvariant="normal">V</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">Ω</mi><mo>×</mo><mi mathvariant="normal">A</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">Ω</mi><mo>·</mo><mi mathvariant="normal">A</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><mi mathvariant="normal">A</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>3</mn></msup></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">V</mi></mstyle></math></div>
 </div>
 <h2 id="s3">それぞれの量のページ</h2><ul>
-<li><a href="/q/resistance.html">電気抵抗</a>（<span class="mono">Ω = kg·m²/(A²·s³)</span>）</li>
-<li><a href="/q/voltage.html">電圧・電位</a>（<span class="mono">V = kg·m²/(A·s³)</span>）</li>
+<li><a href="/q/resistance.html">電気抵抗</a>（<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">Ω</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">A</mi></mrow><mn>2</mn></msup><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>3</mn></msup></mrow></mfrac></mstyle></math></span>）</li>
+<li><a href="/q/voltage.html">電圧・電位</a>（<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">V</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><mi mathvariant="normal">A</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>3</mn></msup></mrow></mfrac></mstyle></math></span>）</li>
 </ul>
 </div></main>
 <footer class="site"><div class="wrap">

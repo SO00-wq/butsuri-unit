@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=6">
-<script src="/assets/site.js?v=6" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=7">
+<script src="/assets/site.js?v=7" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -50,17 +50,17 @@
 <main id="main"><div class="wrap">
 <nav class="bc" aria-label="パンくずリスト"><a href="/">トップ</a> › <a href="/q/acceleration.html">加速度</a> › 圧力との関係</nav>
 <h1>加速度と圧力の関係</h1>
-<div class="hero"><div class="big">m/s²　と　Pa</div><div class="sub">[L T⁻²]　と　[M L⁻¹ T⁻²]</div></div>
+<div class="hero"><div class="big"><math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math>　と　<math><mstyle displaystyle="true"><mi mathvariant="normal">Pa</mi></mstyle></math></div><div class="sub">[L T⁻²]　と　[M L⁻¹ T⁻²]</div></div>
 <nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">単位の比から見る</a><a href="#s2">2つの量を結ぶ公式</a><a href="#s3">それぞれの量のページ</a></div></nav><h2 id="s1">単位の比から見る</h2>
-<div class="calc">[加速度] ÷ [圧力] = (m/s²) ÷ (kg/(m·s²)) = m²/kg</div>
+<div class="calc">[加速度] ÷ [圧力] <math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac><mo>÷</mo><mfrac><mrow><mi mathvariant="normal">kg</mi></mrow><mrow><mi mathvariant="normal">m</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac><mo>=</mo><mfrac><mrow><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><mi mathvariant="normal">kg</mi></mrow></mfrac></mstyle></math></div>
 <h2 id="s2">2つの量を結ぶ公式</h2>
-<div class="step"><b><a href="/f/hydrostatic.html">水圧（静水圧）</a></b>：<span class="mono">p = ρ g h</span>
-<div class="calc">g = p / (ρ h)<br>[g] = Pa ÷ (kg/m³) ÷ m<br>　　= Pa·m²/kg<br>　　= m/s²</div>
-<div class="calc">[p] = kg/m³ × m/s² × m<br>　　= kg/(m·s²)<br>　　= Pa</div>
+<div class="step"><b><a href="/f/hydrostatic.html">水圧（静水圧）</a></b>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">p</mi><mo>=</mo><mi mathvariant="normal">ρ</mi><mi mathvariant="normal">g</mi><mi mathvariant="normal">h</mi></mstyle></math></span>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">g</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">p</mi></mrow><mrow><mi mathvariant="normal">ρ</mi><mi mathvariant="normal">h</mi></mrow></mfrac></mstyle></math><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">g</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">Pa</mi><mo>÷</mo><mfrac><mrow><mi mathvariant="normal">kg</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>3</mn></msup></mrow></mfrac><mo>÷</mo><mi mathvariant="normal">m</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">Pa</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><mi mathvariant="normal">kg</mi></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></div>
+<div class="calc">[<math><mstyle displaystyle="true"><mi mathvariant="normal">p</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mfrac><mrow><mi mathvariant="normal">kg</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>3</mn></msup></mrow></mfrac><mo>×</mo><mi mathvariant="normal">m</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac><mo>×</mo><mi mathvariant="normal">m</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi></mrow><mrow><mi mathvariant="normal">m</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">Pa</mi></mstyle></math></div>
 </div>
 <h2 id="s3">それぞれの量のページ</h2><ul>
-<li><a href="/q/acceleration.html">加速度</a>（<span class="mono">m/s² = m/s²</span>）</li>
-<li><a href="/q/pressure.html">圧力</a>（<span class="mono">Pa = kg/(m·s²)</span>）</li>
+<li><a href="/q/acceleration.html">加速度</a>（<span class="mono"><math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac><mo>=</mo><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></span>）</li>
+<li><a href="/q/pressure.html">圧力</a>（<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">Pa</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi></mrow><mrow><mi mathvariant="normal">m</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></span>）</li>
 </ul>
 </div></main>
 <footer class="site"><div class="wrap">

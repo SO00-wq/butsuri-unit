@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=6">
-<script src="/assets/site.js?v=6" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=7">
+<script src="/assets/site.js?v=7" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -50,22 +50,22 @@
 <main id="main"><div class="wrap">
 <nav class="bc" aria-label="パンくずリスト"><a href="/">トップ</a> › <a href="/q/time.html">時間</a> › 速度との関係</nav>
 <h1>時間と速度の関係</h1>
-<div class="hero"><div class="big">s　と　m/s</div><div class="sub">[T]　と　[L T⁻¹]</div></div>
+<div class="hero"><div class="big"><math><mstyle displaystyle="true"><mi mathvariant="normal">s</mi></mstyle></math>　と　<math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math></div><div class="sub">[T]　と　[L T⁻¹]</div></div>
 <nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">単位の比から見る</a><a href="#s2">2つの量を結ぶ公式</a><a href="#s3">それぞれの量のページ</a></div></nav><h2 id="s1">単位の比から見る</h2>
-<div class="calc">[時間] ÷ [速度] = (s) ÷ (m/s) = s²/m</div>
+<div class="calc">[時間] ÷ [速度] <math><mstyle displaystyle="true"><mo>=</mo><mo>(</mo><mi mathvariant="normal">s</mi><mo>)</mo><mo>÷</mo><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac></mstyle></math></div>
 <p>つまり 時間 は「速度 ÷ <a href="/q/acceleration.html">加速度</a>」と同じ単位をもちます。</p>
 <h2 id="s2">2つの量を結ぶ公式</h2>
-<div class="step"><b><a href="/f/v_def.html">速さの定義</a></b>：<span class="mono">v = x / t</span>
-<div class="calc">t = x / v<br>[t] = m ÷ (m/s)<br>　　= s</div>
-<div class="calc">[v] = m ÷ s<br>　　= m/s</div>
+<div class="step"><b><a href="/f/v_def.html">速さの定義</a></b>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">v</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">x</mi></mrow><mrow><mi mathvariant="normal">t</mi></mrow></mfrac></mstyle></math></span>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">t</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">x</mi></mrow><mrow><mi mathvariant="normal">v</mi></mrow></mfrac></mstyle></math><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">t</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">m</mi><mo>÷</mo><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">s</mi></mstyle></math></div>
+<div class="calc">[<math><mstyle displaystyle="true"><mi mathvariant="normal">v</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">m</mi><mo>÷</mo><mi mathvariant="normal">s</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math></div>
 </div>
-<div class="step"><b><a href="/f/a_def.html">加速度の定義</a></b>：<span class="mono">a = Δv / Δt</span>
-<div class="calc">Δt = Δv / a<br>[Δt] = m/s ÷ (m/s²)<br>　　= s</div>
-<div class="calc">Δv = a Δt<br>[Δv] = m/s² × s<br>　　= m/s</div>
+<div class="step"><b><a href="/f/a_def.html">加速度の定義</a></b>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">a</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">Δv</mi></mrow><mrow><mi mathvariant="normal">Δt</mi></mrow></mfrac></mstyle></math></span>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">Δt</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">Δv</mi></mrow><mrow><mi mathvariant="normal">a</mi></mrow></mfrac></mstyle></math><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">Δt</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac><mo>÷</mo><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">s</mi></mstyle></math></div>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">Δv</mi><mo>=</mo><mi mathvariant="normal">a</mi><mi mathvariant="normal">Δt</mi></mstyle></math><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">Δv</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac><mo>×</mo><mi mathvariant="normal">s</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math></div>
 </div>
 <h2 id="s3">それぞれの量のページ</h2><ul>
-<li><a href="/q/time.html">時間</a>（<span class="mono">s = s</span>）</li>
-<li><a href="/q/velocity.html">速度</a>（<span class="mono">m/s = m/s</span>）</li>
+<li><a href="/q/time.html">時間</a>（<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">s</mi><mo>=</mo><mi mathvariant="normal">s</mi></mstyle></math></span>）</li>
+<li><a href="/q/velocity.html">速度</a>（<span class="mono"><math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math></span>）</li>
 </ul>
 </div></main>
 <footer class="site"><div class="wrap">

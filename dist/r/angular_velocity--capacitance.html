@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=6">
-<script src="/assets/site.js?v=6" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=7">
+<script src="/assets/site.js?v=7" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -50,17 +50,17 @@
 <main id="main"><div class="wrap">
 <nav class="bc" aria-label="パンくずリスト"><a href="/">トップ</a> › <a href="/q/angular_velocity.html">角速度</a> › 静電容量との関係</nav>
 <h1>角速度と静電容量の関係</h1>
-<div class="hero"><div class="big">rad/s　と　F</div><div class="sub">[T⁻¹]　と　[M⁻¹ L⁻² T⁴ I²]</div></div>
+<div class="hero"><div class="big"><math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">rad</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math>　と　<math><mstyle displaystyle="true"><mi mathvariant="normal">F</mi></mstyle></math></div><div class="sub">[T⁻¹]　と　[M⁻¹ L⁻² T⁴ I²]</div></div>
 <nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">単位の比から見る</a><a href="#s2">2つの量を結ぶ公式</a><a href="#s3">それぞれの量のページ</a></div></nav><h2 id="s1">単位の比から見る</h2>
-<div class="calc">[角速度] ÷ [静電容量] = (1/s) ÷ (A²·s⁴/(kg·m²)) = kg·m²/(A²·s⁵)</div>
+<div class="calc">[角速度] ÷ [静電容量] <math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac><mo>÷</mo><mfrac><mrow><msup><mrow><mi mathvariant="normal">A</mi></mrow><mn>2</mn></msup><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>4</mn></msup></mrow><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow></mfrac><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">A</mi></mrow><mn>2</mn></msup><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>5</mn></msup></mrow></mfrac></mstyle></math></div>
 <h2 id="s2">2つの量を結ぶ公式</h2>
-<div class="step"><b><a href="/f/lc_omega.html">LC回路の固有角振動数</a></b>：<span class="mono">ω = 1 / √(L C)</span>
-<div class="calc">ω = 1 / (L¹ᐟ² C¹ᐟ²)　<span class="lead">（係数は単位に影響しないので省略）</span><br>[ω] = 1 ÷ H¹ᐟ² ÷ F¹ᐟ²<br>　　= 1/(H¹ᐟ²·F¹ᐟ²)<br>　　= 1/s<br>　　= rad/s</div>
-<div class="calc">C = 1 / (ω² L)　<span class="lead">（係数は単位に影響しないので省略）</span><br>[C] = 1 ÷ (rad/s)² ÷ H<br>　　= s²/H　<span class="lead">（rad は無次元なので省く）</span><br>　　= A²·s⁴/(kg·m²)<br>　　= F</div>
+<div class="step"><b><a href="/f/lc_omega.html">LC回路の固有角振動数</a></b>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">ω</mi><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><msqrt><mi mathvariant="normal">L</mi><mi mathvariant="normal">C</mi></msqrt></mrow></mfrac></mstyle></math></span>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">ω</mi><mo>=</mo><msqrt><mfrac><mrow><mn>1</mn></mrow><mrow><mi mathvariant="normal">L</mi><mi mathvariant="normal">C</mi></mrow></mfrac></msqrt></mstyle></math>　<span class="lead">（係数は単位に影響しないので省略）</span><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">ω</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><msqrt><mn>1</mn><mo>÷</mo><mi mathvariant="normal">H</mi><mo>÷</mo><mi mathvariant="normal">F</mi></msqrt></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><msqrt><mfrac><mrow><mn>1</mn></mrow><mrow><mi mathvariant="normal">H</mi><mo>·</mo><mi mathvariant="normal">F</mi></mrow></mfrac></msqrt></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">rad</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math></div>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">C</mi><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><msup><mrow><mi mathvariant="normal">ω</mi></mrow><mn>2</mn></msup><mi mathvariant="normal">L</mi></mrow></mfrac></mstyle></math>　<span class="lead">（係数は単位に影響しないので省略）</span><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">C</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mn>1</mn><mo>÷</mo><msup><mrow><mo>(</mo><mfrac><mrow><mi mathvariant="normal">rad</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac><mo>)</mo></mrow><mn>2</mn></msup><mo>÷</mo><mi mathvariant="normal">H</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow><mrow><mi mathvariant="normal">H</mi></mrow></mfrac></mstyle></math>　<span class="lead">（<math><mstyle displaystyle="true"><mi mathvariant="normal">rad</mi></mstyle></math> は無次元なので省く）</span><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><msup><mrow><mi mathvariant="normal">A</mi></mrow><mn>2</mn></msup><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>4</mn></msup></mrow><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">F</mi></mstyle></math></div>
 </div>
 <h2 id="s3">それぞれの量のページ</h2><ul>
-<li><a href="/q/angular_velocity.html">角速度</a>（<span class="mono">rad/s = 1/s</span>）</li>
-<li><a href="/q/capacitance.html">静電容量</a>（<span class="mono">F = A²·s⁴/(kg·m²)</span>）</li>
+<li><a href="/q/angular_velocity.html">角速度</a>（<span class="mono"><math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">rad</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math></span>）</li>
+<li><a href="/q/capacitance.html">静電容量</a>（<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">F</mi><mo>=</mo><mfrac><mrow><msup><mrow><mi mathvariant="normal">A</mi></mrow><mn>2</mn></msup><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>4</mn></msup></mrow><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></span>）</li>
 </ul>
 </div></main>
 <footer class="site"><div class="wrap">

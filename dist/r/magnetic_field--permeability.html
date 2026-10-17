@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=6">
-<script src="/assets/site.js?v=6" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=7">
+<script src="/assets/site.js?v=7" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -50,17 +50,17 @@
 <main id="main"><div class="wrap">
 <nav class="bc" aria-label="パンくずリスト"><a href="/">トップ</a> › <a href="/q/magnetic_field.html">磁場（磁界）の強さ</a> › 透磁率との関係</nav>
 <h1>磁場（磁界）の強さと透磁率の関係</h1>
-<div class="hero"><div class="big">A/m　と　H/m</div><div class="sub">[L⁻¹ I]　と　[M L T⁻² I⁻²]</div></div>
+<div class="hero"><div class="big"><math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">A</mi></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac></mstyle></math>　と　<math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">H</mi></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac></mstyle></math></div><div class="sub">[L⁻¹ I]　と　[M L T⁻² I⁻²]</div></div>
 <nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">単位の比から見る</a><a href="#s2">2つの量を結ぶ公式</a><a href="#s3">それぞれの量のページ</a></div></nav><h2 id="s1">単位の比から見る</h2>
-<div class="calc">[磁場（磁界）の強さ] ÷ [透磁率] = (A/m) ÷ (kg·m/(A²·s²)) = A³·s²/(kg·m²)</div>
+<div class="calc">[磁場（磁界）の強さ] ÷ [透磁率] <math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">A</mi></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac><mo>÷</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><mi mathvariant="normal">m</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">A</mi></mrow><mn>2</mn></msup><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac><mo>=</mo><mfrac><mrow><msup><mrow><mi mathvariant="normal">A</mi></mrow><mn>3</mn></msup><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></div>
 <h2 id="s2">2つの量を結ぶ公式</h2>
-<div class="step"><b><a href="/f/b_mu_h.html">磁束密度と磁場</a></b>：<span class="mono">B = μ H</span>
-<div class="calc">H = B / μ<br>[H] = T ÷ (H/m)<br>　　= T·m/H<br>　　= A/m</div>
-<div class="calc">μ = B / H<br>[μ] = T ÷ (A/m)<br>　　= T·m/A<br>　　= kg·m/(A²·s²)<br>　　= H/m</div>
+<div class="step"><b><a href="/f/b_mu_h.html">磁束密度と磁場</a></b>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">B</mi><mo>=</mo><mi mathvariant="normal">μ</mi><mi mathvariant="normal">H</mi></mstyle></math></span>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">H</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">B</mi></mrow><mrow><mi mathvariant="normal">μ</mi></mrow></mfrac></mstyle></math><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">H</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">T</mi><mo>÷</mo><mfrac><mrow><mi mathvariant="normal">H</mi></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">T</mi><mo>·</mo><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">H</mi></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">A</mi></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac></mstyle></math></div>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">μ</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">B</mi></mrow><mrow><mi mathvariant="normal">H</mi></mrow></mfrac></mstyle></math><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">μ</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">T</mi><mo>÷</mo><mfrac><mrow><mi mathvariant="normal">A</mi></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">T</mi><mo>·</mo><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">A</mi></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><mi mathvariant="normal">m</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">A</mi></mrow><mn>2</mn></msup><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">H</mi></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac></mstyle></math></div>
 </div>
 <h2 id="s3">それぞれの量のページ</h2><ul>
-<li><a href="/q/magnetic_field.html">磁場（磁界）の強さ</a>（<span class="mono">A/m = A/m</span>）</li>
-<li><a href="/q/permeability.html">透磁率</a>（<span class="mono">H/m = kg·m/(A²·s²)</span>）</li>
+<li><a href="/q/magnetic_field.html">磁場（磁界）の強さ</a>（<span class="mono"><math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">A</mi></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mi mathvariant="normal">A</mi></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac></mstyle></math></span>）</li>
+<li><a href="/q/permeability.html">透磁率</a>（<span class="mono"><math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">H</mi></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><mi mathvariant="normal">m</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">A</mi></mrow><mn>2</mn></msup><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></span>）</li>
 </ul>
 </div></main>
 <footer class="site"><div class="wrap">

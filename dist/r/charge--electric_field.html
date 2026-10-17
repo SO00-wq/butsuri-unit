@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=6">
-<script src="/assets/site.js?v=6" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=7">
+<script src="/assets/site.js?v=7" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -50,17 +50,17 @@
 <main id="main"><div class="wrap">
 <nav class="bc" aria-label="パンくずリスト"><a href="/">トップ</a> › <a href="/q/charge.html">電荷（電気量）</a> › 電場（電界）との関係</nav>
 <h1>電荷（電気量）と電場（電界）の関係</h1>
-<div class="hero"><div class="big">C　と　V/m</div><div class="sub">[T I]　と　[M L T⁻³ I⁻¹]</div></div>
+<div class="hero"><div class="big"><math><mstyle displaystyle="true"><mi mathvariant="normal">C</mi></mstyle></math>　と　<math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">V</mi></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac></mstyle></math></div><div class="sub">[T I]　と　[M L T⁻³ I⁻¹]</div></div>
 <nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">単位の比から見る</a><a href="#s2">2つの量を結ぶ公式</a><a href="#s3">それぞれの量のページ</a></div></nav><h2 id="s1">単位の比から見る</h2>
-<div class="calc">[電荷（電気量）] ÷ [電場（電界）] = (A·s) ÷ (kg·m/(A·s³)) = A²·s⁴/(kg·m)</div>
+<div class="calc">[電荷（電気量）] ÷ [電場（電界）] <math><mstyle displaystyle="true"><mo>=</mo><mo>(</mo><mi mathvariant="normal">A</mi><mo>·</mo><mi mathvariant="normal">s</mi><mo>)</mo><mo>÷</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">A</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>3</mn></msup></mrow></mfrac><mo>=</mo><mfrac><mrow><msup><mrow><mi mathvariant="normal">A</mi></mrow><mn>2</mn></msup><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>4</mn></msup></mrow><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><mi mathvariant="normal">m</mi></mrow></mfrac></mstyle></math></div>
 <h2 id="s2">2つの量を結ぶ公式</h2>
-<div class="step"><b><a href="/f/efield_force.html">電場から受ける力</a></b>：<span class="mono">F = q E</span>
-<div class="calc">q = F / E<br>[q] = N ÷ (V/m)<br>　　= N·m/V<br>　　= A·s<br>　　= C</div>
-<div class="calc">E = F / q<br>[E] = N ÷ C<br>　　= N/C<br>　　= kg·m/(A·s³)<br>　　= V/m</div>
+<div class="step"><b><a href="/f/efield_force.html">電場から受ける力</a></b>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">F</mi><mo>=</mo><mi mathvariant="normal">q</mi><mi mathvariant="normal">E</mi></mstyle></math></span>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">q</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">F</mi></mrow><mrow><mi mathvariant="normal">E</mi></mrow></mfrac></mstyle></math><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">q</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">N</mi><mo>÷</mo><mfrac><mrow><mi mathvariant="normal">V</mi></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">N</mi><mo>·</mo><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">V</mi></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">A</mi><mo>·</mo><mi mathvariant="normal">s</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">C</mi></mstyle></math></div>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">E</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">F</mi></mrow><mrow><mi mathvariant="normal">q</mi></mrow></mfrac></mstyle></math><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">E</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">N</mi><mo>÷</mo><mi mathvariant="normal">C</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">N</mi></mrow><mrow><mi mathvariant="normal">C</mi></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">A</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>3</mn></msup></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">V</mi></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac></mstyle></math></div>
 </div>
 <h2 id="s3">それぞれの量のページ</h2><ul>
-<li><a href="/q/charge.html">電荷（電気量）</a>（<span class="mono">C = A·s</span>）</li>
-<li><a href="/q/electric_field.html">電場（電界）</a>（<span class="mono">V/m = kg·m/(A·s³)</span>）</li>
+<li><a href="/q/charge.html">電荷（電気量）</a>（<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">C</mi><mo>=</mo><mi mathvariant="normal">A</mi><mo>·</mo><mi mathvariant="normal">s</mi></mstyle></math></span>）</li>
+<li><a href="/q/electric_field.html">電場（電界）</a>（<span class="mono"><math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">V</mi></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">A</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>3</mn></msup></mrow></mfrac></mstyle></math></span>）</li>
 </ul>
 </div></main>
 <footer class="site"><div class="wrap">

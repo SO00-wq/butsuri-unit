@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=6">
-<script src="/assets/site.js?v=6" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=7">
+<script src="/assets/site.js?v=7" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -50,18 +50,18 @@
 <main id="main"><div class="wrap">
 <nav class="bc" aria-label="パンくずリスト"><a href="/">トップ</a> › <a href="/q/magnetic_flux.html">磁束</a> › 磁束密度との関係</nav>
 <h1>磁束と磁束密度の関係</h1>
-<div class="hero"><div class="big">Wb　と　T</div><div class="sub">[M L² T⁻² I⁻¹]　と　[M T⁻² I⁻¹]</div></div>
+<div class="hero"><div class="big"><math><mstyle displaystyle="true"><mi mathvariant="normal">Wb</mi></mstyle></math>　と　<math><mstyle displaystyle="true"><mi mathvariant="normal">T</mi></mstyle></math></div><div class="sub">[M L² T⁻² I⁻¹]　と　[M T⁻² I⁻¹]</div></div>
 <nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">単位の比から見る</a><a href="#s2">2つの量を結ぶ公式</a><a href="#s3">それぞれの量のページ</a></div></nav><h2 id="s1">単位の比から見る</h2>
-<div class="calc">[磁束] ÷ [磁束密度] = (kg·m²/(A·s²)) ÷ (kg/(A·s²)) = m²</div>
+<div class="calc">[磁束] ÷ [磁束密度] <math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><mi mathvariant="normal">A</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac><mo>÷</mo><mfrac><mrow><mi mathvariant="normal">kg</mi></mrow><mrow><mi mathvariant="normal">A</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac><mo>=</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mstyle></math></div>
 <p>つまり 磁束 は「磁束密度 × <a href="/q/area.html">面積</a>」と同じ単位をもちます。</p>
 <h2 id="s2">2つの量を結ぶ公式</h2>
-<div class="step"><b><a href="/f/flux.html">磁束</a></b>：<span class="mono">Φ = B S</span>
-<div class="calc">[Φ] = T × m²<br>　　= T·m²<br>　　= kg·m²/(A·s²)<br>　　= Wb</div>
-<div class="calc">B = Φ / S<br>[B] = Wb ÷ m²<br>　　= Wb/m²<br>　　= kg/(A·s²)<br>　　= T</div>
+<div class="step"><b><a href="/f/flux.html">磁束</a></b>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">Φ</mi><mo>=</mo><mi mathvariant="normal">B</mi><mi mathvariant="normal">S</mi></mstyle></math></span>
+<div class="calc">[<math><mstyle displaystyle="true"><mi mathvariant="normal">Φ</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">T</mi><mo>×</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">T</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><mi mathvariant="normal">A</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">Wb</mi></mstyle></math></div>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">B</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">Φ</mi></mrow><mrow><mi mathvariant="normal">S</mi></mrow></mfrac></mstyle></math><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">B</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">Wb</mi><mo>÷</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">Wb</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi></mrow><mrow><mi mathvariant="normal">A</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">T</mi></mstyle></math></div>
 </div>
 <h2 id="s3">それぞれの量のページ</h2><ul>
-<li><a href="/q/magnetic_flux.html">磁束</a>（<span class="mono">Wb = kg·m²/(A·s²)</span>）</li>
-<li><a href="/q/magnetic_flux_density.html">磁束密度</a>（<span class="mono">T = kg/(A·s²)</span>）</li>
+<li><a href="/q/magnetic_flux.html">磁束</a>（<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">Wb</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><mi mathvariant="normal">A</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></span>）</li>
+<li><a href="/q/magnetic_flux_density.html">磁束密度</a>（<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">T</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi></mrow><mrow><mi mathvariant="normal">A</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></span>）</li>
 </ul>
 </div></main>
 <footer class="site"><div class="wrap">

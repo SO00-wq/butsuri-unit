@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=6">
-<script src="/assets/site.js?v=6" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=7">
+<script src="/assets/site.js?v=7" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -50,21 +50,21 @@
 <main id="main"><div class="wrap">
 <nav class="bc" aria-label="パンくずリスト"><a href="/">トップ</a> › <a href="/q/current.html">電流</a> › 時間との関係</nav>
 <h1>電流と時間の関係</h1>
-<div class="hero"><div class="big">A　と　s</div><div class="sub">[I]　と　[T]</div></div>
+<div class="hero"><div class="big"><math><mstyle displaystyle="true"><mi mathvariant="normal">A</mi></mstyle></math>　と　<math><mstyle displaystyle="true"><mi mathvariant="normal">s</mi></mstyle></math></div><div class="sub">[I]　と　[T]</div></div>
 <nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">単位の比から見る</a><a href="#s2">2つの量を結ぶ公式</a><a href="#s3">それぞれの量のページ</a></div></nav><h2 id="s1">単位の比から見る</h2>
-<div class="calc">[電流] ÷ [時間] = (A) ÷ (s) = A/s</div>
+<div class="calc">[電流] ÷ [時間] <math><mstyle displaystyle="true"><mo>=</mo><mo>(</mo><mi mathvariant="normal">A</mi><mo>)</mo><mo>÷</mo><mo>(</mo><mi mathvariant="normal">s</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mi mathvariant="normal">A</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math></div>
 <h2 id="s2">2つの量を結ぶ公式</h2>
-<div class="step"><b><a href="/f/charge_def.html">電荷と電流</a></b>：<span class="mono">q = I t</span>
-<div class="calc">I = q / t<br>[I] = C ÷ s<br>　　= C/s<br>　　= A</div>
-<div class="calc">t = q / I<br>[t] = C ÷ A<br>　　= C/A<br>　　= s</div>
+<div class="step"><b><a href="/f/charge_def.html">電荷と電流</a></b>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">q</mi><mo>=</mo><mi mathvariant="normal">I</mi><mi mathvariant="normal">t</mi></mstyle></math></span>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">I</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">q</mi></mrow><mrow><mi mathvariant="normal">t</mi></mrow></mfrac></mstyle></math><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">I</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">C</mi><mo>÷</mo><mi mathvariant="normal">s</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">C</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">A</mi></mstyle></math></div>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">t</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">q</mi></mrow><mrow><mi mathvariant="normal">I</mi></mrow></mfrac></mstyle></math><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">t</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">C</mi><mo>÷</mo><mi mathvariant="normal">A</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">C</mi></mrow><mrow><mi mathvariant="normal">A</mi></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">s</mi></mstyle></math></div>
 </div>
-<div class="step"><b><a href="/f/self_induct.html">自己誘導</a></b>：<span class="mono">V = L ΔI / Δt</span>
-<div class="calc">ΔI = V Δt / L<br>[ΔI] = V × s ÷ H<br>　　= V·s/H<br>　　= A</div>
-<div class="calc">Δt = L ΔI / V<br>[Δt] = H × A ÷ V<br>　　= H·A/V<br>　　= s</div>
+<div class="step"><b><a href="/f/self_induct.html">自己誘導</a></b>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">V</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">L</mi><mi mathvariant="normal">ΔI</mi></mrow><mrow><mi mathvariant="normal">Δt</mi></mrow></mfrac></mstyle></math></span>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">ΔI</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">V</mi><mi mathvariant="normal">Δt</mi></mrow><mrow><mi mathvariant="normal">L</mi></mrow></mfrac></mstyle></math><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">ΔI</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">V</mi><mo>×</mo><mi mathvariant="normal">s</mi><mo>÷</mo><mi mathvariant="normal">H</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">V</mi><mo>·</mo><mi mathvariant="normal">s</mi></mrow><mrow><mi mathvariant="normal">H</mi></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">A</mi></mstyle></math></div>
+<div class="calc"><math><mstyle displaystyle="true"><mi mathvariant="normal">Δt</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">L</mi><mi mathvariant="normal">ΔI</mi></mrow><mrow><mi mathvariant="normal">V</mi></mrow></mfrac></mstyle></math><br>[<math><mstyle displaystyle="true"><mi mathvariant="normal">Δt</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">H</mi><mo>×</mo><mi mathvariant="normal">A</mi><mo>÷</mo><mi mathvariant="normal">V</mi></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">H</mi><mo>·</mo><mi mathvariant="normal">A</mi></mrow><mrow><mi mathvariant="normal">V</mi></mrow></mfrac></mstyle></math><br>　　<math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">s</mi></mstyle></math></div>
 </div>
 <h2 id="s3">それぞれの量のページ</h2><ul>
-<li><a href="/q/current.html">電流</a>（<span class="mono">A = A</span>）</li>
-<li><a href="/q/time.html">時間</a>（<span class="mono">s = s</span>）</li>
+<li><a href="/q/current.html">電流</a>（<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">A</mi><mo>=</mo><mi mathvariant="normal">A</mi></mstyle></math></span>）</li>
+<li><a href="/q/time.html">時間</a>（<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">s</mi><mo>=</mo><mi mathvariant="normal">s</mi></mstyle></math></span>）</li>
 </ul>
 </div></main>
 <footer class="site"><div class="wrap">
