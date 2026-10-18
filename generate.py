@@ -665,6 +665,7 @@ def drawer_html(path):
     <div class="nav-sec"><h4>単位を知る</h4><ul>
       <li><a href="/guide.html"{cur("/guide.html")}>単位の読み方</a></li>
       <li><a href="/about.html"{cur("/about.html")}>このサイトについて</a></li>
+      <li><a href="/privacy.html"{cur("/privacy.html")}>プライバシーポリシー</a></li>
     </ul></div>
     <div class="nav-sec"><h4>単位辞典（分野別）</h4><ul>{cats}</ul></div>
     <div class="nav-sec"><h4>よく調べる単位</h4><div class="chips">{pop}</div></div>
@@ -728,7 +729,7 @@ def page(path, title, desc, body, crumbs=(), noindex=False):
 {body}
 </div></main>
 <footer class="site"><div class="wrap">
-  <div class="links"><a href="/">トップ</a><a href="/method.html">検算のやり方</a><a href="/mistakes/">よくあるミス</a><a href="/training/">検算トレーニング</a><a href="/advanced.html">難関大レベル</a><a href="/guide.html">単位の読み方</a><a href="/about.html">このサイトについて</a>{foot_links}</div>
+  <div class="links"><a href="/">トップ</a><a href="/method.html">検算のやり方</a><a href="/mistakes/">よくあるミス</a><a href="/training/">検算トレーニング</a><a href="/advanced.html">難関大レベル</a><a href="/guide.html">単位の読み方</a><a href="/about.html">このサイトについて</a><a href="/privacy.html">プライバシーポリシー</a>{foot_links}</div>
   <p class="src">単位の定義は、国際度量衡局（BIPM）の SI パンフレット第9版と、その日本語版（産業技術総合研究所 計量標準総合センター）に基づいています。</p>
   {SITE_NAME} — 答えの単位で検算して、取れる問題を落とさない。最終更新日：{UPDATED}
 </div></footer>
@@ -1998,6 +1999,61 @@ def build_advanced():
          "線電荷密度・面電荷密度・面電流密度・単位長さあたりの巻き数・エネルギー密度・移動度・ホール係数など、難関大の二次試験に出る単位の意味と、答えの単位での検算。",
          "\n".join(b), [("難関大レベル", None)])
 
+
+PRIVACY_ENACTED = "2026-10-18"
+
+
+def build_privacy():
+    body = f"""
+<h1>プライバシーポリシー</h1>
+<p class="lead">{E(SITE_NAME)}（以下「当サイト」）における、利用者の情報の取り扱いについて定めます。</p>
+
+<h2>1. 取得する情報</h2>
+<p>当サイトは、会員登録の機能をもたず、氏名や住所などの個人情報を入力していただく場面はありません。ただし、次の場合に情報を取得することがあります。</p>
+<ul>
+<li><b>お問い合わせ</b>：お問い合わせの際に入力していただいた、お名前（ニックネーム可）・メールアドレス・お問い合わせ内容</li>
+<li><b>アクセスの記録</b>：当サイトは Cloudflare, Inc. のサービスで公開しており、表示や安全のために、IPアドレス・ブラウザの種類・閲覧したページなどの記録が同社によって処理されます</li>
+</ul>
+
+<h2>2. 利用の目的</h2>
+<ul>
+<li>お問い合わせへの回答のため</li>
+<li>当サイトの不具合の確認や、内容の改善のため</li>
+<li>不正なアクセスへの対応のため</li>
+</ul>
+<p>取得した情報を、これらの目的以外に利用することはありません。</p>
+
+<h2>3. 第三者への提供</h2>
+<p>法令に基づく場合を除き、取得した情報を本人の同意なく第三者に提供することはありません。</p>
+
+<h2>4. アクセス解析ツールについて</h2>
+<p>当サイトでは、利用状況を把握するために、アクセス解析ツールを利用することがあります。
+これらのツールは、個人を特定しない形で、閲覧したページや閲覧環境などの情報を集計します。</p>
+
+<h2>5. 広告の配信について</h2>
+<p>当サイトでは、第三者配信の広告サービス（Google アドセンス）を利用することがあります。</p>
+<p>Google などの第三者配信事業者は、Cookie を使用して、利用者が当サイトやほかのウェブサイトに過去にアクセスした際の情報に基づいて広告を配信することがあります。
+Google が広告 Cookie を使用することにより、Google やそのパートナーは、当サイトやほかのサイトへのアクセス情報に基づいて、利用者に広告を表示できます。</p>
+<p>利用者は、<a href="https://adssettings.google.com/" rel="noopener">Google の広告設定</a>で、パーソナライズ広告を無効にできます。
+また、<a href="https://www.aboutads.info/" rel="noopener">www.aboutads.info</a> にアクセスすれば、パーソナライズ広告に使われる第三者配信事業者の Cookie を無効にできます。
+Google による情報の取り扱いについては、<a href="https://policies.google.com/technologies/ads?hl=ja" rel="noopener">Google のポリシーと規約（広告）</a>をご覧ください。</p>
+
+<h2>6. 免責事項</h2>
+<p>当サイトの内容は、正確であるよう努めていますが、その正確性や完全性を保証するものではありません。
+当サイトの情報を利用したことによって生じた損害について、当サイトは責任を負いかねます。誤りに気づかれた場合は、お問い合わせからお知らせください。</p>
+
+<h2>7. 著作権</h2>
+<p>当サイトの文章・図などの著作権は、当サイトの運営者に帰属します。引用の範囲を超える無断転載はご遠慮ください。
+学校や塾での授業・自習のための利用は歓迎します。</p>
+
+<h2>8. このポリシーの変更</h2>
+<p>このポリシーは、必要に応じて予告なく変更することがあります。変更後のポリシーは、このページに掲載した時点から効力を生じます。</p>
+
+<p class="lead">制定日：{PRIVACY_ENACTED}<br>運営：{E(SITE_NAME)}運営者</p>
+"""
+    page("/privacy.html", "プライバシーポリシー", f"{SITE_NAME}のプライバシーポリシー（取得する情報、利用目的、アクセス解析、広告の配信、免責事項、著作権）。",
+         body, [("プライバシーポリシー", None)])
+
 def build_sitemap():
     urls = "\n".join(f"  <url><loc>{SITE_URL}{p}</loc></url>" for p in PATHS)
     (OUT / "sitemap.xml").write_text(
@@ -2014,6 +2070,7 @@ def main():
     build_index()
     build_guide()
     build_about()
+    build_privacy()
     build_method()
     build_mistakes_index()
     for m in MISTAKES:
