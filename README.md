@@ -17,3 +17,9 @@ python generate.py
 
 ## 公開（Cloudflare Workers）
 `main` にプッシュすると `dist/` が自動で公開される。
+
+## アイコン・共有画像・お問い合わせ
+
+- `make_images.py` で `static/`（favicon、ホーム画面用アイコン、SNS共有画像 ogp.png）を作る。`generate.py` が `static/` を `dist/` にそのままコピーする
+- お問い合わせページは、`generate.py` の `CONTACT_FORM_URL` に Google フォームの URL を入れると自動で作られ、メニュー・フッター・プライバシーポリシーからリンクされる
+- `src/index.js`：tanbutsu.com 以外のホストからの 301 転送、安全のためのヘッダー、キャッシュ設定。存在しないページは `dist/404.html` を返す

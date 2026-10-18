@@ -27,9 +27,12 @@ SITE_NAME = "タンブツ"
 SITE_TAGLINE = "単位で物理を考える"
 SITE_FULL = f"{SITE_NAME}〜{SITE_TAGLINE}〜"
 SITE_URL = "https://tanbutsu.com"
-ASSET_VER = "12"  # CSS/JS を変えたら上げる（ブラウザのキャッシュ対策）
+ASSET_VER = "13"  # CSS/JS を変えたら上げる（ブラウザのキャッシュ対策）
 UPDATED = "2026-10-18"  # 最終更新日（内容を更新したら変える）
 GOOGLE_VERIFICATION = "kVE91IWkP86K1E_JpBQDklXXu5gz86ZOA64xcgtDUwc"  # Search Console 所有権確認
+# お問い合わせ用 Google フォームの URL（https://docs.google.com/forms/d/e/…/viewform）。
+# 空のあいだは /contact.html を作らず、メニューやフッターにも出さない
+CONTACT_FORM_URL = ""
 SITE_DESC = "物理の計算で出した答えが正しいかを、答えの単位で確かめるためのサイト。検算の手順、よくあるミス、トレーニング、単位辞典。"
 
 DB = json.load(open("data/si_db.json", encoding="utf-8"))
@@ -329,6 +332,7 @@ body{font-family:'Noto Sans JP',system-ui,sans-serif;background:var(--bg);color:
 body.nav-open{overflow:hidden}
 a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+.form-embed{margin:1rem 0}.form-embed iframe{width:100%;height:1100px;border:1px solid var(--border);border-radius:var(--r);background:#fff}
 .skip{position:absolute;left:-999px;top:0;background:var(--accent);color:#fff;padding:.5rem 1rem;z-index:100}.skip:focus{left:8px;top:8px}
 .wrap{max-width:780px;margin:0 auto;padding:0 16px}
 
@@ -671,6 +675,7 @@ def drawer_html(path):
       <li><a href="/guide.html"{cur("/guide.html")}>単位の読み方</a></li>
       <li><a href="/about.html"{cur("/about.html")}>このサイトについて</a></li>
       <li><a href="/privacy.html"{cur("/privacy.html")}>プライバシーポリシー</a></li>
+      {f'<li><a href="/contact.html"{cur("/contact.html")}>お問い合わせ</a></li>' if CONTACT_FORM_URL else ''}
     </ul></div>
     <div class="nav-sec"><h4>単位辞典（分野別）</h4><ul>{cats}</ul></div>
     <div class="nav-sec"><h4>よく調べる単位</h4><div class="chips">{pop}</div></div>
@@ -699,19 +704,46 @@ def page(path, title, desc, body, crumbs=(), noindex=False):
         parts = ['<a href="/">トップ</a>'] + [f'<a href="{u}">{E(t)}</a>' if u else E(t) for t, u in crumbs]
         bc = mathify('<nav class="bc" aria-label="パンくずリスト">' + " › ".join(parts) + "</nav>")
     body = mathify(add_toc(body))
+    full_title = E(title) if path == "/" else E(title) + " | " + SITE_NAME
+    url = SITE_URL + path
+    ld = []
+    if path == "/":
+        ld.append({"@context": "https://schema.org", "@type": "WebSite", "name": SITE_NAME,
+                   "alternateName": [SITE_FULL, "タンブツ 単位で物理を考える"], "url": SITE_URL + "/",
+                   "inLanguage": "ja"})
+    if crumbs:
+        items = [("トップ", "/")] + [(t, u or path) for t, u in crumbs]
+        ld.append({"@context": "https://schema.org", "@type": "BreadcrumbList",
+                   "itemListElement": [{"@type": "ListItem", "position": i, "name": t, "item": SITE_URL + u}
+                                       for i, (t, u) in enumerate(items, 1)]})
+    ld_html = "".join(f'<script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>\n' for x in ld)
+    contact_link = '<a href="/contact.html">お問い合わせ</a>' if CONTACT_FORM_URL else ""
     foot_links = "".join(f'<a href="/c/{c["id"]}.html">{E(c["name"])}</a>' for c in CATS.values())
     doc = f"""<!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{E(title) if path == "/" else E(title) + " | " + SITE_NAME}</title>
+<title>{full_title}</title>
 <meta name="description" content="{E(desc)}">
-<link rel="canonical" href="{SITE_URL}{path}">
+<link rel="canonical" href="{url}">
 {'<meta name="robots" content="noindex,follow">' if noindex else ''}
 <meta name="google-site-verification" content="{GOOGLE_VERIFICATION}">
 <meta name="theme-color" content="#1d5fd1">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta property="og:site_name" content="{SITE_FULL}">
+<meta property="og:title" content="{full_title}">
+<meta property="og:description" content="{E(desc)}">
+<meta property="og:url" content="{url}">
+<meta property="og:type" content="{'website' if path == '/' else 'article'}">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="{SITE_URL}/assets/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+{ld_html}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -735,7 +767,7 @@ def page(path, title, desc, body, crumbs=(), noindex=False):
 {body}
 </div></main>
 <footer class="site"><div class="wrap">
-  <div class="links"><a href="/">トップ</a><a href="/method.html">検算のやり方</a><a href="/mistakes/">よくあるミス</a><a href="/training/">検算トレーニング</a><a href="/advanced.html">難関大レベル</a><a href="/guide.html">単位の読み方</a><a href="/about.html">このサイトについて</a><a href="/privacy.html">プライバシーポリシー</a>{foot_links}</div>
+  <div class="links"><a href="/">トップ</a><a href="/method.html">検算のやり方</a><a href="/mistakes/">よくあるミス</a><a href="/training/">検算トレーニング</a><a href="/advanced.html">難関大レベル</a><a href="/guide.html">単位の読み方</a><a href="/about.html">このサイトについて</a><a href="/privacy.html">プライバシーポリシー</a>{contact_link}{foot_links}</div>
   <p class="src">単位の定義は、国際度量衡局（BIPM）の SI パンフレット第9版と、その日本語版（産業技術総合研究所 計量標準総合センター）に基づいています。</p>
   {SITE_FULL} — 答えの単位で検算して、取れる問題を落とさない。最終更新日：{UPDATED}
 </div></footer>
@@ -2046,7 +2078,7 @@ Google による情報の取り扱いについては、<a href="https://policies
 
 <h2>6. 免責事項</h2>
 <p>当サイトの内容は、正確であるよう努めていますが、その正確性や完全性を保証するものではありません。
-当サイトの情報を利用したことによって生じた損害について、当サイトは責任を負いかねます。誤りに気づかれた場合は、お問い合わせからお知らせください。</p>
+当サイトの情報を利用したことによって生じた損害について、当サイトは責任を負いかねます。誤りに気づかれた場合は、{'<a href="/contact.html">お問い合わせ</a>' if CONTACT_FORM_URL else 'お問い合わせ'}からお知らせください。</p>
 
 <h2>7. 著作権</h2>
 <p>当サイトの文章・図などの著作権は、当サイトの運営者に帰属します。引用の範囲を超える無断転載はご遠慮ください。
@@ -2059,6 +2091,46 @@ Google による情報の取り扱いについては、<a href="https://policies
 """
     page("/privacy.html", "プライバシーポリシー", f"{SITE_NAME}のプライバシーポリシー（取得する情報、利用目的、アクセス解析、広告の配信、免責事項、著作権）。",
          body, [("プライバシーポリシー", None)])
+
+def build_contact():
+    """お問い合わせページ（Google フォームを埋め込む）。CONTACT_FORM_URL が空なら作らない"""
+    if not CONTACT_FORM_URL:
+        return
+    embed = CONTACT_FORM_URL.split("?")[0] + "?embedded=true"
+    body = f"""
+<h1>お問い合わせ</h1>
+<p class="lead">内容の誤り、わかりにくい説明、「こんなミスもよくある」という例など、なんでもお知らせください。</p>
+<ul>
+<li>返信が必要な場合は、メールアドレスを入力してください。</li>
+<li>いただいた情報の扱いは<a href="/privacy.html">プライバシーポリシー</a>のとおりです。</li>
+</ul>
+<div class="form-embed"><iframe src="{E(embed)}" title="お問い合わせフォーム" loading="lazy">読み込んでいます…</iframe></div>
+<p>フォームが表示されないときは、<a href="{E(CONTACT_FORM_URL)}" rel="noopener" target="_blank">こちらから直接開いてください</a>。</p>
+"""
+    page("/contact.html", "お問い合わせ", f"{SITE_NAME}へのお問い合わせ。内容の誤りや、わかりにくい説明のご指摘はこちらから。",
+         body, [("お問い合わせ", None)])
+
+
+def build_404():
+    body = """
+<h1>ページが見つかりません</h1>
+<p class="lead">お探しのページは、移動したか削除された可能性があります。</p>
+<ul>
+<li><a href="/">トップページ</a></li>
+<li><a href="/method.html">検算のやり方</a></li>
+<li><a href="/mistakes/">よくあるミス集</a></li>
+<li><a href="/training/">検算トレーニング</a></li>
+</ul>
+<p>上のメニューの<b>検索</b>から、量の名前や単位記号でも探せます。</p>
+"""
+    page("/404.html", "ページが見つかりません", "お探しのページは見つかりませんでした。", body, noindex=True)
+
+
+def copy_static():
+    src = Path("static")
+    if src.exists():
+        shutil.copytree(src, OUT, dirs_exist_ok=True)
+
 
 def build_sitemap():
     urls = "\n".join(f"  <url><loc>{SITE_URL}{p}</loc></url>" for p in PATHS)
@@ -2077,6 +2149,9 @@ def main():
     build_guide()
     build_about()
     build_privacy()
+    build_contact()
+    build_404()
+    copy_static()
     build_method()
     build_mistakes_index()
     for m in MISTAKES:
