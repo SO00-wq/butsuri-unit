@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-ブツリ単位ラボ ページ生成スクリプト
+タンブツ（単位で物理を考える）ページ生成スクリプト
 
 data/si_db.json（物理量・公式・SI単位のデータ）から、
 次元解析で単位を理解するための静的HTMLページを dist/ に生成する。
@@ -23,9 +23,11 @@ from pathlib import Path
 from itertools import combinations
 
 OUT = Path("dist")
-SITE_NAME = "ブツリ単位ラボ"
+SITE_NAME = "タンブツ"
+SITE_TAGLINE = "単位で物理を考える"
+SITE_FULL = f"{SITE_NAME}〜{SITE_TAGLINE}〜"
 SITE_URL = "https://tanitani.butsuri-lab.workers.dev"  # ★独自ドメイン取得後に変更
-ASSET_VER = "11"  # CSS/JS を変えたら上げる（ブラウザのキャッシュ対策）
+ASSET_VER = "12"  # CSS/JS を変えたら上げる（ブラウザのキャッシュ対策）
 UPDATED = "2026-10-18"  # 最終更新日（内容を更新したら変える）
 GOOGLE_VERIFICATION = "kVE91IWkP86K1E_JpBQDklXXu5gz86ZOA64xcgtDUwc"  # Search Console 所有権確認
 SITE_DESC = "物理の計算で出した答えが正しいかを、答えの単位で確かめるためのサイト。検算の手順、よくあるミス、トレーニング、単位辞典。"
@@ -335,7 +337,10 @@ header.site{position:sticky;top:0;z-index:30;height:var(--hdr);background:color-
 header.site .wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:.5rem}
 .logo{display:flex;align-items:center;gap:.5rem;font-weight:700;color:var(--fg);font-size:1.02rem}
 .logo:hover{text-decoration:none}
-.logo .mark{display:grid;place-items:center;width:30px;height:30px;border-radius:7px;background:var(--accent);color:#fff;font-family:'IBM Plex Mono',monospace;font-size:.78rem;font-weight:600}
+.logo .mark{display:grid;place-items:center;width:32px;height:32px;border-radius:8px;background:var(--accent);color:#fff;font-size:1rem;font-weight:700;flex:none}
+.logo .lt{display:flex;flex-direction:column;line-height:1.15}
+.logo .ln{font-size:1.08rem;font-weight:700;letter-spacing:.04em}
+.logo .ls{font-size:.68rem;font-weight:400;color:var(--dim)}
 .hdr-nav{display:flex;align-items:center;gap:.15rem}
 .hdr-nav .txt{color:var(--dim);font-size:.88rem;padding:.4rem .6rem;border-radius:6px}
 .hdr-nav .txt:hover{color:var(--fg);background:var(--code);text-decoration:none}
@@ -700,12 +705,13 @@ def page(path, title, desc, body, crumbs=(), noindex=False):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{E(title)} | {SITE_NAME}</title>
+<title>{E(title) if path == "/" else E(title) + " | " + SITE_NAME}</title>
 <meta name="description" content="{E(desc)}">
 <link rel="canonical" href="{SITE_URL}{path}">
 {'<meta name="robots" content="noindex,follow">' if noindex else ''}
 <meta name="google-site-verification" content="{GOOGLE_VERIFICATION}">
 <meta name="theme-color" content="#1d5fd1">
+<meta property="og:site_name" content="{SITE_FULL}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -715,7 +721,7 @@ def page(path, title, desc, body, crumbs=(), noindex=False):
 <body>
 <a class="skip" href="#main">本文へ移動</a>
 <header class="site"><div class="wrap">
-  <a class="logo" href="/"><span class="mark">SI</span>{SITE_NAME}</a>
+  <a class="logo" href="/"><span class="mark">単</span><span class="lt"><span class="ln">{SITE_NAME}</span><span class="ls">〜{SITE_TAGLINE}〜</span></span></a>
   <nav class="hdr-nav" aria-label="メインメニュー">
     <a class="txt" href="/method.html">検算のやり方</a>
     <a class="txt" href="/training/">トレーニング</a>
@@ -731,7 +737,7 @@ def page(path, title, desc, body, crumbs=(), noindex=False):
 <footer class="site"><div class="wrap">
   <div class="links"><a href="/">トップ</a><a href="/method.html">検算のやり方</a><a href="/mistakes/">よくあるミス</a><a href="/training/">検算トレーニング</a><a href="/advanced.html">難関大レベル</a><a href="/guide.html">単位の読み方</a><a href="/about.html">このサイトについて</a><a href="/privacy.html">プライバシーポリシー</a>{foot_links}</div>
   <p class="src">単位の定義は、国際度量衡局（BIPM）の SI パンフレット第9版と、その日本語版（産業技術総合研究所 計量標準総合センター）に基づいています。</p>
-  {SITE_NAME} — 答えの単位で検算して、取れる問題を落とさない。最終更新日：{UPDATED}
+  {SITE_FULL} — 答えの単位で検算して、取れる問題を落とさない。最終更新日：{UPDATED}
 </div></footer>
 <button class="to-top" id="to-top" aria-label="ページの先頭へ戻る">{ICON_UP}</button>
 </body>
@@ -1848,7 +1854,7 @@ def build_index():
         '<p><a href="/guide.html">→ はじめに：単位の読み方</a></p>',
         '<div class="grid cat-cards">' + "".join(cats) + "</div>",
     ]
-    page("/", "答えの単位で検算する物理サイト", "物理の計算で出した答えが正しいかを、答えの単位（次元解析）で確かめるためのサイト。検算の手順、よくあるミス集、検算トレーニング、単位辞典。", "\n".join(b))
+    page("/", f"{SITE_FULL}｜答えの単位で検算する物理サイト", "物理の計算で出した答えが正しいかを、答えの単位（次元解析）で確かめるためのサイト。検算の手順、よくあるミス集、検算トレーニング、単位辞典。", "\n".join(b))
 
 
 def unit_home(sym):
@@ -1934,7 +1940,7 @@ def build_about():
     nq = len(QS); nf = len(FS); nw = sum(1 for q in QS.values() if q.get("words"))
     body = f"""
 <h1>このサイトについて</h1>
-<p class="lead">{E(SITE_NAME)}は、物理の計算で出した答えが正しいかどうかを、<b>答えの単位</b>で確かめられるようになるための学習サイトです。</p>
+<p class="lead">{E(SITE_FULL)}は、物理の計算で出した答えが正しいかどうかを、<b>答えの単位</b>で確かめられるようになるための学習サイトです。</p>
 
 <h2>このサイトを作ったきっかけ</h2>
 <p>予備校時代、数学の先生から「取れる問題を間違えることが、一番ダメージが大きい」と教わりました。

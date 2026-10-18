@@ -15,7 +15,10 @@ header.site{position:sticky;top:0;z-index:30;height:var(--hdr);background:color-
 header.site .wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:.5rem}
 .logo{display:flex;align-items:center;gap:.5rem;font-weight:700;color:var(--fg);font-size:1.02rem}
 .logo:hover{text-decoration:none}
-.logo .mark{display:grid;place-items:center;width:30px;height:30px;border-radius:7px;background:var(--accent);color:#fff;font-family:'IBM Plex Mono',monospace;font-size:.78rem;font-weight:600}
+.logo .mark{display:grid;place-items:center;width:32px;height:32px;border-radius:8px;background:var(--accent);color:#fff;font-size:1rem;font-weight:700;flex:none}
+.logo .lt{display:flex;flex-direction:column;line-height:1.15}
+.logo .ln{font-size:1.08rem;font-weight:700;letter-spacing:.04em}
+.logo .ls{font-size:.68rem;font-weight:400;color:var(--dim)}
 .hdr-nav{display:flex;align-items:center;gap:.15rem}
 .hdr-nav .txt{color:var(--dim);font-size:.88rem;padding:.4rem .6rem;border-radius:6px}
 .hdr-nav .txt:hover{color:var(--fg);background:var(--code);text-decoration:none}
