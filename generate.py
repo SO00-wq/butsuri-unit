@@ -33,7 +33,7 @@ GOOGLE_VERIFICATION = "kVE91IWkP86K1E_JpBQDklXXu5gz86ZOA64xcgtDUwc"  # Search Co
 # お問い合わせ用 Google フォームの URL（https://docs.google.com/forms/d/e/…/viewform）。
 # 空のあいだは /contact.html を作らず、メニューやフッターにも出さない
 CONTACT_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSc4mgljJ1zfMHcoatwqz8IuHBPNrcA_xUbW1lx0Os5xN1dvgA/viewform"
-SITE_DESC = "物理の計算で出した答えが正しいかを、答えの単位で確かめるためのサイト。検算の手順、よくあるミス、トレーニング、単位辞典。"
+SITE_DESC = f"{SITE_NAME}は、物理の計算で出した答えが正しいかを、答えの単位で確かめるためのサイト。検算の手順、よくあるミス、トレーニング、単位辞典。"
 
 DB = json.load(open("data/si_db.json", encoding="utf-8"))
 
@@ -1886,7 +1886,7 @@ def build_index():
         '<p><a href="/guide.html">→ はじめに：単位の読み方</a></p>',
         '<div class="grid cat-cards">' + "".join(cats) + "</div>",
     ]
-    page("/", f"{SITE_FULL}｜答えの単位で検算する物理サイト", "物理の計算で出した答えが正しいかを、答えの単位（次元解析）で確かめるためのサイト。検算の手順、よくあるミス集、検算トレーニング、単位辞典。", "\n".join(b))
+    page("/", f"{SITE_FULL}｜答えの単位で検算する物理サイト", f"{SITE_NAME}（{SITE_TAGLINE}）は、物理の計算で出した答えが正しいかを、答えの単位（次元解析）で確かめるためのサイト。検算の手順、よくあるミス集、検算トレーニング、単位辞典。", "\n".join(b))
 
 
 def unit_home(sym):
@@ -1971,8 +1971,9 @@ def build_guide():
 def build_about():
     nq = len(QS); nf = len(FS); nw = sum(1 for q in QS.values() if q.get("words"))
     body = f"""
-<h1>このサイトについて</h1>
+<h1>{E(SITE_NAME)}について</h1>
 <p class="lead">{E(SITE_FULL)}は、物理の計算で出した答えが正しいかどうかを、<b>答えの単位</b>で確かめられるようになるための学習サイトです。</p>
+<p>2026年10月に、サイト名を「ブツリ単位ラボ」から「{E(SITE_NAME)}」に変えました。</p>
 
 <h2>このサイトを作ったきっかけ</h2>
 <p>予備校時代、数学の先生から「取れる問題を間違えることが、一番ダメージが大きい」と教わりました。
