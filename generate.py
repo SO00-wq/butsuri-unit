@@ -32,7 +32,7 @@ UPDATED = "2026-10-18"  # 最終更新日（内容を更新したら変える）
 GOOGLE_VERIFICATION = "kVE91IWkP86K1E_JpBQDklXXu5gz86ZOA64xcgtDUwc"  # Search Console 所有権確認
 # お問い合わせ用 Google フォームの URL（https://docs.google.com/forms/d/e/…/viewform）。
 # 空のあいだは /contact.html を作らず、メニューやフッターにも出さない
-CONTACT_FORM_URL = ""
+CONTACT_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSc4mgljJ1zfMHcoatwqz8IuHBPNrcA_xUbW1lx0Os5xN1dvgA/viewform"
 SITE_DESC = "物理の計算で出した答えが正しいかを、答えの単位で確かめるためのサイト。検算の手順、よくあるミス、トレーニング、単位辞典。"
 
 DB = json.load(open("data/si_db.json", encoding="utf-8"))
@@ -2101,7 +2101,7 @@ def build_contact():
 <h1>お問い合わせ</h1>
 <p class="lead">内容の誤り、わかりにくい説明、「こんなミスもよくある」という例など、なんでもお知らせください。</p>
 <ul>
-<li>返信が必要な場合は、メールアドレスを入力してください。</li>
+<li>返信が必要な場合は、連絡先のメールアドレスもご記入ください。</li>
 <li>いただいた情報の扱いは<a href="/privacy.html">プライバシーポリシー</a>のとおりです。</li>
 </ul>
 <div class="form-embed"><iframe src="{E(embed)}" title="お問い合わせフォーム" loading="lazy">読み込んでいます…</iframe></div>
