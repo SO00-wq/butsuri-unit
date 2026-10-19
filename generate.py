@@ -27,8 +27,8 @@ SITE_NAME = "タンブツ"
 SITE_TAGLINE = "単位で物理を考える"
 SITE_FULL = f"{SITE_NAME}〜{SITE_TAGLINE}〜"
 SITE_URL = "https://tanbutsu.com"
-ASSET_VER = "13"  # CSS/JS を変えたら上げる（ブラウザのキャッシュ対策）
-UPDATED = "2026-10-18"  # 最終更新日（内容を更新したら変える）
+ASSET_VER = "14"  # CSS/JS を変えたら上げる（ブラウザのキャッシュ対策）
+UPDATED = "2026-10-19"  # 最終更新日（内容を更新したら変える）
 GOOGLE_VERIFICATION = "kVE91IWkP86K1E_JpBQDklXXu5gz86ZOA64xcgtDUwc"  # Search Console 所有権確認
 # お問い合わせ用 Google フォームの URL（https://docs.google.com/forms/d/e/…/viewform）。
 # 空のあいだは /contact.html を作らず、メニューやフッターにも出さない
@@ -40,8 +40,14 @@ DB = json.load(open("data/si_db.json", encoding="utf-8"))
 BASE_SYMS = ["kg", "m", "s", "A", "K", "mol", "cd"]
 DISPLAY_ORDER = ["kg", "m", "A", "s", "K", "mol", "cd"]  # 表示の並び（A·s のように書く）
 DIM_LABELS = DB["dimension_labels"]
+DIM_NAMES = ["質量", "長さ", "時間", "電流", "温度", "物質量", "光度"]
 UNITS = {u["symbol"]: u for u in DB["units"]}
 UDIMS = {s: tuple(Fr(x) for x in u["dims"]) for s, u in UNITS.items()}
+USLUG = {"kg": "kilogram", "m": "metre", "s": "second", "A": "ampere", "K": "kelvin", "mol": "mole", "cd": "candela",
+         "rad": "radian", "sr": "steradian", "Hz": "hertz", "N": "newton", "Pa": "pascal", "J": "joule", "W": "watt",
+         "C": "coulomb", "V": "volt", "F": "farad", "Ω": "ohm", "S": "siemens", "Wb": "weber", "T": "tesla",
+         "H": "henry", "lm": "lumen", "lx": "lux", "Bq": "becquerel", "Gy": "gray", "Sv": "sievert", "kat": "katal"}
+assert set(USLUG) == set(UNITS), set(UNITS) ^ set(USLUG)
 CATS = {c["id"]: c for c in DB["categories"]}
 QS = {q["id"]: q for q in DB["quantities"]}
 FS = {f["id"]: f for f in DB["formulas"]}
@@ -332,6 +338,7 @@ body{font-family:'Noto Sans JP',system-ui,sans-serif;background:var(--bg);color:
 body.nav-open{overflow:hidden}
 a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+.faq{margin:.5rem 0 1.5rem}.faq dt{font-weight:700;margin-top:1rem}.faq dt::before{content:"Q. ";color:var(--accent)}.faq dd{margin:.3rem 0 0;padding-left:1.6em}
 .form-embed{margin:1rem 0}.form-embed iframe{width:100%;height:1100px;border:1px solid var(--border);border-radius:var(--r);background:#fff}
 .skip{position:absolute;left:-999px;top:0;background:var(--accent);color:#fff;padding:.5rem 1rem;z-index:100}.skip:focus{left:8px;top:8px}
 .wrap{max-width:780px;margin:0 auto;padding:0 16px}
@@ -673,6 +680,7 @@ def drawer_html(path):
     </ul></div>
     <div class="nav-sec"><h4>単位を知る</h4><ul>
       <li><a href="/guide.html"{cur("/guide.html")}>単位の読み方</a></li>
+      <li><a href="/u/"{cur("/u/")}>SI単位の一覧</a></li>
       <li><a href="/about.html"{cur("/about.html")}>このサイトについて</a></li>
       <li><a href="/privacy.html"{cur("/privacy.html")}>プライバシーポリシー</a></li>
       {f'<li><a href="/contact.html"{cur("/contact.html")}>お問い合わせ</a></li>' if CONTACT_FORM_URL else ''}
@@ -767,7 +775,7 @@ def page(path, title, desc, body, crumbs=(), noindex=False):
 {body}
 </div></main>
 <footer class="site"><div class="wrap">
-  <div class="links"><a href="/">トップ</a><a href="/method.html">検算のやり方</a><a href="/mistakes/">よくあるミス</a><a href="/training/">検算トレーニング</a><a href="/advanced.html">難関大レベル</a><a href="/guide.html">単位の読み方</a><a href="/about.html">このサイトについて</a><a href="/privacy.html">プライバシーポリシー</a>{contact_link}{foot_links}</div>
+  <div class="links"><a href="/">トップ</a><a href="/method.html">検算のやり方</a><a href="/mistakes/">よくあるミス</a><a href="/training/">検算トレーニング</a><a href="/advanced.html">難関大レベル</a><a href="/guide.html">単位の読み方</a><a href="/u/">SI単位の一覧</a><a href="/about.html">このサイトについて</a><a href="/privacy.html">プライバシーポリシー</a>{contact_link}{foot_links}</div>
   <p class="src">単位の定義は、国際度量衡局（BIPM）の SI パンフレット第9版と、その日本語版（産業技術総合研究所 計量標準総合センター）に基づいています。</p>
   {SITE_FULL} — 答えの単位で検算して、取れる問題を落とさない。最終更新日：{UPDATED}
 </div></footer>
@@ -797,6 +805,9 @@ def build_assets():
     for f in FS.values():
         idx.append({"y": "公式", "t": f["name"], "s": f["expr"], "u": f"/f/{f['id']}.html",
                     "k": " ".join(QS[x]["name"] for x in f["quantities"]) + " " + CATS[f["category"]]["name"]})
+    for sym, u in UNITS.items():
+        idx.append({"y": "単位", "t": f"{u['name']}（{sym}）", "s": fmt_base(UDIMS[sym]) if UDIMS[sym] != ZERO else "1",
+                    "u": f"/u/{USLUG[sym]}.html", "units": [sym], "k": u["name"]})
     for c in CATS.values():
         idx.append({"y": "分野", "t": c["name"], "s": c["description"], "u": f"/c/{c['id']}.html", "k": ""})
     idx.append({"y": "解説", "t": "単位の読み方と次元解析", "s": "言葉から単位を組み立てる・基本単位・検算", "u": "/guide.html", "k": "次元解析 使い方 ガイド 読み方 基本単位"})
@@ -818,6 +829,9 @@ def build_assets():
 
 PATHS = []       # サイトマップに載せるページ
 ALL_PAGES = []   # 生成したすべてのページ
+
+def ulink(sym, text=None):
+    return f'<a href="/u/{USLUG[sym]}.html">{E(text or UNITS[sym]["name"] + "（" + sym + "）")}</a>'
 
 def qlink(qid):
     return f'<a href="/q/{qid}.html">{E(QS[qid]["name"])}</a>'
@@ -1001,7 +1015,8 @@ def words_section(q):
     if len(q["ud"]) == 1 and named:
         sym = named[0]
         b.append(f'<div class="note unitname"><b>{E(UNITS[sym]["name"])}（{E(sym)}）</b>は、この組み合わせ '
-                 f'<span class="mono">{E(c)}</span> に付けられた名前です。<br>{E(UNITS[sym]["meaning"])}</div>')
+                 f'<span class="mono">{E(c)}</span> に付けられた名前です。<br>{E(UNITS[sym]["meaning"])}'
+                 f'<br>{ulink(sym, "→ " + UNITS[sym]["name"] + "という単位について、くわしく")}</div>')
     elif q["dims"] == ZERO:
         b.append('<div class="note">単位どうしが打ち消しあって何も残りません。だから「次元をもたない量」なのです。</div>')
     else:
@@ -1014,7 +1029,7 @@ def base_section(q):
     return [f"<h2>{E(q['name'])}とは？ 言葉で意味をつかむ</h2>",
             f'<p class="meaning"><b>{E(q["name"])}とは</b>　{E(q["meaning"])}</p>',
             f'<div class="note unitname"><b>{E(UNITS[sym]["name"])}（{E(sym)}）</b>はSIの基本単位のひとつで、'
-            f"ほかの単位に分解できません。<br>{E(UNITS[sym]['meaning'])}</div>",
+            f"ほかの単位に分解できません。<br>{E(UNITS[sym]['meaning'])}<br>{ulink(sym, '→ ' + UNITS[sym]['name'] + 'という単位について、くわしく')}</div>",
             "<p>ほかのすべての単位は、7つの基本単位を「かける」「割る」で組み合わせて作られています。"
             f"{E(q['name'])}を含む単位の例は、下の「{E(q['name'])}が出てくる公式」から見られます。</p>"]
 
@@ -1625,9 +1640,9 @@ def build_quantity(q):
     elif not q["defined_by"]:
         title = f"{q['name']}の単位 {utitle} の意味｜SI基本単位"
     elif u == base:
-        title = f"{q['name']}の単位 {u} の意味を言葉から理解する"
+        title = f"{q['name']}の単位 {u} の意味と次元を言葉から理解する"
     else:
-        title = f"{q['name']}の単位 {utitle} の意味｜基本単位で表すと {base}"
+        title = f"{q['name']}の単位 {utitle} の意味と次元｜基本単位で表すと {base}"
     desc = (f"{q['name']}とは{q['meaning']}その言葉をそのまま単位に置き換えると {u}"
             + (f"（= {base}）" if base != u and d != ZERO else "") + " になる理由を、図式と確認問題でやさしく解説。")
     lvl = q.get("level", "高校")
@@ -1706,6 +1721,7 @@ def build_quantity(q):
     if d != ZERO and base != u:
         summ.append(f"基本単位だけで書くと {base}。")
     b.append('<div class="summary"><b>まとめ</b><ul>' + "".join(f"<li>{E(x)}</li>" for x in summ) + "</ul></div>")
+    b += quantity_faq(q)
 
     b += practice(q)
 
@@ -1715,6 +1731,39 @@ def build_quantity(q):
                  + "".join(qcard(x) for x in nxt[:9]) + "</div>")
 
     page(f"/q/{qid}.html", title, desc, "\n".join(b), [cat_crumb(q["category"]), (q["name"], None)])
+
+
+def faq_html(items):
+    """よくある質問（検索でよく打たれる言い回しをそのまま質問にする）"""
+    if not items:
+        return []
+    return ["<h2>よくある質問</h2>", '<dl class="faq">'
+            + "".join(f"<dt>{q_}</dt><dd>{a_}</dd>" for q_, a_ in items) + "</dl>"]
+
+
+def quantity_faq(q):
+    d, u, base, n = q["dims"], q["unit_str"], fmt_base(q["dims"]), q["name"]
+    items = []
+    if d == ZERO:
+        items.append((f"{E(n)}に単位はある？", f"ありません。単位どうしが打ち消しあうので、{E(n)}は無次元（単位 1）の量です。"))
+        return faq_html(items)
+    named = [s_ for s_ in q["ud"] if len(q["ud"]) == 1]
+    read = f"（{E(UNITS[named[0]]['name'])}）" if named else ""
+    a = f'<span class="mono">{E(u)}</span>{read}です。'
+    if base != u:
+        a += f'基本単位だけで表すと <span class="mono">{E(base)}</span> になります。'
+    items.append((f"{E(n)}の単位は？", a))
+    items.append((f"{E(n)}の次元は？", f'<span class="mono">{E(fmt_dim(d))}</span> です（' + "、".join(f"{DIM_LABELS[i]} は{DIM_NAMES[i]}" for i in range(7) if d[i] != 0) + "）。"))
+    if q.get("words"):
+        eq, _ = word_equation(q)
+        items.append((f"{E(n)}の単位はどうやって覚える？",
+                      f"暗記しなくても、「{E(n)} ＝ {E(eq)}」という意味の言葉に単位を当てはめれば、"
+                      f'<span class="mono">{E(u)}</span> が出てきます。'))
+    same = [x for x in SAME_DIM[d] if x != q["id"]]
+    if same:
+        items.append((f"{E(n)}と同じ単位をもつ量は？",
+                      "、".join(qlink(x) for x in same[:5]) + f"があります。単位が同じでも意味は違うので、検算のときは何を求めているかも確かめましょう。"))
+    return faq_html(items)
 
 
 def combine_words(q):
@@ -1727,7 +1776,7 @@ def combine_words(q):
 
 def build_formula(f):
     cat = CATS[f["category"]]
-    title = f"{f['name']} {f['expr']} を次元解析で確かめる"
+    title = f"{f['name']} {f['expr']} の単位を次元解析で確かめる"
     desc = f"{f['name']}（{f['expr']}）の両辺の単位がSI基本単位で一致することを確かめ、式に出てくる量の単位どうしの関係を読み取る。"
     b = [f'<span class="tag">{E(cat["name"])}</span>', f"<h1>{E(f['name'])}</h1>",
          f'<div class="hero"><div class="big">{E(f["expr"])}</div></div>']
@@ -1897,9 +1946,111 @@ def unit_home(sym):
     return None
 
 
+
+# ─────────────────────────── 単位ページ ───────────────────────────
+
+def unit_title(sym):
+    u = UNITS[sym]
+    if sym in BASE_SYMS:
+        return f"{u['name']}（{sym}）とは？SI基本単位の意味と決め方"
+    if UDIMS[sym] == ZERO:
+        return f"{u['name']}（{sym}）とは？単位なのに次元がない理由"
+    return f"{u['name']}（{sym}）とは？意味と、基本単位で表すと {fmt_base(UDIMS[sym])}"
+
+
+def build_unit(sym):
+    u = UNITS[sym]
+    dd = UDIMS[sym]
+    home = unit_home(sym)
+    base = fmt_base(dd) if dd != ZERO else "1（無次元）"
+    users = [q for q in QS.values() if sym in q["ud"]]
+    kind = "SI基本単位" if sym in BASE_SYMS else "SI組立単位（固有の名称をもつ単位）"
+    b = [f'<span class="tag">{E(kind)}</span>',
+         f"<h1>{E(unit_title(sym))}</h1>",
+         f'<div class="hero"><div class="big">{E(sym)}{"" if sym in BASE_SYMS else " = " + E(base)}</div>'
+         f'<div class="sub">読み方：{E(u["name"])}　次元 {E(fmt_dim(dd))}</div></div>']
+    if home:
+        b.append(f'<p class="lead">{E(u["name"])}（{E(sym)}）は、{qlink(home["id"])}の単位です。{E(home["name"])}とは、{E(home["meaning"])}</p>')
+    b.append(f'<p class="meaning"><b>{E(u["name"])}の決め方</b>　{E(u["meaning"])}</p>')
+
+    if home and home.get("words") and sym not in BASE_SYMS:
+        b.append(f"<h2>なぜ {E(sym)} ＝ {E(base)} になるのか</h2>")
+        b.append(f"<p>{E(home['name'])}を言葉で言い表し、その言葉を単位に置き換えると、{E(sym)} の中身がわかります。</p>")
+        b += [x for x in words_section(home) if x.startswith('<div class="wordeq"') or x.startswith('<div class="calc"')]
+        b.append(f"<p>くわしい説明と確認問題は、{qlink(home['id'])}のページにあります。</p>")
+    elif sym in BASE_SYMS:
+        b.append("<h2>基本単位とは</h2>")
+        b.append("<p>SI（国際単位系）では、m・kg・s・A・K・mol・cd の7つが基本単位です。"
+                 f"ほかのすべての単位は、この7つをかけたり割ったりして作られています。{E(sym)} はそのひとつで、ほかの単位に分解できません。</p>")
+
+    if users:
+        b.append(f"<h2>{E(sym)} を使う量</h2>")
+        b.append('<div class="tbl"><table><tr><th>量</th><th>SI単位</th><th>基本単位で表すと</th></tr>')
+        for q in users:
+            qb = fmt_base(q["dims"]) if q["dims"] != ZERO else "1"
+            b.append(f'<tr><td>{qlink(q["id"])}</td><td class="mono">{E(q["unit_str"])}</td><td class="mono">{E(qb)}</td></tr>')
+        b.append("</table></div>")
+
+    if home and Q_FORMS[home["id"]]:
+        b.append(f"<h2>{E(home['name'])}が出てくる公式</h2><ul>")
+        for fid in Q_FORMS[home["id"]][:10]:
+            b.append(f'<li>{flink(fid)}：<span class="mono">{E(FS[fid]["expr"])}</span></li>')
+        b.append("</ul>")
+
+    rel = [m for m in MISTAKES if home and m["target"][1] == home["id"]]
+    if rel:
+        b.append(f"<h2>答えが {E(sym)} になる問題でよくあるミス</h2><ul>")
+        for m in rel:
+            b.append(f'<li><a href="/mistakes/{m["id"]}.html">{E(m["title"].replace("【見抜けない例】", ""))}</a></li>')
+        b.append("</ul>")
+
+    same = [x for x in UNITS if x != sym and UDIMS[x] == dd and dd != ZERO]
+    faq = []
+    if home:
+        faq.append((f"{E(sym)} は何の単位？", f"{qlink(home['id'])}の単位です。読み方は「{E(u['name'])}」です。"))
+    if sym not in BASE_SYMS and dd != ZERO:
+        faq.append((f"{E(sym)} を基本単位で表すと？", f'<span class="mono">{E(base)}</span> です。'))
+    if same:
+        faq.append((f"{E(sym)} と " + "・".join(E(x) for x in same) + " の違いは？",
+                    "基本単位で表すと同じ " + f'<span class="mono">{E(base)}</span>' + " ですが、表している量が違います。"
+                    + "、".join(f"{E(x)} は{qlink(unit_home(x)['id']) if unit_home(x) else E(UNITS[x]['name'])}" for x in [sym] + same)
+                    + "の単位です。答えの単位が合っていても、何を求めたかは別に確かめましょう。"))
+    if dd == ZERO:
+        faq.append((f"{E(sym)} は単位なのに次元がないのはなぜ？",
+                    "長さ ÷ 長さ、面積 ÷ 面積のような「同じ種類の量の比」で決まるので、単位どうしが打ち消しあうからです。"))
+    b += faq_html(faq)
+
+    b.append('<p><a href="/u/">→ SI単位の一覧を見る</a>　<a href="/guide.html">→ 単位の読み方</a></p>')
+    desc = (f"{u['name']}（{sym}）の意味と決め方" + ("" if sym in BASE_SYMS else f"、基本単位で表すと {base} になる理由") +
+            f"。{u['meaning']}")
+    page(f"/u/{USLUG[sym]}.html", unit_title(sym), desc, "\n".join(b),
+         [("SI単位の一覧", "/u/"), (f"{u['name']}（{sym}）", None)])
+
+
+def build_unit_index():
+    def rows(syms):
+        return "".join(
+            f'<tr><td class="mono">{E(x)}</td><td>{ulink(x, UNITS[x]["name"])}</td>'
+            f'<td>{qlink(unit_home(x)["id"]) if unit_home(x) else ""}</td>'
+            f'<td class="mono">{E(fmt_base(UDIMS[x]) if UDIMS[x] != ZERO else "1（無次元）")}</td></tr>'
+            for x in syms)
+    head = "<tr><th>記号</th><th>読み方</th><th>量</th><th>基本単位で表すと</th></tr>"
+    derived = [x for x in UNITS if x not in BASE_SYMS]
+    b = ["<h1>SI単位の一覧：基本単位と組立単位を基本単位で表す</h1>",
+         '<p class="lead">SI（国際単位系）の7つの基本単位と、固有の名前をもつ組立単位の一覧です。'
+         "名前のついた単位も、基本単位のかけ算・わり算に直せます。答えの単位で検算するときの早見表として使ってください。</p>",
+         "<h2>7つの基本単位</h2>", f'<div class="tbl"><table>{head}{rows(BASE_SYMS)}</table></div>',
+         f"<h2>固有の名前をもつ組立単位（{len(derived)}個）</h2>", f'<div class="tbl"><table>{head}{rows(derived)}</table></div>',
+         "<p>記号をクリックすると、その単位の意味と、なぜその組み合わせになるのかを説明したページが開きます。</p>",
+         '<p><a href="/guide.html">→ 単位の読み方：言葉の意味から単位を組み立てる</a></p>']
+    page("/u/", "SI単位の一覧｜基本単位と組立単位を基本単位で表すと",
+         f"SIの7つの基本単位と、ニュートン・ジュール・ボルト・テスラなど{len(derived)}個の組立単位を、基本単位（kg・m・s・A など）で表した一覧表。",
+         "\n".join(b), [("SI単位の一覧", None)])
+
+
 def build_guide():
     base_rows = "".join(
-        f'<tr><td class="mono">{E(sym)}</td><td>{E(UNITS[sym]["name"])}</td>'
+        f'<tr><td class="mono">{E(sym)}</td><td>{ulink(sym, UNITS[sym]["name"])}</td>'
         f'<td>{qlink(unit_home(sym)["id"]) if unit_home(sym) else ""}</td><td>{E(UNITS[sym]["meaning"])}</td></tr>'
         for sym in ["m", "kg", "s", "A", "K", "mol", "cd"])
     named = [sym for sym in UNITS if sym not in BASE_SYMS]
@@ -1907,7 +2058,7 @@ def build_guide():
     for sym in named:
         hq = unit_home(sym)
         bse = fmt_base(UDIMS[sym]) if UDIMS[sym] != ZERO else "1（無次元）"
-        named_rows.append(f'<tr><td class="mono">{E(sym)}</td><td>{qlink(hq["id"]) if hq else E(UNITS[sym]["name"])}</td>'
+        named_rows.append(f'<tr><td class="mono">{ulink(sym, sym)}</td><td>{qlink(hq["id"]) if hq else E(UNITS[sym]["name"])}</td>'
                           f'<td>{E(UNITS[sym]["meaning"])}</td><td class="mono">{E(bse)}</td></tr>')
     body = f"""
 <h1>単位の読み方：言葉の意味から単位を組み立てる</h1>
@@ -2134,7 +2285,7 @@ def copy_static():
 
 
 def build_sitemap():
-    urls = "\n".join(f"  <url><loc>{SITE_URL}{p}</loc></url>" for p in PATHS)
+    urls = "\n".join(f"  <url><loc>{SITE_URL}{p}</loc><lastmod>{UPDATED}</lastmod></url>" for p in PATHS)
     (OUT / "sitemap.xml").write_text(
         f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}\n</urlset>\n',
         encoding="utf-8")
@@ -2159,6 +2310,9 @@ def main():
         build_mistake(m)
     build_training()
     build_advanced()
+    build_unit_index()
+    for sym in UNITS:
+        build_unit(sym)
     for c in CATS.values():
         build_category(c)
     for q in QS.values():

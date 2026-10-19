@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ケルビン（K）とは？SI基本単位の意味と決め方 | タンブツ</title>
+<meta name="description" content="ケルビン（K）の意味と決め方。ボルツマン定数をもとに、温度とエネルギーを結びつけて決められている。">
+<link rel="canonical" href="https://tanbutsu.com/u/kelvin.html">
+
+<meta name="google-site-verification" content="kVE91IWkP86K1E_JpBQDklXXu5gz86ZOA64xcgtDUwc">
+<meta name="theme-color" content="#1d5fd1">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta property="og:site_name" content="タンブツ〜単位で物理を考える〜">
+<meta property="og:title" content="ケルビン（K）とは？SI基本単位の意味と決め方 | タンブツ">
+<meta property="og:description" content="ケルビン（K）の意味と決め方。ボルツマン定数をもとに、温度とエネルギーを結びつけて決められている。">
+<meta property="og:url" content="https://tanbutsu.com/u/kelvin.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://tanbutsu.com/assets/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "トップ", "item": "https://tanbutsu.com/"}, {"@type": "ListItem", "position": 2, "name": "SI単位の一覧", "item": "https://tanbutsu.com/u/"}, {"@type": "ListItem", "position": 3, "name": "ケルビン（K）", "item": "https://tanbutsu.com/u/kelvin.html"}]}</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css?v=14">
+<script src="/assets/site.js?v=14" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+<header class="site"><div class="wrap">
+  <a class="logo" href="/"><span class="mark">単</span><span class="lt"><span class="ln">タンブツ</span><span class="ls">〜単位で物理を考える〜</span></span></a>
+  <nav class="hdr-nav" aria-label="メインメニュー">
+    <a class="txt" href="/method.html">検算のやり方</a>
+    <a class="txt" href="/training/">トレーニング</a>
+    <button class="icon-btn" data-open-search aria-label="検索"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
+    <button class="icon-btn" id="menu-btn" aria-label="メニューを開く" aria-controls="drawer" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </nav>
+</div></header>
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" inert aria-label="メニュー">
+  <div class="drawer-head">メニュー<button class="icon-btn" id="close-btn" aria-label="メニューを閉じる"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <div class="drawer-body">
+    <div class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="q" type="search" placeholder="量・単位・公式を検索（例：電圧、J/K）" autocomplete="off" aria-label="サイト内検索"></div>
+    <div class="search-hint">名前でも単位記号でも探せます。</div>
+    <ul class="results" id="results" aria-live="polite"></ul>
+    <div class="nav-sec"><h4>検算する</h4><ul>
+      <li><a href="/">トップ</a></li>
+      <li><a href="/method.html">検算のやり方</a></li>
+      <li><a href="/mistakes/">よくあるミス集</a></li>
+      <li><a href="/training/">検算トレーニング</a></li>
+      <li><a href="/advanced.html">難関大レベル</a></li>
+    </ul></div>
+    <div class="nav-sec"><h4>単位を知る</h4><ul>
+      <li><a href="/guide.html">単位の読み方</a></li>
+      <li><a href="/u/">SI単位の一覧</a></li>
+      <li><a href="/about.html">このサイトについて</a></li>
+      <li><a href="/privacy.html">プライバシーポリシー</a></li>
+      <li><a href="/contact.html">お問い合わせ</a></li>
+    </ul></div>
+    <div class="nav-sec"><h4>単位辞典（分野別）</h4><ul><li><a href="/c/base.html">基本量<span class="n">10量</span></a></li><li><a href="/c/mech.html">力学<span class="n">28量</span></a></li><li><a href="/c/thermo.html">熱・気体<span class="n">12量</span></a></li><li><a href="/c/em.html">電磁気<span class="n">34量</span></a></li><li><a href="/c/wave.html">波・光・量子<span class="n">6量</span></a></li><li><a href="/c/misc.html">放射線・化学<span class="n">4量</span></a></li></ul></div>
+    <div class="nav-sec"><h4>よく調べる単位</h4><div class="chips"><a href="/q/velocity.html">速度</a><a href="/q/acceleration.html">加速度</a><a href="/q/force.html">力</a><a href="/q/energy.html">エネルギー</a><a href="/q/power.html">仕事率</a><a href="/q/pressure.html">圧力</a><a href="/q/voltage.html">電圧</a><a href="/q/resistance.html">電気抵抗</a><a href="/q/capacitance.html">静電容量</a><a href="/q/spring_constant.html">ばね定数</a></div></div>
+  </div>
+</aside>
+<main id="main"><div class="wrap">
+<nav class="bc" aria-label="パンくずリスト"><a href="/">トップ</a> › <a href="/u/">SI単位の一覧</a> › ケルビン（K）</nav>
+<span class="tag">SI基本単位</span>
+<h1>ケルビン（K）とは？SI基本単位の意味と決め方</h1>
+<div class="hero"><div class="big"><math><mstyle displaystyle="true"><mi mathvariant="normal">K</mi></mstyle></math></div><div class="sub">読み方：ケルビン　次元 [Θ]</div></div>
+<p class="lead">ケルビン（K）は、<a href="/q/temperature.html">温度（熱力学温度）</a>の単位です。温度（熱力学温度）とは、物体を作る粒子の、でたらめな運動の激しさの目安。</p>
+<p class="meaning"><b>ケルビンの決め方</b>　ボルツマン定数をもとに、温度とエネルギーを結びつけて決められている。</p>
+<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">基本単位とは</a><a href="#s2">K を使う量</a><a href="#s3">温度（熱力学温度）が出てくる公式</a><a href="#s4">答えが K になる問題でよくあるミス</a><a href="#s5">よくある質問</a></div></nav><h2 id="s1">基本単位とは</h2>
+<p>SI（国際単位系）では、m・kg・s・A・K・mol・cd の7つが基本単位です。ほかのすべての単位は、この7つをかけたり割ったりして作られています。K はそのひとつで、ほかの単位に分解できません。</p>
+<h2 id="s2">K を使う量</h2>
+<div class="tbl"><table><tr><th>量</th><th>SI単位</th><th>基本単位で表すと</th></tr>
+<tr><td><a href="/q/temperature.html">温度（熱力学温度）</a></td><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">K</mi></mstyle></math></td><td class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">K</mi></mstyle></math></td></tr>
+<tr><td><a href="/q/heat_capacity.html">熱容量</a></td><td class="mono"><math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">J</mi></mrow><mrow><mi mathvariant="normal">K</mi></mrow></mfrac></mstyle></math></td><td class="mono"><math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup><mo>·</mo><mi mathvariant="normal">K</mi></mrow></mfrac></mstyle></math></td></tr>
+<tr><td><a href="/q/specific_heat.html">比熱（比熱容量）</a></td><td class="mono"><math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">J</mi></mrow><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><mi mathvariant="normal">K</mi></mrow></mfrac></mstyle></math></td><td class="mono"><math><mstyle displaystyle="true"><mfrac><mrow><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup><mo>·</mo><mi mathvariant="normal">K</mi></mrow></mfrac></mstyle></math></td></tr>
+<tr><td><a href="/q/entropy.html">エントロピー</a></td><td class="mono"><math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">J</mi></mrow><mrow><mi mathvariant="normal">K</mi></mrow></mfrac></mstyle></math></td><td class="mono"><math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup><mo>·</mo><mi mathvariant="normal">K</mi></mrow></mfrac></mstyle></math></td></tr>
+<tr><td><a href="/q/gas_constant.html">気体定数</a></td><td class="mono"><math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">J</mi></mrow><mrow><mi mathvariant="normal">mol</mi><mo>·</mo><mi mathvariant="normal">K</mi></mrow></mfrac></mstyle></math></td><td class="mono"><math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup><mo>·</mo><mi mathvariant="normal">K</mi><mo>·</mo><mi mathvariant="normal">mol</mi></mrow></mfrac></mstyle></math></td></tr>
+<tr><td><a href="/q/boltzmann.html">ボルツマン定数</a></td><td class="mono"><math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">J</mi></mrow><mrow><mi mathvariant="normal">K</mi></mrow></mfrac></mstyle></math></td><td class="mono"><math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup><mo>·</mo><mi mathvariant="normal">K</mi></mrow></mfrac></mstyle></math></td></tr>
+<tr><td><a href="/q/thermal_conductivity.html">熱伝導率</a></td><td class="mono"><math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">W</mi></mrow><mrow><mi mathvariant="normal">m</mi><mo>·</mo><mi mathvariant="normal">K</mi></mrow></mfrac></mstyle></math></td><td class="mono"><math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><mi mathvariant="normal">m</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>3</mn></msup><mo>·</mo><mi mathvariant="normal">K</mi></mrow></mfrac></mstyle></math></td></tr>
+<tr><td><a href="/q/stefan_boltzmann.html">シュテファン＝ボルツマン定数</a></td><td class="mono"><math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">W</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup><mo>·</mo><msup><mrow><mi mathvariant="normal">K</mi></mrow><mn>4</mn></msup></mrow></mfrac></mstyle></math></td><td class="mono"><math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">kg</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>3</mn></msup><mo>·</mo><msup><mrow><mi mathvariant="normal">K</mi></mrow><mn>4</mn></msup></mrow></mfrac></mstyle></math></td></tr>
+<tr><td><a href="/q/molar_heat_capacity.html">モル比熱</a></td><td class="mono"><math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">J</mi></mrow><mrow><mi mathvariant="normal">mol</mi><mo>·</mo><mi mathvariant="normal">K</mi></mrow></mfrac></mstyle></math></td><td class="mono"><math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup><mo>·</mo><mi mathvariant="normal">K</mi><mo>·</mo><mi mathvariant="normal">mol</mi></mrow></mfrac></mstyle></math></td></tr>
+</table></div>
+<h2 id="s3">温度（熱力学温度）が出てくる公式</h2><ul>
+<li><a href="/f/heat_cap.html">熱容量</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">Q</mi><mo>=</mo><mi mathvariant="normal">C</mi><mi mathvariant="normal">ΔT</mi></mstyle></math></span></li>
+<li><a href="/f/spec_heat.html">比熱</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">Q</mi><mo>=</mo><mi mathvariant="normal">m</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">ΔT</mi></mstyle></math></span></li>
+<li><a href="/f/entropy.html">エントロピー変化</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">ΔS</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">Q</mi></mrow><mrow><mi mathvariant="normal">T</mi></mrow></mfrac></mstyle></math></span></li>
+<li><a href="/f/ideal_gas.html">理想気体の状態方程式</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">p</mi><mi mathvariant="normal">V</mi><mo>=</mo><mi mathvariant="normal">n</mi><mi mathvariant="normal">R</mi><mi mathvariant="normal">T</mi></mstyle></math></span></li>
+<li><a href="/f/ideal_gas_k.html">理想気体の状態方程式（分子数）</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">p</mi><mi mathvariant="normal">V</mi><mo>=</mo><mi mathvariant="normal">N</mi><msub><mrow><mi mathvariant="normal">k</mi></mrow><mi mathvariant="normal">B</mi></msub><mi mathvariant="normal">T</mi></mstyle></math></span></li>
+<li><a href="/f/kinetic_temp.html">分子の平均運動エネルギー</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">E</mi><mo>=</mo><mfrac><mrow><mn>3</mn></mrow><mrow><mn>2</mn></mrow></mfrac><msub><mrow><mi mathvariant="normal">k</mi></mrow><mi mathvariant="normal">B</mi></msub><mi mathvariant="normal">T</mi></mstyle></math></span></li>
+<li><a href="/f/fourier.html">熱伝導（フーリエの法則）</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">P</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">λ</mi><mi mathvariant="normal">S</mi><mi mathvariant="normal">ΔT</mi></mrow><mrow><mi mathvariant="normal">d</mi></mrow></mfrac></mstyle></math></span></li>
+<li><a href="/f/stefan.html">シュテファン＝ボルツマンの法則</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">P</mi><mo>=</mo><mi mathvariant="normal">σ</mi><mi mathvariant="normal">S</mi><msup><mrow><mi mathvariant="normal">T</mi></mrow><mn>4</mn></msup></mstyle></math></span></li>
+<li><a href="/f/molar_heat.html">モル比熱</a>：<span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">Q</mi><mo>=</mo><mi mathvariant="normal">n</mi><mi mathvariant="normal">C</mi><mi mathvariant="normal">ΔT</mi></mstyle></math></span></li>
+</ul>
+<h2 id="s4">答えが K になる問題でよくあるミス</h2><ul>
+<li><a href="/mistakes/gas_temperature.html">状態方程式を解くときに分子と分母を逆にする</a></li>
+<li><a href="/mistakes/heat_temperature_rise.html">温度上昇で比熱をかけてしまう</a></li>
+</ul>
+<h2 id="s5">よくある質問</h2>
+<dl class="faq"><dt>K は何の単位？</dt><dd><a href="/q/temperature.html">温度（熱力学温度）</a>の単位です。読み方は「ケルビン」です。</dd></dl>
+<p><a href="/u/">→ SI単位の一覧を見る</a>　<a href="/guide.html">→ 単位の読み方</a></p>
+</div></main>
+<footer class="site"><div class="wrap">
+  <div class="links"><a href="/">トップ</a><a href="/method.html">検算のやり方</a><a href="/mistakes/">よくあるミス</a><a href="/training/">検算トレーニング</a><a href="/advanced.html">難関大レベル</a><a href="/guide.html">単位の読み方</a><a href="/u/">SI単位の一覧</a><a href="/about.html">このサイトについて</a><a href="/privacy.html">プライバシーポリシー</a><a href="/contact.html">お問い合わせ</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>
+  <p class="src">単位の定義は、国際度量衡局（BIPM）の SI パンフレット第9版と、その日本語版（産業技術総合研究所 計量標準総合センター）に基づいています。</p>
+  タンブツ〜単位で物理を考える〜 — 答えの単位で検算して、取れる問題を落とさない。最終更新日：2026-10-19
+</div></footer>
+<button class="to-top" id="to-top" aria-label="ページの先頭へ戻る"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></button>
+</body>
+</html>

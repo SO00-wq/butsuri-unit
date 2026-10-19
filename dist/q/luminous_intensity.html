@@ -27,8 +27,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=13">
-<script src="/assets/site.js?v=13" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=14">
+<script src="/assets/site.js?v=14" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -57,6 +57,7 @@
     </ul></div>
     <div class="nav-sec"><h4>単位を知る</h4><ul>
       <li><a href="/guide.html">単位の読み方</a></li>
+      <li><a href="/u/">SI単位の一覧</a></li>
       <li><a href="/about.html">このサイトについて</a></li>
       <li><a href="/privacy.html">プライバシーポリシー</a></li>
       <li><a href="/contact.html">お問い合わせ</a></li>
@@ -74,9 +75,9 @@
 <div class="sub">次元 [J]</div></div>
 <div class="checkbox"><b>検算のポイント</b><p>答えが光度なら、右辺の単位は <span class="mono ok"><math><mstyle displaystyle="true"><mi mathvariant="normal">cd</mi></mstyle></math></span> になっているはず。ならなければ、どこかが間違っています。</p></div>
 <div class="goals"><b>このページでわかること</b><ul><li>光度を言葉でどう言い表すか</li><li>基本単位 cd がどのように決められているか</li></ul></div>
-<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">光度とは？ 言葉で意味をつかむ</a><a href="#s2">よくある間違い：同じ単位でも別の量</a><a href="#s3">光度が出てくる公式</a><a href="#s4">次に読む：光度を使って表される量</a></div></nav><h2 id="s1">光度とは？ 言葉で意味をつかむ</h2>
+<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">光度とは？ 言葉で意味をつかむ</a><a href="#s2">よくある間違い：同じ単位でも別の量</a><a href="#s3">光度が出てくる公式</a><a href="#s4">よくある質問</a><a href="#s5">次に読む：光度を使って表される量</a></div></nav><h2 id="s1">光度とは？ 言葉で意味をつかむ</h2>
 <p class="meaning"><b>光度とは</b>　ある方向へ向かう光の明るさを、人の目の感じ方で重みづけした量。</p>
-<div class="note unitname"><b>カンデラ（cd）</b>はSIの基本単位のひとつで、ほかの単位に分解できません。<br>ある決まった振動数の光が、ある方向へどれだけの明るさで出ているかで決められている。</div>
+<div class="note unitname"><b>カンデラ（cd）</b>はSIの基本単位のひとつで、ほかの単位に分解できません。<br>ある決まった振動数の光が、ある方向へどれだけの明るさで出ているかで決められている。<br><a href="/u/candela.html">→ カンデラという単位について、くわしく</a></div>
 <p>ほかのすべての単位は、7つの基本単位を「かける」「割る」で組み合わせて作られています。光度を含む単位の例は、下の「光度が出てくる公式」から見られます。</p>
 <h2 id="s2">よくある間違い：同じ単位でも別の量</h2>
 <p>次の量は 光度 と次元 [J] が同じです。単位が一致しても意味が違うことがあるので、検算のときは「何を表す量か」も確かめましょう。</p><ul>
@@ -86,12 +87,14 @@
 <li><a href="/f/lum_flux.html">光束と光度</a>：<span class="mono"><math><mstyle displaystyle="true"><msub><mrow><mi mathvariant="normal">Φ</mi></mrow><mi mathvariant="normal">v</mi></msub><mo>=</mo><msub><mrow><mi mathvariant="normal">I</mi></mrow><mi mathvariant="normal">v</mi></msub><mi mathvariant="normal">Ω</mi></mstyle></math></span></li>
 </ul>
 <div class="summary"><b>まとめ</b><ul><li>光度とは、ある方向へ向かう光の明るさを、人の目の感じ方で重みづけした量。</li></ul></div>
-<h2 id="s4">次に読む：光度を使って表される量</h2><div class="grid"><a href="/q/luminous_flux.html">光束<div class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">lm</mi></mstyle></math></div></a></div>
+<h2 id="s4">よくある質問</h2>
+<dl class="faq"><dt>光度の単位は？</dt><dd><span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">cd</mi></mstyle></math></span>（カンデラ）です。</dd><dt>光度の次元は？</dt><dd><span class="mono">[<math><mstyle displaystyle="true"><mi mathvariant="normal">J</mi></mstyle></math>]</span> です（J は光度）。</dd><dt>光度と同じ単位をもつ量は？</dt><dd><a href="/q/luminous_flux.html">光束</a>があります。単位が同じでも意味は違うので、検算のときは何を求めているかも確かめましょう。</dd></dl>
+<h2 id="s5">次に読む：光度を使って表される量</h2><div class="grid"><a href="/q/luminous_flux.html">光束<div class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">lm</mi></mstyle></math></div></a></div>
 </div></main>
 <footer class="site"><div class="wrap">
-  <div class="links"><a href="/">トップ</a><a href="/method.html">検算のやり方</a><a href="/mistakes/">よくあるミス</a><a href="/training/">検算トレーニング</a><a href="/advanced.html">難関大レベル</a><a href="/guide.html">単位の読み方</a><a href="/about.html">このサイトについて</a><a href="/privacy.html">プライバシーポリシー</a><a href="/contact.html">お問い合わせ</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>
+  <div class="links"><a href="/">トップ</a><a href="/method.html">検算のやり方</a><a href="/mistakes/">よくあるミス</a><a href="/training/">検算トレーニング</a><a href="/advanced.html">難関大レベル</a><a href="/guide.html">単位の読み方</a><a href="/u/">SI単位の一覧</a><a href="/about.html">このサイトについて</a><a href="/privacy.html">プライバシーポリシー</a><a href="/contact.html">お問い合わせ</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>
   <p class="src">単位の定義は、国際度量衡局（BIPM）の SI パンフレット第9版と、その日本語版（産業技術総合研究所 計量標準総合センター）に基づいています。</p>
-  タンブツ〜単位で物理を考える〜 — 答えの単位で検算して、取れる問題を落とさない。最終更新日：2026-10-18
+  タンブツ〜単位で物理を考える〜 — 答えの単位で検算して、取れる問題を落とさない。最終更新日：2026-10-19
 </div></footer>
 <button class="to-top" id="to-top" aria-label="ページの先頭へ戻る"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></button>
 </body>
