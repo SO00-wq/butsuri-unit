@@ -23,3 +23,9 @@ python generate.py
 - `make_images.py` で `static/`（favicon、ホーム画面用アイコン、SNS共有画像 ogp.png）を作る。`generate.py` が `static/` を `dist/` にそのままコピーする
 - お問い合わせページは、`generate.py` の `CONTACT_FORM_URL` に Google フォームの URL を入れると自動で作られ、メニュー・フッター・プライバシーポリシーからリンクされる
 - `src/index.js`：tanbutsu.com 以外のホストからの 301 転送、安全のためのヘッダー、キャッシュ設定。存在しないページは `dist/404.html` を返す
+
+## 代入で検算（/checks/）
+
+- `data/make_checks.py` に定番問題を書き、`python data/make_checks.py` で `data/checks.json` を作る
+- ビルド時に自動で確かめること：答えと誤答の単位が求めたい量と一致する、(m₁+m₂) などの和の中の項の単位がそろう、指数の肩が無次元、
+  各代入ケースで答えが期待どおりの値になる（0 や ∞ は数値で近似）、誤答が指定したケースで見抜ける

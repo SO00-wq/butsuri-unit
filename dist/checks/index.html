@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>代入で検算する方法｜0・∞・90°を入れて物理の答えを確かめる | タンブツ</title>
+<meta name="description" content="物理の答えに 0・∞・90°・等しい値などを代入して確かめる検算の方法。アトウッドの器械、斜面、衝突、直列・並列、RC回路、ドップラー効果など定番問題で、単位の検算と組み合わせて解説。">
+<link rel="canonical" href="https://tanbutsu.com/checks/">
+
+<meta name="google-site-verification" content="kVE91IWkP86K1E_JpBQDklXXu5gz86ZOA64xcgtDUwc">
+<meta name="theme-color" content="#1d5fd1">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta property="og:site_name" content="タンブツ〜単位で物理を考える〜">
+<meta property="og:title" content="代入で検算する方法｜0・∞・90°を入れて物理の答えを確かめる | タンブツ">
+<meta property="og:description" content="物理の答えに 0・∞・90°・等しい値などを代入して確かめる検算の方法。アトウッドの器械、斜面、衝突、直列・並列、RC回路、ドップラー効果など定番問題で、単位の検算と組み合わせて解説。">
+<meta property="og:url" content="https://tanbutsu.com/checks/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://tanbutsu.com/assets/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "トップ", "item": "https://tanbutsu.com/"}, {"@type": "ListItem", "position": 2, "name": "代入で検算", "item": "https://tanbutsu.com/checks/"}]}</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css?v=16">
+<script src="/assets/site.js?v=16" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+<header class="site"><div class="wrap">
+  <a class="logo" href="/"><span class="mark">単</span><span class="lt"><span class="ln">タンブツ</span><span class="ls">〜単位で物理を考える〜</span></span></a>
+  <nav class="hdr-nav" aria-label="メインメニュー">
+    <a class="txt" href="/method.html">検算のやり方</a>
+    <a class="txt" href="/training/">トレーニング</a>
+    <button class="icon-btn" data-open-search aria-label="検索"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
+    <button class="icon-btn" id="menu-btn" aria-label="メニューを開く" aria-controls="drawer" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </nav>
+</div></header>
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" inert aria-label="メニュー">
+  <div class="drawer-head">メニュー<button class="icon-btn" id="close-btn" aria-label="メニューを閉じる"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <div class="drawer-body">
+    <div class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="q" type="search" placeholder="量・単位・公式を検索（例：電圧、J/K）" autocomplete="off" aria-label="サイト内検索"></div>
+    <div class="search-hint">名前でも単位記号でも探せます。</div>
+    <ul class="results" id="results" aria-live="polite"></ul>
+    <div class="nav-sec"><h4>検算する</h4><ul>
+      <li><a href="/">トップ</a></li>
+      <li><a href="/method.html">検算のやり方</a></li>
+      <li><a href="/mistakes/">よくあるミス集</a></li>
+      <li><a href="/training/">検算トレーニング</a></li>
+      <li><a href="/checks/" aria-current="page">代入で検算</a></li>
+      <li><a href="/advanced.html">難関大レベル</a></li>
+    </ul></div>
+    <div class="nav-sec"><h4>単位を知る</h4><ul>
+      <li><a href="/guide.html">単位の読み方</a></li>
+      <li><a href="/u/">SI単位の一覧</a></li>
+      <li><a href="/about.html">このサイトについて</a></li>
+      <li><a href="/privacy.html">プライバシーポリシー</a></li>
+      <li><a href="/contact.html">お問い合わせ</a></li>
+    </ul></div>
+    <div class="nav-sec"><h4>単位辞典（分野別）</h4><ul><li><a href="/c/base.html">基本量<span class="n">10量</span></a></li><li><a href="/c/mech.html">力学<span class="n">28量</span></a></li><li><a href="/c/thermo.html">熱・気体<span class="n">12量</span></a></li><li><a href="/c/em.html">電磁気<span class="n">34量</span></a></li><li><a href="/c/wave.html">波・光・量子<span class="n">6量</span></a></li><li><a href="/c/misc.html">放射線・化学<span class="n">4量</span></a></li></ul></div>
+    <div class="nav-sec"><h4>よく調べる単位</h4><div class="chips"><a href="/q/velocity.html">速度</a><a href="/q/acceleration.html">加速度</a><a href="/q/force.html">力</a><a href="/q/energy.html">エネルギー</a><a href="/q/power.html">仕事率</a><a href="/q/pressure.html">圧力</a><a href="/q/voltage.html">電圧</a><a href="/q/resistance.html">電気抵抗</a><a href="/q/capacitance.html">静電容量</a><a href="/q/spring_constant.html">ばね定数</a></div></div>
+  </div>
+</aside>
+<main id="main"><div class="wrap">
+<nav class="bc" aria-label="パンくずリスト"><a href="/">トップ</a> › 代入で検算</nav>
+<h1>代入で検算する：0・∞・90° を入れて答えを確かめる</h1>
+<p class="lead">単位の検算は、式の「形」が合っているかを確かめます。でも、<math><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle></math> の付け忘れや sin と cos の取り違え、符号のミスは見つけられません。そこで使うのが、<b>答えに特別な値を代入する</b>検算です。極端な場合なら、計算しなくても答えがわかるからです。</p>
+<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">代入検算の手順</a><a href="#s2">例：粗い斜面の加速度</a><a href="#s3">よく使う代入のパターン</a><a href="#s4">単位の検算と組み合わせる</a><a href="#s5">力学の定番問題</a><a href="#s6">熱・気体の定番問題</a><a href="#s7">電磁気の定番問題</a><a href="#s8">波・光・量子の定番問題</a></div></nav><h2 id="s1">代入検算の手順</h2>
+<ol class="steps3"><li><b>答えがすぐにわかる極端な場合を探す</b><br>質量を 0 や ∞ に、角度を 0° や 90° に、2つの量を等しく。</li><li><b>その値を答えの式に代入する</b><br>0 や ∞ を入れたときの式の行き先を調べます。</li><li><b>物理的な結果と比べる</b><br><span class="key">1つでも合わなければ、その答えは間違い</span>です。</li></ol>
+<h2 id="s2">例：粗い斜面の加速度</h2>
+<div class="problem"><b>問題</b><p>傾きの角 θ の粗い斜面を、物体がすべり下りている。動摩擦係数を μ′、重力加速度の大きさを g として、斜面に沿って下向きの加速度 a を求めよ。</p></div>
+<div class="answer wrong-ans"><span class="lbl">ありがちな答え</span><span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">a</mi><mo>=</mo><mi mathvariant="normal">g</mi><mo>(</mo><mi mathvariant="normal">cos</mi><mi mathvariant="normal">θ</mi><mo>−</mo><mi mathvariant="normal">μ′</mi><mi mathvariant="normal">sin</mi><mi mathvariant="normal">θ</mi><mo>)</mo></mstyle></math></span></div>
+<p>単位は <math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math> で合っています。でも θ = 0（水平な面）を代入すると a = g。水平な床に置いた物体が、勝手に g で加速することになってしまいます。正しくは <span class="mono ok"><math><mstyle displaystyle="true"><mi mathvariant="normal">a</mi><mo>=</mo><mi mathvariant="normal">g</mi><mo>(</mo><mi mathvariant="normal">sin</mi><mi mathvariant="normal">θ</mi><mo>−</mo><mi mathvariant="normal">μ′</mi><mi mathvariant="normal">cos</mi><mi mathvariant="normal">θ</mi><mo>)</mo></mstyle></math></span>。θ = 0 なら −μ′g（摩擦でブレーキ）、θ = 90° なら g（自由落下）、μ′ = 0 なら g sin θ と、どれも納得できる結果になります。</p>
+<h2 id="s3">よく使う代入のパターン</h2>
+<div class="tbl"><table><tr><th>代入</th><th>何がわかるか</th></tr><tr><td><b>質量・長さを 0 にする</b></td><td>「相手がいない」「片方だけ」の状況になり、自由落下や静止など、答えのわかる問題に戻ります。</td></tr><tr><td><b>質量・抵抗などを ∞ にする</b></td><td>動かない壁、断線、とても重い物体。答えは 0 や、知っている値に近づくはずです。</td></tr><tr><td><b>2つの量を等しくする</b></td><td>m₁ = m₂、R₁ = R₂ など。つり合って 0 になる、ちょうど半分になる、などがすぐわかります。</td></tr><tr><td><b>角度を 0° と 90° にする</b></td><td>水平な面、垂直な壁、真上に投げる。sin と cos の取り違えはここで見つかります。</td></tr><tr><td><b>時間を 0 と ∞ にする</b></td><td>スイッチを入れた瞬間と、十分に時間がたったあと。はじめの状態と最後の状態に合っているか確かめます。</td></tr><tr><td><b>加えたものを「ない」ことにする</b></td><td>摩擦係数 μ = 0、比誘電率 εr = 1、内部抵抗 r = 0。付け加える前の、よく知っている式に戻るはずです。</td></tr><tr><td><b>量を大きくしたときの増減を考える</b></td><td>速く回せば張力は増えるはず、近づけば音は高くなるはず。符号の間違いが見つかります。</td></tr></table></div>
+<div class="note">代入は<b>2つ以上</b>試すのが安全です。1つの代入では、たまたま正しい答えと同じ値になる誤答もあります（<a href="/checks/elastic_collision.html">弾性衝突の例</a>）。</div>
+<h2 id="s4">単位の検算と組み合わせる</h2>
+<div class="tbl"><table><tr><th>見つけられるミス</th><th>単位の検算</th><th>代入の検算</th></tr><tr><td>√ の付け忘れ、2乗の付け忘れ</td><td class="ok">○</td><td>△</td></tr><tr><td>分子と分母の取り違え</td><td class="ok">○</td><td class="ok">○</td></tr><tr><td>係数（<math><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle></math>、2 など）のミス</td><td class="ng">×</td><td class="ok">○（知っている答えと比べる）</td></tr><tr><td>sin と cos の取り違え</td><td class="ng">×</td><td class="ok">○（0° と 90°）</td></tr><tr><td>符号のミス</td><td class="ng">×</td><td class="ok">○（増えるか減るか）</td></tr><tr><td>直列と並列の取り違え</td><td class="ng">×</td><td class="ok">○（0 と ∞）</td></tr></table></div>
+<p>まず単位で形を確かめ、次に代入で中身を確かめる。2つを通った答えは、かなり信頼できます。</p>
+<h2 id="s5">力学の定番問題</h2><div class="grid mcards"><a href="/checks/incline_friction.html"><div class="t">粗い斜面をすべり下りる物体の加速度</div><div class="mk-line"><span class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">a</mi><mo>=</mo><mi mathvariant="normal">g</mi><mo>(</mo><mi mathvariant="normal">sin</mi><mi mathvariant="normal">θ</mi><mo>−</mo><mi mathvariant="normal">μ′</mi><mi mathvariant="normal">cos</mi><mi mathvariant="normal">θ</mi><mo>)</mo></mstyle></math></span></div><div class="d">代入：μ′ = 0／θ = 90°／θ = 0</div></a><a href="/checks/atwood.html"><div class="t">アトウッドの器械（滑車につるした2つのおもり）の加速度</div><div class="mk-line"><span class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">a</mi><mo>=</mo><mfrac><mrow><mo>(</mo><msub><mrow><mi mathvariant="normal">m</mi></mrow><mi mathvariant="normal">1</mi></msub><mo>−</mo><msub><mrow><mi mathvariant="normal">m</mi></mrow><mi mathvariant="normal">2</mi></msub><mo>)</mo><mi mathvariant="normal">g</mi></mrow><mrow><msub><mrow><mi mathvariant="normal">m</mi></mrow><mi mathvariant="normal">1</mi></msub><mo>+</mo><msub><mrow><mi mathvariant="normal">m</mi></mrow><mi mathvariant="normal">2</mi></msub></mrow></mfrac></mstyle></math></span></div><div class="d">代入：m₁ = m₂／m₂ = 0／m₂ → ∞</div></a><a href="/checks/table_pulley.html"><div class="t">水平な台の上の物体と、つるしたおもりの加速度</div><div class="mk-line"><span class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">a</mi><mo>=</mo><mfrac><mrow><msub><mrow><mi mathvariant="normal">m</mi></mrow><mi mathvariant="normal">2</mi></msub><mi mathvariant="normal">g</mi></mrow><mrow><msub><mrow><mi mathvariant="normal">m</mi></mrow><mi mathvariant="normal">1</mi></msub><mo>+</mo><msub><mrow><mi mathvariant="normal">m</mi></mrow><mi mathvariant="normal">2</mi></msub></mrow></mfrac></mstyle></math></span></div><div class="d">代入：m₁ = 0／m₂ = 0／m₁ → ∞</div></a><a href="/checks/elastic_collision.html"><div class="t">静止した物体への弾性衝突（はね飛ばされる側の速さ）</div><div class="mk-line"><span class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">V</mi><mo>=</mo><mfrac><mrow><mn>2</mn><msub><mrow><mi mathvariant="normal">m</mi></mrow><mi mathvariant="normal">1</mi></msub><msub><mrow><mi mathvariant="normal">v</mi></mrow><mi mathvariant="normal">0</mi></msub></mrow><mrow><msub><mrow><mi mathvariant="normal">m</mi></mrow><mi mathvariant="normal">1</mi></msub><mo>+</mo><msub><mrow><mi mathvariant="normal">m</mi></mrow><mi mathvariant="normal">2</mi></msub></mrow></mfrac></mstyle></math></span></div><div class="d">代入：m₁ = m₂／m₂ → ∞／m₁ → ∞</div></a><a href="/checks/inelastic_collision.html"><div class="t">完全非弾性衝突（くっついた後の速さ）</div><div class="mk-line"><span class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">V</mi><mo>=</mo><mfrac><mrow><msub><mrow><mi mathvariant="normal">m</mi></mrow><mi mathvariant="normal">1</mi></msub><msub><mrow><mi mathvariant="normal">v</mi></mrow><mi mathvariant="normal">0</mi></msub></mrow><mrow><msub><mrow><mi mathvariant="normal">m</mi></mrow><mi mathvariant="normal">1</mi></msub><mo>+</mo><msub><mrow><mi mathvariant="normal">m</mi></mrow><mi mathvariant="normal">2</mi></msub></mrow></mfrac></mstyle></math></span></div><div class="d">代入：m₂ = 0／m₂ → ∞／m₁ = m₂</div></a><a href="/checks/springs_series.html"><div class="t">2本のばねを直列につないだときのばね定数</div><div class="mk-line"><span class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">k</mi><mo>=</mo><mfrac><mrow><msub><mrow><mi mathvariant="normal">k</mi></mrow><mi mathvariant="normal">1</mi></msub><msub><mrow><mi mathvariant="normal">k</mi></mrow><mi mathvariant="normal">2</mi></msub></mrow><mrow><msub><mrow><mi mathvariant="normal">k</mi></mrow><mi mathvariant="normal">1</mi></msub><mo>+</mo><msub><mrow><mi mathvariant="normal">k</mi></mrow><mi mathvariant="normal">2</mi></msub></mrow></mfrac></mstyle></math></span></div><div class="d">代入：k₂ → ∞／k₁ = k₂</div></a><a href="/checks/projectile_range.html"><div class="t">斜方投射の水平到達距離</div><div class="mk-line"><span class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">x</mi><mo>=</mo><mfrac><mrow><msup><mrow><msub><mrow><mi mathvariant="normal">v</mi></mrow><mi mathvariant="normal">0</mi></msub></mrow><mn>2</mn></msup><mi mathvariant="normal">sin</mi><mn>2</mn><mi mathvariant="normal">θ</mi></mrow><mrow><mi mathvariant="normal">g</mi></mrow></mfrac></mstyle></math></span></div><div class="d">代入：θ = 0／θ = 90°／θ = 45°</div></a><a href="/checks/projectile_height.html"><div class="t">斜方投射の最高点の高さ</div><div class="mk-line"><span class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">H</mi><mo>=</mo><mfrac><mrow><msup><mrow><msub><mrow><mi mathvariant="normal">v</mi></mrow><mi mathvariant="normal">0</mi></msub></mrow><mn>2</mn></msup><msup><mrow><mi mathvariant="normal">sin</mi></mrow><mn>2</mn></msup><mi mathvariant="normal">θ</mi></mrow><mrow><mn>2</mn><mi mathvariant="normal">g</mi></mrow></mfrac></mstyle></math></span></div><div class="d">代入：θ = 90°／θ = 0</div></a><a href="/checks/circular_bottom_tension.html"><div class="t">鉛直面内の円運動、最下点での糸の張力</div><div class="mk-line"><span class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">T</mi><mo>=</mo><mi mathvariant="normal">mg</mi><mo>+</mo><mfrac><mrow><msup><mrow><mi mathvariant="normal">mv</mi></mrow><mn>2</mn></msup></mrow><mrow><mi mathvariant="normal">r</mi></mrow></mfrac></mstyle></math></span></div><div class="d">代入：v = 0／v を大きくする</div></a></div>
+<h2 id="s6">熱・気体の定番問題</h2><div class="grid mcards"><a href="/checks/mixing_temperature.html"><div class="t">2つの物体を接触させたあとの温度（熱量の保存）</div><div class="mk-line"><span class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">T</mi><mo>=</mo><mfrac><mrow><msub><mrow><mi mathvariant="normal">m</mi></mrow><mi mathvariant="normal">1</mi></msub><msub><mrow><mi mathvariant="normal">c</mi></mrow><mi mathvariant="normal">1</mi></msub><msub><mrow><mi mathvariant="normal">T</mi></mrow><mi mathvariant="normal">1</mi></msub><mo>+</mo><msub><mrow><mi mathvariant="normal">m</mi></mrow><mi mathvariant="normal">2</mi></msub><msub><mrow><mi mathvariant="normal">c</mi></mrow><mi mathvariant="normal">2</mi></msub><msub><mrow><mi mathvariant="normal">T</mi></mrow><mi mathvariant="normal">2</mi></msub></mrow><mrow><msub><mrow><mi mathvariant="normal">m</mi></mrow><mi mathvariant="normal">1</mi></msub><msub><mrow><mi mathvariant="normal">c</mi></mrow><mi mathvariant="normal">1</mi></msub><mo>+</mo><msub><mrow><mi mathvariant="normal">m</mi></mrow><mi mathvariant="normal">2</mi></msub><msub><mrow><mi mathvariant="normal">c</mi></mrow><mi mathvariant="normal">2</mi></msub></mrow></mfrac></mstyle></math></span></div><div class="d">代入：m₂ = 0／T₁ = T₂／m₁c₁ = m₂c₂</div></a></div>
+<h2 id="s7">電磁気の定番問題</h2><div class="grid mcards"><a href="/checks/resistors_parallel.html"><div class="t">2つの抵抗を並列につないだときの合成抵抗</div><div class="mk-line"><span class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">R</mi><mo>=</mo><mfrac><mrow><msub><mrow><mi mathvariant="normal">R</mi></mrow><mi mathvariant="normal">1</mi></msub><msub><mrow><mi mathvariant="normal">R</mi></mrow><mi mathvariant="normal">2</mi></msub></mrow><mrow><msub><mrow><mi mathvariant="normal">R</mi></mrow><mi mathvariant="normal">1</mi></msub><mo>+</mo><msub><mrow><mi mathvariant="normal">R</mi></mrow><mi mathvariant="normal">2</mi></msub></mrow></mfrac></mstyle></math></span></div><div class="d">代入：R₂ → ∞／R₂ = 0／R₁ = R₂</div></a><a href="/checks/battery_power.html"><div class="t">内部抵抗のある電池で、外部抵抗が消費する電力</div><div class="mk-line"><span class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">P</mi><mo>=</mo><mfrac><mrow><msup><mrow><mi mathvariant="normal">E</mi></mrow><mn>2</mn></msup><mi mathvariant="normal">R</mi></mrow><mrow><msup><mrow><mo>(</mo><mi mathvariant="normal">R</mi><mo>+</mo><mi mathvariant="normal">r</mi><mo>)</mo></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></span></div><div class="d">代入：r = 0／R = 0／R → ∞</div></a><a href="/checks/rc_charging.html"><div class="t">RC回路でコンデンサーを充電するときの電気量</div><div class="mk-line"><span class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">q</mi><mo>=</mo><mi mathvariant="normal">CE</mi><mo>(</mo><mn>1</mn><mo>−</mo><msup><mrow><mi mathvariant="normal">e</mi></mrow><mrow><mstyle displaystyle='false'><mo>−</mo><mfrac><mrow><mi mathvariant="normal">t</mi></mrow><mrow><mi mathvariant="normal">RC</mi></mrow></mfrac></mstyle></mrow></msup><mo>)</mo></mstyle></math></span></div><div class="d">代入：t = 0／t → ∞／R → 0</div></a><a href="/checks/dielectric_half.html"><div class="t"><span class="tag adv">難関大</span>誘電体を半分だけ入れた平行板コンデンサーの電気容量</div><div class="mk-line"><span class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">C</mi><mo>=</mo><mfrac><mrow><mo>(</mo><mn>1</mn><mo>+</mo><mi mathvariant="normal">εr</mi><mo>)</mo><msub><mrow><mi mathvariant="normal">ε</mi></mrow><mi mathvariant="normal">0</mi></msub><mi mathvariant="normal">S</mi></mrow><mrow><mn>2</mn><mi mathvariant="normal">d</mi></mrow></mfrac></mstyle></math></span></div><div class="d">代入：εr = 1／εr を大きくする</div></a></div>
+<h2 id="s8">波・光・量子の定番問題</h2><div class="grid mcards"><a href="/checks/doppler_source.html"><div class="t">近づいてくる音源のドップラー効果</div><div class="mk-line"><span class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">f′</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">Vf</mi></mrow><mrow><mi mathvariant="normal">V</mi><mo>−</mo><mi mathvariant="normal">v</mi></mrow></mfrac></mstyle></math></span></div><div class="d">代入：v = 0／v &gt; 0／v → V</div></a></div>
+<p><a href="/method.html">→ 答えの単位で検算する3つの手順</a>　<a href="/mistakes/">→ よくあるミス集</a></p>
+</div></main>
+<footer class="site"><div class="wrap">
+  <div class="links"><a href="/">トップ</a><a href="/method.html">検算のやり方</a><a href="/mistakes/">よくあるミス</a><a href="/training/">検算トレーニング</a><a href="/checks/">代入で検算</a><a href="/advanced.html">難関大レベル</a><a href="/guide.html">単位の読み方</a><a href="/u/">SI単位の一覧</a><a href="/about.html">このサイトについて</a><a href="/privacy.html">プライバシーポリシー</a><a href="/contact.html">お問い合わせ</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>
+  <p class="src">単位の定義は、国際度量衡局（BIPM）の SI パンフレット第9版と、その日本語版（産業技術総合研究所 計量標準総合センター）に基づいています。</p>
+  タンブツ〜単位で物理を考える〜 — 答えの単位で検算して、取れる問題を落とさない。最終更新日：2026-10-19
+</div></footer>
+<button class="to-top" id="to-top" aria-label="ページの先頭へ戻る"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></button>
+</body>
+</html>

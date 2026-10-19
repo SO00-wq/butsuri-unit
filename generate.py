@@ -27,7 +27,7 @@ SITE_NAME = "タンブツ"
 SITE_TAGLINE = "単位で物理を考える"
 SITE_FULL = f"{SITE_NAME}〜{SITE_TAGLINE}〜"
 SITE_URL = "https://tanbutsu.com"
-ASSET_VER = "14"  # CSS/JS を変えたら上げる（ブラウザのキャッシュ対策）
+ASSET_VER = "16"  # CSS/JS を変えたら上げる（ブラウザのキャッシュ対策）
 UPDATED = "2026-10-19"  # 最終更新日（内容を更新したら変える）
 GOOGLE_VERIFICATION = "kVE91IWkP86K1E_JpBQDklXXu5gz86ZOA64xcgtDUwc"  # Search Console 所有権確認
 # お問い合わせ用 Google フォームの URL（https://docs.google.com/forms/d/e/…/viewform）。
@@ -338,6 +338,7 @@ body{font-family:'Noto Sans JP',system-ui,sans-serif;background:var(--bg);color:
 body.nav-open{overflow:hidden}
 a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+.subst{display:flex;flex-direction:column;gap:10px;margin:.8rem 0}.sc{border:1px solid var(--border);border-radius:var(--r);background:var(--card);padding:10px 14px}.sc-h{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.sc-n{display:grid;place-items:center;width:1.6em;height:1.6em;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-weight:700;font-size:.85em}.sc-ok{margin-left:auto;font-weight:700}.sc-row{display:grid;grid-template-columns:7.5em 1fr;gap:8px;margin-top:6px;align-items:baseline}.sc-l{color:var(--dim);font-size:.85em}@media (max-width:480px){.sc-row{grid-template-columns:1fr;gap:0}}.verdict.ok{color:var(--ok)}
 .faq{margin:.5rem 0 1.5rem}.faq dt{font-weight:700;margin-top:1rem}.faq dt::before{content:"Q. ";color:var(--accent)}.faq dd{margin:.3rem 0 0;padding-left:1.6em}
 .form-embed{margin:1rem 0}.form-embed iframe{width:100%;height:1100px;border:1px solid var(--border);border-radius:var(--r);background:#fff}
 .skip{position:absolute;left:-999px;top:0;background:var(--accent);color:#fff;padding:.5rem 1rem;z-index:100}.skip:focus{left:8px;top:8px}
@@ -676,6 +677,7 @@ def drawer_html(path):
       <li><a href="/method.html"{cur("/method.html")}>検算のやり方</a></li>
       <li><a href="/mistakes/"{cur("/mistakes/")}>よくあるミス集</a></li>
       <li><a href="/training/"{cur("/training/")}>検算トレーニング</a></li>
+      <li><a href="/checks/"{cur("/checks/")}>代入で検算</a></li>
       <li><a href="/advanced.html"{cur("/advanced.html")}>難関大レベル</a></li>
     </ul></div>
     <div class="nav-sec"><h4>単位を知る</h4><ul>
@@ -775,7 +777,7 @@ def page(path, title, desc, body, crumbs=(), noindex=False):
 {body}
 </div></main>
 <footer class="site"><div class="wrap">
-  <div class="links"><a href="/">トップ</a><a href="/method.html">検算のやり方</a><a href="/mistakes/">よくあるミス</a><a href="/training/">検算トレーニング</a><a href="/advanced.html">難関大レベル</a><a href="/guide.html">単位の読み方</a><a href="/u/">SI単位の一覧</a><a href="/about.html">このサイトについて</a><a href="/privacy.html">プライバシーポリシー</a>{contact_link}{foot_links}</div>
+  <div class="links"><a href="/">トップ</a><a href="/method.html">検算のやり方</a><a href="/mistakes/">よくあるミス</a><a href="/training/">検算トレーニング</a><a href="/checks/">代入で検算</a><a href="/advanced.html">難関大レベル</a><a href="/guide.html">単位の読み方</a><a href="/u/">SI単位の一覧</a><a href="/about.html">このサイトについて</a><a href="/privacy.html">プライバシーポリシー</a>{contact_link}{foot_links}</div>
   <p class="src">単位の定義は、国際度量衡局（BIPM）の SI パンフレット第9版と、その日本語版（産業技術総合研究所 計量標準総合センター）に基づいています。</p>
   {SITE_FULL} — 答えの単位で検算して、取れる問題を落とさない。最終更新日：{UPDATED}
 </div></footer>
@@ -805,6 +807,9 @@ def build_assets():
     for f in FS.values():
         idx.append({"y": "公式", "t": f["name"], "s": f["expr"], "u": f"/f/{f['id']}.html",
                     "k": " ".join(QS[x]["name"] for x in f["quantities"]) + " " + CATS[f["category"]]["name"]})
+    for p_ in CHECKS:
+        idx.append({"y": "検算", "t": p_["title"], "s": p_["answer"]["text"], "u": f"/checks/{p_['id']}.html",
+                    "k": "代入 極限 " + " ".join(c["case"] for c in p_["checks"])})
     for sym, u in UNITS.items():
         idx.append({"y": "単位", "t": f"{u['name']}（{sym}）", "s": fmt_base(UDIMS[sym]) if UDIMS[sym] != ZERO else "1",
                     "u": f"/u/{USLUG[sym]}.html", "units": [sym], "k": u["name"]})
@@ -1415,7 +1420,8 @@ def build_mistake(m):
         b.append('<div class="note">単位が合っても、答えが正しいとは限りません（係数や sin・cos の間違いは見つけられません）。'
                  'ただ、<span class="key">単位が合わなければ必ず間違い</span>なので、見直す場所を絞り込めます。</div>')
     else:
-        b.append(f'<div class="note"><b>どうやって見つけるか</b><br>{E(m.get("tip", ""))}<br>単位の検算は、こうした確かめ方とあわせて使いましょう。</div>')
+        b.append(f'<div class="note"><b>どうやって見つけるか</b><br>{E(m.get("tip", ""))}<br>単位の検算は、こうした確かめ方とあわせて使いましょう。'
+                 '<br><a href="/checks/">→ 0・∞・90° を代入して検算する方法</a></div>')
     same = [x for x in MISTAKES if x["id"] != m["id"] and x["theme"] == m["theme"]]
     rest = [x for x in MISTAKES if x["id"] != m["id"] and x["theme"] != m["theme"]]
     t = THEMES[m["theme"]]
@@ -1484,6 +1490,188 @@ def build_mistakes_index():
         build_theme(tid)
 
 
+# ─────────────────────────── 代入で検算（特別な値・極限） ───────────────────────────
+
+import math as _math
+CHECKS = json.load(open("data/checks.json", encoding="utf-8"))["problems"]
+CHECK_FIELDS = {"mech": "力学", "thermo": "熱・気体", "em": "電磁気", "wave": "波・光・量子"}
+_BIG, _SMALL = 1e8, 1e-8
+
+
+def _env(vals):
+    e = {k: getattr(_math, k) for k in ("sin", "cos", "tan", "exp", "sqrt", "log", "pi")}
+    e.update(BIG=_BIG, SMALL=_SMALL, INF=float("inf"))
+    e.update(vals)
+    return e
+
+
+def _eval_case(py, base, sets):
+    vals = dict(base)
+    for k, v in sets.items():
+        vals[k] = eval(str(v), {"__builtins__": {}}, _env(vals))
+    try:
+        return eval(py, {"__builtins__": {}}, _env(vals)), vals
+    except ZeroDivisionError:          # 0 で割る＝無限大に発散
+        return float("inf"), vals
+
+
+def _case_ok(py, p, c):
+    got, vals = _eval_case(py, p["vals"], c["set"])
+    exp = eval(c["expect_py"], {"__builtins__": {}}, _env(vals))
+    if c.get("cmp") == ">":
+        return got > exp * (1 + 1e-9) + 1e-12
+    if exp == float("inf"):
+        return abs(got) > 1e5
+    if got == float("inf"):
+        return False
+    return abs(got - exp) <= 1e-4 * max(1.0, abs(exp))
+
+
+def _check_dims(p, syms):
+    d = {**p.get("parts", {}), **p["given"]}
+    for prod in syms:
+        for sym, _ in prod:
+            if sym not in d:
+                raise SystemExit(f"✗ 代入検算 {p['id']}: 記号 {sym} の単位がわからない")
+    return d
+
+
+for _p in CHECKS:
+    _tq = QS[_p["target"][1]]
+    _all = {**_p.get("parts", {}), **_p["given"]}
+    for _side in ("answer", "wrong"):
+        _check_dims(_p, _p[_side]["expr"])
+        _, _ok = check_lines(_p[_side]["expr"], _all, _tq["dims"])
+        if not _ok:
+            raise SystemExit(f"✗ 代入検算 {_p['id']}: {_side} の単位が合わない（ここに載せる誤答は単位が合うものだけ）")
+    for _k, _prods in _p.get("sums", {}).items():
+        _check_dims(_p, _prods)
+        for _pr in _prods:
+            if prod_dims(_pr, _all) != QS[_p["given"][_k]]["dims"]:
+                raise SystemExit(f"✗ 代入検算 {_p['id']}: {_k} の中の項の単位がそろわない")
+    if _p.get("exponent") and prod_dims(_p["exponent"]["expr"][0], _all) != ZERO:
+        raise SystemExit(f"✗ 代入検算 {_p['id']}: 指数の肩に単位が残っている")
+    for _i, _c in enumerate(_p["checks"]):
+        if not _case_ok(_p["py"], _p, _c):
+            raise SystemExit(f"✗ 代入検算 {_p['id']}: ケース「{_c['case']}」で答えが期待どおりにならない")
+    _w = _p["wrong"]
+    if _case_ok(_w["py"], _p, _p["checks"][_w["caught"]]):
+        raise SystemExit(f"✗ 代入検算 {_p['id']}: 誤答がケース {_w['caught']} で見抜けていない")
+
+
+def check_card(p):
+    tag = '<span class="tag adv">難関大</span>' if p.get("level") == "難関" else ""
+    return (f'<a href="/checks/{p["id"]}.html"><div class="t">{tag}{E(p["title"])}</div>'
+            f'<div class="mk-line"><span class="u">{E(p["answer"]["text"])}</span></div>'
+            f'<div class="d">代入：' + "／".join(E(c["case"].split("（")[0]) for c in p["checks"]) + "</div></a>")
+
+
+SUBST_PATTERNS = [
+    ("質量・長さを 0 にする", "「相手がいない」「片方だけ」の状況になり、自由落下や静止など、答えのわかる問題に戻ります。"),
+    ("質量・抵抗などを ∞ にする", "動かない壁、断線、とても重い物体。答えは 0 や、知っている値に近づくはずです。"),
+    ("2つの量を等しくする", "m₁ = m₂、R₁ = R₂ など。つり合って 0 になる、ちょうど半分になる、などがすぐわかります。"),
+    ("角度を 0° と 90° にする", "水平な面、垂直な壁、真上に投げる。sin と cos の取り違えはここで見つかります。"),
+    ("時間を 0 と ∞ にする", "スイッチを入れた瞬間と、十分に時間がたったあと。はじめの状態と最後の状態に合っているか確かめます。"),
+    ("加えたものを「ない」ことにする", "摩擦係数 μ = 0、比誘電率 εr = 1、内部抵抗 r = 0。付け加える前の、よく知っている式に戻るはずです。"),
+    ("量を大きくしたときの増減を考える", "速く回せば張力は増えるはず、近づけば音は高くなるはず。符号の間違いが見つかります。"),
+]
+
+
+def build_check(p):
+    tq = QS[p["target"][1]]
+    tsym = p["target"][0]
+    tbase = fmt_base(tq["dims"])
+    allg = {**p.get("parts", {}), **p["given"]}
+    rl, _ = check_lines(p["answer"]["expr"], allg, tq["dims"])
+    wl, _ = check_lines(p["wrong"]["expr"], allg, tq["dims"])
+    b = [f'<span class="tag">{E(CHECK_FIELDS[p["field"]])}</span>'
+         + ('<span class="tag adv">難関大レベル</span>' if p.get("level") == "難関" else "") + '<span class="tag">定番問題</span>',
+         f"<h1>{E(p['title'])}を、単位と代入で検算する</h1>",
+         f'<div class="problem"><b>問題</b><p>{E(p["problem"])}</p></div>',
+         f'<div class="answer right-ans"><span class="lbl">答え</span><span class="mono">{E(p["answer"]["text"])}</span></div>',
+         "<p>答えが出たら、提出する前に2つの方法で確かめます。<b>① 単位</b>で式の形を確かめ、<b>② 特別な値の代入</b>で中身を確かめます。</p>",
+         "<h2>① 答えの単位で確かめる</h2>",
+         f'<p>求めたいのは{qlink(tq["id"])} <span class="mono">{E(tsym)}</span>。単位は <span class="mono">{E(tq["unit_str"])}</span>'
+         + (f"（＝ <span class=\"mono\">{E(tbase)}</span>）" if tbase != tq["unit_str"] else "") + "。</p>",
+         f'<p class="lead">使う量の単位：</p>{given_list(p["given"])}']
+    if p.get("sums"):
+        b.append("<p>足し算・引き算でまとめた部分（" + "、".join(f'<span class="mono">{E(k)}</span>' for k in p["sums"])
+                 + "）は、中の項の単位がそろっているので、1つの量として扱えます。</p>")
+    b.append('<div class="calc">' + "<br>".join(rl) + "</div>")
+    if p.get("exponent"):
+        el, _ = check_lines(p["exponent"]["expr"], allg, ZERO)
+        b.append(f'<p>指数関数の肩 <span class="mono">{E(p["exponent"]["text"])}</span> は、単位が消えていなければいけません。</p>'
+                 '<div class="calc">' + "<br>".join(el) + "</div>")
+    b.append(f'<p class="verdict ok">単位は <span class="mono">{E(tbase)}</span> で一致しました。ただし、これだけでは係数や符号、sin と cos の取り違えはわかりません。</p>')
+
+    b.append("<h2>② 特別な値を代入して確かめる</h2>")
+    b.append("<p>答えがすぐにわかる極端な場合を考え、式に代入して同じ結果になるかを確かめます。</p>")
+    b.append('<div class="subst">')
+    for i, c in enumerate(p["checks"], 1):
+        b.append(f'<div class="sc"><div class="sc-h"><span class="sc-n">{i}</span><b>{E(c["case"])}</b><span class="ok sc-ok">○ 合う</span></div>'
+                 f'<div class="sc-row"><span class="sc-l">式に代入すると</span><span class="mono">{E(c["result"])}</span></div>'
+                 f'<div class="sc-row"><span class="sc-l">物理的には</span><span>{E(c["expect"])}</span></div></div>')
+    b.append("</div>")
+    b.append(f'<p class="verdict ok">どの場合も、物理的に正しい結果になりました。単位と代入の両方を通った答えは、かなり信頼できます。</p>')
+
+    w = p["wrong"]
+    cc = p["checks"][w["caught"]]
+    b.append("<h2>単位は合うのに間違っている答えを、代入で見抜く</h2>")
+    b.append(f'<div class="answer wrong-ans"><span class="lbl">ありがちな答え</span><span class="mono">{E(w["text"])}</span></div>')
+    b.append('<div class="calc">' + "<br>".join(wl) + "</div>")
+    b.append(f'<p>単位は合っているので、①だけでは見抜けません。そこで <b>{E(cc["case"])}</b> を代入すると、</p>')
+    b.append(f'<p class="verdict ng">{E(w["why"])}</p>')
+    b.append(f'<div class="tipbox"><b>この問題の検算のコツ</b><p>{E(p["tip"])}</p></div>')
+
+    others = [x for x in CHECKS if x["id"] != p["id"] and x["field"] == p["field"]][:6] or [x for x in CHECKS if x["id"] != p["id"]][:6]
+    b.append("<h2>ほかの定番問題</h2><div class=\"grid mcards\">" + "".join(check_card(x) for x in others) + "</div>")
+    b.append(f'<p><a href="/checks/">→ 代入で検算する方法と、問題の一覧</a>　<a href="/q/{tq["id"]}.html">→ {E(tq["name"])}の単位の意味</a></p>')
+    page(f"/checks/{p['id']}.html", f"{p['title']}｜単位と代入（極限）で検算",
+         f"{p['title']}の答え {p['answer']['text']} を、次元解析と、0・∞・等しい値などの代入で確かめる。単位は合うのに間違っている答えの見抜き方も。",
+         "\n".join(b), [("代入で検算", "/checks/"), (p["title"], None)])
+
+
+def build_checks():
+    rows = "".join(f"<tr><td><b>{E(a)}</b></td><td>{E(d)}</td></tr>" for a, d in SUBST_PATTERNS)
+    ex = next(x for x in CHECKS if x["id"] == "incline_friction")
+    b = ["<h1>代入で検算する：0・∞・90° を入れて答えを確かめる</h1>",
+         '<p class="lead">単位の検算は、式の「形」が合っているかを確かめます。でも、½ の付け忘れや sin と cos の取り違え、符号のミスは見つけられません。'
+         "そこで使うのが、<b>答えに特別な値を代入する</b>検算です。極端な場合なら、計算しなくても答えがわかるからです。</p>",
+         "<h2>代入検算の手順</h2>",
+         '<ol class="steps3">'
+         "<li><b>答えがすぐにわかる極端な場合を探す</b><br>質量を 0 や ∞ に、角度を 0° や 90° に、2つの量を等しく。</li>"
+         "<li><b>その値を答えの式に代入する</b><br>0 や ∞ を入れたときの式の行き先を調べます。</li>"
+         "<li><b>物理的な結果と比べる</b><br><span class=\"key\">1つでも合わなければ、その答えは間違い</span>です。</li></ol>",
+         "<h2>例：粗い斜面の加速度</h2>",
+         f'<div class="problem"><b>問題</b><p>{E(ex["problem"])}</p></div>',
+         f'<div class="answer wrong-ans"><span class="lbl">ありがちな答え</span><span class="mono">{E(ex["wrong"]["text"])}</span></div>',
+         "<p>単位は m/s² で合っています。でも θ = 0（水平な面）を代入すると a = g。水平な床に置いた物体が、勝手に g で加速することになってしまいます。"
+         f'正しくは <span class="mono ok">{E(ex["answer"]["text"])}</span>。θ = 0 なら −μ′g（摩擦でブレーキ）、θ = 90° なら g（自由落下）、μ′ = 0 なら g sin θ と、どれも納得できる結果になります。</p>',
+         "<h2>よく使う代入のパターン</h2>",
+         f'<div class="tbl"><table><tr><th>代入</th><th>何がわかるか</th></tr>{rows}</table></div>',
+         '<div class="note">代入は<b>2つ以上</b>試すのが安全です。1つの代入では、たまたま正しい答えと同じ値になる誤答もあります'
+         '（<a href="/checks/elastic_collision.html">弾性衝突の例</a>）。</div>',
+         "<h2>単位の検算と組み合わせる</h2>",
+         '<div class="tbl"><table><tr><th>見つけられるミス</th><th>単位の検算</th><th>代入の検算</th></tr>'
+         "<tr><td>√ の付け忘れ、2乗の付け忘れ</td><td class=\"ok\">○</td><td>△</td></tr>"
+         "<tr><td>分子と分母の取り違え</td><td class=\"ok\">○</td><td class=\"ok\">○</td></tr>"
+         "<tr><td>係数（½、2 など）のミス</td><td class=\"ng\">×</td><td class=\"ok\">○（知っている答えと比べる）</td></tr>"
+         "<tr><td>sin と cos の取り違え</td><td class=\"ng\">×</td><td class=\"ok\">○（0° と 90°）</td></tr>"
+         "<tr><td>符号のミス</td><td class=\"ng\">×</td><td class=\"ok\">○（増えるか減るか）</td></tr>"
+         "<tr><td>直列と並列の取り違え</td><td class=\"ng\">×</td><td class=\"ok\">○（0 と ∞）</td></tr></table></div>",
+         "<p>まず単位で形を確かめ、次に代入で中身を確かめる。2つを通った答えは、かなり信頼できます。</p>"]
+    for fid, fname in CHECK_FIELDS.items():
+        ps = [x for x in CHECKS if x["field"] == fid]
+        if ps:
+            b.append(f"<h2>{E(fname)}の定番問題</h2><div class=\"grid mcards\">" + "".join(check_card(x) for x in ps) + "</div>")
+    b.append('<p><a href="/method.html">→ 答えの単位で検算する3つの手順</a>　<a href="/mistakes/">→ よくあるミス集</a></p>')
+    page("/checks/", "代入で検算する方法｜0・∞・90°を入れて物理の答えを確かめる",
+         "物理の答えに 0・∞・90°・等しい値などを代入して確かめる検算の方法。アトウッドの器械、斜面、衝突、直列・並列、RC回路、ドップラー効果など定番問題で、単位の検算と組み合わせて解説。",
+         "\n".join(b), [("代入で検算", None)])
+    for p in CHECKS:
+        build_check(p)
+
+
 def build_method():
     m = next(x for x in MISTAKES if x["id"] == "free_fall_speed")
     tq = QS[m["target"][1]]
@@ -1506,22 +1694,29 @@ def build_method():
 <div class="calc">{"<br>".join(wl)}</div>
 <p>m²/s² は m/s と一致しません。v² を求めたところで止まり、√ を付け忘れていたことに気づけます。</p>
 
+<h2>もう1つの検算：特別な値を代入する</h2>
+<p>単位が合っても、½ の付け忘れや sin と cos の取り違えは見つけられません。そこで、答えに<b>極端な値</b>（質量 0 や ∞、角度 0° や 90°、2つの量を等しくする）を代入します。
+極端な場合は計算しなくても答えがわかるので、式がその答えになるかを比べます。</p>
+<p>たとえば斜面の加速度を <span class="mono">a = g cos θ</span> と書いてしまったら、θ = 0（水平な面）を入れると a = g。床に置いた物体が勝手に加速することになるので、間違いだとわかります。</p>
+<p><a href="/checks/">→ 代入で検算する方法と、定番問題{len(CHECKS)}問</a></p>
+
 <h2>気をつけるポイント</h2>
 <ul>
 <li><b>足し算・引き算は、項ごとに単位がそろう</b>：x = v₀t + ½at² なら、v₀t も ½at² もどちらも m。単位の違うものは足せません。</li>
 <li><b>sin・cos・指数関数・log の中身は単位をもたない</b>：sin(ωt) なら ωt に単位が残っていてはいけません。</li>
 <li><b>単位が合っても、正しいとは限らない</b>：½ の付け忘れや sin と cos の取り違えは見つけられません。
-<a href="/mistakes/">よくあるミス</a>の「見抜けない例」も見ておきましょう。</li>
+こうしたミスは<a href="/checks/">代入の検算</a>で見つけます。<a href="/mistakes/">よくあるミス</a>の「見抜けない例」も見ておきましょう。</li>
 </ul>
 
 <h2>次にやること</h2>
 <div class="grid">
 <a href="/mistakes/"><div class="t"><b>よくあるミス集</b></div><div class="u">単位で見つけられる間違いの実例</div></a>
 <a href="/training/"><div class="t"><b>検算トレーニング</b></div><div class="u">単位が合う答えを選ぶ練習</div></a>
+<a href="/checks/"><div class="t"><b>代入で検算</b></div><div class="u">0・∞・90° を入れて確かめる</div></a>
 <a href="/guide.html"><div class="t"><b>単位の読み方</b></div><div class="u">単位の意味を言葉から理解する</div></a>
 </div>
 """
-    page("/method.html", "答えの単位で検算する3つの手順", "物理の計算で出た答えが正しいかを、単位（次元解析）で確かめる3つの手順。足し算の項、sin・cos の中身、見抜けないミスまで解説。",
+    page("/method.html", "答えの単位で検算する3つの手順と、代入での検算", "物理の計算で出た答えが正しいかを、単位（次元解析）で確かめる3つの手順。単位では見抜けないミスを、0・∞・90° の代入で見つける方法も。",
          body, [("検算のやり方", None)])
 
 
@@ -1927,7 +2122,8 @@ def build_index():
         f'<a href="/mistakes/"><div class="t">② よくあるミス集</div><div class="d">√ の付け忘れ、分子と分母の取り違えなど、{len(MISTAKES)} 個の実例。</div></a>'
         f'<a href="/training/"><div class="t">③ 検算トレーニング</div><div class="d">「単位が合う答えはどれ？」を {ntrain} 問。分野別に練習できます。</div></a>'
         f'<a href="#dict"><div class="t">④ 単位辞典</div><div class="d">{len(QS)} 個の量の単位を、意味を表す言葉から組み立てて理解します。</div></a>'
-        f'<a href="/advanced.html"><div class="t">⑤ 難関大レベル</div><div class="d">線密度・面密度・エネルギー密度など、二次試験で出る {sum(1 for q in QS.values() if q.get("level") == "難関")} 個の単位とミス例。</div></a>'
+        f'<a href="/checks/"><div class="t">⑤ 代入で検算</div><div class="d">単位では見抜けない係数・sin と cos・符号のミスを、0・∞・90° の代入で見つける。定番問題 {len(CHECKS)} 問。</div></a>'
+        f'<a href="/advanced.html"><div class="t">⑥ 難関大レベル</div><div class="d">線密度・面密度・エネルギー密度など、二次試験で出る {sum(1 for q in QS.values() if q.get("level") == "難関")} 個の単位とミス例。</div></a>'
         "</div>",
         '<h2 id="dict">単位辞典：答えの単位とその意味を調べる</h2>',
         "<p>検算するには、求めた量の単位と、その単位が何を意味するかを知っている必要があります。"
@@ -2309,6 +2505,7 @@ def main():
     for m in MISTAKES:
         build_mistake(m)
     build_training()
+    build_checks()
     build_advanced()
     build_unit_index()
     for sym in UNITS:
@@ -2323,6 +2520,7 @@ def main():
         build_pair(a, bq, fids)
     build_sitemap()
     print(f"✓ 物理量 {len(QS)}・公式 {len(FS)}・関係 {len(PAIRS)}・分野 {len(CATS)} ページ")
+    print(f"✓ 代入検算 {len(CHECKS)} 問：すべての代入で答えが期待どおりになり、誤答はそれぞれの代入で見抜けることを確認")
     print(f"✓ 言葉の式 {sum(1 for q in QS.values() if q.get('words'))} 個の単位が一致することを確認")
     print(f"合計: {len(ALL_PAGES)} ページ生成完了（うち検索に載せる {len(PATHS)} ページ）→ {OUT}/")
 

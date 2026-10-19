@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>鉛直面内の円運動、最下点での糸の張力｜単位と代入（極限）で検算 | タンブツ</title>
+<meta name="description" content="鉛直面内の円運動、最下点での糸の張力の答え T = mg + mv²/r を、次元解析と、0・∞・等しい値などの代入で確かめる。単位は合うのに間違っている答えの見抜き方も。">
+<link rel="canonical" href="https://tanbutsu.com/checks/circular_bottom_tension.html">
+
+<meta name="google-site-verification" content="kVE91IWkP86K1E_JpBQDklXXu5gz86ZOA64xcgtDUwc">
+<meta name="theme-color" content="#1d5fd1">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta property="og:site_name" content="タンブツ〜単位で物理を考える〜">
+<meta property="og:title" content="鉛直面内の円運動、最下点での糸の張力｜単位と代入（極限）で検算 | タンブツ">
+<meta property="og:description" content="鉛直面内の円運動、最下点での糸の張力の答え T = mg + mv²/r を、次元解析と、0・∞・等しい値などの代入で確かめる。単位は合うのに間違っている答えの見抜き方も。">
+<meta property="og:url" content="https://tanbutsu.com/checks/circular_bottom_tension.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://tanbutsu.com/assets/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "トップ", "item": "https://tanbutsu.com/"}, {"@type": "ListItem", "position": 2, "name": "代入で検算", "item": "https://tanbutsu.com/checks/"}, {"@type": "ListItem", "position": 3, "name": "鉛直面内の円運動、最下点での糸の張力", "item": "https://tanbutsu.com/checks/circular_bottom_tension.html"}]}</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css?v=16">
+<script src="/assets/site.js?v=16" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+<header class="site"><div class="wrap">
+  <a class="logo" href="/"><span class="mark">単</span><span class="lt"><span class="ln">タンブツ</span><span class="ls">〜単位で物理を考える〜</span></span></a>
+  <nav class="hdr-nav" aria-label="メインメニュー">
+    <a class="txt" href="/method.html">検算のやり方</a>
+    <a class="txt" href="/training/">トレーニング</a>
+    <button class="icon-btn" data-open-search aria-label="検索"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
+    <button class="icon-btn" id="menu-btn" aria-label="メニューを開く" aria-controls="drawer" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </nav>
+</div></header>
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" inert aria-label="メニュー">
+  <div class="drawer-head">メニュー<button class="icon-btn" id="close-btn" aria-label="メニューを閉じる"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <div class="drawer-body">
+    <div class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="q" type="search" placeholder="量・単位・公式を検索（例：電圧、J/K）" autocomplete="off" aria-label="サイト内検索"></div>
+    <div class="search-hint">名前でも単位記号でも探せます。</div>
+    <ul class="results" id="results" aria-live="polite"></ul>
+    <div class="nav-sec"><h4>検算する</h4><ul>
+      <li><a href="/">トップ</a></li>
+      <li><a href="/method.html">検算のやり方</a></li>
+      <li><a href="/mistakes/">よくあるミス集</a></li>
+      <li><a href="/training/">検算トレーニング</a></li>
+      <li><a href="/checks/">代入で検算</a></li>
+      <li><a href="/advanced.html">難関大レベル</a></li>
+    </ul></div>
+    <div class="nav-sec"><h4>単位を知る</h4><ul>
+      <li><a href="/guide.html">単位の読み方</a></li>
+      <li><a href="/u/">SI単位の一覧</a></li>
+      <li><a href="/about.html">このサイトについて</a></li>
+      <li><a href="/privacy.html">プライバシーポリシー</a></li>
+      <li><a href="/contact.html">お問い合わせ</a></li>
+    </ul></div>
+    <div class="nav-sec"><h4>単位辞典（分野別）</h4><ul><li><a href="/c/base.html">基本量<span class="n">10量</span></a></li><li><a href="/c/mech.html">力学<span class="n">28量</span></a></li><li><a href="/c/thermo.html">熱・気体<span class="n">12量</span></a></li><li><a href="/c/em.html">電磁気<span class="n">34量</span></a></li><li><a href="/c/wave.html">波・光・量子<span class="n">6量</span></a></li><li><a href="/c/misc.html">放射線・化学<span class="n">4量</span></a></li></ul></div>
+    <div class="nav-sec"><h4>よく調べる単位</h4><div class="chips"><a href="/q/velocity.html">速度</a><a href="/q/acceleration.html">加速度</a><a href="/q/force.html">力</a><a href="/q/energy.html">エネルギー</a><a href="/q/power.html">仕事率</a><a href="/q/pressure.html">圧力</a><a href="/q/voltage.html">電圧</a><a href="/q/resistance.html">電気抵抗</a><a href="/q/capacitance.html">静電容量</a><a href="/q/spring_constant.html">ばね定数</a></div></div>
+  </div>
+</aside>
+<main id="main"><div class="wrap">
+<nav class="bc" aria-label="パンくずリスト"><a href="/">トップ</a> › <a href="/checks/">代入で検算</a> › 鉛直面内の円運動、最下点での糸の張力</nav>
+<span class="tag">力学</span><span class="tag">定番問題</span>
+<h1>鉛直面内の円運動、最下点での糸の張力を、単位と代入で検算する</h1>
+<div class="problem"><b>問題</b><p>長さ r の糸の先に質量 m のおもりをつけ、鉛直面内で円運動させる。最下点での速さが v のとき、糸の張力 T を求めよ。重力加速度の大きさを g とする。</p></div>
+<div class="answer right-ans"><span class="lbl">答え</span><span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">T</mi><mo>=</mo><mi mathvariant="normal">mg</mi><mo>+</mo><mfrac><mrow><msup><mrow><mi mathvariant="normal">mv</mi></mrow><mn>2</mn></msup></mrow><mrow><mi mathvariant="normal">r</mi></mrow></mfrac></mstyle></math></span></div>
+<p>答えが出たら、提出する前に2つの方法で確かめます。<b>① 単位</b>で式の形を確かめ、<b>② 特別な値の代入</b>で中身を確かめます。</p>
+<nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">① 答えの単位で確かめる</a><a href="#s2">② 特別な値を代入して確かめる</a><a href="#s3">単位は合うのに間違っている答えを、代入で見抜く</a><a href="#s4">ほかの定番問題</a></div></nav><h2 id="s1">① 答えの単位で確かめる</h2>
+<p>求めたいのは<a href="/q/force.html">力</a> <span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">T</mi></mstyle></math></span>。単位は <span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">N</mi></mstyle></math></span>（＝ <span class="mono"><math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><mi mathvariant="normal">m</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></span>）。</p>
+<p class="lead">使う量の単位：</p><ul class="given"><li><span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">m</mi></mstyle></math></span>：<a href="/q/mass.html">質量</a> <span class="mono u">[<math><mstyle displaystyle="true"><mi mathvariant="normal">kg</mi></mstyle></math>]</span></li><li><span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">g</mi></mstyle></math></span>：<a href="/q/acceleration.html">加速度</a> <span class="mono u">[<math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math>]</span></li><li><span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">v</mi></mstyle></math></span>：<a href="/q/velocity.html">速度</a> <span class="mono u">[<math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math>]</span></li><li><span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">r</mi></mstyle></math></span>：<a href="/q/length.html">長さ</a> <span class="mono u">[<math><mstyle displaystyle="true"><mi mathvariant="normal">m</mi></mstyle></math>]</span></li></ul>
+<div class="calc">[<math><mstyle displaystyle="true"><mi mathvariant="normal">m</mi><mi mathvariant="normal">g</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">kg</mi><mo>·</mo><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><mi mathvariant="normal">m</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math>　<span class="ok">○ 一致</span><br>[<math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">m</mi><msup><mrow><mi mathvariant="normal">v</mi></mrow><mn>2</mn></msup></mrow><mrow><mi mathvariant="normal">r</mi></mrow></mfrac></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mo>(</mo><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac><mo>)</mo></mrow><mn>2</mn></msup></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><mi mathvariant="normal">m</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math>　<span class="ok">○ 一致</span></div>
+<p class="verdict ok">単位は <span class="mono"><math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><mi mathvariant="normal">m</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></span> で一致しました。ただし、これだけでは係数や符号、sin と cos の取り違えはわかりません。</p>
+<h2 id="s2">② 特別な値を代入して確かめる</h2>
+<p>答えがすぐにわかる極端な場合を考え、式に代入して同じ結果になるかを確かめます。</p>
+<div class="subst">
+<div class="sc"><div class="sc-h"><span class="sc-n">1</span><b>v = 0（止まってぶら下がる）</b><span class="ok sc-ok">○ 合う</span></div><div class="sc-row"><span class="sc-l">式に代入すると</span><span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">T</mi><mo>=</mo><mi mathvariant="normal">mg</mi></mstyle></math></span></div><div class="sc-row"><span class="sc-l">物理的には</span><span>おもりがぶら下がっているだけなので、張力は重さ mg と等しいはず</span></div></div>
+<div class="sc"><div class="sc-h"><span class="sc-n">2</span><b>v を大きくする</b><span class="ok sc-ok">○ 合う</span></div><div class="sc-row"><span class="sc-l">式に代入すると</span><span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">T</mi></mstyle></math> &gt; <math><mstyle displaystyle="true"><mi mathvariant="normal">mg</mi></mstyle></math></span></div><div class="sc-row"><span class="sc-l">物理的には</span><span>速く回すほど、手に感じる引っぱりは強くなるはず</span></div></div>
+</div>
+<p class="verdict ok">どの場合も、物理的に正しい結果になりました。単位と代入の両方を通った答えは、かなり信頼できます。</p>
+<h2 id="s3">単位は合うのに間違っている答えを、代入で見抜く</h2>
+<div class="answer wrong-ans"><span class="lbl">ありがちな答え</span><span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">T</mi><mo>=</mo><mi mathvariant="normal">mg</mi><mo>−</mo><mfrac><mrow><msup><mrow><mi mathvariant="normal">mv</mi></mrow><mn>2</mn></msup></mrow><mrow><mi mathvariant="normal">r</mi></mrow></mfrac></mstyle></math></span></div>
+<div class="calc">[<math><mstyle displaystyle="true"><mi mathvariant="normal">m</mi><mi mathvariant="normal">g</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mi mathvariant="normal">kg</mi><mo>·</mo><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><mi mathvariant="normal">m</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math>　<span class="ok">○ 一致</span><br>[<math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">m</mi><msup><mrow><mi mathvariant="normal">v</mi></mrow><mn>2</mn></msup></mrow><mrow><mi mathvariant="normal">r</mi></mrow></mfrac></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mo>(</mo><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac><mo>)</mo></mrow><mn>2</mn></msup></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><mi mathvariant="normal">m</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math>　<span class="ok">○ 一致</span></div>
+<p>単位は合っているので、①だけでは見抜けません。そこで <b>v を大きくする</b> を代入すると、</p>
+<p class="verdict ng">v を大きくすると T が小さくなり、やがて負になります。糸が「押す」ことはできないので、おかしいとわかります。最下点では、向心力 <math><mstyle displaystyle="true"><mfrac><mrow><msup><mrow><mi mathvariant="normal">mv</mi></mrow><mn>2</mn></msup></mrow><mrow><mi mathvariant="normal">r</mi></mrow></mfrac></mstyle></math> を出すために張力が重力より大きくなります。</p>
+<div class="tipbox"><b>この問題の検算のコツ</b><p>符号のミスは、「この量を大きくすると答えは増えるはずか、減るはずか」を考えると見つかります。</p></div>
+<h2 id="s4">ほかの定番問題</h2><div class="grid mcards"><a href="/checks/incline_friction.html"><div class="t">粗い斜面をすべり下りる物体の加速度</div><div class="mk-line"><span class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">a</mi><mo>=</mo><mi mathvariant="normal">g</mi><mo>(</mo><mi mathvariant="normal">sin</mi><mi mathvariant="normal">θ</mi><mo>−</mo><mi mathvariant="normal">μ′</mi><mi mathvariant="normal">cos</mi><mi mathvariant="normal">θ</mi><mo>)</mo></mstyle></math></span></div><div class="d">代入：μ′ = 0／θ = 90°／θ = 0</div></a><a href="/checks/atwood.html"><div class="t">アトウッドの器械（滑車につるした2つのおもり）の加速度</div><div class="mk-line"><span class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">a</mi><mo>=</mo><mfrac><mrow><mo>(</mo><msub><mrow><mi mathvariant="normal">m</mi></mrow><mi mathvariant="normal">1</mi></msub><mo>−</mo><msub><mrow><mi mathvariant="normal">m</mi></mrow><mi mathvariant="normal">2</mi></msub><mo>)</mo><mi mathvariant="normal">g</mi></mrow><mrow><msub><mrow><mi mathvariant="normal">m</mi></mrow><mi mathvariant="normal">1</mi></msub><mo>+</mo><msub><mrow><mi mathvariant="normal">m</mi></mrow><mi mathvariant="normal">2</mi></msub></mrow></mfrac></mstyle></math></span></div><div class="d">代入：m₁ = m₂／m₂ = 0／m₂ → ∞</div></a><a href="/checks/table_pulley.html"><div class="t">水平な台の上の物体と、つるしたおもりの加速度</div><div class="mk-line"><span class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">a</mi><mo>=</mo><mfrac><mrow><msub><mrow><mi mathvariant="normal">m</mi></mrow><mi mathvariant="normal">2</mi></msub><mi mathvariant="normal">g</mi></mrow><mrow><msub><mrow><mi mathvariant="normal">m</mi></mrow><mi mathvariant="normal">1</mi></msub><mo>+</mo><msub><mrow><mi mathvariant="normal">m</mi></mrow><mi mathvariant="normal">2</mi></msub></mrow></mfrac></mstyle></math></span></div><div class="d">代入：m₁ = 0／m₂ = 0／m₁ → ∞</div></a><a href="/checks/elastic_collision.html"><div class="t">静止した物体への弾性衝突（はね飛ばされる側の速さ）</div><div class="mk-line"><span class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">V</mi><mo>=</mo><mfrac><mrow><mn>2</mn><msub><mrow><mi mathvariant="normal">m</mi></mrow><mi mathvariant="normal">1</mi></msub><msub><mrow><mi mathvariant="normal">v</mi></mrow><mi mathvariant="normal">0</mi></msub></mrow><mrow><msub><mrow><mi mathvariant="normal">m</mi></mrow><mi mathvariant="normal">1</mi></msub><mo>+</mo><msub><mrow><mi mathvariant="normal">m</mi></mrow><mi mathvariant="normal">2</mi></msub></mrow></mfrac></mstyle></math></span></div><div class="d">代入：m₁ = m₂／m₂ → ∞／m₁ → ∞</div></a><a href="/checks/inelastic_collision.html"><div class="t">完全非弾性衝突（くっついた後の速さ）</div><div class="mk-line"><span class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">V</mi><mo>=</mo><mfrac><mrow><msub><mrow><mi mathvariant="normal">m</mi></mrow><mi mathvariant="normal">1</mi></msub><msub><mrow><mi mathvariant="normal">v</mi></mrow><mi mathvariant="normal">0</mi></msub></mrow><mrow><msub><mrow><mi mathvariant="normal">m</mi></mrow><mi mathvariant="normal">1</mi></msub><mo>+</mo><msub><mrow><mi mathvariant="normal">m</mi></mrow><mi mathvariant="normal">2</mi></msub></mrow></mfrac></mstyle></math></span></div><div class="d">代入：m₂ = 0／m₂ → ∞／m₁ = m₂</div></a><a href="/checks/springs_series.html"><div class="t">2本のばねを直列につないだときのばね定数</div><div class="mk-line"><span class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">k</mi><mo>=</mo><mfrac><mrow><msub><mrow><mi mathvariant="normal">k</mi></mrow><mi mathvariant="normal">1</mi></msub><msub><mrow><mi mathvariant="normal">k</mi></mrow><mi mathvariant="normal">2</mi></msub></mrow><mrow><msub><mrow><mi mathvariant="normal">k</mi></mrow><mi mathvariant="normal">1</mi></msub><mo>+</mo><msub><mrow><mi mathvariant="normal">k</mi></mrow><mi mathvariant="normal">2</mi></msub></mrow></mfrac></mstyle></math></span></div><div class="d">代入：k₂ → ∞／k₁ = k₂</div></a></div>
+<p><a href="/checks/">→ 代入で検算する方法と、問題の一覧</a>　<a href="/q/force.html">→ 力の単位の意味</a></p>
+</div></main>
+<footer class="site"><div class="wrap">
+  <div class="links"><a href="/">トップ</a><a href="/method.html">検算のやり方</a><a href="/mistakes/">よくあるミス</a><a href="/training/">検算トレーニング</a><a href="/checks/">代入で検算</a><a href="/advanced.html">難関大レベル</a><a href="/guide.html">単位の読み方</a><a href="/u/">SI単位の一覧</a><a href="/about.html">このサイトについて</a><a href="/privacy.html">プライバシーポリシー</a><a href="/contact.html">お問い合わせ</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>
+  <p class="src">単位の定義は、国際度量衡局（BIPM）の SI パンフレット第9版と、その日本語版（産業技術総合研究所 計量標準総合センター）に基づいています。</p>
+  タンブツ〜単位で物理を考える〜 — 答えの単位で検算して、取れる問題を落とさない。最終更新日：2026-10-19
+</div></footer>
+<button class="to-top" id="to-top" aria-label="ページの先頭へ戻る"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></button>
+</body>
+</html>

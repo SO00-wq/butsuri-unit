@@ -27,8 +27,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=14">
-<script src="/assets/site.js?v=14" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=16">
+<script src="/assets/site.js?v=16" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -53,6 +53,7 @@
       <li><a href="/method.html">検算のやり方</a></li>
       <li><a href="/mistakes/">よくあるミス集</a></li>
       <li><a href="/training/">検算トレーニング</a></li>
+      <li><a href="/checks/">代入で検算</a></li>
       <li><a href="/advanced.html">難関大レベル</a></li>
     </ul></div>
     <div class="nav-sec"><h4>単位を知る</h4><ul>
@@ -82,13 +83,13 @@
 <h2 id="s3">正しい答え</h2>
 <div class="answer right-ans"><span class="lbl">正しい答え</span><span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">a</mi><mo>=</mo><mi mathvariant="normal">g</mi><mi mathvariant="normal">sin</mi><mi mathvariant="normal">θ</mi></mstyle></math></span></div>
 <div class="calc">[<math><mstyle displaystyle="true"><mi mathvariant="normal">g</mi><mi mathvariant="normal">sinθ</mi></mstyle></math>] <math><mstyle displaystyle="true"><mo>=</mo><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math>　<span class="ok">○ 一致</span></div>
-<div class="note"><b>どうやって見つけるか</b><br>sin と cos の取り違えは、極端な場合を考えると見つかります。θ = 0° なら斜面は水平なので加速度は 0 のはず。a = g cos θ だと g になってしまうので間違いだとわかります。<br>単位の検算は、こうした確かめ方とあわせて使いましょう。</div>
+<div class="note"><b>どうやって見つけるか</b><br>sin と cos の取り違えは、極端な場合を考えると見つかります。θ = 0° なら斜面は水平なので加速度は 0 のはず。a = g cos θ だと g になってしまうので間違いだとわかります。<br>単位の検算は、こうした確かめ方とあわせて使いましょう。<br><a href="/checks/">→ 0・∞・90° を代入して検算する方法</a></div>
 <h2 id="s4">力学的エネルギー・斜面のほかのミス</h2><div class="grid mcards"><a href="/mistakes/kinetic_energy.html"><div class="t">運動エネルギーで v を2乗し忘れる</div><div class="mk-line"><span class="mk bad">誤</span><span class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">K</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi mathvariant="normal">mv</mi></mstyle></math></span><span class="mk good">正</span><span class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">K</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><msup><mrow><mi mathvariant="normal">mv</mi></mrow><mn>2</mn></msup></mstyle></math></span></div></a><a href="/mistakes/missing_half.html"><div class="t"><span class="tag warn">単位では見抜けない</span>係数 <math><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle></math> を落とす</div><div class="mk-line"><span class="mk bad">誤</span><span class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">K</mi><mo>=</mo><msup><mrow><mi mathvariant="normal">mv</mi></mrow><mn>2</mn></msup></mstyle></math></span><span class="mk good">正</span><span class="u"><math><mstyle displaystyle="true"><mi mathvariant="normal">K</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><msup><mrow><mi mathvariant="normal">mv</mi></mrow><mn>2</mn></msup></mstyle></math></span></div></a></div>
 <div class="tipbox"><b>力学的エネルギー・斜面の検算のコツ</b><p>エネルギーは <math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math>。運動量 mv（<math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math>）と混ざると単位が合わなくなります。一方で <math><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle></math> の付け忘れや sin・cos の取り違えは単位では見つからないので、極端な場合を考えて確かめます。</p><p><a href="/mistakes/t/energy.html">→ 力学的エネルギー・斜面のミスをまとめて見る</a></p></div>
 <p><a href="/q/acceleration.html">→ 加速度の単位の意味を調べる</a>　<a href="/method.html">→ 検算のやり方</a></p>
 </div></main>
 <footer class="site"><div class="wrap">
-  <div class="links"><a href="/">トップ</a><a href="/method.html">検算のやり方</a><a href="/mistakes/">よくあるミス</a><a href="/training/">検算トレーニング</a><a href="/advanced.html">難関大レベル</a><a href="/guide.html">単位の読み方</a><a href="/u/">SI単位の一覧</a><a href="/about.html">このサイトについて</a><a href="/privacy.html">プライバシーポリシー</a><a href="/contact.html">お問い合わせ</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>
+  <div class="links"><a href="/">トップ</a><a href="/method.html">検算のやり方</a><a href="/mistakes/">よくあるミス</a><a href="/training/">検算トレーニング</a><a href="/checks/">代入で検算</a><a href="/advanced.html">難関大レベル</a><a href="/guide.html">単位の読み方</a><a href="/u/">SI単位の一覧</a><a href="/about.html">このサイトについて</a><a href="/privacy.html">プライバシーポリシー</a><a href="/contact.html">お問い合わせ</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>
   <p class="src">単位の定義は、国際度量衡局（BIPM）の SI パンフレット第9版と、その日本語版（産業技術総合研究所 計量標準総合センター）に基づいています。</p>
   タンブツ〜単位で物理を考える〜 — 答えの単位で検算して、取れる問題を落とさない。最終更新日：2026-10-19
 </div></footer>

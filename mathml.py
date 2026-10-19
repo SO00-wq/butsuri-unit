@@ -17,7 +17,7 @@ import re
 LETTERS = "A-Za-zΩΔΣΦΨΛΘΓΠαβγδεζηθικλμνξπρστυφχψωℏ′'"
 SUPS = {"⁰": "0", "¹": "1", "²": "2", "³": "3", "⁴": "4", "⁵": "5", "⁶": "6", "⁷": "7", "⁸": "8", "⁹": "9", "⁻": "−", "ᐟ": "/"}
 SUBS = {"₀": "0", "₁": "1", "₂": "2", "₃": "3", "₄": "4"}
-RUN = re.compile(r"[" + LETTERS + r"0-9½·×÷=＝+\-−/()√_⁰¹²³⁴⁵⁶⁷⁸⁹⁻ᐟ₀₁₂₃₄ ]+")
+RUN = re.compile(r"[" + LETTERS + r"0-9½·×÷=＝+\-−/()√_^⁰¹²³⁴⁵⁶⁷⁸⁹⁻ᐟ₀₁₂₃₄ ]+")
 TRIGGER = re.compile(r"[/√_½ᐟ]")
 
 
@@ -62,6 +62,8 @@ def tokenize(s):
             toks.append(("rel", {"＝": "=", "-": "−"}.get(c, c))); i += 1
         elif c in "·×÷":
             toks.append(("mul", c)); i += 1
+        elif c == "^":
+            toks.append(("^", c)); i += 1
         elif c in "/()√½":
             toks.append((c, c)); i += 1
         else:
@@ -153,6 +155,11 @@ class Parser:
             elif k == "sup":
                 self.take()
                 node = Node(f"<msup><mrow>{node.with_paren()}</mrow><mn>{esc(v)}</mn></msup>")
+            elif k == "^":
+                # e^(−t/RC) のような指数：括弧の中身をそのまま肩にのせる
+                self.take()
+                ex = self.atom()
+                node = Node(f"<msup><mrow>{node.with_paren()}</mrow><mrow><mstyle displaystyle='false'>{ex.bare()}</mstyle></mrow></msup>")
             elif k == "sub":
                 self.take()
                 node = Node(f"<msub><mrow>{node.render()}</mrow><mi mathvariant=\"normal\">{esc(v)}</mi></msub>")
