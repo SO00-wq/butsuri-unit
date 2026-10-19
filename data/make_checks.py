@@ -14,7 +14,7 @@ from pathlib import Path
 P = []
 
 P.append(dict(
-    id="incline_friction", field="mech", level="高校",
+    id="incline_friction", keyword="斜面をすべる物体の加速度（摩擦あり）の公式", field="mech", level="高校",
     title="粗い斜面をすべり下りる物体の加速度",
     problem="傾きの角 θ の粗い斜面を、物体がすべり下りている。動摩擦係数を μ′、重力加速度の大きさを g として、斜面に沿って下向きの加速度 a を求めよ。",
     given={"g": "acceleration", "sinθ": "number", "cosθ": "number", "μ′": "number"},
@@ -36,7 +36,7 @@ P.append(dict(
 ))
 
 P.append(dict(
-    id="atwood", parts={"m₁": "mass", "m₂": "mass"}, field="mech", level="高校",
+    id="atwood", keyword="アトウッドの器械の加速度の公式", parts={"m₁": "mass", "m₂": "mass"}, field="mech", level="高校",
     title="アトウッドの器械（滑車につるした2つのおもり）の加速度",
     problem="軽い定滑車に軽い糸をかけ、両端に質量 m₁、m₂ のおもりをつるして静かに放す。m₁ が下がる向きを正として、加速度 a を求めよ。重力加速度の大きさを g とする。",
     given={"(m₁−m₂)": "mass", "(m₁+m₂)": "mass", "g": "acceleration"},
@@ -59,7 +59,7 @@ P.append(dict(
 ))
 
 P.append(dict(
-    id="table_pulley", parts={"m₁": "mass"}, field="mech", level="高校",
+    id="table_pulley", keyword="台の上の物体とおもり（滑車）の加速度の公式", parts={"m₁": "mass"}, field="mech", level="高校",
     title="水平な台の上の物体と、つるしたおもりの加速度",
     problem="なめらかな水平の台の上に質量 m₁ の物体を置き、軽い糸と台の端の滑車を通して、質量 m₂ のおもりをつるす。全体の加速度の大きさ a を求めよ。重力加速度の大きさを g とする。",
     given={"m₂": "mass", "g": "acceleration", "(m₁+m₂)": "mass"},
@@ -82,7 +82,7 @@ P.append(dict(
 ))
 
 P.append(dict(
-    id="elastic_collision", parts={"m₂": "mass"}, field="mech", level="高校",
+    id="elastic_collision", keyword="弾性衝突後の速度の公式", parts={"m₂": "mass"}, field="mech", level="高校",
     title="静止した物体への弾性衝突（はね飛ばされる側の速さ）",
     problem="なめらかな水平面上で、速さ v₀ で進む質量 m₁ の小球が、静止している質量 m₂ の小球に正面から弾性衝突した。衝突後の m₂ の速さ V を求めよ。",
     given={"m₁": "mass", "v₀": "velocity", "(m₁+m₂)": "mass"},
@@ -105,7 +105,7 @@ P.append(dict(
 ))
 
 P.append(dict(
-    id="inelastic_collision", parts={"m₂": "mass"}, field="mech", level="高校",
+    id="inelastic_collision", keyword="完全非弾性衝突後の速さの公式", parts={"m₂": "mass"}, field="mech", level="高校",
     title="完全非弾性衝突（くっついた後の速さ）",
     problem="なめらかな水平面上で、速さ v₀ で進む質量 m₁ の物体が、静止している質量 m₂ の物体に衝突して一体となった。衝突後の速さ V を求めよ。",
     given={"m₁": "mass", "v₀": "velocity", "(m₁+m₂)": "mass"},
@@ -128,7 +128,7 @@ P.append(dict(
 ))
 
 P.append(dict(
-    id="springs_series", field="mech", level="高校",
+    id="springs_series", keyword="ばねの直列接続の合成ばね定数", field="mech", level="高校",
     title="2本のばねを直列につないだときのばね定数",
     problem="ばね定数 k₁ と k₂ の軽いばねを一直線につなぎ、1本のばねとみなす。全体のばね定数 k を求めよ。",
     given={"k₁": "spring_constant", "k₂": "spring_constant", "(k₁+k₂)": "spring_constant"},
@@ -149,7 +149,7 @@ P.append(dict(
 ))
 
 P.append(dict(
-    id="resistors_parallel", field="em", level="高校",
+    id="resistors_parallel", keyword="抵抗の並列接続の合成抵抗", field="em", level="高校",
     title="2つの抵抗を並列につないだときの合成抵抗",
     problem="抵抗値 R₁ と R₂ の抵抗を並列につなぐ。合成抵抗 R を求めよ。",
     given={"R₁": "resistance", "R₂": "resistance", "(R₁+R₂)": "resistance"},
@@ -172,7 +172,7 @@ P.append(dict(
 ))
 
 P.append(dict(
-    id="projectile_range", field="mech", level="高校",
+    id="projectile_range", keyword="斜方投射の水平到達距離の公式", field="mech", level="高校",
     title="斜方投射の水平到達距離",
     problem="水平な地面から、水平と角 θ をなす向きに速さ v₀ で小球を投げ上げた。同じ高さの地面に落ちるまでの水平距離 x を求めよ。重力加速度の大きさを g とする。",
     given={"v₀": "velocity", "sin2θ": "number", "sinθ": "number", "g": "acceleration"},
@@ -194,7 +194,7 @@ P.append(dict(
 ))
 
 P.append(dict(
-    id="projectile_height", field="mech", level="高校",
+    id="projectile_height", keyword="斜方投射の最高点の高さの公式", field="mech", level="高校",
     title="斜方投射の最高点の高さ",
     problem="水平な地面から、水平と角 θ をなす向きに速さ v₀ で小球を投げ上げた。最高点の高さ H を求めよ。重力加速度の大きさを g とする。",
     given={"v₀": "velocity", "sin²θ": "number", "g": "acceleration"},
@@ -214,7 +214,7 @@ P.append(dict(
 ))
 
 P.append(dict(
-    id="circular_bottom_tension", field="mech", level="高校",
+    id="circular_bottom_tension", keyword="鉛直面内の円運動、最下点の張力の公式", field="mech", level="高校",
     title="鉛直面内の円運動、最下点での糸の張力",
     problem="長さ r の糸の先に質量 m のおもりをつけ、鉛直面内で円運動させる。最下点での速さが v のとき、糸の張力 T を求めよ。重力加速度の大きさを g とする。",
     given={"m": "mass", "g": "acceleration", "v": "velocity", "r": "length"},
@@ -234,7 +234,7 @@ P.append(dict(
 ))
 
 P.append(dict(
-    id="battery_power", parts={"r": "resistance"}, field="em", level="高校",
+    id="battery_power", keyword="内部抵抗のある電池の消費電力の公式", parts={"r": "resistance"}, field="em", level="高校",
     title="内部抵抗のある電池で、外部抵抗が消費する電力",
     problem="起電力 E、内部抵抗 r の電池に、抵抗値 R の抵抗をつなぐ。抵抗 R で消費される電力 P を求めよ。",
     given={"E": "voltage", "R": "resistance", "(R+r)": "resistance"},
@@ -257,7 +257,7 @@ P.append(dict(
 ))
 
 P.append(dict(
-    id="rc_charging", field="em", level="高校",
+    id="rc_charging", keyword="RC回路の充電の式（コンデンサーの電気量）", field="em", level="高校",
     title="RC回路でコンデンサーを充電するときの電気量",
     problem="起電力 E の電池、抵抗値 R の抵抗、電気容量 C の、電荷のないコンデンサーを直列につなぎ、時刻 t = 0 にスイッチを入れる。時刻 t でのコンデンサーの電気量 q を求めよ。",
     given={"C": "capacitance", "E": "voltage", "(1−e^(−t/RC))": "number", "e^(−t/RC)": "number", "t": "time", "R": "resistance"},
@@ -280,7 +280,7 @@ P.append(dict(
 ))
 
 P.append(dict(
-    id="dielectric_half", field="em", level="難関",
+    id="dielectric_half", keyword="誘電体を半分入れたコンデンサーの電気容量", field="em", level="難関",
     title="誘電体を半分だけ入れた平行板コンデンサーの電気容量",
     problem="面積 S、間隔 d の平行板コンデンサーの極板の半分の面積に、比誘電率 εr の誘電体を極板間いっぱいの厚さで差しこむ。電気容量 C を求めよ。真空の誘電率を ε₀ とする。",
     given={"ε₀": "permittivity", "S": "area", "(1+εr)": "number", "εr": "number", "d": "length"},
@@ -300,7 +300,7 @@ P.append(dict(
 ))
 
 P.append(dict(
-    id="doppler_source", parts={"v": "velocity"}, field="wave", level="高校",
+    id="doppler_source", keyword="ドップラー効果の公式（音源が近づく場合）", parts={"v": "velocity"}, field="wave", level="高校",
     title="近づいてくる音源のドップラー効果",
     problem="振動数 f の音を出す音源が、静止した観測者に向かって速さ v で近づく。音速を V として、観測者が聞く音の振動数 f′ を求めよ。",
     given={"V": "velocity", "f": "frequency", "(V−v)": "velocity", "(V+v)": "velocity"},
@@ -323,7 +323,7 @@ P.append(dict(
 ))
 
 P.append(dict(
-    id="mixing_temperature", field="thermo", level="高校",
+    id="mixing_temperature", keyword="熱平衡後の温度の公式（熱量の保存）", field="thermo", level="高校",
     title="2つの物体を接触させたあとの温度（熱量の保存）",
     problem="質量 m₁、比熱 c₁、温度 T₁ の物体と、質量 m₂、比熱 c₂、温度 T₂ の物体を接触させる。外に熱が逃げないとき、十分に時間がたったあとの温度 T を求めよ。",
     given={"m₁": "mass", "c₁": "specific_heat", "T₁": "temperature", "m₂": "mass", "c₂": "specific_heat", "T₂": "temperature",

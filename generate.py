@@ -28,7 +28,7 @@ SITE_TAGLINE = "単位で物理を考える"
 SITE_FULL = f"{SITE_NAME}〜{SITE_TAGLINE}〜"
 SITE_URL = "https://tanbutsu.com"
 ASSET_VER = "16"  # CSS/JS を変えたら上げる（ブラウザのキャッシュ対策）
-UPDATED = "2026-10-19"  # 最終更新日（内容を更新したら変える）
+UPDATED = "2026-10-20"  # 最終更新日（内容を更新したら変える）
 GOOGLE_VERIFICATION = "kVE91IWkP86K1E_JpBQDklXXu5gz86ZOA64xcgtDUwc"  # Search Console 所有権確認
 # お問い合わせ用 Google フォームの URL（https://docs.google.com/forms/d/e/…/viewform）。
 # 空のあいだは /contact.html を作らず、メニューやフッターにも出さない
@@ -1626,8 +1626,16 @@ def build_check(p):
     others = [x for x in CHECKS if x["id"] != p["id"] and x["field"] == p["field"]][:6] or [x for x in CHECKS if x["id"] != p["id"]][:6]
     b.append("<h2>ほかの定番問題</h2><div class=\"grid mcards\">" + "".join(check_card(x) for x in others) + "</div>")
     b.append(f'<p><a href="/checks/">→ 代入で検算する方法と、問題の一覧</a>　<a href="/q/{tq["id"]}.html">→ {E(tq["name"])}の単位の意味</a></p>')
-    page(f"/checks/{p['id']}.html", f"{p['title']}｜単位と代入（極限）で検算",
-         f"{p['title']}の答え {p['answer']['text']} を、次元解析と、0・∞・等しい値などの代入で確かめる。単位は合うのに間違っている答えの見抜き方も。",
+    b += faq_html([
+        (f"{E(p['keyword'].replace('の公式', ''))}の答えは？", f'<span class="mono">{E(p["answer"]["text"])}</span> です。'),
+        ("答えが合っているか、どうやって確かめる？",
+         f"まず単位が {E(tq['unit_str'])} になるかを確かめ、次に " + "、".join(E(c["case"].split("（")[0]) for c in p["checks"])
+         + " のような特別な値を代入して、物理的に当然の結果になるかを確かめます。"),
+        ("単位が合っていれば正しい？", "いいえ。係数、符号、sin と cos の取り違えは単位では見つかりません。"
+         f"このページの「{E(w['text'])}」のように、単位が合っていても間違っている答えは、代入で見抜きます。"),
+    ])
+    page(f"/checks/{p['id']}.html", f"{p['keyword']} {p['answer']['text']}｜単位と極限で検算",
+         f"{p['keyword']}は {p['answer']['text']}。この答えを、次元解析（単位）と、" + "・".join(c["case"].split("（")[0] for c in p["checks"]) + " などの代入（極限）で確かめる方法と、ありがちな間違いの見抜き方。",
          "\n".join(b), [("代入で検算", "/checks/"), (p["title"], None)])
 
 
@@ -1665,7 +1673,7 @@ def build_checks():
         if ps:
             b.append(f"<h2>{E(fname)}の定番問題</h2><div class=\"grid mcards\">" + "".join(check_card(x) for x in ps) + "</div>")
     b.append('<p><a href="/method.html">→ 答えの単位で検算する3つの手順</a>　<a href="/mistakes/">→ よくあるミス集</a></p>')
-    page("/checks/", "代入で検算する方法｜0・∞・90°を入れて物理の答えを確かめる",
+    page("/checks/", "物理の検算方法：極限・特殊な値の代入｜0・∞・90°で答えを確かめる",
          "物理の答えに 0・∞・90°・等しい値などを代入して確かめる検算の方法。アトウッドの器械、斜面、衝突、直列・並列、RC回路、ドップラー効果など定番問題で、単位の検算と組み合わせて解説。",
          "\n".join(b), [("代入で検算", None)])
     for p in CHECKS:
@@ -1716,7 +1724,7 @@ def build_method():
 <a href="/guide.html"><div class="t"><b>単位の読み方</b></div><div class="u">単位の意味を言葉から理解する</div></a>
 </div>
 """
-    page("/method.html", "答えの単位で検算する3つの手順と、代入での検算", "物理の計算で出た答えが正しいかを、単位（次元解析）で確かめる3つの手順。単位では見抜けないミスを、0・∞・90° の代入で見つける方法も。",
+    page("/method.html", "物理の答えの検算方法｜次元解析（単位）の3つの手順と、極限の代入", "物理の計算で出た答えが正しいかを、単位（次元解析）で確かめる3つの手順。単位では見抜けないミスを、0・∞・90° の代入で見つける方法も。",
          body, [("検算のやり方", None)])
 
 
@@ -1852,6 +1860,9 @@ def build_quantity(q):
         chk = (f'<div class="checkbox"><b>検算のポイント</b><p>答えが{E(q["name"])}なら、右辺の単位は '
                f'<span class="mono ok">{E(u)}</span>' + (f"（＝ <span class=\"mono\">{E(base)}</span>）" if base != u else "")
                + ' になっているはず。ならなければ、どこかが間違っています。</p>')
+        rel_c = [c for c in CHECKS if c["target"][1] == qid]
+        if rel_c:
+            chk += "<p>答えが" + E(q["name"]) + "になる定番問題（代入でも検算）：" + "、".join(f'<a href="/checks/{c["id"]}.html">{E(c["title"])}</a>' for c in rel_c) + "</p>"
         if rel_m:
             chk += "<p>関連するミス例：" + "、".join(f'<a href="/mistakes/{m["id"]}.html">{E(m["title"].replace("【見抜けない例】", ""))}</a>' for m in rel_m) + "</p>"
         chk += "</div>"
@@ -2106,7 +2117,7 @@ def build_index():
         "<li><b>求めたい量の単位を確かめる</b><br>速さなら m/s、エネルギーなら J ＝ kg·m²/s²</li>"
         "<li><b>答えの右辺に、記号の単位を当てはめる</b><br>2、½、π などの数は単位をもたないので無視</li>"
         "<li><b>比べる</b><br><span class=\"key\">合わなければ、その答えは必ず間違い</span></li></ol>",
-        '<p><a href="/method.html">→ 検算のやり方をくわしく読む</a></p>',
+        '<p><a href="/method.html">→ 検算のやり方をくわしく読む</a>　<a href="/checks/">→ 単位で見抜けないミスは、0・∞・90° の代入で</a></p>',
         "<h2>たとえば、こんなミスが見つかる</h2>",
         f'<div class="problem"><b>問題</b><p>{E(ff["problem"])}</p></div>',
         f'<div class="answer wrong-ans"><span class="lbl">ありがちな答え</span><span class="mono">{E(ff["wrong"]["text"])}</span></div>',
@@ -2131,7 +2142,7 @@ def build_index():
         '<p><a href="/guide.html">→ はじめに：単位の読み方</a></p>',
         '<div class="grid cat-cards">' + "".join(cats) + "</div>",
     ]
-    page("/", f"{SITE_FULL}｜答えの単位で検算する物理サイト", f"{SITE_NAME}（{SITE_TAGLINE}）は、物理の計算で出した答えが正しいかを、答えの単位（次元解析）で確かめるためのサイト。検算の手順、よくあるミス集、検算トレーニング、単位辞典。", "\n".join(b))
+    page("/", f"{SITE_FULL}｜物理の答えを単位と代入で検算", f"{SITE_NAME}（{SITE_TAGLINE}）は、物理の計算で出した答えが正しいかを、答えの単位（次元解析）と、0・∞・90° などの代入（極限）で確かめるためのサイト。検算の手順、よくあるミス集、定番問題の検算、検算トレーニング、SI単位辞典。", "\n".join(b))
 
 
 def unit_home(sym):

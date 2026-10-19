@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>タンブツ〜単位で物理を考える〜｜答えの単位で検算する物理サイト</title>
-<meta name="description" content="タンブツ（単位で物理を考える）は、物理の計算で出した答えが正しいかを、答えの単位（次元解析）で確かめるためのサイト。検算の手順、よくあるミス集、検算トレーニング、単位辞典。">
+<title>タンブツ〜単位で物理を考える〜｜物理の答えを単位と代入で検算</title>
+<meta name="description" content="タンブツ（単位で物理を考える）は、物理の計算で出した答えが正しいかを、答えの単位（次元解析）と、0・∞・90° などの代入（極限）で確かめるためのサイト。検算の手順、よくあるミス集、定番問題の検算、検算トレーニング、SI単位辞典。">
 <link rel="canonical" href="https://tanbutsu.com/">
 
 <meta name="google-site-verification" content="kVE91IWkP86K1E_JpBQDklXXu5gz86ZOA64xcgtDUwc">
@@ -13,8 +13,8 @@
 <link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta property="og:site_name" content="タンブツ〜単位で物理を考える〜">
-<meta property="og:title" content="タンブツ〜単位で物理を考える〜｜答えの単位で検算する物理サイト">
-<meta property="og:description" content="タンブツ（単位で物理を考える）は、物理の計算で出した答えが正しいかを、答えの単位（次元解析）で確かめるためのサイト。検算の手順、よくあるミス集、検算トレーニング、単位辞典。">
+<meta property="og:title" content="タンブツ〜単位で物理を考える〜｜物理の答えを単位と代入で検算">
+<meta property="og:description" content="タンブツ（単位で物理を考える）は、物理の計算で出した答えが正しいかを、答えの単位（次元解析）と、0・∞・90° などの代入（極限）で確かめるためのサイト。検算の手順、よくあるミス集、定番問題の検算、検算トレーニング、SI単位辞典。">
 <meta property="og:url" content="https://tanbutsu.com/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ja_JP">
@@ -78,7 +78,7 @@
 <button class="home-search" data-open-search><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>答えの単位を調べる（例：電圧、<math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">J</mi></mrow><mrow><mi mathvariant="normal">K</mi></mrow></mfrac></mstyle></math>、ばね定数）</button>
 <nav class="toc" aria-label="このページの内容"><b>このページの内容</b><div class="chips"><a href="#s1">検算の3つの手順</a><a href="#s2">たとえば、こんなミスが見つかる</a><a href="#s3">このサイトでできること</a></div></nav><h2 id="s1">検算の3つの手順</h2>
 <ol class="steps3"><li><b>求めたい量の単位を確かめる</b><br>速さなら <math><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mstyle></math>、エネルギーなら <math><mstyle displaystyle="true"><mi mathvariant="normal">J</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">kg</mi><mo>·</mo><msup><mrow><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><mrow><msup><mrow><mi mathvariant="normal">s</mi></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></math></li><li><b>答えの右辺に、記号の単位を当てはめる</b><br>2、<math><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle></math>、π などの数は単位をもたないので無視</li><li><b>比べる</b><br><span class="key">合わなければ、その答えは必ず間違い</span></li></ol>
-<p><a href="/method.html">→ 検算のやり方をくわしく読む</a></p>
+<p><a href="/method.html">→ 検算のやり方をくわしく読む</a>　<a href="/checks/">→ 単位で見抜けないミスは、0・∞・90° の代入で</a></p>
 <h2 id="s2">たとえば、こんなミスが見つかる</h2>
 <div class="problem"><b>問題</b><p>ばね定数 k のばねに質量 m のおもりをつけて単振動させた。周期 T を求めよ。</p></div>
 <div class="answer wrong-ans"><span class="lbl">ありがちな答え</span><span class="mono"><math><mstyle displaystyle="true"><mi mathvariant="normal">T</mi><mo>=</mo><mn>2</mn><mi mathvariant="normal">π</mi><msqrt><mfrac><mrow><mi mathvariant="normal">k</mi></mrow><mrow><mi mathvariant="normal">m</mi></mrow></mfrac></msqrt></mstyle></math></span></div>
@@ -98,7 +98,7 @@
 <footer class="site"><div class="wrap">
   <div class="links"><a href="/">トップ</a><a href="/method.html">検算のやり方</a><a href="/mistakes/">よくあるミス</a><a href="/training/">検算トレーニング</a><a href="/checks/">代入で検算</a><a href="/advanced.html">難関大レベル</a><a href="/guide.html">単位の読み方</a><a href="/u/">SI単位の一覧</a><a href="/about.html">このサイトについて</a><a href="/privacy.html">プライバシーポリシー</a><a href="/contact.html">お問い合わせ</a><a href="/c/base.html">基本量</a><a href="/c/mech.html">力学</a><a href="/c/thermo.html">熱・気体</a><a href="/c/em.html">電磁気</a><a href="/c/wave.html">波・光・量子</a><a href="/c/misc.html">放射線・化学</a></div>
   <p class="src">単位の定義は、国際度量衡局（BIPM）の SI パンフレット第9版と、その日本語版（産業技術総合研究所 計量標準総合センター）に基づいています。</p>
-  タンブツ〜単位で物理を考える〜 — 答えの単位で検算して、取れる問題を落とさない。最終更新日：2026-10-19
+  タンブツ〜単位で物理を考える〜 — 答えの単位で検算して、取れる問題を落とさない。最終更新日：2026-10-20
 </div></footer>
 <button class="to-top" id="to-top" aria-label="ページの先頭へ戻る"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></button>
 </body>

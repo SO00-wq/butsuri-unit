@@ -2,6 +2,7 @@
  "problems": [
   {
    "id": "incline_friction",
+   "keyword": "斜面をすべる物体の加速度（摩擦あり）の公式",
    "field": "mech",
    "level": "高校",
    "title": "粗い斜面をすべり下りる物体の加速度",
@@ -116,6 +117,7 @@
   },
   {
    "id": "atwood",
+   "keyword": "アトウッドの器械の加速度の公式",
    "parts": {
     "m₁": "mass",
     "m₂": "mass"
@@ -243,6 +245,7 @@
   },
   {
    "id": "table_pulley",
+   "keyword": "台の上の物体とおもり（滑車）の加速度の公式",
    "parts": {
     "m₁": "mass"
    },
@@ -355,6 +358,7 @@
   },
   {
    "id": "elastic_collision",
+   "keyword": "弾性衝突後の速度の公式",
    "parts": {
     "m₂": "mass"
    },
@@ -467,6 +471,7 @@
   },
   {
    "id": "inelastic_collision",
+   "keyword": "完全非弾性衝突後の速さの公式",
    "parts": {
     "m₂": "mass"
    },
@@ -579,6 +584,7 @@
   },
   {
    "id": "springs_series",
+   "keyword": "ばねの直列接続の合成ばね定数",
    "field": "mech",
    "level": "高校",
    "title": "2本のばねを直列につないだときのばね定数",
@@ -676,6 +682,7 @@
   },
   {
    "id": "resistors_parallel",
+   "keyword": "抵抗の並列接続の合成抵抗",
    "field": "em",
    "level": "高校",
    "title": "2つの抵抗を並列につないだときの合成抵抗",
@@ -782,6 +789,7 @@
   },
   {
    "id": "projectile_range",
+   "keyword": "斜方投射の水平到達距離の公式",
    "field": "mech",
    "level": "高校",
    "title": "斜方投射の水平到達距離",
@@ -876,6 +884,7 @@
   },
   {
    "id": "projectile_height",
+   "keyword": "斜方投射の最高点の高さの公式",
    "field": "mech",
    "level": "高校",
    "title": "斜方投射の最高点の高さ",
@@ -960,6 +969,7 @@
   },
   {
    "id": "circular_bottom_tension",
+   "keyword": "鉛直面内の円運動、最下点の張力の公式",
    "field": "mech",
    "level": "高校",
    "title": "鉛直面内の円運動、最下点での糸の張力",
@@ -1067,6 +1077,7 @@
   },
   {
    "id": "battery_power",
+   "keyword": "内部抵抗のある電池の消費電力の公式",
    "parts": {
     "r": "resistance"
    },
@@ -1179,6 +1190,7 @@
   },
   {
    "id": "rc_charging",
+   "keyword": "RC回路の充電の式（コンデンサーの電気量）",
    "field": "em",
    "level": "高校",
    "title": "RC回路でコンデンサーを充電するときの電気量",
@@ -1295,6 +1307,7 @@
   },
   {
    "id": "dielectric_half",
+   "keyword": "誘電体を半分入れたコンデンサーの電気容量",
    "field": "em",
    "level": "難関",
    "title": "誘電体を半分だけ入れた平行板コンデンサーの電気容量",
@@ -1391,6 +1404,7 @@
   },
   {
    "id": "doppler_source",
+   "keyword": "ドップラー効果の公式（音源が近づく場合）",
    "parts": {
     "v": "velocity"
    },
@@ -1519,6 +1533,7 @@
   },
   {
    "id": "mixing_temperature",
+   "keyword": "熱平衡後の温度の公式（熱量の保存）",
    "field": "thermo",
    "level": "高校",
    "title": "2つの物体を接触させたあとの温度（熱量の保存）",
